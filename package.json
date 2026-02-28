@@ -36,7 +36,7 @@
     "gh:logs": "node scripts/git/github-actions-status.js logs",
     "deploy:status": "node scripts/git/validate-pages-deployment.js",
     "deploy:ping": "curl -s -o /dev/null -w 'HTTP Status: %{http_code}\\nResponse Time: %{time_total}s\\nURL: %{url_effective}\\n' https://gsphome.github.io/englishgame6/",
-    "build:full": "npm run build && git add . && npm run commit:auto && git push",
+    "build:full": "node scripts/development/dev-tools.js full",
     "deploy:push": "npm run build && git add . && npm run commit:auto && git push"
   },
   "dependencies": {
