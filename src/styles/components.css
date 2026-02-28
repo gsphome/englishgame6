@@ -1,0 +1,82 @@
+/* Components CSS - PURE BEM ARCHITECTURE */
+
+/* Import all component styles */
+@import './components/app-router.css';
+@import './components/compact-about.css';
+@import './components/compact-advanced-settings.css';
+@import './components/compact-learning-path.css';
+@import './components/compact-profile.css';
+@import './components/compact-progress-dashboard.css';
+@import './components/progression-dashboard.css';
+@import './components/modal-buttons.css';
+@import './components/completion-component.css';
+@import './components/content-renderer.css';
+@import './components/error-fallback.css';
+@import './components/flashcard-component.css';
+@import './components/fluent-flow-logo.css';
+@import './components/game-controls.css';
+@import './components/header.css';
+@import './components/loading-skeleton.css';
+@import './components/main-menu.css';
+@import './components/matching-cards.css';
+@import './components/matching-component.css';
+@import './components/matching-modal.css';
+@import './components/module-card.css';
+@import './components/quiz-component.css';
+@import './components/score-display.css';
+@import './components/search-bar.css';
+@import './components/sorting-component.css';
+@import './components/sorting-modal.css';
+@import './components/toast-card.css';
+@import './components/toast.css';
+
+/* Safari Mobile Specific Fixes */
+@import './safari-mobile-fixes.css';
+
+/* Design System Foundation already imported in index.css */
+
+/* ALL LEGACY @APPLY STYLES REMOVED */
+/* Use dedicated component CSS files with pure BEM architecture */
+
+/* Global Utility Classes - Pure CSS */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus Styles */
+.focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--theme-primary-blue, #3b82f6);
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  /* High specificity selector for accessibility without !important */
+  html * {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+  }
+
+  /* Additional specificity for common animation elements */
+  html body * {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+  }
+}
+
+/* High Contrast Support */
+@media (prefers-contrast: high) {
+  * {
+    border-width: 2px;
+  }
+}

@@ -1,0 +1,1458 @@
+/* Compact Learning Path - BEM Implementation with Compact UX */
+
+/* === BOX SIZING RESET === */
+.compact-learning-path *,
+.compact-learning-path *::before,
+.compact-learning-path *::after {
+  box-sizing: border-box;
+}
+
+.compact-learning-path {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+  /* Additional 20% reduction from 0.75rem */
+  z-index: 50;
+  animation: modalFadeIn 0.2s ease-out;
+  overflow: hidden;
+}
+
+.compact-learning-path__container {
+  background-color: var(--theme-bg-elevated, #ffffff);
+  border: 1px solid var(--theme-border-modal, rgba(0, 0, 0, 0.1));
+  border-radius: var(--radius-lg, 0.5rem);
+  box-shadow: var(--shadow-strong, 0 20px 25px rgba(0, 0, 0, 0.15));
+  max-width: 24rem;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: modalSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.compact-learning-path__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.27rem;
+  /* Additional 20% reduction from 0.3375rem */
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+}
+
+.compact-learning-path__title-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.compact-learning-path__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.compact-learning-path__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.025em;
+}
+
+/* === HEADER CLOSE BUTTON === */
+.compact-learning-path__header .modal__close-btn {
+  color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  backdrop-filter: blur(8px);
+}
+
+.compact-learning-path__header .modal__close-btn:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-interactive, 0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.dark .compact-learning-path__header .modal__close-btn {
+  color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.dark .compact-learning-path__header .modal__close-btn:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.compact-learning-path__content {
+  padding: 0.3rem 0.45rem;
+  /* Additional 20% reduction from 0.375rem 0.5625rem */
+  flex: 1;
+  overflow-y: auto;
+  max-height: calc(90vh - 100px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.225rem;
+  /* Additional 20% reduction from 0.28125rem */
+}
+
+/* Progress Overview - Simplified 2-Column Grid */
+.compact-learning-path__overview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  align-items: center;
+  background-color: var(--theme-bg-subtle, #f9fafb);
+  border: 2px solid var(--theme-border-soft, #e5e7eb);
+  border-radius: var(--radius-md, 0.375rem);
+  padding: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.compact-learning-path__overview:hover {
+  border-color: var(--theme-primary-blue, #3b82f6);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+}
+
+/* Progress Container - Consistent Design System */
+/* All items now use unified .compact-learning-path__stat structure */
+
+/* Stats - Unified Structure for All Grid Items */
+.compact-learning-path__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.125rem;
+  justify-content: center;
+}
+
+.compact-learning-path__stat-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* Specific spacing for emoji icon to prevent it from being too close to text */
+.compact-learning-path__stat-icon--emoji {
+  margin-bottom: 0.125rem;
+  font-size: 1.5rem;
+}
+
+.compact-learning-path__stat-icon--completed {
+  color: #10b981;
+}
+
+.compact-learning-path__stat-icon--available {
+  color: #3b82f6;
+}
+
+.compact-learning-path__stat-icon--locked {
+  color: #9ca3af;
+}
+
+.compact-learning-path__stat-value {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--theme-text-primary, #111827);
+  letter-spacing: -0.025em;
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  justify-content: center;
+}
+
+.compact-learning-path__stat-value::after {
+  content: attr(data-unit);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--theme-text-secondary, #6b7280);
+}
+
+.compact-learning-path__stat-label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--theme-text-secondary, #6b7280);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+/* Section Titles - Unified Design */
+.compact-learning-path__section-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--theme-text-primary, #111827);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.025em;
+}
+
+/* Next Recommended Module - Unified Section Design */
+.compact-learning-path__next-module {
+  background-color: var(--theme-bg-subtle, #f9fafb);
+  border: 2px solid var(--theme-border-soft, #e5e7eb);
+  border-radius: var(--radius-md, 0.375rem);
+  padding: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.compact-learning-path__next-module:hover {
+  border-color: var(--theme-primary-blue, #3b82f6);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+}
+
+.compact-learning-path__recommended-card {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+  border: 2px solid rgba(16, 185, 129, 0.4);
+  border-radius: var(--radius-md, 0.375rem);
+  padding: 1rem;
+  position: relative;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.1);
+  text-align: center;
+}
+
+.compact-learning-path__recommended-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+  border-color: rgba(16, 185, 129, 0.6);
+}
+
+.compact-learning-path__module-priority {
+  position: absolute;
+  top: -0.1875rem;
+  right: -0.1875rem;
+  /* Reduced positioning from -0.25rem to -0.1875rem */
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border-radius: 9999px;
+  padding: 0.0625rem 0.25rem;
+  /* Reduced padding from 0.125rem 0.375rem to 0.0625rem 0.25rem (50% reduction) */
+  font-size: 0.4375rem;
+  /* Reduced font size from 0.5rem to 0.4375rem */
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.0625rem;
+  /* Reduced gap from 0.125rem to 0.0625rem (50% reduction) */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  /* Reduced shadow */
+}
+
+.compact-learning-path__module-priority-icon {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.compact-learning-path__module-priority-text {
+  white-space: nowrap;
+}
+
+.compact-learning-path__module-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.compact-learning-path__module-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.compact-learning-path__module-level {
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+.compact-learning-path__module-level--emerald {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #047857;
+}
+
+.compact-learning-path__module-level--blue {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #1d4ed8;
+}
+
+.compact-learning-path__module-level--purple {
+  background-color: rgba(147, 51, 234, 0.1);
+  color: #7c3aed;
+}
+
+.compact-learning-path__module-level--orange {
+  background-color: rgba(249, 115, 22, 0.1);
+  color: #ea580c;
+}
+
+.compact-learning-path__module-level--red {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+}
+
+.compact-learning-path__module-level--indigo {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: #4f46e5;
+}
+
+.compact-learning-path__module-type {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--theme-text-secondary, #6b7280);
+  background-color: var(--theme-bg-soft, #f3f4f6);
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.compact-learning-path__module-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--theme-text-primary, #111827);
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+
+.compact-learning-path__section-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.25rem;
+  color: #3b82f6;
+}
+
+/* Unified Modules Section - Horizontal Layout */
+.compact-learning-path__modules-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.compact-learning-path__modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  gap: 0.375rem;
+}
+
+.compact-learning-path__module {
+  background-color: var(--theme-bg-subtle, #f9fafb);
+  border: 1px solid var(--theme-border-soft, #e5e7eb);
+  border-radius: var(--radius-sm, 0.25rem);
+  padding: var(--padding-xs, 0.25rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.compact-learning-path__module:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.compact-learning-path__module--recommended {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(5, 150, 105, 0.08) 100%);
+  border-color: rgba(16, 185, 129, 0.3);
+  border-width: 2px;
+}
+
+.compact-learning-path__module-priority {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border-radius: 9999px;
+  padding: 0.125rem 0.375rem;
+  font-size: 0.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.compact-learning-path__module-priority-icon {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.compact-learning-path__module-priority-text {
+  white-space: nowrap;
+}
+
+.compact-learning-path__module-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.compact-learning-path__module-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.125rem;
+}
+
+.compact-learning-path__module-level {
+  padding: 0.125rem 0.375rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.compact-learning-path__module-level--emerald {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #047857;
+}
+
+.compact-learning-path__module-level--blue {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #1d4ed8;
+}
+
+.compact-learning-path__module-level--purple {
+  background-color: rgba(147, 51, 234, 0.1);
+  color: #7c3aed;
+}
+
+.compact-learning-path__module-level--orange {
+  background-color: rgba(249, 115, 22, 0.1);
+  color: #ea580c;
+}
+
+.compact-learning-path__module-level--red {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+}
+
+.compact-learning-path__module-level--indigo {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: #4f46e5;
+}
+
+.compact-learning-path__module-type {
+  font-size: 0.625rem;
+  color: var(--theme-text-secondary, #6b7280);
+  background-color: var(--theme-bg-soft, #f3f4f6);
+  padding: 0.0625rem 0.25rem;
+  border-radius: 9999px;
+}
+
+.compact-learning-path__module-name {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--theme-text-primary, #111827);
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Unit Progress - Unified Section Design */
+.compact-learning-path__units {
+  background-color: var(--theme-bg-subtle, #f9fafb);
+  border: 2px solid var(--theme-border-soft, #e5e7eb);
+  border-radius: var(--radius-md, 0.375rem);
+  padding: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.compact-learning-path__units:hover {
+  border-color: var(--theme-primary-blue, #3b82f6);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+}
+
+.compact-learning-path__unit-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.compact-learning-path__unit-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  position: relative;
+}
+
+.compact-learning-path__unit-circle {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  transition: transform 0.2s ease;
+}
+
+.compact-learning-path__unit-circle:hover {
+  transform: scale(1.1);
+}
+
+.compact-learning-path__unit-circle-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.compact-learning-path__unit-circle-bg {
+  fill: none;
+  stroke: var(--theme-border-soft, #e5e7eb);
+  stroke-width: 4;
+}
+
+.compact-learning-path__unit-circle-fill {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.compact-learning-path__unit-circle-fill--emerald {
+  stroke: #10b981;
+}
+
+.compact-learning-path__unit-circle-fill--blue {
+  stroke: #3b82f6;
+}
+
+.compact-learning-path__unit-circle-fill--purple {
+  stroke: #8b5cf6;
+}
+
+.compact-learning-path__unit-circle-fill--orange {
+  stroke: #f97316;
+}
+
+.compact-learning-path__unit-circle-fill--red {
+  stroke: #ef4444;
+}
+
+.compact-learning-path__unit-circle-fill--indigo {
+  stroke: #6366f1;
+}
+
+.compact-learning-path__unit-circle-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.125rem;
+}
+
+.compact-learning-path__unit-circle-badge {
+  font-size: 0.625rem;
+  font-weight: 700;
+  padding: 0.0625rem 0.25rem;
+  border-radius: 9999px;
+}
+
+.compact-learning-path__unit-circle-badge--emerald {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #047857;
+}
+
+.compact-learning-path__unit-circle-badge--blue {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: #1d4ed8;
+}
+
+.compact-learning-path__unit-circle-badge--purple {
+  background-color: rgba(147, 51, 234, 0.1);
+  color: #7c3aed;
+}
+
+.compact-learning-path__unit-circle-badge--orange {
+  background-color: rgba(249, 115, 22, 0.1);
+  color: #ea580c;
+}
+
+.compact-learning-path__unit-circle-badge--red {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+}
+
+.compact-learning-path__unit-circle-badge--indigo {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: #4f46e5;
+}
+
+.compact-learning-path__unit-circle-percentage {
+  font-size: 0.5rem;
+  font-weight: 600;
+  color: var(--theme-text-secondary, #6b7280);
+}
+
+.compact-learning-path__unit-circle-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.125rem;
+  width: 100%;
+  position: relative;
+}
+
+.compact-learning-path__unit-circle-name {
+  font-size: 0.625rem;
+  font-weight: 500;
+  color: var(--theme-text-primary, #111827);
+  text-align: center;
+  line-height: 1.2;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/* Enhanced module numbers design - Higher specificity */
+.compact-learning-path .compact-learning-path__unit-circle-stats {
+  font-size: 0.5rem !important;
+  font-weight: 600 !important;
+  color: var(--theme-text-primary, #111827) !important;
+  background: linear-gradient(
+    135deg,
+    var(--theme-bg-elevated, #ffffff) 0%,
+    var(--theme-bg-subtle, #f9fafb) 100%
+  ) !important;
+  border: 1px solid var(--theme-border-soft, #e5e7eb) !important;
+  border-radius: 0.375rem !important;
+  padding: 0.125rem 0.25rem !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+  text-align: center !important;
+  min-width: 2rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  letter-spacing: 0.025em !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Enhanced hover effects - Higher specificity */
+.compact-learning-path .compact-learning-path__unit-circle-stats:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  border-color: var(--theme-primary-blue, #3b82f6) !important;
+}
+
+.compact-learning-path html.dark .compact-learning-path__unit-circle-stats:hover,
+html.dark .compact-learning-path .compact-learning-path__unit-circle-stats:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+  border-color: var(--theme-primary-blue, #60a5fa) !important;
+}
+
+/* Actions - Using unified modal system */
+
+/* Animations */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+
+  to {
+    opacity: 1;
+    backdrop-filter: blur(4px);
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Dark Mode */
+html.dark .compact-learning-path__container {
+  background-color: var(--theme-bg-elevated, #1f2937);
+  border-color: var(--theme-border-soft, #4b5563);
+}
+
+html.dark .compact-learning-path__overview {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+}
+
+/* Dark Mode - Unified Sections */
+html.dark .compact-learning-path__overview,
+html.dark .compact-learning-path__next-module,
+html.dark .compact-learning-path__units {
+  background-color: var(--theme-bg-elevated, #1f2937);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+html.dark .compact-learning-path__overview:hover,
+html.dark .compact-learning-path__next-module:hover,
+html.dark .compact-learning-path__units:hover {
+  border-color: var(--theme-accent-primary, #60a5fa);
+  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.15);
+}
+
+html.dark .compact-learning-path__recommended-card {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.15) 100%);
+  border-color: rgba(16, 185, 129, 0.5);
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+}
+
+html.dark .compact-learning-path__recommended-card:hover {
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  border-color: rgba(16, 185, 129, 0.7);
+}
+
+html.dark .compact-learning-path__module-level--emerald {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+}
+
+html.dark .compact-learning-path__module-level--blue {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+html.dark .compact-learning-path__module-level--purple {
+  background-color: rgba(147, 51, 234, 0.2);
+  color: #a78bfa;
+}
+
+html.dark .compact-learning-path__module-level--orange {
+  background-color: rgba(249, 115, 22, 0.2);
+  color: #fb923c;
+}
+
+html.dark .compact-learning-path__module-level--red {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+html.dark .compact-learning-path__module-level--indigo {
+  background-color: rgba(99, 102, 241, 0.2);
+  color: #818cf8;
+}
+
+html.dark .compact-learning-path__unit-badge--emerald {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+}
+
+html.dark .compact-learning-path__unit-badge--blue {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+html.dark .compact-learning-path__unit-badge--purple {
+  background-color: rgba(147, 51, 234, 0.2);
+  color: #a78bfa;
+}
+
+html.dark .compact-learning-path__unit-badge--orange {
+  background-color: rgba(249, 115, 22, 0.2);
+  color: #fb923c;
+}
+
+html.dark .compact-learning-path__unit-badge--red {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+html.dark .compact-learning-path__unit-badge--indigo {
+  background-color: rgba(99, 102, 241, 0.2);
+  color: #818cf8;
+}
+
+/* Dark mode for circular design */
+html.dark .compact-learning-path__unit-circle-badge--emerald {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+}
+
+html.dark .compact-learning-path__unit-circle-badge--blue {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+html.dark .compact-learning-path__unit-circle-badge--purple {
+  background-color: rgba(147, 51, 234, 0.2);
+  color: #a78bfa;
+}
+
+html.dark .compact-learning-path__unit-circle-badge--orange {
+  background-color: rgba(249, 115, 22, 0.2);
+  color: #fb923c;
+}
+
+html.dark .compact-learning-path__unit-circle-badge--red {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+html.dark .compact-learning-path__unit-circle-badge--indigo {
+  background-color: rgba(99, 102, 241, 0.2);
+  color: #818cf8;
+}
+
+/* Dark mode for improved unit circle stats - Higher specificity */
+.compact-learning-path html.dark .compact-learning-path__unit-circle-stats,
+html.dark .compact-learning-path .compact-learning-path__unit-circle-stats {
+  color: var(--theme-text-primary, #ffffff) !important;
+  background: linear-gradient(
+    135deg,
+    var(--theme-bg-elevated, #374151) 0%,
+    var(--theme-bg-subtle, #4b5563) 100%
+  ) !important;
+  border-color: var(--theme-border-soft, #6b7280) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .compact-learning-path__container {
+    max-width: 24rem;
+  }
+
+  /* Simplified 2-column overview for mobile */
+  .compact-learning-path__overview {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.375rem;
+    padding: 0.375rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .compact-learning-path__stat-icon {
+    width: 0.9625rem;
+    height: 0.9625rem;
+  }
+
+  .compact-learning-path__stat-value {
+    font-size: 0.75rem;
+  }
+
+  .compact-learning-path__stat-label {
+    font-size: 0.625rem;
+  }
+
+  .compact-learning-path__content {
+    padding: 0.375rem;
+    gap: 0.5rem;
+  }
+
+  .compact-learning-path__unit-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.375rem;
+  }
+
+  .compact-learning-path__unit-circle {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .compact-learning-path__unit-circle-name {
+    font-size: 0.5rem;
+  }
+
+  .compact-learning-path__unit-circle-stats {
+    font-size: 0.4375rem;
+    font-weight: 600;
+    color: var(--theme-text-primary, #111827);
+    background: linear-gradient(
+      135deg,
+      var(--theme-bg-elevated, #ffffff) 0%,
+      var(--theme-bg-subtle, #f9fafb) 100%
+    );
+    border: 1px solid var(--theme-border-soft, #e5e7eb);
+    border-radius: 0.375rem;
+    padding: 0.0625rem 0.1875rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    min-width: 1.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.025em;
+    transition: all 0.2s ease;
+  }
+
+  .compact-learning-path__recommended-card {
+    padding: 0.5rem;
+  }
+
+  .compact-learning-path__module-priority {
+    padding: 0.0625rem 0.25rem;
+    font-size: 0.4375rem;
+  }
+
+  .compact-learning-path__module-priority-icon {
+    width: 0.375rem;
+    height: 0.375rem;
+  }
+
+  .compact-learning-path__module-name {
+    font-size: 0.875rem;
+  }
+
+  /* Dark mode support for 640px responsive unit circle stats */
+  html.dark .compact-learning-path__unit-circle-stats {
+    color: var(--theme-text-primary, #ffffff);
+    background: linear-gradient(
+      135deg,
+      var(--theme-bg-elevated, #374151) 0%,
+      var(--theme-bg-subtle, #4b5563) 100%
+    );
+    border-color: var(--theme-border-soft, #6b7280);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .compact-learning-path,
+  .compact-learning-path__container,
+  .compact-learning-path__progress-fill,
+  .compact-learning-path__unit-progress-fill,
+  .compact-learning-path__btn--primary {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* === MOBILE OPTIMIZATION 400px - UNIFIED DESIGN SYSTEM === */
+@media (max-width: 400px) {
+  .compact-learning-path {
+    padding: 0.5rem;
+    align-items: flex-start !important;
+    padding-top: 20px;
+    /* Unified 20px from top for all modals */
+  }
+
+  .compact-learning-path__container {
+    max-width: 20rem;
+    width: 100%;
+    /* Let content determine height, with max constraint */
+    max-height: calc(100vh - 1rem) !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 0 !important;
+  }
+
+  .compact-learning-path__header {
+    padding: 0.5rem;
+    /* Fixed header - no flex grow */
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+  }
+
+  .compact-learning-path__title {
+    font-size: 0.875rem;
+    /* Unified title size */
+  }
+
+  .compact-learning-path__content {
+    padding: 0.2125rem;
+    /* 15% reduction: 0.25rem * 0.85 = 0.2125rem */
+    /* Content grows with content, scrollable if needed */
+    flex: 1 1 auto !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    max-height: calc(100vh - 6rem) !important;
+    /* Account for header and padding */
+  }
+
+  /* Additional scroll prevention */
+  .compact-learning-path * {
+    overscroll-behavior: contain !important;
+  }
+
+  .compact-learning-path {
+    touch-action: none !important;
+    overscroll-behavior: none !important;
+  }
+
+  .compact-learning-path__content > * + * {
+    margin-top: 0.2125rem;
+    /* 15% reduction: 0.25rem * 0.85 = 0.2125rem */
+  }
+
+  .compact-learning-path__overview {
+    padding: 0.2125rem;
+    /* 15% reduction: 0.25rem * 0.85 = 0.2125rem */
+    gap: 0.106rem;
+    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
+    margin-bottom: 0.106rem;
+    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
+  }
+
+  .compact-learning-path__stat {
+    gap: 0.053rem;
+    /* 15% reduction: 0.0625rem * 0.85 = 0.053rem */
+  }
+
+  .compact-learning-path__stat-value {
+    font-size: 0.625rem;
+    margin-bottom: 0.053rem;
+    /* 15% reduction: 0.0625rem * 0.85 = 0.053rem */
+  }
+
+  .compact-learning-path__stat-label {
+    font-size: 0.5rem;
+    /* Ultra-compact stat labels */
+  }
+
+  .compact-learning-path__section-title {
+    font-size: 0.75rem;
+    margin-bottom: 0.106rem;
+    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
+    margin-top: 0.106rem;
+    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
+  }
+
+  .compact-learning-path__next-module {
+    padding: 0.2125rem;
+    /* 15% reduction: 0.25rem * 0.85 = 0.2125rem */
+    margin-bottom: 0.106rem;
+    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
+  }
+
+  .compact-learning-path__recommended-card {
+    padding: 0.2125rem;
+    /* 15% reduction: 0.25rem * 0.85 = 0.2125rem */
+  }
+
+  .compact-learning-path__module-name {
+    font-size: 0.625rem;
+    line-height: 1.1;
+  }
+
+  .compact-learning-path__module-info {
+    gap: 0.106rem;
+    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
+  }
+
+  .compact-learning-path__module-header {
+    gap: 0.2125rem;
+    /* 15% reduction: 0.25rem * 0.85 = 0.2125rem */
+  }
+
+  .compact-learning-path__module-priority {
+    padding: 0.0625rem 0.1875rem;
+    /* Ultra-compact priority badge */
+    font-size: 0.375rem;
+    /* Tiny priority text */
+  }
+
+  .compact-learning-path__module-priority-text {
+    font-size: 0.375rem;
+    /* Tiny priority text */
+  }
+
+  .compact-learning-path__modules-grid {
+    gap: 0.106rem;
+    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
+    margin-top: 0.106rem;
+    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
+  }
+
+  .compact-learning-path__module {
+    padding: 0.106rem;
+    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
+    margin-bottom: 0.053rem;
+    /* 15% reduction: 0.0625rem * 0.85 = 0.053rem */
+  }
+
+  .compact-learning-path__units {
+    padding: 0.2125rem;
+    /* 15% reduction: 0.25rem * 0.85 = 0.2125rem */
+    margin-top: 0.106rem;
+    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
+  }
+
+  .compact-learning-path__unit-grid {
+    gap: 0.159rem;
+    /* 15% reduction: 0.1875rem * 0.85 = 0.159rem */
+    margin-top: 0.106rem;
+    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
+  }
+
+  .compact-learning-path__unit-circle {
+    width: 1.75rem;
+    /* Aggressive reduction for better fit */
+    height: 1.75rem;
+  }
+
+  .compact-learning-path__unit-circle-name {
+    font-size: 0.5rem;
+    /* Ultra-compact unit names */
+  }
+
+  .compact-learning-path__unit-circle-stats {
+    font-size: 0.375rem;
+    /* Ultra-compact unit stats */
+    font-weight: 600;
+    color: var(--theme-text-primary, #111827);
+    background: linear-gradient(
+      135deg,
+      var(--theme-bg-elevated, #ffffff) 0%,
+      var(--theme-bg-subtle, #f9fafb) 100%
+    );
+    border: 1px solid var(--theme-border-soft, #e5e7eb);
+    border-radius: 0.25rem;
+    /* Smaller radius for ultra-compact */
+    padding: 0.0625rem 0.125rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    min-width: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.025em;
+    transition: all 0.2s ease;
+  }
+
+  .compact-learning-path__unit-circle-percentage {
+    font-size: 0.375rem;
+    /* Ultra-compact percentages */
+  }
+
+  .compact-learning-path__module-level {
+    padding: 0.0625rem 0.25rem;
+    /* Ultra-compact level badges */
+    font-size: 0.5rem;
+    /* Ultra-compact level text */
+  }
+
+  .compact-learning-path__module-type {
+    font-size: 0.5rem;
+    /* Ultra-compact type badges */
+    padding: 0.0625rem 0.1875rem;
+    /* Ultra-compact type padding */
+  }
+
+  .compact-learning-path__button {
+    padding: 0.375rem 0.75rem;
+    /* Button padding - MAINTAINED for accessibility */
+    font-size: 0.75rem;
+    /* Unified button text size */
+  }
+
+  /* Dark mode support for responsive unit circle stats */
+  html.dark .compact-learning-path__unit-circle-stats {
+    color: var(--theme-text-primary, #ffffff);
+    background: linear-gradient(
+      135deg,
+      var(--theme-bg-elevated, #374151) 0%,
+      var(--theme-bg-subtle, #4b5563) 100%
+    );
+    border-color: var(--theme-border-soft, #6b7280);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+}
+/* === CRITICAL: Mobile ≤400px - Ultra Compact Learning Path === */
+@media (max-width: 400px) {
+  .compact-learning-path {
+    padding: 0.25rem;
+    align-items: flex-start;
+    padding-top: 20px;
+    /* Unified 20px from top for all modals */
+  }
+
+  .compact-learning-path__container {
+    max-width: 80vw;
+    width: 80vw;
+    max-height: 75vh;
+    border-radius: 0.375rem;
+  }
+
+  .compact-learning-path__header {
+    padding: 0.1875rem 0.25rem;
+    min-height: 2.5rem;
+    /* Unified header height for all modals */
+  }
+
+  .compact-learning-path__title {
+    font-size: 0.8125rem;
+    /* Much smaller title */
+    font-weight: 600;
+    /* Reduced weight */
+  }
+
+  .compact-learning-path__content {
+    padding: 0.1875rem 0.25rem;
+    /* Ultra minimal content padding */
+    gap: 0.125rem;
+    /* Minimal gap between sections */
+  }
+
+  /* Ultra compact overview - 2-column grid */
+  .compact-learning-path__overview {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .compact-learning-path__stat {
+    gap: 0.03125rem;
+    /* Ultra minimal gap between icon and text */
+    padding: 0.125rem;
+    /* Add minimal padding to stats */
+  }
+
+  .compact-learning-path__stat-icon {
+    width: 0.875rem;
+    height: 0.875rem;
+    /* Much smaller icons */
+  }
+
+  .compact-learning-path__stat-icon--emoji {
+    font-size: 0.875rem;
+    margin-bottom: 0.015625rem;
+    /* Ultra minimal margin */
+  }
+
+  .compact-learning-path__stat-value {
+    font-size: 0.6875rem;
+    /* Much smaller value text */
+    font-weight: 600;
+    /* Reduced weight */
+  }
+
+  .compact-learning-path__stat-label {
+    font-size: 0.5625rem;
+    /* Much smaller label text */
+    line-height: 1.1;
+    /* Tighter line height */
+  }
+
+  /* Ultra compact section titles */
+  .compact-learning-path__section-title {
+    font-size: 0.6875rem;
+    /* Much smaller section titles */
+    margin-bottom: 0.1875rem;
+    /* Minimal margin */
+    font-weight: 600;
+    /* Reduced weight */
+  }
+
+  .compact-learning-path__section-icon {
+    width: 0.5625rem;
+    height: 0.5625rem;
+    /* Much smaller section icons */
+    margin-right: 0.125rem;
+    /* Minimal margin */
+  }
+
+  /* Ultra compact next module section */
+  .compact-learning-path__next-module {
+    padding: 0.25rem;
+    /* Ultra minimal padding */
+    margin-bottom: 0.125rem;
+    /* Minimal margin */
+  }
+
+  .compact-learning-path__recommended-card {
+    padding: 0.1875rem;
+    /* Ultra minimal padding - further reduced */
+    margin-top: 0.125rem;
+    /* Ultra minimal margin - further reduced */
+    border-width: 1px;
+    /* Thinner border */
+    border-radius: 0.1875rem;
+    /* Smaller border radius */
+  }
+
+  .compact-learning-path__module-info {
+    gap: 0.125rem;
+    /* Minimal gap */
+  }
+
+  .compact-learning-path__module-header {
+    gap: 0.1875rem;
+    /* Minimal gap */
+    flex-wrap: wrap;
+    /* Allow wrapping on mobile */
+    align-items: center;
+    /* Better alignment */
+  }
+
+  .compact-learning-path__module-level {
+    padding: 0.0625rem 0.25rem;
+    /* Ultra minimal padding */
+    font-size: 0.625rem;
+    /* Much smaller font */
+    font-weight: 500;
+    /* Reduced weight */
+  }
+
+  .compact-learning-path__module-type {
+    font-size: 0.5625rem;
+    /* Much smaller font */
+    padding: 0.03125rem 0.1875rem;
+    /* Ultra minimal padding */
+  }
+
+  .compact-learning-path__module-name {
+    font-size: 0.8125rem;
+    /* Much smaller font */
+    line-height: 1.05;
+    /* Ultra tight line height */
+    font-weight: 600;
+    /* Reduced weight */
+    margin: 0;
+    /* Remove any default margin */
+    padding: 0;
+    /* Remove any default padding */
+    margin-bottom: 0.0625rem;
+    /* Ultra minimal bottom margin */
+    margin-top: 0.0625rem;
+    /* Ultra minimal top margin */
+  }
+
+  .compact-learning-path__module-priority {
+    padding: 0.0625rem 0.25rem;
+    /* Reduced padding */
+    font-size: 0.4375rem;
+    /* Smaller font */
+  }
+
+  .compact-learning-path__module-priority-icon {
+    width: 0.4375rem;
+    height: 0.4375rem;
+    /* Smaller icon */
+  }
+
+  /* Compact modules section */
+  .compact-learning-path__modules-section {
+    gap: 0.25rem;
+    /* Reduced gap */
+  }
+
+  /* If there are module lists, make them more compact */
+  .compact-learning-path__module-list {
+    gap: 0.1875rem;
+    /* Reduced gap between modules */
+  }
+
+  .compact-learning-path__module-item {
+    padding: 0.375rem;
+    /* Reduced padding */
+    font-size: 0.75rem;
+    /* Smaller font */
+  }
+
+  /* Compact any progress bars */
+  .compact-learning-path__progress-bar {
+    height: 0.375rem;
+    /* Thinner progress bar */
+  }
+
+  /* Compact any buttons */
+  .compact-learning-path__button {
+    padding: 0.375rem 0.75rem;
+    /* Reduced padding */
+    font-size: 0.75rem;
+    /* Smaller font */
+  }
+
+  /* Ultra compact footer if exists */
+  .compact-learning-path__footer {
+    padding: 0.375rem;
+    /* Reduced padding */
+  }
+} /* L
+arger close button for mobile accessibility */
+.compact-learning-path__header .modal__close-btn {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.375rem;
+}
+
+.compact-learning-path__header .modal__close-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+} /* === 
+DESKTOP/TABLET POSITIONING >400px === */
+@media (min-width: 401px) {
+  .compact-learning-path {
+    align-items: flex-start;
+    padding-top: 8vh;
+    /* Consistent top positioning for larger screens */
+  }
+}
+/* === MODAL BORDER - DARK MODE === */
+html.dark .compact-learning-path__container {
+  border-color: var(--theme-border-modal-dark, rgba(255, 255, 255, 0.15));
+}
+
+/* === DARK MODE IMPROVEMENTS === */
+html.dark .compact-learning-path__container {
+  background-color: var(--theme-bg-elevated, #1f2937);
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .compact-learning-path__stat-value {
+  color: var(--theme-text-primary, #f9fafb);
+}
+
+html.dark .compact-learning-path__stat-label {
+  color: var(--theme-text-secondary, #9ca3af);
+}
+
+html.dark .compact-learning-path__section-title {
+  color: var(--theme-text-primary, #f9fafb);
+}
+
+html.dark .compact-learning-path__module-name {
+  color: var(--theme-text-primary, #f9fafb);
+}
+
+html.dark .compact-learning-path__unit-circle-bg {
+  stroke: rgba(255, 255, 255, 0.1);
+}
+
+html.dark .compact-learning-path__unit-circle-fill {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+html.dark .compact-learning-path__unit-circle-name {
+  color: var(--theme-text-primary, #f9fafb);
+}
+
+html.dark .compact-learning-path__unit-circle-percentage {
+  color: var(--theme-text-secondary, #9ca3af);
+}

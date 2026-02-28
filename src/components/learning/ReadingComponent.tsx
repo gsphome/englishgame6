@@ -1,0 +1,564 @@
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
+import { ChevronLeft, ChevronRight, Home, ChevronDown, ChevronUp } from 'lucide-react';
+import { useUserStore } from '../../stores/userStore';
+import { useSettingsStore } from '../../stores/settingsStore';
+import { useMenuNavigation } from '../../hooks/useMenuNavigation';
+import { useProgressStore } from '../../stores/progressStore';
+import { useTranslation } from '../../utils/i18n';
+import { useLearningCleanup } from '../../hooks/useLearningCleanup';
+import { ContentAdapter } from '../../utils/contentAdapter';
+import ContentRenderer from '../ui/ContentRenderer';
+import LearningProgressHeader from '../ui/LearningProgressHeader';
+
+import '../../styles/components/reading-component.css';
+import type { ReadingData, LearningModule } from '../../types';
+
+interface ReadingComponentProps {
+  module: LearningModule;
+}
+
+const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
+  const [currentSectionIndex, setCurrentSectionIndex] = useState(-1); // Start at -1 for objectives page
+  const [startTime] = useState(Date.now());
+  const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
+  const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
+  const [vocabularyExpanded, setVocabularyExpanded] = useState(false);
+  const [grammarExpanded, setGrammarExpanded] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  const { updateUserScore } = useUserStore();
+  const { language } = useSettingsStore();
+  const { returnToMenu } = useMenuNavigation();
+  const { addProgressEntry } = useProgressStore();
+  const { t } = useTranslation(language);
+  useLearningCleanup();
+
+  const handleReturnToMenu = () => returnToMenu();
+
+  // Get reading data from module
+  const readingData = useMemo(() => {
+    if (!module?.data || !Array.isArray(module.data) || module.data.length === 0) {
+      return null;
+    }
+    return module.data[0] as ReadingData;
+  }, [module?.data]);
+
+  const readingSections = readingData?.sections || [];
+  const currentSection = readingSections[currentSectionIndex];
+  const isObjectivesPage = currentSectionIndex === -1;
+  const isSummaryPage = currentSectionIndex === readingSections.length;
+  const hasSummaryContent =
+    (readingData?.keyVocabulary?.length ?? 0) > 0 || (readingData?.grammarPoints?.length ?? 0) > 0;
+
+  const handleNext = useCallback(() => {
+    const maxIndex = hasSummaryContent ? readingSections.length : readingSections.length - 1;
+
+    if (currentSectionIndex < maxIndex) {
+      // Scroll to top first (page turn effect)
+      if (contentRef.current && typeof contentRef.current.scrollTo === 'function') {
+        contentRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      // Then update section after a brief delay for smooth transition
+      setTimeout(() => {
+        setCurrentSectionIndex(currentSectionIndex + 1);
+        // Reset interactive states when changing sections
+        setExpandedItems(new Set());
+        setActiveTooltip(null);
+      }, 100);
+    } else {
+      // End of reading
+      const timeSpent = Math.floor((Date.now() - startTime) / 1000);
+
+      // Update user score first (this triggers completeModule in userStore)
+      updateUserScore(module.id, 100, timeSpent);
+
+      // Register progress (reading is completion-based, so 100% for finishing)
+      addProgressEntry({
+        score: 100,
+        totalQuestions: readingSections.length,
+        correctAnswers: readingSections.length,
+        moduleId: module.id,
+        learningMode: 'reading',
+        timeSpent: timeSpent,
+      });
+
+      returnToMenu({ autoScrollToNext: true });
+    }
+  }, [
+    currentSectionIndex,
+    readingSections.length,
+    hasSummaryContent,
+    startTime,
+    addProgressEntry,
+    module.id,
+    updateUserScore,
+    returnToMenu,
+  ]);
+
+  const handlePrev = useCallback(() => {
+    if (currentSectionIndex > -1) {
+      // Scroll to top first (page turn effect)
+      if (contentRef.current && typeof contentRef.current.scrollTo === 'function') {
+        contentRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      // Then update section after a brief delay for smooth transition
+      setTimeout(() => {
+        setCurrentSectionIndex(currentSectionIndex - 1);
+        // Reset interactive states when changing sections
+        setExpandedItems(new Set());
+        setActiveTooltip(null);
+      }, 100);
+    }
+  }, [currentSectionIndex]);
+
+  const toggleExpandable = useCallback((index: number) => {
+    setExpandedItems(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
+  }, []);
+
+  const handleTooltipToggle = useCallback((term: string) => {
+    setActiveTooltip(prev => (prev === term ? null : term));
+  }, []);
+
+  // Keyboard navigation
+  useEffect(() => {
+    if (readingSections.length === 0) return;
+
+    const handleKeyPress = (e: KeyboardEvent) => {
+      switch (e.key) {
+        case 'ArrowRight':
+          e.preventDefault();
+          handleNext();
+          break;
+        case 'ArrowLeft':
+          e.preventDefault();
+          handlePrev();
+          break;
+        case 'Enter':
+          e.preventDefault();
+          handleNext();
+          break;
+        case 'Escape':
+          returnToMenu();
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [currentSectionIndex, readingSections.length, handleNext, handlePrev, returnToMenu]);
+
+  // Early return if no data
+  if (!readingData || !readingSections.length) {
+    return (
+      <div className="reading-component__no-data">
+        <p className="reading-component__no-data-text">{t('learning.noReadingContentAvailable')}</p>
+        <button onClick={handleReturnToMenu} className="reading-component__no-data-btn">
+          {t('navigation.mainMenu')}
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div className="reading-component__container">
+      {/* Unified progress header */}
+      <LearningProgressHeader
+        title={readingData.title}
+        currentIndex={
+          isObjectivesPage
+            ? 0
+            : isSummaryPage
+              ? readingSections.length + 1
+              : currentSectionIndex + 1
+        }
+        totalItems={readingSections.length + 1 + (hasSummaryContent ? 1 : 0)}
+        mode="reading"
+      />
+
+      {/* Reading content */}
+      <div ref={contentRef} className="reading-component__content">
+        {/* Learning Objectives Page - Dedicated first page */}
+        {isObjectivesPage ? (
+          <div className="reading-component__objectives-page">
+            {/* Estimated reading time badge */}
+            {readingData.estimatedReadingTime && (
+              <div className="reading-component__objectives-page-meta">
+                <span className="reading-component__time-badge">
+                  <svg
+                    className="reading-component__time-icon"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                  </svg>
+                  {t('reading.component.estimatedTime', undefined, {
+                    time: String(readingData.estimatedReadingTime),
+                  })}
+                </span>
+              </div>
+            )}
+
+            {/* Learning Objectives - Centered and prominent */}
+            {readingData.learningObjectives?.length > 0 && (
+              <div className="reading-component__objectives-centered">
+                <h3 className="reading-component__objectives-centered-title">
+                  {t('reading.component.objectives')}
+                </h3>
+                <ul className="reading-component__objectives-centered-list">
+                  {readingData.learningObjectives.map((objective, index) => (
+                    <li key={index} className="reading-component__objectives-centered-item">
+                      {objective}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Call to action */}
+            <div className="reading-component__objectives-cta">
+              <p className="reading-component__objectives-cta-text">
+                {t('reading.component.readyToStart', undefined, {
+                  default: "Ready to start? Let's begin!",
+                })}
+              </p>
+            </div>
+          </div>
+        ) : isSummaryPage ? (
+          <div className="reading-component__summary-page">
+            <h3 className="reading-component__summary-title">
+              {t('reading.component.summary', undefined, { default: 'Summary & Review' })}
+            </h3>
+
+            {/* Key Vocabulary Section - Enhanced Collapsible */}
+            {readingData.keyVocabulary?.length > 0 && (
+              <div className="reading-component__vocabulary">
+                <button
+                  className="reading-component__summary-section-trigger"
+                  onClick={() => setVocabularyExpanded(!vocabularyExpanded)}
+                  aria-expanded={vocabularyExpanded}
+                  aria-controls="vocabulary-content"
+                  aria-label={`${vocabularyExpanded ? 'Collapse' : 'Expand'} key vocabulary section with ${readingData.keyVocabulary.length} ${readingData.keyVocabulary.length === 1 ? 'term' : 'terms'}`}
+                >
+                  <span className="reading-component__summary-section-title">
+                    {t('reading.component.keyVocabulary')}
+                    <span className="reading-component__summary-section-count">
+                      {readingData.keyVocabulary.length}
+                    </span>
+                  </span>
+                  <ChevronDown className="reading-component__summary-section-icon" />
+                </button>
+                {vocabularyExpanded && (
+                  <div
+                    id="vocabulary-content"
+                    className="reading-component__vocabulary-grid"
+                    role="region"
+                    aria-label="Key vocabulary terms"
+                  >
+                    {readingData.keyVocabulary.map((term, index) => (
+                      <div key={index} className="reading-component__vocabulary-card">
+                        <div className="reading-component__vocabulary-card-header">
+                          <div className="reading-component__vocabulary-term">{term.term}</div>
+                          {term.pronunciation && (
+                            <div className="reading-component__vocabulary-pronunciation">
+                              {term.pronunciation}
+                            </div>
+                          )}
+                        </div>
+                        <div className="reading-component__vocabulary-content">
+                          <div className="reading-component__vocabulary-definition-block">
+                            <div className="reading-component__vocabulary-label">
+                              {t('reading.component.definition')}
+                            </div>
+                            <div className="reading-component__vocabulary-definition">
+                              {term.definition}
+                            </div>
+                          </div>
+                          <div className="reading-component__vocabulary-example-block">
+                            <div className="reading-component__vocabulary-label">
+                              {t('reading.component.example')}
+                            </div>
+                            <div className="reading-component__vocabulary-example">
+                              {term.example}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Grammar Points Section - Enhanced Collapsible */}
+            {readingData.grammarPoints && readingData.grammarPoints.length > 0 && (
+              <div className="reading-component__grammar-points">
+                <button
+                  className="reading-component__summary-section-trigger"
+                  onClick={() => setGrammarExpanded(!grammarExpanded)}
+                  aria-expanded={grammarExpanded}
+                  aria-controls="grammar-content"
+                  aria-label={`${grammarExpanded ? 'Collapse' : 'Expand'} grammar points section with ${readingData.grammarPoints.length} ${readingData.grammarPoints.length === 1 ? 'rule' : 'rules'}`}
+                >
+                  <span className="reading-component__summary-section-title">
+                    {t('reading.component.grammarPoints')}
+                    <span className="reading-component__summary-section-count">
+                      {readingData.grammarPoints.length}
+                    </span>
+                  </span>
+                  <ChevronDown className="reading-component__summary-section-icon" />
+                </button>
+                {grammarExpanded && readingData.grammarPoints && (
+                  <div id="grammar-content" role="region" aria-label="Grammar points">
+                    {readingData.grammarPoints.map((point, index) => (
+                      <div key={index} className="reading-component__grammar-point">
+                        <div className="reading-component__grammar-point-header">
+                          <span
+                            className="reading-component__grammar-point-number"
+                            aria-label={`Grammar point ${index + 1} of ${readingData.grammarPoints?.length ?? 0}`}
+                          >
+                            {index + 1}
+                          </span>
+                          <div className="reading-component__grammar-rule">{point.rule}</div>
+                        </div>
+                        <div className="reading-component__grammar-explanation">
+                          {point.explanation}
+                        </div>
+                        {point.examples && point.examples.length > 0 && (
+                          <div className="reading-component__grammar-examples">
+                            <div className="reading-component__grammar-examples-title">
+                              {t('reading.component.examples', undefined, { default: 'Examples' })}
+                            </div>
+                            <ul className="reading-component__grammar-examples-list">
+                              {point.examples.map((example, exIndex) => (
+                                <li
+                                  key={exIndex}
+                                  className="reading-component__grammar-example-item"
+                                >
+                                  {example}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                        {point.commonMistakes && point.commonMistakes.length > 0 && (
+                          <div className="reading-component__grammar-mistakes">
+                            <div className="reading-component__grammar-mistakes-title">
+                              {t('reading.component.commonMistakes')}
+                            </div>
+                            <ul className="reading-component__grammar-mistakes-list">
+                              {point.commonMistakes.map((mistake, mIndex) => (
+                                <li
+                                  key={mIndex}
+                                  className="reading-component__grammar-mistake-item"
+                                >
+                                  {mistake}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        ) : (
+          <>
+            {/* Regular content section */}
+            <h3 className="reading-component__section-title">{currentSection?.title}</h3>
+
+            <div className="reading-component__section-content">
+              {currentSection?.type === 'examples' ? (
+                <div className="reading-component__examples-grid">
+                  {currentSection.content.split('\n\n').map((example, index) => {
+                    // Parse example format: "Example N: Title - 'Quote' (optional note)"
+                    // Strategy: Find the last single quote to handle apostrophes like "I'm"
+                    const examplePattern = /^Example (\d+):\s*(.+?)\s*-\s*'(.*)$/;
+                    const match = example.match(examplePattern);
+
+                    if (match) {
+                      const [, number, title, fullQuote] = match;
+                      // Find the last single quote to separate quote from note
+                      const lastQuoteIndex = fullQuote.lastIndexOf("'");
+
+                      if (lastQuoteIndex !== -1) {
+                        const quote = fullQuote.substring(0, lastQuoteIndex);
+                        const note = fullQuote.substring(lastQuoteIndex + 1);
+
+                        return (
+                          <div key={index} className="reading-component__example-card">
+                            <div className="reading-component__example-card-header">
+                              <span className="reading-component__example-number">{number}</span>
+                              <span className="reading-component__example-title">{title}</span>
+                            </div>
+                            <div className="reading-component__example-quote">
+                              "{quote}"
+                              {note.trim() && (
+                                <span className="reading-component__example-note">
+                                  {note.trim()}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                        );
+                      }
+                    }
+
+                    // Fallback for non-matching format
+                    return example.trim() ? (
+                      <div key={index} className="reading-component__example-card">
+                        <div className="reading-component__example-content">{example}</div>
+                      </div>
+                    ) : null;
+                  })}
+                </div>
+              ) : (
+                <ContentRenderer
+                  content={ContentAdapter.ensureStructured(
+                    currentSection?.content || t('common.loading'),
+                    'reading'
+                  )}
+                />
+              )}
+            </div>
+
+            {/* Interactive Content - Tooltips */}
+            {currentSection?.interactive?.tooltips &&
+              currentSection.interactive.tooltips.length > 0 && (
+                <div className="reading-component__tooltips">
+                  <h4 className="reading-component__tooltips-title">
+                    {t('reading.component.keyTerm')}
+                  </h4>
+                  <div className="reading-component__tooltips-grid">
+                    {currentSection.interactive.tooltips.map((tooltip, index) => (
+                      <button
+                        key={index}
+                        className={`reading-component__tooltip-trigger ${
+                          activeTooltip === tooltip.term
+                            ? 'reading-component__tooltip-trigger--active'
+                            : ''
+                        }`}
+                        onClick={() => handleTooltipToggle(tooltip.term)}
+                        aria-expanded={activeTooltip === tooltip.term}
+                      >
+                        <span className="reading-component__tooltip-term">{tooltip.term}</span>
+                        {activeTooltip === tooltip.term && (
+                          <div className="reading-component__tooltip-content">
+                            {tooltip.definition}
+                          </div>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+            {/* Interactive Content - Expandable Sections */}
+            {currentSection?.interactive?.expandable &&
+              currentSection.interactive.expandable.length > 0 && (
+                <div className="reading-component__expandables">
+                  {currentSection.interactive.expandable.map((expandable, index) => (
+                    <div key={index} className="reading-component__expandable">
+                      <button
+                        className="reading-component__expandable-trigger"
+                        onClick={() => toggleExpandable(index)}
+                        aria-expanded={expandedItems.has(index)}
+                      >
+                        <span className="reading-component__expandable-title">
+                          {expandable.title}
+                        </span>
+                        {expandedItems.has(index) ? (
+                          <ChevronUp className="reading-component__expandable-icon" />
+                        ) : (
+                          <ChevronDown className="reading-component__expandable-icon" />
+                        )}
+                      </button>
+                      {expandedItems.has(index) && (
+                        <div className="reading-component__expandable-content">
+                          <ContentRenderer
+                            content={ContentAdapter.ensureStructured(expandable.content, 'reading')}
+                          />
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+            {/* Interactive Content - Highlights */}
+            {currentSection?.interactive?.highlights &&
+              currentSection.interactive.highlights.length > 0 && (
+                <div className="reading-component__highlights">
+                  <h4 className="reading-component__highlights-title">
+                    {t('reading.component.keyTerm')}
+                  </h4>
+                  <div className="reading-component__highlights-list">
+                    {currentSection.interactive.highlights.map((highlight, index) => (
+                      <span key={index} className="reading-component__highlight-item">
+                        {highlight}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+          </>
+        )}
+      </div>
+
+      {/* Unified Control Bar */}
+      <div className="game-controls">
+        {/* Home Navigation */}
+        <button
+          onClick={handleReturnToMenu}
+          className="game-controls__home-btn"
+          title={t('reading.navigation.returnToMenu')}
+        >
+          <Home className="game-controls__home-btn__icon" />
+        </button>
+
+        <button
+          onClick={handlePrev}
+          disabled={currentSectionIndex === -1}
+          className="game-controls__nav-btn"
+          title={t('reading.component.previousSection')}
+        >
+          <ChevronLeft className="game-controls__nav-btn__icon" />
+        </button>
+
+        <button
+          onClick={handleNext}
+          className="game-controls__primary-btn game-controls__primary-btn--blue"
+        >
+          <span>
+            {isObjectivesPage
+              ? t('reading.component.startReading', undefined, { default: 'Start Reading' })
+              : isSummaryPage ||
+                  (!hasSummaryContent && currentSectionIndex === readingSections.length - 1)
+                ? t('reading.component.completeReading')
+                : t('reading.component.nextSection')}
+          </span>
+          <ChevronRight className="game-controls__primary-btn__icon" />
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default ReadingComponent;

@@ -1,0 +1,1450 @@
+/* === HEADER VARIABLES === */
+:root {
+  --header-bg: #ffffff;
+  --header-border: #e5e7eb;
+  --header-text-primary: #111827;
+  --header-text-secondary: #6b7280;
+  --header-icon-color: #374151;
+  --header-icon-hover: #111827;
+  --header-button-hover-bg: #f3f4f6;
+  --header-button-active-bg: #e5e7eb;
+  --header-focus-ring: #3b82f6;
+  --menu-bg: #ffffff;
+  --menu-border: #e5e7eb;
+  --menu-header-bg: #f9fafb;
+  --menu-item-hover: #f3f4f6;
+  --menu-item-active: #e5e7eb;
+
+  /* Theme variables needed by other components */
+  --theme-bg-elevated: #ffffff;
+  --theme-bg-subtle: #f9fafb;
+  --theme-bg-soft: #f3f4f6;
+  --theme-border-soft: #e5e7eb;
+  --theme-border-medium: #d1d5db;
+  --theme-text-primary: #111827;
+  --theme-text-secondary: #6b7280;
+  --theme-primary-blue: #3b82f6;
+  --theme-primary-blue-hover: #2563eb;
+}
+
+html.dark {
+  --header-bg: #1f2937;
+  --header-border: #4b5563;
+  --header-text-primary: #ffffff;
+  --header-text-secondary: #e5e7eb;
+  --header-icon-color: #e5e7eb;
+  --header-icon-hover: #ffffff;
+  --header-button-hover-bg: #374151;
+  --header-button-active-bg: #4b5563;
+  --header-focus-ring: #60a5fa;
+  --menu-bg: #1f2937;
+  --menu-border: #4b5563;
+  --menu-header-bg: #111827;
+  --menu-item-hover: #374151;
+  --menu-item-active: #4b5563;
+
+  /* Theme variables for dark mode */
+  --theme-bg-elevated: #1f2937;
+  --theme-bg-subtle: #374151;
+  --theme-bg-soft: #4b5563;
+  --theme-border-soft: #4b5563;
+  --theme-border-medium: #6b7280;
+  --theme-text-primary: #ffffff;
+  --theme-text-secondary: #e5e7eb;
+  --theme-primary-blue: #3b82f6;
+  --theme-primary-blue-hover: #2563eb;
+}
+
+.header-redesigned {
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--header-border, #e5e7eb);
+  box-shadow: var(--shadow-subtle, 0 1px 3px rgba(0, 0, 0, 0.1));
+  min-height: 64px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 10;
+}
+
+/* Enhanced shadow and border for dark mode */
+.dark .header-redesigned {
+  box-shadow: var(--shadow-medium, 0 4px 6px rgba(0, 0, 0, 0.1));
+  border-bottom: 1px solid var(--header-border, #e5e7eb);
+  background: linear-gradient(180deg, #1f2937 0%, #1a202c 100%);
+}
+
+.header-redesigned__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 64px;
+  /* Ensure consistent height */
+}
+
+/* === MOBILE SAFE AREA MARGINS FOR HEADER === */
+/* Para dispositivos móviles con pantallas curvas o bordes problemáticos */
+@media (max-width: 500px) {
+  .header-redesigned__container {
+    /* Márgenes de seguridad horizontal */
+    margin-left: max(2px, env(safe-area-inset-left));
+    margin-right: max(2px, env(safe-area-inset-right));
+
+    /* Reducir padding para compensar márgenes */
+    padding: 0.375rem 0.25rem;
+
+    /* Asegurar que no exceda el ancho disponible */
+    max-width: calc(100% - 4px);
+  }
+
+  .header-redesigned {
+    /* Padding superior para safe area */
+    padding-top: max(0px, env(safe-area-inset-top));
+  }
+}
+
+/* BREAKPOINT 5: Mobile (menos de 520px) - Ocultar título completamente */
+@media (max-width: 519px) {
+  /* Ocultar todos los elementos de texto para ahorrar espacio */
+  .header-redesigned__title,
+  .header-redesigned__username,
+  .header-redesigned__login-text,
+  .header-redesigned__dev-text {
+    display: none;
+  }
+
+  /* Mantener solo iconos esenciales */
+  .header-redesigned__container {
+    padding: 0.5rem 0.5rem;
+    min-height: 52px;
+  }
+
+  .header-redesigned__left {
+    gap: 0.5rem;
+    min-width: 60px; /* Reducido ya que no hay logo */
+  }
+
+  .header-redesigned__center {
+    flex: 1;
+    max-width: 160px;
+    min-width: 100px;
+  }
+
+  .header-redesigned__right {
+    gap: 0.5rem;
+    min-width: 80px;
+  }
+
+  /* Ocultar logo completamente para ahorrar espacio */
+  .header-redesigned__logo {
+    display: none !important;
+  }
+
+  /* Botones compactos */
+  .header-redesigned__menu-btn,
+  .header-redesigned__user-btn,
+  .header-redesigned__login-btn {
+    min-width: 28px;
+    min-height: 28px;
+    padding: 4px;
+  }
+
+  /* Iconos pequeños */
+  .header-redesigned__menu-icon,
+  .header-redesigned__user-icon {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (min-width: 640px) {
+  .header-redesigned__container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+/* Learning mode maintains same height but optimized spacing */
+.header-redesigned__container--learning {
+  padding: 0.5rem;
+  /* Consistent padding with layout-main */
+}
+
+@media (min-width: 640px) {
+  .header-redesigned__container--learning {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Left Section - Enhanced Consistency */
+.header-redesigned__left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 40px;
+  /* Consistent inner height */
+  z-index: 3; /* Mayor prioridad que contenido central */
+  position: relative;
+}
+
+.header-redesigned__menu-btn {
+  padding: 8px;
+  border-radius: 6px;
+  color: var(--header-icon-color);
+  background-color: transparent;
+  min-width: 40px;
+  min-height: 40px;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5; /* Máxima prioridad para menú hamburguesa */
+  position: relative;
+}
+
+/* Menu button now uses primary button styles - no specific rules needed */
+.header-redesigned__menu-btn:active {
+  background-color: var(--header-button-active-bg);
+  transform: translateY(0);
+}
+
+.header-redesigned__menu-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--header-focus-ring);
+}
+
+.header-redesigned__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 40px;
+  /* Consistent brand height */
+}
+
+.header-redesigned__logo {
+  font-size: 1.75rem;
+  line-height: 1;
+  padding: 6px;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--theme-bg-elevated, #ffffff);
+  border: 1px solid var(--theme-border-soft, #f3f4f6);
+  box-shadow: var(--shadow-subtle, 0 1px 3px rgba(0, 0, 0, 0.1));
+}
+
+.header-redesigned__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--header-text-primary, #111827);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  transition: color 0.2s ease-in-out;
+}
+
+/* Center Section - Consistent Alignment */
+.header-redesigned__center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  /* Consistent center height */
+  z-index: 1; /* Menor prioridad que botones laterales */
+  position: relative;
+}
+
+/* Development Mode Indicator */
+.header-redesigned__dev-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  height: 24px;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: white;
+  border-radius: var(--radius-sm, 0.25rem);
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: var(--font-semibold, 600);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide, 0.025em);
+  box-shadow: 0 1px 2px rgba(220, 38, 38, 0.3);
+  animation: devPulse 2s infinite;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-right: 1.5rem;
+}
+
+.dark .header-redesigned__dev-indicator {
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+  color: #1f2937;
+  box-shadow: 0 1px 2px rgba(248, 113, 113, 0.4);
+}
+
+.header-redesigned__dev-icon {
+  font-size: var(--text-xs, 0.75rem);
+  line-height: var(--leading-none, 1);
+}
+
+.header-redesigned__dev-text {
+  font-size: var(--text-xs, 0.75rem);
+  font-weight: var(--font-bold, 700);
+  line-height: var(--leading-none, 1);
+}
+
+@keyframes devPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.85;
+    transform: scale(1.01);
+  }
+}
+
+/* Right Section - Enhanced Consistency */
+.header-redesigned__right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 40px;
+  /* Consistent right section height */
+  z-index: 3; /* Mayor prioridad que contenido central */
+  position: relative;
+}
+
+.header-redesigned__user-section {
+  display: flex;
+  align-items: center;
+}
+
+.header-redesigned__user-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  color: var(--header-text-secondary);
+  background-color: transparent;
+  min-height: 40px;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  cursor: pointer;
+  z-index: 5; /* Máxima prioridad para botón de usuario */
+  position: relative;
+}
+
+.header-redesigned__user-btn:hover {
+  color: var(--header-text-primary, #111827);
+  background-color: var(--header-button-hover-bg);
+  transform: translateY(-1px);
+}
+
+.header-redesigned__user-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--header-focus-ring);
+}
+
+.header-redesigned__login-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  border-radius: 6px;
+  color: var(--header-text-secondary);
+  background-color: transparent;
+  min-height: 40px;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  cursor: pointer;
+  z-index: 5; /* Máxima prioridad para botón de login */
+  position: relative;
+}
+
+.header-redesigned__login-btn:hover {
+  color: var(--header-text-primary, #111827);
+  background-color: var(--header-button-hover-bg);
+  transform: translateY(-1px);
+}
+
+.header-redesigned__login-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--header-focus-ring);
+}
+
+/* Avatar styles removed - now using consistent icon-only approach */
+.header-redesigned__user-info {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .header-redesigned__user-info {
+    display: block;
+  }
+}
+
+.header-redesigned__username {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--header-text-primary, #111827);
+  transition: color 0.2s ease-in-out;
+}
+
+/* Quick Actions - Simplified Control Panel */
+.header-redesigned__quick-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Button Hierarchy System - Homologated Design */
+.header-redesigned__menu-btn--primary,
+.header-redesigned__user-btn--primary,
+.header-redesigned__login-btn--primary,
+.header-redesigned__control-btn--primary {
+  background-color: var(--header-button-hover-bg);
+  border: 1px solid var(--header-border, #e5e7eb);
+  border-radius: 8px;
+}
+
+.header-redesigned__menu-btn--primary:hover,
+.header-redesigned__user-btn--primary:hover,
+.header-redesigned__login-btn--primary:hover,
+.header-redesigned__control-btn--primary:hover {
+  background-color: var(--header-button-active-bg);
+  border-color: var(--header-icon-hover);
+  box-shadow: var(--shadow-medium, 0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* Deprecated - using --primary for consistency */
+.header-redesigned__control-btn {
+  padding: 8px;
+  border-radius: 6px;
+  color: var(--header-icon-color);
+  background-color: transparent;
+  min-width: 40px;
+  min-height: 40px;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-redesigned__control-btn:hover {
+  color: var(--header-icon-hover);
+  background-color: var(--header-button-hover-bg);
+  transform: translateY(-1px);
+}
+
+.header-redesigned__control-btn:active {
+  background-color: var(--header-button-active-bg);
+  transform: translateY(0);
+}
+
+.header-redesigned__control-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--header-focus-ring);
+}
+
+/* Side Menu Styles */
+.header-side-menu-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 40;
+}
+
+/* Enhanced Hamburger Menu with Design System */
+.header-side-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 280px;
+  z-index: 50;
+  background-color: var(--menu-bg);
+  border-right: 1px solid var(--menu-border);
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
+}
+
+/* Enhanced shadow for dark mode */
+.dark .header-side-menu {
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Enhanced Menu Header */
+.header-side-menu__header {
+  padding: 20px;
+  background-color: var(--menu-header-bg);
+  border-bottom: 1px solid var(--menu-border);
+  backdrop-filter: blur(8px);
+}
+
+/* Enhanced Menu Title Typography */
+.header-side-menu__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--header-text-primary, #111827);
+  letter-spacing: -0.025em;
+  margin: 0 0 4px 0;
+}
+
+.header-side-menu__subtitle {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--header-text-secondary);
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Menu Content */
+.header-side-menu__content {
+  padding: var(--padding-xl, 2rem);
+}
+
+.header-side-menu__content > * + * {
+  margin-top: 1.5rem;
+}
+
+/* Menu Sections */
+.header-side-menu__section > * + * {
+  margin-top: 0.5rem;
+}
+
+.header-side-menu__section-title {
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: var(--font-semibold, 600);
+  color: var(--header-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider, 0.05em);
+  margin: 0 0 8px 16px;
+  opacity: 0.7;
+}
+
+/* Enhanced Menu Items with Better UX */
+.header-side-menu__item {
+  width: 100%;
+  text-align: left;
+  padding: 12px 16px;
+  margin: 4px 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--header-text-secondary);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.header-side-menu__item:hover {
+  background-color: var(--menu-item-hover);
+  color: var(--header-text-primary, #111827);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-medium, 0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.header-side-menu__item--logout {
+  border-top: 1px solid var(--theme-border-soft, #e5e7eb);
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  color: var(--theme-error, #ef4444);
+}
+
+.header-side-menu__item--logout:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--theme-error, #ef4444);
+}
+
+.header-side-menu__item--login {
+  border-top: 1px solid var(--theme-border-soft, #e5e7eb);
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  color: var(--theme-primary-blue, #3b82f6);
+  font-weight: 500;
+}
+
+.header-side-menu__item--login:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: var(--theme-primary-blue-hover, #2563eb);
+}
+
+.header-side-menu__item:active {
+  background-color: var(--menu-item-active);
+  transform: translateX(2px);
+}
+
+.header-side-menu__item:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--header-focus-ring);
+}
+
+/* Enhanced shadow for dark mode menu items */
+.dark .header-side-menu__item:hover {
+  box-shadow: var(--shadow-medium, 0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* Enhanced Menu Icons and Text */
+.header-side-menu__text {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: inherit;
+  transition: color 0.2s ease-in-out;
+}
+
+.header-side-menu__icon {
+  width: 20px;
+  height: 20px;
+  color: currentColor;
+  stroke: currentColor;
+}
+
+/* === MODERN HEADER SYSTEM - CLEAN GRID DESIGN === */
+/* Professional, scalable, and consistent across all devices */
+
+/* === CORE GRID SYSTEM === */
+.header-redesigned__container {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: 'left center right';
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  min-height: 48px;
+}
+
+.header-redesigned__left {
+  grid-area: left;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.header-redesigned__center {
+  grid-area: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0; /* Allow shrinking */
+  z-index: 1;
+}
+
+.header-redesigned__right {
+  grid-area: right;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+/* === RESPONSIVE BREAKPOINTS === */
+
+/* DESKTOP: 1200px+ - Full experience */
+@media (min-width: 1200px) {
+  .header-redesigned__container {
+    grid-template-columns: 280px 1fr 200px;
+    padding: 0.75rem 2rem;
+    min-height: 56px;
+    gap: 1rem;
+  }
+
+  .header-redesigned__left,
+  .header-redesigned__right {
+    gap: 1rem;
+  }
+
+  /* Show all elements */
+  .header-redesigned__title,
+  .header-redesigned__username,
+  .header-redesigned__login-text {
+    display: block;
+  }
+
+  .header-redesigned__logo {
+    width: 48px;
+    height: 48px;
+    font-size: 1.875rem;
+  }
+
+  .header-redesigned__menu-btn,
+  .header-redesigned__user-btn,
+  .header-redesigned__login-btn {
+    min-width: 48px;
+    min-height: 48px;
+    padding: 12px;
+  }
+}
+
+/* DESKTOP STANDARD: 1024px - 1199px */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .header-redesigned__container {
+    grid-template-columns: 240px 1fr 180px;
+    padding: 0.75rem 1.5rem;
+    min-height: 52px;
+    gap: 0.875rem;
+  }
+
+  .header-redesigned__left,
+  .header-redesigned__right {
+    gap: 0.875rem;
+  }
+
+  /* Hide secondary text */
+  .header-redesigned__username,
+  .header-redesigned__login-text,
+  .header-redesigned__dev-text {
+    display: none;
+  }
+
+  .header-redesigned__title {
+    display: block;
+  }
+
+  .header-redesigned__logo {
+    width: 44px;
+    height: 44px;
+    font-size: 1.75rem;
+  }
+
+  .header-redesigned__menu-btn,
+  .header-redesigned__user-btn,
+  .header-redesigned__login-btn {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 10px;
+  }
+}
+
+/* TABLET: 768px - 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header-redesigned__container {
+    grid-template-columns: 200px 1fr 160px;
+    padding: 0.625rem 1.25rem;
+    min-height: 48px;
+    gap: 0.75rem;
+  }
+
+  .header-redesigned__left,
+  .header-redesigned__right {
+    gap: 0.75rem;
+  }
+
+  /* Hide all text except title */
+  .header-redesigned__username,
+  .header-redesigned__login-text,
+  .header-redesigned__dev-text {
+    display: none;
+  }
+
+  .header-redesigned__title {
+    display: block;
+    font-size: 1.125rem;
+  }
+
+  .header-redesigned__logo {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .header-redesigned__menu-btn,
+  .header-redesigned__user-btn,
+  .header-redesigned__login-btn {
+    min-width: 40px;
+    min-height: 40px;
+    padding: 8px;
+  }
+}
+
+/* MOBILE LARGE: 520px - 767px */
+@media (min-width: 520px) and (max-width: 767px) {
+  .header-redesigned__container {
+    grid-template-columns: 120px 1fr 100px;
+    padding: 0.5rem 1rem;
+    min-height: 44px;
+    gap: 0.5rem;
+  }
+
+  .header-redesigned__left,
+  .header-redesigned__right {
+    gap: 0.5rem;
+  }
+
+  /* Hide all text, keep logo */
+  .header-redesigned__title,
+  .header-redesigned__username,
+  .header-redesigned__login-text,
+  .header-redesigned__dev-text {
+    display: none;
+  }
+
+  .header-redesigned__logo {
+    width: 36px;
+    height: 36px;
+    font-size: 1.25rem;
+  }
+
+  .header-redesigned__menu-btn,
+  .header-redesigned__user-btn,
+  .header-redesigned__login-btn {
+    min-width: 36px;
+    min-height: 36px;
+    padding: 6px;
+  }
+}
+
+/* MOBILE STANDARD: 375px - 519px - Removed unnecessary compression */
+/* This breakpoint was removed to prevent unnecessary header compression at 380px */
+/* The general mobile rules will apply instead, providing better spacing */
+
+/* MOBILE SMALL: 320px - 374px */
+@media (min-width: 320px) and (max-width: 374px) {
+  .header-redesigned__container {
+    grid-template-columns: 60px 1fr 60px;
+    padding: 0.25rem 0.5rem;
+    min-height: 36px;
+    gap: 0.25rem;
+  }
+
+  .header-redesigned__left,
+  .header-redesigned__right {
+    gap: 0.25rem;
+  }
+
+  .header-redesigned__menu-btn,
+  .header-redesigned__user-btn,
+  .header-redesigned__login-btn {
+    min-width: 28px;
+    min-height: 28px;
+    padding: 2px;
+  }
+
+  .header-redesigned__menu-icon,
+  .header-redesigned__user-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* MOBILE TINY: <320px - Emergency */
+@media (max-width: 319px) {
+  .header-redesigned__container {
+    grid-template-columns: 50px 1fr 50px;
+    padding: 0.125rem 0.25rem;
+    min-height: 32px;
+    gap: 0.125rem;
+  }
+
+  .header-redesigned__left,
+  .header-redesigned__right {
+    gap: 0.125rem;
+  }
+
+  .header-redesigned__menu-btn,
+  .header-redesigned__user-btn,
+  .header-redesigned__login-btn {
+    min-width: 24px;
+    min-height: 24px;
+    padding: 1px;
+  }
+
+  .header-redesigned__menu-icon,
+  .header-redesigned__user-icon {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* === ELEMENT VISIBILITY RULES === */
+
+/* Dev indicator visibility */
+@media (max-width: 1023px) {
+  .header-redesigned__dev-indicator {
+    display: none;
+  }
+}
+
+/* User info visibility */
+@media (max-width: 767px) {
+  .header-redesigned__user-info {
+    display: none;
+  }
+}
+
+/* === CENTER ALIGNMENT OPTIMIZATION === */
+
+/* CRITICAL: Perfect centering for mobile breakpoints */
+@media (max-width: 519px) {
+  .header-redesigned__center {
+    justify-content: center !important;
+    align-items: center !important;
+    display: flex !important;
+    width: 100% !important;
+    text-align: center !important;
+    position: relative !important;
+  }
+
+  /* Force score-display to center with absolute positioning fallback */
+  .header-redesigned__center > * {
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  /* Ensure all score-display elements are centered */
+  .score-display-compact,
+  .score-display-compact__container,
+  .score-display-compact__values {
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* Override any conflicting grid or flex rules */
+  .header-redesigned__container {
+    grid-template-columns: 60px 1fr 60px !important;
+    justify-items: center !important;
+    align-items: center !important;
+  }
+}
+
+/* Enhanced Accessibility and High Contrast Support */
+@media (prefers-contrast: high) {
+  :root {
+    --header-icon-color: #000000;
+    --header-icon-hover: #000000;
+    --header-text-primary: #000000;
+    --header-text-secondary: #333333;
+  }
+
+  .dark {
+    --header-icon-color: #ffffff;
+    --header-icon-hover: #ffffff;
+    --header-text-primary: #ffffff;
+    --header-text-secondary: #e5e5e5;
+    --header-button-hover-bg: #4b5563;
+    --header-button-active-bg: #6b7280;
+  }
+}
+
+/* Enhanced Focus Indicators for Better Accessibility */
+.header-redesigned button:focus-visible {
+  outline: 2px solid var(--header-focus-ring);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* Screen Reader Only Text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Button Hierarchy Styles */
+.header-redesigned__menu-btn--tertiary {
+  opacity: 0.7;
+  transition: all 0.2s ease-in-out;
+}
+
+.header-redesigned__menu-btn--tertiary:hover {
+  opacity: 1;
+}
+
+/* Improved Animation Performance */
+.header-redesigned *,
+.header-side-menu * {
+  will-change: auto;
+}
+
+.header-redesigned button:hover,
+.header-side-menu__item:hover {
+  will-change: transform, background-color;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  /* justified: Accessibility requirement for reduced motion */
+  .header-redesigned *,
+  .header-side-menu * {
+    transition: none;
+    /* Accessibility: disable transitions */
+    transform: none;
+    /* Accessibility: disable transforms */
+    animation: none;
+    /* Accessibility: disable animations */
+  }
+}
+
+/* Enhanced Logo with Better Dark Mode Contrast */
+.dark .header-redesigned__logo {
+  background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hover effect for logo in dark mode */
+.dark .header-redesigned__brand:hover .header-redesigned__logo {
+  background: linear-gradient(135deg, #4b5563 0%, #6b7280 100%);
+  transform: scale(1.05);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Light mode - keep it clean */
+.header-redesigned__logo {
+  background: transparent;
+}
+
+.header-redesigned__brand:hover .header-redesigned__logo {
+  transform: scale(1.05);
+  background-color: var(--header-button-hover-bg);
+  border-color: var(--theme-border-medium, #e5e7eb);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Better Overlay for Side Menu */
+.header-side-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 40;
+  backdrop-filter: blur(4px);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.dark .header-side-menu-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Logo Animation and Accessibility Enhancements */
+.header-redesigned__brand {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.header-redesigned__brand:focus {
+  outline: none;
+}
+
+.header-redesigned__brand:focus .header-redesigned__logo {
+  box-shadow: 0 0 0 2px var(--header-focus-ring);
+}
+
+/* Alternative high contrast version for accessibility */
+@media (prefers-contrast: high) {
+  .dark .header-redesigned__logo {
+    background: #000000;
+    border: 2px solid #ffffff;
+    box-shadow: none;
+  }
+
+  .dark .header-redesigned__brand:hover .header-redesigned__logo {
+    background: #333333;
+    border: 2px solid #ffffff;
+  }
+}
+
+/* Reduced motion support for logo */
+@media (prefers-reduced-motion: reduce) {
+  /* justified: Accessibility requirement for reduced motion */
+  .header-redesigned__logo,
+  .header-redesigned__brand:hover .header-redesigned__logo {
+    transform: none;
+    /* Accessibility: disable transforms */
+    transition: none;
+    /* Accessibility: disable transitions */
+  }
+}
+
+/* Enhanced Button Definitions for Dark Mode */
+.dark .header-redesigned__menu-btn,
+.dark .header-redesigned__user-btn,
+.dark .header-redesigned__login-btn,
+.dark .header-redesigned__control-btn {
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.dark .header-redesigned__menu-btn:hover,
+.dark .header-redesigned__user-btn:hover,
+.dark .header-redesigned__login-btn:hover,
+.dark .header-redesigned__control-btn:hover {
+  border-color: var(--header-border, #e5e7eb);
+  background-color: var(--header-button-hover-bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced Primary Buttons in Dark Mode - Homologated */
+.dark .header-redesigned__menu-btn--primary,
+.dark .header-redesigned__user-btn--primary,
+.dark .header-redesigned__login-btn--primary,
+.dark .header-redesigned__control-btn--primary {
+  background-color: rgba(75, 85, 99, 0.5);
+  border: 1px solid var(--header-border, #e5e7eb);
+  backdrop-filter: blur(8px);
+}
+
+.dark .header-redesigned__menu-btn--primary:hover,
+.dark .header-redesigned__user-btn--primary:hover,
+.dark .header-redesigned__login-btn--primary:hover,
+.dark .header-redesigned__control-btn--primary:hover {
+  background-color: var(--header-button-active-bg);
+  border-color: #6b7280;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Avatar styles removed - now using consistent icon-only approach for all buttons */
+
+/* Enhanced Side Menu for Dark Mode */
+.dark .header-side-menu {
+  background: linear-gradient(180deg, #1f2937 0%, #1a202c 100%);
+  border-right: 1px solid var(--menu-border);
+  box-shadow:
+    4px 0 25px rgba(0, 0, 0, 0.5),
+    inset -1px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+.dark .header-side-menu__header {
+  background: linear-gradient(180deg, #111827 0%, #0f172a 100%);
+  border-bottom: 1px solid var(--menu-border);
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Enhanced Menu Items for Dark Mode */
+.dark .header-side-menu__item {
+  border: 1px solid transparent;
+  margin: 2px 8px;
+}
+
+.dark .header-side-menu__item:hover {
+  background: linear-gradient(90deg, rgba(75, 85, 99, 0.5) 0%, rgba(107, 114, 128, 0.3) 100%);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced Section Titles for Dark Mode */
+.dark .header-side-menu__section-title {
+  color: #9ca3af;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Enhanced Focus States for Dark Mode */
+.dark .header-redesigned button:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+  box-shadow:
+    0 0 0 4px rgba(96, 165, 250, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced Overlay for Dark Mode */
+.dark .header-side-menu-overlay {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  backdrop-filter: blur(8px);
+}
+
+/* Enhanced Logo Glow Effect for Dark Mode */
+.dark .header-redesigned__logo {
+  background: linear-gradient(135deg, #374151 0%, #4b5563 100%);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(96, 165, 250, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .header-redesigned__brand:hover .header-redesigned__logo {
+  background: linear-gradient(135deg, #4b5563 0%, #6b7280 100%);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 0 30px rgba(96, 165, 250, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced Typography Contrast for Dark Mode */
+.dark .header-redesigned__title {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+}
+
+.dark .header-redesigned__username {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  color: #e5e7eb;
+}
+
+/* Enhanced Quick Actions for Dark Mode - Now using --primary for consistency */
+
+/* Homologated Button Sections - Equal Visual Weight */
+.header-redesigned__user-section,
+.header-redesigned__quick-actions {
+  display: flex;
+  align-items: center;
+}
+
+/* Ensure consistent spacing between primary action buttons */
+.header-redesigned__right > * + * {
+  margin-left: 8px;
+}
+
+/* Homologated Primary Button Styles - All buttons get same treatment */
+.header-redesigned__menu-btn--primary,
+.header-redesigned__user-btn--primary,
+.header-redesigned__login-btn--primary,
+.header-redesigned__control-btn--primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  min-height: 40px;
+  min-width: 40px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--header-text-primary, #111827);
+}
+
+/* Ensure icons have consistent visual weight and better contrast */
+.header-redesigned__menu-btn--primary svg,
+.header-redesigned__user-btn--primary svg,
+.header-redesigned__login-btn--primary svg,
+.header-redesigned__control-btn--primary svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--header-text-primary, #111827);
+  stroke: var(--header-text-primary, #111827);
+}
+
+/* Ensure all text within primary buttons uses consistent color */
+.header-redesigned__menu-btn--primary span,
+.header-redesigned__user-btn--primary span,
+.header-redesigned__login-btn--primary span,
+.header-redesigned__control-btn--primary span,
+.header-redesigned__username {
+  color: var(--header-text-primary, #111827);
+  font-weight: 500;
+}
+
+/* Ensure Stats button has same visual weight as User button */
+.header-redesigned__control-btn--primary {
+  min-width: 40px;
+}
+
+/* Ensure consistent button alignment in right section */
+.header-redesigned__user-section,
+.header-redesigned__quick-actions {
+  align-items: center;
+  height: 40px;
+}
+
+/* Dark mode - ensure all primary buttons have identical treatment */
+.dark .header-redesigned__menu-btn--primary,
+.dark .header-redesigned__user-btn--primary,
+.dark .header-redesigned__login-btn--primary,
+.dark .header-redesigned__control-btn--primary {
+  background: linear-gradient(135deg, rgba(75, 85, 99, 0.6) 0%, rgba(55, 65, 81, 0.4) 100%);
+  border: 1px solid var(--header-border, #e5e7eb);
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  color: var(--header-text-primary, #111827);
+}
+
+.dark .header-redesigned__menu-btn--primary:hover,
+.dark .header-redesigned__user-btn--primary:hover,
+.dark .header-redesigned__login-btn--primary:hover,
+.dark .header-redesigned__control-btn--primary:hover {
+  background: linear-gradient(135deg, rgba(107, 114, 128, 0.7) 0%, rgba(75, 85, 99, 0.5) 100%);
+  border-color: #6b7280;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+  color: var(--header-text-primary, #111827);
+}
+
+/* Ensure dark mode hover state maintains consistent text color */
+.dark .header-redesigned__menu-btn--primary:hover span,
+.dark .header-redesigned__user-btn--primary:hover span,
+.dark .header-redesigned__login-btn--primary:hover span,
+.dark .header-redesigned__control-btn--primary:hover span,
+.dark .header-redesigned__user-btn--primary:hover .header-redesigned__username {
+  color: var(--header-text-primary, #111827);
+}
+
+/* Light mode - ensure consistency */
+.header-redesigned__menu-btn--primary,
+.header-redesigned__user-btn--primary,
+.header-redesigned__login-btn--primary,
+.header-redesigned__control-btn--primary {
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  border: 1px solid var(--header-border, #e5e7eb);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: var(--header-text-primary, #111827);
+}
+
+.header-redesigned__menu-btn--primary:hover,
+.header-redesigned__user-btn--primary:hover,
+.header-redesigned__login-btn--primary:hover,
+.header-redesigned__control-btn--primary:hover {
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  border-color: #9ca3af;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+  color: var(--header-text-primary, #111827);
+}
+
+/* Ensure hover state maintains consistent text color for all elements */
+.header-redesigned__menu-btn--primary:hover span,
+.header-redesigned__user-btn--primary:hover span,
+.header-redesigned__login-btn--primary:hover span,
+.header-redesigned__control-btn--primary:hover span,
+.header-redesigned__user-btn--primary:hover .header-redesigned__username {
+  color: var(--header-text-primary, #111827);
+}
+
+/* Additional styles for login text */
+.header-redesigned__login-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--header-text-primary, #111827);
+}
+
+/* Additional styles for user icon */
+.header-redesigned__user-icon {
+  width: 16px;
+  height: 16px;
+  color: currentColor;
+  stroke: currentColor;
+}
+
+/* Additional styles for menu icon */
+.header-redesigned__menu-icon {
+  width: 16px;
+  height: 16px;
+  color: currentColor;
+  stroke: currentColor;
+}
+
+/* === HAMBURGER MENU 400px - UNIFIED DESIGN SYSTEM === */
+/* Breakpoint for screens below 400px - unified with modal system */
+@media (max-width: 399px) {
+  .header-side-menu {
+    width: 50%;
+    max-width: 200px;
+    min-width: 180px;
+  }
+
+  /* Unified header padding */
+  .header-side-menu__header {
+    padding: 0.5rem;
+    /* Unified header padding (8px) */
+  }
+
+  .header-side-menu__content {
+    padding: 0.5rem;
+    /* Unified content padding (8px) */
+  }
+
+  /* Unified menu items */
+  .header-side-menu__item {
+    padding: 0.375rem 0.5rem;
+    /* Unified item padding (6px 8px) */
+    margin: 0.125rem 0.25rem;
+    /* Unified item margins (2px 4px) */
+    gap: 0.375rem;
+    /* Unified icon-text gap (6px) */
+  }
+
+  /* Unified icons */
+  .header-side-menu__icon {
+    width: 16px;
+    /* Consistent icon size */
+    height: 16px;
+  }
+
+  /* Unified typography */
+  .header-side-menu__title {
+    font-size: 0.875rem;
+    /* Unified title size */
+    margin-bottom: 0.125rem;
+    /* Unified title margin */
+  }
+
+  .header-side-menu__subtitle {
+    font-size: 0.75rem;
+    /* Unified subtitle size */
+  }
+
+  .header-side-menu__section-title {
+    font-size: 0.75rem;
+    /* Unified section title size */
+    margin: 0 0 0.25rem 0.5rem;
+    /* Unified section title margins */
+  }
+
+  .header-side-menu__text {
+    font-size: 0.75rem;
+    /* Unified menu text size */
+  }
+
+  /* Unified section spacing */
+  .header-side-menu__content > * + * {
+    margin-top: 0.5rem;
+    /* Unified section gaps */
+  }
+
+  .header-side-menu__section > * + * {
+    margin-top: 0.25rem;
+    /* Unified element gaps */
+  }
+}

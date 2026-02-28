@@ -1,0 +1,449 @@
+/**
+ * Completion Component - Pure BEM Implementation
+ * 
+ * Clean semantic styles for completion learning mode
+ * Uses design system tokens and eliminates all Tailwind classes
+ */
+
+/* === COMPLETION COMPONENT CONTAINER === */
+.completion-component__container {
+  max-width: 42rem;
+  margin: 0.125rem auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    135deg,
+    var(--theme-bg-elevated, #ffffff) 0%,
+    var(--theme-bg-subtle, #f9fafb) 100%
+  );
+  border: 1px solid var(--theme-border-modal, rgba(0, 0, 0, 0.1));
+  border-radius: var(--radius-lg, 0.5rem);
+}
+
+/* === RESULT CONTAINER === */
+.completion-component__result-container--visible {
+  opacity: 1;
+  max-height: 200px;
+  transition: all 0.3s ease;
+}
+
+.completion-component__result-container--hidden {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .completion-component__container {
+    padding: 0.75rem;
+  }
+}
+
+/* === NO DATA STATE === */
+.completion-component__no-data {
+  max-width: 72rem; /* max-w-6xl */
+  margin: 0 auto;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .completion-component__no-data {
+    padding: 1.5rem;
+  }
+}
+
+.completion-component__no-data-text {
+  color: var(--theme-text-secondary, #6b7280);
+  margin-bottom: 1rem;
+}
+
+/* Dark mode no data text */
+html.dark .completion-component__no-data-text {
+  color: var(--theme-text-secondary, #e5e7eb);
+}
+
+.completion-component__no-data-btn {
+  padding: var(--padding-md, 1rem) var(--padding-xl, 2rem);
+  background-color: var(--theme-primary-blue, #3b82f6);
+  color: white;
+  border-radius: var(--radius-md, 0.375rem);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.completion-component__no-data-btn:hover {
+  background-color: #2563eb;
+}
+
+/* === COMPLETION HEADER - Now using unified LearningProgressHeader === */
+
+/* === EXERCISE CARD === */
+.completion-component__exercise-card {
+  background-color: var(--theme-bg-elevated, #ffffff);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-subtle, 0 1px 3px rgba(0, 0, 0, 0.1));
+  padding: 1rem;
+  margin: 0;
+  border: 1px solid var(--theme-border-soft, #f3f4f6);
+  width: 100%;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .completion-component__exercise-card {
+    padding: 1.25rem;
+  }
+}
+
+.completion-component__instruction {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--theme-text-primary, #374151);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .completion-component__instruction {
+    font-size: 1.125rem;
+  }
+}
+
+/* Dark mode instruction */
+html.dark .completion-component__instruction {
+  color: var(--theme-text-primary, #ffffff);
+}
+
+/* === TIP SECTION === */
+.completion-component__tip {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: #eff6ff;
+  border-left: 4px solid var(--theme-primary-blue, #3b82f6);
+  border-radius: 0 var(--radius-md, 0.375rem) var(--radius-md, 0.375rem) 0;
+}
+
+.completion-component__tip-text {
+  font-size: 0.875rem;
+  color: #1e40af;
+}
+
+/* Dark mode tip section */
+html.dark .completion-component__tip {
+  background-color: var(--theme-bg-subtle, #374151);
+  border-left-color: var(--theme-primary-blue, #60a5fa);
+}
+
+html.dark .completion-component__tip-text {
+  color: var(--theme-primary-blue, #60a5fa);
+}
+
+/* === SENTENCE CONTAINER === */
+.completion-component__sentence-container {
+  font-size: 1.125rem;
+  line-height: 1.625;
+  margin-bottom: 1rem;
+  padding: 1.25rem;
+  background: linear-gradient(to right, #f9fafb, #f3f4f6);
+  border-radius: 1rem;
+  border: 1px solid var(--theme-border-primary, #e5e7eb);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.completion-component__text {
+  color: var(--theme-text-primary, #374151);
+}
+
+.completion-component__sentence {
+  color: var(--theme-text-primary, #374151);
+  font-weight: 500;
+}
+
+/* Dark mode sentence container */
+html.dark .completion-component__sentence-container {
+  background: linear-gradient(
+    to right,
+    var(--theme-bg-subtle, #374151),
+    var(--theme-bg-soft, #4b5563)
+  );
+  border-color: var(--theme-border-soft, #4b5563);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+html.dark .completion-component__text {
+  color: var(--theme-text-primary, #ffffff);
+}
+
+html.dark .completion-component__sentence {
+  color: var(--theme-text-primary, #ffffff);
+}
+
+/* === COMPLETION INPUT === */
+.completion-component__input {
+  display: inline-block;
+  width: 160px; /* Fixed width to accommodate ~8 characters comfortably */
+  min-width: 160px;
+  max-width: 200px;
+  margin: 0 0.5rem;
+  padding: var(--padding-sm, 0.5rem) var(--padding-md, 1rem);
+  border: 2px solid;
+  border-radius: var(--radius-md, 0.375rem);
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.completion-component__input:focus {
+  outline: none;
+}
+
+/* Input States */
+.completion-component__input--correct {
+  border-color: var(--theme-success, #10b981);
+  background-color: #f0fdf4;
+  color: #15803d;
+}
+
+.completion-component__input--incorrect {
+  border-color: var(--theme-error, #ef4444);
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.completion-component__input--disabled {
+  border-color: var(--theme-border-soft, #f3f4f6);
+  background-color: var(--theme-bg-subtle, #f9fafb);
+  color: var(--theme-text-secondary, #6b7280);
+}
+
+.completion-component__input--neutral {
+  border-color: #93c5fd;
+  background-color: #eff6ff;
+  color: var(--theme-text-primary, #374151);
+}
+
+.completion-component__input--neutral:focus {
+  border-color: var(--theme-primary-blue, #3b82f6);
+  background-color: white;
+}
+
+/* Dark mode input states */
+html.dark .completion-component__input--correct {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--theme-success, #34d399);
+  border-color: var(--theme-success, #10b981);
+}
+
+html.dark .completion-component__input--incorrect {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--theme-error, #f87171);
+  border-color: var(--theme-error, #ef4444);
+}
+
+html.dark .completion-component__input--disabled {
+  background-color: var(--theme-bg-subtle, #374151);
+  color: var(--theme-text-secondary, #e5e7eb);
+  border-color: var(--theme-border-soft, #4b5563);
+}
+
+html.dark .completion-component__input--neutral {
+  background-color: var(--theme-bg-elevated, #1f2937);
+  color: var(--theme-text-primary, #ffffff);
+  border-color: var(--theme-primary-blue, #60a5fa);
+}
+
+html.dark .completion-component__input--neutral:focus {
+  background-color: var(--theme-bg-subtle, #374151);
+  border-color: var(--theme-primary-blue, #3b82f6);
+}
+
+/* === RESULT SECTION === */
+.completion-component__result-container {
+  margin-top: 0.75rem;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.completion-component__result-container--hidden {
+  max-height: 0;
+  opacity: 0;
+}
+
+.completion-component__result-container--visible {
+  max-height: 6rem;
+  opacity: 1;
+}
+
+.completion-component__result {
+  padding: 0.625rem;
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius-md, 0.375rem);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Dark mode result section */
+html.dark .completion-component__result {
+  background-color: var(--theme-bg-subtle, #374151);
+  border-color: var(--theme-border-soft, #4b5563);
+}
+
+.completion-component__feedback-row {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  flex-wrap: wrap;
+}
+
+.completion-component__feedback-icon {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+.completion-component__feedback-icon--correct {
+  color: var(--theme-success, #10b981);
+}
+
+.completion-component__feedback-icon--incorrect {
+  color: var(--theme-error, #ef4444);
+}
+
+.completion-component__feedback {
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: var(--theme-text-primary, #374151);
+}
+
+.completion-component__correct-answer {
+  font-size: 0.75rem;
+  color: var(--theme-text-secondary, #6b7280);
+}
+
+/* Dark mode feedback text */
+html.dark .completion-component__feedback {
+  color: var(--theme-text-primary, #ffffff);
+}
+
+html.dark .completion-component__correct-answer {
+  color: var(--theme-text-secondary, #e5e7eb);
+}
+
+.completion-component__explanation {
+  border-top: 1px solid #bfdbfe;
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.completion-component__explanation-text {
+  font-size: 0.75rem;
+  color: var(--theme-text-secondary, #6b7280);
+  line-height: 1.625;
+}
+
+.completion-component__explanation-label {
+  font-weight: 500;
+}
+
+/* Dark mode explanation */
+html.dark .completion-component__explanation {
+  border-top-color: var(--theme-border-soft, #4b5563);
+}
+
+html.dark .completion-component__explanation-text {
+  color: var(--theme-text-secondary, #e5e7eb);
+}
+
+html.dark .completion-component__explanation-label {
+  color: var(--theme-text-primary, #ffffff);
+}
+
+/* === CONTROLS === */
+/* === CONTROLS - Using Unified Game Controls === */
+/* All control styles moved to game-controls.css */
+
+.completion-component__next-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.completion-component__btn-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* === MOBILE OPTIMIZATIONS === */
+@media (max-width: 768px) {
+  .completion-component__container {
+    padding: var(--padding-sm, 0.5rem);
+  }
+
+  .completion-component__exercise-card {
+    padding: 0.875rem;
+  }
+
+  .completion-component__sentence-container {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .completion-component__input {
+    width: 140px;
+    min-width: 140px;
+    font-size: 1.1rem;
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+/* === DARK MODE === */
+/* Container and main elements */
+html.dark .completion-component__container {
+  background: linear-gradient(
+    135deg,
+    var(--theme-bg-elevated, #1f2937) 0%,
+    var(--theme-bg-subtle, #374151) 100%
+  );
+}
+
+html.dark .completion-component__exercise-card {
+  background-color: var(--theme-bg-elevated, #1f2937);
+  border-color: var(--theme-border-soft, #4b5563);
+}
+
+html.dark .completion-component__controls {
+  background-color: var(--theme-bg-elevated, #1f2937);
+  border-color: var(--theme-border-soft, #4b5563);
+}
+
+/* === ACCESSIBILITY === */
+@media (prefers-reduced-motion: reduce) {
+  .completion-component__input {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .completion-component__input {
+    border-width: 3px;
+    font-weight: 600;
+  }
+}
+/* === LEARNING COMPONENT BORDER - DARK MODE === */
+html.dark .completion-component__container {
+  border-color: var(--theme-border-modal-dark, rgba(255, 255, 255, 0.15));
+}

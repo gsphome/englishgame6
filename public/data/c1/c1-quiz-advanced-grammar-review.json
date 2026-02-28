@@ -1,0 +1,67 @@
+[
+  {
+    "question": "Which sentence uses the correct conditional structure?",
+    "options": [
+      "If I would have known, I would have come.",
+      "If I had known, I would have come.",
+      "If I have known, I would come.",
+      "If I knew, I would have come."
+    ],
+    "correct": 1,
+    "explanation": "Third conditional uses 'had + past participle' in the if-clause and 'would have + past participle' in the main clause.",
+    "category": "Grammar",
+    "level": "c1"
+  },
+  {
+    "question": "Select the sentence with correct inversion:",
+    "options": [
+      "Rarely I have seen such dedication.",
+      "Rarely have I seen such dedication.",
+      "Rarely I seen such dedication.",
+      "I have rarely seen such dedication."
+    ],
+    "correct": 1,
+    "explanation": "After negative adverbs like 'rarely', we invert the subject and auxiliary verb.",
+    "category": "Grammar",
+    "level": "c1"
+  },
+  {
+    "question": "Which participle clause is correct?",
+    "options": [
+      "Having finished the report, the meeting was started.",
+      "Having finished the report, we started the meeting.",
+      "Finishing the report, the meeting was started.",
+      "To finish the report, the meeting was started."
+    ],
+    "correct": 1,
+    "explanation": "The participle clause must have the same subject as the main clause. 'We' finished the report and 'we' started the meeting.",
+    "category": "Grammar",
+    "level": "c1"
+  },
+  {
+    "question": "Choose the correct subjunctive form:",
+    "options": [
+      "It's essential that he is here on time.",
+      "It's essential that he be here on time.",
+      "It's essential that he will be here on time.",
+      "It's essential that he was here on time."
+    ],
+    "correct": 1,
+    "explanation": "After expressions like 'it's essential that', we use the subjunctive form (base form of the verb).",
+    "category": "Grammar",
+    "level": "c1"
+  },
+  {
+    "question": "Which sentence demonstrates correct use of mixed conditionals?",
+    "options": [
+      "If I had studied harder, I would be successful now.",
+      "If I studied harder, I would have been successful now.",
+      "If I have studied harder, I would be successful now.",
+      "If I would study harder, I would be successful now."
+    ],
+    "correct": 0,
+    "explanation": "Mixed conditionals combine past condition (had + past participle) with present result (would + base verb).",
+    "category": "Grammar",
+    "level": "c1"
+  }
+]

@@ -1,0 +1,90 @@
+/**
+ * FluentFlowLogo Component - Pure BEM Implementation
+ * 
+ * Clean semantic styles for the FluentFlow logo
+ * Uses design system tokens and eliminates all Tailwind classes
+ */
+
+/* === LOGO COMPONENT === */
+.fluent-flow-logo {
+  display: inline-block;
+}
+
+/* === SIZE VARIANTS === */
+.fluent-flow-logo--sm {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.fluent-flow-logo--md {
+  width: 2rem;
+  height: 2rem;
+}
+
+.fluent-flow-logo--lg {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* === GRADIENT STOPS === */
+.fluent-flow-logo__gradient-start {
+  stop-color: var(--theme-primary-blue, #3b82f6);
+}
+
+.fluent-flow-logo__gradient-end {
+  stop-color: var(--theme-primary-blue-hover);
+}
+
+/* === BACKGROUND CIRCLE === */
+.fluent-flow-logo__background {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+/* === TEXT ELEMENT === */
+.fluent-flow-logo__text {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  fill: white;
+}
+
+/* === FLOW LINES === */
+.fluent-flow-logo path {
+  stroke: white;
+}
+
+/* === DARK MODE TEXT AND LINES === */
+.dark .fluent-flow-logo__text {
+  fill: white;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.8));
+}
+
+.dark .fluent-flow-logo path {
+  stroke: white;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.6));
+}
+
+/* === DARK MODE ENHANCEMENTS === */
+.dark .fluent-flow-logo__gradient-start {
+  stop-color: #60a5fa;
+}
+
+.dark .fluent-flow-logo__gradient-end {
+  stop-color: #3b82f6;
+}
+
+.dark .fluent-flow-logo__background {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* === ACCESSIBILITY === */
+@media (prefers-reduced-motion: reduce) {
+  .fluent-flow-logo__background {
+    filter: none;
+  }
+
+  .dark .fluent-flow-logo__background {
+    filter: none;
+  }
+}

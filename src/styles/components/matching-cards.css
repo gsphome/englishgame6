@@ -1,0 +1,214 @@
+/* Matching Cards - BEM-like Classes for Main Game Interface */
+
+/* Base Matching Card */
+.matching-cards__card {
+  width: 100%;
+  padding: var(--padding-lg, 1.5rem);
+  font-size: 0.875rem;
+  text-align: left;
+  border-width: 2px;
+  border-radius: var(--radius-lg, 0.5rem);
+  transition: all 0.2s ease;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Card States - Normal Game Play */
+.matching-cards__card--normal {
+  border-color: #e5e7eb;
+  background-color: white;
+  color: #111827;
+}
+
+.dark .matching-cards__card--normal {
+  border-color: #4b5563;
+  background-color: #374151;
+  color: white;
+}
+
+.matching-cards__card--normal:hover {
+  border-color: #ec4899;
+  background-color: #fdf2f8;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+}
+
+.dark .matching-cards__card--normal:hover {
+  border-color: #ec4899;
+  background-color: #831843;
+}
+
+.matching-cards__card--selected {
+  border-color: #ec4899;
+  background-color: #fce7f3;
+  color: #831843;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.dark .matching-cards__card--selected {
+  border-color: #ec4899;
+  background-color: #be185d;
+  color: white;
+}
+
+.matching-cards__card--matched {
+  border-color: #ec4899;
+  background-color: #fce7f3;
+  color: #831843;
+  cursor: pointer;
+}
+
+.dark .matching-cards__card--matched {
+  border-color: #ec4899;
+  background-color: #831843;
+  color: white;
+}
+
+/* Card States - After Correction (Professional Colors) */
+.matching-cards__card--result-correct {
+  border-color: #22c55e;
+  background-color: #22c55e;
+  color: white;
+  cursor: default;
+}
+
+.dark .matching-cards__card--result-correct {
+  border-color: #16a34a;
+  background-color: #16a34a;
+  color: white;
+}
+
+.matching-cards__card--result-incorrect {
+  border-color: #ef4444;
+  background-color: #ef4444;
+  color: white;
+  cursor: default;
+}
+
+.dark .matching-cards__card--result-incorrect {
+  border-color: #dc2626;
+  background-color: #dc2626;
+  color: white;
+}
+
+/* Card Content */
+.matching-cards__card__content {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.matching-cards__card__letter {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #3b82f6;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.matching-cards__card__text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.matching-cards__card__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.matching-cards__card__info-btn {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.matching-cards__card__info-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.matching-cards__card__match-number {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #ec4899;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Header Styles */
+.matching-cards__cards__header {
+  margin-bottom: 1rem;
+}
+
+.matching-cards__cards__header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.matching-cards__cards__header__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+@media (min-width: 640px) {
+  .matching-cards__cards__header__title {
+    font-size: 1.25rem;
+  }
+}
+
+.dark .matching-cards__cards__header__title {
+  color: white;
+}
+
+.matching-cards__cards__header__progress-badge {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b5563;
+  background-color: #f3f4f6;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.dark .matching-cards__cards__header__progress-badge {
+  color: #d1d5db;
+  background-color: #374151;
+}
+
+.matching-cards__cards__header__progress-bar {
+  width: 100%;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  height: 0.375rem;
+}
+
+.matching-cards__cards__header__progress-fill {
+  background-color: #ec4899;
+  height: 0.375rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}

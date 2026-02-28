@@ -1,0 +1,282 @@
+[
+  {
+    "front": "Innovation",
+    "back": "Innovación",
+    "ipa": "/ˌɪnəˈveɪʃn/",
+    "example": "The company is a leader in technological innovation.",
+    "example_es": "La empresa es líder en innovación tecnológica."
+  },
+  {
+    "front": "Algorithm",
+    "back": "Algoritmo",
+    "ipa": "/ˈælɡərɪðəm/",
+    "example": "Search engines use a complex algorithm to rank pages.",
+    "example_es": "Los motores de búsqueda utilizan un algoritmo complejo para clasificar las páginas."
+  },
+  {
+    "front": "Automation",
+    "back": "Automatización",
+    "ipa": "/ˌɔːtəˈmeɪʃn/",
+    "example": "Automation has increased productivity in factories.",
+    "example_es": "La automatización ha aumentado la productividad en las fábricas."
+  },
+  {
+    "front": "Cybersecurity",
+    "back": "Ciberseguridad",
+    "ipa": "/ˈsaɪbərsɪˌkjʊrəti/",
+    "example": "Cybersecurity is essential to protect sensitive data.",
+    "example_es": "La ciberseguridad es esencial para proteger los datos confidenciales."
+  },
+  {
+    "front": "Artificial Intelligence",
+    "back": "Inteligencia Artificial",
+    "ipa": "/ˌɑːrtɪˌfɪʃl ɪnˈtelɪdʒəns/",
+    "example": "Artificial Intelligence is transforming many industries.",
+    "example_es": "La Inteligencia Artificial está transformando muchas industrias."
+  },
+  {
+    "front": "Database",
+    "back": "Base de datos",
+    "ipa": "/ˈdeɪtəbeɪs/",
+    "example": "The company maintains a large database of customers.",
+    "example_es": "La empresa mantiene una gran base de datos de clientes."
+  },
+  {
+    "front": "Digital",
+    "back": "Digital",
+    "ipa": "/ˈdɪdʒɪtl/",
+    "example": "We are living in a digital age.",
+    "example_es": "Vivimos en una era digital."
+  },
+  {
+    "front": "Device",
+    "back": "Dispositivo",
+    "ipa": "/dɪˈvaɪs/",
+    "example": "A smartphone is a very useful device.",
+    "example_es": "Un teléfono inteligente es un dispositivo muy útil."
+  },
+  {
+    "front": "Gadget",
+    "back": "Aparato / Artilugio",
+    "ipa": "/ˈɡædʒɪt/",
+    "example": "He loves buying the latest electronic gadgets.",
+    "example_es": "Le encanta comprar los últimos aparatos electrónicos."
+  },
+  {
+    "front": "Network",
+    "back": "Red",
+    "ipa": "/ˈnetwɜːrk/",
+    "example": "The office network was down for an hour.",
+    "example_es": "La red de la oficina estuvo caída durante una hora."
+  },
+  {
+    "front": "Software",
+    "back": "Software",
+    "ipa": "/ˈsɒftweər/",
+    "example": "You need to install the new software to use this feature.",
+    "example_es": "Necesitas instalar el nuevo software para usar esta función."
+  },
+  {
+    "front": "Hardware",
+    "back": "Hardware",
+    "ipa": "/ˈhɑːrdweər/",
+    "example": "The computer's hardware was damaged.",
+    "example_es": "El hardware de la computadora estaba dañado."
+  },
+  {
+    "front": "Upload",
+    "back": "Subir / Cargar",
+    "ipa": "/ˌʌpˈloʊd/",
+    "example": "I need to upload these files to the server.",
+    "example_es": "Necesito subir estos archivos al servidor."
+  },
+  {
+    "front": "Download",
+    "back": "Descargar",
+    "ipa": "/ˈdaʊnloʊd/",
+    "example": "You can download the document from our website.",
+    "example_es": "Puedes descargar el documento desde nuestro sitio web."
+  },
+  {
+    "front": "User-friendly",
+    "back": "Fácil de usar",
+    "ipa": "/ˌjuːzər ˈfrendli/",
+    "example": "The new app is very user-friendly.",
+    "example_es": "La nueva aplicación es muy fácil de usar."
+  },
+  {
+    "front": "State-of-the-art",
+    "back": "De última generación",
+    "ipa": "/ˌsteɪt əv ðɪ ˈɑːrt/",
+    "example": "The hospital has state-of-the-art equipment.",
+    "example_es": "El hospital cuenta con equipos de última generación."
+  },
+  {
+    "front": "Virtual reality",
+    "back": "Realidad virtual",
+    "ipa": "/ˌvɜːrtʃuəl riˈæləti/",
+    "example": "Virtual reality games are becoming very popular.",
+    "example_es": "Los juegos de realidad virtual se están volviendo muy populares."
+  },
+  {
+    "front": "Biotechnology",
+    "back": "Biotecnología",
+    "ipa": "/ˌbaɪoʊtekˈnɒlədʒi/",
+    "example": "Biotechnology has led to new medical treatments.",
+    "example_es": "La biotecnología ha dado lugar a nuevos tratamientos médicos."
+  },
+  {
+    "front": "E-commerce",
+    "back": "Comercio electrónico",
+    "ipa": "/ˈiː kɒmɜːrs/",
+    "example": "E-commerce has changed the way people shop.",
+    "example_es": "El comercio electrónico ha cambiado la forma en que la gente compra."
+  },
+  {
+    "front": "Cloud computing",
+    "back": "Computación en la nube",
+    "ipa": "/ˌklaʊd kəmˈpjuːtɪŋ/",
+    "example": "Many companies now use cloud computing for data storage.",
+    "example_es": "Muchas empresas ahora usan la computación en la nube para el almacenamiento de datos."
+  },
+  {
+    "front": "Big data",
+    "back": "Grandes datos",
+    "ipa": "/ˌbɪɡ ˈdeɪtə/",
+    "example": "Big data analytics is transforming industries.",
+    "example_es": "El análisis de grandes datos está transformando las industrias."
+  },
+  {
+    "front": "Blockchain",
+    "back": "Cadena de bloques",
+    "ipa": "/ˈblɒktʃeɪn/",
+    "example": "Blockchain technology is behind cryptocurrencies.",
+    "example_es": "La tecnología blockchain está detrás de las criptomonedas."
+  },
+  {
+    "front": "Coding",
+    "back": "Programación",
+    "ipa": "/ˈkoʊdɪŋ/",
+    "example": "Learning coding is essential for software development.",
+    "example_es": "Aprender programación es esencial para el desarrollo de software."
+  },
+  {
+    "front": "Connectivity",
+    "back": "Conectividad",
+    "ipa": "/ˌkɒnekˈtɪvəti/",
+    "example": "High-speed connectivity is crucial for remote work.",
+    "example_es": "La conectividad de alta velocidad es crucial para el trabajo remoto."
+  },
+  {
+    "front": "Data privacy",
+    "back": "Privacidad de datos",
+    "ipa": "/ˈdeɪtə ˈprɪvəsi/",
+    "example": "Data privacy is a major concern for online users.",
+    "example_es": "La privacidad de datos es una preocupación importante para los usuarios en línea."
+  },
+  {
+    "front": "Digital transformation",
+    "back": "Transformación digital",
+    "ipa": "/ˌdɪdʒɪtl trænsfərˈmeɪʃn/",
+    "example": "Many companies are undergoing digital transformation.",
+    "example_es": "Muchas empresas están experimentando una transformación digital."
+  },
+  {
+    "front": "Disruptive technology",
+    "back": "Tecnología disruptiva",
+    "ipa": "/dɪsˈrʌptɪv tekˈnɒlədʒi/",
+    "example": "Artificial intelligence is a disruptive technology.",
+    "example_es": "La inteligencia artificial es una tecnología disruptiva."
+  },
+  {
+    "front": "Encryption",
+    "back": "Cifrado",
+    "ipa": "/ɪnˈkrɪpʃn/",
+    "example": "Encryption is used to protect sensitive information.",
+    "example_es": "El cifrado se utiliza para proteger la información sensible."
+  },
+  {
+    "front": "Firmware",
+    "back": "Firmware",
+    "ipa": "/ˈfɜːrmweər/",
+    "example": "You might need to update the device's firmware.",
+    "example_es": "Es posible que necesites actualizar el firmware del dispositivo."
+  },
+  {
+    "front": "Geolocation",
+    "back": "Geolocalización",
+    "ipa": "/ˌdʒiːoʊloʊˈkeɪʃn/",
+    "example": "Geolocation services are used in many mobile apps.",
+    "example_es": "Los servicios de geolocalización se utilizan en muchas aplicaciones móviles."
+  },
+  {
+    "front": "Hacking",
+    "back": "Hacking",
+    "ipa": "/ˈhækɪŋ/",
+    "example": "The company was a victim of a major hacking attack.",
+    "example_es": "La empresa fue víctima de un importante ataque de hacking."
+  },
+  {
+    "front": "Internet of Things (IoT)",
+    "back": "Internet de las cosas (IoT)",
+    "ipa": "/ˈɪntərnet ɒv θɪŋz/",
+    "example": "The Internet of Things connects everyday objects to the internet.",
+    "example_es": "El Internet de las cosas conecta objetos cotidianos a internet."
+  },
+  {
+    "front": "Machine learning",
+    "back": "Aprendizaje automático",
+    "ipa": "/məˈʃiːn ˈlɜːrnɪŋ/",
+    "example": "Machine learning is a subset of artificial intelligence.",
+    "example_es": "El aprendizaje automático es un subconjunto de la inteligencia artificial."
+  },
+  {
+    "front": "Open source",
+    "back": "Código abierto",
+    "ipa": "/ˌoʊpən ˈsɔːrs/",
+    "example": "Many developers contribute to open source projects.",
+    "example_es": "Muchos desarrolladores contribuyen a proyectos de código abierto."
+  },
+  {
+    "front": "Platform",
+    "back": "Plataforma",
+    "ipa": "/ˈplætfɔːrm/",
+    "example": "The new software runs on multiple platforms.",
+    "example_es": "El nuevo software se ejecuta en múltiples plataformas."
+  },
+  {
+    "front": "Robotics",
+    "back": "Robótica",
+    "ipa": "/roʊˈbɒtɪks/",
+    "example": "Robotics is an exciting field of engineering.",
+    "example_es": "La robótica es un campo emocionante de la ingeniería."
+  },
+  {
+    "front": "Server",
+    "back": "Servidor",
+    "ipa": "/ˈsɜːrvər/",
+    "example": "The website is hosted on a powerful server.",
+    "example_es": "El sitio web está alojado en un potente servidor."
+  },
+  {
+    "front": "Virtualization",
+    "back": "Virtualización",
+    "ipa": "/ˌvɜːrtʃuəlaɪˈzeɪʃn/",
+    "example": "Virtualization allows multiple operating systems to run on one machine.",
+    "example_es": "La virtualización permite que múltiples sistemas operativos se ejecuten en una máquina."
+  },
+  {
+    "front": "Wearable technology",
+    "back": "Tecnología ponible",
+    "ipa": "/ˈweərəbl tekˈnɒlədʒi/",
+    "example": "Smartwatches are a popular form of wearable technology.",
+    "example_es": "Los relojes inteligentes son una forma popular de tecnología ponible."
+  },
+  {
+    "front": "Augmented reality",
+    "back": "Realidad aumentada",
+    "ipa": "/ˌɔːɡmentɪd riˈæləti/",
+    "example": "Augmented reality apps overlay digital information onto the real world.",
+    "example_es": "Las aplicaciones de realidad aumentada superponen información digital al mundo real."
+  }
+]

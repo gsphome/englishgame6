@@ -1,0 +1,161 @@
+/**
+ * Learning Progress Header - Unified Component
+ * 
+ * Standardized progress header for all 5 learning modes
+ * Provides consistent UX across Flashcards, Quiz, Completion, Sorting, and Matching
+ */
+
+/* === LEARNING PROGRESS HEADER BLOCK === */
+.learning-progress-header {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.learning-progress-header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.learning-progress-header__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--theme-text-primary, #111827);
+  margin: 0;
+  flex: 1;
+  text-align: left;
+}
+
+.learning-progress-header__counter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4rem;
+  padding: var(--padding-sm, 0.5rem) var(--padding-lg, 1.5rem);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+  background-color: var(--theme-bg-subtle, #f9fafb);
+  color: var(--theme-text-secondary, #6b7280);
+  border-radius: 9999px;
+  border: 1px solid var(--theme-border-soft, #f3f4f6);
+  flex-shrink: 0;
+}
+
+.learning-progress-header__progress-container {
+  width: 100%;
+  height: 5px;
+  background-color: var(--theme-bg-soft, #f3f4f6);
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.learning-progress-header__progress-fill {
+  --progress-width: 0%;
+  width: var(--progress-width);
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+
+/* Progress fill variants for different learning modes */
+.learning-progress-header__progress-fill--flashcard {
+  background: linear-gradient(
+    90deg,
+    var(--theme-primary-blue, #3b82f6) 0%,
+    var(--theme-primary-purple, #8b5cf6) 100%
+  );
+}
+
+.learning-progress-header__progress-fill--quiz {
+  background-color: var(--theme-success, #10b981);
+}
+
+.learning-progress-header__progress-fill--completion {
+  background: linear-gradient(
+    90deg,
+    var(--theme-primary-purple, #8b5cf6) 0%,
+    var(--theme-primary-blue, #3b82f6) 100%
+  );
+}
+
+.learning-progress-header__progress-fill--sorting {
+  background: linear-gradient(
+    90deg,
+    var(--theme-primary-purple, #8b5cf6) 0%,
+    var(--theme-primary-blue, #3b82f6) 100%
+  );
+}
+
+.learning-progress-header__progress-fill--matching {
+  background-color: var(--theme-primary-purple, #8b5cf6);
+}
+
+.learning-progress-header__help-text {
+  font-size: 0.75rem;
+  color: var(--theme-text-tertiary, #9ca3af);
+  margin: 0;
+  font-style: italic;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (min-width: 640px) {
+  .learning-progress-header__title {
+    font-size: 1.375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .learning-progress-header__top {
+    margin-bottom: 0.5rem;
+  }
+
+  .learning-progress-header__title {
+    font-size: 1.125rem;
+  }
+
+  .learning-progress-header__counter {
+    min-width: 3.5rem;
+    padding: var(--padding-xs, 0.25rem) var(--padding-md, 1rem);
+    font-size: 0.8125rem;
+  }
+
+  .learning-progress-header__progress-container {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* === DARK MODE === */
+html.dark .learning-progress-header__title {
+  color: var(--theme-text-primary, #ffffff);
+}
+
+html.dark .learning-progress-header__counter {
+  background-color: var(--theme-bg-subtle, #374151);
+  border-color: var(--theme-border-soft, #4b5563);
+  color: var(--theme-text-secondary, #d1d5db);
+}
+
+html.dark .learning-progress-header__progress-container {
+  background-color: var(--theme-bg-soft, #4b5563);
+}
+
+html.dark .learning-progress-header__help-text {
+  color: var(--theme-text-tertiary, #9ca3af);
+}
+
+/* === ACCESSIBILITY === */
+@media (prefers-reduced-motion: reduce) {
+  .learning-progress-header__progress-fill {
+    transition: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .learning-progress-header__counter {
+    border-width: 2px;
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,332 @@
+/* Mobile Dark Theme - Mobile Dark Mode + Safari Fixes
+ * Theme context for mobile devices in dark mode
+ * Touch optimizations with dark colors
+ * 44px minimum touch targets, Safari fixes, enhanced contrast
+ * Optimized styles for mobile devices in dark mode
+ * Includes Safari Mobile specific fixes and touch target optimizations
+ */
+
+/* MOBILE DARK CONTEXT */
+/* Mobile dark theme context for screens up to 768px in dark mode */
+@media (max-width: 768px) {
+  html.dark {
+    /* BASE MOBILE OPTIMIZATIONS */
+    /* Touch targets optimized to 44px minimum for accessibility */
+
+    /* HEADER COMPONENT */
+    /* DISABLED: These rules conflict with header.css variables */
+    /*
+    .header-redesigned {
+      background-color: var(--theme-bg-elevated, #ffffff);
+      color: var(--theme-text-primary, #374151);
+      border-color: var(--theme-border-soft, #f3f4f6);
+      min-height: 56px;
+      padding: 0.75rem 1rem;
+    }
+
+    .header-redesigned__title,
+    .header-redesigned__username {
+      color: var(--theme-text-primary, #374151);
+      font-size: 1.1rem;
+    }
+
+    .header-redesigned svg,
+    .header-redesigned [data-lucide] {
+      color: var(--theme-text-secondary, #6b7280);
+      stroke: var(--theme-text-secondary, #6b7280);
+      width: 24px;
+      height: 24px;
+    }
+
+    .header-redesigned__button {
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0.5rem;
+    }
+
+    .header-redesigned__button:hover {
+      background-color: var(--theme-bg-soft, #f9fafb);
+    }
+    */
+
+    /* MODULE CARDS */
+    .module-card {
+      background-color: var(--theme-bg-elevated, #ffffff);
+      color: var(--theme-text-primary, #374151);
+      border-color: var(--theme-border-soft, #f3f4f6);
+      /* Card optimizations with touch-friendly spacing */
+      margin-bottom: 1rem;
+      padding: 1.25rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow-medium, 0 4px 6px rgba(0, 0, 0, 0.1));
+      /* Touch target optimization */
+      min-height: 44px;
+    }
+
+    .module-card__title {
+      color: var(--theme-text-primary, #374151);
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .module-card__description {
+      color: var(--theme-text-secondary, #6b7280);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .module-card svg {
+      color: var(--theme-text-secondary, #6b7280);
+      stroke: var(--theme-text-secondary, #6b7280);
+      /* Appropriately sized icons */
+      width: 20px;
+      height: 20px;
+    }
+
+    /* NAVIGATION */
+    .nav-btn {
+      background-color: transparent;
+      color: var(--theme-text-primary, #374151);
+      border-color: var(--theme-border-soft, #f3f4f6);
+      /* 44px minimum touch targets */
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0.75rem;
+    }
+
+    .nav-btn:active {
+      background-color: var(--theme-border-medium, #e5e7eb);
+      transform: scale(0.98);
+    }
+
+    .nav-btn--on-colored {
+      color: var(--theme-text-on-colored, #ffffff);
+      border-color: var(--theme-border-on-colored);
+    }
+
+    /* COMPACT SETTINGS */
+    .compact-settings__container {
+      background-color: var(--theme-bg-elevated, #ffffff);
+      border-color: var(--theme-border-subtle, #f9fafb);
+      /* Full width, better spacing */
+      margin: 0.5rem;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-strong, 0 10px 15px rgba(0, 0, 0, 0.1));
+    }
+
+    .compact-settings__header {
+      background-color: var(--theme-bg-elevated, #ffffff);
+      color: var(--theme-text-primary, #374151);
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--theme-border-soft, #f3f4f6);
+    }
+
+    .compact-settings__content {
+      background-color: var(--theme-bg-elevated, #ffffff);
+      color: var(--theme-text-primary, #374151);
+      padding: 1rem 0;
+    }
+
+    .compact-settings__footer {
+      background-color: var(--theme-bg-elevated, #ffffff);
+      color: var(--theme-text-primary, #374151);
+      padding-top: 1rem;
+      border-top: 1px solid var(--theme-border-soft, #f3f4f6);
+    }
+
+    .compact-settings__title {
+      color: var(--theme-text-primary, #374151);
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .compact-settings__label {
+      color: var(--theme-text-primary, #374151);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .compact-settings__input,
+    .compact-settings__select {
+      background-color: var(--theme-bg-subtle, #fafafa);
+      color: var(--theme-text-primary, #374151);
+      border-color: var(--theme-border-soft, #f3f4f6);
+      /* 44px minimum touch targets */
+      min-height: 44px;
+      padding: 0.75rem 1rem;
+      font-size: 16px; /* Prevents zoom on iOS Safari */
+      border-radius: 8px;
+    }
+
+    .compact-settings__input:focus,
+    .compact-settings__select:focus {
+      border-color: var(--theme-primary-purple);
+      box-shadow: 0 0 0 3px var(--theme-primary-purple-light);
+      outline: none;
+    }
+
+    /* LEARNING COMPONENTS */
+    .flashcard-component,
+    .quiz-component,
+    .sorting-component,
+    .matching-component {
+      background-color: var(--theme-bg-elevated, #ffffff);
+      color: var(--theme-text-primary, #374151);
+      border-color: var(--theme-border-soft, #f3f4f6);
+      /* Better spacing and touch */
+      margin: 0.75rem;
+      padding: 1.5rem;
+      border-radius: 16px;
+      box-shadow: var(--shadow-medium, 0 4px 6px rgba(0, 0, 0, 0.1));
+    }
+
+    .quiz-component__question-card,
+    .flashcard-component__card,
+    .matching-component__item,
+    .sorting-component__item {
+      background-color: var(--theme-bg-elevated, #ffffff);
+      border-color: var(--theme-border-soft, #f3f4f6);
+      box-shadow: var(--shadow-subtle, 0 1px 3px rgba(0, 0, 0, 0.1));
+      /* Touch target optimization */
+      min-height: 44px;
+    }
+
+    .quiz-component__option--selected,
+    .matching-component__item--selected {
+      color: var(--theme-text-on-colored, #ffffff);
+      border-color: transparent;
+    }
+
+    .progress-bar {
+      background-color: var(--theme-bg-soft, #f9fafb);
+    }
+
+    /* MAIN MENU */
+    .main-menu {
+      background-color: var(--theme-bg-elevated, #ffffff);
+      border-color: var(--theme-border-soft, #f3f4f6);
+      /* Full screen overlay */
+      border-radius: 0;
+    }
+
+    .main-menu__item {
+      color: var(--theme-text-primary, #374151);
+      /* 44px minimum touch targets */
+      padding: 1rem 1.5rem;
+      font-size: 1.1rem;
+      min-height: 44px;
+    }
+
+    .main-menu__item:active {
+      background-color: var(--theme-border-medium, #e5e7eb);
+      transform: scale(0.98);
+    }
+  }
+}
+
+/* SAFARI MOBILE SPECIFIC FIXES */
+/* Integrated from safari-mobile-fix.css for complete consolidation */
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 768px) {
+    /* Force dark mode when system is light but app is dark */
+    /* justified: Must override Safari's prefers-color-scheme */
+    @media (prefers-color-scheme: light) {
+      html.dark {
+        color-scheme: dark; /* Safari override */
+        -webkit-color-scheme: dark; /* Safari override */
+        background-color: var(--theme-bg-primary, #1f2937); /* Safari override */
+        color: var(--theme-text-primary, #ffffff); /* Safari override */
+      }
+
+      /* Component-specific Safari fixes with theme tokens */
+      html.dark .header-redesigned,
+      html.dark .module-card,
+      html.dark .compact-settings__container {
+        background-color: var(--theme-bg-elevated, #1f2937);
+        color: var(--theme-text-primary, #ffffff);
+        border-color: var(--theme-border-soft, #4b5563);
+      }
+
+      html.dark .compact-settings__header,
+      html.dark .compact-settings__content,
+      html.dark .compact-settings__footer {
+        background-color: var(--theme-bg-elevated, #1f2937);
+        color: var(--theme-text-primary, #ffffff);
+      }
+
+      html.dark .compact-settings__input,
+      html.dark .compact-settings__select {
+        background-color: var(--theme-bg-subtle, #374151);
+        color: var(--theme-text-primary, #ffffff);
+        border-color: var(--theme-border-soft, #4b5563);
+        /* Safari-specific: Prevent zoom on focus */
+        font-size: 16px;
+      }
+
+      /* SVG icons Safari fix with theme tokens */
+      html.dark svg,
+      html.dark [data-lucide] {
+        color: var(--theme-text-secondary, #e5e7eb);
+        stroke: var(--theme-text-secondary, #e5e7eb);
+      }
+    }
+
+    /* Additional Safari webkit fixes */
+    html.dark {
+      -webkit-appearance: none;
+      -webkit-color-scheme: dark;
+    }
+
+    /* Safari touch target optimization */
+    html.dark button,
+    html.dark input,
+    html.dark select {
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
+      -webkit-touch-callout: none;
+    }
+  }
+}
+
+/* MOBILE DARK ACCESSIBILITY */
+@media (max-width: 768px) and (prefers-contrast: high) {
+  html.dark {
+    .header-redesigned,
+    .module-card,
+    .compact-settings__container {
+      border-width: 2px;
+      border-style: solid;
+      border-color: var(--theme-text-primary, #374151);
+    }
+
+    .compact-settings__input,
+    .compact-settings__select {
+      border-width: 2px;
+      border-color: var(--theme-text-primary, #374151);
+    }
+
+    .header-redesigned__title,
+    .module-card__title,
+    .compact-settings__title {
+      color: var(--theme-text-primary, #374151);
+      font-weight: 600;
+    }
+  }
+}
+
+/* MOBILE DARK REDUCED MOTION */
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  html.dark {
+    .nav-btn:active,
+    .main-menu__item:active {
+      transform: none;
+    }
+
+    .header-redesigned,
+    .module-card,
+    .nav-btn,
+    .compact-settings__input {
+      transition: none;
+    }
+  }
+}

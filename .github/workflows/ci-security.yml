@@ -1,0 +1,58 @@
+name: CI Security
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  security:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline
+
+      - name: Dependency audit
+        run: npm audit --audit-level=high --omit=dev
+
+      - name: Production audit
+        run: npm audit --audit-level=high --production
+
+      - name: Critical vulnerabilities
+        run: npm audit --audit-level=critical
+
+      - name: Security patterns check
+        run: |
+          echo "🔍 Checking for security patterns..."
+          
+          # Check for eval() usage - critical security risk
+          if find src \( -name "*.ts" -o -name "*.tsx" -o -name "*.js" -o -name "*.jsx" \) | xargs grep -l "eval(" 2>/dev/null; then
+            echo "🚨 Found eval() usage - potential security risk"
+            exit 1
+          fi
+          
+          echo "✅ Security patterns check completed"
+
+      - name: Secret scan with TruffleHog
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          base: ${{ github.event.before }}
+          head: ${{ github.sha }}

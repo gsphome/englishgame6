@@ -1,0 +1,962 @@
+[
+  {
+    "front": "Analyze",
+    "back": "Analizar",
+    "ipa": "/ˈænəlaɪz/",
+    "example": "You need to analyze the data carefully.",
+    "example_es": "Necesitas analizar los datos cuidadosamente.",
+    "category": "General"
+  },
+  {
+    "front": "Assume",
+    "back": "Asumir",
+    "ipa": "/əˈsuːm/",
+    "example": "Never assume you know the answer.",
+    "example_es": "Nunca asumas que sabes la respuesta.",
+    "category": "General"
+  },
+  {
+    "front": "Benefit",
+    "back": "Beneficio",
+    "ipa": "/ˈbenɪfɪt/",
+    "example": "What is the main benefit of this approach?",
+    "example_es": "¿Cuál es el principal beneficio de este enfoque?",
+    "category": "General"
+  },
+  {
+    "front": "Concept",
+    "back": "Concepto",
+    "ipa": "/ˈkɒnsept/",
+    "example": "It's important to understand the basic concepts.",
+    "example_es": "Es importante entender los conceptos básicos.",
+    "category": "General"
+  },
+  {
+    "front": "Context",
+    "back": "Contexto",
+    "ipa": "/ˈkɒntekst/",
+    "example": "The meaning of a word can change with context.",
+    "example_es": "El significado de una palabra puede cambiar con el contexto.",
+    "category": "General"
+  },
+  {
+    "front": "Criteria",
+    "back": "Criterios",
+    "ipa": "/kraɪˈtɪəriə/",
+    "example": "What are the criteria for success?",
+    "example_es": "¿Cuáles son los criterios para el éxito?",
+    "category": "General"
+  },
+  {
+    "front": "Data",
+    "back": "Datos",
+    "ipa": "/ˈdeɪtə/",
+    "example": "We need more data to make a decision.",
+    "example_es": "Necesitamos más datos para tomar una decisión.",
+    "category": "General"
+  },
+  {
+    "front": "Factor",
+    "back": "Factor",
+    "ipa": "/ˈfæktər/",
+    "example": "Cost is a major factor in our decision.",
+    "example_es": "El costo es un factor importante en nuestra decisión.",
+    "category": "General"
+  },
+  {
+    "front": "Function",
+    "back": "Función",
+    "ipa": "/ˈfʌŋkʃn/",
+    "example": "What is the function of this device?",
+    "example_es": "¿Cuál es la función de este dispositivo?",
+    "category": "General"
+  },
+  {
+    "front": "Issue",
+    "back": "Asunto / Problema",
+    "ipa": "/ˈɪʃuː/",
+    "example": "This is a complex issue with no easy solution.",
+    "example_es": "Este es un asunto complejo sin una solución fácil.",
+    "category": "General"
+  },
+  {
+    "front": "Method",
+    "back": "Método",
+    "ipa": "/ˈmeθəd/",
+    "example": "We need a new method to solve this problem.",
+    "example_es": "Necesitamos un nuevo método para resolver este problema.",
+    "category": "General"
+  },
+  {
+    "front": "Period",
+    "back": "Período",
+    "ipa": "/ˈpɪəriəd/",
+    "example": "This was a period of great change.",
+    "example_es": "Este fue un período de grandes cambios.",
+    "category": "General"
+  },
+  {
+    "front": "Principle",
+    "back": "Principio",
+    "ipa": "/ˈprɪnsəpl/",
+    "example": "This is a fundamental principle of science.",
+    "example_es": "Este es un principio fundamental de la ciencia.",
+    "category": "General"
+  },
+  {
+    "front": "Role",
+    "back": "Rol / Papel",
+    "ipa": "/rəʊl/",
+    "example": "He played a key role in the project.",
+    "example_es": "Él jugó un papel clave en el proyecto.",
+    "category": "General"
+  },
+  {
+    "front": "Sector",
+    "back": "Sector",
+    "ipa": "/ˈsektər/",
+    "example": "The technology sector is growing rapidly.",
+    "example_es": "El sector tecnológico está creciendo rápidamente.",
+    "category": "General"
+  },
+  {
+    "front": "Source",
+    "back": "Fuente",
+    "ipa": "/sɔːrs/",
+    "example": "What is the source of this information?",
+    "example_es": "¿Cuál es la fuente de esta información?",
+    "category": "General"
+  },
+  {
+    "front": "Structure",
+    "back": "Estructura",
+    "ipa": "/ˈstrʌktʃər/",
+    "example": "The structure of the building is very complex.",
+    "example_es": "La estructura del edificio es muy compleja.",
+    "category": "General"
+  },
+  {
+    "front": "Theory",
+    "back": "Teoría",
+    "ipa": "/ˈθɪəri/",
+    "example": "This is just a theory, it hasn't been proven.",
+    "example_es": "Esto es solo una teoría, no ha sido probada.",
+    "category": "General"
+  },
+  {
+    "front": "Variable",
+    "back": "Variable",
+    "ipa": "/ˈveəriəbl/",
+    "example": "There are too many variables to consider.",
+    "example_es": "Hay demasiadas variables a considerar.",
+    "category": "General"
+  },
+  {
+    "front": "Trend",
+    "back": "Tendencia",
+    "ipa": "/trend/",
+    "example": "There is a growing trend towards online shopping.",
+    "example_es": "Hay una tendencia creciente hacia las compras en línea.",
+    "category": "General"
+  },
+  {
+    "front": "Access",
+    "back": "Acceso",
+    "ipa": "/ˈækses/",
+    "example": "You need a password to access the system.",
+    "example_es": "Necesitas una contraseña para acceder al sistema.",
+    "category": "General"
+  },
+  {
+    "front": "Achieve",
+    "back": "Lograr",
+    "ipa": "/əˈtʃiːv/",
+    "example": "She worked hard to achieve her goals.",
+    "example_es": "Ella trabajó duro para lograr sus metas.",
+    "category": "General"
+  },
+  {
+    "front": "Acquire",
+    "back": "Adquirir",
+    "ipa": "/əˈkwaɪər/",
+    "example": "The company acquired a new subsidiary.",
+    "example_es": "La empresa adquirió una nueva subsidiaria.",
+    "category": "General"
+  },
+  {
+    "front": "Adapt",
+    "back": "Adaptar",
+    "ipa": "/əˈdæpt/",
+    "example": "It's important to adapt to new situations.",
+    "example_es": "Es importante adaptarse a nuevas situaciones.",
+    "category": "General"
+  },
+  {
+    "front": "Adjust",
+    "back": "Ajustar",
+    "ipa": "/əˈdʒʌst/",
+    "example": "You need to adjust the settings.",
+    "example_es": "Necesitas ajustar la configuración.",
+    "category": "General"
+  },
+  {
+    "front": "Administer",
+    "back": "Administrar",
+    "ipa": "/ədˈmɪnɪstər/",
+    "example": "He administers the daily operations of the office.",
+    "example_es": "Él administra las operaciones diarias de la oficina.",
+    "category": "General"
+  },
+  {
+    "front": "Affect",
+    "back": "Afectar",
+    "ipa": "/əˈfekt/",
+    "example": "The new policy will affect everyone.",
+    "example_es": "La nueva política afectará a todos.",
+    "category": "General"
+  },
+  {
+    "front": "Allocate",
+    "back": "Asignar",
+    "ipa": "/ˈæləkeɪt/",
+    "example": "We need to allocate resources efficiently.",
+    "example_es": "Necesitamos asignar los recursos de manera eficiente.",
+    "category": "General"
+  },
+  {
+    "front": "Alter",
+    "back": "Alterar",
+    "ipa": "/ˈɔːltər/",
+    "example": "The design was altered to fit the new requirements.",
+    "example_es": "El diseño fue alterado para ajustarse a los nuevos requisitos.",
+    "category": "General"
+  },
+  {
+    "front": "Apparent",
+    "back": "Aparente / Evidente",
+    "ipa": "/əˈpærənt/",
+    "example": "It was apparent that he was tired.",
+    "example_es": "Era evidente que estaba cansado.",
+    "category": "General"
+  },
+  {
+    "front": "Approach",
+    "back": "Enfoque / Abordar",
+    "ipa": "/əˈproʊtʃ/",
+    "example": "We need a new approach to this problem.",
+    "example_es": "Necesitamos un nuevo enfoque para este problema.",
+    "category": "General"
+  },
+  {
+    "front": "Area",
+    "back": "Área",
+    "ipa": "/ˈeəriə/",
+    "example": "This is a restricted area.",
+    "example_es": "Esta es un área restringida.",
+    "category": "General"
+  },
+  {
+    "front": "Aspect",
+    "back": "Aspecto",
+    "ipa": "/ˈæspekt/",
+    "example": "Consider every aspect of the situation.",
+    "example_es": "Considera cada aspecto de la situación.",
+    "category": "General"
+  },
+  {
+    "front": "Assess",
+    "back": "Evaluar",
+    "ipa": "/əˈses/",
+    "example": "We need to assess the damage.",
+    "example_es": "Necesitamos evaluar el daño.",
+    "category": "General"
+  },
+  {
+    "front": "Assist",
+    "back": "Ayudar / Asistir",
+    "ipa": "/əˈsɪst/",
+    "example": "Can I assist you with anything?",
+    "example_es": "¿Puedo ayudarte en algo?",
+    "category": "General"
+  },
+  {
+    "front": "Assume",
+    "back": "Asumir",
+    "ipa": "/əˈsuːm/",
+    "example": "Don't assume anything.",
+    "example_es": "No asumas nada.",
+    "category": "General"
+  },
+  {
+    "front": "Authority",
+    "back": "Autoridad",
+    "ipa": "/əˈθɔːrəti/",
+    "example": "He has the authority to make decisions.",
+    "example_es": "Él tiene la autoridad para tomar decisiones.",
+    "category": "General"
+  },
+  {
+    "front": "Available",
+    "back": "Disponible",
+    "ipa": "/əˈveɪləbl/",
+    "example": "The information is available online.",
+    "example_es": "La información está disponible en línea.",
+    "category": "General"
+  },
+  {
+    "front": "Aware",
+    "back": "Consciente",
+    "ipa": "/əˈweər/",
+    "example": "Are you aware of the risks?",
+    "example_es": "¿Eres consciente de los riesgos?",
+    "category": "General"
+  },
+  {
+    "front": "Challenge",
+    "back": "Desafío",
+    "ipa": "/ˈtʃælɪndʒ/",
+    "example": "This project presents a new challenge.",
+    "example_es": "Este proyecto presenta un nuevo desafío.",
+    "category": "General"
+  },
+  {
+    "front": "Innovation",
+    "back": "Innovación",
+    "ipa": "/ˌɪnəˈveɪʃn/",
+    "example": "The company is a leader in technological innovation.",
+    "example_es": "La empresa es líder en innovación tecnológica.",
+    "category": "Technology"
+  },
+  {
+    "front": "Algorithm",
+    "back": "Algoritmo",
+    "ipa": "/ˈælɡərɪðəm/",
+    "example": "Search engines use a complex algorithm to rank pages.",
+    "example_es": "Los motores de búsqueda utilizan un algoritmo complejo para clasificar las páginas.",
+    "category": "Technology"
+  },
+  {
+    "front": "Automation",
+    "back": "Automatización",
+    "ipa": "/ˌɔːtəˈmeɪʃn/",
+    "example": "Automation has increased productivity in factories.",
+    "example_es": "La automatización ha aumentado la productividad en las fábricas.",
+    "category": "Technology"
+  },
+  {
+    "front": "Cybersecurity",
+    "back": "Ciberseguridad",
+    "ipa": "/ˈsaɪbərsɪˌkjʊrəti/",
+    "example": "Cybersecurity is essential to protect sensitive data.",
+    "example_es": "La ciberseguridad es esencial para proteger los datos confidenciales.",
+    "category": "Technology"
+  },
+  {
+    "front": "Artificial Intelligence",
+    "back": "Inteligencia Artificial",
+    "ipa": "/ˌɑːrtɪˌfɪʃl ɪnˈtelɪdʒəns/",
+    "example": "Artificial Intelligence is transforming many industries.",
+    "example_es": "La Inteligencia Artificial está transformando muchas industrias.",
+    "category": "Technology"
+  },
+  {
+    "front": "Database",
+    "back": "Base de datos",
+    "ipa": "/ˈdeɪtəbeɪs/",
+    "example": "The company maintains a large database of customers.",
+    "example_es": "La empresa mantiene una gran base de datos de clientes.",
+    "category": "Technology"
+  },
+  {
+    "front": "Digital",
+    "back": "Digital",
+    "ipa": "/ˈdɪdʒɪtl/",
+    "example": "We are living in a digital age.",
+    "example_es": "Vivimos en una era digital.",
+    "category": "Technology"
+  },
+  {
+    "front": "Device",
+    "back": "Dispositivo",
+    "ipa": "/dɪˈvaɪs/",
+    "example": "A smartphone is a very useful device.",
+    "example_es": "Un teléfono inteligente es un dispositivo muy útil.",
+    "category": "Technology"
+  },
+  {
+    "front": "Gadget",
+    "back": "Aparato / Artilugio",
+    "ipa": "/ˈɡædʒɪt/",
+    "example": "He loves buying the latest electronic gadgets.",
+    "example_es": "Le encanta comprar los últimos aparatos electrónicos.",
+    "category": "Technology"
+  },
+  {
+    "front": "Network",
+    "back": "Red",
+    "ipa": "/ˈnetwɜːrk/",
+    "example": "The office network was down for an hour.",
+    "example_es": "La red de la oficina estuvo caída durante una hora.",
+    "category": "Technology"
+  },
+  {
+    "front": "Software",
+    "back": "Software",
+    "ipa": "/ˈsɒftweər/",
+    "example": "You need to install the new software to use this feature.",
+    "example_es": "Necesitas instalar el nuevo software para usar esta función.",
+    "category": "Technology"
+  },
+  {
+    "front": "Hardware",
+    "back": "Hardware",
+    "ipa": "/ˈhɑːrdweər/",
+    "example": "The computer's hardware was damaged.",
+    "example_es": "El hardware de la computadora estaba dañado.",
+    "category": "Technology"
+  },
+  {
+    "front": "Upload",
+    "back": "Subir / Cargar",
+    "ipa": "/ˌʌpˈloʊd/",
+    "example": "I need to upload these files to the server.",
+    "example_es": "Necesito subir estos archivos al servidor.",
+    "category": "Technology"
+  },
+  {
+    "front": "Download",
+    "back": "Descargar",
+    "ipa": "/ˈdaʊnloʊd/",
+    "example": "You can download the document from our website.",
+    "example_es": "Puedes descargar el documento desde nuestro sitio web.",
+    "category": "Technology"
+  },
+  {
+    "front": "User-friendly",
+    "back": "Fácil de usar",
+    "ipa": "/ˌjuːzər ˈfrendli/",
+    "example": "The new app is very user-friendly.",
+    "example_es": "La nueva aplicación es muy fácil de usar.",
+    "category": "Technology"
+  },
+  {
+    "front": "State-of-the-art",
+    "back": "De última generación",
+    "ipa": "/ˌsteɪt əv ðɪ ˈɑːrt/",
+    "example": "The hospital has state-of-the-art equipment.",
+    "example_es": "El hospital cuenta con equipos de última generación.",
+    "category": "Technology"
+  },
+  {
+    "front": "Virtual reality",
+    "back": "Realidad virtual",
+    "ipa": "/ˌvɜːrtʃuəl riˈæləti/",
+    "example": "Virtual reality games are becoming very popular.",
+    "example_es": "Los juegos de realidad virtual se están volviendo muy populares.",
+    "category": "Technology"
+  },
+  {
+    "front": "Biotechnology",
+    "back": "Biotecnología",
+    "ipa": "/ˌbaɪoʊtekˈnɒlədʒi/",
+    "example": "Biotechnology has led to new medical treatments.",
+    "example_es": "La biotecnología ha dado lugar a nuevos tratamientos médicos.",
+    "category": "Technology"
+  },
+  {
+    "front": "E-commerce",
+    "back": "Comercio electrónico",
+    "ipa": "/ˈiː kɒmɜːrs/",
+    "example": "E-commerce has changed the way people shop.",
+    "example_es": "El comercio electrónico ha cambiado la forma en que la gente compra.",
+    "category": "Technology"
+  },
+  {
+    "front": "Cloud computing",
+    "back": "Computación en la nube",
+    "ipa": "/ˌklaʊd kəmˈpjuːtɪŋ/",
+    "example": "Many companies now use cloud computing for data storage.",
+    "example_es": "Muchas empresas ahora usan la computación en la nube para el almacenamiento de datos.",
+    "category": "Technology"
+  },
+  {
+    "front": "Big data",
+    "back": "Grandes datos",
+    "ipa": "/ˌbɪɡ ˈdeɪtə/",
+    "example": "Big data analytics is transforming industries.",
+    "example_es": "El análisis de grandes datos está transformando las industrias.",
+    "category": "Technology"
+  },
+  {
+    "front": "Blockchain",
+    "back": "Cadena de bloques",
+    "ipa": "/ˈblɒktʃeɪn/",
+    "example": "Blockchain technology is behind cryptocurrencies.",
+    "example_es": "La tecnología blockchain está detrás de las criptomonedas.",
+    "category": "Technology"
+  },
+  {
+    "front": "Coding",
+    "back": "Programación",
+    "ipa": "/ˈkoʊdɪŋ/",
+    "example": "Learning coding is essential for software development.",
+    "example_es": "Aprender programación es esencial para el desarrollo de software.",
+    "category": "Technology"
+  },
+  {
+    "front": "Connectivity",
+    "back": "Conectividad",
+    "ipa": "/ˌkɒnekˈtɪvəti/",
+    "example": "High-speed connectivity is crucial for remote work.",
+    "example_es": "La conectividad de alta velocidad es crucial para el trabajo remoto.",
+    "category": "Technology"
+  },
+  {
+    "front": "Data privacy",
+    "back": "Privacidad de datos",
+    "ipa": "/ˈdeɪtə ˈprɪvəsi/",
+    "example": "Data privacy is a major concern for online users.",
+    "example_es": "La privacidad de datos es una preocupación importante para los usuarios en línea.",
+    "category": "Technology"
+  },
+  {
+    "front": "Digital transformation",
+    "back": "Transformación digital",
+    "ipa": "/ˌdɪdʒɪtl trænsfərˈmeɪʃn/",
+    "example": "Many companies are undergoing digital transformation.",
+    "example_es": "Muchas empresas están experimentando una transformación digital.",
+    "category": "Technology"
+  },
+  {
+    "front": "Disruptive technology",
+    "back": "Tecnología disruptiva",
+    "ipa": "/dɪsˈrʌptɪv tekˈnɒlədʒi/",
+    "example": "Artificial intelligence is a disruptive technology.",
+    "example_es": "La inteligencia artificial es una tecnología disruptiva.",
+    "category": "Technology"
+  },
+  {
+    "front": "Encryption",
+    "back": "Cifrado",
+    "ipa": "/ɪnˈkrɪpʃn/",
+    "example": "Encryption is used to protect sensitive information.",
+    "example_es": "El cifrado se utiliza para proteger la información sensible.",
+    "category": "Technology"
+  },
+  {
+    "front": "Firmware",
+    "back": "Firmware",
+    "ipa": "/ˈfɜːrmweər/",
+    "example": "You might need to update the device's firmware.",
+    "example_es": "Es posible que necesites actualizar el firmware del dispositivo.",
+    "category": "Technology"
+  },
+  {
+    "front": "Geolocation",
+    "back": "Geolocalización",
+    "ipa": "/ˌdʒiːoʊloʊˈkeɪʃn/",
+    "example": "Geolocation services are used in many mobile apps.",
+    "example_es": "Los servicios de geolocalización se utilizan en muchas aplicaciones móviles.",
+    "category": "Technology"
+  },
+  {
+    "front": "Hacking",
+    "back": "Hacking",
+    "ipa": "/ˈhækɪŋ/",
+    "example": "The company was a victim of a major hacking attack.",
+    "example_es": "La empresa fue víctima de un importante ataque de hacking.",
+    "category": "Technology"
+  },
+  {
+    "front": "Internet of Things (IoT)",
+    "back": "Internet de las cosas (IoT)",
+    "ipa": "/ˈɪntərnet ɒv θɪŋz/",
+    "example": "The Internet of Things connects everyday objects to the internet.",
+    "example_es": "El Internet de las cosas conecta objetos cotidianos a internet.",
+    "category": "Technology"
+  },
+  {
+    "front": "Machine learning",
+    "back": "Aprendizaje automático",
+    "ipa": "/məˈʃiːn ˈlɜːrnɪŋ/",
+    "example": "Machine learning is a subset of artificial intelligence.",
+    "example_es": "El aprendizaje automático es un subconjunto de la inteligencia artificial.",
+    "category": "Technology"
+  },
+  {
+    "front": "Open source",
+    "back": "Código abierto",
+    "ipa": "/ˌoʊpən ˈsɔːrs/",
+    "example": "Many developers contribute to open source projects.",
+    "example_es": "Muchos desarrolladores contribuyen a proyectos de código abierto.",
+    "category": "Technology"
+  },
+  {
+    "front": "Platform",
+    "back": "Plataforma",
+    "ipa": "/ˈplætfɔːrm/",
+    "example": "The new software runs on multiple platforms.",
+    "example_es": "El nuevo software se ejecuta en múltiples plataformas.",
+    "category": "Technology"
+  },
+  {
+    "front": "Robotics",
+    "back": "Robótica",
+    "ipa": "/roʊˈbɒtɪks/",
+    "example": "Robotics is an exciting field of engineering.",
+    "example_es": "La robótica es un campo emocionante de la ingeniería.",
+    "category": "Technology"
+  },
+  {
+    "front": "Server",
+    "back": "Servidor",
+    "ipa": "/ˈsɜːrvər/",
+    "example": "The website is hosted on a powerful server.",
+    "example_es": "El sitio web está alojado en un potente servidor.",
+    "category": "Technology"
+  },
+  {
+    "front": "Virtualization",
+    "back": "Virtualización",
+    "ipa": "/ˌvɜːrtʃuəlaɪˈzeɪʃn/",
+    "example": "Virtualization allows multiple operating systems to run on one machine.",
+    "example_es": "La virtualización permite que múltiples sistemas operativos se ejecuten en una máquina.",
+    "category": "Technology"
+  },
+  {
+    "front": "Wearable technology",
+    "back": "Tecnología ponible",
+    "ipa": "/ˈweərəbl tekˈnɒlədʒi/",
+    "example": "Smartwatches are a popular form of wearable technology.",
+    "example_es": "Los relojes inteligentes son una forma popular de tecnología ponible.",
+    "category": "Technology"
+  },
+  {
+    "front": "Augmented reality",
+    "back": "Realidad aumentada",
+    "ipa": "/ˌɔːɡmentɪd riˈæləti/",
+    "example": "Augmented reality apps overlay digital information onto the real world.",
+    "example_es": "Las aplicaciones de realidad aumentada superponen información digital al mundo real.",
+    "category": "Technology"
+  },
+  {
+    "front": "Dress up",
+    "back": "Vestirse elegante / Disfrazarse",
+    "ipa": "/dres ʌp/",
+    "example": "She likes to dress up for parties.",
+    "example_es": "Le gusta vestirse elegante para las fiestas.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Smarten up",
+    "back": "Arreglarse / Mejorar el aspecto",
+    "ipa": "/ˈsmɑːrtn ʌp/",
+    "example": "He needs to smarten up for the interview.",
+    "example_es": "Necesita arreglarse para la entrevista.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Try on",
+    "back": "Probarse (ropa)",
+    "ipa": "/traɪ ɒn/",
+    "example": "She's been trying on clothes all morning.",
+    "example_es": "Ha estado probándose ropa toda la mañana.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Take off",
+    "back": "Quitarse (ropa)",
+    "ipa": "/teɪk ɒf/",
+    "example": "He needs to take off his shoes before he comes in.",
+    "example_es": "Necesita quitarse los zapatos antes de entrar.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Put on",
+    "back": "Ponerse (ropa/maquillaje)",
+    "ipa": "/pʊt ɒn/",
+    "example": "She's been putting on her makeup.",
+    "example_es": "Se ha estado maquillando.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Do up",
+    "back": "Abrochar / Atar",
+    "ipa": "/duː ʌp/",
+    "example": "He needs to do up his shoelaces.",
+    "example_es": "Necesita atarse los cordones de los zapatos.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Wrap up",
+    "back": "Abrigarse",
+    "ipa": "/ræp ʌp/",
+    "example": "She<s been wrapping up warm because it>s cold outside.",
+    "example_es": "Se ha estado abrigando porque hace frío fuera.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Get changed out of",
+    "back": "Quitarse (ropa mojada)",
+    "ipa": "/ɡet tʃeɪndʒd aʊt ɒv/",
+    "example": "He needs to get changed out of his wet clothes.",
+    "example_es": "Necesita quitarse la ropa mojada.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Slip into",
+    "back": "Ponerse (ropa fácilmente)",
+    "ipa": "/slɪp ˈɪntuː/",
+    "example": "She's been slipping into her new dress.",
+    "example_es": "Se ha estado poniendo su nuevo vestido fácilmente.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Throw on",
+    "back": "Ponerse (ropa rápidamente)",
+    "ipa": "/θroʊ ɒn/",
+    "example": "He needs to throw on a jacket before he goes out.",
+    "example_es": "Necesita ponerse una chaqueta antes de salir.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Show off",
+    "back": "Presumir / Alardear",
+    "ipa": "/ʃoʊ ɒf/",
+    "example": "She's been showing off her new ring.",
+    "example_es": "Ha estado presumiendo de su nuevo anillo.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Grow out",
+    "back": "Dejar crecer (pelo)",
+    "ipa": "/ɡroʊ aʊt/",
+    "example": "He needs to grow out his hair.",
+    "example_es": "Necesita dejarse crecer el pelo.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Let out",
+    "back": "Ensanchar (ropa)",
+    "ipa": "/let aʊt/",
+    "example": "She's been letting out her dress.",
+    "example_es": "Ha estado ensanchando su vestido.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Take in",
+    "back": "Estrechar (ropa)",
+    "ipa": "/teɪk ɪn/",
+    "example": "He needs to take in his trousers.",
+    "example_es": "Necesita estrechar sus pantalones.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Zip up",
+    "back": "Subir la cremallera",
+    "ipa": "/zɪp ʌp/",
+    "example": "He needs to zip up his jacket.",
+    "example_es": "Necesita subirse la cremallera de la chaqueta.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Kick off",
+    "back": "Quitarse (zapatos)",
+    "ipa": "/kɪk ɒf/",
+    "example": "She's been kicking off her shoes.",
+    "example_es": "Se ha estado quitando los zapatos.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Pull up",
+    "back": "Subir (ropa)",
+    "ipa": "/pʊl ʌp/",
+    "example": "He needs to pull up his socks.",
+    "example_es": "Necesita subirse los calcetines.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Slip out of",
+    "back": "Quitarse (ropa fácilmente)",
+    "ipa": "/slɪp aʊt ɒv/",
+    "example": "She's been slipping out of her wet clothes.",
+    "example_es": "Se ha estado quitando la ropa mojada fácilmente.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Accessorize",
+    "back": "Complementar / Accesorizar",
+    "ipa": "/əkˈsesəraɪz/",
+    "example": "She loves to accessorize her outfits with scarves and jewelry.",
+    "example_es": "Le encanta complementar sus atuendos con bufandas y joyas.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Button up",
+    "back": "Abrocharse (botones)",
+    "ipa": "/ˈbʌtn ʌp/",
+    "example": "Button up your coat, it's cold outside.",
+    "example_es": "Abróchate el abrigo, hace frío fuera.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Change into",
+    "back": "Cambiarse a (ropa)",
+    "ipa": "/tʃeɪndʒ ˈɪntuː/",
+    "example": "I need to change into something more comfortable.",
+    "example_es": "Necesito cambiarme a algo más cómodo.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Dress down",
+    "back": "Vestir informal",
+    "ipa": "/dres daʊn/",
+    "example": "It's a casual office, so you can dress down.",
+    "example_es": "Es una oficina informal, así que puedes vestir informal.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Fasten up",
+    "back": "Abrochar / Sujetar",
+    "ipa": "/ˈfɑːsn ʌp/",
+    "example": "Fasten up your seatbelt before we start.",
+    "example_es": "Abróchate el cinturón antes de que empecemos.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Get dressed",
+    "back": "Vestirse",
+    "ipa": "/ɡet drest/",
+    "example": "I need to get dressed for work.",
+    "example_es": "Necesito vestirme para el trabajo.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Get undressed",
+    "back": "Desvestirse",
+    "ipa": "/ɡet ʌnˈdrest/",
+    "example": "He got undressed and went to bed.",
+    "example_es": "Se desvistió y se fue a la cama.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Go with",
+    "back": "Combinar con",
+    "ipa": "/ɡoʊ wɪð/",
+    "example": "That shirt doesn't go with your trousers.",
+    "example_es": "Esa camisa no combina con tus pantalones.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Hang up",
+    "back": "Colgar (ropa)",
+    "ipa": "/hæŋ ʌp/",
+    "example": "Please hang up your coat in the closet.",
+    "example_es": "Por favor, cuelga tu abrigo en el armario.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Lace up",
+    "back": "Atarse (cordones)",
+    "ipa": "/leɪs ʌp/",
+    "example": "Lace up your boots before you go hiking.",
+    "example_es": "Átate las botas antes de ir de excursión.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Match",
+    "back": "Hacer juego / Combinar",
+    "ipa": "/mætʃ/",
+    "example": "Her shoes match her bag perfectly.",
+    "example_es": "Sus zapatos combinan perfectamente con su bolso.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Pull on",
+    "back": "Ponerse (rápidamente)",
+    "ipa": "/pʊl ɒn/",
+    "example": "She pulled on a sweater as it was getting cold.",
+    "example_es": "Se puso un suéter rápidamente porque estaba haciendo frío.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Slip on",
+    "back": "Ponerse (fácilmente)",
+    "ipa": "/slɪp ɒn/",
+    "example": "He slipped on his shoes and left.",
+    "example_es": "Se puso los zapatos fácilmente y se fue.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Unbutton",
+    "back": "Desabrochar",
+    "ipa": "/ʌnˈbʌtn/",
+    "example": "He unbuttoned his shirt.",
+    "example_es": "Se desabrochó la camisa.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Unzip",
+    "back": "Bajar la cremallera",
+    "ipa": "/ʌnˈzɪp/",
+    "example": "Unzip your jacket, it's warm in here.",
+    "example_es": "Baja la cremallera de tu chaqueta, hace calor aquí.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Wear out",
+    "back": "Desgastar / Gastar (ropa)",
+    "ipa": "/weər aʊt/",
+    "example": "I've worn out my favorite jeans.",
+    "example_es": "He desgastado mis vaqueros favoritos.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Zip down",
+    "back": "Bajar la cremallera",
+    "ipa": "/zɪp daʊn/",
+    "example": "Zip down your jacket if you're hot.",
+    "example_es": "Baja la cremallera de tu chaqueta si tienes calor.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Dress down",
+    "back": "Vestir informal",
+    "ipa": "/dres daʊn/",
+    "example": "It's a casual office, so you can dress down.",
+    "example_es": "Es una oficina informal, así que puedes vestir informal.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Fling on",
+    "back": "Ponerse rápidamente",
+    "ipa": "/flɪŋ ɒn/",
+    "example": "She flung on a coat and ran out the door.",
+    "example_es": "Se puso un abrigo rápidamente y salió corriendo por la puerta.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Get dressed up",
+    "back": "Arreglarse/Vestirse de gala",
+    "ipa": "/ɡet drest ʌp/",
+    "example": "We're getting dressed up for the party tonight.",
+    "example_es": "Nos estamos arreglando para la fiesta de esta noche.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Put on weight",
+    "back": "Engordar",
+    "ipa": "/pʊt ɒn weɪt/",
+    "example": "I've put on a lot of weight since I stopped exercising.",
+    "example_es": "He engordado mucho desde que dejé de hacer ejercicio.",
+    "category": "Clothing"
+  },
+  {
+    "front": "Take off weight",
+    "back": "Adelgazar",
+    "ipa": "/teɪk ɒf weɪt/",
+    "example": "She's trying to take off weight for her wedding.",
+    "example_es": "Está intentando adelgazar para su boda.",
+    "category": "Clothing"
+  }
+]

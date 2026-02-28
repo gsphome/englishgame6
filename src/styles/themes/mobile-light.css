@@ -1,0 +1,352 @@
+/**
+ * Mobile Light Theme - Mobile Light Mode + Safari Fixes
+ * 
+ * Theme context for mobile devices in light mode
+ * MOBILE_LIGHT_THEME - Touch optimizations with light colors
+ * 44px minimum touch targets, Safari fixes, mobile-specific interactions
+ * 
+ * Optimized styles for mobile devices in light mode
+ * Includes Safari Mobile specific fixes and touch target optimizations (44px minimum)
+ * Integrated content from mobile-theme-fix.css and safari-mobile-fix.css
+ */
+
+/* === MOBILE LIGHT CONTEXT === */
+/* MOBILE_LIGHT_MEDIA_QUERY - Mobile light theme context */
+/* Applies to screens up to 768px in light mode */
+@media (max-width: 768px) {
+  html.light,
+  html:not(.dark) {
+    /* === BASE MOBILE OPTIMIZATIONS === */
+    /* Touch targets optimized to 44px minimum for accessibility */
+
+    /* === HEADER COMPONENT === */
+    /* DISABLED: These rules conflict with header.css variables */
+    /*
+    .header-redesigned {
+      background-color: var(--theme-bg-elevated, #ffffff);
+      color: var(--theme-text-primary, #374151);
+      border-color: var(--theme-border-soft, #f3f4f6);
+      min-height: 56px;
+      padding: 0.75rem 1rem;
+    }
+
+    .header-redesigned__title,
+    .header-redesigned__username {
+      color: var(--theme-text-primary, #374151);
+      font-size: 1.1rem;
+    }
+
+    .header-redesigned svg,
+    .header-redesigned [data-lucide] {
+      color: var(--theme-text-secondary, #6b7280);
+      stroke: var(--theme-text-secondary, #6b7280);
+      width: 24px;
+      height: 24px;
+    }
+
+    .header-redesigned__button {
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0.5rem;
+    }
+
+    .header-redesigned__button:hover {
+      background-color: var(--theme-bg-subtle, #fafafa);
+    }
+    */
+
+    /* === MODULE CARDS === */
+    .module-card {
+      background-color: var(--theme-bg-elevated, #ffffff);
+      color: var(--theme-text-primary, #374151);
+      border-color: var(--theme-border-soft, #f3f4f6);
+      /* Mobile-specific: Card optimizations with touch-friendly spacing */
+      margin-bottom: 1rem;
+      padding: 1.25rem;
+      border-radius: 12px;
+      /* Touch target optimization */
+      min-height: 44px;
+    }
+
+    .module-card__title {
+      color: var(--theme-text-primary, #374151);
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .module-card__description {
+      color: var(--theme-text-secondary, #6b7280);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .module-card svg {
+      color: var(--theme-text-secondary, #6b7280);
+      stroke: var(--theme-text-secondary, #6b7280);
+      /* Mobile-specific: Appropriately sized icons */
+      width: 20px;
+      height: 20px;
+    }
+
+    /* === NAVIGATION === */
+    .nav-btn {
+      background-color: transparent;
+      color: var(--theme-text-primary, #374151);
+      border-color: var(--theme-border-soft, #f3f4f6);
+      /* Mobile-specific: 44px minimum touch targets */
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0.75rem;
+    }
+
+    .nav-btn:active {
+      background-color: var(--theme-bg-soft, #f9fafb);
+      transform: scale(0.98);
+    }
+
+    .nav-btn--on-colored {
+      color: var(--theme-text-on-colored, #ffffff);
+      border-color: var(--theme-border-on-colored);
+    }
+
+    /* === COMPACT SETTINGS === */
+    .compact-settings__container {
+      background-color: var(--theme-bg-elevated, #ffffff);
+      border-color: var(--theme-border-soft, #f3f4f6);
+      /* Mobile-specific: Full width, better spacing */
+      margin: 0.5rem;
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+
+    .compact-settings__header {
+      background-color: var(--theme-bg-elevated, #ffffff);
+      color: var(--theme-text-primary, #374151);
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--theme-border-soft, #f3f4f6);
+    }
+
+    .compact-settings__content {
+      background-color: var(--theme-bg-elevated, #ffffff);
+      color: var(--theme-text-primary, #374151);
+      padding: 1rem 0;
+    }
+
+    .compact-settings__footer {
+      background-color: var(--theme-bg-elevated, #ffffff);
+      color: var(--theme-text-primary, #374151);
+      padding-top: 1rem;
+      border-top: 1px solid var(--theme-border-soft, #f3f4f6);
+    }
+
+    .compact-settings__title {
+      color: var(--theme-text-primary, #374151);
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .compact-settings__label {
+      color: var(--theme-text-primary, #374151);
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .compact-settings__input,
+    .compact-settings__select {
+      background-color: var(--theme-bg-elevated, #ffffff);
+      color: var(--theme-text-primary, #374151);
+      border-color: var(--theme-border-soft, #f3f4f6);
+      /* Mobile-specific: 44px minimum touch targets */
+      min-height: 44px;
+      padding: 0.75rem 1rem;
+      font-size: 16px; /* Prevents zoom on iOS Safari */
+      border-radius: 8px;
+    }
+
+    .compact-settings__input:focus,
+    .compact-settings__select:focus {
+      border-color: var(--theme-primary-purple);
+      box-shadow: 0 0 0 3px var(--theme-primary-purple-light);
+      outline: none;
+    }
+
+    /* === LEARNING COMPONENTS === */
+    .flashcard-component,
+    .quiz-component,
+    .sorting-component,
+    .matching-component {
+      background-color: var(--theme-bg-elevated, #ffffff);
+      color: var(--theme-text-primary, #374151);
+      border-color: var(--theme-border-soft, #f3f4f6);
+      /* Mobile-specific: Better spacing and touch */
+      margin: 0.75rem;
+      padding: 1.5rem;
+      border-radius: 16px;
+    }
+
+    .quiz-component__question-card,
+    .flashcard-component__card,
+    .matching-component__item,
+    .sorting-component__item {
+      background-color: var(--theme-bg-elevated, #ffffff);
+      border-color: var(--theme-border-soft, #f3f4f6);
+      box-shadow: var(--shadow-subtle, 0 1px 3px rgba(0, 0, 0, 0.1));
+      /* Touch target optimization */
+      min-height: 44px;
+    }
+
+    .quiz-component__option--selected,
+    .matching-component__item--selected {
+      color: var(--theme-text-on-colored, #ffffff);
+      border-color: transparent;
+    }
+
+    .progress-bar {
+      background-color: var(--theme-bg-soft, #f9fafb);
+    }
+
+    /* === MAIN MENU === */
+    .main-menu {
+      background-color: var(--theme-bg-elevated, #ffffff);
+      border-color: var(--theme-border-subtle, #f9fafb);
+      /* Mobile-specific: Full screen overlay */
+      border-radius: 0;
+    }
+
+    .main-menu__item {
+      color: var(--theme-text-primary, #374151);
+      /* Mobile-specific: 44px minimum touch targets */
+      padding: 1rem 1.5rem;
+      font-size: 1.1rem;
+      min-height: 44px;
+    }
+
+    .main-menu__item:active {
+      background-color: var(--theme-bg-soft, #f9fafb);
+      transform: scale(0.98);
+    }
+  }
+}
+
+/* === SAFARI MOBILE SPECIFIC FIXES === */
+/* Integrated from safari-mobile-fix.css for complete consolidation */
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 768px) {
+    /* Force light mode when system is dark but app is light */
+    /* justified: Must override Safari's prefers-color-scheme */
+    @media (prefers-color-scheme: dark) {
+      html:not(.dark),
+      html.light {
+        color-scheme: light; /* Safari override */
+        -webkit-color-scheme: light; /* Safari override */
+        background-color: var(--theme-bg-elevated, #ffffff); /* Safari override */
+        color: var(--theme-text-primary, #111827); /* Safari override */
+      }
+
+      /* Component-specific Safari fixes with theme tokens */
+      html:not(.dark) .header-redesigned,
+      html:not(.dark) .module-card,
+      html:not(.dark) .compact-settings__container,
+      html.light .header-redesigned,
+      html.light .module-card,
+      html.light .compact-settings__container {
+        background-color: var(--theme-bg-elevated, #ffffff);
+        color: var(--theme-text-primary, #111827);
+        border-color: var(--theme-border-soft, #e5e7eb);
+      }
+
+      html:not(.dark) .compact-settings__header,
+      html:not(.dark) .compact-settings__content,
+      html:not(.dark) .compact-settings__footer,
+      html.light .compact-settings__header,
+      html.light .compact-settings__content,
+      html.light .compact-settings__footer {
+        background-color: var(--theme-bg-elevated, #ffffff);
+        color: var(--theme-text-primary, #111827);
+      }
+
+      html:not(.dark) .compact-settings__input,
+      html:not(.dark) .compact-settings__select,
+      html.light .compact-settings__input,
+      html.light .compact-settings__select {
+        background-color: var(--theme-bg-elevated, #ffffff);
+        color: var(--theme-text-primary, #111827);
+        border-color: var(--theme-border-soft, #d1d5db);
+        /* Safari-specific: Prevent zoom on focus */
+        font-size: 16px;
+      }
+
+      /* SVG icons Safari fix with theme tokens */
+      html:not(.dark) svg,
+      html:not(.dark) [data-lucide],
+      html.light svg,
+      html.light [data-lucide] {
+        color: var(--theme-text-secondary, #374151);
+        stroke: var(--theme-text-secondary, #374151);
+      }
+    }
+
+    /* Additional Safari webkit fixes */
+    html:not(.dark),
+    html.light {
+      -webkit-appearance: none;
+      -webkit-color-scheme: light;
+    }
+
+    /* Safari touch target optimization */
+    html:not(.dark) button,
+    html:not(.dark) input,
+    html:not(.dark) select,
+    html.light button,
+    html.light input,
+    html.light select {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+      -webkit-touch-callout: none;
+    }
+  }
+}
+
+/* === MOBILE LIGHT ACCESSIBILITY === */
+@media (max-width: 768px) and (prefers-contrast: high) {
+  html.light,
+  html:not(.dark) {
+    .header-redesigned,
+    .module-card,
+    .compact-settings__container {
+      border-width: 2px;
+      border-style: solid;
+      border-color: var(--theme-text-primary, #374151);
+    }
+
+    .compact-settings__input,
+    .compact-settings__select {
+      border-width: 2px;
+      border-color: var(--theme-text-primary, #374151);
+    }
+
+    .header-redesigned__title,
+    .module-card__title,
+    .compact-settings__title {
+      font-weight: 600;
+      color: var(--theme-text-primary, #374151);
+    }
+  }
+}
+
+/* === MOBILE LIGHT REDUCED MOTION === */
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+  html.light,
+  html:not(.dark) {
+    .nav-btn:active,
+    .main-menu__item:active {
+      transform: none;
+    }
+
+    .header-redesigned,
+    .module-card,
+    .nav-btn,
+    .compact-settings__input {
+      transition: none;
+    }
+  }
+}

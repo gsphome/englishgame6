@@ -1,0 +1,1414 @@
+/**
+ * Matching Component - BEM Implementation
+ * 
+ * Clean semantic styles for matching learning mode
+ * Uses design system tokens and eliminates inline styles
+ */
+
+/* === MATCHING COMPONENT BLOCK === */
+.matching-component {
+  max-width: 42rem;
+  margin: 0.125rem auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    135deg,
+    var(--theme-bg-elevated, #ffffff) 0%,
+    var(--theme-bg-subtle, #f9fafb) 100%
+  );
+  border: 1px solid var(--theme-border-modal, rgba(0, 0, 0, 0.1));
+  border-radius: var(--radius-lg, 0.5rem);
+}
+
+/* === HEADER - Now using unified LearningProgressHeader === */
+/* Header styles removed - using LearningProgressHeader component */
+
+/* === LOADING === */
+.matching-component__loading {
+  text-align: center;
+  padding: 2rem;
+}
+
+.matching-component__loading-text {
+  color: var(--theme-text-secondary, #6b7280);
+}
+
+/* === BUTTONS === */
+/* Button styles are defined in the MATCHING BUTTONS section below */
+
+/* === ITEM ACTIONS === */
+.matching-component__item-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+  flex-shrink: 0;
+  min-width: 2rem;
+  height: 1.5rem;
+}
+
+.matching-component__match-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--theme-primary-blue, #3b82f6);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* === CONTROLS === */
+/* === CONTROLS - Using Unified Game Controls === */
+/* All control styles moved to game-controls.css */
+
+/* === MODAL STYLES === */
+/* All modal styles have been moved to matching-modal.css to avoid conflicts and maintain consistency */
+
+@media (min-width: 640px) {
+  .matching-component {
+    padding: 0.75rem;
+  }
+}
+
+/* === MATCHING HEADER - Now using unified LearningProgressHeader === */
+
+/* === MATCHING GRID === */
+.matching-component__grid {
+  margin-bottom: 0.625rem;
+}
+
+.matching-component__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .matching-component__columns {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2px;
+  }
+}
+
+.matching-component__column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 0.75rem;
+}
+
+.matching-component__column-header {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--theme-text-primary, #111827);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  padding: 0.375rem 0.5rem;
+  background-color: var(--theme-bg-subtle, #f9fafb);
+  border: 1px solid var(--theme-border-subtle, #e5e7eb);
+  border-radius: 0.75rem;
+}
+
+/* === MATCHING ITEMS === */
+/* Inspired by quiz-component design with clear borders and states */
+
+.matching-component__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--theme-bg-elevated, #ffffff);
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: var(--transition-interactive);
+  text-align: left;
+  width: 100%;
+  min-height: 2.5rem;
+  box-sizing: border-box;
+  box-shadow: var(--shadow-card-default);
+  font-weight: 500;
+  margin: 0.25rem 0;
+  color: #1f2937;
+}
+
+/* HOVER STATE - Enhanced for non-selected cards (NO LAYOUT SHIFT) */
+.matching-component__item:hover:not(.matching-component__item--selected):not(
+    .matching-component__item--matched
+  ):not(.matching-component__item--correct):not(.matching-component__item--incorrect):not(
+    .matching-component__item--matched-inactive
+  ) {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-color: #3b82f6;
+  /* Professional hover: scale from center (no layout shift) */
+  transform: scale(1.02);
+  box-shadow:
+    0 4px 12px rgba(59, 130, 246, 0.15),
+    0 0 0 2px rgba(59, 130, 246, 0.1);
+  transition: var(--transition-interactive);
+}
+
+/* DEFAULT STATE - Improved design for non-selected cards */
+.matching-component__item:not(.matching-component__item--selected):not(
+    .matching-component__item--matched
+  ):not(.matching-component__item--correct):not(.matching-component__item--incorrect):not(
+    .matching-component__item--matched-inactive
+  ):not(.matching-component__item--unmatched) {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 2px solid #d1d5db;
+  box-shadow: var(--shadow-card-default);
+  color: #374151;
+  font-weight: 500;
+  transition: var(--transition-interactive);
+}
+
+/* SELECTED STATE - Clear selection with strong border (NO LAYOUT SHIFT) */
+html body .matching-component .matching-component__item--selected {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+  border: 3px solid #1e40af !important;
+  color: #ffffff !important;
+  /* Professional selection: scale from center (no layout shift) */
+  transform: scale(1.03) !important;
+  box-shadow:
+    0 8px 20px rgba(59, 130, 246, 0.3),
+    0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+  font-weight: 600 !important;
+  transition: var(--transition-interactive) !important;
+}
+
+/* MATCHED STATE - Improved contrast with animation */
+.matching-component__item--matched {
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  border: 2px solid #0284c7;
+  color: #0c4a6e;
+  cursor: default;
+  box-shadow: var(--shadow-card-default);
+  font-weight: 600;
+  transition: var(--transition-interactive);
+  animation: pulse-success var(--animation-normal) ease-out;
+}
+
+/* MATCHED INACTIVE STATE - Better readability */
+.matching-component__item--matched-inactive {
+  background-color: #f8fafc;
+  border: 2px solid #cbd5e1;
+  color: #475569;
+  cursor: not-allowed;
+  opacity: 0.8;
+  box-shadow: none;
+  font-weight: 500;
+  transition: var(--transition-interactive);
+}
+
+/* UNMATCHED STATE - Clear warning with border */
+.matching-component__item--unmatched {
+  background-color: #fef3c7;
+  border: 2px solid #f59e0b;
+  color: #92400e;
+  box-shadow: var(--shadow-card-default);
+  font-weight: 500;
+  transition: var(--transition-interactive);
+}
+
+/* CORRECT STATE - Soft success styling with better UX */
+.matching-component__item--correct {
+  background: linear-gradient(
+    135deg,
+    rgba(34, 197, 94, 0.12) 0%,
+    rgba(34, 197, 94, 0.08) 100%
+  ) !important;
+  border: 2px solid rgba(34, 197, 94, 0.4) !important;
+  color: #166534 !important;
+  box-shadow: var(--shadow-card-hover) !important;
+  font-weight: 600 !important;
+  transition: var(--transition-interactive) !important;
+  animation: pulse-success var(--animation-normal) ease-out !important;
+}
+
+/* INCORRECT STATE - Soft error styling with better UX */
+.matching-component__item--incorrect {
+  background: linear-gradient(
+    135deg,
+    rgba(239, 68, 68, 0.15) 0%,
+    rgba(239, 68, 68, 0.1) 100%
+  ) !important;
+  border: 2px solid rgba(239, 68, 68, 0.5) !important;
+  color: #991b1b !important;
+  box-shadow: var(--shadow-card-hover) !important;
+  font-weight: 600 !important;
+  transition: var(--transition-interactive) !important;
+}
+
+.matching-component__item:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.matching-component__item-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 0.75rem;
+  min-height: 1.5rem;
+  position: relative;
+}
+
+html body .matching-component .matching-component__item-letter {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  background-color: #e5e7eb !important;
+  color: #374151 !important;
+  border-radius: 50% !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  flex-shrink: 0 !important;
+  margin-right: 0.75rem !important;
+  transition: var(--transition-interactive) !important;
+  border: 1px solid #d1d5db !important;
+}
+
+.matching-component__item-letter--orange {
+  background-color: #f97316;
+  color: #ffffff;
+}
+
+/* Letter states - matching quiz component pattern */
+html body .matching-component .matching-component__item--selected .matching-component__item-letter {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  border: 2px solid #1d4ed8 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3) !important;
+}
+
+/* SELECTED TEXT - High specificity to ensure white text */
+html body .matching-component .matching-component__item--selected,
+html body .matching-component .matching-component__item--selected *,
+html body .matching-component button.matching-component__item--selected,
+html body .matching-component button.matching-component__item--selected * {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+html body .matching-component .matching-component__item--matched .matching-component__item-letter {
+  background-color: #ffffff !important;
+  color: #0c4a6e !important;
+  border: 2px solid #0284c7 !important;
+  font-weight: 700 !important;
+}
+
+.matching-component__item--matched-inactive .matching-component__item-letter {
+  background-color: #f3f4f6;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+  font-weight: 600;
+}
+
+.matching-component__item--unmatched .matching-component__item-letter {
+  background-color: #ffffff;
+  color: #92400e;
+  border: 2px solid #f59e0b;
+  font-weight: 700;
+}
+
+html body .matching-component .matching-component__item--correct .matching-component__item-letter {
+  background-color: #22c55e !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border: 2px solid #16a34a !important;
+  box-shadow: 0 2px 6px rgba(34, 197, 94, 0.3) !important;
+}
+
+.matching-component__item--incorrect .matching-component__item-letter {
+  background-color: #ef4444 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border: 2px solid #dc2626 !important;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.3) !important;
+}
+
+.matching-component__item-text {
+  flex: 1;
+  font-size: 0.875rem;
+  color: var(--theme-text-primary, #111827);
+  line-height: 1.25rem;
+  min-height: 1.25rem;
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem;
+  overflow: visible;
+  /* CHANGED: was 'hidden' - could be cutting off text */
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+/* IMMEDIATE OVERRIDE - Applied right after base selector */
+/* NUCLEAR OPTION: Force white text with maximum possible specificity */
+
+/* Correct state - ALL possible selectors */
+.matching-component__item--correct .matching-component__item-text,
+.matching-component__item--correct .matching-component__item-text *,
+.matching-component__item--correct * .matching-component__item-text,
+.matching-component__item.matching-component__item--correct .matching-component__item-text,
+button.matching-component__item--correct .matching-component__item-text,
+div.matching-component__item--correct .matching-component__item-text,
+span.matching-component__item--correct .matching-component__item-text,
+[class*='matching-component__item--correct'] .matching-component__item-text {
+  color: #ffffff;
+  /* FORCE WHITE TEXT ON CORRECT STATE */
+}
+
+/* Incorrect state - ALL possible selectors */
+.matching-component__item--incorrect .matching-component__item-text,
+.matching-component__item--incorrect .matching-component__item-text *,
+.matching-component__item--incorrect * .matching-component__item-text,
+.matching-component__item.matching-component__item--incorrect .matching-component__item-text,
+button.matching-component__item--incorrect .matching-component__item-text,
+div.matching-component__item--incorrect .matching-component__item-text,
+span.matching-component__item--incorrect .matching-component__item-text,
+[class*='matching-component__item--incorrect'] .matching-component__item-text {
+  color: #ffffff;
+  /* FORCE WHITE TEXT ON INCORRECT STATE */
+}
+
+/* Selected state - ALL possible selectors */
+.matching-component__item--selected .matching-component__item-text,
+.matching-component__item--selected .matching-component__item-text *,
+.matching-component__item--selected * .matching-component__item-text,
+.matching-component__item.matching-component__item--selected .matching-component__item-text,
+button.matching-component__item--selected .matching-component__item-text,
+div.matching-component__item--selected .matching-component__item-text,
+span.matching-component__item--selected .matching-component__item-text,
+[class*='matching-component__item--selected'] .matching-component__item-text {
+  color: #ffffff;
+  /* FORCE WHITE TEXT ON SELECTED STATE */
+}
+
+/* CRITICAL: Override base color for state-specific items */
+.matching-component__item--correct .matching-component__item-text,
+.matching-component__item--incorrect .matching-component__item-text,
+.matching-component__item--selected .matching-component__item-text {
+  color: #ffffff;
+}
+
+/* STATE TEXT COLORS - Light Mode - Matching quiz component pattern */
+/* CRITICAL: Maximum specificity selectors to ensure white text on correction states */
+
+/* Button + Item + State + Text - Maximum specificity */
+button.matching-component__item.matching-component__item--selected .matching-component__item-text,
+.matching-component__button.matching-component__item.matching-component__item--selected
+  .matching-component__item-text,
+.matching-component__item.matching-component__item--selected .matching-component__item-text {
+  color: #ffffff;
+}
+
+button.matching-component__item.matching-component__item--matched .matching-component__item-text,
+.matching-component__button.matching-component__item.matching-component__item--matched
+  .matching-component__item-text,
+.matching-component__item.matching-component__item--matched .matching-component__item-text {
+  color: #374151;
+}
+
+button.matching-component__item.matching-component__item--matched-inactive
+  .matching-component__item-text,
+.matching-component__button.matching-component__item.matching-component__item--matched-inactive
+  .matching-component__item-text,
+.matching-component__item.matching-component__item--matched-inactive
+  .matching-component__item-text {
+  color: #6b7280;
+}
+
+button.matching-component__item.matching-component__item--unmatched .matching-component__item-text,
+.matching-component__button.matching-component__item.matching-component__item--unmatched
+  .matching-component__item-text,
+.matching-component__item.matching-component__item--unmatched .matching-component__item-text {
+  color: #a16207;
+}
+
+button.matching-component__item.matching-component__item--correct .matching-component__item-text,
+.matching-component__button.matching-component__item.matching-component__item--correct
+  .matching-component__item-text,
+.matching-component__item.matching-component__item--correct .matching-component__item-text {
+  color: #ffffff;
+}
+
+button.matching-component__item.matching-component__item--incorrect .matching-component__item-text,
+.matching-component__button.matching-component__item.matching-component__item--incorrect
+  .matching-component__item-text,
+.matching-component__item.matching-component__item--incorrect .matching-component__item-text {
+  color: #ffffff;
+}
+
+/* === MATCHING BUTTONS === */
+/* CRITICAL FIX: Button styles must NOT override item layout */
+
+.matching-component__button {
+  /* Reset button defaults */
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+
+  /* Inherit item layout */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+}
+
+/* Button modifiers should NOT affect layout - only used for non-item buttons */
+.matching-component__button--primary:not(.matching-component__item) {
+  background: linear-gradient(
+    135deg,
+    var(--theme-primary-blue, #3b82f6) 0%,
+    var(--theme-primary-purple, #8b5cf6) 100%
+  );
+  color: white;
+  width: 8rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ripple effect for primary buttons */
+.matching-component__button--primary:not(.matching-component__item)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.matching-component__button--primary:not(.matching-component__item):active::after {
+  animation: ripple var(--animation-fast) var(--ease-smooth);
+}
+
+.matching-component__button--secondary:not(.matching-component__item) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--theme-bg-subtle, #f9fafb);
+  border: 1px solid var(--theme-border-soft, #f3f4f6);
+  border-radius: 50%;
+  color: var(--theme-text-secondary, #6b7280);
+}
+
+.matching-component__button--success:not(.matching-component__item) {
+  background: linear-gradient(
+    135deg,
+    var(--theme-success, #10b981) 0%,
+    var(--theme-success-dark, #059669) 100%
+  );
+  color: white;
+  width: 8rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.matching-component__info-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: var(--transition-interactive);
+  flex-shrink: 0;
+  backdrop-filter: blur(4px);
+  box-shadow: var(--shadow-button-default);
+}
+
+.matching-component__info-button:hover {
+  background-color: var(--theme-primary-blue, #3b82f6);
+  border-color: var(--theme-primary-blue, #3b82f6);
+  transform: scale(1.1);
+  box-shadow: var(--shadow-button-hover);
+}
+
+.matching-component__info-button:active {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-button-active);
+}
+
+.matching-component__info-button:focus-visible {
+  outline: 2px solid var(--theme-primary-blue, #3b82f6);
+  outline-offset: 2px;
+}
+
+.matching-component__info-button:hover .matching-component__info-icon {
+  color: white;
+}
+
+.matching-component__info-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #374151;
+  transition: var(--transition-fast);
+  font-weight: 600;
+}
+
+/* Info button states for different item states */
+.matching-component__item--correct .matching-component__info-button {
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.matching-component__item--correct .matching-component__info-icon {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.matching-component__item--incorrect .matching-component__info-button {
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.matching-component__item--incorrect .matching-component__info-icon {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Dark mode info button styles */
+.dark .matching-component__info-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.dark .matching-component__info-button:hover {
+  background-color: var(--theme-primary-blue, #3b82f6);
+  border-color: var(--theme-primary-blue, #3b82f6);
+}
+
+.dark .matching-component__info-icon {
+  color: var(--gray-300, #d1d5db);
+}
+
+.dark .matching-component__item--correct .matching-component__info-button {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.dark .matching-component__item--correct .matching-component__info-icon {
+  color: #ffffff;
+}
+
+.dark .matching-component__item--incorrect .matching-component__info-button {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.dark .matching-component__item--incorrect .matching-component__info-icon {
+  color: #ffffff;
+}
+
+/* === MATCHING NAVIGATION === */
+.matching-component__navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.matching-component__nav-button {
+  padding: var(--padding-lg, 1.5rem) 1.5rem;
+  background-color: var(--theme-primary-blue, #3b82f6);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md, 0.375rem);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-interactive);
+}
+
+.matching-component__nav-button:hover {
+  background-color: var(--theme-primary-blue-hover, #2563eb);
+}
+
+.matching-component__nav-button:disabled {
+  background-color: var(--theme-text-disabled);
+  cursor: not-allowed;
+}
+
+/* === DARK MODE === */
+
+.dark .matching-component__column-header {
+  background-color: var(--gray-800, #1f2937);
+  color: var(--gray-200, #e5e7eb);
+}
+
+/* Dark mode base styles - Professional dark theme */
+.dark .matching-component__item {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #f1f5f9;
+  transition: var(--transition-interactive);
+}
+
+.dark .matching-component__item-letter {
+  background-color: #475569;
+  color: #f1f5f9;
+  transition: var(--transition-interactive);
+}
+
+.dark .matching-component__item-text {
+  color: #f1f5f9;
+}
+
+.dark
+  .matching-component__item:hover:not(.matching-component__item--selected):not(
+    .matching-component__item--matched
+  ):not(.matching-component__item--correct):not(.matching-component__item--incorrect) {
+  background-color: rgba(14, 165, 233, 0.2);
+  border-color: #0ea5e9;
+  box-shadow: var(--shadow-card-hover);
+  transition: var(--transition-interactive);
+}
+
+/* === DARK MODE STATE STYLES === */
+/* CRITICAL FIX: Proper dark mode colors with correct CSS cascade order */
+
+.dark .matching-component__item--selected {
+  background-color: #1e40af;
+  border-color: #3b82f6;
+  color: white;
+  transition: var(--transition-interactive);
+}
+
+.dark .matching-component__item--selected .matching-component__item-letter {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Dark mode - Maximum specificity for selected text */
+.dark
+  button.matching-component__item.matching-component__item--selected
+  .matching-component__item-text,
+.dark
+  .matching-component__button.matching-component__item.matching-component__item--selected
+  .matching-component__item-text,
+.dark .matching-component__item--selected .matching-component__item-text {
+  color: white;
+}
+
+.dark .matching-component__item--matched {
+  background-color: #0f172a;
+  border-color: #0ea5e9;
+  color: #38bdf8;
+  transition: var(--transition-interactive);
+}
+
+.dark .matching-component__item--matched .matching-component__item-letter {
+  background-color: #0ea5e9;
+  color: #ffffff;
+}
+
+/* Dark mode - Maximum specificity for matched text */
+.dark
+  button.matching-component__item.matching-component__item--matched
+  .matching-component__item-text,
+.dark
+  .matching-component__button.matching-component__item.matching-component__item--matched
+  .matching-component__item-text,
+.dark .matching-component__item--matched .matching-component__item-text {
+  color: var(--gray-200, #e5e7eb);
+}
+
+.dark .matching-component__item--matched-inactive {
+  background-color: #0f172a;
+  border-color: #334155;
+  color: #64748b;
+  opacity: 0.7;
+  transition: var(--transition-interactive);
+}
+
+.dark .matching-component__item--correct {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%) !important;
+  border: 3px solid #15803d !important;
+  color: #ffffff !important;
+  box-shadow:
+    0 0 0 3px rgba(34, 197, 94, 0.4),
+    0 6px 20px rgba(34, 197, 94, 0.5) !important;
+  font-weight: 700 !important;
+  transform: scale(1.02) !important;
+  transition: var(--transition-interactive) !important;
+  animation: pulse-success var(--animation-normal) ease-out !important;
+}
+
+.dark .matching-component__item--correct .matching-component__item-letter {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  border: 2px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Dark mode - Maximum specificity for correct text */
+.dark
+  button.matching-component__item.matching-component__item--correct
+  .matching-component__item-text,
+.dark
+  .matching-component__button.matching-component__item.matching-component__item--correct
+  .matching-component__item-text,
+.dark .matching-component__item--correct .matching-component__item-text {
+  color: white;
+}
+
+.dark .matching-component__item--incorrect {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+  border: 3px solid #b91c1c !important;
+  color: #ffffff !important;
+  box-shadow:
+    0 0 0 3px rgba(239, 68, 68, 0.4),
+    0 6px 20px rgba(239, 68, 68, 0.5) !important;
+  font-weight: 700 !important;
+  transform: scale(1.02) !important;
+  transition: var(--transition-interactive) !important;
+}
+
+.dark .matching-component__item--incorrect .matching-component__item-letter {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  border: 2px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Dark mode - Maximum specificity for incorrect text */
+.dark
+  button.matching-component__item.matching-component__item--incorrect
+  .matching-component__item-text,
+.dark
+  .matching-component__button.matching-component__item.matching-component__item--incorrect
+  .matching-component__item-text,
+.dark .matching-component__item--incorrect .matching-component__item-text {
+  color: white;
+}
+
+.dark .matching-component__item--unmatched {
+  background-color: #92400e;
+  border-color: #f59e0b;
+  color: #fef3c7;
+  transition: var(--transition-interactive);
+}
+
+/* === MOBILE OPTIMIZATIONS === */
+@media (max-width: 768px) {
+  .matching-component {
+    padding: 0.5rem;
+  }
+
+  .matching-component__item {
+    padding: 1rem;
+  }
+
+  .matching-component__item-text {
+    font-size: 1rem;
+  }
+
+  .matching-component__nav-button {
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+  }
+}
+
+/* === COLUMN SPACING - Compact Design === */
+.matching-component__columns {
+  padding: 0.5rem;
+  background-color: rgba(59, 130, 246, 0.02);
+  border-radius: 1rem;
+  border: 1px solid rgba(59, 130, 246, 0.08);
+}
+
+.matching-component__column {
+  padding: 0.5rem;
+  background-color: rgba(248, 250, 252, 0.3);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(16, 185, 129, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+/* Dark mode columns - Sophisticated dark theme */
+.dark .matching-component__columns {
+  background-color: rgba(15, 23, 42, 0.8);
+  border-color: rgba(51, 65, 85, 0.3);
+}
+
+.dark .matching-component__column {
+  background-color: rgba(30, 41, 59, 0.6);
+  border-color: rgba(71, 85, 105, 0.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Compact margin for items */
+.matching-component__item {
+  margin: 0.125rem 0;
+}
+
+/* Specific padding for ALL button item states - Terms and Definitions */
+.matching-component__item.matching-component__button {
+  padding: 1rem;
+}
+
+/* Ensure consistent padding for all states */
+.matching-component__item.matching-component__button.matching-component__button--primary,
+.matching-component__item.matching-component__button.matching-component__button--secondary {
+  padding: 1rem;
+}
+
+/* All matching item states get consistent padding */
+.matching-component__item--selected.matching-component__button,
+.matching-component__item--matched.matching-component__button,
+.matching-component__item--matched-inactive.matching-component__button,
+.matching-component__item--unmatched.matching-component__button,
+.matching-component__item--correct.matching-component__button,
+.matching-component__item--incorrect.matching-component__button {
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .matching-component__columns {
+    padding: 12px;
+    background-color: rgba(59, 130, 246, 0.08);
+  }
+
+  .matching-component__column {
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .matching-component__item {
+    margin: 4px;
+  }
+
+  /* Specific padding for ALL button item states on mobile */
+  .matching-component__item.matching-component__button {
+    padding: 1rem;
+  }
+
+  .matching-component__item.matching-component__button.matching-component__button--primary,
+  .matching-component__item.matching-component__button.matching-component__button--secondary {
+    padding: 1rem;
+  }
+
+  .matching-component__item--selected.matching-component__button,
+  .matching-component__item--matched.matching-component__button,
+  .matching-component__item--matched-inactive.matching-component__button,
+  .matching-component__item--unmatched.matching-component__button,
+  .matching-component__item--correct.matching-component__button,
+  .matching-component__item--incorrect.matching-component__button {
+    padding: 1rem;
+  }
+}
+
+/* MODAL STYLES MOVED TO matching-modal.css */
+
+/* === CRITICAL FIX: FINAL OVERRIDE FOR WHITE TEXT === */
+/* These selectors have maximum priority and are placed at the end to ensure they override everything */
+
+/* ULTRA HIGH SPECIFICITY - FINAL OVERRIDE */
+.matching-component
+  button.matching-component__item.matching-component__button.matching-component__item--correct
+  .matching-component__item-text,
+.matching-component
+  .matching-component__item.matching-component__button.matching-component__item--correct
+  .matching-component__item-text,
+button.matching-component__item.matching-component__item--correct .matching-component__item-text,
+.matching-component__item.matching-component__item--correct .matching-component__item-text,
+.matching-component__item--correct .matching-component__item-text {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+  /* Force white text on correct state */
+}
+
+.matching-component
+  button.matching-component__item.matching-component__button.matching-component__item--incorrect
+  .matching-component__item-text,
+.matching-component
+  .matching-component__item.matching-component__button.matching-component__item--incorrect
+  .matching-component__item-text,
+button.matching-component__item.matching-component__item--incorrect .matching-component__item-text,
+.matching-component__item.matching-component__item--incorrect .matching-component__item-text,
+.matching-component__item--incorrect .matching-component__item-text {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+  /* Force white text on incorrect state */
+}
+
+.matching-component
+  button.matching-component__item.matching-component__button.matching-component__item--selected
+  .matching-component__item-text,
+.matching-component
+  .matching-component__item.matching-component__button.matching-component__item--selected
+  .matching-component__item-text,
+button.matching-component__item.matching-component__item--selected .matching-component__item-text,
+.matching-component__item.matching-component__item--selected .matching-component__item-text,
+.matching-component__item--selected .matching-component__item-text {
+  color: #ffffff;
+  /* Force white text on selected state */
+}
+
+/* Dark mode final overrides */
+.dark
+  .matching-component
+  button.matching-component__item.matching-component__button.matching-component__item--correct
+  .matching-component__item-text,
+.dark
+  .matching-component
+  .matching-component__item.matching-component__button.matching-component__item--correct
+  .matching-component__item-text,
+.dark
+  button.matching-component__item.matching-component__item--correct
+  .matching-component__item-text,
+.dark .matching-component__item.matching-component__item--correct .matching-component__item-text,
+.dark .matching-component__item--correct .matching-component__item-text {
+  color: #ffffff;
+}
+
+.dark
+  .matching-component
+  button.matching-component__item.matching-component__button.matching-component__item--incorrect
+  .matching-component__item-text,
+.dark
+  .matching-component
+  .matching-component__item.matching-component__button.matching-component__item--incorrect
+  .matching-component__item-text,
+.dark
+  button.matching-component__item.matching-component__item--incorrect
+  .matching-component__item-text,
+.dark .matching-component__item.matching-component__item--incorrect .matching-component__item-text,
+.dark .matching-component__item--incorrect .matching-component__item-text {
+  color: #ffffff;
+}
+
+.dark
+  .matching-component
+  button.matching-component__item.matching-component__button.matching-component__item--selected
+  .matching-component__item-text,
+.dark
+  .matching-component
+  .matching-component__item.matching-component__button.matching-component__item--selected
+  .matching-component__item-text,
+.dark
+  button.matching-component__item.matching-component__item--selected
+  .matching-component__item-text,
+.dark .matching-component__item.matching-component__item--selected .matching-component__item-text,
+.dark .matching-component__item--selected .matching-component__item-text {
+  color: #ffffff;
+}
+
+/* === ACCESSIBILITY === */
+@media (prefers-reduced-motion: reduce) {
+  .matching-component__progress-fill,
+  .matching-component__item,
+  .matching-component__nav-button {
+    transition: none;
+    transform: none;
+  }
+}
+
+@media (prefers-contrast: high) {
+  .matching-component__item {
+    border-width: 3px;
+  }
+
+  .matching-component__item--selected,
+  .matching-component__item--matched,
+  .matching-component__item--correct,
+  .matching-component__item--incorrect {
+    border-width: 3px;
+    font-weight: 600;
+  }
+}
+
+/* EMERGENCY FIX: Force dark backgrounds in dark mode */
+.dark .matching-component__item--selected {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+  color: #ffffff !important;
+  border: 3px solid #fbbf24 !important;
+  box-shadow:
+    0 0 0 3px rgba(251, 191, 36, 0.4),
+    0 6px 20px rgba(245, 158, 11, 0.5) !important;
+  transform: scale(1.02) !important;
+}
+
+.dark .matching-component__item--matched {
+  background: #0f172a !important;
+  color: #38bdf8 !important;
+}
+
+.dark .matching-component__item--matched-inactive {
+  background: #0f172a !important;
+  color: #64748b !important;
+}
+
+.dark .matching-component__item--correct {
+  background: #166534 !important;
+  color: #ffffff !important;
+}
+
+.dark .matching-component__item--incorrect {
+  background: #991b1b !important;
+  color: #ffffff !important;
+}
+
+/* Force text colors */
+.dark .matching-component__item--selected .matching-component__item-text {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark .matching-component__item--matched .matching-component__item-text {
+  color: #38bdf8 !important;
+}
+
+.dark .matching-component__item--matched-inactive .matching-component__item-text {
+  color: #64748b !important;
+}
+
+.dark .matching-component__item--correct .matching-component__item-text {
+  color: #ffffff !important;
+}
+
+.dark .matching-component__item--incorrect .matching-component__item-text {
+  color: #ffffff !important;
+}
+
+/* 
+NUCLEAR OPTION: Override ALL matching items in dark mode */
+.dark .matching-component__item {
+  background: #1e293b !important;
+  color: #f1f5f9 !important;
+  border-color: #334155 !important;
+}
+
+.dark .matching-component__item .matching-component__item-text {
+  color: #f1f5f9 !important;
+}
+
+.dark .matching-component__item .matching-component__item-letter {
+  background: #475569 !important;
+  color: #f1f5f9 !important;
+}
+
+/* Override specific states with higher specificity */
+html.dark .matching-component__item {
+  background: #1e293b !important;
+  color: #f1f5f9 !important;
+}
+
+html.dark .matching-component__item .matching-component__item-text {
+  color: #f1f5f9 !important;
+}
+
+html.dark .matching-component__item .matching-component__item-letter {
+  background: #475569 !important;
+  color: #f1f5f9 !important;
+}
+
+/* Enhanced 
+selected state letter */
+.dark .matching-component__item--selected .matching-component__item-letter {
+  background: rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.4) !important;
+  font-weight: 700 !important;
+}
+
+/*
+ Override selected letter with high contrast */
+.dark .matching-component__item--selected .matching-component__item-letter {
+  background: #ffffff !important;
+  color: #d97706 !important;
+  border: 2px solid #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* FORCE COMPACT DESIGN - Higher specificity */
+html body .matching-component__item {
+  padding: 0.5rem 0.75rem !important;
+  min-height: 2.5rem !important;
+  margin: 0.125rem 0 !important;
+  border-radius: 0.75rem !important;
+  border-width: 1px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html body .matching-component__columns {
+  gap: 1rem !important;
+  padding: 1.25rem !important;
+  padding-top: 1.5rem !important;
+  border-radius: 1rem !important;
+  background-color: rgba(59, 130, 246, 0.15) !important;
+  margin-top: 1rem !important;
+  border: 1px solid rgba(59, 130, 246, 0.2) !important;
+}
+
+html body .matching-component__column {
+  gap: 0.5rem !important;
+  padding: 1rem !important;
+  border-radius: 0.75rem !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border: 2px solid rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+html body .matching-component__column-header {
+  font-size: 0.875rem !important;
+  padding: 0.75rem 1rem !important;
+  margin-bottom: 1rem !important;
+  margin-top: 0 !important;
+  border-radius: 0.5rem !important;
+  background-color: rgba(59, 130, 246, 0.2) !important;
+  color: rgba(30, 58, 138, 1) !important;
+  font-weight: 600 !important;
+}
+
+/* Dark mode compact overrides */
+html.dark body .matching-component__columns {
+  background-color: rgba(15, 23, 42, 0.8) !important;
+  border: 1px solid rgba(51, 65, 85, 0.6) !important;
+}
+
+html.dark body .matching-component__column {
+  background-color: rgba(30, 41, 59, 0.95) !important;
+  border: 2px solid rgba(71, 85, 105, 0.8) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+html.dark body .matching-component__column-header {
+  background-color: rgba(59, 130, 246, 0.3) !important;
+  color: rgba(147, 197, 253, 1) !important;
+}
+
+/* ULTIMATE COMPACT OVERRIDE - All button combinations */
+button.matching-component__item.matching-component__button.matching-component__button--primary,
+button.matching-component__item.matching-component__button.matching-component__button--secondary,
+button.matching-component__item.matching-component__button,
+.matching-component__item.matching-component__button,
+.matching-component__item--default.matching-component__button,
+.matching-component__item--selected.matching-component__button,
+.matching-component__item--matched.matching-component__button,
+.matching-component__item--matched-inactive.matching-component__button,
+.matching-component__item--correct.matching-component__button,
+.matching-component__item--incorrect.matching-component__button,
+.matching-component__item--unmatched.matching-component__button {
+  padding: 0.5rem 0.75rem !important;
+  min-height: 2.5rem !important;
+  margin: 0.125rem 0 !important;
+  border-radius: 0.75rem !important;
+  border-width: 1px !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+  font-size: 0.875rem !important;
+}
+
+/* Force compact columns */
+.matching-component .matching-component__columns {
+  gap: 0.75rem !important;
+  padding: 0.5rem !important;
+  border-radius: 1rem !important;
+}
+
+.matching-component .matching-component__column {
+  gap: 0.25rem !important;
+  padding: 0.5rem !important;
+  border-radius: 0.75rem !important;
+}
+
+.matching-component .matching-component__column-header {
+  font-size: 0.875rem !important;
+  padding: 0.375rem 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  border-radius: 0.75rem !important;
+}
+
+/* ===== FINAL OVERRIDE - MAXIMUM SPECIFICITY FOR CORRECT ANSWERS ===== */
+/* This section has the highest priority and will override all previous styles */
+
+/* CORRECT ANSWER - ULTRA HIGH SPECIFICITY */
+html body .matching-component .matching-component__item.matching-component__item--correct,
+html body .matching-component button.matching-component__item.matching-component__item--correct,
+html body .matching-component .matching-component__button.matching-component__item--correct,
+html body button.matching-component__item--correct,
+html body .matching-component__item--correct {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%) !important;
+  border: 3px solid #15803d !important;
+  color: #ffffff !important;
+  box-shadow:
+    0 0 0 4px rgba(34, 197, 94, 0.4),
+    0 8px 25px rgba(34, 197, 94, 0.5) !important;
+  font-weight: 700 !important;
+  transform: scale(1.03) !important;
+}
+
+/* CORRECT ANSWER TEXT - ULTRA HIGH SPECIFICITY */
+html
+  body
+  .matching-component
+  .matching-component__item.matching-component__item--correct
+  .matching-component__item-text,
+html
+  body
+  .matching-component
+  button.matching-component__item.matching-component__item--correct
+  .matching-component__item-text,
+html
+  body
+  .matching-component
+  .matching-component__button.matching-component__item--correct
+  .matching-component__item-text,
+html body button.matching-component__item--correct .matching-component__item-text,
+html body .matching-component__item--correct .matching-component__item-text,
+html body .matching-component__item--correct .matching-component__item-text * {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* CORRECT ANSWER LETTER - ULTRA HIGH SPECIFICITY */
+html
+  body
+  .matching-component
+  .matching-component__item.matching-component__item--correct
+  .matching-component__item-letter,
+html
+  body
+  .matching-component
+  button.matching-component__item.matching-component__item--correct
+  .matching-component__item-letter,
+html
+  body
+  .matching-component
+  .matching-component__button.matching-component__item--correct
+  .matching-component__item-letter,
+html body button.matching-component__item--correct .matching-component__item-letter,
+html body .matching-component__item--correct .matching-component__item-letter {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  border: 2px solid rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* INCORRECT ANSWER - ULTRA HIGH SPECIFICITY */
+html body .matching-component .matching-component__item.matching-component__item--incorrect,
+html body .matching-component button.matching-component__item.matching-component__item--incorrect,
+html body .matching-component .matching-component__button.matching-component__item--incorrect,
+html body button.matching-component__item--incorrect,
+html body .matching-component__item--incorrect {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+  border: 3px solid #b91c1c !important;
+  color: #ffffff !important;
+  box-shadow:
+    0 0 0 4px rgba(239, 68, 68, 0.4),
+    0 8px 25px rgba(239, 68, 68, 0.5) !important;
+  font-weight: 700 !important;
+  transform: scale(1.03) !important;
+}
+
+/* INCORRECT ANSWER TEXT - ULTRA HIGH SPECIFICITY */
+html
+  body
+  .matching-component
+  .matching-component__item.matching-component__item--incorrect
+  .matching-component__item-text,
+html
+  body
+  .matching-component
+  button.matching-component__item.matching-component__item--incorrect
+  .matching-component__item-text,
+html
+  body
+  .matching-component
+  .matching-component__button.matching-component__item--incorrect
+  .matching-component__item-text,
+html body button.matching-component__item--incorrect .matching-component__item-text,
+html body .matching-component__item--incorrect .matching-component__item-text,
+html body .matching-component__item--incorrect .matching-component__item-text * {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* DARK MODE OVERRIDES - ULTRA HIGH SPECIFICITY */
+html.dark body .matching-component .matching-component__item.matching-component__item--correct,
+html.dark
+  body
+  .matching-component
+  button.matching-component__item.matching-component__item--correct,
+html.dark body .matching-component .matching-component__button.matching-component__item--correct,
+html.dark body button.matching-component__item--correct,
+html.dark body .matching-component__item--correct {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%) !important;
+  border: 3px solid #15803d !important;
+  color: #ffffff !important;
+  box-shadow:
+    0 0 0 4px rgba(34, 197, 94, 0.5),
+    0 8px 25px rgba(34, 197, 94, 0.6) !important;
+}
+
+html.dark
+  body
+  .matching-component
+  .matching-component__item.matching-component__item--correct
+  .matching-component__item-text,
+html.dark
+  body
+  .matching-component
+  button.matching-component__item.matching-component__item--correct
+  .matching-component__item-text,
+html.dark
+  body
+  .matching-component
+  .matching-component__button.matching-component__item--correct
+  .matching-component__item-text,
+html.dark body button.matching-component__item--correct .matching-component__item-text,
+html.dark body .matching-component__item--correct .matching-component__item-text,
+html.dark body .matching-component__item--correct .matching-component__item-text * {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+}
+/* === LEARNING COMPONENT BORDER - DARK MODE === */
+html.dark .matching-component {
+  border-color: var(--theme-border-modal-dark, rgba(255, 255, 255, 0.15));
+}

@@ -1,0 +1,311 @@
+/**
+ * Content Renderer Styles
+ * Semantic styling for structured content segments
+ */
+
+/* Base content renderer */
+.content-renderer {
+  display: inline;
+  line-height: inherit;
+}
+
+/* Base segment styles */
+.content-renderer__segment {
+  display: inline;
+}
+
+/* Text segments inherit default styling */
+
+/* Term segments (previously quoted text) */
+.content-renderer__segment--term {
+  color: #1d4ed8;
+  font-weight: bold;
+}
+
+/* Dark mode for terms */
+.dark .content-renderer__segment--term {
+  color: #60a5fa;
+}
+
+/* Emphasis segments */
+.content-renderer__segment--emphasis {
+  font-weight: bold;
+  color: inherit;
+}
+
+/* Code segments */
+.content-renderer__segment--code {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  background-color: #f3f4f6;
+  padding: 0.125rem 0.25rem;
+  border-radius: var(--radius-sm, 0.25rem);
+  font-size: 0.875em;
+}
+
+.dark .content-renderer__segment--code {
+  background-color: #374151;
+  color: #e5e7eb;
+}
+
+/* Variable segments */
+.content-renderer__segment--variable {
+  color: #7c3aed;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.dark .content-renderer__segment--variable {
+  color: #a78bfa;
+}
+
+/* Link segments */
+.content-renderer__segment--link {
+  color: #2563eb;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.dark .content-renderer__segment--link {
+  color: #3b82f6;
+}
+
+/* Format-specific overrides */
+
+/* Quiz format - enhance term visibility */
+.content-renderer--quiz .content-renderer__segment--term {
+  color: #1d4ed8;
+  font-weight: bold;
+  /* Slightly larger for better visibility in questions */
+  font-size: 1.02em;
+}
+
+.dark .content-renderer--quiz .content-renderer__segment--term {
+  color: #60a5fa;
+}
+
+/* Flashcard format - softer styling */
+.content-renderer--flashcard .content-renderer__segment--term {
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.dark .content-renderer--flashcard .content-renderer__segment--term {
+  color: #93c5fd;
+}
+
+/* Explanation format - educational styling */
+.content-renderer--explanation .content-renderer__segment--term {
+  color: #1d4ed8;
+  font-weight: 600;
+  border-bottom: 1px dotted currentColor;
+}
+
+.dark .content-renderer--explanation .content-renderer__segment--term {
+  color: #60a5fa;
+}
+
+/* Hover effects for interactive segments */
+.content-renderer__segment--term:hover,
+.content-renderer__segment--link:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+/* Accessibility improvements */
+.content-renderer__segment--term[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  background: #1f2937;
+  color: white;
+  padding: var(--padding-xs, 0.25rem) var(--padding-md, 1rem);
+  border-radius: var(--radius-sm, 0.25rem);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 5;
+  margin-top: 1.5rem;
+  margin-left: -1rem;
+}
+
+.dark .content-renderer__segment--term[title]:hover::after {
+  background: #374151;
+}
+
+/* Override colors for selected matched states in matching component */
+.matching-component__item--selected .content-renderer__segment--term,
+.matching-component__item--selected .content-renderer {
+  color: var(--theme-text-on-colored, #ffffff);
+  /* WHITE TEXT ON BLUE BACKGROUND */
+}
+
+.matching-component__item--matched .content-renderer__segment--term,
+.matching-component__item--matched .content-renderer {
+  color: var(--theme-text-primary, #374151);
+}
+
+.matching-component__item--correct .content-renderer__segment--term,
+.matching-component__item--correct .content-renderer {
+  color: var(--theme-text-on-colored, #ffffff);
+  /* WHITE TEXT ON GREEN BACKGROUND */
+}
+
+.matching-component__item--incorrect .content-renderer__segment--term,
+.matching-component__item--incorrect .content-renderer {
+  color: var(--theme-text-on-colored, #ffffff);
+  /* WHITE TEXT ON RED BACKGROUND */
+}
+
+.matching-component__item--matched-inactive .content-renderer__segment--term {
+  color: var(--theme-text-tertiary, #9ca3af);
+}
+
+/* Light mode override for matched items content */
+html:not(.dark) .matching-component__item--matched .content-renderer__segment--term,
+html:not(.dark) .matching-component__item--matched .content-renderer__segment--emphasis,
+html:not(.dark) .matching-component__item--matched .content-renderer__segment--variable,
+html:not(.dark) .matching-component__item--matched .content-renderer__segment--code {
+  color: var(--theme-text-primary, #374151);
+}
+
+html:not(.dark) .matching-component__item--matched .content-renderer,
+html:not(.dark) .matching-component__item--matched .content-renderer * {
+  color: var(--theme-text-primary, #374151);
+}
+
+/* Ensure hover states don't override ContentRenderer colors */
+html:not(.dark) .matching-component__item--matched:hover .content-renderer,
+html:not(.dark) .matching-component__item--matched-inactive:hover .content-renderer,
+html:not(.dark) .matching-component__item--matched:hover .content-renderer *,
+html:not(.dark) .matching-component__item--matched-inactive:hover .content-renderer *,
+html:not(.dark) .matching-component__item--matched:hover .content-renderer__segment--term,
+html:not(.dark) .matching-component__item--matched-inactive:hover .content-renderer__segment--term,
+html:not(.dark) .matching-component__item--matched:hover .content-renderer__segment--emphasis,
+html:not(.dark)
+  .matching-component__item--matched-inactive:hover
+  .content-renderer__segment--emphasis,
+html:not(.dark) .matching-component__item--matched:hover .content-renderer__segment--variable,
+html:not(.dark)
+  .matching-component__item--matched-inactive:hover
+  .content-renderer__segment--variable,
+html:not(.dark) .matching-component__item--matched:hover .content-renderer__segment--code,
+html:not(.dark) .matching-component__item--matched-inactive:hover .content-renderer__segment--code {
+  color: #111827;
+}
+
+/* Override for correct incorrect states in light mode - WHITE TEXT FOR CONTRAST */
+html:not(.dark) .matching-component__item--correct .content-renderer,
+html:not(.dark) .matching-component__item--correct .content-renderer *,
+html:not(.dark) .matching-component__item--correct .content-renderer__segment--term,
+html:not(.dark) .matching-component__item--correct .content-renderer__segment--emphasis,
+html:not(.dark) .matching-component__item--correct .content-renderer__segment--variable,
+html:not(.dark) .matching-component__item--correct .content-renderer__segment--code {
+  color: #ffffff;
+  /* WHITE TEXT ON GREEN BACKGROUND */
+}
+
+html:not(.dark) .matching-component__item--incorrect .content-renderer,
+html:not(.dark) .matching-component__item--incorrect .content-renderer *,
+html:not(.dark) .matching-component__item--incorrect .content-renderer__segment--term,
+html:not(.dark) .matching-component__item--incorrect .content-renderer__segment--emphasis,
+html:not(.dark) .matching-component__item--incorrect .content-renderer__segment--variable,
+html:not(.dark) .matching-component__item--incorrect .content-renderer__segment--code {
+  color: #ffffff;
+  /* WHITE TEXT ON RED BACKGROUND */
+}
+
+/* Unmatched items ContentRenderer styles */
+html:not(.dark) .matching-component__item--unmatched .content-renderer,
+html:not(.dark) .matching-component__item--unmatched .content-renderer *,
+html:not(.dark) .matching-component__item--unmatched .content-renderer__segment--term,
+html:not(.dark) .matching-component__item--unmatched .content-renderer__segment--emphasis,
+html:not(.dark) .matching-component__item--unmatched .content-renderer__segment--variable,
+html:not(.dark) .matching-component__item--unmatched .content-renderer__segment--code {
+  color: #6b7280;
+}
+
+/* Ensure selected items maintain white text in ContentRenderer on hover */
+.matching-component__item--selected:hover .content-renderer,
+.matching-component__item--selected:hover .content-renderer *,
+.matching-component__item--selected:hover .content-renderer__segment,
+.matching-component__item--selected:hover .content-renderer__segment--text,
+.matching-component__item--selected:hover .content-renderer__segment--term,
+.matching-component__item--selected:hover .content-renderer__segment--emphasis,
+.matching-component__item--selected:hover .content-renderer__segment--variable,
+.matching-component__item--selected:hover .content-renderer__segment--code {
+  color: #ffffff;
+}
+
+.matching-component__item--selected .content-renderer__segment--emphasis,
+.matching-component__item--matched .content-renderer__segment--emphasis,
+.matching-component__item--matched-inactive .content-renderer__segment--emphasis,
+.matching-component__item--correct .content-renderer__segment--emphasis,
+.matching-component__item--incorrect .content-renderer__segment--emphasis {
+  color: #ffffff;
+}
+
+.matching-component__item--matched-inactive .content-renderer__segment--emphasis {
+  color: var(--theme-text-disabled, #9ca3af);
+}
+
+.matching-component__item--selected .content-renderer__segment--variable,
+.matching-component__item--matched .content-renderer__segment--variable,
+.matching-component__item--matched-inactive .content-renderer__segment--variable,
+.matching-component__item--correct .content-renderer__segment--variable,
+.matching-component__item--incorrect .content-renderer__segment--variable {
+  color: #ffffff;
+}
+
+.matching-component__item--matched-inactive .content-renderer__segment--variable {
+  color: var(--theme-text-disabled, #9ca3af);
+}
+
+.matching-component__item--selected .content-renderer__segment--code,
+.matching-component__item--matched .content-renderer__segment--code,
+.matching-component__item--matched-inactive .content-renderer__segment--code,
+.matching-component__item--correct .content-renderer__segment--code,
+.matching-component__item--incorrect .content-renderer__segment--code {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.matching-component__item--matched-inactive .content-renderer__segment--code {
+  color: var(--theme-text-disabled, #9ca3af);
+  background-color: var(--theme-bg-subtle, #f9fafb);
+}
+
+/* Override colors for other components */
+.quiz-component__option--correct .content-renderer__segment--term,
+.quiz-component__option--incorrect .content-renderer__segment--term {
+  color: inherit;
+}
+
+.sorting-component__sorted-item--correct .content-renderer__segment--term,
+.sorting-component__sorted-item--incorrect .content-renderer__segment--term {
+  color: #ffffff;
+}
+
+/* Dark mode overrides for selected states */
+.dark .matching-component__item--selected .content-renderer__segment--term,
+.dark .matching-component__item--matched .content-renderer__segment--term,
+.dark .matching-component__item--matched-inactive .content-renderer__segment--term,
+.dark .matching-component__item--correct .content-renderer__segment--term,
+.dark .matching-component__item--incorrect .content-renderer__segment--term {
+  color: #ffffff;
+}
+
+.dark .matching-component__item--matched-inactive .content-renderer__segment--term {
+  color: #6b7280;
+}
+
+/* Dark mode - Force all text content in matched-inactive items to be visible */
+.dark .matching-component__item--matched-inactive .content-renderer,
+.dark .matching-component__item--matched-inactive .content-renderer *,
+.dark .matching-component__item--matched-inactive span,
+.dark .matching-component__item--matched-inactive p,
+.dark .matching-component__item--matched-inactive div {
+  color: #6b7280;
+}
+
+.dark .sorting-component__sorted-item--correct .content-renderer__segment--term,
+.dark .sorting-component__sorted-item--incorrect .content-renderer__segment--term {
+  color: #ffffff;
+}

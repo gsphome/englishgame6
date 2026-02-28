@@ -1,0 +1,146 @@
+/**
+ * Progression Dashboard Dark Theme - Component-Specific Overrides
+ * 
+ * Component-specific dark theme styles that can override global theme
+ * BEM_DARK_THEME - Semantic classes for component-level theming
+ * Use .progression-dashboard--dark-theme for component-specific overrides
+ * 
+ * This file provides component-level dark theme overrides that have higher
+ * specificity than global theme files, allowing for fine-grained control
+ */
+
+/* === COMPONENT DARK THEME BASE === */
+.progression-dashboard--dark-theme {
+  background-color: var(--theme-bg-primary, #111827);
+  color: var(--theme-text-primary, #ffffff);
+}
+
+/* === TEXT ELEMENTS === */
+.progression-dashboard--dark-theme .progression-dashboard__unit-title {
+  color: var(--theme-text-primary, #ffffff);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__unit-stats {
+  color: var(--theme-text-primary, #ffffff);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__module-name {
+  color: var(--theme-text-primary, #ffffff);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__module-desc {
+  color: var(--theme-text-primary, #ffffff);
+  opacity: 0.9;
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__module-type,
+.progression-dashboard--dark-theme .progression-dashboard__module-time {
+  color: var(--theme-text-primary, #ffffff);
+  opacity: 0.7;
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__next-name {
+  color: var(--theme-text-primary, #ffffff);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__next-desc {
+  color: var(--theme-text-primary, #ffffff);
+  opacity: 0.95;
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__time {
+  color: var(--theme-text-primary, #ffffff);
+  opacity: 0.8;
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__unit-next-label,
+.progression-dashboard--dark-theme .progression-dashboard__next-label {
+  color: var(--theme-text-primary, #ffffff);
+}
+
+/* === BACKGROUND ELEMENTS === */
+.progression-dashboard--dark-theme .progression-dashboard__unit {
+  background-color: var(--theme-bg-elevated, #1f2937);
+  border-color: var(--theme-border-soft, #4b5563);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__module {
+  background-color: var(--theme-bg-elevated, #1f2937);
+  border-color: var(--theme-border-soft, #4b5563);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__module:hover {
+  background-color: var(--theme-bg-soft, #374151);
+  border-color: var(--theme-primary-blue, #3b82f6);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__module--next {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-color: var(--theme-primary-blue, #3b82f6);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__module-icon {
+  background-color: var(--theme-bg-soft, #374151);
+  border-color: var(--theme-border-medium, #6b7280);
+}
+
+/* === HERO SECTION === */
+.progression-dashboard--dark-theme .progression-dashboard__hero {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: var(--theme-text-primary, #ffffff);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__next-module {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--theme-text-primary, #ffffff);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__continue-btn {
+  background-color: var(--theme-primary-blue, #1e40af);
+  color: var(--theme-text-primary, #ffffff);
+  border: 2px solid var(--theme-primary-blue, #3b82f6);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__continue-btn:hover {
+  background-color: var(--theme-primary-blue-hover, #3b82f6);
+  color: var(--theme-text-primary, #ffffff);
+  border-color: var(--theme-primary-blue-hover, #60a5fa);
+}
+
+/* === LOCKED MODULES === */
+.progression-dashboard--dark-theme
+  .progression-dashboard__module--locked
+  .progression-dashboard__module-name {
+  color: var(--theme-text-secondary, #d1d5db);
+}
+
+.progression-dashboard--dark-theme
+  .progression-dashboard__module--locked
+  .progression-dashboard__module-desc {
+  color: var(--theme-text-tertiary, #9ca3af);
+}
+
+.progression-dashboard--dark-theme
+  .progression-dashboard__module--locked
+  .progression-dashboard__module-type,
+.progression-dashboard--dark-theme
+  .progression-dashboard__module--locked
+  .progression-dashboard__module-time {
+  color: var(--theme-text-tertiary, #9ca3af);
+}
+
+/* === COMPONENT-SPECIFIC MODIFIERS === */
+/* These can override global theme styles for specific use cases */
+
+.progression-dashboard--dark-theme.progression-dashboard--high-contrast
+  .progression-dashboard__module-name {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.progression-dashboard--dark-theme.progression-dashboard--compact
+  .progression-dashboard__module-desc {
+  opacity: 1;
+  color: var(--theme-text-secondary, #e5e7eb);
+}

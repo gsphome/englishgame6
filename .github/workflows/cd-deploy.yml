@@ -1,0 +1,182 @@
+name: CD Deploy
+
+on:
+  workflow_run:
+    workflows: ["CI Build", "CI Quality", "CI Security"]
+    types:
+      - completed
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      force-deploy:
+        description: 'Force deploy (skip pipeline checks)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  check-pipelines:
+    name: Check All Pipelines
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.conclusion == 'success' || inputs.force-deploy == true
+    outputs:
+      should-deploy: ${{ steps.pipeline-check.outputs.should_deploy }}
+      commit-sha: ${{ steps.commit-details.outputs.commit_sha }}
+    steps:
+      - name: Get commit details
+        id: commit-details
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            COMMIT_SHA="${{ github.sha }}"
+          else
+            COMMIT_SHA="${{ github.event.workflow_run.head_sha }}"
+          fi
+          echo "commit_sha=$COMMIT_SHA" >> $GITHUB_OUTPUT
+
+      - name: Check pipeline status
+        id: pipeline-check
+        run: |
+          COMMIT_SHA="${{ steps.commit-details.outputs.commit_sha }}"
+          
+          if [ "${{ inputs.force-deploy }}" = "true" ]; then
+            echo "🚀 Force deploy enabled"
+            echo "should_deploy=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          
+          echo "🔍 Checking all CI pipelines for commit: $COMMIT_SHA"
+          echo "🎯 Triggered by: ${{ github.event.workflow_run.name }}"
+          
+          # Wait a moment for API consistency
+          sleep 5
+          
+          # Get workflow runs for this commit with retry logic
+          for i in {1..5}; do
+            echo "📡 API call attempt $i/5..."
+            
+            QUALITY_STATUS=$(gh api repos/${{ github.repository }}/actions/runs --jq ".workflow_runs[] | select(.head_sha == \"$COMMIT_SHA\" and .name == \"CI Quality\") | .conclusion" | head -1)
+            SECURITY_STATUS=$(gh api repos/${{ github.repository }}/actions/runs --jq ".workflow_runs[] | select(.head_sha == \"$COMMIT_SHA\" and .name == \"CI Security\") | .conclusion" | head -1)
+            BUILD_STATUS=$(gh api repos/${{ github.repository }}/actions/runs --jq ".workflow_runs[] | select(.head_sha == \"$COMMIT_SHA\" and .name == \"CI Build\") | .conclusion" | head -1)
+            
+            echo "📊 Pipeline Status (attempt $i):"
+            echo "- Quality: ${QUALITY_STATUS:-❓ not found}"
+            echo "- Security: ${SECURITY_STATUS:-❓ not found}"
+            echo "- Build: ${BUILD_STATUS:-❓ not found}"
+            
+            # Check if all pipelines are found and successfully completed
+            if [[ "$QUALITY_STATUS" == "success" && "$SECURITY_STATUS" == "success" && "$BUILD_STATUS" == "success" ]]; then
+              echo "✅ All pipelines found and succeeded"
+              break
+            fi
+            
+            # If any pipeline failed, exit immediately
+            if [[ "$QUALITY_STATUS" == "failure" || "$SECURITY_STATUS" == "failure" || "$BUILD_STATUS" == "failure" ]]; then
+              echo "❌ At least one pipeline failed - stopping deployment"
+              echo "should_deploy=false" >> $GITHUB_OUTPUT
+              exit 1
+            fi
+            
+            if [ $i -lt 5 ]; then
+              echo "⏳ Waiting 15s before retry..."
+              sleep 15
+            fi
+          done
+          
+          # Final status check
+          echo "🔍 Final pipeline status:"
+          echo "- Quality: $QUALITY_STATUS"
+          echo "- Security: $SECURITY_STATUS" 
+          echo "- Build: $BUILD_STATUS"
+          
+          if [[ "$QUALITY_STATUS" == "success" && "$SECURITY_STATUS" == "success" && "$BUILD_STATUS" == "success" ]]; then
+            echo "should_deploy=true" >> $GITHUB_OUTPUT
+            echo "✅ All CI pipelines succeeded - deployment approved"
+          else
+            echo "should_deploy=false" >> $GITHUB_OUTPUT
+            echo "❌ Deployment blocked - not all pipelines succeeded"
+            echo "📋 This will cause the workflow to be skipped (expected behavior)"
+            exit 1
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: check-pipelines
+    if: needs.check-pipelines.outputs.should-deploy == 'true'
+    environment: production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get build artifacts
+        run: |
+          COMMIT_SHA="${{ needs.check-pipelines.outputs.commit-sha }}"
+          ARTIFACT_NAME="build-files-$COMMIT_SHA"
+          
+          # Get the build run ID
+          BUILD_RUN_ID=$(gh api repos/${{ github.repository }}/actions/runs \
+            --jq ".workflow_runs[] | select(.head_sha == \"$COMMIT_SHA\" and .name == \"CI Build\" and .conclusion == \"success\") | .id" \
+            | head -1)
+          
+          if [ -z "$BUILD_RUN_ID" ]; then
+            echo "❌ No successful CI Build run found"
+            exit 1
+          fi
+          
+          # Download artifacts
+          ARTIFACT_URL=$(gh api repos/${{ github.repository }}/actions/runs/$BUILD_RUN_ID/artifacts \
+            --jq ".artifacts[] | select(.name == \"$ARTIFACT_NAME\") | .archive_download_url")
+          
+          mkdir -p dist
+          curl -L -H "Authorization: token ${{ github.token }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "$ARTIFACT_URL" -o artifact.zip
+          
+          unzip -q artifact.zip -d dist/
+          rm artifact.zip
+          
+          echo "✅ Artifacts downloaded"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Deployment success
+        run: |
+          echo "🎉 Deployment successful!"
+          echo "📍 URL: ${{ steps.deployment.outputs.page_url }}"
+
+  deployment-complete:
+    name: Deployment Complete
+    runs-on: ubuntu-latest
+    needs: [check-pipelines, deploy]
+    if: needs.check-pipelines.outputs.should-deploy == 'true' && needs.deploy.result == 'success'
+    steps:
+      - name: Success notification
+        run: |
+          echo "🎉 CD Deploy Workflow Completed Successfully!"
+          echo "✅ All pipelines passed"
+          echo "✅ Deployment executed successfully"
+          echo "🌐 Application is live and accessible"

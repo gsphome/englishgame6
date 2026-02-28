@@ -1,0 +1,282 @@
+[
+  {
+    "front": "Dress up",
+    "back": "Vestirse elegante / Disfrazarse",
+    "ipa": "/dres ʌp/",
+    "example": "She likes to dress up for parties.",
+    "example_es": "Le gusta vestirse elegante para las fiestas."
+  },
+  {
+    "front": "Smarten up",
+    "back": "Arreglarse / Mejorar el aspecto",
+    "ipa": "/ˈsmɑːrtn ʌp/",
+    "example": "He needs to smarten up for the interview.",
+    "example_es": "Necesita arreglarse para la entrevista."
+  },
+  {
+    "front": "Try on",
+    "back": "Probarse (ropa)",
+    "ipa": "/traɪ ɒn/",
+    "example": "She's been trying on clothes all morning.",
+    "example_es": "Ha estado probándose ropa toda la mañana."
+  },
+  {
+    "front": "Take off",
+    "back": "Quitarse (ropa)",
+    "ipa": "/teɪk ɒf/",
+    "example": "He needs to take off his shoes before he comes in.",
+    "example_es": "Necesita quitarse los zapatos antes de entrar."
+  },
+  {
+    "front": "Put on",
+    "back": "Ponerse (ropa/maquillaje)",
+    "ipa": "/pʊt ɒn/",
+    "example": "She's been putting on her makeup.",
+    "example_es": "Se ha estado maquillando."
+  },
+  {
+    "front": "Do up",
+    "back": "Abrochar / Atar",
+    "ipa": "/duː ʌp/",
+    "example": "He needs to do up his shoelaces.",
+    "example_es": "Necesita atarse los cordones de los zapatos."
+  },
+  {
+    "front": "Wrap up",
+    "back": "Abrigarse",
+    "ipa": "/ræp ʌp/",
+    "example": "She<s been wrapping up warm because it>s cold outside.",
+    "example_es": "Se ha estado abrigando porque hace frío fuera."
+  },
+  {
+    "front": "Get changed out of",
+    "back": "Quitarse (ropa mojada)",
+    "ipa": "/ɡet tʃeɪndʒd aʊt ɒv/",
+    "example": "He needs to get changed out of his wet clothes.",
+    "example_es": "Necesita quitarse la ropa mojada."
+  },
+  {
+    "front": "Slip into",
+    "back": "Ponerse (ropa fácilmente)",
+    "ipa": "/slɪp ˈɪntuː/",
+    "example": "She's been slipping into her new dress.",
+    "example_es": "Se ha estado poniendo su nuevo vestido fácilmente."
+  },
+  {
+    "front": "Throw on",
+    "back": "Ponerse (ropa rápidamente)",
+    "ipa": "/θroʊ ɒn/",
+    "example": "He needs to throw on a jacket before he goes out.",
+    "example_es": "Necesita ponerse una chaqueta antes de salir."
+  },
+  {
+    "front": "Show off",
+    "back": "Presumir / Alardear",
+    "ipa": "/ʃoʊ ɒf/",
+    "example": "She's been showing off her new ring.",
+    "example_es": "Ha estado presumiendo de su nuevo anillo."
+  },
+  {
+    "front": "Grow out",
+    "back": "Dejar crecer (pelo)",
+    "ipa": "/ɡroʊ aʊt/",
+    "example": "He needs to grow out his hair.",
+    "example_es": "Necesita dejarse crecer el pelo."
+  },
+  {
+    "front": "Let out",
+    "back": "Ensanchar (ropa)",
+    "ipa": "/let aʊt/",
+    "example": "She's been letting out her dress.",
+    "example_es": "Ha estado ensanchando su vestido."
+  },
+  {
+    "front": "Take in",
+    "back": "Estrechar (ropa)",
+    "ipa": "/teɪk ɪn/",
+    "example": "He needs to take in his trousers.",
+    "example_es": "Necesita estrechar sus pantalones."
+  },
+  {
+    "front": "Zip up",
+    "back": "Subir la cremallera",
+    "ipa": "/zɪp ʌp/",
+    "example": "He needs to zip up his jacket.",
+    "example_es": "Necesita subirse la cremallera de la chaqueta."
+  },
+  {
+    "front": "Kick off",
+    "back": "Quitarse (zapatos)",
+    "ipa": "/kɪk ɒf/",
+    "example": "She's been kicking off her shoes.",
+    "example_es": "Se ha estado quitando los zapatos."
+  },
+  {
+    "front": "Pull up",
+    "back": "Subir (ropa)",
+    "ipa": "/pʊl ʌp/",
+    "example": "He needs to pull up his socks.",
+    "example_es": "Necesita subirse los calcetines."
+  },
+  {
+    "front": "Slip out of",
+    "back": "Quitarse (ropa fácilmente)",
+    "ipa": "/slɪp aʊt ɒv/",
+    "example": "She's been slipping out of her wet clothes.",
+    "example_es": "Se ha estado quitando la ropa mojada fácilmente."
+  },
+  {
+    "front": "Accessorize",
+    "back": "Complementar / Accesorizar",
+    "ipa": "/əkˈsesəraɪz/",
+    "example": "She loves to accessorize her outfits with scarves and jewelry.",
+    "example_es": "Le encanta complementar sus atuendos con bufandas y joyas."
+  },
+  {
+    "front": "Button up",
+    "back": "Abrocharse (botones)",
+    "ipa": "/ˈbʌtn ʌp/",
+    "example": "Button up your coat, it's cold outside.",
+    "example_es": "Abróchate el abrigo, hace frío fuera."
+  },
+  {
+    "front": "Change into",
+    "back": "Cambiarse a (ropa)",
+    "ipa": "/tʃeɪndʒ ˈɪntuː/",
+    "example": "I need to change into something more comfortable.",
+    "example_es": "Necesito cambiarme a algo más cómodo."
+  },
+  {
+    "front": "Dress down",
+    "back": "Vestir informal",
+    "ipa": "/dres daʊn/",
+    "example": "It's a casual office, so you can dress down.",
+    "example_es": "Es una oficina informal, así que puedes vestir informal."
+  },
+  {
+    "front": "Fasten up",
+    "back": "Abrochar / Sujetar",
+    "ipa": "/ˈfɑːsn ʌp/",
+    "example": "Fasten up your seatbelt before we start.",
+    "example_es": "Abróchate el cinturón antes de que empecemos."
+  },
+  {
+    "front": "Get dressed",
+    "back": "Vestirse",
+    "ipa": "/ɡet drest/",
+    "example": "I need to get dressed for work.",
+    "example_es": "Necesito vestirme para el trabajo."
+  },
+  {
+    "front": "Get undressed",
+    "back": "Desvestirse",
+    "ipa": "/ɡet ʌnˈdrest/",
+    "example": "He got undressed and went to bed.",
+    "example_es": "Se desvistió y se fue a la cama."
+  },
+  {
+    "front": "Go with",
+    "back": "Combinar con",
+    "ipa": "/ɡoʊ wɪð/",
+    "example": "That shirt doesn't go with your trousers.",
+    "example_es": "Esa camisa no combina con tus pantalones."
+  },
+  {
+    "front": "Hang up",
+    "back": "Colgar (ropa)",
+    "ipa": "/hæŋ ʌp/",
+    "example": "Please hang up your coat in the closet.",
+    "example_es": "Por favor, cuelga tu abrigo en el armario."
+  },
+  {
+    "front": "Lace up",
+    "back": "Atarse (cordones)",
+    "ipa": "/leɪs ʌp/",
+    "example": "Lace up your boots before you go hiking.",
+    "example_es": "Átate las botas antes de ir de excursión."
+  },
+  {
+    "front": "Match",
+    "back": "Hacer juego / Combinar",
+    "ipa": "/mætʃ/",
+    "example": "Her shoes match her bag perfectly.",
+    "example_es": "Sus zapatos combinan perfectamente con su bolso."
+  },
+  {
+    "front": "Pull on",
+    "back": "Ponerse (rápidamente)",
+    "ipa": "/pʊl ɒn/",
+    "example": "She pulled on a sweater as it was getting cold.",
+    "example_es": "Se puso un suéter rápidamente porque estaba haciendo frío."
+  },
+  {
+    "front": "Slip on",
+    "back": "Ponerse (fácilmente)",
+    "ipa": "/slɪp ɒn/",
+    "example": "He slipped on his shoes and left.",
+    "example_es": "Se puso los zapatos fácilmente y se fue."
+  },
+  {
+    "front": "Unbutton",
+    "back": "Desabrochar",
+    "ipa": "/ʌnˈbʌtn/",
+    "example": "He unbuttoned his shirt.",
+    "example_es": "Se desabrochó la camisa."
+  },
+  {
+    "front": "Unzip",
+    "back": "Bajar la cremallera",
+    "ipa": "/ʌnˈzɪp/",
+    "example": "Unzip your jacket, it's warm in here.",
+    "example_es": "Baja la cremallera de tu chaqueta, hace calor aquí."
+  },
+  {
+    "front": "Wear out",
+    "back": "Desgastar / Gastar (ropa)",
+    "ipa": "/weər aʊt/",
+    "example": "I've worn out my favorite jeans.",
+    "example_es": "He desgastado mis vaqueros favoritos."
+  },
+  {
+    "front": "Zip down",
+    "back": "Bajar la cremallera",
+    "ipa": "/zɪp daʊn/",
+    "example": "Zip down your jacket if you're hot.",
+    "example_es": "Baja la cremallera de tu chaqueta si tienes calor."
+  },
+  {
+    "front": "Dress down",
+    "back": "Vestir informal",
+    "ipa": "/dres daʊn/",
+    "example": "It's a casual office, so you can dress down.",
+    "example_es": "Es una oficina informal, así que puedes vestir informal."
+  },
+  {
+    "front": "Fling on",
+    "back": "Ponerse rápidamente",
+    "ipa": "/flɪŋ ɒn/",
+    "example": "She flung on a coat and ran out the door.",
+    "example_es": "Se puso un abrigo rápidamente y salió corriendo por la puerta."
+  },
+  {
+    "front": "Get dressed up",
+    "back": "Arreglarse/Vestirse de gala",
+    "ipa": "/ɡet drest ʌp/",
+    "example": "We're getting dressed up for the party tonight.",
+    "example_es": "Nos estamos arreglando para la fiesta de esta noche."
+  },
+  {
+    "front": "Put on weight",
+    "back": "Engordar",
+    "ipa": "/pʊt ɒn weɪt/",
+    "example": "I've put on a lot of weight since I stopped exercising.",
+    "example_es": "He engordado mucho desde que dejé de hacer ejercicio."
+  },
+  {
+    "front": "Take off weight",
+    "back": "Adelgazar",
+    "ipa": "/teɪk ɒf weɪt/",
+    "example": "She's trying to take off weight for her wedding.",
+    "example_es": "Está intentando adelgazar para su boda."
+  }
+]

@@ -1,0 +1,123 @@
+/* Breakpoints and Device Detection - Design System
+ * Centralized responsive system for 4 theme contexts
+ * Use these breakpoints consistently
+ * Use --mobile-device and --web-device for theme context detection
+ * Centralized media queries and device detection for consistent
+ * responsive behavior across all theme contexts
+ */
+
+/* BREAKPOINT DEFINITIONS */
+/* Standard breakpoint values - 768px is the critical mobile web boundary */
+:root {
+  --breakpoint-mobile: 768px; /* Mobile web boundary - critical for theme contexts */
+  --breakpoint-tablet: 1024px; /* Tablet breakpoint - optional optimization */
+  --breakpoint-desktop: 1200px; /* Desktop breakpoint - large screen optimization */
+}
+
+/* DEVICE DETECTION MIXINS */
+/* DEVICE_DETECTION - Media query patterns for theme contexts */
+/* Use these patterns for responsive component styling */
+
+/* Mobile Detection - Comprehensive approach */
+/* Mobile theme context - touch optimizations needed */
+@custom-media --mobile-device (max-width: 768px);
+@custom-media --mobile-portrait (max-width: 768px) and (orientation: portrait);
+@custom-media --mobile-landscape (max-width: 768px) and (orientation: landscape);
+
+/* Safari Mobile Specific Detection */
+/* Safari mobile fixes - webkit-specific optimizations */
+@custom-media --safari-mobile (max-width: 768px) and (-webkit-touch-callout: none);
+
+/* Desktop Web Detection */
+/* Web theme context - hover states and desktop optimizations */
+@custom-media --web-device (min-width: 769px);
+@custom-media --desktop-device (min-width: 1024px);
+
+/* CONTEXT DETECTION CLASSES */
+/* THEME_CONTEXT_CLASSES - 4 theme context system */
+/* These classes represent the 4 distinct theme contexts */
+
+/* Base context classes for theme targeting */
+.theme-context--web-light {
+  /* Applied to html when: desktop + light mode */
+  /* Desktop optimizations with light theme colors */
+}
+
+.theme-context--web-dark {
+  /* Applied to html when: desktop + dark mode */
+  /* Desktop optimizations with dark theme colors */
+}
+
+.theme-context--mobile-light {
+  /* Applied to html when: mobile + light mode */
+  /* Touch optimizations with light theme colors */
+}
+
+.theme-context--mobile-dark {
+  /* Applied to html when: mobile + dark mode */
+  /* Touch optimizations with dark theme colors */
+}
+
+/* UTILITY CLASSES */
+/* RESPONSIVE_UTILITIES - Context-aware visibility utilities */
+/* Use sparingly - prefer responsive component design */
+
+/* Hide on specific contexts */
+.hide-on-mobile {
+  /* Hide element on mobile devices */
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.hide-on-web {
+  /* Hide element on desktop web devices */
+  @media (min-width: 769px) {
+    display: none;
+  }
+}
+
+.show-mobile-only {
+  /* Show element only on mobile devices */
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+.show-web-only {
+  /* Show element only on desktop web devices */
+  display: none;
+  @media (min-width: 769px) {
+    display: block;
+  }
+}
+
+/* ACCESSIBILITY BREAKPOINTS */
+/* ACCESSIBILITY_DETECTION - User preference detection */
+/* Automatically adapt to user accessibility preferences */
+
+/* High contrast mode detection */
+/* Components should respect high contrast preferences */
+@media (prefers-contrast: high) {
+  .theme-context--web-light,
+  .theme-context--mobile-light {
+    --contrast-mode: high-light; /* High contrast light mode */
+  }
+
+  .theme-context--web-dark,
+  .theme-context--mobile-dark {
+    --contrast-mode: high-dark; /* High contrast dark mode */
+  }
+}
+
+/* Reduced motion detection */
+/* Disable animations when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .theme-context--web-light,
+  .theme-context--web-dark,
+  .theme-context--mobile-light,
+  .theme-context--mobile-dark {
+    --motion-mode: reduced; /* Reduced motion preference detected */
+  }
+}

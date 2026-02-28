@@ -1,0 +1,282 @@
+[
+  {
+    "front": "Analyze",
+    "back": "Analizar",
+    "ipa": "/ˈænəlaɪz/",
+    "example": "You need to analyze the data carefully.",
+    "example_es": "Necesitas analizar los datos cuidadosamente."
+  },
+  {
+    "front": "Assume",
+    "back": "Asumir",
+    "ipa": "/əˈsuːm/",
+    "example": "Never assume you know the answer.",
+    "example_es": "Nunca asumas que sabes la respuesta."
+  },
+  {
+    "front": "Benefit",
+    "back": "Beneficio",
+    "ipa": "/ˈbenɪfɪt/",
+    "example": "What is the main benefit of this approach?",
+    "example_es": "¿Cuál es el principal beneficio de este enfoque?"
+  },
+  {
+    "front": "Concept",
+    "back": "Concepto",
+    "ipa": "/ˈkɒnsept/",
+    "example": "It's important to understand the basic concepts.",
+    "example_es": "Es importante entender los conceptos básicos."
+  },
+  {
+    "front": "Context",
+    "back": "Contexto",
+    "ipa": "/ˈkɒntekst/",
+    "example": "The meaning of a word can change with context.",
+    "example_es": "El significado de una palabra puede cambiar con el contexto."
+  },
+  {
+    "front": "Criteria",
+    "back": "Criterios",
+    "ipa": "/kraɪˈtɪəriə/",
+    "example": "What are the criteria for success?",
+    "example_es": "¿Cuáles son los criterios para el éxito?"
+  },
+  {
+    "front": "Data",
+    "back": "Datos",
+    "ipa": "/ˈdeɪtə/",
+    "example": "We need more data to make a decision.",
+    "example_es": "Necesitamos más datos para tomar una decisión."
+  },
+  {
+    "front": "Factor",
+    "back": "Factor",
+    "ipa": "/ˈfæktər/",
+    "example": "Cost is a major factor in our decision.",
+    "example_es": "El costo es un factor importante en nuestra decisión."
+  },
+  {
+    "front": "Function",
+    "back": "Función",
+    "ipa": "/ˈfʌŋkʃn/",
+    "example": "What is the function of this device?",
+    "example_es": "¿Cuál es la función de este dispositivo?"
+  },
+  {
+    "front": "Issue",
+    "back": "Asunto / Problema",
+    "ipa": "/ˈɪʃuː/",
+    "example": "This is a complex issue with no easy solution.",
+    "example_es": "Este es un asunto complejo sin una solución fácil."
+  },
+  {
+    "front": "Method",
+    "back": "Método",
+    "ipa": "/ˈmeθəd/",
+    "example": "We need a new method to solve this problem.",
+    "example_es": "Necesitamos un nuevo método para resolver este problema."
+  },
+  {
+    "front": "Period",
+    "back": "Período",
+    "ipa": "/ˈpɪəriəd/",
+    "example": "This was a period of great change.",
+    "example_es": "Este fue un período de grandes cambios."
+  },
+  {
+    "front": "Principle",
+    "back": "Principio",
+    "ipa": "/ˈprɪnsəpl/",
+    "example": "This is a fundamental principle of science.",
+    "example_es": "Este es un principio fundamental de la ciencia."
+  },
+  {
+    "front": "Role",
+    "back": "Rol / Papel",
+    "ipa": "/rəʊl/",
+    "example": "He played a key role in the project.",
+    "example_es": "Él jugó un papel clave en el proyecto."
+  },
+  {
+    "front": "Sector",
+    "back": "Sector",
+    "ipa": "/ˈsektər/",
+    "example": "The technology sector is growing rapidly.",
+    "example_es": "El sector tecnológico está creciendo rápidamente."
+  },
+  {
+    "front": "Source",
+    "back": "Fuente",
+    "ipa": "/sɔːrs/",
+    "example": "What is the source of this information?",
+    "example_es": "¿Cuál es la fuente de esta información?"
+  },
+  {
+    "front": "Structure",
+    "back": "Estructura",
+    "ipa": "/ˈstrʌktʃər/",
+    "example": "The structure of the building is very complex.",
+    "example_es": "La estructura del edificio es muy compleja."
+  },
+  {
+    "front": "Theory",
+    "back": "Teoría",
+    "ipa": "/ˈθɪəri/",
+    "example": "This is just a theory, it hasn't been proven.",
+    "example_es": "Esto es solo una teoría, no ha sido probada."
+  },
+  {
+    "front": "Variable",
+    "back": "Variable",
+    "ipa": "/ˈveəriəbl/",
+    "example": "There are too many variables to consider.",
+    "example_es": "Hay demasiadas variables a considerar."
+  },
+  {
+    "front": "Trend",
+    "back": "Tendencia",
+    "ipa": "/trend/",
+    "example": "There is a growing trend towards online shopping.",
+    "example_es": "Hay una tendencia creciente hacia las compras en línea."
+  },
+  {
+    "front": "Access",
+    "back": "Acceso",
+    "ipa": "/ˈækses/",
+    "example": "You need a password to access the system.",
+    "example_es": "Necesitas una contraseña para acceder al sistema."
+  },
+  {
+    "front": "Achieve",
+    "back": "Lograr",
+    "ipa": "/əˈtʃiːv/",
+    "example": "She worked hard to achieve her goals.",
+    "example_es": "Ella trabajó duro para lograr sus metas."
+  },
+  {
+    "front": "Acquire",
+    "back": "Adquirir",
+    "ipa": "/əˈkwaɪər/",
+    "example": "The company acquired a new subsidiary.",
+    "example_es": "La empresa adquirió una nueva subsidiaria."
+  },
+  {
+    "front": "Adapt",
+    "back": "Adaptar",
+    "ipa": "/əˈdæpt/",
+    "example": "It's important to adapt to new situations.",
+    "example_es": "Es importante adaptarse a nuevas situaciones."
+  },
+  {
+    "front": "Adjust",
+    "back": "Ajustar",
+    "ipa": "/əˈdʒʌst/",
+    "example": "You need to adjust the settings.",
+    "example_es": "Necesitas ajustar la configuración."
+  },
+  {
+    "front": "Administer",
+    "back": "Administrar",
+    "ipa": "/ədˈmɪnɪstər/",
+    "example": "He administers the daily operations of the office.",
+    "example_es": "Él administra las operaciones diarias de la oficina."
+  },
+  {
+    "front": "Affect",
+    "back": "Afectar",
+    "ipa": "/əˈfekt/",
+    "example": "The new policy will affect everyone.",
+    "example_es": "La nueva política afectará a todos."
+  },
+  {
+    "front": "Allocate",
+    "back": "Asignar",
+    "ipa": "/ˈæləkeɪt/",
+    "example": "We need to allocate resources efficiently.",
+    "example_es": "Necesitamos asignar los recursos de manera eficiente."
+  },
+  {
+    "front": "Alter",
+    "back": "Alterar",
+    "ipa": "/ˈɔːltər/",
+    "example": "The design was altered to fit the new requirements.",
+    "example_es": "El diseño fue alterado para ajustarse a los nuevos requisitos."
+  },
+  {
+    "front": "Apparent",
+    "back": "Aparente / Evidente",
+    "ipa": "/əˈpærənt/",
+    "example": "It was apparent that he was tired.",
+    "example_es": "Era evidente que estaba cansado."
+  },
+  {
+    "front": "Approach",
+    "back": "Enfoque / Abordar",
+    "ipa": "/əˈproʊtʃ/",
+    "example": "We need a new approach to this problem.",
+    "example_es": "Necesitamos un nuevo enfoque para este problema."
+  },
+  {
+    "front": "Area",
+    "back": "Área",
+    "ipa": "/ˈeəriə/",
+    "example": "This is a restricted area.",
+    "example_es": "Esta es un área restringida."
+  },
+  {
+    "front": "Aspect",
+    "back": "Aspecto",
+    "ipa": "/ˈæspekt/",
+    "example": "Consider every aspect of the situation.",
+    "example_es": "Considera cada aspecto de la situación."
+  },
+  {
+    "front": "Assess",
+    "back": "Evaluar",
+    "ipa": "/əˈses/",
+    "example": "We need to assess the damage.",
+    "example_es": "Necesitamos evaluar el daño."
+  },
+  {
+    "front": "Assist",
+    "back": "Ayudar / Asistir",
+    "ipa": "/əˈsɪst/",
+    "example": "Can I assist you with anything?",
+    "example_es": "¿Puedo ayudarte en algo?"
+  },
+  {
+    "front": "Assume",
+    "back": "Asumir",
+    "ipa": "/əˈsuːm/",
+    "example": "Don't assume anything.",
+    "example_es": "No asumas nada."
+  },
+  {
+    "front": "Authority",
+    "back": "Autoridad",
+    "ipa": "/əˈθɔːrəti/",
+    "example": "He has the authority to make decisions.",
+    "example_es": "Él tiene la autoridad para tomar decisiones."
+  },
+  {
+    "front": "Available",
+    "back": "Disponible",
+    "ipa": "/əˈveɪləbl/",
+    "example": "The information is available online.",
+    "example_es": "La información está disponible en línea."
+  },
+  {
+    "front": "Aware",
+    "back": "Consciente",
+    "ipa": "/əˈweər/",
+    "example": "Are you aware of the risks?",
+    "example_es": "¿Eres consciente de los riesgos?"
+  },
+  {
+    "front": "Challenge",
+    "back": "Desafío",
+    "ipa": "/ˈtʃælɪndʒ/",
+    "example": "This project presents a new challenge.",
+    "example_es": "Este proyecto presenta un nuevo desafío."
+  }
+]

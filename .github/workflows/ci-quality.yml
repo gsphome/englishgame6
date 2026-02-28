@@ -1,0 +1,56 @@
+name: CI Quality
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Code Quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit
+
+      - name: Run ESLint
+        run: |
+          echo "🔍 Running ESLint..."
+          npm run lint
+          echo "✅ ESLint completed"
+
+      - name: Run TypeScript check
+        run: |
+          echo "🔍 Running TypeScript check..."
+          npm run type-check
+          echo "✅ TypeScript check completed"
+
+      - name: Run tests
+        run: |
+          echo "🔍 Running tests..."
+          npm test
+          echo "✅ Tests completed"
+
+      - name: Check formatting
+        run: |
+          echo "🔍 Checking formatting..."
+          npm run format:check
+          echo "✅ Formatting check completed"
