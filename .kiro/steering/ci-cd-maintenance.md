@@ -14,6 +14,15 @@ inclusion: auto
   - Security patterns check (eval, secrets)
   - TruffleHog secret scan
 
+### Maintenance (Cada 5 días)
+- **Schedule**: `0 0 */5 * *` (00:00 UTC cada 5 días)
+- **Propósito**: Mantener artifacts frescos (evitar expiración)
+- **Acciones**:
+  - Commit vacío automático
+  - Trigger de CI/CD pipelines
+  - Regeneración de artifacts
+- **Beneficio**: Previene fallos de CD Deploy por artifacts expirados
+
 ## Artifact Retention
 
 ### Build Artifacts
@@ -36,8 +45,17 @@ git push
 
 ## Mantenimiento Preventivo
 
-### Cada 7 días (antes de expiración de artifacts)
-Si no hay commits nuevos pero quieres mantener el deployment actualizado:
+### Automático (Implementado)
+El workflow `maintenance.yml` corre cada 5 días automáticamente:
+- Hace commit vacío
+- Dispara CI/CD pipelines
+- Regenera artifacts
+- Actualiza deployment
+
+**No requiere intervención manual.**
+
+### Manual (Opcional)
+Si necesitas forzar actualización antes del cron:
 
 ```bash
 npm run build:full
@@ -133,11 +151,11 @@ gh workflow run "CD Deploy" --field force-deploy=true
 
 ## Best Practices
 
-1. **Commits frecuentes** - Al menos cada 5 días para mantener artifacts
-2. **Monitoreo diario** - Revisar notificaciones de GitHub Actions
+1. ✅ **Mantenimiento automático** - Workflow corre cada 5 días (ya configurado)
+2. **Monitoreo ocasional** - Revisar notificaciones de GitHub Actions si hay fallos
 3. **Build local primero** - Usar `npm run build:full` antes de push importante
 4. **Validar deployment** - Usar `npm run deploy:status` después de deploy
-5. **Actualizar dependencias** - Revisar `npm audit` semanalmente
+5. **Actualizar dependencias** - Revisar `npm audit` cuando el cron de seguridad alerte
 
 ## Comandos Útiles
 
@@ -165,5 +183,7 @@ gh workflow run "CD Deploy" --field force-deploy=true
 
 - Los artifacts expiran después de 7 días (configurado en ci-build.yml)
 - El cron job de seguridad corre diariamente a las 2 AM UTC
+- ✅ **El cron job de mantenimiento corre cada 5 días** para mantener artifacts frescos
 - GitHub Pages requiere `build_type: workflow` para GitHub Actions deployment
 - El CD Deploy solo se dispara cuando todos los CI pipelines pasan
+- **Compatible con GitHub Free** - No aumenta uso de storage

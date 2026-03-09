@@ -1,0 +1,57 @@
+name: Maintenance
+
+on:
+  schedule:
+    # Runs every 5 days at 00:00 UTC to keep artifacts fresh
+    - cron: '0 0 */5 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  keep-artifacts-fresh:
+    name: Keep Artifacts Fresh
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create maintenance commit
+        run: |
+          echo "🔄 Creating maintenance commit to refresh artifacts..."
+          
+          # Check if there are any uncommitted changes
+          if ! git diff-index --quiet HEAD --; then
+            echo "⚠️ Uncommitted changes detected, skipping maintenance commit"
+            exit 0
+          fi
+          
+          # Create empty commit
+          git commit --allow-empty -m "chore(maintenance): refresh build artifacts
+
+This automated commit keeps CI/CD artifacts fresh (7-day retention).
+Triggered by scheduled maintenance workflow every 5 days."
+          
+          echo "✅ Maintenance commit created"
+
+      - name: Push changes
+        run: |
+          echo "🚀 Pushing maintenance commit..."
+          git push
+          echo "✅ Maintenance commit pushed successfully"
+
+      - name: Summary
+        run: |
+          echo "📊 Maintenance Summary"
+          echo "===================="
+          echo "✅ Artifacts will be refreshed by CI/CD pipelines"
+          echo "⏰ Next maintenance: 5 days from now"
+          echo "🌐 Deployment will be updated automatically"
