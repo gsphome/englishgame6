@@ -16,13 +16,8 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [
       react({
-        // Ensure React is available globally to prevent createContext issues
         jsxRuntime: 'automatic',
-        jsxImportSource: 'react',
-        // Add babel config to ensure proper React handling
-        babel: {
-          plugins: []
-        }
+        jsxImportSource: 'react'
       })
     ],
     root: resolve(__dirname, '..'),
@@ -32,20 +27,13 @@ export default defineConfig(({ mode }) => {
       emptyOutDir: true,
       // CSS chunk optimization for 500KB target compliance (pure CSS architecture)
       rollupOptions: {
-        // Ensure proper loading order for dependencies
-        external: [],
         output: {
-          // Ensure vendor chunk loads first (contains React)
           chunkFileNames: (chunkInfo) => {
             if (chunkInfo.name === 'vendor') {
               return 'assets/vendor-[hash].js';
             }
             return 'assets/[name]-[hash].js';
           },
-          // SIMPLIFIED: No manual chunks - let Vite handle React bundling
-          // This ensures React stays in main bundle and loads synchronously
-          manualChunks: undefined,
-          // Simplified asset naming - let Vite handle automatically
           assetFileNames: 'assets/[name]-[hash][extname]'
         }
       },
@@ -76,17 +64,13 @@ export default defineConfig(({ mode }) => {
       }
     },
     optimizeDeps: {
-      // Pre-bundle critical dependencies to ensure they're available
       include: [
         'react',
         'react-dom',
         'react/jsx-runtime',
         'zustand',
         '@tanstack/react-query'
-      ],
-      exclude: [],
-      // Don't force optimization to allow proper bundling
-      force: false
+      ]
     },
     server: {
       fs: {

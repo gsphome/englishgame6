@@ -27,6 +27,10 @@ export function logHeader(message) {
   console.log('='.repeat(60));
 }
 
+export function logCompactHeader(message) {
+  log(`\n🔄 ${message}`, colors.bright + colors.cyan);
+}
+
 export function logSuccess(message) {
   log(`✅ ${message}`, colors.green);
 }

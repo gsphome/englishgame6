@@ -8,37 +8,7 @@
 import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
-
-// Colors for console output
-const colors = {
-    reset: '\x1b[0m',
-    bright: '\x1b[1m',
-    red: '\x1b[31m',
-    green: '\x1b[32m',
-    yellow: '\x1b[33m',
-    blue: '\x1b[34m',
-    cyan: '\x1b[36m'
-};
-
-function log(message, color = colors.reset) {
-    console.log(`${color}${message}${colors.reset}`);
-}
-
-function logSuccess(message) {
-    log(`✅ ${message}`, colors.green);
-}
-
-function logWarning(message) {
-    log(`⚠️ ${message}`, colors.yellow);
-}
-
-function logError(message) {
-    log(`❌ ${message}`, colors.red);
-}
-
-function logInfo(message) {
-    log(`ℹ️ ${message}`, colors.blue);
-}
+import { colors, log, logSuccess, logError, logWarning, logInfo } from '../utils/logger.js';
 
 /**
  * Check for dangerous patterns with context analysis

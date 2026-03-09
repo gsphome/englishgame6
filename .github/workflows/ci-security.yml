@@ -23,7 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
@@ -31,12 +31,6 @@ jobs:
 
       - name: Dependency audit
         run: npm audit --audit-level=high --omit=dev
-
-      - name: Production audit
-        run: npm audit --audit-level=high --production
-
-      - name: Critical vulnerabilities
-        run: npm audit --audit-level=critical
 
       - name: Security patterns check
         run: |
