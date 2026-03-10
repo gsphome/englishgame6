@@ -36,6 +36,8 @@ export default [
         'warn',
         { allowConstantExport: true },
       ],
+      // TypeScript handles undefined variable checks; no-undef causes false positives with TS types
+      'no-undef': 'off',
       // Reduce false positives for unused variables
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': [
