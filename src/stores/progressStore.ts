@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { progressionService } from '../services/progressionService';
 
-export interface ProgressEntry {
+interface ProgressEntry {
   date: string; // YYYY-MM-DD format
   score: number;
   totalQuestions: number;
@@ -12,7 +12,7 @@ export interface ProgressEntry {
   timeSpent?: number;
 }
 
-export interface DailyProgress {
+interface DailyProgress {
   date: string;
   totalScore: number;
   totalQuestions: number;
@@ -23,7 +23,7 @@ export interface DailyProgress {
   modules: string[];
 }
 
-export interface ModuleCompletion {
+interface ModuleCompletion {
   moduleId: string;
   completedAt: string;
   bestScore: number;

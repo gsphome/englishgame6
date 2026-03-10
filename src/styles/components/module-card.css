@@ -6,7 +6,6 @@
   --card-shadow: var(--shadow-card-default);
   --card-shadow-hover: var(--shadow-card-hover);
   --card-shadow-active: var(--shadow-card-active);
-  --card-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --card-width-mobile: 100px;
   --card-height-mobile: 85px;
   --card-width-tablet: 130px;
@@ -466,27 +465,7 @@
 
 .module-card__status-indicator--locked svg {
   color: var(--theme-text-on-colored, rgba(255, 255, 255, 0.9));
-}
-
-/* Legacy support - will be deprecated */
-.module-card__status-icon {
-  position: absolute;
-  top: 0.25rem;
-  right: 0.25rem;
-  width: 1.25rem;
-  height: 1.25rem;
-  background-color: rgba(16, 185, 129, 0.95);
-  border: 2px solid rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease-in-out;
-  z-index: 2;
-}
-
-.module-card__status-icon svg {
+}.module-card__status-icon svg {
   width: 0.75rem;
   height: 0.75rem;
   color: var(--theme-text-on-colored, #ffffff);
@@ -775,7 +754,7 @@
 
 /* === UTILITY CLASSES === */
 .text-white {
-  color: #ffffff !important;
+  color: #ffffff;
 }
 
 /* === MODULE CARD ICONS === */
@@ -892,6 +871,7 @@ html.light .module-card--reading .module-card__icon svg {
   background: linear-gradient(90deg, rgba(16, 185, 129, 0.9), rgba(5, 150, 105, 0.9));
   transition: width 0.3s ease-in-out;
   box-shadow: 0 0 4px rgba(16, 185, 129, 0.5);
+  width: var(--progress-width, 0%);
 }
 
 /* Progress indicator for completed modules */

@@ -1,10 +1,19 @@
 import React, { Suspense, lazy } from 'react';
 import { useAppStore } from '../../stores/appStore';
+import { useSettingsStore } from '../../stores/settingsStore';
 import { useModuleData } from '../../hooks/useModuleData';
+import { useTranslation } from '../../utils/i18n';
 import { LoadingSkeleton } from '../ui/LoadingSkeleton';
 import { MainMenu } from '../ui/MainMenu';
 import type { LearningModule } from '../../types';
 import '../../styles/components/app-router.css';
+
+// Helper to get translated error message outside React context
+const getErrorMsg = () => {
+  const lang = useSettingsStore.getState().language;
+  const { t } = useTranslation(lang);
+  return t('errors.failedToLoadComponent');
+};
 
 // Lazy load learning components with better error handling
 const FlashcardComponent = lazy(() =>
@@ -14,7 +23,7 @@ const FlashcardComponent = lazy(() =>
     }))
     .catch(() => ({
       default: () => (
-        <div className="app-router__error-fallback">Failed to load Flashcard component</div>
+        <div className="app-router__error-fallback">{getErrorMsg()}</div>
       ),
     }))
 );
@@ -26,7 +35,7 @@ const QuizComponent = lazy(() =>
     }))
     .catch(() => ({
       default: () => (
-        <div className="app-router__error-fallback">Failed to load Quiz component</div>
+        <div className="app-router__error-fallback">{getErrorMsg()}</div>
       ),
     }))
 );
@@ -38,7 +47,7 @@ const CompletionComponent = lazy(() =>
     }))
     .catch(() => ({
       default: () => (
-        <div className="app-router__error-fallback">Failed to load Completion component</div>
+        <div className="app-router__error-fallback">{getErrorMsg()}</div>
       ),
     }))
 );
@@ -50,7 +59,7 @@ const SortingComponent = lazy(() =>
     }))
     .catch(() => ({
       default: () => (
-        <div className="app-router__error-fallback">Failed to load Sorting component</div>
+        <div className="app-router__error-fallback">{getErrorMsg()}</div>
       ),
     }))
 );
@@ -62,7 +71,7 @@ const MatchingComponent = lazy(() =>
     }))
     .catch(() => ({
       default: () => (
-        <div className="app-router__error-fallback">Failed to load Matching component</div>
+        <div className="app-router__error-fallback">{getErrorMsg()}</div>
       ),
     }))
 );
@@ -74,7 +83,7 @@ const ReadingComponent = lazy(() =>
     }))
     .catch(() => ({
       default: () => (
-        <div className="app-router__error-fallback">Failed to load Reading component</div>
+        <div className="app-router__error-fallback">{getErrorMsg()}</div>
       ),
     }))
 );
@@ -91,26 +100,31 @@ const ModuleError: React.FC<{ error: Error; moduleId: string; onRetry: () => voi
   error,
   moduleId,
   onRetry,
-}) => (
-  <div className="app-router__error">
-    <div className="app-router__error-container">
-      <div className="app-router__error-icon">⚠️</div>
-      <h3 className="app-router__error-title">Failed to load module: {moduleId}</h3>
-      <p className="app-router__error-message">{error.message}</p>
-      <div className="app-router__error-actions">
-        <button onClick={onRetry} className="app-router__error-btn app-router__error-btn--primary">
-          Retry
-        </button>
-        <button
-          onClick={() => window.location.reload()}
-          className="app-router__error-btn app-router__error-btn--secondary"
-        >
-          Reload Page
-        </button>
+}) => {
+  const { language } = useSettingsStore();
+  const { t } = useTranslation(language);
+
+  return (
+    <div className="app-router__error">
+      <div className="app-router__error-container">
+        <div className="app-router__error-icon">⚠️</div>
+        <h3 className="app-router__error-title">{t('errors.failedToLoadModule')}: {moduleId}</h3>
+        <p className="app-router__error-message">{error.message}</p>
+        <div className="app-router__error-actions">
+          <button onClick={onRetry} className="app-router__error-btn app-router__error-btn--primary">
+            {t('errors.tryAgain')}
+          </button>
+          <button
+            onClick={() => window.location.reload()}
+            className="app-router__error-btn app-router__error-btn--secondary"
+          >
+            {t('errors.goToHome')}
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 interface LearningComponentWrapperProps {
   moduleId: string;
@@ -123,6 +137,8 @@ const LearningComponentWrapper: React.FC<LearningComponentWrapperProps> = ({
   children,
 }) => {
   const { data: moduleData, isLoading, error, refetch } = useModuleData(moduleId);
+  const { language } = useSettingsStore();
+  const { t } = useTranslation(language);
 
   if (isLoading) {
     return <ComponentLoader />;
@@ -135,7 +151,7 @@ const LearningComponentWrapper: React.FC<LearningComponentWrapperProps> = ({
   if (!moduleData) {
     return (
       <div className="app-router__no-module">
-        <p className="app-router__no-module-text">No module data available</p>
+        <p className="app-router__no-module-text">{t('messages.noDataAvailable')}</p>
       </div>
     );
   }
@@ -154,11 +170,13 @@ export const AppRouter: React.FC = () => {
   // For learning modes, we need a module
   const moduleId = currentModule?.id;
   if (!moduleId) {
+    const lang = useSettingsStore.getState().language;
+    const { t } = useTranslation(lang);
     return (
       <div className="app-router__no-module">
-        <p className="app-router__no-module-text">No module selected</p>
+        <p className="app-router__no-module-text">{t('messages.noModuleSelected')}</p>
         <button onClick={() => window.location.reload()} className="app-router__no-module-btn">
-          Return to Menu
+          {t('messages.returnToMenu')}
         </button>
       </div>
     );

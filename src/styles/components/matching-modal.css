@@ -21,45 +21,20 @@
 
 .dark .matching-modal {
   background-color: rgba(0, 0, 0, 0.6);
-}
-
-/* === MODAL CONTAINER === */
-.matching-modal__container {
-  background-color: var(--theme-bg-elevated, #ffffff);
-  border: 1px solid var(--glass-border-light);
-  border-radius: 0.5rem;
-  box-shadow:
-    0 10px 15px rgba(0, 0, 0, 0.1),
-    0 4px 6px rgba(0, 0, 0, 0.05);
-  max-width: 28rem;
-  width: 100%;
-  max-height: 85vh;
-  overflow: hidden;
-  animation: modalSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.dark .matching-modal__container {
-  background-color: var(--theme-bg-elevated, #1f2937);
-  border-color: var(--glass-border-dark);
-}
-
-/* === HEADER === */
+}/* === HEADER === */
 .matching-modal__header {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  padding: 1rem 1.5rem !important;
-  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%) !important;
-  position: relative !important;
-  overflow: visible !important;
-  margin: 0 !important;
-  border-radius: 0.5rem 0.5rem 0 0 !important;
-  flex-shrink: 0 !important;
-  min-height: 3.5rem !important;
-  border-bottom: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  position: relative;
+  overflow: visible;
+  margin: 0;
+  border-radius: 0.5rem 0.5rem 0 0;
+  flex-shrink: 0;
+  min-height: 3.5rem;
+  border-bottom: none;
 }
 
 .matching-modal__header::before {
@@ -74,11 +49,11 @@
 }
 
 .matching-modal__title {
-  font-size: 1.125rem !important;
-  font-weight: 700 !important;
-  color: white !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
-  z-index: 1 !important;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .dark .matching-modal__title {
@@ -136,27 +111,7 @@
 
 .dark .matching-modal__content {
   background-color: var(--theme-bg-elevated, #1f2937);
-}
-
-/* === SCROLL STYLES === */
-.matching-modal__content::-webkit-scrollbar {
-  width: 4px;
-}
-
-.matching-modal__content::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.matching-modal__content::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
-}
-
-.dark .matching-modal__content::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.matching-modal__summary {
+}.matching-modal__summary {
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -171,62 +126,13 @@
   border-radius: 0.5rem;
   overflow: hidden;
   border: 2px solid #e5e7eb;
-}
-
-/* === COMPACT TABLE DESIGN - SINGLE ROW LAYOUT === */
-.matching-modal__result-card {
-  display: grid;
-  grid-template-columns: 2.5rem minmax(6rem, 1fr) minmax(6rem, 1fr) minmax(6rem, 1fr);
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  border: none !important;
-  border-bottom: 1px solid #e5e7eb !important;
-  border-radius: 0 !important;
-  background-color: #ffffff;
-  transition: all 0.15s;
-  box-shadow: none !important;
-}
-
-.matching-modal__result-card:last-child {
-  border-bottom: none !important;
-}
-
-.matching-modal__result-card:hover {
-  background-color: #f9fafb;
-}
-
-.matching-modal__result-card--correct {
-  background-color: #f0fdf4 !important;
-  border-left: 3px solid #22c55e !important;
-  padding-left: calc(0.75rem - 2px) !important;
-}
-
-.matching-modal__result-card--correct:hover {
+}.matching-modal__result-card:last-child {
+  border-bottom: none;
+}.matching-modal__result-card--correct:hover {
   background-color: #dcfce7 !important;
-}
-
-.dark .matching-modal__result-card--correct {
-  background-color: rgba(34, 197, 94, 0.1) !important;
-  border-left-color: #22c55e !important;
-}
-
-.matching-modal__result-card--incorrect {
-  background-color: #fef2f2 !important;
-  border-left: 3px solid #ef4444 !important;
-  padding-left: calc(0.75rem - 2px) !important;
-}
-
-.matching-modal__result-card--incorrect:hover {
+}.matching-modal__result-card--incorrect:hover {
   background-color: #fee2e2 !important;
-}
-
-.dark .matching-modal__result-card--incorrect {
-  background-color: rgba(239, 68, 68, 0.1) !important;
-  border-left-color: #ef4444 !important;
-}
-
-/* === STATUS ICON - Column 1 === */
+}/* === STATUS ICON - Column 1 === */
 .matching-modal__result-card__status {
   font-size: 1.5rem;
   font-weight: 700;
@@ -425,22 +331,22 @@
 }
 
 .matching-modal__close-button {
-  padding: 0.75rem 2rem !important;
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
-  color: white !important;
-  border-radius: 0.5rem !important;
-  transition: all 0.2s ease !important;
-  font-weight: 600 !important;
-  font-size: 0.9375rem !important;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
-  border: none !important;
-  cursor: pointer !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: auto !important;
-  min-width: 10rem !important;
-  margin: 0 auto !important;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 10rem;
+  margin: 0 auto;
 }
 
 .matching-modal__close-button:hover {
@@ -452,14 +358,7 @@
 .matching-modal__close-button:active {
   transform: translateY(0) scale(0.98) !important;
   box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3) !important;
-}
-
-.matching-modal__close-button:focus-visible {
-  outline: 2px solid #60a5fa !important;
-  outline-offset: 2px !important;
-}
-
-.dark .matching-modal__close-button {
+}.dark .matching-modal__close-button {
   background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%) !important;
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4) !important;
 }
@@ -537,19 +436,6 @@
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
-  }
-}
-
-@keyframes modalSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-    /* Reduced movement for mobile */
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 /* === CRITICAL: Mobile ≤400px - Compact Modal Experience === */

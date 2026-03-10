@@ -41,8 +41,11 @@ const AppContent: React.FC = () => {
 
   // Handle view changes and cleanup
   useEffect(() => {
-    const prevView = sessionStorage.getItem('prevView') || 'menu';
-    sessionStorage.setItem('prevView', currentView);
+    let prevView = 'menu';
+    try {
+      prevView = sessionStorage.getItem('prevView') || 'menu';
+      sessionStorage.setItem('prevView', currentView);
+    } catch { /* Private browsing or storage full */ }
 
     // Clear toasts when changing views (immediate, no delays)
     if (currentView !== prevView) {
@@ -55,16 +58,18 @@ const AppContent: React.FC = () => {
 
     // Restore scroll position when returning to menu
     if (currentView === 'menu' && prevView !== 'menu') {
-      const savedScroll = sessionStorage.getItem('menuGridScrollPosition');
-      if (savedScroll) {
-        const scrollPos = parseInt(savedScroll, 10);
-        requestAnimationFrame(() => {
-          const gridElement = document.querySelector('.main-menu__grid');
-          if (gridElement) {
-            gridElement.scrollTop = scrollPos;
-          }
-        });
-      }
+      try {
+        const savedScroll = sessionStorage.getItem('menuGridScrollPosition');
+        if (savedScroll) {
+          const scrollPos = parseInt(savedScroll, 10);
+          requestAnimationFrame(() => {
+            const gridElement = document.querySelector('.main-menu__grid');
+            if (gridElement) {
+              gridElement.scrollTop = scrollPos;
+            }
+          });
+        }
+      } catch { /* Private browsing */ }
     }
   }, [currentView]);
 

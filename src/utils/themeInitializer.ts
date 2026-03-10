@@ -20,7 +20,7 @@ import {
   applyThemeContext,
 } from './mobileThemeFix';
 
-export interface ThemeState {
+interface ThemeState {
   theme: ThemeMode;
   isSystemPreference: boolean;
 }
@@ -45,7 +45,7 @@ export function detectSystemTheme(): ThemeMode {
 /**
  * Gets the stored theme preference or falls back to system preference
  */
-export function getInitialTheme(): ThemeState {
+function getInitialTheme(): ThemeState {
   // Check if we're in a browser environment
   if (typeof window === 'undefined') {
     return { theme: 'light', isSystemPreference: false };
@@ -179,7 +179,7 @@ function forceThemeRerender(theme: ThemeMode): void {
 /**
  * Updates the meta theme-color tag for mobile browsers
  */
-export function updateMetaThemeColor(theme: ThemeMode): void {
+function updateMetaThemeColor(theme: ThemeMode): void {
   if (typeof document === 'undefined') {
     return;
   }

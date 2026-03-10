@@ -7,6 +7,8 @@ import { useAllModules } from '../../hooks/useModuleData';
 import { useProgression } from '../../hooks/useProgression';
 import { useSearch } from '../../hooks/useSearch';
 import { useAppStore } from '../../stores/appStore';
+import { useSettingsStore } from '../../stores/settingsStore';
+import { useTranslation } from '../../utils/i18n';
 import { toast } from '../../stores/toastStore';
 import { List, BarChart3 } from 'lucide-react';
 import '../../styles/components/main-menu.css';
@@ -17,6 +19,8 @@ export const MainMenu: React.FC = () => {
   const { query, setQuery, results } = useSearch(modules);
   const { setCurrentModule, setCurrentView, setPreviousMenuContext, previousMenuContext } =
     useAppStore();
+  const { language } = useSettingsStore();
+  const { t } = useTranslation(language);
   const [viewMode, setViewMode] = useState<'progression' | 'list'>(previousMenuContext);
   const [highlightedModuleId, setHighlightedModuleId] = useState<string | null>(null);
   const gridRef = useRef<HTMLDivElement>(null);
@@ -36,33 +40,24 @@ export const MainMenu: React.FC = () => {
   useEffect(() => {
     if (isLoading || !modules.length) return;
 
-    const shouldAutoScroll = sessionStorage.getItem('autoScrollToNext');
-    console.log('[MainMenu] Auto-scroll check:', {
-      shouldAutoScroll,
-      viewMode,
-      hasModules: modules.length > 0,
-    });
+    let shouldAutoScroll: string | null = null;
+    try { shouldAutoScroll = sessionStorage.getItem('autoScrollToNext'); } catch { /* */ }
+    let scrollTimer: ReturnType<typeof setTimeout> | null = null;
+    let highlightTimer: ReturnType<typeof setTimeout> | null = null;
 
     if (shouldAutoScroll === 'true' && viewMode === 'list') {
       // Clear flag immediately to prevent re-triggering
-      sessionStorage.removeItem('autoScrollToNext');
+      try { sessionStorage.removeItem('autoScrollToNext'); } catch { /* */ }
 
       const nextModule = progression.getNextRecommendedModule();
-      console.log('[MainMenu] Next recommended module:', nextModule?.id, nextModule?.name);
 
       if (nextModule && gridRef.current) {
         // Highlight the next module
         setHighlightedModuleId(nextModule.id);
 
         // Delay to ensure DOM is fully rendered
-        setTimeout(() => {
+        scrollTimer = setTimeout(() => {
           const moduleCard = document.querySelector(`[data-module-id="${nextModule.id}"]`);
-          console.log(
-            '[MainMenu] Module card found:',
-            !!moduleCard,
-            'Grid ref:',
-            !!gridRef.current
-          );
 
           if (moduleCard && gridRef.current) {
             const gridRect = gridRef.current.getBoundingClientRect();
@@ -75,8 +70,6 @@ export const MainMenu: React.FC = () => {
               gridRect.height / 2 +
               cardRect.height / 2;
 
-            console.log('[MainMenu] Scrolling to:', scrollTop);
-
             gridRef.current.scrollTo({
               top: Math.max(0, scrollTop),
               behavior: 'smooth',
@@ -85,11 +78,16 @@ export const MainMenu: React.FC = () => {
         }, 150);
 
         // Remove highlight after animation completes
-        setTimeout(() => {
+        highlightTimer = setTimeout(() => {
           setHighlightedModuleId(null);
         }, 2500);
       }
     }
+
+    return () => {
+      if (scrollTimer) clearTimeout(scrollTimer);
+      if (highlightTimer) clearTimeout(highlightTimer);
+    };
   }, [isLoading, modules.length, viewMode, progression]);
 
   // Show welcome toast when modules are loaded (only once per session)
@@ -124,7 +122,7 @@ export const MainMenu: React.FC = () => {
     // Save scroll position before changing view
     const gridElement = document.querySelector('.main-menu__grid');
     if (gridElement) {
-      sessionStorage.setItem('menuGridScrollPosition', gridElement.scrollTop.toString());
+      try { sessionStorage.setItem('menuGridScrollPosition', gridElement.scrollTop.toString()); } catch { /* */ }
     }
 
     // Reset auto-scroll flag when user manually selects a module
@@ -156,7 +154,7 @@ export const MainMenu: React.FC = () => {
     return (
       <div className="main-menu">
         <div className="main-menu__search">
-          <SearchBar query="" onQueryChange={() => {}} placeholder="Search" disabled={true} />
+          <SearchBar query="" onQueryChange={() => {}} placeholder={t('common.searchPlaceholder')} disabled={true} />
         </div>
         <ModuleGridSkeleton />
       </div>
@@ -167,9 +165,9 @@ export const MainMenu: React.FC = () => {
     return (
       <div className="main-menu">
         <div className="main-menu__error" role="alert">
-          <p className="main-menu__error-text">Error loading modules</p>
+          <p className="main-menu__error-text">{t('errors.errorLoadingModules')}</p>
           <p className="main-menu__error-text">
-            {error instanceof Error ? error.message : 'An unexpected error occurred'}
+            {error instanceof Error ? error.message : t('errors.unexpectedErrorOccurred')}
           </p>
           <button
             onClick={() => window.location.reload()}
@@ -188,7 +186,7 @@ export const MainMenu: React.FC = () => {
       {/* Header with view toggle */}
       <div className="main-menu__header">
         <div className="main-menu__search">
-          <SearchBar query={query} onQueryChange={setQuery} placeholder="Search" />
+          <SearchBar query={query} onQueryChange={setQuery} placeholder={t('common.searchPlaceholder')} />
         </div>
 
         <div className="main-menu__view-toggle">

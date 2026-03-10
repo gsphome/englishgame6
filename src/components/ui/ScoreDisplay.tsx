@@ -29,11 +29,6 @@ export const ScoreDisplay: React.FC = () => {
       {/* Adaptive container based on context */}
       <div
         className={`score-display-compact__container ${isInGame ? 'score-display-compact__container--in-game' : 'score-display-compact__container--full'}`}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
       >
         {isInGame ? (
           // Compact session score with fixed layout

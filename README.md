@@ -32,7 +32,6 @@ npm install && npm run dev
 | Validate | `npm run validate:all` | All validations |
 | CSS | `npm run validate:bem` | BEM validation |
 | Security | `npm run security:audit` | Dependency audit |
-| Deploy | `npm run deploy:push` | Build + commit + push |
 | Monitor | `npm run gh:status` | GitHub Actions status |
 | Pipeline | `npm run pipeline` | Interactive pipeline |
 

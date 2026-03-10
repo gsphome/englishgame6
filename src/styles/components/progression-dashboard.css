@@ -10,8 +10,8 @@
 .progression-dashboard__hero {
   background: linear-gradient(
     135deg,
-    var(--theme-accent-primary) 0%,
-    var(--theme-accent-secondary) 100%
+    var(--theme-accent-primary, #3b82f6) 0%,
+    var(--theme-accent-secondary, #8b5cf6) 100%
   );
   border-radius: var(--radius-lg, 0.5rem);
   padding: 0.36rem;
@@ -20,11 +20,25 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
+.progression-dashboard__hero--compact {
+  padding: 0.35rem;
+  margin: 0 0 0.25rem 0;
+  min-height: auto;
+  max-height: 100px;
+  overflow: hidden;
+}
+
 /* Continue Learning Section */
 .progression-dashboard__continue {
   text-align: center;
   min-height: auto;
   height: auto;
+}
+
+.progression-dashboard__continue--compact {
+  padding: 0;
+  margin: 0;
+  min-height: auto;
 }
 
 .progression-dashboard__next-module {
@@ -40,6 +54,12 @@
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
+.progression-dashboard__next-module--compact {
+  padding: 0.25rem;
+  gap: 0.25rem;
+  min-height: auto;
+}
+
 .progression-dashboard__next-info {
   flex: 1;
   text-align: left;
@@ -52,6 +72,12 @@
   color: #ffffff;
 }
 
+.progression-dashboard__next-name--compact {
+  margin-bottom: 0.1rem;
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
 .progression-dashboard__next-desc {
   color: rgba(255, 255, 255, 0.92);
   margin-bottom: 0.35rem;
@@ -60,10 +86,21 @@
   font-weight: 400;
 }
 
+.progression-dashboard__next-desc--compact {
+  margin-bottom: 0.15rem;
+  line-height: 1.2;
+  opacity: 0.95;
+}
+
 .progression-dashboard__next-meta {
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+
+.progression-dashboard__next-meta--compact {
+  gap: 0.25rem;
+  margin-top: 0.02rem;
 }
 
 .progression-dashboard__level-badge {
@@ -73,11 +110,16 @@
   font-weight: 600;
   color: white;
   text-transform: uppercase;
+  background-color: var(--level-color, var(--theme-accent-primary, #3b82f6));
 }
 
 .progression-dashboard__time {
   font-size: var(--text-sm, 0.875rem);
   color: rgba(255, 255, 255, 0.88);
+}
+
+.progression-dashboard__time--compact {
+  line-height: 1;
 }
 
 .progression-dashboard__continue-btn {
@@ -101,6 +143,14 @@
   /* Ensure text is always visible */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.progression-dashboard__continue-btn--compact {
+  padding: 0.15rem 0.3rem;
+  gap: 0.08rem;
+  min-height: auto;
+  height: fit-content;
+  flex-shrink: 0;
 }
 
 .progression-dashboard__continue-btn:hover {
@@ -150,7 +200,7 @@
 }
 
 .progression-dashboard__unit {
-  background: var(--theme-bg-secondary);
+  background: var(--theme-bg-secondary, #f9fafb);
   border-radius: var(--radius-md, 0.375rem);
   padding: 0.125rem;
   border: 1px solid var(--theme-border-light, #f3f4f6);
@@ -196,7 +246,7 @@
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
-  background: var(--theme-bg-tertiary);
+  background: var(--theme-bg-tertiary, #f3f4f6);
   transition: all 0.2s ease;
 }
 
@@ -208,7 +258,7 @@
 }
 
 .progression-dashboard__unit-next-indicator {
-  background: var(--theme-accent-primary);
+  background: var(--theme-accent-primary, #3b82f6);
   color: white;
   padding: 0.0625rem 0.375rem;
   border-radius: 0.625rem;
@@ -283,7 +333,7 @@
 .progression-dashboard__progress-bar {
   flex: 1;
   height: 0.25rem;
-  background: var(--theme-bg-tertiary);
+  background: var(--theme-bg-tertiary, #f3f4f6);
   border-radius: var(--radius-sm, 0.25rem);
   overflow: hidden;
   order: 1;
@@ -291,9 +341,10 @@
 
 .progression-dashboard__progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--theme-accent-primary), var(--theme-accent-secondary));
+  background: linear-gradient(90deg, var(--theme-accent-primary, #3b82f6), var(--theme-accent-secondary, #8b5cf6));
   border-radius: var(--radius-sm, 0.25rem);
   transition: width 0.3s ease;
+  width: var(--progress-width, 0%);
 }
 
 /* Modules Grid - HORIZONTAL LAYOUT */
@@ -343,7 +394,7 @@
 .progression-dashboard__module--unlocked:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(59, 130, 246, 0.15);
-  border-color: var(--theme-accent-primary);
+  border-color: var(--theme-accent-primary, #3b82f6);
   background: #fefefe;
 }
 
@@ -369,7 +420,7 @@
 }
 
 .progression-dashboard__module--next {
-  border-color: var(--theme-accent-primary);
+  border-color: var(--theme-accent-primary, #3b82f6);
   background: linear-gradient(
     135deg,
     var(--theme-bg-primary, #f9fafb) 0%,
@@ -385,7 +436,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  background: var(--theme-bg-secondary);
+  background: var(--theme-bg-secondary, #f9fafb);
   border: 1px solid var(--theme-border-light, #f3f4f6);
   transition: all 0.2s ease;
 }
@@ -406,7 +457,7 @@
 }
 
 .progression-dashboard__icon--available {
-  color: var(--theme-accent-primary);
+  color: var(--theme-accent-primary, #3b82f6);
   background: rgba(59, 130, 246, 0.1);
 }
 
@@ -462,7 +513,7 @@
   position: absolute;
   top: -0.25rem;
   right: 0.5rem;
-  background: var(--theme-accent-primary);
+  background: var(--theme-accent-primary, #3b82f6);
   color: white;
   padding: 0.0625rem 0.375rem;
   border-radius: 0.625rem;
@@ -865,17 +916,6 @@ html.dark body .progression-dashboard__module--locked .progression-dashboard__mo
 
 /* Layer 3: Inline styles fallback - ONLY FOR EXTREME CASES */
 /* These classes can be applied via JavaScript if CSS layers fail */
-.progression-dashboard__text-white-force {
-  color: #ffffff;
-}
-
-.progression-dashboard__bg-dark-force {
-  background: #374151;
-}
-
-.progression-dashboard__border-dark-force {
-  border-color: #4b5563;
-}
 
 /* FINAL LAYER: Ensure ALL text elements are white in dark mode */
 /* Ultra-specific selectors for any missed text elements */
@@ -911,18 +951,10 @@ body.dark html .progression-dashboard--dark-theme *,
 }
 
 /* Emergency inline-style equivalent classes */
-.progression-dashboard__emergency-white-text {
-  color: #ffffff;
-}
 
-.progression-dashboard__emergency-dark-bg {
-  background-color: #374151;
-}
-
-/* Ultra-small mobile devices - Prevent double scroll */
+/* Ultra-small mobile devices - Prevent double scroll - CONSOLIDATED */
 @media (max-width: 400px) {
   .progression-dashboard {
-    /* CRITICAL: Adjust for layout container changes */
     height: calc(100dvh - 90px) !important;
     max-height: calc(100dvh - 90px) !important;
     min-height: calc(100dvh - 90px) !important;
@@ -932,6 +964,8 @@ body.dark html .progression-dashboard--dark-theme *,
     flex-direction: column !important;
     margin: 0 !important;
     padding: 0.25rem !important;
+    touch-action: pan-y !important;
+    overscroll-behavior: contain !important;
   }
 
   /* Hide description and time in module content for ultra small screens */
@@ -946,7 +980,6 @@ body.dark html .progression-dashboard--dark-theme *,
   .progression-dashboard__hero {
     padding: 0.15rem;
     margin-bottom: 0.1rem;
-    /* Reduce hero section height */
     min-height: auto;
     flex-shrink: 0;
     max-height: 80px;
@@ -955,7 +988,6 @@ body.dark html .progression-dashboard--dark-theme *,
   .progression-dashboard__next-module {
     padding: 0.2rem;
     gap: 0.2rem;
-    /* Ensure compact layout */
     min-height: auto;
     height: auto;
   }
@@ -977,7 +1009,6 @@ body.dark html .progression-dashboard--dark-theme *,
   }
 
   .progression-dashboard__units {
-    /* CRITICAL: Account for expanded units - more conservative height */
     flex: 1 1 auto !important;
     min-height: 0 !important;
     max-height: calc(100dvh - 250px) !important;
@@ -987,12 +1018,12 @@ body.dark html .progression-dashboard--dark-theme *,
     gap: 0.05rem;
     padding: 0.1rem;
     margin: 0.05rem 0;
-    /* Ensure smooth scrolling */
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
-    /* Force GPU acceleration for smooth scroll */
     transform: translateZ(0);
     will-change: scroll-position;
+    touch-action: pan-y !important;
+    overscroll-behavior: contain !important;
   }
 
   .progression-dashboard__unit {
@@ -1057,23 +1088,9 @@ body.dark html .progression-dashboard--dark-theme *,
     background: rgba(59, 130, 246, 0.4);
     border-radius: 2px;
   }
-}
 
-/* Additional mobile scroll prevention */
-@media (max-width: 400px) {
   /* Ensure no scroll bubbling */
   .progression-dashboard * {
-    overscroll-behavior: contain !important;
-  }
-
-  /* Force touch action containment */
-  .progression-dashboard {
-    touch-action: pan-y !important;
-    overscroll-behavior: contain !important;
-  }
-
-  .progression-dashboard__units {
-    touch-action: pan-y !important;
     overscroll-behavior: contain !important;
   }
 }

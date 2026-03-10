@@ -89,7 +89,7 @@ export const Header: React.FC<HeaderProps> = () => {
         <div className="header-redesigned__center">
           <ScoreDisplay />
           {developmentMode && (
-            <div className="header-redesigned__dev-indicator" title="Development Mode Active">
+            <div className="header-redesigned__dev-indicator" title={t('common.developmentModeActive')}>
               <span className="header-redesigned__dev-icon">🔧</span>
               <span className="header-redesigned__dev-text">DEV</span>
             </div>
@@ -260,8 +260,8 @@ export const Header: React.FC<HeaderProps> = () => {
 
                     <button
                       onClick={() => {
-                        localStorage.clear();
-                        sessionStorage.clear();
+                        try { localStorage.clear(); } catch { /* */ }
+                        try { sessionStorage.clear(); } catch { /* */ }
                         window.location.reload();
                       }}
                       className="header-side-menu__item header-side-menu__item--logout"

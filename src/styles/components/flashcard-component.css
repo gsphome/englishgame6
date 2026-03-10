@@ -170,31 +170,6 @@ cua
 /* === CONTROLS - Using Unified Game Controls === */
 /* Control styles are inherited from game-controls.css */
 
-.flashcard-component__flip-btn {
-  /* Inherits from .game-controls__primary-btn--blue */
-  box-shadow: var(--shadow-button-default);
-}
-
-.flashcard-component__flip-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-button-hover);
-}
-
-.flashcard-component__flip-btn:active {
-  transform: translateY(0) scale(0.98);
-  box-shadow: var(--shadow-button-active);
-}
-
-.flashcard-component__flip-btn:focus-visible {
-  outline: 2px solid var(--theme-primary-blue, #3b82f6);
-  outline-offset: 2px;
-}
-
-.flashcard-component__flip-btn-icon {
-  width: 0.875rem;
-  height: 0.875rem;
-}
-
 /* === NO DATA STATE === */
 .flashcard-component__no-data {
   display: flex;
@@ -259,7 +234,7 @@ cua
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 639px) {
   .flashcard-component__card {
     height: 10rem;
   }
@@ -272,21 +247,11 @@ cua
     font-size: 1.25rem;
   }
 
-  .flashcard-component__controls {
-    gap: 0.5rem;
-    padding: 0.5rem;
-  }
+  
 
-  .flashcard-component__nav-btn {
-    width: 2rem;
-    height: 2rem;
-  }
+  
 
-  .flashcard-component__flip-btn {
-    padding: 0.375rem 0.5rem;
-    font-size: 0.6875rem;
-    width: 7rem;
-  }
+  
 }
 
 /* === CRITICAL: Mobile ≤400px - Translation Visibility Fix === */
@@ -361,24 +326,8 @@ cua
   }
 
   /* Ensure controls don't interfere with card content */
-  .flashcard-component__controls {
-    margin-top: 0.25rem;
-    /* Minimal margin from card */
-    padding: 0.25rem;
-    /* Reduced padding */
-  }
-}
-
-/* === DARK MODE === */
-html.dark .flashcard-component__container {
-  background: linear-gradient(
-    135deg,
-    var(--theme-bg-elevated, #1f2937) 0%,
-    var(--theme-bg-subtle, #374151) 100%
-  );
-}
-
-html.dark .flashcard-component__card-front,
+  
+}html.dark .flashcard-component__card-front,
 html.dark .flashcard-component__card-back {
   background: linear-gradient(
     135deg,
@@ -402,11 +351,6 @@ html.dark .flashcard-component__back-answer {
   color: var(--theme-text-primary, #ffffff);
 }
 
-html.dark .flashcard-component__controls {
-  background-color: var(--theme-bg-elevated, #1f2937);
-  border-color: var(--theme-border-soft, #4b5563);
-}
-
 /* === ACCESSIBILITY === */
 @media (prefers-reduced-motion: reduce) {
   .flashcard-component__card-inner {
@@ -417,10 +361,7 @@ html.dark .flashcard-component__controls {
     transform: none;
   }
 
-  .flashcard-component__nav-btn:hover,
-  .flashcard-component__flip-btn:hover {
-    transform: none;
-  }
+  
 }
 
 @media (prefers-contrast: high) {

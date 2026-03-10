@@ -152,7 +152,7 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
               <button
                 className="compact-about__tech-item compact-about__tech-item--clickable"
                 onClick={() => setShowScreenInfo(true)}
-                title="Click to view screen information"
+                title={t('about.clickToViewScreenInfo')}
               >
                 React
               </button>
@@ -179,7 +179,7 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
             <div className="screen-info-modal__header">
               <div className="screen-info-modal__title-section">
                 <Monitor className="screen-info-modal__icon" />
-                <h3 className="screen-info-modal__title">Screen Information</h3>
+                <h3 className="screen-info-modal__title">{t('about.screenInformation')}</h3>
               </div>
               <button
                 onClick={() => setShowScreenInfo(false)}

@@ -191,112 +191,42 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
     >
       {/* Continue Learning Section */}
       {nextRecommended && (
-        <div
-          className="progression-dashboard__hero"
-          style={{
-            padding: '0.35rem',
-            marginBottom: '0.25rem',
-            minHeight: 'auto',
-            maxHeight: '100px',
-            overflow: 'hidden',
-            margin: '0 0 0 0',
-          }}
-        >
-          <div
-            className="progression-dashboard__continue"
-            style={{
-              padding: '0',
-              margin: '0',
-              minHeight: 'auto',
-            }}
-          >
-            <div
-              className="progression-dashboard__next-module"
-              style={{
-                padding: '0.25rem',
-                gap: '0.25rem',
-                minHeight: 'auto',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-              }}
-            >
-              <div
-                className="progression-dashboard__next-info"
-                style={{
-                  padding: '0',
-                  margin: '0',
-                  minHeight: 'auto',
-                  lineHeight: '1.2',
-                  flex: '1',
-                  textAlign: 'left',
-                }}
-              >
-                <h3
-                  className="progression-dashboard__next-name"
-                  style={{
-                    marginBottom: '0.1rem',
-                    fontSize: '1rem',
-                    lineHeight: '1.1',
-                    fontWeight: '700',
-                  }}
-                >
+        <div className="progression-dashboard__hero progression-dashboard__hero--compact">
+          <div className="progression-dashboard__continue progression-dashboard__continue--compact">
+            <div className="progression-dashboard__next-module progression-dashboard__next-module--compact">
+              <div className="progression-dashboard__next-info">
+                <h3 className="progression-dashboard__next-name progression-dashboard__next-name--compact">
                   {nextRecommended.name}
                 </h3>
-                <p
-                  className="progression-dashboard__next-desc"
-                  style={{
-                    marginBottom: '0.15rem',
-                    lineHeight: '1.2',
-                    opacity: '0.95',
-                  }}
-                >
+                <p className="progression-dashboard__next-desc progression-dashboard__next-desc--compact">
                   {nextRecommended.description}
                 </p>
                 <div
-                  className="progression-dashboard__next-meta"
-                  style={{
-                    gap: '0.25rem',
-                    marginTop: '0.02rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                  }}
+                  className="progression-dashboard__next-meta progression-dashboard__next-meta--compact"
                 >
                   <span
                     className="progression-dashboard__level-badge"
                     style={{
-                      backgroundColor: getLevelColor(
+                      '--level-color': getLevelColor(
                         Array.isArray(nextRecommended.level)
                           ? nextRecommended.level[0]
                           : nextRecommended.level
                       ),
-                      padding: '0.03rem 0.15rem',
-                      lineHeight: '1',
-                    }}
+                    } as React.CSSProperties}
                   >
                     {Array.isArray(nextRecommended.level)
                       ? nextRecommended.level[0].toUpperCase()
                       : nextRecommended.level.toUpperCase()}
                   </span>
                   <span
-                    className="progression-dashboard__time"
-                    style={{
-                      lineHeight: '1',
-                    }}
+                    className="progression-dashboard__time progression-dashboard__time--compact"
                   >
                     ~{nextRecommended.estimatedTime}min
                   </span>
                 </div>
               </div>
               <button
-                className="progression-dashboard__continue-btn"
-                style={{
-                  padding: '0.15rem 0.3rem',
-                  gap: '0.08rem',
-                  minHeight: 'auto',
-                  height: 'fit-content',
-                  flexShrink: '0',
-                }}
+                className="progression-dashboard__continue-btn progression-dashboard__continue-btn--compact"
                 onClick={handleContinueLearning}
               >
                 <Play className="progression-dashboard__continue-icon" />
@@ -350,7 +280,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
                     <div className="progression-dashboard__progress-bar">
                       <div
                         className="progression-dashboard__progress-fill"
-                        style={{ width: `${unitStatus.percentage}%` }}
+                        style={{ '--progress-width': `${unitStatus.percentage}%` } as React.CSSProperties}
                       />
                     </div>
                   </div>
@@ -388,10 +318,10 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
                               <span
                                 className="progression-dashboard__level-badge"
                                 style={{
-                                  backgroundColor: getLevelColor(
+                                  '--level-color': getLevelColor(
                                     Array.isArray(module.level) ? module.level[0] : module.level
                                   ),
-                                }}
+                                } as React.CSSProperties}
                               >
                                 {Array.isArray(module.level)
                                   ? module.level[0].toUpperCase()

@@ -80,33 +80,13 @@
 /* === MATCHING GRID === */
 .matching-component__grid {
   margin-bottom: 0.625rem;
-}
-
-.matching-component__columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
-  padding: 0.5rem;
-}
-
-@media (max-width: 768px) {
+}@media (max-width: 768px) {
   .matching-component__columns {
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 2px;
+    padding: 12px;
   }
-}
-
-.matching-component__column {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  padding: 0.5rem;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 0.75rem;
-}
-
-.matching-component__column-header {
+}.matching-component__column-header {
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--theme-text-primary, #111827);
@@ -116,32 +96,7 @@
   background-color: var(--theme-bg-subtle, #f9fafb);
   border: 1px solid var(--theme-border-subtle, #e5e7eb);
   border-radius: 0.75rem;
-}
-
-/* === MATCHING ITEMS === */
-/* Inspired by quiz-component design with clear borders and states */
-
-.matching-component__item {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 0.5rem 0.75rem;
-  background-color: var(--theme-bg-elevated, #ffffff);
-  border: 1px solid #e5e7eb;
-  border-radius: 0.75rem;
-  cursor: pointer;
-  transition: var(--transition-interactive);
-  text-align: left;
-  width: 100%;
-  min-height: 2.5rem;
-  box-sizing: border-box;
-  box-shadow: var(--shadow-card-default);
-  font-weight: 500;
-  margin: 0.25rem 0;
-  color: #1f2937;
-}
-
-/* HOVER STATE - Enhanced for non-selected cards (NO LAYOUT SHIFT) */
+}/* HOVER STATE - Enhanced for non-selected cards (NO LAYOUT SHIFT) */
 .matching-component__item:hover:not(.matching-component__item--selected):not(
     .matching-component__item--matched
   ):not(.matching-component__item--correct):not(.matching-component__item--incorrect):not(
@@ -520,21 +475,6 @@ button.matching-component__item.matching-component__item--incorrect .matching-co
   color: var(--theme-text-secondary, #6b7280);
 }
 
-.matching-component__button--success:not(.matching-component__item) {
-  background: linear-gradient(
-    135deg,
-    var(--theme-success, #10b981) 0%,
-    var(--theme-success-dark, #059669) 100%
-  );
-  color: white;
-  width: 8rem;
-  padding: 0.5rem 1rem;
-  border-radius: 9999px;
-  font-weight: 600;
-  font-size: 0.75rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 .matching-component__info-button {
   display: inline-flex;
   align-items: center;
@@ -638,49 +578,13 @@ button.matching-component__item.matching-component__item--incorrect .matching-co
 }
 
 /* === MATCHING NAVIGATION === */
-.matching-component__navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1.5rem;
-}
-
-.matching-component__nav-button {
-  padding: var(--padding-lg, 1.5rem) 1.5rem;
-  background-color: var(--theme-primary-blue, #3b82f6);
-  color: #ffffff;
-  border: none;
-  border-radius: var(--radius-md, 0.375rem);
-  font-weight: 500;
-  cursor: pointer;
-  transition: var(--transition-interactive);
-}
-
-.matching-component__nav-button:hover {
-  background-color: var(--theme-primary-blue-hover, #2563eb);
-}
-
-.matching-component__nav-button:disabled {
-  background-color: var(--theme-text-disabled);
-  cursor: not-allowed;
-}
 
 /* === DARK MODE === */
 
 .dark .matching-component__column-header {
   background-color: var(--gray-800, #1f2937);
   color: var(--gray-200, #e5e7eb);
-}
-
-/* Dark mode base styles - Professional dark theme */
-.dark .matching-component__item {
-  background-color: #1e293b;
-  border-color: #334155;
-  color: #f1f5f9;
-  transition: var(--transition-interactive);
-}
-
-.dark .matching-component__item-letter {
+}.dark .matching-component__item-letter {
   background-color: #475569;
   color: #f1f5f9;
   transition: var(--transition-interactive);
@@ -698,24 +602,7 @@ button.matching-component__item.matching-component__item--incorrect .matching-co
   border-color: #0ea5e9;
   box-shadow: var(--shadow-card-hover);
   transition: var(--transition-interactive);
-}
-
-/* === DARK MODE STATE STYLES === */
-/* CRITICAL FIX: Proper dark mode colors with correct CSS cascade order */
-
-.dark .matching-component__item--selected {
-  background-color: #1e40af;
-  border-color: #3b82f6;
-  color: white;
-  transition: var(--transition-interactive);
-}
-
-.dark .matching-component__item--selected .matching-component__item-letter {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-/* Dark mode - Maximum specificity for selected text */
+}/* Dark mode - Maximum specificity for selected text */
 .dark
   button.matching-component__item.matching-component__item--selected
   .matching-component__item-text,
@@ -724,16 +611,7 @@ button.matching-component__item.matching-component__item--incorrect .matching-co
   .matching-component__item-text,
 .dark .matching-component__item--selected .matching-component__item-text {
   color: white;
-}
-
-.dark .matching-component__item--matched {
-  background-color: #0f172a;
-  border-color: #0ea5e9;
-  color: #38bdf8;
-  transition: var(--transition-interactive);
-}
-
-.dark .matching-component__item--matched .matching-component__item-letter {
+}.dark .matching-component__item--matched .matching-component__item-letter {
   background-color: #0ea5e9;
   color: #ffffff;
 }
@@ -747,30 +625,7 @@ button.matching-component__item.matching-component__item--incorrect .matching-co
   .matching-component__item-text,
 .dark .matching-component__item--matched .matching-component__item-text {
   color: var(--gray-200, #e5e7eb);
-}
-
-.dark .matching-component__item--matched-inactive {
-  background-color: #0f172a;
-  border-color: #334155;
-  color: #64748b;
-  opacity: 0.7;
-  transition: var(--transition-interactive);
-}
-
-.dark .matching-component__item--correct {
-  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%) !important;
-  border: 3px solid #15803d !important;
-  color: #ffffff !important;
-  box-shadow:
-    0 0 0 3px rgba(34, 197, 94, 0.4),
-    0 6px 20px rgba(34, 197, 94, 0.5) !important;
-  font-weight: 700 !important;
-  transform: scale(1.02) !important;
-  transition: var(--transition-interactive) !important;
-  animation: pulse-success var(--animation-normal) ease-out !important;
-}
-
-.dark .matching-component__item--correct .matching-component__item-letter {
+}.dark .matching-component__item--correct .matching-component__item-letter {
   background-color: rgba(255, 255, 255, 0.3) !important;
   color: #ffffff !important;
   font-weight: 800 !important;
@@ -787,21 +642,7 @@ button.matching-component__item.matching-component__item--incorrect .matching-co
   .matching-component__item-text,
 .dark .matching-component__item--correct .matching-component__item-text {
   color: white;
-}
-
-.dark .matching-component__item--incorrect {
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
-  border: 3px solid #b91c1c !important;
-  color: #ffffff !important;
-  box-shadow:
-    0 0 0 3px rgba(239, 68, 68, 0.4),
-    0 6px 20px rgba(239, 68, 68, 0.5) !important;
-  font-weight: 700 !important;
-  transform: scale(1.02) !important;
-  transition: var(--transition-interactive) !important;
-}
-
-.dark .matching-component__item--incorrect .matching-component__item-letter {
+}.dark .matching-component__item--incorrect .matching-component__item-letter {
   background-color: rgba(255, 255, 255, 0.3) !important;
   color: #ffffff !important;
   font-weight: 800 !important;
@@ -841,10 +682,7 @@ button.matching-component__item.matching-component__item--incorrect .matching-co
     font-size: 1rem;
   }
 
-  .matching-component__nav-button {
-    padding: 1rem 1.25rem;
-    font-size: 1rem;
-  }
+  
 }
 
 /* === COLUMN SPACING - Compact Design === */
@@ -903,7 +741,6 @@ button.matching-component__item.matching-component__item--incorrect .matching-co
 
 @media (max-width: 768px) {
   .matching-component__columns {
-    padding: 12px;
     background-color: rgba(59, 130, 246, 0.08);
   }
 
@@ -1036,9 +873,7 @@ button.matching-component__item.matching-component__item--selected .matching-com
 
 /* === ACCESSIBILITY === */
 @media (prefers-reduced-motion: reduce) {
-  .matching-component__progress-fill,
-  .matching-component__item,
-  .matching-component__nav-button {
+  .matching-component__item {
     transition: none;
     transform: none;
   }
@@ -1142,18 +977,7 @@ html.dark .matching-component__item .matching-component__item-text {
 html.dark .matching-component__item .matching-component__item-letter {
   background: #475569 !important;
   color: #f1f5f9 !important;
-}
-
-/* Enhanced 
-selected state letter */
-.dark .matching-component__item--selected .matching-component__item-letter {
-  background: rgba(255, 255, 255, 0.25) !important;
-  color: #ffffff !important;
-  border: 2px solid rgba(255, 255, 255, 0.4) !important;
-  font-weight: 700 !important;
-}
-
-/*
+}/*
  Override selected letter with high contrast */
 .dark .matching-component__item--selected .matching-component__item-letter {
   background: #ffffff !important;

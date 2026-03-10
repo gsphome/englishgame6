@@ -201,7 +201,7 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
             <div className="module-card__progress" aria-hidden="true">
               <div
                 className="module-card__progress-bar"
-                style={{ width: `${progressPercentage}%` }}
+                style={{ '--progress-width': `${progressPercentage}%` } as React.CSSProperties}
               />
             </div>
           )}

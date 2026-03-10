@@ -65,18 +65,7 @@
   color: rgba(255, 255, 255, 0.95);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   letter-spacing: -0.025em;
-}
-
-/* === HEADER CLOSE BUTTON === */
-.compact-learning-path__header .modal__close-btn {
-  color: rgba(255, 255, 255, 0.9);
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  backdrop-filter: blur(8px);
-}
-
-.compact-learning-path__header .modal__close-btn:hover {
+}.compact-learning-path__header .modal__close-btn:hover {
   color: white;
   background-color: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.4);
@@ -158,14 +147,6 @@
   color: #10b981;
 }
 
-.compact-learning-path__stat-icon--available {
-  color: #3b82f6;
-}
-
-.compact-learning-path__stat-icon--locked {
-  color: #9ca3af;
-}
-
 .compact-learning-path__stat-value {
   font-size: 1.125rem;
   font-weight: 700;
@@ -238,107 +219,7 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
   border-color: rgba(16, 185, 129, 0.6);
-}
-
-.compact-learning-path__module-priority {
-  position: absolute;
-  top: -0.1875rem;
-  right: -0.1875rem;
-  /* Reduced positioning from -0.25rem to -0.1875rem */
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  color: white;
-  border-radius: 9999px;
-  padding: 0.0625rem 0.25rem;
-  /* Reduced padding from 0.125rem 0.375rem to 0.0625rem 0.25rem (50% reduction) */
-  font-size: 0.4375rem;
-  /* Reduced font size from 0.5rem to 0.4375rem */
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 0.0625rem;
-  /* Reduced gap from 0.125rem to 0.0625rem (50% reduction) */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  /* Reduced shadow */
-}
-
-.compact-learning-path__module-priority-icon {
-  width: 0.5rem;
-  height: 0.5rem;
-}
-
-.compact-learning-path__module-priority-text {
-  white-space: nowrap;
-}
-
-.compact-learning-path__module-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.compact-learning-path__module-header {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  justify-content: center;
-}
-
-.compact-learning-path__module-level {
-  padding: 0.25rem 0.625rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 0.025em;
-}
-
-.compact-learning-path__module-level--emerald {
-  background-color: rgba(16, 185, 129, 0.1);
-  color: #047857;
-}
-
-.compact-learning-path__module-level--blue {
-  background-color: rgba(59, 130, 246, 0.1);
-  color: #1d4ed8;
-}
-
-.compact-learning-path__module-level--purple {
-  background-color: rgba(147, 51, 234, 0.1);
-  color: #7c3aed;
-}
-
-.compact-learning-path__module-level--orange {
-  background-color: rgba(249, 115, 22, 0.1);
-  color: #ea580c;
-}
-
-.compact-learning-path__module-level--red {
-  background-color: rgba(239, 68, 68, 0.1);
-  color: #dc2626;
-}
-
-.compact-learning-path__module-level--indigo {
-  background-color: rgba(99, 102, 241, 0.1);
-  color: #4f46e5;
-}
-
-.compact-learning-path__module-type {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--theme-text-secondary, #6b7280);
-  background-color: var(--theme-bg-soft, #f3f4f6);
-  padding: 0.25rem 0.5rem;
-  border-radius: 9999px;
-}
-
-.compact-learning-path__module-name {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--theme-text-primary, #111827);
-  line-height: 1.3;
-  letter-spacing: -0.025em;
-}
-
-.compact-learning-path__section-icon {
+}.compact-learning-path__section-icon {
   width: 0.75rem;
   height: 0.75rem;
   margin-right: 0.25rem;
@@ -346,17 +227,6 @@
 }
 
 /* Unified Modules Section - Horizontal Layout */
-.compact-learning-path__modules-section {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.compact-learning-path__modules-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
-  gap: 0.375rem;
-}
 
 .compact-learning-path__module {
   background-color: var(--theme-bg-subtle, #f9fafb);
@@ -374,12 +244,6 @@
 .compact-learning-path__module:hover {
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.compact-learning-path__module--recommended {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(5, 150, 105, 0.08) 100%);
-  border-color: rgba(16, 185, 129, 0.3);
-  border-width: 2px;
 }
 
 .compact-learning-path__module-priority {
@@ -697,15 +561,7 @@ html.dark .compact-learning-path .compact-learning-path__unit-circle-stats:hover
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-}
-
-/* Dark Mode */
-html.dark .compact-learning-path__container {
-  background-color: var(--theme-bg-elevated, #1f2937);
-  border-color: var(--theme-border-soft, #4b5563);
-}
-
-html.dark .compact-learning-path__overview {
+}html.dark .compact-learning-path__overview {
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
 }
 
@@ -761,36 +617,6 @@ html.dark .compact-learning-path__module-level--red {
 }
 
 html.dark .compact-learning-path__module-level--indigo {
-  background-color: rgba(99, 102, 241, 0.2);
-  color: #818cf8;
-}
-
-html.dark .compact-learning-path__unit-badge--emerald {
-  background-color: rgba(16, 185, 129, 0.2);
-  color: #34d399;
-}
-
-html.dark .compact-learning-path__unit-badge--blue {
-  background-color: rgba(59, 130, 246, 0.2);
-  color: #60a5fa;
-}
-
-html.dark .compact-learning-path__unit-badge--purple {
-  background-color: rgba(147, 51, 234, 0.2);
-  color: #a78bfa;
-}
-
-html.dark .compact-learning-path__unit-badge--orange {
-  background-color: rgba(249, 115, 22, 0.2);
-  color: #fb923c;
-}
-
-html.dark .compact-learning-path__unit-badge--red {
-  background-color: rgba(239, 68, 68, 0.2);
-  color: #f87171;
-}
-
-html.dark .compact-learning-path__unit-badge--indigo {
   background-color: rgba(99, 102, 241, 0.2);
   color: #818cf8;
 }
@@ -941,29 +767,25 @@ html.dark .compact-learning-path .compact-learning-path__unit-circle-stats {
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .compact-learning-path,
-  .compact-learning-path__container,
-  .compact-learning-path__progress-fill,
-  .compact-learning-path__unit-progress-fill,
-  .compact-learning-path__btn--primary {
+.compact-learning-path__container {
     animation: none;
     transition: none;
   }
 }
 
-/* === MOBILE OPTIMIZATION 400px - UNIFIED DESIGN SYSTEM === */
+/* === MOBILE OPTIMIZATION ≤400px - CONSOLIDATED === */
 @media (max-width: 400px) {
   .compact-learning-path {
-    padding: 0.5rem;
-    align-items: flex-start !important;
+    padding: 0.25rem;
+    align-items: flex-start;
     padding-top: 20px;
-    /* Unified 20px from top for all modals */
   }
 
   .compact-learning-path__container {
-    max-width: 20rem;
-    width: 100%;
-    /* Let content determine height, with max constraint */
-    max-height: calc(100vh - 1rem) !important;
+    max-width: 80vw;
+    width: 80vw;
+    max-height: 75vh;
+    border-radius: 0.375rem;
     overflow: hidden !important;
     display: flex !important;
     flex-direction: column !important;
@@ -971,27 +793,25 @@ html.dark .compact-learning-path .compact-learning-path__unit-circle-stats {
   }
 
   .compact-learning-path__header {
-    padding: 0.5rem;
-    /* Fixed header - no flex grow */
+    padding: 0.1875rem 0.25rem;
+    min-height: 2.5rem;
     flex-shrink: 0 !important;
     flex-grow: 0 !important;
   }
 
   .compact-learning-path__title {
-    font-size: 0.875rem;
-    /* Unified title size */
+    font-size: 0.8125rem;
+    font-weight: 600;
   }
 
   .compact-learning-path__content {
-    padding: 0.2125rem;
-    /* 15% reduction: 0.25rem * 0.85 = 0.2125rem */
-    /* Content grows with content, scrollable if needed */
+    padding: 0.1875rem 0.25rem;
+    gap: 0.125rem;
     flex: 1 1 auto !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
     -webkit-overflow-scrolling: touch;
     max-height: calc(100vh - 6rem) !important;
-    /* Account for header and padding */
   }
 
   /* Additional scroll prevention */
@@ -1006,123 +826,140 @@ html.dark .compact-learning-path .compact-learning-path__unit-circle-stats {
 
   .compact-learning-path__content > * + * {
     margin-top: 0.2125rem;
-    /* 15% reduction: 0.25rem * 0.85 = 0.2125rem */
   }
 
+  /* Ultra compact overview - 2-column grid */
   .compact-learning-path__overview {
-    padding: 0.2125rem;
-    /* 15% reduction: 0.25rem * 0.85 = 0.2125rem */
-    gap: 0.106rem;
-    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
-    margin-bottom: 0.106rem;
-    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding: 0.5rem;
+    margin-bottom: 0.25rem;
   }
 
   .compact-learning-path__stat {
-    gap: 0.053rem;
-    /* 15% reduction: 0.0625rem * 0.85 = 0.053rem */
+    gap: 0.03125rem;
+    padding: 0.125rem;
+  }
+
+  .compact-learning-path__stat-icon {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  .compact-learning-path__stat-icon--emoji {
+    font-size: 0.875rem;
+    margin-bottom: 0.015625rem;
   }
 
   .compact-learning-path__stat-value {
-    font-size: 0.625rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
     margin-bottom: 0.053rem;
-    /* 15% reduction: 0.0625rem * 0.85 = 0.053rem */
   }
 
   .compact-learning-path__stat-label {
-    font-size: 0.5rem;
-    /* Ultra-compact stat labels */
-  }
-
-  .compact-learning-path__section-title {
-    font-size: 0.75rem;
-    margin-bottom: 0.106rem;
-    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
-    margin-top: 0.106rem;
-    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
-  }
-
-  .compact-learning-path__next-module {
-    padding: 0.2125rem;
-    /* 15% reduction: 0.25rem * 0.85 = 0.2125rem */
-    margin-bottom: 0.106rem;
-    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
-  }
-
-  .compact-learning-path__recommended-card {
-    padding: 0.2125rem;
-    /* 15% reduction: 0.25rem * 0.85 = 0.2125rem */
-  }
-
-  .compact-learning-path__module-name {
-    font-size: 0.625rem;
+    font-size: 0.5625rem;
     line-height: 1.1;
   }
 
+  /* Ultra compact section titles */
+  .compact-learning-path__section-title {
+    font-size: 0.6875rem;
+    margin-bottom: 0.1875rem;
+    margin-top: 0.106rem;
+    font-weight: 600;
+  }
+
+  .compact-learning-path__section-icon {
+    width: 0.5625rem;
+    height: 0.5625rem;
+    margin-right: 0.125rem;
+  }
+
+  /* Ultra compact next module section */
+  .compact-learning-path__next-module {
+    padding: 0.25rem;
+    margin-bottom: 0.125rem;
+  }
+
+  .compact-learning-path__recommended-card {
+    padding: 0.1875rem;
+    margin-top: 0.125rem;
+    border-width: 1px;
+    border-radius: 0.1875rem;
+  }
+
   .compact-learning-path__module-info {
-    gap: 0.106rem;
-    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
+    gap: 0.125rem;
   }
 
   .compact-learning-path__module-header {
-    gap: 0.2125rem;
-    /* 15% reduction: 0.25rem * 0.85 = 0.2125rem */
+    gap: 0.1875rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .compact-learning-path__module-level {
+    padding: 0.0625rem 0.25rem;
+    font-size: 0.625rem;
+    font-weight: 500;
+  }
+
+  .compact-learning-path__module-type {
+    font-size: 0.5625rem;
+    padding: 0.03125rem 0.1875rem;
+  }
+
+  .compact-learning-path__module-name {
+    font-size: 0.8125rem;
+    line-height: 1.05;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 0.0625rem;
+    margin-top: 0.0625rem;
   }
 
   .compact-learning-path__module-priority {
-    padding: 0.0625rem 0.1875rem;
-    /* Ultra-compact priority badge */
-    font-size: 0.375rem;
-    /* Tiny priority text */
+    padding: 0.0625rem 0.25rem;
+    font-size: 0.4375rem;
+  }
+
+  .compact-learning-path__module-priority-icon {
+    width: 0.4375rem;
+    height: 0.4375rem;
   }
 
   .compact-learning-path__module-priority-text {
     font-size: 0.375rem;
-    /* Tiny priority text */
-  }
-
-  .compact-learning-path__modules-grid {
-    gap: 0.106rem;
-    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
-    margin-top: 0.106rem;
-    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
   }
 
   .compact-learning-path__module {
     padding: 0.106rem;
-    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
     margin-bottom: 0.053rem;
-    /* 15% reduction: 0.0625rem * 0.85 = 0.053rem */
   }
 
   .compact-learning-path__units {
     padding: 0.2125rem;
-    /* 15% reduction: 0.25rem * 0.85 = 0.2125rem */
     margin-top: 0.106rem;
-    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
   }
 
   .compact-learning-path__unit-grid {
     gap: 0.159rem;
-    /* 15% reduction: 0.1875rem * 0.85 = 0.159rem */
     margin-top: 0.106rem;
-    /* 15% reduction: 0.125rem * 0.85 = 0.106rem */
   }
 
   .compact-learning-path__unit-circle {
     width: 1.75rem;
-    /* Aggressive reduction for better fit */
     height: 1.75rem;
   }
 
   .compact-learning-path__unit-circle-name {
     font-size: 0.5rem;
-    /* Ultra-compact unit names */
   }
 
   .compact-learning-path__unit-circle-stats {
     font-size: 0.375rem;
-    /* Ultra-compact unit stats */
     font-weight: 600;
     color: var(--theme-text-primary, #111827);
     background: linear-gradient(
@@ -1132,7 +969,6 @@ html.dark .compact-learning-path .compact-learning-path__unit-circle-stats {
     );
     border: 1px solid var(--theme-border-soft, #e5e7eb);
     border-radius: 0.25rem;
-    /* Smaller radius for ultra-compact */
     padding: 0.0625rem 0.125rem;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     text-align: center;
@@ -1146,28 +982,6 @@ html.dark .compact-learning-path .compact-learning-path__unit-circle-stats {
 
   .compact-learning-path__unit-circle-percentage {
     font-size: 0.375rem;
-    /* Ultra-compact percentages */
-  }
-
-  .compact-learning-path__module-level {
-    padding: 0.0625rem 0.25rem;
-    /* Ultra-compact level badges */
-    font-size: 0.5rem;
-    /* Ultra-compact level text */
-  }
-
-  .compact-learning-path__module-type {
-    font-size: 0.5rem;
-    /* Ultra-compact type badges */
-    padding: 0.0625rem 0.1875rem;
-    /* Ultra-compact type padding */
-  }
-
-  .compact-learning-path__button {
-    padding: 0.375rem 0.75rem;
-    /* Button padding - MAINTAINED for accessibility */
-    font-size: 0.75rem;
-    /* Unified button text size */
   }
 
   /* Dark mode support for responsive unit circle stats */
@@ -1180,219 +994,6 @@ html.dark .compact-learning-path .compact-learning-path__unit-circle-stats {
     );
     border-color: var(--theme-border-soft, #6b7280);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  }
-}
-/* === CRITICAL: Mobile ≤400px - Ultra Compact Learning Path === */
-@media (max-width: 400px) {
-  .compact-learning-path {
-    padding: 0.25rem;
-    align-items: flex-start;
-    padding-top: 20px;
-    /* Unified 20px from top for all modals */
-  }
-
-  .compact-learning-path__container {
-    max-width: 80vw;
-    width: 80vw;
-    max-height: 75vh;
-    border-radius: 0.375rem;
-  }
-
-  .compact-learning-path__header {
-    padding: 0.1875rem 0.25rem;
-    min-height: 2.5rem;
-    /* Unified header height for all modals */
-  }
-
-  .compact-learning-path__title {
-    font-size: 0.8125rem;
-    /* Much smaller title */
-    font-weight: 600;
-    /* Reduced weight */
-  }
-
-  .compact-learning-path__content {
-    padding: 0.1875rem 0.25rem;
-    /* Ultra minimal content padding */
-    gap: 0.125rem;
-    /* Minimal gap between sections */
-  }
-
-  /* Ultra compact overview - 2-column grid */
-  .compact-learning-path__overview {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-    padding: 0.5rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .compact-learning-path__stat {
-    gap: 0.03125rem;
-    /* Ultra minimal gap between icon and text */
-    padding: 0.125rem;
-    /* Add minimal padding to stats */
-  }
-
-  .compact-learning-path__stat-icon {
-    width: 0.875rem;
-    height: 0.875rem;
-    /* Much smaller icons */
-  }
-
-  .compact-learning-path__stat-icon--emoji {
-    font-size: 0.875rem;
-    margin-bottom: 0.015625rem;
-    /* Ultra minimal margin */
-  }
-
-  .compact-learning-path__stat-value {
-    font-size: 0.6875rem;
-    /* Much smaller value text */
-    font-weight: 600;
-    /* Reduced weight */
-  }
-
-  .compact-learning-path__stat-label {
-    font-size: 0.5625rem;
-    /* Much smaller label text */
-    line-height: 1.1;
-    /* Tighter line height */
-  }
-
-  /* Ultra compact section titles */
-  .compact-learning-path__section-title {
-    font-size: 0.6875rem;
-    /* Much smaller section titles */
-    margin-bottom: 0.1875rem;
-    /* Minimal margin */
-    font-weight: 600;
-    /* Reduced weight */
-  }
-
-  .compact-learning-path__section-icon {
-    width: 0.5625rem;
-    height: 0.5625rem;
-    /* Much smaller section icons */
-    margin-right: 0.125rem;
-    /* Minimal margin */
-  }
-
-  /* Ultra compact next module section */
-  .compact-learning-path__next-module {
-    padding: 0.25rem;
-    /* Ultra minimal padding */
-    margin-bottom: 0.125rem;
-    /* Minimal margin */
-  }
-
-  .compact-learning-path__recommended-card {
-    padding: 0.1875rem;
-    /* Ultra minimal padding - further reduced */
-    margin-top: 0.125rem;
-    /* Ultra minimal margin - further reduced */
-    border-width: 1px;
-    /* Thinner border */
-    border-radius: 0.1875rem;
-    /* Smaller border radius */
-  }
-
-  .compact-learning-path__module-info {
-    gap: 0.125rem;
-    /* Minimal gap */
-  }
-
-  .compact-learning-path__module-header {
-    gap: 0.1875rem;
-    /* Minimal gap */
-    flex-wrap: wrap;
-    /* Allow wrapping on mobile */
-    align-items: center;
-    /* Better alignment */
-  }
-
-  .compact-learning-path__module-level {
-    padding: 0.0625rem 0.25rem;
-    /* Ultra minimal padding */
-    font-size: 0.625rem;
-    /* Much smaller font */
-    font-weight: 500;
-    /* Reduced weight */
-  }
-
-  .compact-learning-path__module-type {
-    font-size: 0.5625rem;
-    /* Much smaller font */
-    padding: 0.03125rem 0.1875rem;
-    /* Ultra minimal padding */
-  }
-
-  .compact-learning-path__module-name {
-    font-size: 0.8125rem;
-    /* Much smaller font */
-    line-height: 1.05;
-    /* Ultra tight line height */
-    font-weight: 600;
-    /* Reduced weight */
-    margin: 0;
-    /* Remove any default margin */
-    padding: 0;
-    /* Remove any default padding */
-    margin-bottom: 0.0625rem;
-    /* Ultra minimal bottom margin */
-    margin-top: 0.0625rem;
-    /* Ultra minimal top margin */
-  }
-
-  .compact-learning-path__module-priority {
-    padding: 0.0625rem 0.25rem;
-    /* Reduced padding */
-    font-size: 0.4375rem;
-    /* Smaller font */
-  }
-
-  .compact-learning-path__module-priority-icon {
-    width: 0.4375rem;
-    height: 0.4375rem;
-    /* Smaller icon */
-  }
-
-  /* Compact modules section */
-  .compact-learning-path__modules-section {
-    gap: 0.25rem;
-    /* Reduced gap */
-  }
-
-  /* If there are module lists, make them more compact */
-  .compact-learning-path__module-list {
-    gap: 0.1875rem;
-    /* Reduced gap between modules */
-  }
-
-  .compact-learning-path__module-item {
-    padding: 0.375rem;
-    /* Reduced padding */
-    font-size: 0.75rem;
-    /* Smaller font */
-  }
-
-  /* Compact any progress bars */
-  .compact-learning-path__progress-bar {
-    height: 0.375rem;
-    /* Thinner progress bar */
-  }
-
-  /* Compact any buttons */
-  .compact-learning-path__button {
-    padding: 0.375rem 0.75rem;
-    /* Reduced padding */
-    font-size: 0.75rem;
-    /* Smaller font */
-  }
-
-  /* Ultra compact footer if exists */
-  .compact-learning-path__footer {
-    padding: 0.375rem;
-    /* Reduced padding */
   }
 } /* L
 arger close button for mobile accessibility */
@@ -1413,13 +1014,7 @@ DESKTOP/TABLET POSITIONING >400px === */
     padding-top: 8vh;
     /* Consistent top positioning for larger screens */
   }
-}
-/* === MODAL BORDER - DARK MODE === */
-html.dark .compact-learning-path__container {
-  border-color: var(--theme-border-modal-dark, rgba(255, 255, 255, 0.15));
-}
-
-/* === DARK MODE IMPROVEMENTS === */
+}/* === DARK MODE IMPROVEMENTS === */
 html.dark .compact-learning-path__container {
   background-color: var(--theme-bg-elevated, #1f2937);
   box-shadow: 0 20px 25px rgba(0, 0, 0, 0.4);

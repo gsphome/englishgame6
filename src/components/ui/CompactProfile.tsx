@@ -252,7 +252,7 @@ export const CompactProfile: React.FC<CompactProfileProps> = ({ isOpen, onClose 
             <div className="compact-profile__section">
               <h3 className="compact-profile__section-title">
                 🎯 {t('profile.interestedCategories')}{' '}
-                <span style={{ color: 'var(--theme-error, #ef4444)', marginLeft: '0.25rem' }}>
+                <span className="compact-profile__required-mark">
                   *
                 </span>
               </h3>

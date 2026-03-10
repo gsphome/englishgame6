@@ -3,7 +3,9 @@
  * Precisely detects Safari Mobile (not Chrome Mobile)
  */
 
-export const detectSafariMobile = (): boolean => {
+import { logDebug } from './logger';
+
+const detectSafariMobile = (): boolean => {
   // Check if we're in a browser environment
   if (typeof window === 'undefined' || typeof navigator === 'undefined') {
     return false;
@@ -27,21 +29,21 @@ export const detectSafariMobile = (): boolean => {
   return isSafari && isNotChrome && isMobile && hasWebKit && hasVersion;
 };
 
-export const applySafariMobileClass = (): void => {
+const applySafariMobileClass = (): void => {
   const isSafariMobile = detectSafariMobile();
 
   // Debug logging
-  console.log('Safari Mobile Detection:', {
+  logDebug('Safari Mobile Detection', {
     userAgent: navigator.userAgent,
     isSafariMobile,
     classList: document.documentElement.classList.toString(),
-  });
+  }, 'safariDetection');
 
   if (isSafariMobile) {
     document.documentElement.classList.add('browser-safari-mobile');
-    console.log('✅ Safari Mobile class applied');
+    logDebug('Safari Mobile class applied', undefined, 'safariDetection');
   } else {
-    console.log('❌ Not Safari Mobile, no class applied');
+    logDebug('Not Safari Mobile, no class applied', undefined, 'safariDetection');
   }
 };
 

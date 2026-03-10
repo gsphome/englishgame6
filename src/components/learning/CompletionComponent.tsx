@@ -317,7 +317,7 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
             className="game-controls__primary-btn game-controls__primary-btn--purple"
           >
             <Check className="game-controls__primary-btn__icon" />
-            <span>Check Answer</span>
+            <span>{t('learning.checkAnswer')}</span>
           </button>
         ) : (
           <button

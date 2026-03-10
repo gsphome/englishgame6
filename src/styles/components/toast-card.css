@@ -1,34 +1,5 @@
 /* Toast Card Component - BEM Architecture */
 
-/* Toast Container */
-.toast-card-container {
-  position: fixed;
-  z-index: 99999;
-  pointer-events: none;
-  top: 16px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-}
-
-/* Tablet and desktop - top right */
-@media (min-width: 640px) {
-  .toast-card-container {
-    top: 16px;
-    right: 16px;
-    left: auto;
-    justify-content: flex-end;
-  }
-}
-
-/* Landscape mobile - adjusted position */
-@media (max-width: 639px) and (orientation: landscape) {
-  .toast-card-container {
-    top: 8px;
-  }
-}
-
 /* Block: toast-card */
 .toast-card {
   position: relative;

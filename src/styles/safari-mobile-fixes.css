@@ -133,13 +133,6 @@
     box-sizing: border-box !important;
   }
 
-  .nav-btn__text {
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
-    max-width: 100% !important;
-  }
-
   /* Fix any generic button elements */
   button {
     overflow: hidden !important;
@@ -239,10 +232,6 @@
     .main-menu__view-btn:last-child::after {
       content: 'A' !important;
       font-size: 0.7rem !important;
-    }
-
-    .nav-btn__text {
-      display: none !important;
     }
 
     .modal__btn {

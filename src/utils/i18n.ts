@@ -1,7 +1,7 @@
 import type { Language } from '../types';
 
 // Enhanced translations with nested structure
-export const translations = {
+const translations = {
   en: {
     common: {
       loading: 'Loading...',
@@ -103,6 +103,8 @@ export const translations = {
       enabled: 'Enabled',
       disabled: 'Disabled',
       developmentModeDescription: 'Unlock all modes for testing',
+      developmentModeActive: 'Development Mode Active',
+      searchPlaceholder: 'Search',
     },
     about: {
       title: 'About FluentFlow',
@@ -121,6 +123,8 @@ export const translations = {
       feature4: 'Multilingual interface (English/Spanish)',
       feature5: 'Multiple learning modes and games',
       developerTitle: 'Cloud Expert passionate about GenAI',
+      screenInformation: 'Screen Information',
+      clickToViewScreenInfo: 'Click to view screen information',
       acknowledgments: 'Acknowledgments',
       acknowledgementsText:
         'Built with passion for language learning and education. Special thanks to the open-source community for the amazing tools and libraries that made this project possible.',
@@ -273,6 +277,8 @@ export const translations = {
     messages: {
       noDataAvailable: 'No data available',
       moduleNotFound: 'Module not found',
+      noModuleSelected: 'No module selected',
+      returnToMenu: 'Return to Menu',
       loadingFailed: 'Failed to load content',
       sessionComplete: 'Session completed!',
       wellDone: 'Well done!',
@@ -331,6 +337,14 @@ export const translations = {
     },
     errors: {
       somethingWentWrong: 'Something went wrong',
+      unexpectedError: 'We\'re sorry, but something unexpected happened. Please try again.',
+      errorDetails: 'Error Details',
+      tryAgain: 'Try Again',
+      goToHome: 'Go to Home',
+      failedToLoadComponent: 'Failed to load component',
+      failedToLoadModule: 'Failed to load module',
+      errorLoadingModules: 'Error loading modules',
+      unexpectedErrorOccurred: 'An unexpected error occurred',
       networkError: 'Network error',
       serverError: 'Server error',
       notFound: 'Not found',
@@ -490,6 +504,8 @@ export const translations = {
       enabled: 'Habilitado',
       disabled: 'Deshabilitado',
       developmentModeDescription: 'Desbloquea todos los modos para pruebas',
+      developmentModeActive: 'Modo Desarrollo Activo',
+      searchPlaceholder: 'Buscar',
     },
     about: {
       title: 'Acerca de FluentFlow',
@@ -508,6 +524,8 @@ export const translations = {
       feature4: 'Interfaz multiidioma (Inglés/Español)',
       feature5: 'Múltiples modos de aprendizaje y juegos',
       developerTitle: 'Experto Cloud apasionado por la GenAI',
+      screenInformation: 'Información de Pantalla',
+      clickToViewScreenInfo: 'Clic para ver información de pantalla',
       acknowledgments: 'Agradecimientos',
       acknowledgementsText:
         'Construido con pasión por el aprendizaje de idiomas y la educación. Agradecimientos especiales a la comunidad de código abierto por las increíbles herramientas y librerías que hicieron posible este proyecto.',
@@ -660,6 +678,8 @@ export const translations = {
     messages: {
       noDataAvailable: 'No hay datos disponibles',
       moduleNotFound: 'Módulo no encontrado',
+      noModuleSelected: 'No hay módulo seleccionado',
+      returnToMenu: 'Volver al Menú',
       loadingFailed: 'Error al cargar contenido',
       sessionComplete: '¡Sesión completada!',
       wellDone: '¡Bien hecho!',
@@ -718,6 +738,14 @@ export const translations = {
     },
     errors: {
       somethingWentWrong: 'Algo salió mal',
+      unexpectedError: 'Lo sentimos, algo inesperado ocurrió. Por favor intenta de nuevo.',
+      errorDetails: 'Detalles del Error',
+      tryAgain: 'Intentar de Nuevo',
+      goToHome: 'Ir al Inicio',
+      failedToLoadComponent: 'Error al cargar componente',
+      failedToLoadModule: 'Error al cargar módulo',
+      errorLoadingModules: 'Error al cargar módulos',
+      unexpectedErrorOccurred: 'Ocurrió un error inesperado',
       networkError: 'Error de red',
       serverError: 'Error del servidor',
       notFound: 'No encontrado',
@@ -848,11 +876,4 @@ export const useTranslation = (language: Language) => {
   };
 };
 
-// Translation key builders (use these with useTranslation hook in components)
-export const getCommonKey = (key: string) => `common.${key}` as TranslationKeys;
-export const getErrorKey = (key: string) => `errors.${key}` as TranslationKeys;
-export const getCategoryKey = (category: string) => {
-  const categoryKey = category.toLowerCase().replace(/\s+/g, '');
-  return `categories.${categoryKey}` as TranslationKeys;
-};
-export const getLevelKey = (level: string) => `levels.${level.toLowerCase()}` as TranslationKeys;
+

@@ -293,11 +293,6 @@ export const toast = {
   },
 };
 
-// Reset function for tests
-export const resetToastStore = () => {
-  globalState.currentToast = null;
-  globalState.isVisible = false;
-};
 
 // Make debug functions available globally for testing
 if (typeof window !== 'undefined') {

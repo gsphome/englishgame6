@@ -430,7 +430,7 @@ const MatchingComponent: React.FC<MatchingComponentProps> = ({ module }) => {
               className="game-controls__primary-btn game-controls__primary-btn--orange"
             >
               <Check className="game-controls__primary-btn__icon" />
-              <span>Check Matches</span>
+              <span>{t('learning.checkMatches')}</span>
             </button>
           </>
         ) : (
@@ -447,7 +447,7 @@ const MatchingComponent: React.FC<MatchingComponentProps> = ({ module }) => {
               className="game-controls__primary-btn game-controls__primary-btn--green"
             >
               <Check className="game-controls__primary-btn__icon" />
-              <span>Finish</span>
+              <span>{t('learning.finishExercise')}</span>
             </button>
           </>
         )}
@@ -510,7 +510,6 @@ const MatchingComponent: React.FC<MatchingComponentProps> = ({ module }) => {
                         {result.explanation && (
                           <span
                             className="matching-modal__result-card__explanation"
-                            style={{ display: 'none' }}
                           >
                             {result.explanation}
                           </span>

@@ -74,10 +74,3 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
   }
 }
 
-// Hook for functional components to trigger error boundary
-export const useErrorHandler = () => {
-  return (error: Error, errorInfo?: string) => {
-    logError('Manual error reported', { error, errorInfo }, 'useErrorHandler');
-    throw error;
-  };
-};

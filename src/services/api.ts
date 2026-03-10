@@ -13,7 +13,7 @@ export interface ApiResponse<T> {
   error?: string;
 }
 
-export interface ModuleFilters {
+interface ModuleFilters {
   categories?: string[];
   level?: string;
   limit?: number;

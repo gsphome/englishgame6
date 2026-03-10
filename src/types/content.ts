@@ -3,7 +3,7 @@
  * Structured approach to content that separates data from presentation
  */
 
-export type ContentSegmentType =
+type ContentSegmentType =
   | 'text' // Regular text
   | 'term' // Highlighted terms (previously quoted text)
   | 'emphasis' // Bold/italic text
@@ -31,21 +31,3 @@ export interface StructuredContent {
     [key: string]: any;
   };
 }
-
-// Enhanced interfaces for learning data
-export interface QuizDataV2 extends BaseLearningData {
-  question: StructuredContent;
-  options: string[];
-  correct: number | string;
-  explanation?: StructuredContent;
-}
-
-export interface FlashcardDataV2 extends BaseLearningData {
-  front: StructuredContent;
-  back: StructuredContent;
-  example?: StructuredContent;
-  pronunciation?: string;
-}
-
-// Import base types
-import type { BaseLearningData } from './index';

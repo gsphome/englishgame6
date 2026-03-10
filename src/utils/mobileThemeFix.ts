@@ -11,6 +11,7 @@ import {
   THEME_SELECTORS,
   type ThemeMode,
 } from './themeConstants';
+import { logDebug } from './logger';
 
 /**
  * Detects if the user is on a mobile device
@@ -27,7 +28,7 @@ export function isMobileDevice(): boolean {
 /**
  * Forces a complete style recalculation on mobile devices
  */
-export function forceMobileStyleRecalculation(): void {
+function forceMobileStyleRecalculation(): void {
   if (typeof document === 'undefined') return;
 
   // Force reflow by temporarily changing display
@@ -43,7 +44,7 @@ export function forceMobileStyleRecalculation(): void {
 /**
  * Removes all cached styles that might interfere with theme switching
  */
-export function clearMobileCachedStyles(): void {
+function clearMobileCachedStyles(): void {
   if (typeof document === 'undefined') return;
 
   // Remove all style attributes from problematic elements
@@ -205,7 +206,7 @@ export function isSafariMobile(): boolean {
 /**
  * Applies Safari Mobile light mode fix using design system tokens
  */
-export function forceSafariLightMode(): void {
+function forceSafariLightMode(): void {
   if (!isSafariMobile()) return;
 
   // Use design system tokens instead of hardcoded values
@@ -281,7 +282,7 @@ export function forceSafariLightMode(): void {
 /**
  * Forces Safari to respect app theme over system preference
  */
-export function forceSafariThemeOverride(): void {
+function forceSafariThemeOverride(): void {
   if (!isSafariMobile()) return;
 
   const htmlElement = document.documentElement;
@@ -454,7 +455,7 @@ function updateSafariColorSchemeMeta(theme: ThemeMode): void {
 /**
  * Updates mobile-specific meta tags with Safari override
  */
-export function updateMobileViewportMeta(theme: ThemeMode): void {
+function updateMobileViewportMeta(theme: ThemeMode): void {
   if (typeof document === 'undefined') return;
 
   // Update theme-color meta tag
@@ -498,7 +499,7 @@ export function updateMobileViewportMeta(theme: ThemeMode): void {
 /**
  * Sets up mobile-specific theme change handlers
  */
-export function setupMobileThemeHandlers(): void {
+function setupMobileThemeHandlers(): void {
   if (!isMobileDevice()) return;
 
   // Listen for orientation changes that might affect theme
@@ -534,7 +535,7 @@ export function setupMobileThemeHandlers(): void {
     const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
     const handleSystemThemeChange = () => {
-      console.log('System theme changed, enforcing app theme...');
+      logDebug('System theme changed, enforcing app theme...', undefined, 'mobileThemeFix');
       const currentTheme = document.documentElement.classList.contains(THEME_CLASSES.dark)
         ? 'dark'
         : 'light';
@@ -582,7 +583,7 @@ export function setupMobileThemeHandlers(): void {
 /**
  * Detects and fixes Safari theme conflicts
  */
-export function detectAndFixSafariThemeConflict(): void {
+function detectAndFixSafariThemeConflict(): void {
   if (!isSafariMobile()) return;
 
   const htmlElement = document.documentElement;
@@ -659,7 +660,7 @@ export function detectAndFixSafariThemeConflict(): void {
 export function emergencyLightModeFix(): void {
   if (!isSafariMobile()) return;
 
-  console.log('Applying emergency light mode fix for Safari Mobile...');
+  logDebug('Applying emergency light mode fix for Safari Mobile...', undefined, 'mobileThemeFix');
 
   const htmlElement = document.documentElement;
   const lightTokens = THEME_COLORS.light;

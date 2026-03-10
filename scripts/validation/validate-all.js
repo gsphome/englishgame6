@@ -2,48 +2,99 @@
 
 /**
  * Script maestro de validación - ejecuta todas las verificaciones
+ * 
+ * Modos:
+ *   (sin args)    Ejecuta validaciones base (data-paths + BEM)
+ *   --full        Ejecuta validaciones base + 4 análisis profundos
  */
 
+import { logHeader, logInfo, logSuccess, logError } from '../utils/logger.js';
 import { checkAllLinks } from './validate-data-paths.js';
-import { fixModuleTypes } from './fix-module-types.js';
+import { validateBEMCompliance } from './validate-bem.js';
 
-const colors = {
-  reset: '\x1b[0m',
-  red: '\x1b[31m',
-  green: '\x1b[32m',
-  yellow: '\x1b[33m',
-  blue: '\x1b[34m',
-  magenta: '\x1b[35m',
-  cyan: '\x1b[36m',
-  bold: '\x1b[1m'
-};
+const FULL_MODE = process.argv.includes('--full');
 
-const log = {
-  info: (msg) => console.log(`${colors.blue}ℹ${colors.reset} ${msg}`),
-  success: (msg) => console.log(`${colors.green}✓${colors.reset} ${msg}`),
-  warning: (msg) => console.log(`${colors.yellow}⚠${colors.reset} ${msg}`),
-  error: (msg) => console.log(`${colors.red}✗${colors.reset} ${msg}`),
-  title: (msg) => console.log(`\n${colors.bold}${colors.cyan}${msg}${colors.reset}\n`)
-};
-
-async function main() {
-  log.title('🔍 VALIDACIÓN COMPLETA DE MODOS DE APRENDIZAJE');
+async function runAnalysisScript(scriptPath, name) {
+  const { execSync } = await import('child_process');
+  const { dirname } = await import('path');
+  const { fileURLToPath } = await import('url');
+  const rootDir = dirname(dirname(dirname(fileURLToPath(import.meta.url))));
 
   try {
-    // 1. Verificar y corregir tipos de módulos
-    log.info('Paso 1: Verificando tipos de módulos...');
-    await fixModuleTypes();
+    const output = execSync(`node ${scriptPath}`, {
+      cwd: rootDir,
+      encoding: 'utf-8',
+      stdio: 'pipe',
+    });
 
-    // 2. Verificar todos los links y rutas
-    log.info('Paso 2: Verificando links y rutas...');
-    await checkAllLinks();
+    // Check for ❌ in output (indicates failures)
+    const hasErrors = output.includes('❌');
+    if (!hasErrors) {
+      const warnings = (output.match(/⚠️/g) || []).length;
+      if (warnings > 0) {
+        logInfo(`${name}: ✅ (${warnings} warning${warnings > 1 ? 's' : ''})`);
+      } else {
+        logSuccess(`${name}: ✅`);
+      }
+    } else {
+      logError(`${name}: ❌`);
+      console.log(output);
+    }
+    return !hasErrors;
+  } catch (e) {
+    logError(`${name}: ❌ (exit code ${e.status})`);
+    if (e.stdout) console.log(e.stdout);
+    return false;
+  }
+}
 
-    log.title('✅ VALIDACIÓN COMPLETA EXITOSA');
-    console.log('Todos los modos de aprendizaje han sido verificados y están funcionando correctamente.');
-    
-  } catch (error) {
-    log.error(`Error durante la validación: ${error.message}`);
+async function main() {
+  logHeader('🔍 VALIDACIÓN COMPLETA' + (FULL_MODE ? ' + ANÁLISIS PROFUNDO' : ''));
+
+  const results = [];
+
+  // 1. Links y rutas de datos
+  logInfo('Paso 1: Verificando datos y rutas...');
+  try {
+    const passed = await checkAllLinks();
+    results.push({ name: 'Data Paths', ok: passed });
+  } catch (e) {
+    logError(`Data paths: ${e.message}`);
+    results.push({ name: 'Data Paths', ok: false });
+  }
+
+  // 2. BEM compliance
+  logInfo('Paso 2: Verificando BEM compliance...');
+  try {
+    const passed = validateBEMCompliance();
+    results.push({ name: 'BEM', ok: passed });
+  } catch (e) {
+    logError(`BEM: ${e.message}`);
+    results.push({ name: 'BEM', ok: false });
+  }
+
+  // 3. Análisis profundos (solo con --full)
+  if (FULL_MODE) {
+    logInfo('Paso 3: Análisis profundos...');
+
+    const analyses = [
+      { script: 'scripts/validation/analyze-unused.js', name: 'Analyze Unused (17 pasadas)' },
+      { script: 'scripts/validation/deep-analysis.js', name: 'Deep Analysis (DA+DB+DC, 30 pasadas)' },
+    ];
+
+    for (const { script, name } of analyses) {
+      const ok = await runAnalysisScript(script, name);
+      results.push({ name, ok });
+    }
+  }
+
+  // Resumen
+  const failed = results.filter(r => !r.ok);
+  if (failed.length > 0) {
+    logError(`${failed.length} validación(es) fallaron: ${failed.map(r => r.name).join(', ')}`);
     process.exit(1);
+  } else {
+    logSuccess(`Todas las validaciones pasaron (${results.length} checks)`);
   }
 }
 

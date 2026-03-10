@@ -68,8 +68,7 @@
   pointer-events: none;
 }
 
-.modal__btn--primary:active::after,
-.modal__btn--danger:active::after {
+.modal__btn--primary:active::after {
   animation: ripple var(--animation-fast) var(--ease-smooth);
 }
 
@@ -94,73 +93,12 @@
   outline-offset: 2px;
 }
 
-.modal__btn--secondary {
-  background-color: var(--theme-bg-subtle, #f9fafb);
-  color: var(--theme-text-secondary, #6b7280);
-  border: 1px solid var(--theme-border-soft, #e5e7eb);
-}
-
-.modal__btn--secondary:hover {
-  background-color: var(--theme-bg-soft, #f3f4f6);
-  color: var(--theme-text-primary, #374151);
-  box-shadow: var(--shadow-button-hover);
-  transform: translateY(-1px);
-}
-
-.modal__btn--secondary:active {
-  transform: translateY(0) scale(0.98);
-  box-shadow: var(--shadow-button-active);
-}
-
-.modal__btn--secondary:focus-visible {
-  outline: 2px solid var(--theme-primary-blue, #3b82f6);
-  outline-offset: 2px;
-}
-
-.modal__btn--danger {
-  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-  color: #ffffff;
-}
-
-.modal__btn--danger:hover {
-  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-  box-shadow: var(--shadow-button-hover);
-  transform: translateY(-1px);
-}
-
-.modal__btn--danger:active {
-  transform: translateY(0) scale(0.98);
-  box-shadow: var(--shadow-button-active);
-}
-
-.modal__btn--danger:focus-visible {
-  outline: 2px solid #ef4444;
-  outline-offset: 2px;
-}
-
 .modal__btn-icon {
   width: 1rem;
   height: 1rem;
 }
 
 /* === DISABLED STATE === */
-.modal__btn--disabled {
-  opacity: 1 !important;
-  cursor: not-allowed;
-  pointer-events: none;
-  /* Unified disabled style for all button types */
-  background-color: var(--theme-bg-subtle, #f9fafb) !important;
-  background-image: none !important;
-  color: var(--theme-text-secondary, #6b7280) !important;
-  border: 1px solid var(--theme-border-soft, #e5e7eb) !important;
-  box-shadow: none !important;
-}
-
-.modal__btn--primary.modal__btn--disabled,
-.modal__btn--secondary.modal__btn--disabled,
-.modal__btn--danger.modal__btn--disabled {
-  /* All disabled buttons use the same unified style above */
-}
 
 /* === FOOTER LAYOUT STANDARD === */
 .modal__actions {
@@ -178,16 +116,6 @@
   justify-content: center;
 }
 
-.modal__actions--double {
-  justify-content: space-between;
-  flex-direction: row;
-}
-
-.modal__actions--row {
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 /* === DARK MODE === */
 html.dark .modal__close-btn {
   color: var(--theme-text-tertiary, #d1d5db);
@@ -198,36 +126,12 @@ html.dark .modal__close-btn:hover {
   background-color: var(--theme-bg-subtle, #374151);
 }
 
-html.dark .modal__btn--secondary {
-  background-color: var(--theme-bg-subtle, #374151);
-  color: var(--theme-text-secondary, #e5e7eb);
-  border-color: var(--theme-border-soft, #4b5563);
-}
-
-html.dark .modal__btn--secondary:hover {
-  background-color: var(--theme-bg-soft, #4b5563);
-  color: var(--theme-text-primary, #ffffff);
-}
-
 html.dark .modal__actions {
   background-color: var(--theme-bg-elevated, #1f2937);
   border-color: var(--theme-border-soft, #4b5563);
 }
 
 /* Unified disabled style for dark mode */
-html.dark .modal__btn--disabled {
-  background-color: var(--theme-bg-subtle, #4b5563) !important;
-  background-image: none !important;
-  color: var(--theme-text-secondary, #9ca3af) !important;
-  border: 1px solid var(--theme-border-soft, #6b7280) !important;
-  box-shadow: none !important;
-}
-
-html.dark .modal__btn--primary.modal__btn--disabled,
-html.dark .modal__btn--secondary.modal__btn--disabled,
-html.dark .modal__btn--danger.modal__btn--disabled {
-  /* All disabled buttons use the same unified dark style above */
-}
 
 /* === RESPONSIVE === */
 @media (max-width: 640px) {
@@ -236,10 +140,7 @@ html.dark .modal__btn--danger.modal__btn--disabled {
     gap: 0.5rem;
   }
 
-  .modal__actions--double,
-  .modal__actions--row {
-    flex-direction: column;
-  }
+  
 
   .modal__btn {
     width: 100%;

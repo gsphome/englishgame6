@@ -1,6 +1,6 @@
 // Core Types
 export type LearningMode = 'flashcard' | 'quiz' | 'completion' | 'sorting' | 'matching' | 'reading';
-export type DifficultyLevel = 'a1' | 'a2' | 'b1' | 'b2' | 'c1' | 'c2';
+type DifficultyLevel = 'a1' | 'a2' | 'b1' | 'b2' | 'c1' | 'c2';
 export type Category =
   | 'Vocabulary'
   | 'Grammar'
@@ -30,7 +30,7 @@ export interface LearningModule {
 }
 
 // Base interface for all learning data types
-export interface BaseLearningData {
+interface BaseLearningData {
   id: string;
   category?: Category;
   level?: DifficultyLevel;
@@ -70,7 +70,7 @@ export interface SortingData extends BaseLearningData {
   subcategory?: string;
 }
 
-export interface MatchingData extends BaseLearningData {
+interface MatchingData extends BaseLearningData {
   left: string;
   right: string;
   explanation?: string;
@@ -88,7 +88,7 @@ export interface ReadingData extends BaseLearningData {
   estimatedReadingTime: number; // in minutes
 }
 
-export interface ReadingSection {
+interface ReadingSection {
   id: string;
   title: string;
   content: string;
@@ -96,30 +96,30 @@ export interface ReadingSection {
   interactive?: ReadingInteractive;
 }
 
-export interface ReadingInteractive {
+interface ReadingInteractive {
   highlights?: string[];
   tooltips?: ReadingTooltip[];
   expandable?: ReadingExpandable[];
 }
 
-export interface ReadingTooltip {
+interface ReadingTooltip {
   term: string;
   definition: string;
 }
 
-export interface ReadingExpandable {
+interface ReadingExpandable {
   title: string;
   content: string;
 }
 
-export interface KeyTerm {
+interface KeyTerm {
   term: string;
   definition: string;
   example: string;
   pronunciation?: string; // IPA notation
 }
 
-export interface GrammarPoint {
+interface GrammarPoint {
   rule: string;
   explanation: string;
   examples: string[];
@@ -127,7 +127,7 @@ export interface GrammarPoint {
 }
 
 // Union type for all learning data
-export type LearningData =
+type LearningData =
   | FlashcardData
   | QuizData
   | CompletionData
@@ -138,7 +138,7 @@ export type LearningData =
 // Language and Theme types
 export type Language = 'en' | 'es';
 export type Theme = 'light' | 'dark';
-export type UserLevel = 'beginner' | 'intermediate' | 'advanced';
+type UserLevel = 'beginner' | 'intermediate' | 'advanced';
 
 // User & Auth
 export interface User {
@@ -150,7 +150,7 @@ export interface User {
   createdAt: string;
 }
 
-export interface UserPreferences {
+interface UserPreferences {
   language: Language;
   dailyGoal: number;
   categories: Category[];
@@ -175,7 +175,7 @@ export interface ModuleScore {
 }
 
 // App State
-export type AppView = 'menu' | LearningMode;
+type AppView = 'menu' | LearningMode;
 export type MenuContext = 'progression' | 'list';
 
 export interface AppState {
@@ -188,22 +188,7 @@ export interface AppState {
   error: string | null;
 }
 
-// Settings types
-export interface GameModeSettings {
-  wordCount?: number;
-  questionCount?: number;
-  itemCount?: number;
-  categoryCount?: number;
-}
-
-export interface GameSettings {
-  flashcardMode: GameModeSettings;
-  quizMode: GameModeSettings;
-  completionMode: GameModeSettings;
-  sortingMode: GameModeSettings & { categoryCount: number };
-  matchingMode: GameModeSettings;
-  readingMode: GameModeSettings;
-}
+// Settings types — removed GameModeSettings, GameSettings (duplicated in settingsStore.ts)
 
 export interface MaxLimits {
   flashcard: number;
@@ -215,44 +200,8 @@ export interface MaxLimits {
   maxCategories: number;
 }
 
-// Toast types
-export type ToastType = 'success' | 'error' | 'warning' | 'info';
+// Toast types — removed ToastType, Toast (duplicated in toastStore.ts)
 
-export interface Toast {
-  id: string;
-  type: ToastType;
-  message: string;
-  duration?: number;
-  isGameRelated?: boolean;
-}
+// Validation types — removed ValidationResult, ValidationConfig (unused)
 
-// Validation types
-export interface ValidationResult {
-  success: boolean;
-  errors: string[];
-  warnings?: string[];
-}
-
-export interface ValidationConfig {
-  strictMode: boolean;
-  requiredItemCount: number;
-  allowWarnings: boolean;
-}
-
-// API Response types
-export interface ApiError {
-  message: string;
-  code?: string;
-  details?: Record<string, unknown>;
-}
-
-export interface ApiResponse<T> {
-  data: T;
-  success: boolean;
-  error?: string;
-  meta?: {
-    total?: number;
-    page?: number;
-    limit?: number;
-  };
-}
+// API Response types — removed ApiError, ApiResponse (duplicated in api.ts)

@@ -133,14 +133,3 @@
 /* === COMPONENT-SPECIFIC MODIFIERS === */
 /* These can override global theme styles for specific use cases */
 
-.progression-dashboard--dark-theme.progression-dashboard--high-contrast
-  .progression-dashboard__module-name {
-  color: #ffffff;
-  font-weight: 600;
-}
-
-.progression-dashboard--dark-theme.progression-dashboard--compact
-  .progression-dashboard__module-desc {
-  opacity: 1;
-  color: var(--theme-text-secondary, #e5e7eb);
-}

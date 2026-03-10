@@ -19,7 +19,7 @@ export interface MaxLimits {
   maxCategories: number;
 }
 
-export interface SettingsState {
+interface SettingsState {
   // General
   theme: 'light' | 'dark';
   language: 'en' | 'es';

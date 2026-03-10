@@ -10,7 +10,7 @@ export function logDebug(message: string, data?: any, component?: string) {
   void component;
 }
 
-export function logInfo(message: string, data?: any, component?: string) {
+function logInfo(message: string, data?: any, component?: string) {
   // Disabled to prevent initialization issues
   void message;
   void data;

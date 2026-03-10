@@ -83,5 +83,4 @@ export const THEME_SELECTORS = {
 } as const;
 
 export type ThemeMode = 'light' | 'dark';
-export type ThemeColorKey = keyof typeof THEME_COLORS.light;
-export type ThemeClassName = keyof typeof THEME_CLASSES;
+
