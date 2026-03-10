@@ -191,17 +191,17 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
     >
       {/* Continue Learning Section */}
       {nextRecommended && (
-        <div className="progression-dashboard__hero progression-dashboard__hero--compact">
-          <div className="progression-dashboard__continue progression-dashboard__continue--compact">
-            <div className="progression-dashboard__next-module progression-dashboard__next-module--compact">
+        <div className="progression-dashboard__hero">
+          <div className="progression-dashboard__continue">
+            <div className="progression-dashboard__next-module">
               <div className="progression-dashboard__next-info">
-                <h3 className="progression-dashboard__next-name progression-dashboard__next-name--compact">
+                <h3 className="progression-dashboard__next-name">
                   {nextRecommended.name}
                 </h3>
-                <p className="progression-dashboard__next-desc progression-dashboard__next-desc--compact">
+                <p className="progression-dashboard__next-desc">
                   {nextRecommended.description}
                 </p>
-                <div className="progression-dashboard__next-meta progression-dashboard__next-meta--compact">
+                <div className="progression-dashboard__next-meta">
                   <span
                     className="progression-dashboard__level-badge"
                     style={
@@ -218,13 +218,16 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
                       ? nextRecommended.level[0].toUpperCase()
                       : nextRecommended.level.toUpperCase()}
                   </span>
-                  <span className="progression-dashboard__time progression-dashboard__time--compact">
-                    ~{nextRecommended.estimatedTime}min
+                  <span className="progression-dashboard__module-type progression-dashboard__module-type--hero">
+                    {nextRecommended.learningMode}
+                  </span>
+                  <span className="progression-dashboard__time">
+                    {nextRecommended.estimatedTime}min
                   </span>
                 </div>
               </div>
               <button
-                className="progression-dashboard__continue-btn progression-dashboard__continue-btn--compact"
+                className="progression-dashboard__continue-btn"
                 onClick={handleContinueLearning}
               >
                 <Play className="progression-dashboard__continue-icon" />
@@ -333,7 +336,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
                                 {module.learningMode}
                               </span>
                               <span className="progression-dashboard__module-time">
-                                ~{module.estimatedTime}min
+                                {module.estimatedTime}min
                               </span>
                             </div>
                           </div>

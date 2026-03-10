@@ -25,6 +25,7 @@ const translations = {
       locked: 'Locked',
       exercise: 'Exercise',
       continue: 'Continue Learning',
+      searchPlaceholder: 'Search',
     },
     navigation: {
       mainMenu: 'Main Menu',
@@ -104,7 +105,6 @@ const translations = {
       disabled: 'Disabled',
       developmentModeDescription: 'Unlock all modes for testing',
       developmentModeActive: 'Development Mode Active',
-      searchPlaceholder: 'Search',
     },
     about: {
       title: 'About FluentFlow',
@@ -426,6 +426,7 @@ const translations = {
       locked: 'Bloqueado',
       exercise: 'Ejercicio',
       continue: 'Continuar Aprendiendo',
+      searchPlaceholder: 'Buscar',
     },
     navigation: {
       mainMenu: 'Menú Principal',
@@ -505,7 +506,6 @@ const translations = {
       disabled: 'Deshabilitado',
       developmentModeDescription: 'Desbloquea todos los modos para pruebas',
       developmentModeActive: 'Modo Desarrollo Activo',
-      searchPlaceholder: 'Buscar',
     },
     about: {
       title: 'Acerca de FluentFlow',
