@@ -59,13 +59,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Changed from center to flex-start */
+  justify-content: center; /* Back to center */
   height: 100%;
   /* Reduced padding for better visual balance */
-  padding: 0.125rem 0.125rem 1rem 0.125rem; /* Reduced bottom padding from 1.5rem to 1rem */
+  padding: 0.125rem; /* Reset to original padding */
+  padding-bottom: 1.25rem; /* Only add bottom padding for level badge */
   text-align: center;
   /* Tighter gap for more compact feel */
-  gap: 0;
+  gap: 0.125rem; /* Add small gap between elements */
   /* Ensure perfect centering within card bounds */
   box-sizing: border-box;
   position: relative; /* For absolute positioning of level badge */
@@ -147,7 +148,7 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   /* Position at bottom center */
   position: absolute;
-  bottom: 0.25rem;
+  bottom: 0.1875rem; /* Reduced from 0.25rem to 0.1875rem (3px) */
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
