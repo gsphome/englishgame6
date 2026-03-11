@@ -95,21 +95,24 @@ const AppContent: React.FC = () => {
       if (hash.startsWith('#/learn/')) {
         const moduleId = hash.replace('#/learn/', '');
 
-        // Only update if different from current state
+        // Check current state
         const { currentModule } = useAppStore.getState();
-        if (!currentModule || currentModule.id !== moduleId) {
-          // We need to fetch the module metadata to update Zustand
-          // Import api service dynamically to avoid circular dependencies
-          const { fetchModules } = await import('./services/api');
-          const response = await fetchModules();
+        
+        // If the module is already correctly set, do nothing
+        if (currentModule && currentModule.id === moduleId) {
+          return;
+        }
 
-          if (response.success) {
-            const module = response.data.find(m => m.id === moduleId);
-            if (module) {
-              const { setCurrentModule, setCurrentView } = useAppStore.getState();
-              setCurrentModule(module);
-              setCurrentView(module.learningMode);
-            }
+        // Module needs to be loaded - fetch module metadata
+        const { fetchModules } = await import('./services/api');
+        const response = await fetchModules();
+
+        if (response.success) {
+          const module = response.data.find(m => m.id === moduleId);
+          if (module) {
+            const { setCurrentModule, setCurrentView } = useAppStore.getState();
+            setCurrentModule(module);
+            setCurrentView(module.learningMode);
           }
         }
       } else if (hash === '' || hash === '#/' || hash === '#/menu') {
