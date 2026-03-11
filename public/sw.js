@@ -41,7 +41,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  console.log('[SW] Intercepting:', url.pathname);
+  console.log('[SW] Intercepting:', request.url);
 
   event.respondWith(
     caches.open(CACHE_NAME).then((cache) => {
@@ -52,39 +52,22 @@ self.addEventListener('fetch', (event) => {
           return response;
         })
         .catch(async () => {
-          // Sin red: buscar en cache con múltiples estrategias
-          console.log('[SW] Network failed, trying cache:', url.pathname);
+          // Sin red: buscar en cache (ahora las URLs coinciden exactamente)
+          console.log('[SW] Network failed, checking cache:', request.url);
           
-          // Estrategia 1: Match exacto
-          let cachedResponse = await cache.match(request);
-          
-          // Estrategia 2: Match sin query params
-          if (!cachedResponse) {
-            const urlWithoutQuery = new URL(request.url);
-            urlWithoutQuery.search = '';
-            cachedResponse = await cache.match(urlWithoutQuery.toString());
-          }
-          
-          // Estrategia 3: Match solo pathname (sin origin)
-          if (!cachedResponse) {
-            const keys = await cache.keys();
-            for (const key of keys) {
-              const keyUrl = new URL(key.url);
-              if (keyUrl.pathname === url.pathname) {
-                cachedResponse = await cache.match(key);
-                console.log('[SW] Found via pathname match:', keyUrl.href);
-                break;
-              }
-            }
-          }
+          const cachedResponse = await cache.match(request);
           
           if (cachedResponse) {
-            console.log('[SW] Serving from cache:', url.pathname);
+            console.log('[SW] ✅ Serving from cache:', url.pathname);
             return cachedResponse;
           }
           
+          // Debug: mostrar qué hay en cache
+          const keys = await cache.keys();
+          console.log('[SW] ❌ Not in cache. Available URLs:', keys.length);
+          keys.slice(0, 3).forEach(key => console.log('  -', key.url));
+          
           // No hay cache: devolver error offline
-          console.warn('[SW] Not in cache:', url.pathname);
           return new Response(
             JSON.stringify({ error: 'MODULE_NOT_AVAILABLE_OFFLINE' }),
             {
