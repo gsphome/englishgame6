@@ -8,7 +8,6 @@ import { logError } from '../../utils/logger';
 import {
   downloadLevels,
   deleteAllCache,
-  deleteLevelCache,
   formatStorageSize,
   getTotalCacheSize,
 } from '../../services/offlineManager';
