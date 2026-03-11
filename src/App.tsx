@@ -85,8 +85,8 @@ const AppContent: React.FC = () => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Sync URL hash with Zustand state for proper navigation
-  // This ensures that when the URL hash changes (e.g., browser back/forward),
-  // the Zustand state is updated to match
+  // This is the SINGLE SOURCE OF TRUTH for navigation
+  // Components should ONLY update the hash, and this effect will update Zustand
   useEffect(() => {
     const handleHashChange = async () => {
       const hash = window.location.hash;
@@ -96,10 +96,10 @@ const AppContent: React.FC = () => {
         const moduleId = hash.replace('#/learn/', '');
 
         // Check current state
-        const { currentModule } = useAppStore.getState();
+        const { currentModule, currentView } = useAppStore.getState();
 
-        // If the module is already correctly set, do nothing
-        if (currentModule && currentModule.id === moduleId) {
+        // If the module is already correctly set AND view is correct, do nothing
+        if (currentModule?.id === moduleId && currentView !== 'menu') {
           return;
         }
 
@@ -117,7 +117,8 @@ const AppContent: React.FC = () => {
         }
       } else if (hash === '' || hash === '#/' || hash === '#/menu') {
         // Navigate to menu
-        const { setCurrentView } = useAppStore.getState();
+        const { setCurrentView, setCurrentModule } = useAppStore.getState();
+        setCurrentModule(null);
         setCurrentView('menu');
       }
     };
