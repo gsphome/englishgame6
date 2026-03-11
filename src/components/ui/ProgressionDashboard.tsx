@@ -15,7 +15,7 @@ interface ProgressionDashboardProps {
 export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
   onModuleSelect: _onModuleSelect,
 }) => {
-  const { setCurrentModule, setCurrentView, setPreviousMenuContext } = useAppStore();
+  const { setPreviousMenuContext } = useAppStore();
   const { isModuleCompleted } = useProgressStore();
   const progression = useProgression();
   const [expandedUnits, setExpandedUnits] = React.useState<Set<number>>(new Set());

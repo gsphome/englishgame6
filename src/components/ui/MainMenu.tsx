@@ -17,8 +17,7 @@ export const MainMenu: React.FC = () => {
   const { data: modules = [], isLoading, error } = useAllModules();
   const progression = useProgression();
   const { query, setQuery, results } = useSearch(modules);
-  const { setCurrentModule, setCurrentView, setPreviousMenuContext, previousMenuContext } =
-    useAppStore();
+  const { setPreviousMenuContext, previousMenuContext } = useAppStore();
   const { language } = useSettingsStore();
   const { t } = useTranslation(language);
   const [viewMode, setViewMode] = useState<'progression' | 'list'>(previousMenuContext);
