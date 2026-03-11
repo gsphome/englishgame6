@@ -37,7 +37,8 @@
   max-height: 80vh;
   display: flex;
   flex-direction: column;
-  overflow: visible;
+  overflow: hidden;
+  position: relative;
 }
 
 /* === HEADER === */
@@ -51,6 +52,8 @@
   background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
   border-radius: var(--radius-lg, 0.5rem) var(--radius-lg, 0.5rem) 0 0;
   flex-shrink: 0;
+  position: relative;
+  z-index: 100;
 }
 
 .download-manager__title {
@@ -92,7 +95,7 @@
 /* === CONTENT === */
 .download-manager__content {
   padding: 0.75rem;
-  flex: 1;
+  flex: 1 1 auto;
   overflow-y: auto;
   overflow-x: hidden;
   display: flex;
@@ -100,6 +103,7 @@
   gap: 0.75rem;
   background-color: var(--theme-bg-subtle, #fafafa);
   border-radius: 0 0 var(--radius-lg, 0.5rem) var(--radius-lg, 0.5rem);
+  min-height: 0;
 }
 
 /* === LIST === */
