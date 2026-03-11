@@ -311,3 +311,48 @@ html.dark .matching-component__item--correct .matching-component__item-text * {
   font-weight: 800 !important;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6) !important;
 }
+
+/* === MOBILE RESPONSIVE === */
+@media (max-width: 767px) {
+  /* Increase touch targets for mobile */
+  .matching-component .matching-component__item {
+    min-height: 3rem !important;
+    padding: 0.625rem 0.875rem !important;
+    font-size: 0.9375rem !important;
+  }
+
+  .matching-component .matching-component__item-letter {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  .matching-component .matching-component__columns {
+    gap: 0.5rem !important;
+    padding: 0.375rem !important;
+  }
+
+  .matching-component .matching-component__column {
+    padding: 0.375rem !important;
+  }
+}
+
+@media (max-width: 419px) {
+  /* Ultra compact for small screens */
+  .matching-component .matching-component__item {
+    min-height: 2.75rem !important;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.875rem !important;
+  }
+
+  .matching-component .matching-component__item-letter {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  .matching-component .matching-component__columns {
+    gap: 0.375rem !important;
+    padding: 0.25rem !important;
+  }
+}

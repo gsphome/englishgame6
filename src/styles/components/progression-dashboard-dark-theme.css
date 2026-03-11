@@ -141,3 +141,42 @@
 .progression-dashboard--dark-theme .progression-dashboard__progress-fill {
   background: linear-gradient(90deg, #60a5fa, #818cf8);
 }
+
+/* === MOBILE RESPONSIVE === */
+@media (max-width: 767px) {
+  /* Increase touch targets and readability */
+  .progression-dashboard--dark-theme .progression-dashboard__module {
+    padding: 0.875rem;
+    min-height: 44px;
+  }
+
+  .progression-dashboard--dark-theme .progression-dashboard__unit-title {
+    font-size: 1.125rem;
+  }
+
+  .progression-dashboard--dark-theme .progression-dashboard__module-name {
+    font-size: 1rem;
+  }
+
+  .progression-dashboard--dark-theme .progression-dashboard__continue-btn {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 419px) {
+  /* Ultra compact for small screens */
+  .progression-dashboard--dark-theme .progression-dashboard__module {
+    padding: 0.75rem;
+  }
+
+  .progression-dashboard--dark-theme .progression-dashboard__unit-title {
+    font-size: 1rem;
+  }
+
+  .progression-dashboard--dark-theme .progression-dashboard__module-name {
+    font-size: 0.9375rem;
+  }
+}

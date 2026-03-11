@@ -111,6 +111,34 @@
   transition: opacity 0.2s ease;
 }
 
+/* === MOBILE RESPONSIVE === */
+@media (max-width: 767px) {
+  /* Increase font size for better mobile readability */
+  .content-renderer__segment--code {
+    font-size: 0.8125rem;
+    padding: 0.1875rem 0.375rem;
+  }
+
+  /* Ensure touch-friendly spacing */
+  .content-renderer__segment--link {
+    padding: 0.125rem 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 419px) {
+  /* Ultra compact for small screens */
+  .content-renderer__segment--code {
+    font-size: 0.75rem;
+  }
+
+  .content-renderer--quiz .content-renderer__segment--term {
+    font-size: 1em;
+  }
+}
+
 /* Accessibility improvements */
 .content-renderer__segment--term[title]:hover::after {
   content: attr(title);
