@@ -138,18 +138,15 @@ class ApiService {
    * Strategy: network-first with Cache API fallback for offline support
    */
   async fetchModuleData(moduleId: string): Promise<ApiResponse<LearningModule>> {
-    console.log('[ApiService] fetchModuleData called:', moduleId);
     const cacheKey = this.getCacheKey('module', { moduleId });
     const cached = this.getFromCache<LearningModule>(cacheKey);
 
     if (cached) {
-      console.log('[ApiService] Returning cached module data:', moduleId);
       logDebug('Returning cached module data', { moduleId }, 'ApiService');
       return { data: cached, success: true };
     }
 
     try {
-      console.log('[ApiService] Fetching module metadata...');
       // First get module metadata
       const modulesResponse = await this.fetchModules();
       if (!modulesResponse.success) {
@@ -167,11 +164,8 @@ class ApiService {
 
       const moduleInfo = modulesResponse.data.find(m => m.id === moduleId);
       if (!moduleInfo) {
-        console.error('[ApiService] Module not found:', moduleId);
         throw new Error(`Module ${moduleId} not found`);
       }
-
-      console.log('[ApiService] Module info:', moduleInfo);
 
       // Then get module data if dataPath exists
       let moduleData: LearningModule = { ...moduleInfo };
@@ -183,12 +177,9 @@ class ApiService {
           : moduleInfo.dataPath;
         const dataUrl = validateUrl(getAssetPath(cleanDataPath));
 
-        console.log('[ApiService] Fetching module data from:', dataUrl);
-
         let data: any;
 
         if (!navigator.onLine) {
-          console.log('[ApiService] Offline: attempting Cache API fallback');
           // Offline: go straight to Cache API
           logDebug(
             'Offline: attempting Cache API fallback for module data',
@@ -197,10 +188,8 @@ class ApiService {
           );
           const cachedResponse = await getCachedResponse(dataUrl);
           if (cachedResponse) {
-            console.log('[ApiService] ✅ Found in Cache API');
             data = await cachedResponse.json();
           } else {
-            console.error('[ApiService] ❌ Not found in Cache API');
             return {
               data: {} as LearningModule,
               success: false,
@@ -208,13 +197,10 @@ class ApiService {
             };
           }
         } else {
-          console.log('[ApiService] Online: trying network first');
           // Online: try network first, fallback to Cache API
           try {
             data = await secureJsonFetch(dataUrl);
-            console.log('[ApiService] ✅ Network fetch successful');
           } catch (fetchError) {
-            console.log('[ApiService] Network failed, trying Cache API fallback');
             logDebug(
               'Network failed, attempting Cache API fallback for module data',
               { moduleId },
@@ -222,10 +208,8 @@ class ApiService {
             );
             const cachedResponse = await getCachedResponse(dataUrl);
             if (cachedResponse) {
-              console.log('[ApiService] ✅ Found in Cache API (fallback)');
               data = await cachedResponse.json();
             } else {
-              console.error('[ApiService] ❌ Not found in Cache API (fallback)');
               throw fetchError; // Re-throw original error if no cache
             }
           }

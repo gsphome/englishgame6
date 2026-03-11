@@ -12,7 +12,6 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker
       .register(swPath)
       .then(registration => {
-        console.log('SW registered:', registration.scope);
       })
       .catch(error => {
         console.warn('SW registration failed:', error);

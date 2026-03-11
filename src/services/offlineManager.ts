@@ -119,7 +119,6 @@ async function getUrlsForLevels(
  */
 async function preCacheJavaScriptAssets(): Promise<void> {
   try {
-    console.log('[OfflineManager] Pre-caching JavaScript assets...');
 
     // Get all script tags from the current page
     const scripts = Array.from(document.querySelectorAll('script[src]'));
@@ -132,7 +131,6 @@ async function preCacheJavaScriptAssets(): Promise<void> {
       return;
     }
 
-    console.log('[OfflineManager] Found', scriptUrls.length, 'JavaScript assets to cache');
 
     const assetsCache = await caches.open(ASSETS_CACHE);
 
@@ -141,7 +139,6 @@ async function preCacheJavaScriptAssets(): Promise<void> {
         // Check if already cached
         const cached = await assetsCache.match(url);
         if (cached) {
-          console.log('[OfflineManager] Already cached:', url);
           continue;
         }
 
@@ -149,14 +146,12 @@ async function preCacheJavaScriptAssets(): Promise<void> {
         const response = await fetch(url);
         if (response.ok) {
           await assetsCache.put(url, response);
-          console.log('[OfflineManager] ✅ Cached JS asset:', url);
         }
       } catch (error) {
         console.warn('[OfflineManager] Failed to cache JS asset:', url, error);
       }
     }
 
-    console.log('[OfflineManager] JavaScript assets pre-cache complete');
   } catch (error) {
     console.error('[OfflineManager] Pre-cache JavaScript assets failed:', error);
   }
@@ -174,7 +169,6 @@ export async function downloadLevels(
   levels: string[],
   onProgress: (progress: DownloadProgress) => void
 ): Promise<DownloadProgress> {
-  console.log('[OfflineManager] Starting download for levels:', levels);
 
   // Pre-cache JavaScript assets first (critical for offline functionality)
   await preCacheJavaScriptAssets();
@@ -198,8 +192,6 @@ export async function downloadLevels(
     allUrls.unshift(modulesUrl);
   }
 
-  console.log('[OfflineManager] URLs to download:', allUrls.length);
-  console.log('[OfflineManager] First 3 URLs:', allUrls.slice(0, 3));
 
   const total = allUrls.length;
   const failed: string[] = [];
@@ -213,10 +205,8 @@ export async function downloadLevels(
   // Download sequentially
   for (const url of allUrls) {
     try {
-      console.log('[OfflineManager] Downloading:', url);
       const response = await fetchWithRetries(url);
       await cache.put(url, response);
-      console.log('[OfflineManager] ✅ Cached:', url);
       completed++;
     } catch (error) {
       console.error('[OfflineManager] ❌ Failed:', url, error);
@@ -233,7 +223,6 @@ export async function downloadLevels(
     onProgress({ total, completed, failed: [...failed] });
   }
 
-  console.log('[OfflineManager] Download complete. Total:', total, 'Failed:', failed.length);
   logDebug('Download complete', { total, completed, failedCount: failed.length }, 'OfflineManager');
 
   return { total, completed, failed };
