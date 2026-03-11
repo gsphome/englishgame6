@@ -114,6 +114,9 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
       setPreviousMenuContext('progression');
       setCurrentModule(nextRecommended);
       setCurrentView(nextRecommended.learningMode);
+      
+      // Update URL hash for proper navigation
+      window.location.hash = `#/learn/${nextRecommended.id}`;
     }
   };
 
@@ -147,6 +150,9 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
     // Navigate directly to the module
     setCurrentModule(module);
     setCurrentView(module.learningMode);
+    
+    // Update URL hash for proper navigation
+    window.location.hash = `#/learn/${module.id}`;
   };
 
   const getUnitTitle = (unit: number): string => {

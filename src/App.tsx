@@ -84,6 +84,49 @@ const AppContent: React.FC = () => {
       });
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // Sync URL hash with Zustand state for proper navigation
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      
+      // Parse hash format: #/learn/module-id
+      if (hash.startsWith('#/learn/')) {
+        const moduleId = hash.replace('#/learn/', '');
+        
+        // Only update if different from current state
+        const { currentModule, setCurrentModule, setCurrentView } = useAppStore.getState();
+        if (!currentModule || currentModule.id !== moduleId) {
+          // Fetch module info from modules list
+          import('./services/api').then(({ fetchModules }) => {
+            fetchModules().then(response => {
+              if (response.success) {
+                const module = response.data.find(m => m.id === moduleId);
+                if (module) {
+                  setCurrentModule(module);
+                  setCurrentView(module.learningMode);
+                }
+              }
+            });
+          });
+        }
+      } else if (hash === '' || hash === '#/' || hash === '#/menu') {
+        // Navigate to menu
+        const { setCurrentView } = useAppStore.getState();
+        setCurrentView('menu');
+      }
+    };
+
+    // Handle initial hash on mount
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+    
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
   // Handle view changes and cleanup
   useEffect(() => {
     let prevView = 'menu';
