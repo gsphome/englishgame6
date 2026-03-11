@@ -3,8 +3,8 @@
  * Estrategia: Network-first con fallback a Cache API para modo offline
  */
 
-const CACHE_NAME = 'fluentflow-offline-v3';
-const ASSETS_CACHE = 'fluentflow-assets-v3';
+const CACHE_NAME = 'fluentflow-offline-v4';
+const ASSETS_CACHE = 'fluentflow-assets-v4';
 
 // Instalación: pre-cachear assets críticos
 self.addEventListener('install', (event) => {
@@ -54,8 +54,8 @@ self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
-  // Ignorar peticiones de otros dominios y chrome-extension
-  if (!url.origin.includes(self.location.origin) && !url.pathname.includes('englishgame6')) {
+  // Ignorar peticiones de otros dominios (excepto las de nuestro path)
+  if (url.origin !== self.location.origin) {
     return;
   }
 

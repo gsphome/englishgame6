@@ -11,8 +11,8 @@ import { logDebug, logError } from '../utils/logger';
 import type { LearningModule } from '../types';
 
 // Isolated cache names to avoid interfering with other browser data
-export const CACHE_NAME = 'fluentflow-offline-v3';
-export const ASSETS_CACHE = 'fluentflow-assets-v3';
+export const CACHE_NAME = 'fluentflow-offline-v4';
+export const ASSETS_CACHE = 'fluentflow-assets-v4';
 
 export interface DownloadProgress {
   total: number;
