@@ -85,8 +85,10 @@ const AppContent: React.FC = () => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Sync URL hash with Zustand state for proper navigation
+  // This ensures that when the URL hash changes (e.g., browser back/forward),
+  // the Zustand state is updated to match
   useEffect(() => {
-    const handleHashChange = () => {
+    const handleHashChange = async () => {
       const hash = window.location.hash;
 
       // Parse hash format: #/learn/module-id
@@ -94,20 +96,21 @@ const AppContent: React.FC = () => {
         const moduleId = hash.replace('#/learn/', '');
 
         // Only update if different from current state
-        const { currentModule, setCurrentModule, setCurrentView } = useAppStore.getState();
+        const { currentModule } = useAppStore.getState();
         if (!currentModule || currentModule.id !== moduleId) {
-          // Fetch module info from modules list
-          import('./services/api').then(({ fetchModules }) => {
-            fetchModules().then(response => {
-              if (response.success) {
-                const module = response.data.find(m => m.id === moduleId);
-                if (module) {
-                  setCurrentModule(module);
-                  setCurrentView(module.learningMode);
-                }
-              }
-            });
-          });
+          // We need to fetch the module metadata to update Zustand
+          // Import api service dynamically to avoid circular dependencies
+          const { fetchModules } = await import('./services/api');
+          const response = await fetchModules();
+
+          if (response.success) {
+            const module = response.data.find(m => m.id === moduleId);
+            if (module) {
+              const { setCurrentModule, setCurrentView } = useAppStore.getState();
+              setCurrentModule(module);
+              setCurrentView(module.learningMode);
+            }
+          }
         }
       } else if (hash === '' || hash === '#/' || hash === '#/menu') {
         // Navigate to menu
