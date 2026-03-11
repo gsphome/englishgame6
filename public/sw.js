@@ -36,6 +36,11 @@ self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
+  // Log TODAS las peticiones para debug
+  if (url.pathname.includes('englishgame6')) {
+    console.log('[SW] Fetch event:', url.pathname);
+  }
+
   // Solo interceptar peticiones JSON de data/
   if (!url.pathname.includes('/data/') && !url.pathname.includes('learningModules.json')) {
     return;
@@ -65,7 +70,8 @@ self.addEventListener('fetch', (event) => {
           // Debug: mostrar qué hay en cache
           const keys = await cache.keys();
           console.log('[SW] ❌ Not in cache. Available URLs:', keys.length);
-          keys.slice(0, 3).forEach(key => console.log('  -', key.url));
+          console.log('[SW] Looking for:', request.url);
+          keys.slice(0, 5).forEach(key => console.log('  Available:', key.url));
           
           // No hay cache: devolver error offline
           return new Response(

@@ -4,12 +4,15 @@ import { apiService, fetchModules, fetchModuleData } from '../services/api';
 import type { LearningModule } from '../types';
 
 export const useModuleData = (moduleId: string) => {
+  console.log('[useModuleData] Hook called for:', moduleId);
   const { categories, level, gameSettings, developmentMode } = useSettingsStore();
 
   return useQuery({
     queryKey: ['module', moduleId],
     queryFn: async () => {
+      console.log('[useModuleData] queryFn executing for:', moduleId);
       const response = await fetchModuleData(moduleId);
+      console.log('[useModuleData] Response:', { success: response.success, error: response.error });
       if (!response.success) {
         throw new Error(response.error || 'Failed to fetch module data');
       }
