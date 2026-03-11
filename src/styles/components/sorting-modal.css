@@ -438,7 +438,7 @@
   .sorting-modal__container {
     max-width: 80vw;
     width: 80vw;
-    max-height: 75vh;
+    max-height: 85vh;
   }
 
   .sorting-modal__header {
@@ -454,6 +454,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+    max-height: calc(85vh - 8rem);
   }
 
   .sorting-modal__summary {
