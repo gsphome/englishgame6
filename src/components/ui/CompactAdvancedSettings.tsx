@@ -121,7 +121,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
         setSelectedLevels([level]);
       }
     }
-  }, [isOpen, offlineEnabled, level]);
+  }, [isOpen, offlineEnabled, level, allLevels]);
 
   // Load total cache size when modal opens and offline is enabled
   useEffect(() => {
@@ -148,7 +148,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
         setSelectedLevels([level]);
       }
     }
-  }, [level, setOfflineEnabled, setDownloadedLevels, setLastDownloadDate]);
+  }, [level, allLevels, setOfflineEnabled, setDownloadedLevels, setLastDownloadDate]);
 
   const handleLevelCheckbox = useCallback((lvl: string, checked: boolean) => {
     setSelectedLevels(prev =>

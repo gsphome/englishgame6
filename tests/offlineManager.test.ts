@@ -199,7 +199,6 @@ describe('offlineManager', () => {
     });
 
     it('should handle failed downloads and report them', async () => {
-      let callCount = 0;
       globalThis.fetch = vi.fn(async (input: RequestInfo | URL) => {
         const url = typeof input === 'string' ? input : input.toString();
         if (url.includes('learningModules.json')) {
