@@ -202,14 +202,14 @@
 }
 
 /* === RESULT CARD HEADER === */
-.sorting-modal__result-card__header {
+.sorting-modal__card-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 0.0625rem;
 }
 
-.sorting-modal__result-card__word {
+.sorting-modal__card-word {
   font-weight: 600;
   color: #111827;
   font-size: 0.875rem;
@@ -217,44 +217,44 @@
   padding: 0;
 }
 
-.dark .sorting-modal__result-card__word {
+.dark .sorting-modal__card-word {
   color: white;
 }
 
-.sorting-modal__result-card__status {
+.sorting-modal__card-status {
   font-size: 1.125rem;
   font-weight: 700;
 }
 
-.sorting-modal__result-card__status--correct {
+.sorting-modal__card-status--correct {
   color: #16a34a;
 }
 
-.dark .sorting-modal__result-card__status--correct {
+.dark .sorting-modal__card-status--correct {
   color: #22c55e;
 }
 
-.sorting-modal__result-card__status--incorrect {
+.sorting-modal__card-status--incorrect {
   color: #dc2626;
 }
 
-.dark .sorting-modal__result-card__status--incorrect {
+.dark .sorting-modal__card-status--incorrect {
   color: #ef4444;
 }
 
 /* === RESULT CARD CONTENT === */
-.sorting-modal__result-card__content {
+.sorting-modal__card-content {
   display: flex;
   flex-direction: column;
   gap: 0.1875rem;
 }
 
-.sorting-modal__result-card__field {
+.sorting-modal__card-field {
   display: flex;
   flex-direction: column;
 }
 
-.sorting-modal__result-card__label {
+.sorting-modal__card-label {
   font-size: 0.6875rem;
   font-weight: 500;
   color: #4b5563;
@@ -262,11 +262,11 @@
   margin-bottom: 0.015625rem;
 }
 
-.dark .sorting-modal__result-card__label {
+.dark .sorting-modal__card-label {
   color: #d1d5db;
 }
 
-.sorting-modal__result-card__value {
+.sorting-modal__card-value {
   font-size: 0.6875rem;
   font-weight: 500;
   padding: 0.015625rem 0.125rem;
@@ -274,31 +274,31 @@
   border-width: 1px;
 }
 
-.sorting-modal__result-card__value--correct {
+.sorting-modal__card-value--correct {
   color: #111827;
   background-color: white;
   border-color: #e5e7eb;
 }
 
-.dark .sorting-modal__result-card__value--correct {
+.dark .sorting-modal__card-value--correct {
   color: white;
   background-color: #374151;
   border-color: #6b7280;
 }
 
-.sorting-modal__result-card__value--incorrect {
+.sorting-modal__card-value--incorrect {
   color: #b91c1c;
   background-color: #fee2e2;
   border-color: #fecaca;
 }
 
-.dark .sorting-modal__result-card__value--incorrect {
+.dark .sorting-modal__card-value--incorrect {
   color: white;
   background-color: #374151;
   border-color: #6b7280;
 }
 
-.sorting-modal__result-card__explanation {
+.sorting-modal__card-explanation {
   font-size: 0.6875rem;
   color: #374151;
   background-color: #f9fafb;
@@ -309,7 +309,7 @@
   margin: 0;
 }
 
-.dark .sorting-modal__result-card__explanation {
+.dark .sorting-modal__card-explanation {
   color: #d1d5db;
   background-color: #111827;
   border-color: #374151;
@@ -373,14 +373,14 @@
 /* Control Buttons */
 
 /* === HEADER PROGRESS ELEMENTS === */
-.sorting-modal__header__top {
+.sorting-modal__header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.75rem;
 }
 
-.sorting-modal__header__title {
+.sorting-modal__header-title {
   font-size: 1.125rem;
   font-weight: 700;
   color: white;
@@ -388,16 +388,16 @@
 }
 
 @media (min-width: 640px) {
-  .sorting-modal__header__title {
+  .sorting-modal__header-title {
     font-size: 1.25rem;
   }
 }
 
-.dark .sorting-modal__header__title {
+.dark .sorting-modal__header-title {
   color: white;
 }
 
-.sorting-modal__header__progress-badge {
+.sorting-modal__progress-badge {
   font-size: 0.875rem;
   font-weight: 500;
   color: white;
@@ -407,19 +407,19 @@
   backdrop-filter: blur(8px);
 }
 
-.dark .sorting-modal__header__progress-badge {
+.dark .sorting-modal__progress-badge {
   color: white;
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-.sorting-modal__header__progress-bar {
+.sorting-modal__progress-bar {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 9999px;
   height: 0.375rem;
 }
 
-.sorting-modal__header__progress-fill {
+.sorting-modal__progress-fill {
   background-color: white;
   height: 0.375rem;
   border-radius: 9999px;

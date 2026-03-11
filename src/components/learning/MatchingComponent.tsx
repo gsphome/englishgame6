@@ -411,7 +411,7 @@ const MatchingComponent: React.FC<MatchingComponentProps> = ({ module }) => {
           className="game-controls__home-btn"
           title={t('learning.returnToMainMenu')}
         >
-          <Home className="game-controls__home-btn__icon" />
+          <Home className="game-controls__home-icon" />
         </button>
 
         {!showResult ? (
@@ -421,7 +421,7 @@ const MatchingComponent: React.FC<MatchingComponentProps> = ({ module }) => {
               className="game-controls__icon-btn"
               title={t('learning.resetExercise')}
             >
-              <RotateCcw className="game-controls__icon-btn__icon" />
+              <RotateCcw className="game-controls__action-icon" />
             </button>
 
             <button
@@ -429,7 +429,7 @@ const MatchingComponent: React.FC<MatchingComponentProps> = ({ module }) => {
               disabled={!allMatched}
               className="game-controls__primary-btn game-controls__primary-btn--orange"
             >
-              <Check className="game-controls__primary-btn__icon" />
+              <Check className="game-controls__primary-icon" />
               <span>{t('learning.checkMatches')}</span>
             </button>
           </>
@@ -440,13 +440,13 @@ const MatchingComponent: React.FC<MatchingComponentProps> = ({ module }) => {
               className="game-controls__icon-btn"
               title={t('learning.viewSummary')}
             >
-              <Info className="game-controls__icon-btn__icon" />
+              <Info className="game-controls__action-icon" />
             </button>
             <button
               onClick={finishExercise}
               className="game-controls__primary-btn game-controls__primary-btn--green"
             >
-              <Check className="game-controls__primary-btn__icon" />
+              <Check className="game-controls__primary-icon" />
               <span>{t('learning.finishExercise')}</span>
             </button>
           </>
@@ -484,31 +484,31 @@ const MatchingComponent: React.FC<MatchingComponentProps> = ({ module }) => {
                         }`}
                       >
                         <span
-                          className={`matching-modal__result-card__status ${
+                          className={`matching-modal__card-status ${
                             result.isCorrect
-                              ? 'matching-modal__result-card__status--correct'
-                              : 'matching-modal__result-card__status--incorrect'
+                              ? 'matching-modal__card-status--correct'
+                              : 'matching-modal__card-status--incorrect'
                           }`}
                         >
                           {result.isCorrect ? '✓' : '✗'}
                         </span>
 
-                        <h4 className="matching-modal__result-card__term">{result.left}</h4>
+                        <h4 className="matching-modal__card-term">{result.left}</h4>
 
-                        <p className="matching-modal__result-card__value matching-modal__result-card__value--correct">
+                        <p className="matching-modal__card-value matching-modal__card-value--correct">
                           {result.right}
                         </p>
 
                         {!result.isCorrect ? (
-                          <p className="matching-modal__result-card__value matching-modal__result-card__value--incorrect">
+                          <p className="matching-modal__card-value matching-modal__card-value--incorrect">
                             {result.userAnswer}
                           </p>
                         ) : (
-                          <span className="matching-modal__result-card__placeholder"></span>
+                          <span className="matching-modal__card-placeholder"></span>
                         )}
 
                         {result.explanation && (
-                          <span className="matching-modal__result-card__explanation">
+                          <span className="matching-modal__card-explanation">
                             {result.explanation}
                           </span>
                         )}
@@ -519,15 +519,15 @@ const MatchingComponent: React.FC<MatchingComponentProps> = ({ module }) => {
               ) : (
                 /* Individual Explanation View */
                 <div className="matching-modal__individual">
-                  <div className="matching-modal__individual__field">
-                    <h4 className="matching-modal__individual__label">Match:</h4>
-                    <p className="matching-modal__individual__value">{selectedTerm.right}</p>
+                  <div className="matching-modal__detail-field">
+                    <h4 className="matching-modal__detail-label">Match:</h4>
+                    <p className="matching-modal__detail-value">{selectedTerm.right}</p>
                   </div>
 
                   {selectedTerm.explanation && (
-                    <div className="matching-modal__individual__field">
-                      <h4 className="matching-modal__individual__label">Explanation:</h4>
-                      <div className="matching-modal__individual__explanation">
+                    <div className="matching-modal__detail-field">
+                      <h4 className="matching-modal__detail-label">Explanation:</h4>
+                      <div className="matching-modal__detail-explanation">
                         <ContentRenderer
                           content={ContentAdapter.ensureStructured(
                             selectedTerm.explanation,

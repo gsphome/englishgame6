@@ -572,7 +572,7 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
           className="game-controls__home-btn"
           title={t('learning.returnToMainMenu')}
         >
-          <Home className="game-controls__home-btn__icon" />
+          <Home className="game-controls__home-icon" />
         </button>
 
         {!showResult ? (
@@ -582,7 +582,7 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
               className="game-controls__icon-btn"
               title={t('learning.resetExercise')}
             >
-              <RotateCcw className="game-controls__icon-btn__icon" />
+              <RotateCcw className="game-controls__action-icon" />
             </button>
 
             <button
@@ -590,7 +590,7 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
               disabled={!allWordsSorted}
               className="game-controls__primary-btn game-controls__primary-btn--orange"
             >
-              <Check className="game-controls__primary-btn__icon" />
+              <Check className="game-controls__primary-icon" />
               <span>{t('learning.checkAnswers')}</span>
             </button>
           </>
@@ -601,13 +601,13 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
               className="game-controls__icon-btn"
               title={t('learning.viewSummary')}
             >
-              <Info className="game-controls__icon-btn__icon" />
+              <Info className="game-controls__action-icon" />
             </button>
             <button
               onClick={finishExercise}
               className="game-controls__primary-btn game-controls__primary-btn--green"
             >
-              <Check className="game-controls__primary-btn__icon" />
+              <Check className="game-controls__primary-icon" />
               <span>{t('learning.finishSorting')}</span>
             </button>
           </>
@@ -660,42 +660,42 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
                           : 'sorting-modal__result-card--incorrect'
                       }`}
                     >
-                      <div className="sorting-modal__result-card__header">
-                        <h4 className="sorting-modal__result-card__word">{result.word}</h4>
+                      <div className="sorting-modal__card-header">
+                        <h4 className="sorting-modal__card-word">{result.word}</h4>
                         <span
-                          className={`sorting-modal__result-card__status ${
+                          className={`sorting-modal__card-status ${
                             result.isCorrect
-                              ? 'sorting-modal__result-card__status--correct'
-                              : 'sorting-modal__result-card__status--incorrect'
+                              ? 'sorting-modal__card-status--correct'
+                              : 'sorting-modal__card-status--incorrect'
                           }`}
                         >
                           {result.isCorrect ? '✓' : '✗'}
                         </span>
                       </div>
 
-                      <div className="sorting-modal__result-card__content">
-                        <div className="sorting-modal__result-card__field">
-                          <span className="sorting-modal__result-card__label">
+                      <div className="sorting-modal__card-content">
+                        <div className="sorting-modal__card-field">
+                          <span className="sorting-modal__card-label">
                             Correct category:
                           </span>
-                          <p className="sorting-modal__result-card__value sorting-modal__result-card__value--correct">
+                          <p className="sorting-modal__card-value sorting-modal__card-value--correct">
                             {result.correctCategory}
                           </p>
                         </div>
 
                         {!result.isCorrect && (
-                          <div className="sorting-modal__result-card__field">
-                            <span className="sorting-modal__result-card__label">Your answer:</span>
-                            <p className="sorting-modal__result-card__value sorting-modal__result-card__value--incorrect">
+                          <div className="sorting-modal__card-field">
+                            <span className="sorting-modal__card-label">Your answer:</span>
+                            <p className="sorting-modal__card-value sorting-modal__card-value--incorrect">
                               {result.userCategory}
                             </p>
                           </div>
                         )}
 
                         {result.explanation && (
-                          <div className="sorting-modal__result-card__field">
-                            <span className="sorting-modal__result-card__label">Explanation:</span>
-                            <p className="sorting-modal__result-card__explanation">
+                          <div className="sorting-modal__card-field">
+                            <span className="sorting-modal__card-label">Explanation:</span>
+                            <p className="sorting-modal__card-explanation">
                               {result.explanation}
                             </p>
                           </div>

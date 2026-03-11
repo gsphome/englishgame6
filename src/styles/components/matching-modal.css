@@ -137,7 +137,7 @@
 .matching-modal__result-card--incorrect:hover {
   background-color: #fee2e2 !important;
 } /* === STATUS ICON - Column 1 === */
-.matching-modal__result-card__status {
+.matching-modal__card-status {
   font-size: 1.5rem;
   font-weight: 700;
   display: flex;
@@ -145,24 +145,24 @@
   justify-content: center;
 }
 
-.matching-modal__result-card__status--correct {
+.matching-modal__card-status--correct {
   color: #22c55e;
 }
 
-.dark .matching-modal__result-card__status--correct {
+.dark .matching-modal__card-status--correct {
   color: #22c55e;
 }
 
-.matching-modal__result-card__status--incorrect {
+.matching-modal__card-status--incorrect {
   color: #ef4444;
 }
 
-.dark .matching-modal__result-card__status--incorrect {
+.dark .matching-modal__card-status--incorrect {
   color: #ef4444;
 }
 
 /* === TERM - Column 2 === */
-.matching-modal__result-card__term {
+.matching-modal__card-term {
   font-weight: 700;
   color: #111827;
   font-size: 0.8125rem;
@@ -174,14 +174,14 @@
   border-radius: 0.375rem;
 }
 
-.dark .matching-modal__result-card__term {
+.dark .matching-modal__card-term {
   color: white;
   background-color: #374151;
   border-color: #4b5563;
 }
 
 /* === CORRECT VALUE - Column 3 === */
-.matching-modal__result-card__value--correct {
+.matching-modal__card-value--correct {
   color: #166534;
   background-color: #ffffff;
   border: 1px solid #d1d5db !important;
@@ -193,14 +193,14 @@
   text-align: center;
 }
 
-.dark .matching-modal__result-card__value--correct {
+.dark .matching-modal__card-value--correct {
   color: #86efac;
   background-color: #1e293b;
   border-color: #334155 !important;
 }
 
 /* === INCORRECT VALUE - Column 4 === */
-.matching-modal__result-card__value--incorrect {
+.matching-modal__card-value--incorrect {
   color: #991b1b;
   background-color: #fee2e2;
   border: 1px solid #fecaca !important;
@@ -212,19 +212,19 @@
   text-align: center;
 }
 
-.dark .matching-modal__result-card__value--incorrect {
+.dark .matching-modal__card-value--incorrect {
   color: #fca5a5;
   background-color: #1e293b;
   border-color: #334155 !important;
 }
 
 /* === PLACEHOLDER for correct answers === */
-.matching-modal__result-card__placeholder {
+.matching-modal__card-placeholder {
   display: block;
   visibility: hidden;
 }
 
-.matching-modal__result-card__explanation {
+.matching-modal__card-explanation {
   display: none;
 }
 
@@ -241,13 +241,13 @@
   background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
 }
 
-.matching-modal__individual__field {
+.matching-modal__detail-field {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-.matching-modal__individual__label {
+.matching-modal__detail-label {
   font-size: 0.6875rem;
   font-weight: 700;
   color: #6b7280;
@@ -258,11 +258,11 @@
   border: none;
 }
 
-.dark .matching-modal__individual__label {
+.dark .matching-modal__detail-label {
   color: #9ca3af;
 }
 
-.matching-modal__individual__value {
+.matching-modal__detail-value {
   font-size: 1.125rem;
   font-weight: 600;
   color: #111827;
@@ -275,23 +275,23 @@
   transition: all 0.2s ease;
 }
 
-.matching-modal__individual__value:hover {
+.matching-modal__detail-value:hover {
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.12);
 }
 
-.dark .matching-modal__individual__value {
+.dark .matching-modal__detail-value {
   color: #f3f4f6;
   background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
   border-color: #3b82f6;
   box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
 }
 
-.dark .matching-modal__individual__value:hover {
+.dark .matching-modal__detail-value:hover {
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
-.matching-modal__individual__explanation {
+.matching-modal__detail-explanation {
   font-size: 0.9375rem;
   color: #374151;
   padding: 1rem 1.25rem;
@@ -305,7 +305,7 @@
   position: relative;
 }
 
-.matching-modal__individual__explanation::before {
+.matching-modal__detail-explanation::before {
   content: '💡';
   position: absolute;
   top: 1rem;
@@ -314,7 +314,7 @@
   opacity: 0.6;
 }
 
-.dark .matching-modal__individual__explanation {
+.dark .matching-modal__detail-explanation {
   color: #fef3c7;
   background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
   border-color: #f59e0b;
@@ -541,19 +541,19 @@
     /* Touch feedback */
   }
 
-  .matching-modal__result-card__header {
+  .matching-modal__card-header {
     margin-bottom: 0.25rem;
     /* Clear separation */
     align-items: center;
     /* Better alignment */
   }
 
-  .matching-modal__result-card__content {
+  .matching-modal__card-content {
     gap: 0.1875rem;
     /* Optimized spacing */
   }
 
-  .matching-modal__result-card__term {
+  .matching-modal__card-term {
     font-size: 0.8125rem;
     /* Optimized for readability */
     font-weight: 700;
@@ -564,14 +564,14 @@
     /* Compact tracking */
   }
 
-  .matching-modal__result-card__status {
+  .matching-modal__card-status {
     font-size: 1.125rem;
     /* Adequate size for recognition */
     line-height: 1;
     /* Tight line height */
   }
 
-  .matching-modal__result-card__label {
+  .matching-modal__card-label {
     font-size: 0.6875rem;
     /* Minimum readable size */
     font-weight: 600;
@@ -584,7 +584,7 @@
     /* Subtle hierarchy */
   }
 
-  .matching-modal__result-card__value {
+  .matching-modal__card-value {
     font-size: 0.75rem;
     /* Readable size */
     font-weight: 500;
@@ -595,7 +595,7 @@
     /* Readable line height */
   }
 
-  .matching-modal__result-card__explanation {
+  .matching-modal__card-explanation {
     font-size: 0.6875rem;
     /* Compact but readable */
     padding: 0.1875rem 0.25rem;
@@ -640,26 +640,26 @@
     padding: 1rem;
   }
 
-  .matching-modal__individual__field {
+  .matching-modal__detail-field {
     gap: 0.5rem;
   }
 
-  .matching-modal__individual__label {
+  .matching-modal__detail-label {
     font-size: 0.625rem;
   }
 
-  .matching-modal__individual__value {
+  .matching-modal__detail-value {
     font-size: 1rem;
     padding: 0.875rem 1rem;
   }
 
-  .matching-modal__individual__explanation {
+  .matching-modal__detail-explanation {
     font-size: 0.875rem;
     padding: 0.875rem 1rem;
     padding-right: 2.5rem; /* Space for emoji */
   }
 
-  .matching-modal__individual__explanation::before {
+  .matching-modal__detail-explanation::before {
     font-size: 1rem;
     top: 0.875rem;
     right: 0.875rem;

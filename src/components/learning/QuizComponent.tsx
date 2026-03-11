@@ -276,7 +276,7 @@ const QuizComponent: React.FC<QuizComponentProps> = ({ module }) => {
           className="game-controls__home-btn"
           title={t('learning.returnToMainMenu')}
         >
-          <Home className="game-controls__home-btn__icon" />
+          <Home className="game-controls__home-icon" />
         </button>
 
         <button
@@ -289,7 +289,7 @@ const QuizComponent: React.FC<QuizComponentProps> = ({ module }) => {
               ? t('learning.finishQuiz')
               : t('learning.nextQuestion')}
           </span>
-          <ArrowRight className="game-controls__primary-btn__icon" />
+          <ArrowRight className="game-controls__primary-icon" />
         </button>
       </div>
     </div>

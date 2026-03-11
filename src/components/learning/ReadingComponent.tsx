@@ -528,7 +528,7 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
           className="game-controls__home-btn"
           title={t('reading.navigation.returnToMenu')}
         >
-          <Home className="game-controls__home-btn__icon" />
+          <Home className="game-controls__home-icon" />
         </button>
 
         <button
@@ -537,7 +537,7 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
           className="game-controls__nav-btn"
           title={t('reading.component.previousSection')}
         >
-          <ChevronLeft className="game-controls__nav-btn__icon" />
+          <ChevronLeft className="game-controls__nav-icon" />
         </button>
 
         <button
@@ -552,7 +552,7 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
                 ? t('reading.component.completeReading')
                 : t('reading.component.nextSection')}
           </span>
-          <ChevronRight className="game-controls__primary-btn__icon" />
+          <ChevronRight className="game-controls__primary-icon" />
         </button>
       </div>
     </div>

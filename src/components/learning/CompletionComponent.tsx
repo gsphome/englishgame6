@@ -307,7 +307,7 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
           className="game-controls__home-btn"
           title={t('learning.returnToMainMenu')}
         >
-          <Home className="game-controls__home-btn__icon" />
+          <Home className="game-controls__home-icon" />
         </button>
 
         {!showResult ? (
@@ -316,7 +316,7 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
             disabled={!hasAnswer}
             className="game-controls__primary-btn game-controls__primary-btn--purple"
           >
-            <Check className="game-controls__primary-btn__icon" />
+            <Check className="game-controls__primary-icon" />
             <span>{t('learning.checkAnswer')}</span>
           </button>
         ) : (
@@ -329,7 +329,7 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
                 ? t('learning.finishExercise')
                 : t('learning.nextExercise')}
             </span>
-            <ArrowRight className="game-controls__primary-btn__icon" />
+            <ArrowRight className="game-controls__primary-icon" />
           </button>
         )}
       </div>

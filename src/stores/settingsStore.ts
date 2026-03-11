@@ -57,13 +57,12 @@ const DEFAULT_CATEGORIES = [
   'Grammar',
   'PhrasalVerbs',
   'Idioms',
-  'Pronunciation',
-  'Listening',
   'Reading',
-  'Writing',
-  'Speaking',
   'Review',
 ];
+
+// Categories removed in v4 migration
+const REMOVED_CATEGORIES = ['Pronunciation', 'Listening', 'Writing', 'Speaking'];
 
 export const useSettingsStore = create<SettingsState>()(
   persist(
@@ -126,20 +125,30 @@ export const useSettingsStore = create<SettingsState>()(
     }),
     {
       name: 'settings-storage',
-      version: 3,
+      version: 4,
       migrate: (persistedState: any, version: number) => {
         // Migration from version 1 to version 2
         if (version < 2) {
-          return {
+          persistedState = {
             ...persistedState,
-            categories: DEFAULT_CATEGORIES, // Expand from 4 to 10 categories
+            categories: DEFAULT_CATEGORIES,
           };
         }
         // Migration from version 2 to version 3
         if (version < 3) {
-          return {
+          persistedState = {
             ...persistedState,
-            randomizeItems: true, // Default: randomization enabled
+            randomizeItems: true,
+          };
+        }
+        // Migration from version 3 to version 4: remove unused categories
+        if (version < 4) {
+          const currentCategories = persistedState.categories || [];
+          persistedState = {
+            ...persistedState,
+            categories: currentCategories.filter(
+              (c: string) => !REMOVED_CATEGORIES.includes(c)
+            ),
           };
         }
         return persistedState;

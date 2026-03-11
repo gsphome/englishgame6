@@ -6,11 +6,7 @@ export type Category =
   | 'Grammar'
   | 'PhrasalVerbs'
   | 'Idioms'
-  | 'Pronunciation'
-  | 'Listening'
   | 'Reading'
-  | 'Writing'
-  | 'Speaking'
   | 'Review';
 
 export interface LearningModule {
