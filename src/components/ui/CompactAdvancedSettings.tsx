@@ -4,7 +4,13 @@ import { useSettingsStore } from '../../stores/settingsStore';
 import { useTranslation } from '../../utils/i18n';
 import { validateGameSettings } from '../../utils/inputValidation';
 import { useEscapeKey } from '../../hooks/useEscapeKey';
-import { downloadLevels, deleteAllCache, deleteLevelCache, formatStorageSize, getTotalCacheSize } from '../../services/offlineManager';
+import {
+  downloadLevels,
+  deleteAllCache,
+  deleteLevelCache,
+  formatStorageSize,
+  getTotalCacheSize,
+} from '../../services/offlineManager';
 import type { DownloadProgress } from '../../services/offlineManager';
 import { DownloadManagerModal } from './DownloadManagerModal';
 import '../../styles/components/compact-advanced-settings.css';
@@ -43,7 +49,9 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
 
   const { t } = useTranslation(language);
   const [hasChanges, setHasChanges] = useState(false);
-  const [activeTab, setActiveTab] = useState<'general' | 'games' | 'categories' | 'offline'>('general');
+  const [activeTab, setActiveTab] = useState<'general' | 'games' | 'categories' | 'offline'>(
+    'general'
+  );
 
   // Offline state
   const cacheSupported = 'caches' in window;
@@ -126,34 +134,37 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
   // Load total cache size when modal opens and offline is enabled
   useEffect(() => {
     if (isOpen && offlineEnabled && cacheSupported) {
-      getTotalCacheSize().then(setTotalCacheSize).catch(() => setTotalCacheSize(0));
+      getTotalCacheSize()
+        .then(setTotalCacheSize)
+        .catch(() => setTotalCacheSize(0));
     }
   }, [isOpen, offlineEnabled, cacheSupported, downloadedLevels]);
 
-  const handleToggleOffline = useCallback(async (enabled: boolean) => {
-    if (!enabled) {
-      // Deactivating: delete all cache and clean state
-      await deleteAllCache();
-      setDownloadedLevels([]);
-      setLastDownloadDate(null);
-      setOfflineEnabled(false);
-      setTotalCacheSize(0);
-      setSelectedLevels([]);
-      setFailedUrls([]);
-    } else {
-      setOfflineEnabled(true);
-      if (level === 'all') {
-        setSelectedLevels([...allLevels]);
+  const handleToggleOffline = useCallback(
+    async (enabled: boolean) => {
+      if (!enabled) {
+        // Deactivating: delete all cache and clean state
+        await deleteAllCache();
+        setDownloadedLevels([]);
+        setLastDownloadDate(null);
+        setOfflineEnabled(false);
+        setTotalCacheSize(0);
+        setSelectedLevels([]);
+        setFailedUrls([]);
       } else {
-        setSelectedLevels([level]);
+        setOfflineEnabled(true);
+        if (level === 'all') {
+          setSelectedLevels([...allLevels]);
+        } else {
+          setSelectedLevels([level]);
+        }
       }
-    }
-  }, [level, allLevels, setOfflineEnabled, setDownloadedLevels, setLastDownloadDate]);
+    },
+    [level, allLevels, setOfflineEnabled, setDownloadedLevels, setLastDownloadDate]
+  );
 
   const handleLevelCheckbox = useCallback((lvl: string, checked: boolean) => {
-    setSelectedLevels(prev =>
-      checked ? [...prev, lvl] : prev.filter(l => l !== lvl)
-    );
+    setSelectedLevels(prev => (checked ? [...prev, lvl] : prev.filter(l => l !== lvl)));
   }, []);
 
   const handleDownload = useCallback(async () => {
@@ -175,7 +186,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
 
       // Download new levels (only if there are any)
       if (levelsToDownload.length > 0) {
-        const result = await downloadLevels(levelsToDownload, (progress) => {
+        const result = await downloadLevels(levelsToDownload, progress => {
           setDownloadProgress(progress);
         });
 
@@ -202,7 +213,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
     setIsDownloading(true);
 
     try {
-      const result = await downloadLevels(selectedLevels, (progress) => {
+      const result = await downloadLevels(selectedLevels, progress => {
         setDownloadProgress(progress);
       });
 
@@ -305,485 +316,485 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
             </button>
           </div>
 
-        {/* Tab Navigation */}
-        <div className="compact-settings__tabs">
-          <button
-            onClick={() => setActiveTab('general')}
-            className={`compact-settings__tab ${activeTab === 'general' ? 'compact-settings__tab--active' : ''}`}
-          >
-            <Palette className="compact-settings__tab-icon" />
-            <span className="compact-settings__tab-title">General</span>
-          </button>
-          <button
-            onClick={() => setActiveTab('games')}
-            className={`compact-settings__tab ${activeTab === 'games' ? 'compact-settings__tab--active' : ''}`}
-          >
-            <Gamepad2 className="compact-settings__tab-icon" />
-            <span className="compact-settings__tab-title">Games</span>
-          </button>
-          <button
-            onClick={() => setActiveTab('categories')}
-            className={`compact-settings__tab ${activeTab === 'categories' ? 'compact-settings__tab--active' : ''}`}
-          >
-            <Wrench className="compact-settings__tab-icon" />
-            <span className="compact-settings__tab-title">Categories</span>
-          </button>
-          <button
-            onClick={() => setActiveTab('offline')}
-            className={`compact-settings__tab ${activeTab === 'offline' ? 'compact-settings__tab--active' : ''}`}
-          >
-            <WifiOff className="compact-settings__tab-icon" />
-            <span className="compact-settings__tab-title">Offline</span>
-          </button>
-        </div>
+          {/* Tab Navigation */}
+          <div className="compact-settings__tabs">
+            <button
+              onClick={() => setActiveTab('general')}
+              className={`compact-settings__tab ${activeTab === 'general' ? 'compact-settings__tab--active' : ''}`}
+            >
+              <Palette className="compact-settings__tab-icon" />
+              <span className="compact-settings__tab-title">General</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('games')}
+              className={`compact-settings__tab ${activeTab === 'games' ? 'compact-settings__tab--active' : ''}`}
+            >
+              <Gamepad2 className="compact-settings__tab-icon" />
+              <span className="compact-settings__tab-title">Games</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('categories')}
+              className={`compact-settings__tab ${activeTab === 'categories' ? 'compact-settings__tab--active' : ''}`}
+            >
+              <Wrench className="compact-settings__tab-icon" />
+              <span className="compact-settings__tab-title">Categories</span>
+            </button>
+            <button
+              onClick={() => setActiveTab('offline')}
+              className={`compact-settings__tab ${activeTab === 'offline' ? 'compact-settings__tab--active' : ''}`}
+            >
+              <WifiOff className="compact-settings__tab-icon" />
+              <span className="compact-settings__tab-title">Offline</span>
+            </button>
+          </div>
 
-        <div className="compact-settings__content">
-          {/* General Settings Tab */}
-          {activeTab === 'general' && (
-            <div className="compact-settings__section">
-              <div className="compact-settings__fields">
-                <div className="compact-settings__field">
-                  <label className="compact-settings__label">{t('settings.theme')}</label>
-                  <select
-                    className="compact-settings__select"
-                    value={localTheme}
-                    onChange={e => setLocalTheme(e.target.value as 'light' | 'dark')}
-                  >
-                    <option value="light">☀️ {t('settings.light')}</option>
-                    <option value="dark">🌙 {t('settings.dark')}</option>
-                  </select>
-                </div>
-
-                <div className="compact-settings__field">
-                  <label className="compact-settings__label">{t('settings.language')}</label>
-                  <select
-                    className="compact-settings__select"
-                    value={localLanguage}
-                    onChange={e => setLocalLanguage(e.target.value as 'en' | 'es')}
-                  >
-                    <option value="en">🇺🇸 English</option>
-                    <option value="es">🇪🇸 Español</option>
-                  </select>
-                </div>
-
-                <div className="compact-settings__field">
-                  <label className="compact-settings__label">{t('settings.level')}</label>
-                  <select
-                    className="compact-settings__select"
-                    value={localLevel}
-                    onChange={e => setLocalLevel(e.target.value as any)}
-                  >
-                    <option value="all">🌟 {t('settings.all')}</option>
-                    <option value="a1">🟢 A1</option>
-                    <option value="a2">🟡 A2</option>
-                    <option value="b1">🟠 B1</option>
-                    <option value="b2">🔴 B2</option>
-                    <option value="c1">🟣 C1</option>
-                    <option value="c2">⚫ C2</option>
-                  </select>
-                </div>
-
-                <div className="compact-settings__toggles-row">
-                  <div className="compact-settings__field compact-settings__field--dev">
-                    <div className="compact-settings__toggle-container">
-                      <label
-                        className="compact-settings__label compact-settings__label--dev"
-                        title={t(
-                          'settings.developmentModeDescription',
-                          'Unlock all modes for testing'
-                        )}
-                      >
-                        🔧 Dev Mode
-                      </label>
-                      <input
-                        type="checkbox"
-                        id="developmentMode"
-                        className="compact-settings__toggle"
-                        checked={localDevelopmentMode}
-                        onChange={e => setLocalDevelopmentMode(e.target.checked)}
-                      />
-                    </div>
+          <div className="compact-settings__content">
+            {/* General Settings Tab */}
+            {activeTab === 'general' && (
+              <div className="compact-settings__section">
+                <div className="compact-settings__fields">
+                  <div className="compact-settings__field">
+                    <label className="compact-settings__label">{t('settings.theme')}</label>
+                    <select
+                      className="compact-settings__select"
+                      value={localTheme}
+                      onChange={e => setLocalTheme(e.target.value as 'light' | 'dark')}
+                    >
+                      <option value="light">☀️ {t('settings.light')}</option>
+                      <option value="dark">🌙 {t('settings.dark')}</option>
+                    </select>
                   </div>
 
-                  <div className="compact-settings__field compact-settings__field--dev">
-                    <div className="compact-settings__toggle-container">
-                      <label
-                        className="compact-settings__label compact-settings__label--dev"
-                        title={t(
-                          'settings.randomizeItemsDescription',
-                          'Shuffle cards, questions and exercises in random order'
-                        )}
-                      >
-                        🎲 Randomize
-                      </label>
-                      <input
-                        type="checkbox"
-                        id="randomizeItems"
-                        className="compact-settings__toggle"
-                        checked={localRandomizeItems}
-                        onChange={e => setLocalRandomizeItems(e.target.checked)}
-                      />
-                    </div>
+                  <div className="compact-settings__field">
+                    <label className="compact-settings__label">{t('settings.language')}</label>
+                    <select
+                      className="compact-settings__select"
+                      value={localLanguage}
+                      onChange={e => setLocalLanguage(e.target.value as 'en' | 'es')}
+                    >
+                      <option value="en">🇺🇸 English</option>
+                      <option value="es">🇪🇸 Español</option>
+                    </select>
                   </div>
-                </div>
 
-
-              </div>
-            </div>
-          )}
-
-          {/* Games Settings Tab */}
-          {activeTab === 'games' && (
-            <div className="compact-settings__section">
-              <div className="compact-settings__games">
-                <div className="compact-settings__game">
-                  <label className="compact-settings__game-label">
-                    📚 {t('settings.flashcardMode')}
-                  </label>
-                  <div className="compact-settings__game-stepper">
-                    <button
-                      type="button"
-                      className="compact-settings__stepper-btn compact-settings__stepper-btn--minus"
-                      onClick={() =>
-                        handleGameSettingChange(
-                          'flashcardMode',
-                          'wordCount',
-                          Math.max(5, (localGameSettings.flashcardMode.wordCount || 10) - 1)
-                        )
-                      }
-                      disabled={(localGameSettings.flashcardMode.wordCount || 10) <= 5}
-                      aria-label="Decrease flashcard count"
+                  <div className="compact-settings__field">
+                    <label className="compact-settings__label">{t('settings.level')}</label>
+                    <select
+                      className="compact-settings__select"
+                      value={localLevel}
+                      onChange={e => setLocalLevel(e.target.value as any)}
                     >
-                      −
-                    </button>
-                    <span className="compact-settings__stepper-value">
-                      {localGameSettings.flashcardMode.wordCount || 10}
-                    </span>
-                    <button
-                      type="button"
-                      className="compact-settings__stepper-btn compact-settings__stepper-btn--plus"
-                      onClick={() =>
-                        handleGameSettingChange(
-                          'flashcardMode',
-                          'wordCount',
-                          Math.min(30, (localGameSettings.flashcardMode.wordCount || 10) + 1)
-                        )
-                      }
-                      disabled={(localGameSettings.flashcardMode.wordCount || 10) >= 30}
-                      aria-label="Increase flashcard count"
-                    >
-                      +
-                    </button>
+                      <option value="all">🌟 {t('settings.all')}</option>
+                      <option value="a1">🟢 A1</option>
+                      <option value="a2">🟡 A2</option>
+                      <option value="b1">🟠 B1</option>
+                      <option value="b2">🔴 B2</option>
+                      <option value="c1">🟣 C1</option>
+                      <option value="c2">⚫ C2</option>
+                    </select>
                   </div>
-                </div>
 
-                <div className="compact-settings__game">
-                  <label className="compact-settings__game-label">
-                    ❓ {t('settings.quizMode')}
-                  </label>
-                  <div className="compact-settings__game-stepper">
-                    <button
-                      type="button"
-                      className="compact-settings__stepper-btn compact-settings__stepper-btn--minus"
-                      onClick={() =>
-                        handleGameSettingChange(
-                          'quizMode',
-                          'questionCount',
-                          Math.max(5, (localGameSettings.quizMode.questionCount || 10) - 1)
-                        )
-                      }
-                      disabled={(localGameSettings.quizMode.questionCount || 10) <= 5}
-                      aria-label="Decrease quiz count"
-                    >
-                      −
-                    </button>
-                    <span className="compact-settings__stepper-value">
-                      {localGameSettings.quizMode.questionCount || 10}
-                    </span>
-                    <button
-                      type="button"
-                      className="compact-settings__stepper-btn compact-settings__stepper-btn--plus"
-                      onClick={() =>
-                        handleGameSettingChange(
-                          'quizMode',
-                          'questionCount',
-                          Math.min(25, (localGameSettings.quizMode.questionCount || 10) + 1)
-                        )
-                      }
-                      disabled={(localGameSettings.quizMode.questionCount || 10) >= 25}
-                      aria-label="Increase quiz count"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-
-                <div className="compact-settings__game">
-                  <label className="compact-settings__game-label">
-                    ✏️ {t('settings.completionMode')}
-                  </label>
-                  <div className="compact-settings__game-stepper">
-                    <button
-                      type="button"
-                      className="compact-settings__stepper-btn compact-settings__stepper-btn--minus"
-                      onClick={() =>
-                        handleGameSettingChange(
-                          'completionMode',
-                          'itemCount',
-                          Math.max(5, (localGameSettings.completionMode.itemCount || 10) - 1)
-                        )
-                      }
-                      disabled={(localGameSettings.completionMode.itemCount || 10) <= 5}
-                      aria-label="Decrease completion count"
-                    >
-                      −
-                    </button>
-                    <span className="compact-settings__stepper-value">
-                      {localGameSettings.completionMode.itemCount || 10}
-                    </span>
-                    <button
-                      type="button"
-                      className="compact-settings__stepper-btn compact-settings__stepper-btn--plus"
-                      onClick={() =>
-                        handleGameSettingChange(
-                          'completionMode',
-                          'itemCount',
-                          Math.min(20, (localGameSettings.completionMode.itemCount || 10) + 1)
-                        )
-                      }
-                      disabled={(localGameSettings.completionMode.itemCount || 10) >= 20}
-                      aria-label="Increase completion count"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-
-                <div className="compact-settings__game">
-                  <label className="compact-settings__game-label">
-                    🔄 {t('settings.sortingMode')}
-                  </label>
-                  <div className="compact-settings__game-stepper">
-                    <button
-                      type="button"
-                      className="compact-settings__stepper-btn compact-settings__stepper-btn--minus"
-                      onClick={() =>
-                        handleGameSettingChange(
-                          'sortingMode',
-                          'wordCount',
-                          Math.max(8, (localGameSettings.sortingMode.wordCount || 12) - 1)
-                        )
-                      }
-                      disabled={(localGameSettings.sortingMode.wordCount || 12) <= 8}
-                      aria-label="Decrease sorting count"
-                    >
-                      −
-                    </button>
-                    <span className="compact-settings__stepper-value">
-                      {localGameSettings.sortingMode.wordCount || 12}
-                    </span>
-                    <button
-                      type="button"
-                      className="compact-settings__stepper-btn compact-settings__stepper-btn--plus"
-                      onClick={() =>
-                        handleGameSettingChange(
-                          'sortingMode',
-                          'wordCount',
-                          Math.min(20, (localGameSettings.sortingMode.wordCount || 12) + 1)
-                        )
-                      }
-                      disabled={(localGameSettings.sortingMode.wordCount || 12) >= 20}
-                      aria-label="Increase sorting count"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-
-                <div className="compact-settings__game">
-                  <label className="compact-settings__game-label">
-                    🔗 {t('settings.matchingMode')}
-                  </label>
-                  <div className="compact-settings__game-stepper">
-                    <button
-                      type="button"
-                      className="compact-settings__stepper-btn compact-settings__stepper-btn--minus"
-                      onClick={() =>
-                        handleGameSettingChange(
-                          'matchingMode',
-                          'wordCount',
-                          Math.max(4, (localGameSettings.matchingMode.wordCount || 6) - 1)
-                        )
-                      }
-                      disabled={(localGameSettings.matchingMode.wordCount || 6) <= 4}
-                      aria-label="Decrease matching count"
-                    >
-                      −
-                    </button>
-                    <span className="compact-settings__stepper-value">
-                      {localGameSettings.matchingMode.wordCount || 6}
-                    </span>
-                    <button
-                      type="button"
-                      className="compact-settings__stepper-btn compact-settings__stepper-btn--plus"
-                      onClick={() =>
-                        handleGameSettingChange(
-                          'matchingMode',
-                          'wordCount',
-                          Math.min(12, (localGameSettings.matchingMode.wordCount || 6) + 1)
-                        )
-                      }
-                      disabled={(localGameSettings.matchingMode.wordCount || 6) >= 12}
-                      aria-label="Increase matching count"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Categories Tab */}
-          {activeTab === 'categories' && (
-            <div className="compact-settings__section">
-              <div className="compact-settings__categories">
-                {allCategories.map(category => (
-                  <div key={category} className="compact-settings__category">
-                    <input
-                      type="checkbox"
-                      id={category}
-                      checked={localCategories.includes(category)}
-                      onChange={e => handleCategoryChange(category, e.target.checked)}
-                      className="compact-settings__category-checkbox"
-                    />
-                    <label htmlFor={category} className="compact-settings__category-label">
-                      {category === 'Vocabulary' &&
-                        `📚 ${categoryLabels[category as keyof typeof categoryLabels]}`}
-                      {category === 'Grammar' &&
-                        `📝 ${categoryLabels[category as keyof typeof categoryLabels]}`}
-                      {category === 'PhrasalVerbs' &&
-                        `🔗 ${categoryLabels[category as keyof typeof categoryLabels]}`}
-                      {category === 'Idioms' &&
-                        `💭 ${categoryLabels[category as keyof typeof categoryLabels]}`}
-                    </label>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Offline Tab */}
-          {activeTab === 'offline' && (
-            <div className="compact-settings__section">
-              <div className="compact-settings__fields">
-                <div className="compact-settings__offline-toggle">
-                  <div className="compact-settings__toggle-container">
-                    <label className="compact-settings__label">
-                      <WifiOff className="compact-settings__offline-icon" />
-                      {t('offline.title')}:{' '}
-                      {offlineEnabled && downloadedLevels.length > 0
-                        ? t('offline.enabled')
-                        : t('offline.disabled')}
-                    </label>
-                    <input
-                      type="checkbox"
-                      id="offlineMode"
-                      className="compact-settings__toggle"
-                      checked={offlineEnabled}
-                      onChange={e => handleToggleOffline(e.target.checked)}
-                      disabled={!cacheSupported}
-                    />
-                  </div>
-                </div>
-
-                {offlineEnabled && (
-                  <>
-                    <div className="compact-settings__offline-levels">
-                      <span className="compact-settings__offline-levels-label">
-                        {t('offline.selectLevels')}
-                      </span>
-                      <div className="compact-settings__offline-levels-grid">
-                        {allLevels.map(lvl => (
-                          <label key={lvl} className="compact-settings__offline-level-item">
-                            <input
-                              type="checkbox"
-                              checked={selectedLevels.includes(lvl)}
-                              onChange={e => handleLevelCheckbox(lvl, e.target.checked)}
-                              disabled={isDownloading}
-                            />
-                            <span>{lvl.toUpperCase()}</span>
-                          </label>
-                        ))}
+                  <div className="compact-settings__toggles-row">
+                    <div className="compact-settings__field compact-settings__field--dev">
+                      <div className="compact-settings__toggle-container">
+                        <label
+                          className="compact-settings__label compact-settings__label--dev"
+                          title={t(
+                            'settings.developmentModeDescription',
+                            'Unlock all modes for testing'
+                          )}
+                        >
+                          🔧 Dev Mode
+                        </label>
+                        <input
+                          type="checkbox"
+                          id="developmentMode"
+                          className="compact-settings__toggle"
+                          checked={localDevelopmentMode}
+                          onChange={e => setLocalDevelopmentMode(e.target.checked)}
+                        />
                       </div>
+                    </div>
+
+                    <div className="compact-settings__field compact-settings__field--dev">
+                      <div className="compact-settings__toggle-container">
+                        <label
+                          className="compact-settings__label compact-settings__label--dev"
+                          title={t(
+                            'settings.randomizeItemsDescription',
+                            'Shuffle cards, questions and exercises in random order'
+                          )}
+                        >
+                          🎲 Randomize
+                        </label>
+                        <input
+                          type="checkbox"
+                          id="randomizeItems"
+                          className="compact-settings__toggle"
+                          checked={localRandomizeItems}
+                          onChange={e => setLocalRandomizeItems(e.target.checked)}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Games Settings Tab */}
+            {activeTab === 'games' && (
+              <div className="compact-settings__section">
+                <div className="compact-settings__games">
+                  <div className="compact-settings__game">
+                    <label className="compact-settings__game-label">
+                      📚 {t('settings.flashcardMode')}
+                    </label>
+                    <div className="compact-settings__game-stepper">
                       <button
-                        className="compact-settings__offline-download-btn"
-                        onClick={handleDownload}
-                        disabled={selectedLevels.length === 0 || isDownloading}
+                        type="button"
+                        className="compact-settings__stepper-btn compact-settings__stepper-btn--minus"
+                        onClick={() =>
+                          handleGameSettingChange(
+                            'flashcardMode',
+                            'wordCount',
+                            Math.max(5, (localGameSettings.flashcardMode.wordCount || 10) - 1)
+                          )
+                        }
+                        disabled={(localGameSettings.flashcardMode.wordCount || 10) <= 5}
+                        aria-label="Decrease flashcard count"
                       >
-                        {isDownloading ? t('offline.downloading') : t('offline.download')}
+                        −
+                      </button>
+                      <span className="compact-settings__stepper-value">
+                        {localGameSettings.flashcardMode.wordCount || 10}
+                      </span>
+                      <button
+                        type="button"
+                        className="compact-settings__stepper-btn compact-settings__stepper-btn--plus"
+                        onClick={() =>
+                          handleGameSettingChange(
+                            'flashcardMode',
+                            'wordCount',
+                            Math.min(30, (localGameSettings.flashcardMode.wordCount || 10) + 1)
+                          )
+                        }
+                        disabled={(localGameSettings.flashcardMode.wordCount || 10) >= 30}
+                        aria-label="Increase flashcard count"
+                      >
+                        +
                       </button>
                     </div>
+                  </div>
 
-                    {isDownloading && downloadProgress && (
-                      <div className="compact-settings__offline-progress">
-                        <div className="compact-settings__offline-progress-bar">
-                          <div
-                            className="compact-settings__offline-progress-fill"
-                            style={{
-                              width: `${downloadProgress.total > 0 ? (downloadProgress.completed / downloadProgress.total) * 100 : 0}%`,
-                            }}
-                          />
-                        </div>
-                        <span className="compact-settings__offline-progress-text">
-                          {downloadProgress.completed}/{downloadProgress.total}
-                        </span>
-                      </div>
-                    )}
+                  <div className="compact-settings__game">
+                    <label className="compact-settings__game-label">
+                      ❓ {t('settings.quizMode')}
+                    </label>
+                    <div className="compact-settings__game-stepper">
+                      <button
+                        type="button"
+                        className="compact-settings__stepper-btn compact-settings__stepper-btn--minus"
+                        onClick={() =>
+                          handleGameSettingChange(
+                            'quizMode',
+                            'questionCount',
+                            Math.max(5, (localGameSettings.quizMode.questionCount || 10) - 1)
+                          )
+                        }
+                        disabled={(localGameSettings.quizMode.questionCount || 10) <= 5}
+                        aria-label="Decrease quiz count"
+                      >
+                        −
+                      </button>
+                      <span className="compact-settings__stepper-value">
+                        {localGameSettings.quizMode.questionCount || 10}
+                      </span>
+                      <button
+                        type="button"
+                        className="compact-settings__stepper-btn compact-settings__stepper-btn--plus"
+                        onClick={() =>
+                          handleGameSettingChange(
+                            'quizMode',
+                            'questionCount',
+                            Math.min(25, (localGameSettings.quizMode.questionCount || 10) + 1)
+                          )
+                        }
+                        disabled={(localGameSettings.quizMode.questionCount || 10) >= 25}
+                        aria-label="Increase quiz count"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
 
-                    {failedUrls.length > 0 && !isDownloading && (
-                      <div className="compact-settings__offline-failed">
-                        <span>{t('offline.filesFailedCount', undefined, { count: failedUrls.length })}</span>
-                        <button
-                          className="compact-settings__offline-retry-btn"
-                          onClick={handleRetryFailed}
-                        >
-                          {t('offline.retryFailed')}
-                        </button>
-                      </div>
-                    )}
+                  <div className="compact-settings__game">
+                    <label className="compact-settings__game-label">
+                      ✏️ {t('settings.completionMode')}
+                    </label>
+                    <div className="compact-settings__game-stepper">
+                      <button
+                        type="button"
+                        className="compact-settings__stepper-btn compact-settings__stepper-btn--minus"
+                        onClick={() =>
+                          handleGameSettingChange(
+                            'completionMode',
+                            'itemCount',
+                            Math.max(5, (localGameSettings.completionMode.itemCount || 10) - 1)
+                          )
+                        }
+                        disabled={(localGameSettings.completionMode.itemCount || 10) <= 5}
+                        aria-label="Decrease completion count"
+                      >
+                        −
+                      </button>
+                      <span className="compact-settings__stepper-value">
+                        {localGameSettings.completionMode.itemCount || 10}
+                      </span>
+                      <button
+                        type="button"
+                        className="compact-settings__stepper-btn compact-settings__stepper-btn--plus"
+                        onClick={() =>
+                          handleGameSettingChange(
+                            'completionMode',
+                            'itemCount',
+                            Math.min(20, (localGameSettings.completionMode.itemCount || 10) + 1)
+                          )
+                        }
+                        disabled={(localGameSettings.completionMode.itemCount || 10) >= 20}
+                        aria-label="Increase completion count"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
 
-                    {downloadedLevels.length > 0 && (
-                      <div className="compact-settings__offline-storage">
-                        <span>
-                          {t('offline.storage')}: {formatStorageSize(totalCacheSize)}
-                        </span>
-                        <button
-                          className="compact-settings__offline-manage-btn"
-                          onClick={() => setIsModalOpen(true)}
-                        >
-                          {t('offline.manageDownloads')}
-                        </button>
-                      </div>
-                    )}
-                  </>
-                )}
+                  <div className="compact-settings__game">
+                    <label className="compact-settings__game-label">
+                      🔄 {t('settings.sortingMode')}
+                    </label>
+                    <div className="compact-settings__game-stepper">
+                      <button
+                        type="button"
+                        className="compact-settings__stepper-btn compact-settings__stepper-btn--minus"
+                        onClick={() =>
+                          handleGameSettingChange(
+                            'sortingMode',
+                            'wordCount',
+                            Math.max(8, (localGameSettings.sortingMode.wordCount || 12) - 1)
+                          )
+                        }
+                        disabled={(localGameSettings.sortingMode.wordCount || 12) <= 8}
+                        aria-label="Decrease sorting count"
+                      >
+                        −
+                      </button>
+                      <span className="compact-settings__stepper-value">
+                        {localGameSettings.sortingMode.wordCount || 12}
+                      </span>
+                      <button
+                        type="button"
+                        className="compact-settings__stepper-btn compact-settings__stepper-btn--plus"
+                        onClick={() =>
+                          handleGameSettingChange(
+                            'sortingMode',
+                            'wordCount',
+                            Math.min(20, (localGameSettings.sortingMode.wordCount || 12) + 1)
+                          )
+                        }
+                        disabled={(localGameSettings.sortingMode.wordCount || 12) >= 20}
+                        aria-label="Increase sorting count"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="compact-settings__game">
+                    <label className="compact-settings__game-label">
+                      🔗 {t('settings.matchingMode')}
+                    </label>
+                    <div className="compact-settings__game-stepper">
+                      <button
+                        type="button"
+                        className="compact-settings__stepper-btn compact-settings__stepper-btn--minus"
+                        onClick={() =>
+                          handleGameSettingChange(
+                            'matchingMode',
+                            'wordCount',
+                            Math.max(4, (localGameSettings.matchingMode.wordCount || 6) - 1)
+                          )
+                        }
+                        disabled={(localGameSettings.matchingMode.wordCount || 6) <= 4}
+                        aria-label="Decrease matching count"
+                      >
+                        −
+                      </button>
+                      <span className="compact-settings__stepper-value">
+                        {localGameSettings.matchingMode.wordCount || 6}
+                      </span>
+                      <button
+                        type="button"
+                        className="compact-settings__stepper-btn compact-settings__stepper-btn--plus"
+                        onClick={() =>
+                          handleGameSettingChange(
+                            'matchingMode',
+                            'wordCount',
+                            Math.min(12, (localGameSettings.matchingMode.wordCount || 6) + 1)
+                          )
+                        }
+                        disabled={(localGameSettings.matchingMode.wordCount || 6) >= 12}
+                        aria-label="Increase matching count"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          )}
-        </div>
-        <div className="modal__actions modal__actions--single">
-          <button
-            onClick={handleSaveAndClose}
-            className="modal__btn modal__btn--primary"
-            aria-label={hasChanges ? t('common.save') : t('common.close')}
-          >
-            <Save className="modal__btn-icon" />
-            {hasChanges ? t('common.save') : t('common.close')}
-          </button>
+            )}
+
+            {/* Categories Tab */}
+            {activeTab === 'categories' && (
+              <div className="compact-settings__section">
+                <div className="compact-settings__categories">
+                  {allCategories.map(category => (
+                    <div key={category} className="compact-settings__category">
+                      <input
+                        type="checkbox"
+                        id={category}
+                        checked={localCategories.includes(category)}
+                        onChange={e => handleCategoryChange(category, e.target.checked)}
+                        className="compact-settings__category-checkbox"
+                      />
+                      <label htmlFor={category} className="compact-settings__category-label">
+                        {category === 'Vocabulary' &&
+                          `📚 ${categoryLabels[category as keyof typeof categoryLabels]}`}
+                        {category === 'Grammar' &&
+                          `📝 ${categoryLabels[category as keyof typeof categoryLabels]}`}
+                        {category === 'PhrasalVerbs' &&
+                          `🔗 ${categoryLabels[category as keyof typeof categoryLabels]}`}
+                        {category === 'Idioms' &&
+                          `💭 ${categoryLabels[category as keyof typeof categoryLabels]}`}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Offline Tab */}
+            {activeTab === 'offline' && (
+              <div className="compact-settings__section">
+                <div className="compact-settings__fields">
+                  <div className="compact-settings__offline-toggle">
+                    <div className="compact-settings__toggle-container">
+                      <label className="compact-settings__label">
+                        <WifiOff className="compact-settings__offline-icon" />
+                        {t('offline.title')}:{' '}
+                        {offlineEnabled && downloadedLevels.length > 0
+                          ? t('offline.enabled')
+                          : t('offline.disabled')}
+                      </label>
+                      <input
+                        type="checkbox"
+                        id="offlineMode"
+                        className="compact-settings__toggle"
+                        checked={offlineEnabled}
+                        onChange={e => handleToggleOffline(e.target.checked)}
+                        disabled={!cacheSupported}
+                      />
+                    </div>
+                  </div>
+
+                  {offlineEnabled && (
+                    <>
+                      <div className="compact-settings__offline-levels">
+                        <span className="compact-settings__offline-levels-label">
+                          {t('offline.selectLevels')}
+                        </span>
+                        <div className="compact-settings__offline-levels-grid">
+                          {allLevels.map(lvl => (
+                            <label key={lvl} className="compact-settings__offline-level-item">
+                              <input
+                                type="checkbox"
+                                checked={selectedLevels.includes(lvl)}
+                                onChange={e => handleLevelCheckbox(lvl, e.target.checked)}
+                                disabled={isDownloading}
+                              />
+                              <span>{lvl.toUpperCase()}</span>
+                            </label>
+                          ))}
+                        </div>
+                        <button
+                          className="compact-settings__offline-download-btn"
+                          onClick={handleDownload}
+                          disabled={selectedLevels.length === 0 || isDownloading}
+                        >
+                          {isDownloading ? t('offline.downloading') : t('offline.download')}
+                        </button>
+                      </div>
+
+                      {isDownloading && downloadProgress && (
+                        <div className="compact-settings__offline-progress">
+                          <div className="compact-settings__offline-progress-bar">
+                            <div
+                              className="compact-settings__offline-progress-fill"
+                              style={{
+                                width: `${downloadProgress.total > 0 ? (downloadProgress.completed / downloadProgress.total) * 100 : 0}%`,
+                              }}
+                            />
+                          </div>
+                          <span className="compact-settings__offline-progress-text">
+                            {downloadProgress.completed}/{downloadProgress.total}
+                          </span>
+                        </div>
+                      )}
+
+                      {failedUrls.length > 0 && !isDownloading && (
+                        <div className="compact-settings__offline-failed">
+                          <span>
+                            {t('offline.filesFailedCount', undefined, { count: failedUrls.length })}
+                          </span>
+                          <button
+                            className="compact-settings__offline-retry-btn"
+                            onClick={handleRetryFailed}
+                          >
+                            {t('offline.retryFailed')}
+                          </button>
+                        </div>
+                      )}
+
+                      {downloadedLevels.length > 0 && (
+                        <div className="compact-settings__offline-storage">
+                          <span>
+                            {t('offline.storage')}: {formatStorageSize(totalCacheSize)}
+                          </span>
+                          <button
+                            className="compact-settings__offline-manage-btn"
+                            onClick={() => setIsModalOpen(true)}
+                          >
+                            {t('offline.manageDownloads')}
+                          </button>
+                        </div>
+                      )}
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="modal__actions modal__actions--single">
+            <button
+              onClick={handleSaveAndClose}
+              className="modal__btn modal__btn--primary"
+              aria-label={hasChanges ? t('common.save') : t('common.close')}
+            >
+              <Save className="modal__btn-icon" />
+              {hasChanges ? t('common.save') : t('common.close')}
+            </button>
+          </div>
         </div>
       </div>
-    </div>
 
       <DownloadManagerModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>

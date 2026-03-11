@@ -154,7 +154,9 @@
   align-items: center;
   padding: 0.625rem 0.75rem;
   border-radius: 0.5rem;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .matching-modal__result-card--correct {

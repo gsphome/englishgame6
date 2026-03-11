@@ -20,8 +20,13 @@ interface DownloadManagerModalProps {
 }
 
 export const DownloadManagerModal: React.FC<DownloadManagerModalProps> = ({ isOpen, onClose }) => {
-  const { language, downloadedLevels, setDownloadedLevels, setOfflineEnabled, setLastDownloadDate } =
-    useSettingsStore();
+  const {
+    language,
+    downloadedLevels,
+    setDownloadedLevels,
+    setOfflineEnabled,
+    setLastDownloadDate,
+  } = useSettingsStore();
   const { t } = useTranslation(language);
 
   const [levelInfo, setLevelInfo] = useState<LevelStorageInfo[]>([]);
@@ -42,16 +47,19 @@ export const DownloadManagerModal: React.FC<DownloadManagerModalProps> = ({ isOp
     }
   }, [isOpen, refreshInfo]);
 
-  const handleDeleteLevel = useCallback(async (level: string) => {
-    await deleteLevelCache(level);
-    const updatedLevels = downloadedLevels.filter(l => l !== level);
-    setDownloadedLevels(updatedLevels);
-    if (updatedLevels.length === 0) {
-      setOfflineEnabled(false);
-      setLastDownloadDate(null);
-    }
-    await refreshInfo();
-  }, [downloadedLevels, setDownloadedLevels, setOfflineEnabled, setLastDownloadDate, refreshInfo]);
+  const handleDeleteLevel = useCallback(
+    async (level: string) => {
+      await deleteLevelCache(level);
+      const updatedLevels = downloadedLevels.filter(l => l !== level);
+      setDownloadedLevels(updatedLevels);
+      if (updatedLevels.length === 0) {
+        setOfflineEnabled(false);
+        setLastDownloadDate(null);
+      }
+      await refreshInfo();
+    },
+    [downloadedLevels, setDownloadedLevels, setOfflineEnabled, setLastDownloadDate, refreshInfo]
+  );
 
   const handleDeleteAll = useCallback(async () => {
     await deleteAllCache();
@@ -61,12 +69,15 @@ export const DownloadManagerModal: React.FC<DownloadManagerModalProps> = ({ isOp
     onClose();
   }, [setDownloadedLevels, setOfflineEnabled, setLastDownloadDate, onClose]);
 
-  const handleOverlayClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    // Only close if clicking directly on the overlay, not on child elements
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  }, [onClose]);
+  const handleOverlayClick = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      // Only close if clicking directly on the overlay, not on child elements
+      if (e.target === e.currentTarget) {
+        onClose();
+      }
+    },
+    [onClose]
+  );
 
   if (!isOpen) return null;
 
@@ -88,11 +99,10 @@ export const DownloadManagerModal: React.FC<DownloadManagerModalProps> = ({ isOp
               <ul className="download-manager__list">
                 {levelInfo.map(info => (
                   <li key={info.level} className="download-manager__item">
-                    <span className="download-manager__item-name">
-                      {info.level.toUpperCase()}
-                    </span>
+                    <span className="download-manager__item-name">{info.level.toUpperCase()}</span>
                     <span className="download-manager__item-info">
-                      {info.moduleCount} {info.moduleCount === 1 ? 'module' : 'modules'} · {formatStorageSize(info.sizeBytes)}
+                      {info.moduleCount} {info.moduleCount === 1 ? 'module' : 'modules'} ·{' '}
+                      {formatStorageSize(info.sizeBytes)}
                     </span>
                     <button
                       className="download-manager__item-delete"
@@ -106,7 +116,9 @@ export const DownloadManagerModal: React.FC<DownloadManagerModalProps> = ({ isOp
               </ul>
 
               <div className="download-manager__total">
-                <span>{t('offline.storage')}: {formatStorageSize(totalSize)}</span>
+                <span>
+                  {t('offline.storage')}: {formatStorageSize(totalSize)}
+                </span>
               </div>
 
               <div className="modal__actions">

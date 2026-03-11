@@ -418,7 +418,8 @@ const translations = {
       deleteAll: 'Delete All',
       confirmDeleteAll: 'Are you sure you want to delete all downloaded content?',
       emptyState: 'No content downloaded. Download levels from Advanced Settings to play offline.',
-      moduleNotAvailable: 'This module is not available offline. Download it when you have a connection.',
+      moduleNotAvailable:
+        'This module is not available offline. Download it when you have a connection.',
       indicator: 'Offline Mode',
       filesFailedCount: '{{count}} file(s) failed to download',
       cacheIntegrityWarning: 'Some offline levels are no longer available',
@@ -841,13 +842,16 @@ const translations = {
       deleteLevel: 'Eliminar nivel',
       deleteAll: 'Eliminar Todo',
       confirmDeleteAll: '¿Estás seguro de que deseas eliminar todo el contenido descargado?',
-      emptyState: 'No hay contenido descargado. Descarga niveles desde Configuración Avanzada para jugar offline.',
-      moduleNotAvailable: 'Este módulo no está disponible offline. Descárgalo cuando tengas conexión.',
+      emptyState:
+        'No hay contenido descargado. Descarga niveles desde Configuración Avanzada para jugar offline.',
+      moduleNotAvailable:
+        'Este módulo no está disponible offline. Descárgalo cuando tengas conexión.',
       indicator: 'Modo Offline',
       filesFailedCount: '{{count}} archivo(s) fallaron al descargar',
       cacheIntegrityWarning: 'Algunos niveles offline ya no están disponibles',
       cacheIntegrityMissing: 'Los niveles {{levels}} fueron eliminados de la caché',
-      cacheIntegrityAllMissing: 'Todo el contenido offline fue eliminado. El modo offline ha sido desactivado.',
+      cacheIntegrityAllMissing:
+        'Todo el contenido offline fue eliminado. El modo offline ha sido desactivado.',
     },
   },
 } as const;

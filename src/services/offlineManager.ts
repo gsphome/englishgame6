@@ -104,9 +104,7 @@ async function getUrlsForLevels(
       return moduleLevels.includes(targetLevel as any);
     });
 
-    const urls = modulesForLevel
-      .filter(m => m.dataPath)
-      .map(m => resolveDataPath(m.dataPath!));
+    const urls = modulesForLevel.filter(m => m.dataPath).map(m => resolveDataPath(m.dataPath!));
 
     urlsByLevel.set(targetLevel, urls);
   }
@@ -173,11 +171,7 @@ export async function downloadLevels(
     onProgress({ total, completed, failed: [...failed] });
   }
 
-  logDebug(
-    'Download complete',
-    { total, completed, failedCount: failed.length },
-    'OfflineManager'
-  );
+  logDebug('Download complete', { total, completed, failedCount: failed.length }, 'OfflineManager');
 
   return { total, completed, failed };
 }

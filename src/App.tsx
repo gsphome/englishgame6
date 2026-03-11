@@ -35,7 +35,14 @@ const queryClient = new QueryClient({
 
 const AppContent: React.FC = () => {
   const { currentView } = useAppStore();
-  const { offlineEnabled, downloadedLevels, language, setOfflineEnabled, setDownloadedLevels, setLastDownloadDate } = useSettingsStore();
+  const {
+    offlineEnabled,
+    downloadedLevels,
+    language,
+    setOfflineEnabled,
+    setDownloadedLevels,
+    setLastDownloadDate,
+  } = useSettingsStore();
   const { t } = useTranslation(language);
   const integrityChecked = useRef(false);
 
@@ -50,30 +57,31 @@ const AppContent: React.FC = () => {
     if (!offlineEnabled || downloadedLevels.length === 0 || integrityChecked.current) return;
     integrityChecked.current = true;
 
-    verifyCacheIntegrity(downloadedLevels).then(({ missingLevels }) => {
-      if (missingLevels.length === 0) return;
+    verifyCacheIntegrity(downloadedLevels)
+      .then(({ missingLevels }) => {
+        if (missingLevels.length === 0) return;
 
-      if (missingLevels.length === downloadedLevels.length) {
-        // All levels missing — disable offline mode entirely
-        setOfflineEnabled(false);
-        setDownloadedLevels([]);
-        setLastDownloadDate(null);
-        toast.warning(
-          t('offline.title'),
-          t('offline.cacheIntegrityAllMissing')
-        );
-      } else {
-        // Some levels missing — update state and notify
-        const remaining = downloadedLevels.filter(l => !missingLevels.includes(l));
-        setDownloadedLevels(remaining);
-        toast.info(
-          t('offline.cacheIntegrityWarning'),
-          t('offline.cacheIntegrityMissing', undefined, { levels: missingLevels.map(l => l.toUpperCase()).join(', ') })
-        );
-      }
-    }).catch(() => {
-      // Silently fail — integrity check is non-critical
-    });
+        if (missingLevels.length === downloadedLevels.length) {
+          // All levels missing — disable offline mode entirely
+          setOfflineEnabled(false);
+          setDownloadedLevels([]);
+          setLastDownloadDate(null);
+          toast.warning(t('offline.title'), t('offline.cacheIntegrityAllMissing'));
+        } else {
+          // Some levels missing — update state and notify
+          const remaining = downloadedLevels.filter(l => !missingLevels.includes(l));
+          setDownloadedLevels(remaining);
+          toast.info(
+            t('offline.cacheIntegrityWarning'),
+            t('offline.cacheIntegrityMissing', undefined, {
+              levels: missingLevels.map(l => l.toUpperCase()).join(', '),
+            })
+          );
+        }
+      })
+      .catch(() => {
+        // Silently fail — integrity check is non-critical
+      });
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Handle view changes and cleanup
