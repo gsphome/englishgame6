@@ -1,0 +1,1667 @@
+{
+  "components": [
+    {
+      "path": "src/components/common/ErrorBoundary.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/common/ErrorFallback.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/layout/AppRouter.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/learning/CompletionComponent.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/learning/FlashcardComponent.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/learning/MatchingComponent.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/learning/QuizComponent.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/learning/ReadingComponent.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/learning/SortingComponent.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/CompactAbout.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/CompactAdvancedSettings.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/CompactLearningPath.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/CompactProfile.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/CompactProgressDashboard.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/ContentRenderer.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/DownloadManagerModal.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/FluentFlowLogo.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/Header.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/LearningProgressHeader.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/LoadingSkeleton.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/MainMenu.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/MemoizedComponents.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/ModuleCard.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/OrientationLock.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/ProgressionDashboard.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/ScoreDisplay.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/SearchBar.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/Toast.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/components/ui/ToastContainer.tsx",
+      "type": "component",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    }
+  ],
+  "styles": [
+    {
+      "path": "src/styles/components/app-router.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (prefers-reduced-motion: reduce) {"
+      ],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/styles/components/compact-about.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (max-width: 640px) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media (max-width: 400px) {",
+        "@media (min-width: 401px) {",
+        "@media (max-width: 768px) {",
+        "@media (max-width: 400px) {",
+        "@media (min-width: 769px) {"
+      ],
+      "hardcodedWidths": [
+        "width: 768px",
+        "width: 769px",
+        "min-width: 401px",
+        "min-width: 769px"
+      ],
+      "fixedPositions": [
+        "position: fixed detected"
+      ],
+      "overflowIssues": [],
+      "touchTargets": [
+        "height: 3px",
+        "width: 4px"
+      ],
+      "issues": [
+        "4 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components/compact-advanced-settings.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (max-width: 400px) {",
+        "@media (min-width: 401px) {"
+      ],
+      "hardcodedWidths": [
+        "min-width: 401px"
+      ],
+      "fixedPositions": [
+        "position: fixed detected"
+      ],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components/compact-learning-path.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (max-width: 640px) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media (max-width: 400px) {",
+        "@media (min-width: 401px) {"
+      ],
+      "hardcodedWidths": [
+        "min-width: 401px"
+      ],
+      "fixedPositions": [
+        "position: fixed detected"
+      ],
+      "overflowIssues": [],
+      "touchTargets": [
+        "width: 1px"
+      ],
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components/compact-profile.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (max-width: 640px) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media (min-width: 401px) {",
+        "@media (max-width: 400px) {"
+      ],
+      "hardcodedWidths": [
+        "min-width: 401px"
+      ],
+      "fixedPositions": [
+        "position: fixed detected"
+      ],
+      "overflowIssues": [],
+      "touchTargets": [
+        "width: 4px"
+      ],
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components/compact-progress-dashboard.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (max-width: 640px) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media (max-width: 400px) {",
+        "@media (min-width: 401px) {"
+      ],
+      "hardcodedWidths": [
+        "min-width: 401px"
+      ],
+      "fixedPositions": [
+        "position: fixed detected"
+      ],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components/completion-component.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (min-width: 640px) {",
+        "@media (min-width: 640px) {",
+        "@media (min-width: 640px) {",
+        "@media (min-width: 640px) {",
+        "@media (max-width: 768px) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media (prefers-contrast: high) {"
+      ],
+      "hardcodedWidths": [
+        "width: 768px",
+        "min-width: 640px",
+        "min-width: 640px",
+        "min-width: 640px",
+        "min-width: 640px",
+        "min-width: 160px",
+        "min-width: 140px"
+      ],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [
+        "width: 3px"
+      ],
+      "issues": [
+        "7 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components/content-renderer.css",
+      "type": "style",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": [
+        "Sin media queries para responsive"
+      ]
+    },
+    {
+      "path": "src/styles/components/download-manager.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (max-width: 400px) {",
+        "@media (min-width: 401px) {"
+      ],
+      "hardcodedWidths": [
+        "min-width: 401px"
+      ],
+      "fixedPositions": [
+        "position: fixed detected"
+      ],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components/error-fallback.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (max-width: 768px) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media (prefers-contrast: high) {"
+      ],
+      "hardcodedWidths": [
+        "width: 768px"
+      ],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components/flashcard-component.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (min-width: 640px) {",
+        "@media (max-width: 639px) {",
+        "@media (max-width: 400px) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media (prefers-contrast: high) {"
+      ],
+      "hardcodedWidths": [
+        "min-width: 640px"
+      ],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [
+        "width: 2px"
+      ],
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components/fluent-flow-logo.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (prefers-reduced-motion: reduce) {"
+      ],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/styles/components/game-controls.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (max-width: 768px) {",
+        "@media (min-width: 769px) and (max-width: 770px) {",
+        "@media (max-width: 768px) and (min-width: 641px) {",
+        "@media (max-width: 640px) {",
+        "@media (max-width: 400px) {"
+      ],
+      "hardcodedWidths": [
+        "width: 768px",
+        "width: 769px",
+        "width: 770px",
+        "width: 768px",
+        "min-width: 769px",
+        "min-width: 641px"
+      ],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": [
+        "6 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components/header.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (min-width: 768px) {",
+        "@media (min-width: 1024px) {",
+        "@media (min-width: 1024px) {",
+        "@media (min-width: 1024px) {",
+        "@media (max-width: 520px) {",
+        "@media (min-width: 768px) {",
+        "@media (max-width: 767px) {",
+        "@media (max-width: 767px) {",
+        "@media (prefers-contrast: high) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media (max-width: 500px) {",
+        "@media (max-width: 400px) {",
+        "@media (max-width: 400px) {",
+        "@media (min-width: 768px) {",
+        "@media (min-width: 1024px) {"
+      ],
+      "hardcodedWidths": [
+        "width: 1440px",
+        "width: 768px",
+        "width: 1024px",
+        "width: 1024px",
+        "width: 1024px",
+        "width: 768px",
+        "width: 768px",
+        "width: 1024px",
+        "min-width: 768px",
+        "min-width: 1024px",
+        "min-width: 1024px",
+        "min-width: 1024px",
+        "min-width: 768px",
+        "min-width: 180px",
+        "min-width: 768px",
+        "min-width: 1024px"
+      ],
+      "fixedPositions": [
+        "position: fixed detected"
+      ],
+      "overflowIssues": [],
+      "touchTargets": [
+        "font-size: 18px",
+        "font-size: 14px",
+        "font-size: 14px",
+        "font-size: 11px",
+        "font-size: 11px",
+        "font-size: 11px",
+        "font-size: 18px",
+        "font-size: 14px",
+        "font-size: 14px",
+        "font-size: 14px",
+        "width: 20px",
+        "height: 20px",
+        "width: 1px",
+        "height: 1px",
+        "width: 18px",
+        "height: 18px",
+        "font-size: 16px",
+        "font-size: 12px",
+        "font-size: 13px"
+      ],
+      "issues": [
+        "16 anchos fijos detectados",
+        "19 elementos con tamaños < 24px (touch targets)"
+      ]
+    },
+    {
+      "path": "src/styles/components/learning-progress-header.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (min-width: 640px) {",
+        "@media (max-width: 480px) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media (prefers-contrast: high) {"
+      ],
+      "hardcodedWidths": [
+        "min-width: 640px"
+      ],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [
+        "height: 6px",
+        "width: 2px"
+      ],
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components/main-menu.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (max-width: 460px) {",
+        "@media (max-width: 170px) {",
+        "@media (min-width: 171px) and (max-width: 479px) {",
+        "@media (min-width: 480px) and (max-width: 719px) {",
+        "@media (min-width: 720px) {",
+        "@media (min-width: 520px) and (max-width: 639px) {",
+        "@media (min-width: 640px) and (max-width: 759px) {",
+        "@media (min-width: 760px) and (max-width: 879px) {",
+        "@media (min-width: 880px) {",
+        "@media (min-width: 1140px) {",
+        "@media (max-width: 639px) {",
+        "@media (max-width: 374px) {",
+        "@media (prefers-contrast: high) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media print {",
+        "@media (max-width: 379px) {",
+        "@media (min-width: 880px) {",
+        "@media (max-width: 259px) {",
+        "@media (min-width: 260px) and (max-width: 379px) {",
+        "@media (min-width: 380px) and (max-width: 519px) {",
+        "@media (min-width: 520px) and (max-width: 639px) {",
+        "@media (min-width: 640px) and (max-width: 759px) {",
+        "@media (min-width: 760px) and (max-width: 879px) {",
+        "@media (min-width: 880px) {",
+        "@media (min-width: 640px) {",
+        "@media (min-width: 1920px) {"
+      ],
+      "hardcodedWidths": [
+        "width: 879px",
+        "width: 880px",
+        "width: 1140px",
+        "width: 880px",
+        "width: 879px",
+        "width: 880px",
+        "width: 1920px",
+        "min-width: 171px",
+        "min-width: 480px",
+        "min-width: 720px",
+        "min-width: 520px",
+        "min-width: 640px",
+        "min-width: 760px",
+        "min-width: 880px",
+        "min-width: 1140px",
+        "min-width: 120px",
+        "min-width: 44px",
+        "min-width: 880px",
+        "min-width: 260px",
+        "min-width: 380px",
+        "min-width: 520px",
+        "min-width: 640px",
+        "min-width: 760px",
+        "min-width: 880px",
+        "min-width: 640px",
+        "min-width: 1920px"
+      ],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [
+        "width: 4px"
+      ],
+      "issues": [
+        "26 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components/matching-cards.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (min-width: 640px) {"
+      ],
+      "hardcodedWidths": [
+        "min-width: 640px"
+      ],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components/matching-component-override.css",
+      "type": "style",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [
+        "width: 1px"
+      ],
+      "issues": [
+        "Sin media queries para responsive"
+      ]
+    },
+    {
+      "path": "src/styles/components/matching-component.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (min-width: 640px) {",
+        "@media (max-width: 768px) {",
+        "@media (max-width: 768px) {",
+        "@media (max-width: 768px) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media (prefers-contrast: high) {"
+      ],
+      "hardcodedWidths": [
+        "width: 768px",
+        "width: 768px",
+        "width: 768px",
+        "min-width: 640px"
+      ],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [
+        "width: 3px",
+        "width: 3px",
+        "width: 1px",
+        "width: 1px"
+      ],
+      "issues": [
+        "4 anchos fijos detectados",
+        "4 elementos con tamaños < 24px (touch targets)"
+      ]
+    },
+    {
+      "path": "src/styles/components/matching-modal.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (max-width: 640px) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media (max-width: 400px) {",
+        "@media (max-width: 768px) {",
+        "@media (prefers-contrast: high) {"
+      ],
+      "hardcodedWidths": [
+        "width: 768px"
+      ],
+      "fixedPositions": [
+        "position: fixed detected"
+      ],
+      "overflowIssues": [],
+      "touchTargets": [
+        "width: 2px"
+      ],
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components/modal-buttons.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (max-width: 640px) {"
+      ],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/styles/components/module-card.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (max-width: 719px) {",
+        "@media (min-width: 321px) and (max-width: 719px) {",
+        "@media (min-width: 750px) and (max-width: 950px) {",
+        "@media (min-width: 720px) {",
+        "@media (min-width: 900px) {",
+        "@media (prefers-contrast: high) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media (prefers-color-scheme: dark) {",
+        "@media (prefers-reduced-motion: reduce) {"
+      ],
+      "hardcodedWidths": [
+        "width: 950px",
+        "width: 900px",
+        "min-width: 321px",
+        "min-width: 750px",
+        "min-width: 720px",
+        "min-width: 900px"
+      ],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [
+        "width: 3px",
+        "height: 3px"
+      ],
+      "issues": [
+        "6 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components/orientation-lock.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media screen and (orientation: landscape) and (max-height: 500px) {",
+        "@media (prefers-contrast: high) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media (prefers-contrast: high) {",
+        "@media screen and (orientation: landscape) and (max-height: 400px) {",
+        "@media screen and (orientation: landscape) and (min-height: 401px) and (max-height: 500px) {"
+      ],
+      "hardcodedWidths": [],
+      "fixedPositions": [
+        "position: fixed detected"
+      ],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/styles/components/progression-dashboard-dark-theme.css",
+      "type": "style",
+      "hasMediaQueries": false,
+      "mediaQueries": [],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": [
+        "Sin media queries para responsive"
+      ]
+    },
+    {
+      "path": "src/styles/components/progression-dashboard.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (min-width: 1024px) {",
+        "@media (min-width: 768px) and (max-width: 1023px) {",
+        "@media (max-height: 900px) and (min-width: 769px) {",
+        "@media (max-width: 767px) {",
+        "@media (max-width: 400px) {"
+      ],
+      "hardcodedWidths": [
+        "width: 1024px",
+        "width: 768px",
+        "width: 1023px",
+        "width: 769px",
+        "min-width: 1024px",
+        "min-width: 768px",
+        "min-width: 769px"
+      ],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [
+        "width: 6px",
+        "width: 4px"
+      ],
+      "issues": [
+        "7 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components/quiz-component.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (min-width: 640px) {",
+        "@media (min-width: 640px) {",
+        "@media (min-width: 640px) {",
+        "@media (min-width: 640px) {",
+        "@media (max-width: 768px) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media (prefers-contrast: high) {"
+      ],
+      "hardcodedWidths": [
+        "width: 768px",
+        "min-width: 640px",
+        "min-width: 640px",
+        "min-width: 640px",
+        "min-width: 640px"
+      ],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [
+        "width: 3px",
+        "width: 3px"
+      ],
+      "issues": [
+        "5 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components/reading-component.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (min-width: 640px) {",
+        "@media (min-width: 640px) {",
+        "@media (min-width: 1024px) {",
+        "@media (min-width: 768px) {",
+        "@media (min-width: 1024px) {",
+        "@media (max-width: 767px) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media (prefers-contrast: high) {",
+        "@media print {",
+        "@media (max-width: 767px) and (orientation: landscape) {"
+      ],
+      "hardcodedWidths": [
+        "width: 1024px",
+        "width: 768px",
+        "width: 1024px",
+        "min-width: 640px",
+        "min-width: 640px",
+        "min-width: 1024px",
+        "min-width: 200px",
+        "min-width: 768px",
+        "min-width: 1024px",
+        "min-width: 250px"
+      ],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [
+        "width: 14px",
+        "height: 14px",
+        "width: 5px",
+        "width: 8px",
+        "width: 22px",
+        "height: 22px",
+        "height: 4px",
+        "height: 5px",
+        "width: 20px",
+        "height: 20px",
+        "width: 2px",
+        "width: 3px"
+      ],
+      "issues": [
+        "10 anchos fijos detectados",
+        "12 elementos con tamaños < 24px (touch targets)"
+      ]
+    },
+    {
+      "path": "src/styles/components/score-display.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (min-width: 600px) {",
+        "@media (min-width: 520px) and (max-width: 599px) {",
+        "@media (min-width: 420px) and (max-width: 519px) {",
+        "@media (min-width: 311px) and (max-width: 419px) {",
+        "@media (max-width: 310px) {",
+        "@media (max-width: 519px) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media (prefers-contrast: high) {"
+      ],
+      "hardcodedWidths": [
+        "min-width: 160px",
+        "min-width: 200px",
+        "min-width: 32px",
+        "min-width: 600px",
+        "min-width: 160px",
+        "min-width: 200px",
+        "min-width: 520px",
+        "min-width: 140px",
+        "min-width: 170px",
+        "min-width: 35px",
+        "min-width: 420px",
+        "min-width: 120px",
+        "min-width: 140px",
+        "min-width: 30px",
+        "min-width: 20px",
+        "min-width: 24px",
+        "min-width: 311px",
+        "min-width: 70px",
+        "min-width: 80px",
+        "min-width: 16px",
+        "min-width: 16px",
+        "min-width: 18px",
+        "min-width: 20px",
+        "min-width: 2px",
+        "min-width: 2px",
+        "min-width: 80px",
+        "min-width: 90px",
+        "min-width: 70px",
+        "min-width: 16px"
+      ],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [
+        "width: 1px",
+        "height: 3px",
+        "width: 20px",
+        "height: 1px",
+        "height: 16px",
+        "width: 16px",
+        "width: 16px",
+        "height: 20px",
+        "width: 18px",
+        "width: 20px",
+        "width: 20px",
+        "width: 22px",
+        "width: 2px",
+        "width: 3px",
+        "width: 2px",
+        "width: 3px",
+        "width: 1px",
+        "height: 1px",
+        "width: 16px",
+        "width: 2px"
+      ],
+      "issues": [
+        "29 anchos fijos detectados",
+        "20 elementos con tamaños < 24px (touch targets)"
+      ]
+    },
+    {
+      "path": "src/styles/components/search-bar.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (max-width: 639px) {",
+        "@media (min-width: 768px) {",
+        "@media (prefers-contrast: high) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media print {",
+        "@media (max-width: 639px) {",
+        "@media (min-width: 640px) and (max-width: 899px) {",
+        "@media (min-width: 900px) {"
+      ],
+      "hardcodedWidths": [
+        "width: 768px",
+        "width: 899px",
+        "width: 900px",
+        "min-width: 768px",
+        "min-width: 640px",
+        "min-width: 900px"
+      ],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [
+        "width: 1px",
+        "height: 1px",
+        "width: 3px"
+      ],
+      "issues": [
+        "6 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components/sorting-component.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (min-width: 640px) {",
+        "@media (min-width: 1024px) {",
+        "@media (max-width: 768px) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media (prefers-contrast: high) {"
+      ],
+      "hardcodedWidths": [
+        "width: 1024px",
+        "width: 768px",
+        "min-width: 640px",
+        "min-width: 1024px"
+      ],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [
+        "width: 3px",
+        "width: 3px",
+        "width: 3px",
+        "width: 2px"
+      ],
+      "issues": [
+        "4 anchos fijos detectados",
+        "4 elementos con tamaños < 24px (touch targets)"
+      ]
+    },
+    {
+      "path": "src/styles/components/sorting-modal.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (min-width: 401px) {",
+        "@media (min-width: 640px) {",
+        "@media (max-width: 400px) {",
+        "@media (min-width: 401px) {",
+        "@media (prefers-reduced-motion: reduce) {"
+      ],
+      "hardcodedWidths": [
+        "min-width: 401px",
+        "min-width: 640px",
+        "min-width: 401px"
+      ],
+      "fixedPositions": [
+        "position: fixed detected"
+      ],
+      "overflowIssues": [],
+      "touchTargets": [
+        "width: 4px",
+        "width: 1px"
+      ],
+      "issues": [
+        "3 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components/toast-card.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (min-width: 640px) {",
+        "@media (min-width: 1024px) {",
+        "@media (max-width: 639px) and (orientation: landscape) {",
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media (prefers-contrast: high) {"
+      ],
+      "hardcodedWidths": [
+        "width: 1024px",
+        "min-width: 44px",
+        "min-width: 36px",
+        "min-width: 640px",
+        "min-width: 1024px"
+      ],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [
+        "width: 16px",
+        "height: 16px",
+        "width: 16px",
+        "height: 16px",
+        "font-size: 14px",
+        "font-size: 12px",
+        "font-size: 12px",
+        "font-size: 13px",
+        "font-size: 11px",
+        "font-size: 15px",
+        "font-size: 13px",
+        "width: 2px",
+        "width: 6px",
+        "width: 6px",
+        "width: 6px",
+        "width: 6px"
+      ],
+      "issues": [
+        "5 anchos fijos detectados",
+        "16 elementos con tamaños < 24px (touch targets)"
+      ]
+    },
+    {
+      "path": "src/styles/components/toast.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (max-width: 640px) {",
+        "@media (prefers-contrast: high) {",
+        "@media (prefers-reduced-motion: reduce) {"
+      ],
+      "hardcodedWidths": [
+        "min-width: 320px"
+      ],
+      "fixedPositions": [
+        "position: fixed detected"
+      ],
+      "overflowIssues": [],
+      "touchTargets": [
+        "width: 2px"
+      ],
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/components.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (prefers-reduced-motion: reduce) {",
+        "@media (prefers-contrast: high) {"
+      ],
+      "hardcodedWidths": [],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [
+        "width: 1px",
+        "height: 1px",
+        "width: 2px"
+      ],
+      "issues": []
+    },
+    {
+      "path": "src/styles/design-system/typography.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (max-width: 640px) {",
+        "@media (min-width: 641px) and (max-width: 1024px) {",
+        "@media (prefers-reduced-motion: reduce) {"
+      ],
+      "hardcodedWidths": [
+        "width: 1024px",
+        "min-width: 641px"
+      ],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": [
+        "2 anchos fijos detectados"
+      ]
+    },
+    {
+      "path": "src/styles/layout.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (max-width: 400px) {"
+      ],
+      "hardcodedWidths": [],
+      "fixedPositions": [
+        "position: fixed detected"
+      ],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": []
+    },
+    {
+      "path": "src/styles/safari-mobile-fixes.css",
+      "type": "style",
+      "hasMediaQueries": true,
+      "mediaQueries": [
+        "@media (max-width: 400px) {",
+        "@media (max-width: 350px) {",
+        "@media (min-width: 401px) and (max-width: 500px) {"
+      ],
+      "hardcodedWidths": [
+        "min-width: 120px",
+        "min-width: 140px",
+        "min-width: 80px",
+        "min-width: 401px"
+      ],
+      "fixedPositions": [],
+      "overflowIssues": [],
+      "touchTargets": [],
+      "issues": [
+        "4 anchos fijos detectados"
+      ]
+    }
+  ],
+  "issues": [
+    {
+      "file": "src/styles/components/compact-about.css",
+      "issues": [
+        "4 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/components/compact-advanced-settings.css",
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/components/compact-learning-path.css",
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/components/compact-profile.css",
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/components/compact-progress-dashboard.css",
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/components/completion-component.css",
+      "issues": [
+        "7 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/components/content-renderer.css",
+      "issues": [
+        "Sin media queries para responsive"
+      ]
+    },
+    {
+      "file": "src/styles/components/download-manager.css",
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/components/error-fallback.css",
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/components/flashcard-component.css",
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/components/game-controls.css",
+      "issues": [
+        "6 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/components/header.css",
+      "issues": [
+        "16 anchos fijos detectados",
+        "19 elementos con tamaños < 24px (touch targets)"
+      ]
+    },
+    {
+      "file": "src/styles/components/learning-progress-header.css",
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/components/main-menu.css",
+      "issues": [
+        "26 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/components/matching-cards.css",
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/components/matching-component-override.css",
+      "issues": [
+        "Sin media queries para responsive"
+      ]
+    },
+    {
+      "file": "src/styles/components/matching-component.css",
+      "issues": [
+        "4 anchos fijos detectados",
+        "4 elementos con tamaños < 24px (touch targets)"
+      ]
+    },
+    {
+      "file": "src/styles/components/matching-modal.css",
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/components/module-card.css",
+      "issues": [
+        "6 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/components/progression-dashboard-dark-theme.css",
+      "issues": [
+        "Sin media queries para responsive"
+      ]
+    },
+    {
+      "file": "src/styles/components/progression-dashboard.css",
+      "issues": [
+        "7 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/components/quiz-component.css",
+      "issues": [
+        "5 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/components/reading-component.css",
+      "issues": [
+        "10 anchos fijos detectados",
+        "12 elementos con tamaños < 24px (touch targets)"
+      ]
+    },
+    {
+      "file": "src/styles/components/score-display.css",
+      "issues": [
+        "29 anchos fijos detectados",
+        "20 elementos con tamaños < 24px (touch targets)"
+      ]
+    },
+    {
+      "file": "src/styles/components/search-bar.css",
+      "issues": [
+        "6 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/components/sorting-component.css",
+      "issues": [
+        "4 anchos fijos detectados",
+        "4 elementos con tamaños < 24px (touch targets)"
+      ]
+    },
+    {
+      "file": "src/styles/components/sorting-modal.css",
+      "issues": [
+        "3 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/components/toast-card.css",
+      "issues": [
+        "5 anchos fijos detectados",
+        "16 elementos con tamaños < 24px (touch targets)"
+      ]
+    },
+    {
+      "file": "src/styles/components/toast.css",
+      "issues": [
+        "1 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/design-system/typography.css",
+      "issues": [
+        "2 anchos fijos detectados"
+      ]
+    },
+    {
+      "file": "src/styles/safari-mobile-fixes.css",
+      "issues": [
+        "4 anchos fijos detectados"
+      ]
+    }
+  ],
+  "summary": {
+    "totalComponents": 29,
+    "totalStyles": 37,
+    "componentsWithMediaQueries": 0,
+    "stylesWithMediaQueries": 34,
+    "missingViewportMeta": false,
+    "hardcodedWidths": [
+      {
+        "file": "src/styles/components/score-display.css",
+        "count": 29
+      },
+      {
+        "file": "src/styles/components/main-menu.css",
+        "count": 26
+      },
+      {
+        "file": "src/styles/components/header.css",
+        "count": 16
+      },
+      {
+        "file": "src/styles/components/reading-component.css",
+        "count": 10
+      },
+      {
+        "file": "src/styles/components/completion-component.css",
+        "count": 7
+      },
+      {
+        "file": "src/styles/components/progression-dashboard.css",
+        "count": 7
+      },
+      {
+        "file": "src/styles/components/game-controls.css",
+        "count": 6
+      },
+      {
+        "file": "src/styles/components/module-card.css",
+        "count": 6
+      },
+      {
+        "file": "src/styles/components/search-bar.css",
+        "count": 6
+      },
+      {
+        "file": "src/styles/components/quiz-component.css",
+        "count": 5
+      },
+      {
+        "file": "src/styles/components/toast-card.css",
+        "count": 5
+      },
+      {
+        "file": "src/styles/components/compact-about.css",
+        "count": 4
+      },
+      {
+        "file": "src/styles/components/matching-component.css",
+        "count": 4
+      },
+      {
+        "file": "src/styles/components/sorting-component.css",
+        "count": 4
+      },
+      {
+        "file": "src/styles/safari-mobile-fixes.css",
+        "count": 4
+      },
+      {
+        "file": "src/styles/components/sorting-modal.css",
+        "count": 3
+      },
+      {
+        "file": "src/styles/design-system/typography.css",
+        "count": 2
+      },
+      {
+        "file": "src/styles/components/compact-advanced-settings.css",
+        "count": 1
+      },
+      {
+        "file": "src/styles/components/compact-learning-path.css",
+        "count": 1
+      },
+      {
+        "file": "src/styles/components/compact-profile.css",
+        "count": 1
+      },
+      {
+        "file": "src/styles/components/compact-progress-dashboard.css",
+        "count": 1
+      },
+      {
+        "file": "src/styles/components/download-manager.css",
+        "count": 1
+      },
+      {
+        "file": "src/styles/components/error-fallback.css",
+        "count": 1
+      },
+      {
+        "file": "src/styles/components/flashcard-component.css",
+        "count": 1
+      },
+      {
+        "file": "src/styles/components/learning-progress-header.css",
+        "count": 1
+      },
+      {
+        "file": "src/styles/components/matching-cards.css",
+        "count": 1
+      },
+      {
+        "file": "src/styles/components/matching-modal.css",
+        "count": 1
+      },
+      {
+        "file": "src/styles/components/toast.css",
+        "count": 1
+      }
+    ],
+    "missingMobileBreakpoints": [
+      "src/styles/components/content-renderer.css",
+      "src/styles/components/matching-component-override.css",
+      "src/styles/components/progression-dashboard-dark-theme.css"
+    ]
+  }
+}
