@@ -97,7 +97,7 @@ const AppContent: React.FC = () => {
 
         // Check current state
         const { currentModule } = useAppStore.getState();
-        
+
         // If the module is already correctly set, do nothing
         if (currentModule && currentModule.id === moduleId) {
           return;
