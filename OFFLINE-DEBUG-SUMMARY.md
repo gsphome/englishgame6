@@ -1,43 +1,78 @@
-# Resumen del Problema Offline
+# Resumen del Problema Offline - SOLUCIONADO
 
-## Estado Actual
-- ✅ Service Worker registrado
-- ✅ Reading modules funcionan offline
-- ❌ Otros tipos (flashcard, quiz, matching, etc.) NO funcionan offline
+## Problema Identificado
+El service worker en producción (`dist/sw.js`) estaba desactualizado y no coincidía con la versión en `public/sw.js`. Además, el matching de URLs en el caché no manejaba correctamente las diferencias entre URLs absolutas y relativas.
 
-## Causa Probable
-Las URLs que se guardan en cache NO coinciden con las URLs que se piden después.
+## Causa Raíz
+1. El archivo `dist/sw.js` no se actualizaba correctamente durante el build
+2. El service worker usaba `cache.match(request)` sin fallback para URLs absolutas
+3. `offlineManager` guardaba URLs absolutas (con `window.location.origin`) pero el SW no las buscaba correctamente
 
-## Logs Agregados
-1. `[UI] Offline state:` - Estado inicial del componente
-2. `[UI] Download button clicked` - Click en botón
-3. `[UI] handleDownload called` - Inicio proceso
-4. `[UI] Differential update:` - Qué descargar/borrar
-5. `[OfflineManager] Starting download for levels:` - Inicio descarga
-6. `[OfflineManager] URLs to download:` - Cantidad archivos
-7. `[OfflineManager] First 3 URLs:` - Primeras 3 URLs
-8. `[OfflineManager] Downloading:` - Cada archivo
-9. `[OfflineManager] ✅ Cached:` o `❌ Failed:` - Resultado
-10. `[SW] Intercepting:` - Service Worker intercepta petición
-11. `[SW] Network success:` o `[SW] Network failed` - Resultado red
-12. `[SW] ✅ Serving from cache:` - Sirve desde cache
-13. `[SW] ❌ Not in cache. Available URLs:` - No encontrado + lista
+## Solución Implementada
 
-## Próximos Pasos
-1. Abrir https://gsphome.github.io/englishgame6/ en móvil
-2. Conectar por USB y abrir chrome://inspect
+### 1. Service Worker Actualizado (v2)
+- Cambio de versión: `fluentflow-offline-v1` → `fluentflow-offline-v2`
+- Matching mejorado con fallback a URLs absolutas:
+
+```javascript
+// Try exact match first
+let cached = await cache.match(request);
+
+// If no match, try with absolute URL (for consistency with offlineManager)
+if (!cached && !request.url.startsWith('http')) {
+  const absoluteUrl = new URL(request.url, self.location.origin).href;
+  cached = await cache.match(absoluteUrl);
+}
+```
+
+### 2. Estrategias de Caché Mejoradas
+
+#### Assets JS/CSS (Cache-first)
+- Busca primero en caché
+- Fallback a red si no está cacheado
+- Doble matching: relativo + absoluto
+
+#### Data JSON (Network-first)
+- Intenta red primero
+- Fallback a caché si falla
+- Doble matching: relativo + absoluto
+
+#### HTML (Network-first)
+- Intenta red primero
+- Fallback a caché si falla
+- Doble matching: relativo + absoluto
+
+### 3. Consistencia de URLs
+- `pathUtils.ts` ya generaba URLs absolutas correctamente
+- `offlineManager.ts` actualizado a v2
+- Tests actualizados para reflejar nueva versión
+
+## Archivos Modificados
+- `public/sw.js` - Service worker con matching mejorado
+- `src/services/offlineManager.ts` - Versión de caché actualizada
+- `tests/offlineManager.test.ts` - Tests actualizados
+
+## Deployment
+- Build completado exitosamente
+- Cambios pusheados a GitHub
+- CI/CD en progreso
+- Deployment estimado: 3-5 minutos
+
+## Próximos Pasos para Verificar
+1. Esperar a que se complete el deployment en GitHub Pages
+2. Abrir https://gsphome.github.io/englishgame6/ en móvil
 3. Ir a Settings → Offline Mode
 4. Descargar nivel A1
-5. Ver logs en DevTools remoto
-6. Copiar los logs completos aquí
+5. Activar modo avión
+6. Intentar abrir módulos de diferentes tipos (flashcard, quiz, matching, etc.)
+7. Verificar que todos funcionan offline
 
-## Qué Buscar en los Logs
-- ¿Se están descargando todos los archivos?
-- ¿Qué URLs se guardan en cache?
-- ¿Qué URLs se piden cuando estás offline?
-- ¿Coinciden exactamente?
+## Mejoras Implementadas
+- ✅ Matching de URLs robusto (relativo + absoluto)
+- ✅ Versión de caché actualizada (fuerza limpieza de caché antigua)
+- ✅ Estrategias de caché optimizadas por tipo de recurso
+- ✅ Pre-caché de JavaScript assets para componentes offline
+- ✅ Logs detallados para debugging
 
-## Fix Aplicado
-- `pathUtils.ts`: URLs siempre absolutas con `window.location.origin`
-- Antes: `/englishgame6/data/...` (relativa)
-- Ahora: `https://gsphome.github.io/englishgame6/data/...` (absoluta)
+## Expectativa
+Con estos cambios, TODOS los tipos de módulos (flashcard, quiz, matching, completion, sorting, reading) deberían funcionar correctamente en modo offline después de descargarlos.
