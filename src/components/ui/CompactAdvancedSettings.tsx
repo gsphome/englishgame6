@@ -174,19 +174,14 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
     setDownloadProgress(null);
 
     try {
-      // Differential update: compare selected vs already downloaded
-      const levelsToDownload = selectedLevels.filter(l => !downloadedLevels.includes(l));
-      const levelsToDelete = downloadedLevels.filter(l => !selectedLevels.includes(l));
+      // Clean approach: delete all cache and re-download only selected levels with current categories
+      // This ensures consistency between selected levels/categories and cached content
+      await deleteAllCache();
 
-      // Delete deselected levels
-      for (const level of levelsToDelete) {
-        await deleteLevelCache(level);
-      }
-
-      // Download new levels (only if there are any)
-      if (levelsToDownload.length > 0) {
+      // Download selected levels with current category filters
+      if (selectedLevels.length > 0) {
         const result = await downloadLevels(
-          levelsToDownload,
+          selectedLevels,
           progress => {
             setDownloadProgress(progress);
           },
