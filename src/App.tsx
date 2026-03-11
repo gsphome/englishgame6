@@ -26,9 +26,12 @@ const queryClient = new QueryClient({
       },
       refetchOnWindowFocus: false,
       refetchOnReconnect: true,
+      // Allow queries to run even when offline - let service worker handle it
+      networkMode: 'always',
     },
     mutations: {
       retry: 1,
+      networkMode: 'always',
     },
   },
 });
