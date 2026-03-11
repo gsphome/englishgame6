@@ -210,8 +210,6 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
       setIsDownloading(false);
     }
   }, [selectedLevels, isDownloading, downloadedLevels, setDownloadedLevels, setLastDownloadDate]);
-    }
-  }, [selectedLevels, isDownloading, downloadedLevels, setDownloadedLevels, setLastDownloadDate]);
 
   const handleRetryFailed = useCallback(async () => {
     if (failedUrls.length === 0 || isDownloading) return;
