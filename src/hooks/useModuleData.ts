@@ -12,7 +12,10 @@ export const useModuleData = (moduleId: string) => {
     queryFn: async () => {
       console.log('[useModuleData] queryFn executing for:', moduleId);
       const response = await fetchModuleData(moduleId);
-      console.log('[useModuleData] Response:', { success: response.success, error: response.error });
+      console.log('[useModuleData] Response:', {
+        success: response.success,
+        error: response.error,
+      });
       if (!response.success) {
         throw new Error(response.error || 'Failed to fetch module data');
       }

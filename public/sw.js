@@ -41,8 +41,18 @@ self.addEventListener('fetch', (event) => {
     console.log('[SW] Fetch event:', url.pathname);
   }
 
-  // Solo interceptar peticiones JSON de data/
-  if (!url.pathname.includes('/data/') && !url.pathname.includes('learningModules.json')) {
+  // Interceptar:
+  // 1. JSON de data/
+  // 2. JavaScript chunks (.js)
+  // 3. CSS chunks (.css)
+  const shouldIntercept =
+    url.pathname.includes('/data/') ||
+    url.pathname.includes('learningModules.json') ||
+    url.pathname.includes('/assets/') ||
+    url.pathname.endsWith('.js') ||
+    url.pathname.endsWith('.css');
+
+  if (!shouldIntercept) {
     return;
   }
 
@@ -52,7 +62,20 @@ self.addEventListener('fetch', (event) => {
     caches.open(CACHE_NAME).then((cache) => {
       return fetch(request)
         .then((response) => {
-          // Si hay red, devolver respuesta
+          // Si hay red, cachear la respuesta para uso futuro
+          if (response.ok) {
+            // Solo cachear assets estáticos (JS, CSS, JSON)
+            if (
+              url.pathname.includes('/assets/') ||
+              url.pathname.includes('/data/') ||
+              url.pathname.endsWith('.js') ||
+              url.pathname.endsWith('.css') ||
+              url.pathname.endsWith('.json')
+            ) {
+              cache.put(request, response.clone());
+              console.log('[SW] Cached for future:', url.pathname);
+            }
+          }
           console.log('[SW] Network success:', url.pathname);
           return response;
         })
