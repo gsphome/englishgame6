@@ -169,12 +169,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
   }, []);
 
   const handleDownload = useCallback(async () => {
-    if (selectedLevels.length === 0) {
-      return;
-    }
-
     if (isDownloading) {
-      console.warn('[UI] Already downloading, aborting');
       return;
     }
 
@@ -213,6 +208,8 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
       logError('Download error', { error }, 'CompactAdvancedSettings');
     } finally {
       setIsDownloading(false);
+    }
+  }, [selectedLevels, isDownloading, downloadedLevels, setDownloadedLevels, setLastDownloadDate]);
     }
   }, [selectedLevels, isDownloading, downloadedLevels, setDownloadedLevels, setLastDownloadDate]);
 
