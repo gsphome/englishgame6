@@ -61,12 +61,18 @@ export const DownloadManagerModal: React.FC<DownloadManagerModalProps> = ({ isOp
     onClose();
   }, [setDownloadedLevels, setOfflineEnabled, setLastDownloadDate, onClose]);
 
+  const handleOverlayClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  }, [onClose]);
+
   if (!isOpen) return null;
 
   const hasDownloads = levelInfo.length > 0;
 
   return (
-    <div className="download-manager">
+    <div className="download-manager" onClick={handleOverlayClick}>
       <div className="download-manager__container">
         <div className="download-manager__header">
           <h2 className="download-manager__title">{t('offline.manageDownloads')}</h2>
