@@ -207,7 +207,6 @@ describe('offlineManager', () => {
             headers: { 'Content-Type': 'application/json' },
           });
         }
-        callCount++;
         // Fail the first data file always (all 3 attempts)
         if (url.includes('a1-flashcard-basic')) {
           throw new Error('Network error');
