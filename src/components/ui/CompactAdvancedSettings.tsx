@@ -185,9 +185,13 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
 
       // Download new levels (only if there are any)
       if (levelsToDownload.length > 0) {
-        const result = await downloadLevels(levelsToDownload, progress => {
-          setDownloadProgress(progress);
-        }, categories);
+        const result = await downloadLevels(
+          levelsToDownload,
+          progress => {
+            setDownloadProgress(progress);
+          },
+          categories
+        );
 
         if (result.failed.length > 0) {
           setFailedUrls(result.failed);
@@ -212,9 +216,13 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
     setIsDownloading(true);
 
     try {
-      const result = await downloadLevels(selectedLevels, progress => {
-        setDownloadProgress(progress);
-      }, categories);
+      const result = await downloadLevels(
+        selectedLevels,
+        progress => {
+          setDownloadProgress(progress);
+        },
+        categories
+      );
 
       setFailedUrls(result.failed);
 
@@ -230,7 +238,14 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
     } finally {
       setIsDownloading(false);
     }
-  }, [failedUrls, isDownloading, selectedLevels, categories, setDownloadedLevels, setLastDownloadDate]);
+  }, [
+    failedUrls,
+    isDownloading,
+    selectedLevels,
+    categories,
+    setDownloadedLevels,
+    setLastDownloadDate,
+  ]);
 
   const handleSave = () => {
     if (!hasChanges) return;

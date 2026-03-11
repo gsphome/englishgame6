@@ -104,12 +104,12 @@ async function getUrlsForLevels(
     const modulesForLevel = allModules.filter(m => {
       const moduleLevels = Array.isArray(m.level) ? m.level : [m.level];
       const hasLevel = moduleLevels.includes(targetLevel as any);
-      
+
       // If no categories selected, include all modules for this level
       if (categories.length === 0) {
         return hasLevel;
       }
-      
+
       // If categories selected, also filter by category
       return hasLevel && m.category && categories.includes(m.category);
     });
