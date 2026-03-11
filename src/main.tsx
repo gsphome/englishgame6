@@ -5,6 +5,21 @@ import './index.css';
 import { initializeTheme } from './utils/themeInitializer';
 import './utils/safariDetection';
 
+// Registrar Service Worker para modo offline
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    const swPath = import.meta.env.BASE_URL + 'sw.js';
+    navigator.serviceWorker
+      .register(swPath)
+      .then((registration) => {
+        console.log('SW registered:', registration.scope);
+      })
+      .catch((error) => {
+        console.warn('SW registration failed:', error);
+      });
+  });
+}
+
 try {
   // Debug: Check if React is properly loaded
   if (!React || !React.createContext) {
