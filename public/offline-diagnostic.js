@@ -18,7 +18,7 @@ async function diagnosticOfflineCache() {
   console.log('📦 Caches disponibles:', cacheNames);
   
   // 3. Verificar cache de datos
-  const dataCache = await caches.open('fluentflow-offline-v2');
+  const dataCache = await caches.open('fluentflow-offline-v3');
   const dataCacheKeys = await dataCache.keys();
   console.log(`\n📊 Cache de datos (${dataCacheKeys.length} archivos):`);
   
@@ -35,14 +35,16 @@ async function diagnosticOfflineCache() {
   
   console.log('Por nivel:', byLevel);
   
-  // 4. Mostrar primeras 10 URLs
+  // 4. Mostrar primeras 10 URLs con formato
   console.log('\n📝 Primeras 10 URLs en caché:');
   dataCacheKeys.slice(0, 10).forEach((req, i) => {
-    console.log(`  ${i + 1}. ${req.url}`);
+    const url = new URL(req.url);
+    console.log(`  ${i + 1}. ${url.pathname}`);
+    console.log(`      Full: ${req.url}`);
   });
   
   // 5. Verificar cache de assets
-  const assetsCache = await caches.open('fluentflow-assets-v2');
+  const assetsCache = await caches.open('fluentflow-assets-v3');
   const assetsCacheKeys = await assetsCache.keys();
   console.log(`\n🎨 Cache de assets (${assetsCacheKeys.length} archivos):`);
   assetsCacheKeys.slice(0, 5).forEach((req, i) => {

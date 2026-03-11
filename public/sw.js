@@ -115,42 +115,26 @@ self.addEventListener('fetch', (event) => {
   if (isDataJson || isModulesJson) {
     event.respondWith(
       caches.open(CACHE_NAME).then(async (cache) => {
+        // Normalize request URL to absolute format (matching offlineManager storage format)
+        const absoluteUrl = request.url.startsWith('http') 
+          ? request.url 
+          : new URL(request.url, self.location.origin).href;
+        
         try {
           console.log('[SW] Fetching data:', url.pathname);
           const response = await fetch(request);
           
           if (response.ok) {
-            cache.put(request, response.clone());
+            // Store with absolute URL for consistency
+            cache.put(absoluteUrl, response.clone());
             console.log('[SW] ✅ Data cached:', url.pathname);
           }
           return response;
         } catch (error) {
           console.log('[SW] Network failed, checking cache:', url.pathname);
           
-          // Try multiple URL formats for matching
-          let cached = null;
-          
-          // 1. Try exact match with original request
-          cached = await cache.match(request);
-          
-          // 2. Try with absolute URL (add origin if missing)
-          if (!cached) {
-            const absoluteUrl = url.origin + url.pathname;
-            cached = await cache.match(absoluteUrl);
-            if (cached) console.log('[SW] ✅ Found with absolute URL');
-          }
-          
-          // 3. Try with just pathname (remove origin if present)
-          if (!cached) {
-            cached = await cache.match(url.pathname);
-            if (cached) console.log('[SW] ✅ Found with pathname only');
-          }
-          
-          // 4. Try ignoring search params
-          if (!cached) {
-            cached = await cache.match(request, { ignoreSearch: true });
-            if (cached) console.log('[SW] ✅ Found ignoring search params');
-          }
+          // Try matching with absolute URL (primary strategy)
+          let cached = await cache.match(absoluteUrl);
           
           if (cached) {
             console.log('[SW] ✅ Data from cache:', url.pathname);
@@ -158,6 +142,7 @@ self.addEventListener('fetch', (event) => {
           }
 
           console.error('[SW] ❌ Data not available:', url.pathname);
+          console.error('[SW] Tried URL:', absoluteUrl);
           return new Response(
             JSON.stringify({ error: 'MODULE_NOT_AVAILABLE_OFFLINE' }),
             {
