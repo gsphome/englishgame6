@@ -162,7 +162,7 @@ export const MainMenu: React.FC = () => {
 
     // Save current menu context before navigating to learning mode
     setPreviousMenuContext(viewMode);
-    
+
     // Update URL hash FIRST - let App.tsx useEffect handle Zustand updates
     window.location.hash = `#/learn/${module.id}`;
   };

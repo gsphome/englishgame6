@@ -112,7 +112,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
 
       // Save that user came from progression dashboard
       setPreviousMenuContext('progression');
-      
+
       // Update URL hash FIRST - let App.tsx useEffect handle Zustand updates
       window.location.hash = `#/learn/${nextRecommended.id}`;
     }
@@ -145,7 +145,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
 
     // Save that user came from progression dashboard
     setPreviousMenuContext('progression');
-    
+
     // Update URL hash FIRST - let App.tsx useEffect handle Zustand updates
     window.location.hash = `#/learn/${module.id}`;
   };
