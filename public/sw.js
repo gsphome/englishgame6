@@ -4,7 +4,7 @@
  */
 
 const CACHE_NAME = 'fluentflow-offline-v4';
-const ASSETS_CACHE = 'fluentflow-assets-v4';
+const ASSETS_CACHE = 'fluentflow-assets-v5';
 
 // Instalación: pre-cachear assets críticos
 self.addEventListener('install', (event) => {
