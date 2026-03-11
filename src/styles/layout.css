@@ -8,29 +8,29 @@
 
 /* Reading mode: lock viewport height so footer stays visible */
 .layout-container[data-view='reading'] {
-  height: auto;
-  min-height: 100vh;
-  overflow: visible;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
 }
 
 .layout-container[data-view='reading'] main {
   flex: 1;
-  overflow: visible;
+  overflow: hidden;
   min-height: 0;
   padding: 0.5rem 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Mobile: Adjust reading mode height to account for hidden header */
+/* Mobile: Adjust reading mode for hidden header */
 @media (max-width: 767px) {
   .layout-container[data-view='reading'] {
-    min-height: 100vh;
-    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
   }
   
   .layout-container[data-view='reading'] main {
     padding: 0.5rem 0.5rem 1rem;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
   }
 }
 

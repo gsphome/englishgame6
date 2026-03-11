@@ -15,7 +15,7 @@
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
-  height: auto;
+  height: 100%;
   background: linear-gradient(
     135deg,
     var(--theme-bg-elevated, #ffffff) 0%,
@@ -28,13 +28,34 @@
 }
 
 /* === CONTENT AREA - Mobile First === */
-/* Natural flow — page scrolls globally, no internal scroll */
+/* Fixed height with internal scroll to prevent jumps */
 .reading-component__content {
   flex: 1;
   min-height: 0;
-  overflow-y: visible;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 0.75rem;
   margin-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(59, 130, 246, 0.3) transparent;
+}
+
+.reading-component__content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.reading-component__content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.reading-component__content::-webkit-scrollbar-thumb {
+  background-color: rgba(59, 130, 246, 0.3);
+  border-radius: 3px;
+}
+
+.reading-component__content::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(59, 130, 246, 0.5);
 }
 
 /* === META INFO - Estimated reading time badge === */
@@ -1158,20 +1179,17 @@
 
 /* === MOBILE SMALL (< 768px) - Explicit mobile adjustments === */
 @media (max-width: 767px) {
-  /* Mobile: Container adjustments - remove fixed height */
+  /* Mobile: Container maintains fixed height */
   .reading-component__container {
     margin: 0.25rem;
     padding: 0.375rem;
-    height: auto;
-    min-height: auto;
-    max-height: none;
+    height: 100%;
   }
 
-  /* Mobile: Compact padding */
+  /* Mobile: Compact padding with scroll */
   .reading-component__content {
     padding: 0.75rem;
-    overflow-y: visible;
-    max-height: none;
+    overflow-y: auto;
   }
 
   /* Mobile: Single column vocabulary */
