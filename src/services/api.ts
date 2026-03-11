@@ -121,16 +121,8 @@ class ApiService {
           : moduleInfo.dataPath;
         const dataUrl = validateUrl(getAssetPath(cleanDataPath));
 
-        let data: any;
-
         // Let service worker handle offline/online - it has network-first with cache fallback
-        try {
-          data = await secureJsonFetch(dataUrl);
-        } catch (fetchError) {
-          // If fetch fails, service worker should have already tried cache
-          // Re-throw the error to be handled by outer catch
-          throw fetchError;
-        }
+        const data = await secureJsonFetch(dataUrl);
 
         // Handle different data formats:
         // - Arrays (flashcard, quiz, etc.): use as-is
