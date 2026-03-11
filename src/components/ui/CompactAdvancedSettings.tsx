@@ -4,6 +4,7 @@ import { useSettingsStore } from '../../stores/settingsStore';
 import { useTranslation } from '../../utils/i18n';
 import { validateGameSettings } from '../../utils/inputValidation';
 import { useEscapeKey } from '../../hooks/useEscapeKey';
+import { logError } from '../../utils/logger';
 import {
   downloadLevels,
   deleteAllCache,
