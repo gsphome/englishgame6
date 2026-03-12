@@ -6,23 +6,48 @@
 const CACHE_NAME = 'fluentflow-offline-v5';
 const ASSETS_CACHE = 'fluentflow-assets-v6';
 
+/**
+ * Normalize URL for consistent cache matching
+ * Removes query params, hash, and trailing slashes
+ */
+function normalizeUrl(url) {
+  try {
+    const parsed = new URL(url);
+    parsed.search = '';
+    parsed.hash = '';
+    parsed.pathname = parsed.pathname.replace(/\/$/, '');
+    return parsed.href;
+  } catch (error) {
+    console.warn('[SW] Failed to normalize URL:', url);
+    return url;
+  }
+}
+
 // Instalación: pre-cachear assets críticos
 self.addEventListener('install', (event) => {
   console.log('[SW] Installing...');
   
   event.waitUntil(
-    caches.open(ASSETS_CACHE).then((cache) => {
-      console.log('[SW] Pre-caching critical assets...');
-      // Pre-cachear el HTML principal y learningModules.json
-      // Los chunks de JS/CSS se cachearán dinámicamente cuando se carguen
-      return cache.addAll([
-        './',
-        './index.html',
-        './data/learningModules.json'
-      ]).catch(err => {
-        console.warn('[SW] Pre-cache failed (expected in dev):', err.message);
-      });
-    }).then(() => {
+    Promise.all([
+      // Pre-cache learningModules.json en CACHE_NAME (crítico para offline)
+      caches.open(CACHE_NAME).then((cache) => {
+        console.log('[SW] Pre-caching learningModules.json...');
+        const modulesUrl = normalizeUrl('./data/learningModules.json');
+        return cache.add(modulesUrl).catch(err => {
+          console.warn('[SW] Failed to pre-cache modules (expected in dev):', err.message);
+        });
+      }),
+      // Pre-cache HTML en ASSETS_CACHE
+      caches.open(ASSETS_CACHE).then((cache) => {
+        console.log('[SW] Pre-caching HTML...');
+        return cache.addAll([
+          './',
+          './index.html'
+        ]).catch(err => {
+          console.warn('[SW] Pre-cache HTML failed (expected in dev):', err.message);
+        });
+      })
+    ]).then(() => {
       console.log('[SW] Pre-cache complete');
       return self.skipWaiting();
     })
@@ -76,14 +101,10 @@ self.addEventListener('fetch', (event) => {
   if (isJsAsset || isCssAsset) {
     event.respondWith(
       caches.open(ASSETS_CACHE).then(async (cache) => {
-        // Try exact match first
-        let cached = await cache.match(request);
+        const normalizedUrl = normalizeUrl(request.url);
         
-        // If no match, try with absolute URL (for consistency with offlineManager)
-        if (!cached && !request.url.startsWith('http')) {
-          const absoluteUrl = new URL(request.url, self.location.origin).href;
-          cached = await cache.match(absoluteUrl);
-        }
+        // Try with normalized URL
+        let cached = await cache.match(normalizedUrl);
         
         if (cached) {
           console.log('[SW] ✅ Asset from cache:', url.pathname);
@@ -94,13 +115,12 @@ self.addEventListener('fetch', (event) => {
         try {
           const response = await fetch(request);
           if (response.ok) {
-            cache.put(request, response.clone());
+            cache.put(normalizedUrl, response.clone());
             console.log('[SW] ✅ Asset cached:', url.pathname);
           }
           return response;
         } catch (error) {
           console.error('[SW] ❌ Asset fetch failed:', url.pathname, error.message);
-          // Si falla y no hay cache, devolver error genérico
           return new Response('Asset not available offline', { 
             status: 503,
             statusText: 'Service Unavailable'
@@ -115,72 +135,31 @@ self.addEventListener('fetch', (event) => {
   if (isDataJson || isModulesJson) {
     event.respondWith(
       caches.open(CACHE_NAME).then(async (cache) => {
-        // Normalize request URL to absolute format (matching offlineManager storage format)
-        const absoluteUrl = request.url.startsWith('http') 
-          ? request.url 
-          : new URL(request.url, self.location.origin).href;
+        const normalizedUrl = normalizeUrl(request.url);
         
         try {
           console.log('[SW] Fetching data:', url.pathname);
           const response = await fetch(request);
           
           if (response.ok) {
-            // Store with BOTH absolute URL and request for maximum compatibility
-            await cache.put(absoluteUrl, response.clone());
-            await cache.put(request, response.clone());
+            // Store with normalized URL for consistent retrieval
+            await cache.put(normalizedUrl, response.clone());
             console.log('[SW] ✅ Data cached:', url.pathname);
           }
           return response;
         } catch (error) {
           console.log('[SW] Network failed, checking cache:', url.pathname);
           
-          // Try multiple matching strategies for maximum compatibility
-          let cached = await cache.match(absoluteUrl);
-          
-          if (!cached) {
-            // Try with original request
-            cached = await cache.match(request);
-          }
-          
-          if (!cached) {
-            // Try with ignoreSearch option (ignores query params)
-            cached = await cache.match(absoluteUrl, { ignoreSearch: true });
-          }
-          
-          if (!cached) {
-            // Last resort: try matching just by pathname
-            const keys = await cache.keys();
-            console.log('[SW] 🔍 Searching in cache. Looking for:', url.pathname);
-            console.log('[SW] 🔍 Cache has', keys.length, 'entries');
-            
-            // Log first 10 cached URLs for debugging
-            if (keys.length > 0) {
-              console.log('[SW] 🔍 Sample cached URLs:');
-              keys.slice(0, 10).forEach(req => {
-                const cachedUrl = new URL(req.url);
-                console.log('[SW]    -', cachedUrl.pathname);
-              });
-            }
-            
-            for (const cachedRequest of keys) {
-              const cachedUrl = new URL(cachedRequest.url);
-              if (cachedUrl.pathname === url.pathname) {
-                cached = await cache.match(cachedRequest);
-                if (cached) {
-                  console.log('[SW] ✅ Matched by pathname:', url.pathname);
-                  break;
-                }
-              }
-            }
-          }
+          // Try with normalized URL (primary method)
+          let cached = await cache.match(normalizedUrl);
           
           if (cached) {
-            console.log('[SW] ✅ Data from cache:', url.pathname);
+            console.log('[SW] ✅ Serving from cache (normalized):', url.pathname);
             return cached;
           }
 
-          console.error('[SW] ❌ Data not available:', url.pathname);
-          console.error('[SW] Tried URL:', absoluteUrl);
+          console.error('[SW] ❌ Not in cache:', url.pathname);
+          console.error('[SW] Normalized URL:', normalizedUrl);
           return new Response(
             JSON.stringify({ error: 'MODULE_NOT_AVAILABLE_OFFLINE' }),
             {
@@ -199,21 +178,17 @@ self.addEventListener('fetch', (event) => {
   if (isHtml) {
     event.respondWith(
       caches.open(ASSETS_CACHE).then(async (cache) => {
+        const normalizedUrl = normalizeUrl(request.url);
+        
         try {
           const response = await fetch(request);
           if (response.ok) {
-            cache.put(request, response.clone());
+            cache.put(normalizedUrl, response.clone());
           }
           return response;
         } catch (error) {
-          // Try exact match first
-          let cached = await cache.match(request);
-          
-          // If no match, try with absolute URL
-          if (!cached && !request.url.startsWith('http')) {
-            const absoluteUrl = new URL(request.url, self.location.origin).href;
-            cached = await cache.match(absoluteUrl);
-          }
+          // Try with normalized URL
+          let cached = await cache.match(normalizedUrl);
           
           if (cached) {
             console.log('[SW] ✅ HTML from cache');

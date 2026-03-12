@@ -67,20 +67,45 @@ class ApiService {
 
   /**
    * Fetch all available learning modules
-   * Strategy: network-first with Cache API fallback for offline support
+   * Strategy: Memory → Cache API → Network (offline-first for reliability)
    */
   async fetchModules(): Promise<ApiResponse<LearningModule[]>> {
     const cacheKey = this.getCacheKey('modules');
+    
+    // 1. Try Memory Cache first (fastest)
     const cached = this.getFromCache<LearningModule[]>(cacheKey);
-
     if (cached) {
-      logDebug('Returning cached modules', { count: cached.length }, 'ApiService');
+      logDebug('Returning memory cached modules', { count: cached.length }, 'ApiService');
       return { data: cached, success: true };
     }
 
     const modulesUrl = getLearningModulesPath();
 
-    // Let service worker handle offline/online - it has network-first with cache fallback
+    // 2. Try Cache API directly (offline support without network)
+    try {
+      const cache = await caches.open('fluentflow-offline-v5');
+      const cacheResponse = await cache.match(modulesUrl);
+      
+      if (cacheResponse) {
+        const modules = await cacheResponse.json();
+        
+        // Enhance modules with default values
+        const enhancedModules = modules.map((module: LearningModule) => ({
+          ...module,
+          estimatedTime: module.estimatedTime ?? 5,
+          difficulty: module.difficulty ?? 3,
+          tags: module.tags ?? [module.category],
+        }));
+        
+        this.setCache(cacheKey, enhancedModules);
+        logDebug('Returning Cache API modules', { count: enhancedModules.length }, 'ApiService');
+        return { data: enhancedModules, success: true };
+      }
+    } catch (error) {
+      logDebug('Cache API lookup failed, trying network', { error }, 'ApiService');
+    }
+
+    // 3. Try network as last resort
     try {
       const validatedUrl = validateUrl(modulesUrl);
       const modules = await secureJsonFetch<LearningModule[]>(validatedUrl);
@@ -94,12 +119,12 @@ class ApiService {
       }));
 
       this.setCache(cacheKey, enhancedModules);
-      logDebug('Fetched modules successfully', { count: enhancedModules.length }, 'ApiService');
+      logDebug('Fetched modules from network', { count: enhancedModules.length }, 'ApiService');
 
       return { data: enhancedModules, success: true };
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      logError('Failed to fetch modules', { error: errorMessage }, 'ApiService');
+      logError('Failed to fetch modules from all sources', { error: errorMessage }, 'ApiService');
       return { data: [], success: false, error: errorMessage };
     }
   }

@@ -27,6 +27,27 @@ export interface LevelStorageInfo {
 }
 
 /**
+ * Normalize URL for consistent cache storage and retrieval
+ * Removes query params, trailing slashes, and ensures absolute format
+ */
+function normalizeUrl(url: string): string {
+  try {
+    const parsed = new URL(url, typeof window !== 'undefined' ? window.location.origin : 'https://gsphome.github.io');
+    // Remove query params for consistent matching
+    parsed.search = '';
+    // Remove hash
+    parsed.hash = '';
+    // Remove trailing slash from pathname
+    parsed.pathname = parsed.pathname.replace(/\/$/, '');
+    return parsed.href;
+  } catch (error) {
+    // If URL parsing fails, return original
+    console.warn('[OfflineManager] Failed to normalize URL:', url, error);
+    return url;
+  }
+}
+
+/**
  * Fetch with retries: 1 original attempt + 2 retries with backoff (1s, 2s)
  */
 async function fetchWithRetries(url: string, maxRetries = 2): Promise<Response> {
@@ -210,12 +231,12 @@ export async function downloadLevels(
   // Download sequentially
   for (const url of allUrls) {
     try {
-      const response = await fetchWithRetries(url);
-      // Store with BOTH absolute URL and as Request for maximum compatibility
-      await cache.put(url, response.clone());
-      // Also store with Request object for service worker compatibility
-      await cache.put(new Request(url), response);
+      const normalizedUrl = normalizeUrl(url);
+      const response = await fetchWithRetries(normalizedUrl);
+      // Store with normalized URL for consistent retrieval
+      await cache.put(normalizedUrl, response);
       completed++;
+      logDebug('Downloaded and cached', { url: normalizedUrl }, 'OfflineManager');
     } catch (error) {
       console.error('[OfflineManager] ❌ Failed:', url, error);
       failed.push(url);
@@ -331,21 +352,22 @@ export async function getTotalCacheSize(): Promise<number> {
 
 /**
  * Verify that cached content is still available for the given downloaded levels.
- * Returns which levels are valid and which are missing from the cache.
+ * Returns which levels are valid, missing, or partially cached.
  */
 export async function verifyCacheIntegrity(
   downloadedLevels: string[]
-): Promise<{ valid: boolean; missingLevels: string[] }> {
+): Promise<{ valid: boolean; missingLevels: string[]; partialLevels: string[] }> {
   let allModules: LearningModule[];
   try {
     allModules = await fetchModulesList();
   } catch {
     // If we can't even get the modules list, all levels are missing
-    return { valid: false, missingLevels: [...downloadedLevels] };
+    return { valid: false, missingLevels: [...downloadedLevels], partialLevels: [] };
   }
 
   const cache = await caches.open(CACHE_NAME);
   const missingLevels: string[] = [];
+  const partialLevels: string[] = [];
 
   for (const level of downloadedLevels) {
     const modulesForLevel = allModules.filter(m => {
@@ -355,26 +377,42 @@ export async function verifyCacheIntegrity(
 
     const urlsForLevel = modulesForLevel
       .filter(m => m.dataPath)
-      .map(m => resolveDataPath(m.dataPath!));
+      .map(m => normalizeUrl(resolveDataPath(m.dataPath!)));
 
-    // A level is considered missing if none of its files are in cache
-    let hasAnyFile = false;
+    if (urlsForLevel.length === 0) {
+      continue;
+    }
+
+    // Count how many files are actually cached
+    let cachedCount = 0;
     for (const url of urlsForLevel) {
       const response = await cache.match(url);
       if (response) {
-        hasAnyFile = true;
-        break;
+        cachedCount++;
       }
     }
 
-    if (!hasAnyFile && urlsForLevel.length > 0) {
+    const completeness = cachedCount / urlsForLevel.length;
+
+    if (completeness === 0) {
+      // No files cached at all
       missingLevels.push(level);
+    } else if (completeness < 0.9) {
+      // Less than 90% cached - considered partial
+      partialLevels.push(level);
+      logDebug(
+        `Level ${level} partially cached`,
+        { cached: cachedCount, total: urlsForLevel.length, completeness: `${(completeness * 100).toFixed(1)}%` },
+        'OfflineManager'
+      );
     }
+    // else: completeness >= 0.9 - level is OK
   }
 
   return {
-    valid: missingLevels.length === 0,
+    valid: missingLevels.length === 0 && partialLevels.length === 0,
     missingLevels,
+    partialLevels,
   };
 }
 

@@ -61,8 +61,8 @@ const AppContent: React.FC = () => {
     integrityChecked.current = true;
 
     verifyCacheIntegrity(downloadedLevels)
-      .then(({ missingLevels }) => {
-        if (missingLevels.length === 0) return;
+      .then(({ missingLevels, partialLevels }) => {
+        if (missingLevels.length === 0 && partialLevels.length === 0) return;
 
         if (missingLevels.length === downloadedLevels.length) {
           // All levels missing — disable offline mode entirely
@@ -70,14 +70,18 @@ const AppContent: React.FC = () => {
           setDownloadedLevels([]);
           setLastDownloadDate(null);
           toast.warning(t('offline.title'), t('offline.cacheIntegrityAllMissing'));
-        } else {
-          // Some levels missing — update state and notify
-          const remaining = downloadedLevels.filter(l => !missingLevels.includes(l));
+        } else if (missingLevels.length > 0 || partialLevels.length > 0) {
+          // Some levels missing or partial — update state and notify
+          const remaining = downloadedLevels.filter(
+            l => !missingLevels.includes(l) && !partialLevels.includes(l)
+          );
           setDownloadedLevels(remaining);
+
+          const problematicLevels = [...missingLevels, ...partialLevels];
           toast.info(
             t('offline.cacheIntegrityWarning'),
             t('offline.cacheIntegrityMissing', undefined, {
-              levels: missingLevels.map(l => l.toUpperCase()).join(', '),
+              levels: problematicLevels.map(l => l.toUpperCase()).join(', '),
             })
           );
         }
