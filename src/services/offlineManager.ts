@@ -316,9 +316,11 @@ export async function getLevelStorageInfo(): Promise<LevelStorageInfo[]> {
   const cache = await caches.open(CACHE_NAME);
 
   for (const level of levels) {
+    // Only count modules where this is the PRIMARY level (first in array)
+    // This prevents showing levels incorrectly due to cache corruption or multi-level modules
     const modulesForLevel = allModules.filter(m => {
       const moduleLevels = Array.isArray(m.level) ? m.level : [m.level];
-      return moduleLevels.includes(level as any);
+      return moduleLevels[0] === level;
     });
 
     const urlsForLevel = modulesForLevel
