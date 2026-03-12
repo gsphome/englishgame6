@@ -150,6 +150,18 @@ self.addEventListener('fetch', (event) => {
           if (!cached) {
             // Last resort: try matching just by pathname
             const keys = await cache.keys();
+            console.log('[SW] 🔍 Searching in cache. Looking for:', url.pathname);
+            console.log('[SW] 🔍 Cache has', keys.length, 'entries');
+            
+            // Log first 10 cached URLs for debugging
+            if (keys.length > 0) {
+              console.log('[SW] 🔍 Sample cached URLs:');
+              keys.slice(0, 10).forEach(req => {
+                const cachedUrl = new URL(req.url);
+                console.log('[SW]    -', cachedUrl.pathname);
+              });
+            }
+            
             for (const cachedRequest of keys) {
               const cachedUrl = new URL(cachedRequest.url);
               if (cachedUrl.pathname === url.pathname) {
