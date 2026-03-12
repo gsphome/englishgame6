@@ -71,7 +71,7 @@ class ApiService {
    */
   async fetchModules(): Promise<ApiResponse<LearningModule[]>> {
     const cacheKey = this.getCacheKey('modules');
-    
+
     // 1. Try Memory Cache first (fastest)
     const cached = this.getFromCache<LearningModule[]>(cacheKey);
     if (cached) {
@@ -85,10 +85,10 @@ class ApiService {
     try {
       const cache = await caches.open('fluentflow-offline-v5');
       const cacheResponse = await cache.match(modulesUrl);
-      
+
       if (cacheResponse) {
         const modules = await cacheResponse.json();
-        
+
         // Enhance modules with default values
         const enhancedModules = modules.map((module: LearningModule) => ({
           ...module,
@@ -96,7 +96,7 @@ class ApiService {
           difficulty: module.difficulty ?? 3,
           tags: module.tags ?? [module.category],
         }));
-        
+
         this.setCache(cacheKey, enhancedModules);
         logDebug('Returning Cache API modules', { count: enhancedModules.length }, 'ApiService');
         return { data: enhancedModules, success: true };

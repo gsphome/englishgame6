@@ -32,7 +32,10 @@ export interface LevelStorageInfo {
  */
 function normalizeUrl(url: string): string {
   try {
-    const parsed = new URL(url, typeof window !== 'undefined' ? window.location.origin : 'https://gsphome.github.io');
+    const parsed = new URL(
+      url,
+      typeof window !== 'undefined' ? window.location.origin : 'https://gsphome.github.io'
+    );
     // Remove query params for consistent matching
     parsed.search = '';
     // Remove hash
@@ -402,7 +405,11 @@ export async function verifyCacheIntegrity(
       partialLevels.push(level);
       logDebug(
         `Level ${level} partially cached`,
-        { cached: cachedCount, total: urlsForLevel.length, completeness: `${(completeness * 100).toFixed(1)}%` },
+        {
+          cached: cachedCount,
+          total: urlsForLevel.length,
+          completeness: `${(completeness * 100).toFixed(1)}%`,
+        },
         'OfflineManager'
       );
     }
