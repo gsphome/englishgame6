@@ -24,9 +24,9 @@ import type { LearningModule } from '../types';
  *    - Scope: Persistente entre sesiones, sobrevive recargas
  *    - Estrategia: Network-first con fallback a cache
  *
- * FLUJO DE DATOS:
- * Online: Memory → Network → SW Cache (actualiza) → Memory Cache (actualiza)
- * Offline: Memory → SW Cache → Memory Cache (actualiza)
+ * FLUJO DE DATOS (ONLINE-FIRST):
+ * Online: Memory → Network → Memory Cache (actualiza) → Service Worker cachea automáticamente
+ * Offline: Memory → Cache API → Memory Cache (actualiza)
  */
 
 export interface ApiResponse<T> {
@@ -67,7 +67,7 @@ class ApiService {
 
   /**
    * Fetch all available learning modules
-   * Strategy: Memory → Cache API → Network (offline-first for reliability)
+   * Strategy: Memory → Network → Cache API (online-first for fresh data)
    */
   async fetchModules(): Promise<ApiResponse<LearningModule[]>> {
     const cacheKey = this.getCacheKey('modules');
@@ -81,31 +81,7 @@ class ApiService {
 
     const modulesUrl = getLearningModulesPath();
 
-    // 2. Try Cache API directly (offline support without network)
-    try {
-      const cache = await caches.open('fluentflow-offline-v5');
-      const cacheResponse = await cache.match(modulesUrl);
-
-      if (cacheResponse) {
-        const modules = await cacheResponse.json();
-
-        // Enhance modules with default values
-        const enhancedModules = modules.map((module: LearningModule) => ({
-          ...module,
-          estimatedTime: module.estimatedTime ?? 5,
-          difficulty: module.difficulty ?? 3,
-          tags: module.tags ?? [module.category],
-        }));
-
-        this.setCache(cacheKey, enhancedModules);
-        logDebug('Returning Cache API modules', { count: enhancedModules.length }, 'ApiService');
-        return { data: enhancedModules, success: true };
-      }
-    } catch (error) {
-      logDebug('Cache API lookup failed, trying network', { error }, 'ApiService');
-    }
-
-    // 3. Try network as last resort
+    // 2. Try Network first (online-first strategy)
     try {
       const validatedUrl = validateUrl(modulesUrl);
       const modules = await secureJsonFetch<LearningModule[]>(validatedUrl);
@@ -122,8 +98,35 @@ class ApiService {
       logDebug('Fetched modules from network', { count: enhancedModules.length }, 'ApiService');
 
       return { data: enhancedModules, success: true };
-    } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    } catch (networkError) {
+      logDebug('Network fetch failed, trying Cache API', { error: networkError }, 'ApiService');
+
+      // 3. Fallback to Cache API if network fails (offline support)
+      try {
+        const cache = await caches.open('fluentflow-offline-v5');
+        const cacheResponse = await cache.match(modulesUrl);
+
+        if (cacheResponse) {
+          const modules = await cacheResponse.json();
+
+          // Enhance modules with default values
+          const enhancedModules = modules.map((module: LearningModule) => ({
+            ...module,
+            estimatedTime: module.estimatedTime ?? 5,
+            difficulty: module.difficulty ?? 3,
+            tags: module.tags ?? [module.category],
+          }));
+
+          this.setCache(cacheKey, enhancedModules);
+          logDebug('Returning Cache API modules (offline)', { count: enhancedModules.length }, 'ApiService');
+          return { data: enhancedModules, success: true };
+        }
+      } catch (cacheError) {
+        logDebug('Cache API lookup failed', { error: cacheError }, 'ApiService');
+      }
+
+      // 4. Both network and cache failed
+      const errorMessage = networkError instanceof Error ? networkError.message : 'Unknown error';
       logError('Failed to fetch modules from all sources', { error: errorMessage }, 'ApiService');
       return { data: [], success: false, error: errorMessage };
     }
