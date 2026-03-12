@@ -75,7 +75,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
   }, [isDarkMode, forceWhiteTextIfNeeded]);
 
   const nextRecommended = progression.getNextRecommendedModule();
-  
+
   // Get completed modules from store
   const { completedModules } = useProgressStore();
   const completedModulesCount = Object.keys(completedModules || {}).length;
