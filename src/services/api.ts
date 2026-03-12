@@ -118,7 +118,11 @@ class ApiService {
           }));
 
           this.setCache(cacheKey, enhancedModules);
-          logDebug('Returning Cache API modules (offline)', { count: enhancedModules.length }, 'ApiService');
+          logDebug(
+            'Returning Cache API modules (offline)',
+            { count: enhancedModules.length },
+            'ApiService'
+          );
           return { data: enhancedModules, success: true };
         }
       } catch (cacheError) {
