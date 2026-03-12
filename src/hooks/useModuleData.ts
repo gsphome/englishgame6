@@ -15,6 +15,7 @@ export const useModuleData = (moduleId: string) => {
       }
       return response.data;
     },
+    networkMode: 'always', // Allow queries offline - service worker handles caching
     select: (module: LearningModule) => {
       // Apply filtering using the service layer
       if (module.data && Array.isArray(module.data)) {
@@ -82,6 +83,7 @@ export const useAllModules = () => {
       }
       return response.data;
     },
+    networkMode: 'always', // Allow queries offline - service worker handles caching
     select: (modules: LearningModule[]) => {
       // In development mode, show all modules without filtering
       if (developmentMode) {
