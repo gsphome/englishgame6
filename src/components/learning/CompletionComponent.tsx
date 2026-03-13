@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { Check, X, ArrowRight, Home } from 'lucide-react';
 import { useAppStore } from '../../stores/appStore';
 import { useUserStore } from '../../stores/userStore';
@@ -15,6 +15,7 @@ import { ContentAdapter } from '../../utils/contentAdapter';
 import ContentRenderer from '../ui/ContentRenderer';
 import LearningProgressHeader from '../ui/LearningProgressHeader';
 import { EditableInput } from '../ui/EditableInput';
+import type { EditableInputHandle } from '../ui/EditableInput';
 
 import type { LearningModule } from '../../types';
 
