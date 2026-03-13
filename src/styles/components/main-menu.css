@@ -22,6 +22,11 @@
 
   /* Large Desktop: same as desktop */
   --grid-height-large-desktop: calc(var(--card-height-desktop) * 4 + 0.75rem * 3 + 0.75rem);
+
+  /* Fixed content area height — shared by grid AND progression dashboard to prevent resize on tab switch */
+  --menu-content-height-mobile: var(--grid-height-mobile);
+  --menu-content-height-tablet: var(--grid-height-tablet);
+  --menu-content-height-desktop: var(--grid-height-desktop);
 }
 
 /* SVG Icon Inheritance Fix - Force white in dark mode */
@@ -272,9 +277,20 @@
 @media (min-width: 520px) and (max-width: 639px) {
   .main-menu__grid {
     padding: var(--grid-padding-tablet);
-    max-height: var(--grid-height-tablet);
+    max-height: var(--menu-content-height-tablet);
+    height: var(--menu-content-height-tablet);
     overflow-y: auto;
     scrollbar-gutter: stable;
+  }
+  .main-menu .progression-dashboard {
+    height: var(--menu-content-height-tablet);
+    max-height: var(--menu-content-height-tablet);
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .main-menu .progression-dashboard__units {
+    max-height: calc(var(--menu-content-height-tablet) - 4rem);
+    overflow-y: auto;
   }
 }
 
@@ -282,9 +298,20 @@
 @media (min-width: 640px) and (max-width: 759px) {
   .main-menu__grid {
     padding: var(--grid-padding-tablet);
-    max-height: var(--grid-height-tablet);
+    max-height: var(--menu-content-height-tablet);
+    height: var(--menu-content-height-tablet);
     overflow-y: auto;
     scrollbar-gutter: stable;
+  }
+  .main-menu .progression-dashboard {
+    height: var(--menu-content-height-tablet);
+    max-height: var(--menu-content-height-tablet);
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .main-menu .progression-dashboard__units {
+    max-height: calc(var(--menu-content-height-tablet) - 4rem);
+    overflow-y: auto;
   }
 }
 
@@ -292,9 +319,20 @@
 @media (min-width: 760px) and (max-width: 879px) {
   .main-menu__grid {
     padding: var(--grid-padding-tablet);
-    max-height: var(--grid-height-desktop);
+    max-height: var(--menu-content-height-desktop);
+    height: var(--menu-content-height-desktop);
     overflow-y: auto;
     scrollbar-gutter: stable;
+  }
+  .main-menu .progression-dashboard {
+    height: var(--menu-content-height-desktop);
+    max-height: var(--menu-content-height-desktop);
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .main-menu .progression-dashboard__units {
+    max-height: calc(var(--menu-content-height-desktop) - 4rem);
+    overflow-y: auto;
   }
 }
 
@@ -302,13 +340,26 @@
 @media (min-width: 880px) {
   .main-menu__grid {
     padding: var(--grid-padding-desktop);
-    max-height: var(--grid-height-desktop);
+    max-height: var(--menu-content-height-desktop);
+    height: var(--menu-content-height-desktop);
     overflow-y: auto;
     scrollbar-gutter: stable;
 
     /* Apple-style scrollbar - Compact */
     scrollbar-width: thin;
     scrollbar-color: var(--theme-border-medium, #e5e7eb) transparent;
+  }
+
+  .main-menu .progression-dashboard {
+    height: var(--menu-content-height-desktop);
+    max-height: var(--menu-content-height-desktop);
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .main-menu .progression-dashboard__units {
+    max-height: calc(var(--menu-content-height-desktop) - 4rem);
+    overflow-y: auto;
   }
 
   .main-menu__grid::-webkit-scrollbar {
@@ -332,7 +383,8 @@
 /* Large Desktop Enhancement - 9+ columns, minimal scrolling */
 @media (min-width: 1140px) {
   .main-menu__grid {
-    max-height: var(--grid-height-large-desktop);
+    max-height: var(--menu-content-height-desktop);
+    height: var(--menu-content-height-desktop);
     padding: var(--grid-padding-large-desktop);
   }
 }
@@ -445,7 +497,8 @@
 
   .main-menu__grid {
     padding: var(--grid-padding-mobile);
-    max-height: var(--grid-height-mobile);
+    max-height: var(--menu-content-height-mobile);
+    height: var(--menu-content-height-mobile);
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-gutter: stable;
@@ -453,6 +506,19 @@
     max-width: 100%;
     scrollbar-width: thin;
     scrollbar-color: var(--theme-border-medium, #e5e7eb) transparent;
+  }
+
+  /* Lock progression dashboard to same height as grid — prevents resize on tab switch */
+  .main-menu .progression-dashboard {
+    height: var(--menu-content-height-mobile);
+    max-height: var(--menu-content-height-mobile);
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .main-menu .progression-dashboard__units {
+    max-height: calc(var(--menu-content-height-mobile) - 4rem);
+    overflow-y: auto;
   }
 
   .main-menu__grid-container {
@@ -514,11 +580,22 @@
 
   .main-menu__grid {
     padding: 0.25rem;
-    max-height: var(--grid-height-mobile);
+    max-height: var(--menu-content-height-mobile);
+    height: var(--menu-content-height-mobile);
+  }
+
+  .main-menu .progression-dashboard {
+    height: var(--menu-content-height-mobile);
+    max-height: var(--menu-content-height-mobile);
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .main-menu .progression-dashboard__units {
+    max-height: calc(var(--menu-content-height-mobile) - 4rem);
+    overflow-y: auto;
   }
 }
-
-/* Dark Mode - Handled by theme context variables */
 /* No explicit dark mode rules needed - design tokens handle theme switching */
 
 /* === UX ENHANCEMENTS: ACCESSIBILITY & VISUAL HIERARCHY === */
@@ -706,7 +783,7 @@ html.dark .main-menu__grid::-webkit-scrollbar-thumb:hover {
 }
 
 .main-menu__grid {
-  outline: 2px solid green;
+  /* outline: 2px solid green; */
 }
 
 .main-menu__search {

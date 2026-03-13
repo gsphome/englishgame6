@@ -487,7 +487,8 @@
 
 /* Hide time element for screens smaller than 720px */
 @media (max-width: 719px) {
-  .module-card__time {
+  .module-card__time,
+  .module-card__level {
     display: none !important;
   }
 }
