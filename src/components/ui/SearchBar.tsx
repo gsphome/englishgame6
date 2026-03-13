@@ -17,6 +17,12 @@ export const SearchBar: React.FC<SearchBarProps> = ({
 }) => {
   const searchId = useId();
   const clearButtonId = useId();
+  const [isReadOnly, setIsReadOnly] = React.useState(true);
+
+  // Remove readonly on first interaction to prevent password bar
+  const handleFocus = () => {
+    setIsReadOnly(false);
+  };
 
   return (
     <div className="search-bar" role="search">
@@ -33,9 +39,11 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         name="search"
         value={query}
         onChange={e => onQueryChange(e.target.value)}
+        onFocus={handleFocus}
         className="search-bar__input"
         placeholder={placeholder}
         disabled={disabled}
+        readOnly={isReadOnly}
         autoComplete="off"
         autoCorrect="off"
         autoCapitalize="off"

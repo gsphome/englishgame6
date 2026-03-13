@@ -32,6 +32,7 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
   const [answer, setAnswer] = useState('');
   const [showResult, setShowResult] = useState(false);
   const [startTime] = useState(Date.now());
+  const [isReadOnly, setIsReadOnly] = useState(true);
 
   const { updateSessionScore } = useAppStore();
   const { updateUserScore } = useUserStore();
@@ -43,6 +44,11 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
   useLearningCleanup();
 
   const handleReturnToMenu = () => returnToMenu();
+
+  // Remove readonly on first interaction to prevent password bar
+  const handleFocus = () => {
+    setIsReadOnly(false);
+  };
 
   // Process exercises with optional randomization based on settings
   const processedExercises = useMemo(() => {
@@ -204,7 +210,9 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
             type="text"
             value={answer}
             onChange={e => setAnswer(e.target.value.toLowerCase())}
+            onFocus={handleFocus}
             disabled={showResult}
+            readOnly={isReadOnly}
             placeholder={placeholderHint}
             autoComplete="off"
             autoCorrect="off"

@@ -18,6 +18,15 @@
     border: none !important;
   }
 
+  /* === HIDE PASSWORD AUTOFILL BAR === */
+  
+  /* Hide the iOS password autofill accessory bar */
+  input[type="text"],
+  input[type="search"] {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+  }
+
   /* === SEARCH BAR FIX === */
 
   /* Add search icon */
