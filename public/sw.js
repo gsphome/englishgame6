@@ -4,7 +4,7 @@
  */
 
 const CACHE_NAME = 'fluentflow-offline-v5';
-const ASSETS_CACHE = 'fluentflow-assets-v6';
+const ASSETS_CACHE = 'fluentflow-assets-v7';
 
 /**
  * Normalize URL for consistent cache matching
@@ -142,14 +142,15 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Estrategia 3: HTML → Network-first con fallback a cache
+  // Estrategia 3: HTML → Network-first con fallback a cache, siempre revalidar
   if (isHtml) {
     event.respondWith(
       caches.open(ASSETS_CACHE).then(async (cache) => {
         const normalizedUrl = normalizeUrl(request.url);
-        
+
         try {
-          const response = await fetch(request);
+          // Force revalidation — bypass browser HTTP cache for HTML
+          const response = await fetch(request, { cache: 'no-cache' });
           if (response.ok) {
             cache.put(normalizedUrl, response.clone());
           }
@@ -157,12 +158,12 @@ self.addEventListener('fetch', (event) => {
         } catch (error) {
           // Try with normalized URL
           let cached = await cache.match(normalizedUrl);
-          
+
           if (cached) {
             console.log('[SW] ✅ HTML from cache');
             return cached;
           }
-          return new Response('App not available offline', { 
+          return new Response('App not available offline', {
             status: 503,
             statusText: 'Service Unavailable'
           });

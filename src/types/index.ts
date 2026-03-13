@@ -180,16 +180,6 @@ export interface AppState {
 
 // Settings types — removed GameModeSettings, GameSettings (duplicated in settingsStore.ts)
 
-export interface MaxLimits {
-  flashcard: number;
-  quiz: number;
-  completion: number;
-  sorting: number;
-  matching: number;
-  reading: number;
-  maxCategories: number;
-}
-
 // Toast types — removed ToastType, Toast (duplicated in toastStore.ts)
 
 // Validation types — removed ValidationResult, ValidationConfig (unused)

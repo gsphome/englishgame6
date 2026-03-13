@@ -6,7 +6,7 @@ import { MemoizedHeader, MemoizedToastContainer } from './components/ui/Memoized
 import { OrientationLock } from './components/ui/OrientationLock';
 import { useAppStore } from './stores/appStore';
 import { useSettingsStore } from './stores/settingsStore';
-import { useMaxLimits } from './hooks/useMaxLimits';
+
 import { useSystemTheme } from './hooks/useSystemTheme';
 import { useTranslation } from './utils/i18n';
 import { verifyCacheIntegrity } from './services/offlineManager';
@@ -48,10 +48,6 @@ const AppContent: React.FC = () => {
   } = useSettingsStore();
   const { t } = useTranslation(language);
   const integrityChecked = useRef(false);
-
-  // Calculate max limits based on available data
-  useMaxLimits();
-
   // Set up system theme listener
   useSystemTheme();
 

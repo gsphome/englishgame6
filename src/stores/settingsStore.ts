@@ -10,15 +10,6 @@ export interface GameSettings {
   matchingMode: { wordCount: number };
 }
 
-export interface MaxLimits {
-  flashcard: number;
-  quiz: number;
-  completion: number;
-  sorting: number;
-  matching: number;
-  maxCategories: number;
-}
-
 interface SettingsState {
   // General
   theme: 'light' | 'dark';
@@ -37,9 +28,6 @@ interface SettingsState {
   // Game Settings
   gameSettings: GameSettings;
 
-  // Max limits based on available data
-  maxLimits: MaxLimits;
-
   // Offline
   offlineEnabled: boolean;
   downloadedLevels: string[];
@@ -53,7 +41,6 @@ interface SettingsState {
   setRandomizeItems: (enabled: boolean) => void;
   setCategories: (categories: string[]) => void;
   setGameSetting: (mode: keyof GameSettings, setting: string, value: number) => void;
-  updateMaxLimits: (limits: MaxLimits) => void;
   setOfflineEnabled: (enabled: boolean) => void;
   setDownloadedLevels: (levels: string[]) => void;
   setLastDownloadDate: (date: string | null) => void;
@@ -81,15 +68,6 @@ export const useSettingsStore = create<SettingsState>()(
         completionMode: { itemCount: 10 },
         sortingMode: { wordCount: 5, categoryCount: 3 },
         matchingMode: { wordCount: 6 },
-      },
-
-      maxLimits: {
-        flashcard: 50,
-        quiz: 50,
-        completion: 50,
-        sorting: 50,
-        matching: 50,
-        maxCategories: 10,
       },
 
       // Offline defaults
@@ -126,8 +104,6 @@ export const useSettingsStore = create<SettingsState>()(
           },
         });
       },
-
-      updateMaxLimits: limits => set({ maxLimits: limits }),
 
       setOfflineEnabled: enabled => set({ offlineEnabled: enabled }),
 
