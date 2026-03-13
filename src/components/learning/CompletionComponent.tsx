@@ -10,9 +10,11 @@ import { useToast } from '../../hooks/useToast';
 import { useLearningCleanup } from '../../hooks/useLearningCleanup';
 import { conditionalShuffle } from '../../utils/randomUtils';
 import '../../styles/components/completion-component.css';
+import '../../styles/components/editable-input.css';
 import { ContentAdapter } from '../../utils/contentAdapter';
 import ContentRenderer from '../ui/ContentRenderer';
 import LearningProgressHeader from '../ui/LearningProgressHeader';
+import { EditableInput } from '../ui/EditableInput';
 
 import type { LearningModule } from '../../types';
 
@@ -32,7 +34,6 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
   const [answer, setAnswer] = useState('');
   const [showResult, setShowResult] = useState(false);
   const [startTime] = useState(Date.now());
-  const [isReadOnly, setIsReadOnly] = useState(true);
 
   const { updateSessionScore } = useAppStore();
   const { updateUserScore } = useUserStore();
@@ -45,11 +46,6 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
 
   const handleReturnToMenu = () => returnToMenu();
 
-  // Remove readonly on first interaction to prevent password bar
-  const handleFocus = () => {
-    setIsReadOnly(false);
-  };
-
   // Process exercises with optional randomization based on settings
   const processedExercises = useMemo(() => {
     if (!module?.data) return [];
@@ -61,9 +57,9 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
   // Auto-focus input when exercise changes or component mounts
   useEffect(() => {
     if (!showResult && processedExercises.length > 0) {
-      const inputElement = document.querySelector('input[type="text"]') as HTMLInputElement;
-      if (inputElement) {
-        setTimeout(() => inputElement.focus(), 100);
+      const editableEl = document.querySelector('.editable-input[contenteditable="true"]') as HTMLElement;
+      if (editableEl) {
+        setTimeout(() => editableEl.focus(), 100);
       }
     }
   }, [currentIndex, showResult, processedExercises.length]);
@@ -205,27 +201,20 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
         const placeholderHint = firstLetter ? `${firstLetter}...` : '...';
 
         elements.push(
-          <input
+          <EditableInput
             key={`input-${index}`}
-            type="text"
             value={answer}
-            onChange={e => setAnswer(e.target.value.toLowerCase())}
-            onFocus={handleFocus}
+            onChange={value => setAnswer(value.toLowerCase())}
             disabled={showResult}
-            readOnly={isReadOnly}
             placeholder={placeholderHint}
-            autoComplete="off"
-            autoCorrect="off"
-            autoCapitalize="off"
-            spellCheck="false"
-            data-form-type="other"
-            className={inputClass}
+            className={`editable-input ${inputClass.replace('completion-component__input', 'editable-input')}`}
             style={
               {
                 '--dynamic-width': `${Math.max(120, (answer?.length || 3) * 12 + 60)}px`,
                 textTransform: 'lowercase',
               } as React.CSSProperties
             }
+            autoFocus={!showResult}
           />
         );
       }

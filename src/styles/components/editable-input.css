@@ -1,0 +1,63 @@
+/* EditableInput - contenteditable div styled as input */
+/* Used to avoid iOS password autofill bar */
+
+.editable-input {
+  display: inline-block;
+  min-width: 120px;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 1.5;
+  outline: none;
+  transition: all 0.2s ease;
+  cursor: text;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.editable-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.editable-input[contenteditable='false'] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--color-bg-secondary);
+}
+
+/* Placeholder styling */
+.editable-input:empty::before {
+  content: attr(data-placeholder);
+  color: var(--color-text-tertiary);
+  opacity: 0.6;
+}
+
+/* Correct state */
+.editable-input--correct {
+  border-color: var(--color-success);
+  background: var(--color-success-bg);
+}
+
+/* Incorrect state */
+.editable-input--incorrect {
+  border-color: var(--color-error);
+  background: var(--color-error-bg);
+}
+
+/* Neutral state (default) */
+.editable-input--neutral {
+  border-color: var(--color-border);
+}
+
+/* Disabled state */
+.editable-input--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--color-bg-secondary);
+}
