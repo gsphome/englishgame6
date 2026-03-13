@@ -35,6 +35,7 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
   const [answer, setAnswer] = useState('');
   const [showResult, setShowResult] = useState(false);
   const [startTime] = useState(Date.now());
+  const inputRef = useRef<EditableInputHandle>(null);
 
   const { updateSessionScore } = useAppStore();
   const { updateUserScore } = useUserStore();
@@ -55,17 +56,11 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
 
   const currentExercise = processedExercises[currentIndex];
 
-  // Auto-focus input when exercise changes or component mounts
+  // Focus input on mount
   useEffect(() => {
-    if (!showResult && processedExercises.length > 0) {
-      const editableEl = document.querySelector(
-        '.editable-input[contenteditable="true"]'
-      ) as HTMLElement;
-      if (editableEl) {
-        setTimeout(() => editableEl.focus(), 100);
-      }
-    }
-  }, [currentIndex, showResult, processedExercises.length]);
+    inputRef.current?.focus();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const checkAnswer = useCallback(() => {
     if (showResult) return;
@@ -97,6 +92,8 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
       setCurrentIndex(currentIndex + 1);
       setAnswer('');
       setShowResult(false);
+      // Focus after React re-renders the new exercise
+      requestAnimationFrame(() => inputRef.current?.focus());
     } else {
       const timeSpent = Math.floor((Date.now() - startTime) / 1000);
       const { sessionScore } = useAppStore.getState();
@@ -206,6 +203,7 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
         elements.push(
           <EditableInput
             key={`input-${index}`}
+            ref={inputRef}
             value={answer}
             onChange={value => setAnswer(value.toLowerCase())}
             disabled={showResult}
