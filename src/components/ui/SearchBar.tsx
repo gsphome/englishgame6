@@ -28,7 +28,9 @@ export const SearchBar: React.FC<SearchBarProps> = ({
       </div>
       <input
         id={searchId}
-        type="text"
+        type="search"
+        inputMode="search"
+        name="search"
         value={query}
         onChange={e => onQueryChange(e.target.value)}
         className="search-bar__input"
@@ -39,6 +41,8 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         autoCapitalize="off"
         spellCheck="false"
         data-form-type="other"
+        data-lpignore="true"
+        data-1p-ignore="true"
         aria-describedby={query ? clearButtonId : undefined}
         aria-label="Search learning modules by name, category, or topic"
       />
