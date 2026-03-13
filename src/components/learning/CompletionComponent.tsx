@@ -207,6 +207,10 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
             disabled={showResult}
             placeholder={placeholderHint}
             autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck="false"
+            data-form-type="other"
             className={inputClass}
             style={
               {

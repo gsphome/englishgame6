@@ -97,14 +97,46 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
     }
   }, [nextRecommended, expandedUnits]);
 
+  // Scroll to next module when unit is expanded
+  React.useEffect(() => {
+    if (nextRecommended && expandedUnits.has(nextRecommended.unit)) {
+      // Small delay to let the DOM update after expansion
+      const timer = setTimeout(() => {
+        const nextModuleElement = document.querySelector('.progression-dashboard__module--next');
+        if (nextModuleElement) {
+          nextModuleElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+          });
+        }
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [nextRecommended, expandedUnits]);
+
   const toggleUnit = (unit: number) => {
     const newExpanded = new Set(expandedUnits);
+    const isExpanding = !newExpanded.has(unit);
+    
     if (newExpanded.has(unit)) {
       newExpanded.delete(unit);
     } else {
       newExpanded.add(unit);
     }
     setExpandedUnits(newExpanded);
+
+    // If expanding a unit with the next module, scroll to it
+    if (isExpanding && nextRecommended && nextRecommended.unit === unit) {
+      setTimeout(() => {
+        const nextModuleElement = document.querySelector('.progression-dashboard__module--next');
+        if (nextModuleElement) {
+          nextModuleElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+          });
+        }
+      }, 300);
+    }
   };
 
   const handleContinueLearning = () => {

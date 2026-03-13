@@ -34,6 +34,11 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         className="search-bar__input"
         placeholder={placeholder}
         disabled={disabled}
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
+        spellCheck="false"
+        data-form-type="other"
         aria-describedby={query ? clearButtonId : undefined}
         aria-label="Search learning modules by name, category, or topic"
       />
