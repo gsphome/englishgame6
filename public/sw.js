@@ -4,7 +4,7 @@
  */
 
 const CACHE_NAME = 'fluentflow-offline-v5';
-const ASSETS_CACHE = 'fluentflow-assets-v7';
+const ASSETS_CACHE = 'fluentflow-assets-v8';
 
 /**
  * Normalize URL for consistent cache matching
