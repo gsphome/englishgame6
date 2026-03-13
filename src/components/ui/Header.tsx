@@ -169,10 +169,11 @@ export const Header: React.FC<HeaderProps> = () => {
       </div>
 
       {/* Compact Modals - rendered via portal to avoid event bubbling to header */}
-      {showProfileForm && createPortal(
-        <CompactProfile isOpen={showProfileForm} onClose={() => setShowProfileForm(false)} />,
-        document.body
-      )}
+      {showProfileForm &&
+        createPortal(
+          <CompactProfile isOpen={showProfileForm} onClose={() => setShowProfileForm(false)} />,
+          document.body
+        )}
 
       {createPortal(
         <CompactAdvancedSettings isOpen={showSettings} onClose={() => setShowSettings(false)} />,
