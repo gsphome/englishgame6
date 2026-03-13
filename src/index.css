@@ -3,8 +3,22 @@
 @import './styles/layout.css';
 @import './styles/components/orientation-lock.css';
 
+/* === GLOBAL BOX SIZING === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* === GLOBAL BASE STYLES === */
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
+  overflow-x: hidden;
+  width: 100%;
   background-color: #f3f4f6;
   font-family: var(
     --font-primary,

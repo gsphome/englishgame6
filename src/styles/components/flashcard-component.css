@@ -1,4 +1,3 @@
-cua
 /* Flashcard Component - PURE BEM ARCHITECTURE */
 
 /* === BOX SIZING RESET === */
@@ -11,6 +10,7 @@ cua
 /* === MAIN CONTAINER === */
 .flashcard-component__container {
   max-width: 42rem;
+  width: 100%;
   margin: 0.125rem auto;
   padding: 0.5rem;
   display: flex;

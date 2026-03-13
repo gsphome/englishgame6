@@ -316,7 +316,7 @@
 }
 
 /* === RESPONSIVE DESIGN === */
-@media (min-width: 769px) and (max-width: 770px) {
+@media (min-width: 769px) {
   .game-controls {
     gap: 0.625rem;
     padding: 0.625rem;
