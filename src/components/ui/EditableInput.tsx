@@ -26,10 +26,14 @@ export const EditableInput: React.FC<EditableInputProps> = ({
   autoFocus = false,
 }) => {
   const divRef = useRef<HTMLDivElement>(null);
+  // Track whether the div currently has focus to avoid cursor-reset on mobile
+  const isFocused = useRef(false);
 
-  // Update div content when value changes externally
+  // Update div content only when value changes externally AND div is not focused.
+  // On mobile (iOS/Android), setting textContent while the element has focus
+  // resets the cursor to position 0, causing the "cursor behind first letter" bug.
   useEffect(() => {
-    if (divRef.current && divRef.current.textContent !== value) {
+    if (divRef.current && !isFocused.current && divRef.current.textContent !== value) {
       divRef.current.textContent = value;
     }
   }, [value]);
@@ -44,6 +48,19 @@ export const EditableInput: React.FC<EditableInputProps> = ({
   const handleInput = (e: React.FormEvent<HTMLDivElement>) => {
     const newValue = e.currentTarget.textContent || '';
     onChange(newValue);
+  };
+
+  const handleFocus = () => {
+    isFocused.current = true;
+    onFocus?.();
+  };
+
+  const handleBlur = () => {
+    isFocused.current = false;
+    // Sync content on blur in case external value differs
+    if (divRef.current && divRef.current.textContent !== value) {
+      divRef.current.textContent = value;
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -65,12 +82,14 @@ export const EditableInput: React.FC<EditableInputProps> = ({
       ref={divRef}
       contentEditable={!disabled}
       onInput={handleInput}
-      onFocus={onFocus}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
       onKeyDown={handleKeyDown}
       onPaste={handlePaste}
       className={className}
       style={style}
-      data-placeholder={!value ? placeholder : ''}
+      data-placeholder={placeholder}
+      data-empty={!value ? 'true' : 'false'}
       role="textbox"
       aria-label={placeholder}
       suppressContentEditableWarning

@@ -36,11 +36,13 @@
   background: var(--color-bg-secondary);
 }
 
-/* Placeholder styling */
-.editable-input:empty::before {
+/* Placeholder styling — uses data-empty attribute instead of :empty pseudo-class.
+   :empty on contenteditable can create ghost text nodes on iOS that push the cursor. */
+.editable-input[data-empty='true']::before {
   content: attr(data-placeholder);
   color: var(--color-text-tertiary);
   opacity: 0.6;
+  pointer-events: none;
 }
 
 /* Correct state */
