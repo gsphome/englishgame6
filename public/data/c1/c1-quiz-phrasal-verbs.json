@@ -1,0 +1,327 @@
+[
+  {
+    "question": "What does the phrasal verb \"phase out\" mean?",
+    "options": [
+      "To gradually eliminate or discontinue something",
+      "To introduce something new",
+      "To pause temporarily",
+      "To reorganise a process"
+    ],
+    "correct": "To gradually eliminate or discontinue something",
+    "explanation": "<Phase out> means to gradually stop using or producing something over a period of time.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "Choose the correct sentence using \"fall through\":",
+    "options": [
+      "The deal fell through at the last minute.",
+      "The deal fell through with success.",
+      "The deal fell through to completion.",
+      "The deal fell through our expectations."
+    ],
+    "correct": "The deal fell through at the last minute.",
+    "explanation": "<Fall through> means a plan or deal fails to happen or materialise.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "What does \"iron out\" mean in a professional context?",
+    "options": [
+      "To resolve problems or difficulties",
+      "To press clothing",
+      "To straighten a structure",
+      "To simplify a process"
+    ],
+    "correct": "To resolve problems or difficulties",
+    "explanation": "<Iron out> means to resolve or smooth out problems, disagreements, or complications.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "Which phrasal verb means \"to resign from a position\"?",
+    "options": [
+      "Step down",
+      "Step up",
+      "Step back",
+      "Step out"
+    ],
+    "correct": "Step down",
+    "explanation": "<Step down> means to resign from a position of authority or responsibility.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "What does \"gloss over\" mean?",
+    "options": [
+      "To treat something superficially or avoid dealing with it",
+      "To explain in great detail",
+      "To add a shiny finish",
+      "To review carefully"
+    ],
+    "correct": "To treat something superficially or avoid dealing with it",
+    "explanation": "<Gloss over> means to deal with something briefly and without proper attention, often to avoid criticism.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "Complete: \"The committee ______ a comprehensive report on the findings.\"",
+    "options": [
+      "drew up",
+      "drew out",
+      "drew on",
+      "drew back"
+    ],
+    "correct": "drew up",
+    "explanation": "<Draw up> means to prepare or write a formal document, plan, or list.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "What does \"water down\" mean?",
+    "options": [
+      "To weaken or dilute the strength of something",
+      "To add water to a drink",
+      "To reduce the price of something",
+      "To simplify language"
+    ],
+    "correct": "To weaken or dilute the strength of something",
+    "explanation": "<Water down> means to make something weaker or less effective, often a proposal or policy.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "Which phrasal verb means \"to include something in a calculation or plan\"?",
+    "options": [
+      "Factor in",
+      "Factor out",
+      "Factor up",
+      "Factor through"
+    ],
+    "correct": "Factor in",
+    "explanation": "<Factor in> means to include a particular element when making a calculation or decision.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "What does \"pass over\" mean in a workplace context?",
+    "options": [
+      "To ignore someone for a promotion or opportunity",
+      "To hand something to a colleague",
+      "To review a document",
+      "To transfer responsibility"
+    ],
+    "correct": "To ignore someone for a promotion or opportunity",
+    "explanation": "<Pass over> means to overlook or ignore someone when giving a promotion or opportunity.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "Complete: \"The team ______ the evidence to reconstruct what had happened.\"",
+    "options": [
+      "pieced together",
+      "pieced out",
+      "pieced up",
+      "pieced through"
+    ],
+    "correct": "pieced together",
+    "explanation": "<Piece together> means to reconstruct something from separate parts or fragments of information.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "What does \"fend off\" mean?",
+    "options": [
+      "To defend against an attack or unwanted approach",
+      "To send someone away politely",
+      "To avoid a difficult question",
+      "To protect a resource"
+    ],
+    "correct": "To defend against an attack or unwanted approach",
+    "explanation": "<Fend off> means to defend yourself against an attack, criticism, or unwanted attention.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "Which phrasal verb means \"to expand into new areas\"?",
+    "options": [
+      "Branch out",
+      "Branch off",
+      "Branch up",
+      "Branch into"
+    ],
+    "correct": "Branch out",
+    "explanation": "<Branch out> means to expand or diversify into new areas of activity.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "What does \"scale back\" mean?",
+    "options": [
+      "To reduce the size or scope of something",
+      "To return to a previous level",
+      "To measure something precisely",
+      "To increase gradually"
+    ],
+    "correct": "To reduce the size or scope of something",
+    "explanation": "<Scale back> means to reduce the size, extent, or ambition of something.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "Complete: \"She was ______ by the unexpected turn of events.\"",
+    "options": [
+      "taken aback",
+      "taken over",
+      "taken apart",
+      "taken in"
+    ],
+    "correct": "taken aback",
+    "explanation": "<Taken aback> means to be surprised or shocked by something unexpected.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "What does \"hold up\" mean when referring to a project?",
+    "options": [
+      "To delay or obstruct progress",
+      "To support something physically",
+      "To present something for review",
+      "To maintain a high standard"
+    ],
+    "correct": "To delay or obstruct progress",
+    "explanation": "<Hold up> means to delay or obstruct something, preventing it from proceeding.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "Which phrasal verb means \"to negotiate intensely until an agreement is reached\"?",
+    "options": [
+      "Hammer out",
+      "Work out",
+      "Sort out",
+      "Figure out"
+    ],
+    "correct": "Hammer out",
+    "explanation": "<Hammer out> means to reach an agreement through prolonged and difficult negotiation.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "What does \"single out\" mean?",
+    "options": [
+      "To choose or identify one person from a group",
+      "To isolate a problem",
+      "To focus on one task",
+      "To separate items individually"
+    ],
+    "correct": "To choose or identify one person from a group",
+    "explanation": "<Single out> means to select or identify one particular person or thing from a group.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "Complete: \"The old regulations were ______ last year to modernise the system.\"",
+    "options": [
+      "done away with",
+      "done out of",
+      "done up with",
+      "done over with"
+    ],
+    "correct": "done away with",
+    "explanation": "<Do away with> means to abolish or eliminate something, such as a rule or practice.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "What does \"rally around\" mean?",
+    "options": [
+      "To unite and support someone in difficulty",
+      "To gather for a protest",
+      "To organise a group event",
+      "To surround someone physically"
+    ],
+    "correct": "To unite and support someone in difficulty",
+    "explanation": "<Rally around> means to come together to support someone who is in a difficult situation.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "Which phrasal verb means \"to choose not to participate\"?",
+    "options": [
+      "Opt out",
+      "Opt in",
+      "Opt for",
+      "Opt up"
+    ],
+    "correct": "Opt out",
+    "explanation": "<Opt out> means to choose not to participate in something or to withdraw from an arrangement.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "What does \"stumble upon\" mean?",
+    "options": [
+      "To find or discover something by accident",
+      "To trip over an obstacle",
+      "To make a mistake in a presentation",
+      "To encounter a problem unexpectedly"
+    ],
+    "correct": "To find or discover something by accident",
+    "explanation": "<Stumble upon> means to find or discover something unexpectedly, without looking for it.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "Complete: \"The CEO was ______ after the company's financial scandal became public.\"",
+    "options": [
+      "let go",
+      "let off",
+      "let down",
+      "let out"
+    ],
+    "correct": "let go",
+    "explanation": "<Let go> means to dismiss someone from their job, often used as a diplomatic euphemism.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "What does \"play down\" mean?",
+    "options": [
+      "To minimise the importance or seriousness of something",
+      "To reduce the volume of music",
+      "To perform below one's ability",
+      "To simplify a game"
+    ],
+    "correct": "To minimise the importance or seriousness of something",
+    "explanation": "<Play down> means to make something seem less important or serious than it really is.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "Which phrasal verb means \"to introduce a new system or policy\"?",
+    "options": [
+      "Bring in",
+      "Bring up",
+      "Bring out",
+      "Bring about"
+    ],
+    "correct": "Bring in",
+    "explanation": "<Bring in> means to introduce a new law, policy, or system.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  },
+  {
+    "question": "What does \"pull off\" mean?",
+    "options": [
+      "To succeed in doing something difficult",
+      "To remove something forcefully",
+      "To leave a road",
+      "To cancel an event"
+    ],
+    "correct": "To succeed in doing something difficult",
+    "explanation": "<Pull off> means to succeed in achieving something that was difficult or seemed unlikely.",
+    "category": "PhrasalVerbs",
+    "level": "c1"
+  }
+]
