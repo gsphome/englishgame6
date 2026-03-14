@@ -54,17 +54,14 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
     const maxIndex = hasSummaryContent ? readingSections.length : readingSections.length - 1;
 
     if (currentSectionIndex < maxIndex) {
-      // Scroll to top first (page turn effect)
-      if (contentRef.current && typeof contentRef.current.scrollTo === 'function') {
-        contentRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+      // Reset scroll instantly before changing section
+      if (contentRef.current) {
+        contentRef.current.scrollTop = 0;
       }
-      // Then update section after a brief delay for smooth transition
-      setTimeout(() => {
-        setCurrentSectionIndex(currentSectionIndex + 1);
-        // Reset interactive states when changing sections
-        setExpandedItems(new Set());
-        setActiveTooltip(null);
-      }, 100);
+      setCurrentSectionIndex(currentSectionIndex + 1);
+      // Reset interactive states when changing sections
+      setExpandedItems(new Set());
+      setActiveTooltip(null);
     } else {
       // End of reading
       const timeSpent = Math.floor((Date.now() - startTime) / 1000);
@@ -97,17 +94,14 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
 
   const handlePrev = useCallback(() => {
     if (currentSectionIndex > -1) {
-      // Scroll to top first (page turn effect)
-      if (contentRef.current && typeof contentRef.current.scrollTo === 'function') {
-        contentRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+      // Reset scroll instantly before changing section
+      if (contentRef.current) {
+        contentRef.current.scrollTop = 0;
       }
-      // Then update section after a brief delay for smooth transition
-      setTimeout(() => {
-        setCurrentSectionIndex(currentSectionIndex - 1);
-        // Reset interactive states when changing sections
-        setExpandedItems(new Set());
-        setActiveTooltip(null);
-      }, 100);
+      setCurrentSectionIndex(currentSectionIndex - 1);
+      // Reset interactive states when changing sections
+      setExpandedItems(new Set());
+      setActiveTooltip(null);
     }
   }, [currentSectionIndex]);
 
