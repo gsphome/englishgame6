@@ -50,12 +50,13 @@ export const MainMenu: React.FC = () => {
           const gridRect = gridRef.current.getBoundingClientRect();
           const cardRect = moduleCard.getBoundingClientRect();
 
-          // Calculate scroll position to center the card vertically
-          const scrollTop =
-            gridRef.current.scrollTop +
-            (cardRect.top - gridRect.top) -
-            gridRect.height / 2 +
-            cardRect.height / 2;
+          // Use actual scrollable height (clientHeight) instead of getBoundingClientRect
+          // to avoid issues on mobile where the grid rect may not reflect the visible area
+          const visibleHeight = gridRef.current.clientHeight;
+          const cardOffsetInGrid = gridRef.current.scrollTop + (cardRect.top - gridRect.top);
+
+          // Center the card with a small top padding so it's never clipped
+          const scrollTop = cardOffsetInGrid - visibleHeight / 2 + cardRect.height / 2;
 
           gridRef.current.scrollTo({
             top: Math.max(0, scrollTop),

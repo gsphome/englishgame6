@@ -10,9 +10,9 @@ import { getLearningModulesPath, getAssetPath } from '../utils/pathUtils';
 import { logDebug, logError } from '../utils/logger';
 import type { LearningModule } from '../types';
 
-// Isolated cache names to avoid interfering with other browser data
-export const CACHE_NAME = 'fluentflow-offline-v5';
-export const ASSETS_CACHE = 'fluentflow-assets-v8';
+// Must match the CACHE_NAME in public/sw.js
+export const CACHE_NAME = 'fluentflow-v1';
+export const ASSETS_CACHE = 'fluentflow-v1'; // unified cache
 
 export interface DownloadProgress {
   total: number;
