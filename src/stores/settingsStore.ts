@@ -113,7 +113,7 @@ export const useSettingsStore = create<SettingsState>()(
     }),
     {
       name: 'settings-storage',
-      version: 5,
+      version: 6,
       migrate: (persistedState: any, version: number) => {
         // Migration from version 1 to version 2
         if (version < 2) {
@@ -145,6 +145,16 @@ export const useSettingsStore = create<SettingsState>()(
             downloadedLevels: [],
             lastDownloadDate: null,
           };
+        }
+        // Migration from version 5 to version 6: ensure Idioms category is included
+        if (version < 6) {
+          const currentCategories: string[] = persistedState.categories || [];
+          if (!currentCategories.includes('Idioms')) {
+            persistedState = {
+              ...persistedState,
+              categories: [...currentCategories, 'Idioms'],
+            };
+          }
         }
         return persistedState;
       },
