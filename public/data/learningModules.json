@@ -1392,6 +1392,40 @@
     "difficulty": 4
   },
   {
+    "id": "completion-phrasal-verbs-advanced-b2",
+    "name": "Phrasal Verbs Advanced",
+    "learningMode": "completion",
+    "dataPath": "data/b2/b2-completion-phrasal-verbs-advanced.json",
+    "level": [
+      "b2"
+    ],
+    "category": "PhrasalVerbs",
+    "unit": 4,
+    "prerequisites": [
+      "quiz-idioms-professional-b2"
+    ],
+    "description": "Advanced phrasal verbs in professional and everyday contexts",
+    "estimatedTime": 7,
+    "difficulty": 4
+  },
+  {
+    "id": "quiz-phrasal-verbs-b2",
+    "name": "Phrasal Verbs Quiz",
+    "learningMode": "quiz",
+    "dataPath": "data/b2/b2-quiz-phrasal-verbs.json",
+    "level": [
+      "b2"
+    ],
+    "category": "PhrasalVerbs",
+    "unit": 4,
+    "prerequisites": [
+      "completion-phrasal-verbs-advanced-b2"
+    ],
+    "description": "Test your knowledge of upper-intermediate phrasal verbs",
+    "estimatedTime": 7,
+    "difficulty": 4
+  },
+  {
     "id": "quiz-upper-intermediate-review-b2",
     "name": "Upper-Intermediate Review",
     "learningMode": "quiz",
@@ -1402,7 +1436,7 @@
     "category": "Review",
     "unit": 4,
     "prerequisites": [
-      "quiz-idioms-professional-b2"
+      "quiz-phrasal-verbs-b2"
     ],
     "description": "Comprehensive review of B2 level concepts: used to, phrasal verbs, connectors, and professional vocabulary",
     "estimatedTime": 10,
@@ -1800,6 +1834,23 @@
     "difficulty": 5
   },
   {
+    "id": "quiz-phrasal-verbs-c1",
+    "name": "Phrasal Verbs Quiz",
+    "learningMode": "quiz",
+    "dataPath": "data/c1/c1-quiz-phrasal-verbs.json",
+    "level": [
+      "c1"
+    ],
+    "category": "PhrasalVerbs",
+    "unit": 5,
+    "prerequisites": [
+      "quiz-advanced-idioms-c1"
+    ],
+    "description": "Advanced phrasal verbs used in professional and academic contexts",
+    "estimatedTime": 7,
+    "difficulty": 5
+  },
+  {
     "id": "quiz-advanced-grammar-review-c1",
     "name": "Advanced Grammar Review",
     "learningMode": "quiz",
@@ -1810,7 +1861,7 @@
     "category": "Review",
     "unit": 5,
     "prerequisites": [
-      "quiz-advanced-idioms-c1"
+      "quiz-phrasal-verbs-c1"
     ],
     "description": "Comprehensive review of C1 grammar: conditionals, inversions, participles, subjunctive",
     "estimatedTime": 8,
