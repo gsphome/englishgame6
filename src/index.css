@@ -36,6 +36,17 @@ body {
   color: var(--theme-text-primary, #111827);
 }
 
+/* Mobile menu view: match body bg to avoid gray space below menu */
+@media (max-width: 639px) {
+  body:has(.layout-container[data-view='menu']) {
+    background-color: #ffffff;
+  }
+
+  html:has(.layout-container[data-view='menu']) {
+    background-color: #ffffff;
+  }
+}
+
 .dark body {
   background-color: #111827;
   color: #ffffff;

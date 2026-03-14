@@ -17,15 +17,23 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       staleTime: 10 * 60 * 1000, // 10 minutes
+      gcTime: 30 * 60 * 1000, // Keep unused data in cache 30 minutes
       retry: (failureCount, error) => {
         // Don't retry on 4xx errors
         if (error instanceof Error && error.message.includes('HTTP 4')) {
           return false;
         }
-        return failureCount < 3;
+        // Don't retry JSON parse errors (content issue, not transient)
+        if (error instanceof Error && error.message.includes('parse JSON')) {
+          return false;
+        }
+        return failureCount < 2;
       },
       refetchOnWindowFocus: false,
-      refetchOnReconnect: true,
+      // Don't auto-refetch on reconnect — user can manually refresh if needed.
+      // Auto-refetch on reconnect can cause the UI to flash/error when coming
+      // back to the page after a long time if the network request fails.
+      refetchOnReconnect: false,
       // Allow queries to run even when offline - let service worker handle it
       networkMode: 'always',
     },
@@ -91,9 +99,13 @@ const AppContent: React.FC = () => {
   // This is the SINGLE SOURCE OF TRUTH for navigation
   // Components should ONLY update the hash, and this effect will update Zustand
   useEffect(() => {
-    const handleHashChange = async () => {
-      const hash = window.location.hash;
+    // Guard against concurrent hash change handlers racing each other.
+    // Only one navigation resolution runs at a time; subsequent calls while
+    // one is in-flight are debounced and re-run after it finishes.
+    let isProcessing = false;
+    let pendingHash: string | null = null;
 
+    const resolveHash = async (hash: string) => {
       // Parse hash format: #/learn/module-id
       if (hash.startsWith('#/learn/')) {
         const moduleId = hash.replace('#/learn/', '');
@@ -107,16 +119,22 @@ const AppContent: React.FC = () => {
         }
 
         try {
-          // Module needs to be loaded - fetch module metadata
+          // Module needs to be loaded - fetch module metadata.
+          // fetchModules() uses ApiService memory cache (10 min) and falls back
+          // to Cache API, so this is resilient to network failures.
           const { fetchModules } = await import('./services/api');
           const response = await fetchModules();
 
           if (!response.success || !response.data) {
             console.error('[App] Failed to fetch modules:', response.error);
-            // Fallback to menu on error
-            const { setCurrentView, setCurrentModule } = useAppStore.getState();
-            setCurrentModule(null);
-            setCurrentView('menu');
+            // Don't redirect to menu on transient errors — let useModuleData handle the error UI.
+            // Only redirect if Zustand has no usable module info at all.
+            const { currentModule } = useAppStore.getState();
+            if (!currentModule || currentModule.id !== moduleId) {
+              const { setCurrentView, setCurrentModule } = useAppStore.getState();
+              setCurrentModule(null);
+              setCurrentView('menu');
+            }
             return;
           }
 
@@ -124,7 +142,7 @@ const AppContent: React.FC = () => {
 
           if (!module) {
             console.error('[App] Module not found:', moduleId);
-            // Fallback to menu if module not found
+            // Module genuinely doesn't exist — go to menu
             const { setCurrentView, setCurrentModule } = useAppStore.getState();
             setCurrentModule(null);
             setCurrentView('menu');
@@ -137,16 +155,43 @@ const AppContent: React.FC = () => {
           setCurrentView(module.learningMode);
         } catch (error) {
           console.error('[App] Error in handleHashChange:', error);
-          // Fallback to menu on exception
-          const { setCurrentView, setCurrentModule } = useAppStore.getState();
-          setCurrentModule(null);
-          setCurrentView('menu');
+          // Don't redirect to menu on transient errors — let useModuleData handle it.
+          // Only redirect if Zustand has no module info at all.
+          const { currentModule } = useAppStore.getState();
+          if (!currentModule || currentModule.id !== moduleId) {
+            const { setCurrentView, setCurrentModule } = useAppStore.getState();
+            setCurrentModule(null);
+            setCurrentView('menu');
+          }
         }
       } else if (hash === '' || hash === '#/' || hash === '#/menu') {
         // Navigate to menu
         const { setCurrentView, setCurrentModule } = useAppStore.getState();
         setCurrentModule(null);
         setCurrentView('menu');
+      }
+    };
+
+    const handleHashChange = async () => {
+      const hash = window.location.hash;
+
+      if (isProcessing) {
+        // Queue the latest hash — previous intermediate hashes are irrelevant
+        pendingHash = hash;
+        return;
+      }
+
+      isProcessing = true;
+      try {
+        await resolveHash(hash);
+      } finally {
+        isProcessing = false;
+        // If a new hash arrived while we were processing, handle it now
+        if (pendingHash !== null) {
+          const next = pendingHash;
+          pendingHash = null;
+          void resolveHash(next);
+        }
       }
     };
 

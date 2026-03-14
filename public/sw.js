@@ -5,6 +5,7 @@
 
 const CACHE_NAME = 'fluentflow-offline-v5';
 const ASSETS_CACHE = 'fluentflow-assets-v8';
+const ALL_CACHES = [CACHE_NAME, ASSETS_CACHE];
 
 /**
  * Normalize URL for consistent cache matching

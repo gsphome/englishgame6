@@ -65,7 +65,10 @@ export const useModuleData = (moduleId: string) => {
       if (error instanceof Error && error.message.includes('not found')) {
         return false; // Don't retry for 404-like errors
       }
-      return failureCount < 3;
+      if (error instanceof Error && error.message.includes('parse JSON')) {
+        return false; // Don't retry parse errors
+      }
+      return failureCount < 2; // Aligned with QueryClient global config
     },
     refetchOnWindowFocus: false,
   });
@@ -110,7 +113,14 @@ export const useAllModules = () => {
         return true;
       });
     },
-    staleTime: 15 * 60 * 1000, // 15 minutes for modules list
-    retry: 3,
+    staleTime: 15 * 60 * 1000, // 15 minutes for modules list (longer than module data — list changes rarely)
+    retry: (failureCount, error) => {
+      // Don't retry parse errors
+      if (error instanceof Error && error.message.includes('parse JSON')) {
+        return false;
+      }
+      return failureCount < 2; // Aligned with QueryClient global config
+    },
+    refetchOnWindowFocus: false, // Explicit — don't refetch list on tab focus
   });
 };

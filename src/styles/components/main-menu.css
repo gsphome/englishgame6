@@ -515,16 +515,17 @@
     scrollbar-color: var(--theme-border-medium, #e5e7eb) transparent;
   }
 
-  /* Lock progression dashboard to same height as grid — prevents resize on tab switch */
+  /* Lock progression dashboard to same height as grid — overrides ≤400px !important rules */
   .main-menu .progression-dashboard {
-    height: var(--menu-content-height-mobile);
-    max-height: var(--menu-content-height-mobile);
-    overflow: hidden;
+    height: var(--menu-content-height-mobile) !important;
+    max-height: var(--menu-content-height-mobile) !important;
+    min-height: var(--menu-content-height-mobile) !important;
+    overflow: hidden !important;
     box-sizing: border-box;
   }
 
   .main-menu .progression-dashboard__units {
-    max-height: calc(var(--menu-content-height-mobile) - 4rem);
+    max-height: calc(var(--menu-content-height-mobile) - 4rem) !important;
     overflow-y: auto;
   }
 

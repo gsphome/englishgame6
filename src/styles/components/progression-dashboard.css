@@ -498,6 +498,12 @@
   border-radius: 0 var(--radius-sm, 0.25rem) 0 0.375rem;
   font-size: var(--text-xs, 0.75rem);
   font-weight: 600;
+  pointer-events: none;
+}
+
+/* Reserve space so module-name doesn't go under the NEXT badge */
+.progression-dashboard__module--next .progression-dashboard__module-content {
+  padding-right: 2.5rem;
 }
 
 .progression-dashboard__next-label {
@@ -565,6 +571,20 @@
     height: 54px;
     min-height: 54px;
     max-height: 54px;
+  }
+
+  .progression-dashboard__module-name {
+    font-size: 0.75rem;
+    line-height: 1.15;
+  }
+
+  .progression-dashboard__module-desc {
+    display: none;
+  }
+
+  .progression-dashboard__module-type,
+  .progression-dashboard__module-time {
+    font-size: 0.6875rem;
   }
 
   .progression-dashboard__unit {
@@ -737,6 +757,16 @@ html.dark .progression-dashboard__unit-stats:hover {
     height: 52px;
     min-height: 52px;
     max-height: 52px;
+  }
+
+  .progression-dashboard__module-name {
+    font-size: 0.6875rem;
+    line-height: 1.15;
+  }
+
+  .progression-dashboard__module-type,
+  .progression-dashboard__module-time {
+    font-size: 0.625rem;
   }
 
   .progression-dashboard__units::-webkit-scrollbar {

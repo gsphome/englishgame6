@@ -26,10 +26,14 @@ const secureFetch = async (url: string, options: SecureFetchOptions = {}): Promi
   const { timeout = 10000, ...fetchOptions } = options;
 
   // Security headers for requests
+  // NOTE: Do NOT add Cache-Control: no-cache for same-origin requests —
+  // it bypasses the Service Worker cache and breaks offline mode.
+  const isSameOrigin =
+    typeof window !== 'undefined' && url.startsWith(window.location.origin);
+
   const secureHeaders: globalThis.HeadersInit = {
     'X-Requested-With': 'XMLHttpRequest',
-    'Cache-Control': 'no-cache',
-    Pragma: 'no-cache',
+    ...(isSameOrigin ? {} : { 'Cache-Control': 'no-cache', Pragma: 'no-cache' }),
     ...fetchOptions.headers,
   };
 
@@ -126,11 +130,18 @@ export const secureJsonFetch = async <T = any>(
   url: string,
   options: SecureFetchOptions = {}
 ): Promise<T> => {
+  // Do NOT send Cache-Control: no-cache for same-origin asset requests.
+  // Those headers bypass the Service Worker cache, breaking offline mode.
+  const isSameOrigin =
+    typeof window !== 'undefined' && url.startsWith(window.location.origin);
+
   const response = await secureFetch(url, {
     ...options,
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
+      // Only add cache-busting headers for cross-origin requests
+      ...(isSameOrigin ? {} : { 'Cache-Control': 'no-cache', Pragma: 'no-cache' }),
       ...options.headers,
     },
   });
@@ -155,9 +166,23 @@ export const secureJsonFetch = async <T = any>(
     throw new Error(`HTTP ${response.status}: ${response.statusText}`);
   }
 
+  // NOTE: Content-type check is intentionally lenient.
+  // Service Worker cached responses may omit or alter content-type headers,
+  // and GitHub Pages sometimes serves JSON with 'text/plain' or no content-type.
+  // We attempt to parse as JSON regardless and only throw if parsing fails.
   const contentType = response.headers.get('content-type');
-  if (!contentType || !contentType.includes('application/json')) {
-    throw new Error('Response is not valid JSON');
+  const looksLikeJson =
+    !contentType ||
+    contentType.includes('application/json') ||
+    contentType.includes('text/plain') ||
+    contentType.includes('text/javascript') ||
+    contentType.includes('application/octet-stream');
+
+  if (!looksLikeJson) {
+    // Only reject clearly non-JSON content types (HTML error pages, etc.)
+    if (contentType?.includes('text/html')) {
+      throw new Error(`Response is not valid JSON (content-type: ${contentType})`);
+    }
   }
 
   try {

@@ -4,6 +4,22 @@ import { logError, logDebug } from '../utils/logger';
 import type { LearningModule } from '../types';
 
 /**
+ * Normalize a URL the same way the Service Worker does:
+ * remove query params, hash, and trailing slash.
+ */
+function normalizeUrlForCache(url: string): string {
+  try {
+    const parsed = new URL(url);
+    parsed.search = '';
+    parsed.hash = '';
+    parsed.pathname = parsed.pathname.replace(/\/$/, '');
+    return parsed.href;
+  } catch {
+    return url;
+  }
+}
+
+/**
  * API Service Layer - Abstracts all API calls and data fetching logic
  *
  * CACHE ARCHITECTURE (3 niveles):
@@ -43,7 +59,9 @@ interface ModuleFilters {
 
 class ApiService {
   private cache = new Map<string, { data: unknown; timestamp: number }>();
-  private readonly CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+  // Memory cache TTL aligned with TanStack Query staleTime (10 min) so they
+  // expire together and avoid unnecessary network re-fetches between layers.
+  private readonly CACHE_TTL = 10 * 60 * 1000; // 10 minutes
 
   /**
    * Generic cache management
@@ -104,7 +122,10 @@ class ApiService {
       // 3. Fallback to Cache API if network fails (offline support)
       try {
         const cache = await caches.open('fluentflow-offline-v5');
-        const cacheResponse = await cache.match(modulesUrl);
+        // Normalize URL to match how SW stores it (no query params, no trailing slash)
+        const normalizedUrl = normalizeUrlForCache(modulesUrl);
+        const cacheResponse =
+          (await cache.match(normalizedUrl)) ?? (await cache.match(modulesUrl));
 
         if (cacheResponse) {
           const modules = await cacheResponse.json();
@@ -177,13 +198,30 @@ class ApiService {
         const dataUrl = validateUrl(getAssetPath(cleanDataPath));
 
         // Lazy load actual module data (questions, flashcards, etc.)
-        const data = await secureJsonFetch(dataUrl);
+        let data: any;
+        try {
+          data = await secureJsonFetch(dataUrl);
+        } catch (networkErr) {
+          // Fallback to Cache API (offline support)
+          logDebug('Network failed for module data, trying Cache API', { moduleId }, 'ApiService');
+          const cache = await caches.open('fluentflow-offline-v5');
+          const normalizedUrl = normalizeUrlForCache(dataUrl);
+          const cached = (await cache.match(normalizedUrl)) ?? (await cache.match(dataUrl));
+          if (cached) {
+            data = await cached.json();
+            logDebug('Serving module data from Cache API', { moduleId }, 'ApiService');
+          } else {
+            throw networkErr; // re-throw if nothing in cache
+          }
+        }
 
         // Handle different data formats:
         // - Arrays (flashcard, quiz, etc.): use as-is
-        // - Objects (reading mode): wrap in array for consistent access
-        let processedData = data.data || data;
-        if (!Array.isArray(processedData) && typeof processedData === 'object') {
+        // - Objects with .data property (reading mode): extract it
+        // - Plain objects: wrap in array for consistent access
+        // NOTE: use explicit null/undefined check — data.data could be 0, false, or ""
+        let processedData = (data.data !== null && data.data !== undefined) ? data.data : data;
+        if (!Array.isArray(processedData) && typeof processedData === 'object' && processedData !== null) {
           processedData = [processedData];
         }
 

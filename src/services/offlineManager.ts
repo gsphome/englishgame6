@@ -12,7 +12,7 @@ import type { LearningModule } from '../types';
 
 // Isolated cache names to avoid interfering with other browser data
 export const CACHE_NAME = 'fluentflow-offline-v5';
-export const ASSETS_CACHE = 'fluentflow-assets-v6';
+export const ASSETS_CACHE = 'fluentflow-assets-v8';
 
 export interface DownloadProgress {
   total: number;

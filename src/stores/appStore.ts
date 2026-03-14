@@ -143,8 +143,15 @@ export const useAppStore = create<AppStore>()(
     {
       name: 'app-storage',
       partialize: state => ({
-        currentView: state.currentView,
-        currentModule: state.currentModule,
+        // Always restore to menu on reload — learning views are restored via URL hash.
+        // Persisting a learning view without its module causes a flash of
+        // "no module selected" before handleHashChange resolves.
+        currentView: 'menu' as const,
+        // NOTE: currentModule is intentionally NOT persisted.
+        // The URL hash (#/learn/module-id) is the source of truth for navigation.
+        // Persisting currentModule causes stale data issues when the user returns
+        // after a long time — the module metadata may have changed or been removed.
+        // handleHashChange re-validates the module from the network/cache on mount.
         previousMenuContext: state.previousMenuContext,
         globalScore: state.globalScore,
         // sessionScore should NOT be persisted - it's session-only data
