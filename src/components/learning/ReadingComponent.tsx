@@ -232,9 +232,7 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
           </div>
         ) : isSummaryPage ? (
           <div className="reading-component__summary-page">
-            <h3 className="reading-component__summary-title">
-              {t('reading.component.summary')}
-            </h3>
+            <h3 className="reading-component__summary-title">{t('reading.component.summary')}</h3>
 
             {/* Key Vocabulary Section - Enhanced Collapsible */}
             {readingData.keyVocabulary?.length > 0 && (
