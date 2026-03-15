@@ -1,10 +1,14 @@
 import React from 'react';
 import Toast from './Toast';
 import { useToastStore } from '../../stores/toastStore';
+import { useSettingsStore } from '../../stores/settingsStore';
+import { useTranslation } from '../../utils/i18n';
 import '../../styles/components/toast-card.css';
 
 export const ToastContainer: React.FC = () => {
   const { currentToast, isVisible, clearToast } = useToastStore();
+  const { language } = useSettingsStore();
+  const { t } = useTranslation(language);
 
   // Only render if there's a toast and it's visible
   if (!currentToast || !isVisible) {
@@ -12,7 +16,7 @@ export const ToastContainer: React.FC = () => {
   }
 
   return (
-    <div aria-label="Notifications" role="region" className="toast-container">
+    <div aria-label={t('navigation.notifications')} role="region" className="toast-container">
       <Toast key={currentToast.id} toast={currentToast} onClose={clearToast} />
     </div>
   );

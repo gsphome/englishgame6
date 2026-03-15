@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { CheckCircle, XCircle, ArrowRight, Home } from 'lucide-react';
 import { useAppStore } from '../../stores/appStore';
 import { useUserStore } from '../../stores/userStore';
@@ -25,29 +25,34 @@ const QuizComponent: React.FC<QuizComponentProps> = ({ module }) => {
   const [showResult, setShowResult] = useState(false);
   const [startTime] = useState(Date.now());
 
-  const { updateSessionScore } = useAppStore();
+  const updateSessionScore = useAppStore(state => state.updateSessionScore);
   const { updateUserScore } = useUserStore();
   const { theme, language, randomizeItems } = useSettingsStore();
 
-  // Process questions with optional randomization based on settings
-  const processedQuestions = useMemo(() => {
-    if (!module?.data) return [];
+  // Compute processed questions once on mount — stored in a ref so that
+  // re-renders triggered by score updates never re-shuffle the options.
+  const processedQuestionsRef = useRef<ReturnType<typeof buildProcessedQuestions> | null>(null);
 
-    const questions = module.data as QuizData[];
-    const processedQuestions = conditionalShuffle(questions, randomizeItems);
-
-    // Conditionally randomize options for each question
-    return processedQuestions.map(question => {
-      if (!question.options || !question.correct) return question;
-
-      const processedOptions = conditionalShuffle([...question.options], randomizeItems);
-
-      return {
-        ...question,
-        options: processedOptions,
-      };
+  function buildProcessedQuestions(data: typeof module.data, shuffle: boolean) {
+    if (!data) return [];
+    const questions = data as QuizData[];
+    const shuffled = conditionalShuffle(questions, shuffle);
+    return shuffled.map(question => {
+      if (!question.options) return question;
+      const correctText =
+        typeof question.correct === 'number'
+          ? question.options[question.correct]
+          : question.correct;
+      const processedOptions = conditionalShuffle([...question.options], shuffle);
+      return { ...question, options: processedOptions, correct: correctText };
     });
-  }, [module?.data, randomizeItems]);
+  }
+
+  if (processedQuestionsRef.current === null) {
+    processedQuestionsRef.current = buildProcessedQuestions(module?.data, randomizeItems);
+  }
+
+  const processedQuestions = processedQuestionsRef.current;
   const { returnToMenu } = useMenuNavigation();
   const { addProgressEntry } = useProgressStore();
   const { t } = useTranslation(language);

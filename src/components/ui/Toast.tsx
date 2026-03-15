@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { CheckCircle, XCircle, AlertCircle, Info, X } from 'lucide-react';
 import { type ToastData } from '../../stores/toastStore';
+import { useSettingsStore } from '../../stores/settingsStore';
+import { useTranslation } from '../../utils/i18n';
 import '../../styles/components/toast-card.css';
 
 interface ToastProps {
@@ -11,6 +13,8 @@ interface ToastProps {
 const Toast: React.FC<ToastProps> = ({ toast, onClose }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isLeaving, setIsLeaving] = useState(false);
+  const { language } = useSettingsStore();
+  const { t } = useTranslation(language);
 
   useEffect(() => {
     // Trigger entrance animation
@@ -92,7 +96,7 @@ const Toast: React.FC<ToastProps> = ({ toast, onClose }) => {
           <button
             onClick={handleClose}
             className={`${baseClass}__close`}
-            aria-label="Close notification"
+            aria-label={t('navigation.closeNotification')}
           >
             <X className={`${baseClass}__close-icon`} />
           </button>

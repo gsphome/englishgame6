@@ -329,28 +329,28 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
               className={`compact-settings__tab ${activeTab === 'general' ? 'compact-settings__tab--active' : ''}`}
             >
               <Palette className="compact-settings__tab-icon" />
-              <span className="compact-settings__tab-title">General</span>
+              <span className="compact-settings__tab-title">{t('settings.tabGeneral')}</span>
             </button>
             <button
               onClick={() => setActiveTab('games')}
               className={`compact-settings__tab ${activeTab === 'games' ? 'compact-settings__tab--active' : ''}`}
             >
               <Gamepad2 className="compact-settings__tab-icon" />
-              <span className="compact-settings__tab-title">Games</span>
+              <span className="compact-settings__tab-title">{t('settings.tabGames')}</span>
             </button>
             <button
               onClick={() => setActiveTab('categories')}
               className={`compact-settings__tab ${activeTab === 'categories' ? 'compact-settings__tab--active' : ''}`}
             >
               <Wrench className="compact-settings__tab-icon" />
-              <span className="compact-settings__tab-title">Categories</span>
+              <span className="compact-settings__tab-title">{t('settings.tabCategories')}</span>
             </button>
             <button
               onClick={() => setActiveTab('offline')}
               className={`compact-settings__tab ${activeTab === 'offline' ? 'compact-settings__tab--active' : ''}`}
             >
               <WifiOff className="compact-settings__tab-icon" />
-              <span className="compact-settings__tab-title">Offline</span>
+              <span className="compact-settings__tab-title">{t('settings.tabOffline')}</span>
             </button>
           </div>
 
@@ -378,8 +378,8 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
                       value={localLanguage}
                       onChange={e => setLocalLanguage(e.target.value as 'en' | 'es')}
                     >
-                      <option value="en">🇺🇸 English</option>
-                      <option value="es">🇪🇸 Español</option>
+                      <option value="en">{t('settings.langEnglish')}</option>
+                      <option value="es">{t('settings.langSpanish')}</option>
                     </select>
                   </div>
 
@@ -467,7 +467,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
                           )
                         }
                         disabled={(localGameSettings.flashcardMode.wordCount || 10) <= 5}
-                        aria-label="Decrease flashcard count"
+                        aria-label={t('settings.decreaseFlashcardCount')}
                       >
                         −
                       </button>
@@ -485,7 +485,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
                           )
                         }
                         disabled={(localGameSettings.flashcardMode.wordCount || 10) >= 30}
-                        aria-label="Increase flashcard count"
+                        aria-label={t('settings.increaseFlashcardCount')}
                       >
                         +
                       </button>
@@ -508,7 +508,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
                           )
                         }
                         disabled={(localGameSettings.quizMode.questionCount || 10) <= 5}
-                        aria-label="Decrease quiz count"
+                        aria-label={t('settings.decreaseQuizCount')}
                       >
                         −
                       </button>
@@ -526,7 +526,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
                           )
                         }
                         disabled={(localGameSettings.quizMode.questionCount || 10) >= 25}
-                        aria-label="Increase quiz count"
+                        aria-label={t('settings.increaseQuizCount')}
                       >
                         +
                       </button>
@@ -549,7 +549,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
                           )
                         }
                         disabled={(localGameSettings.completionMode.itemCount || 10) <= 5}
-                        aria-label="Decrease completion count"
+                        aria-label={t('settings.decreaseCompletionCount')}
                       >
                         −
                       </button>
@@ -567,7 +567,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
                           )
                         }
                         disabled={(localGameSettings.completionMode.itemCount || 10) >= 20}
-                        aria-label="Increase completion count"
+                        aria-label={t('settings.increaseCompletionCount')}
                       >
                         +
                       </button>
@@ -590,7 +590,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
                           )
                         }
                         disabled={(localGameSettings.sortingMode.wordCount || 12) <= 8}
-                        aria-label="Decrease sorting count"
+                        aria-label={t('settings.decreaseSortingCount')}
                       >
                         −
                       </button>
@@ -608,7 +608,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
                           )
                         }
                         disabled={(localGameSettings.sortingMode.wordCount || 12) >= 20}
-                        aria-label="Increase sorting count"
+                        aria-label={t('settings.increaseSortingCount')}
                       >
                         +
                       </button>
@@ -631,7 +631,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
                           )
                         }
                         disabled={(localGameSettings.matchingMode.wordCount || 6) <= 4}
-                        aria-label="Decrease matching count"
+                        aria-label={t('settings.decreaseMatchingCount')}
                       >
                         −
                       </button>
@@ -649,7 +649,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
                           )
                         }
                         disabled={(localGameSettings.matchingMode.wordCount || 6) >= 12}
-                        aria-label="Increase matching count"
+                        aria-label={t('settings.increaseMatchingCount')}
                       >
                         +
                       </button>

@@ -67,11 +67,11 @@ function getInitialTheme(): ThemeState {
     console.warn('Failed to parse stored theme preference:', error);
   }
 
-  // Fall back to system preference
-  const systemTheme = detectSystemTheme();
+  // No stored preference — default to light mode
+  // This ensures incognito browsers and dark-system users get light by default
   return {
-    theme: systemTheme,
-    isSystemPreference: true,
+    theme: 'light',
+    isSystemPreference: false,
   };
 }
 

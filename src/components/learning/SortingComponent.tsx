@@ -44,7 +44,7 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
     null
   );
 
-  const { updateSessionScore } = useAppStore();
+  const updateSessionScore = useAppStore(state => state.updateSessionScore);
   const { updateUserScore } = useUserStore();
   const { language, randomizeItems } = useSettingsStore();
   const { returnToMenu } = useMenuNavigation();
@@ -550,7 +550,7 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
 
                 {showResult && hasErrors && (
                   <div className="sorting-component__feedback sorting-component__feedback--error">
-                    <span className="sorting-component__feedback-label">Correct items:</span>{' '}
+                    <span className="sorting-component__feedback-label">{t('learning.correctItems')}</span>{' '}
                     <span className="sorting-component__feedback-text">
                       {category.items.map((item, idx) => (
                         <span key={idx}>
@@ -643,7 +643,7 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
         <div className="sorting-modal">
           <div className="sorting-modal__container">
             <div className="sorting-modal__header">
-              <h3 className="sorting-modal__title">Exercise Summary - Past Tense Verbs</h3>
+              <h3 className="sorting-modal__title">{t('learning.exerciseSummary')}</h3>
               <button
                 onClick={() => setShowExplanation(false)}
                 className="sorting-modal__close-btn"
@@ -680,7 +680,7 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
 
                       <div className="sorting-modal__card-content">
                         <div className="sorting-modal__card-field">
-                          <span className="sorting-modal__card-label">Correct category:</span>
+                          <span className="sorting-modal__card-label">{t('learning.correctAnswer')}</span>
                           <p className="sorting-modal__card-value sorting-modal__card-value--correct">
                             {result.correctCategory}
                           </p>
@@ -688,7 +688,7 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
 
                         {!result.isCorrect && (
                           <div className="sorting-modal__card-field">
-                            <span className="sorting-modal__card-label">Your answer:</span>
+                            <span className="sorting-modal__card-label">{t('learning.yourAnswer')}</span>
                             <p className="sorting-modal__card-value sorting-modal__card-value--incorrect">
                               {result.userCategory}
                             </p>
@@ -697,7 +697,7 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
 
                         {result.explanation && (
                           <div className="sorting-modal__card-field">
-                            <span className="sorting-modal__card-label">Explanation:</span>
+                            <span className="sorting-modal__card-label">{t('learning.explanation')}</span>
                             <p className="sorting-modal__card-explanation">{result.explanation}</p>
                           </div>
                         )}
@@ -713,7 +713,7 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
                 onClick={() => setShowExplanation(false)}
                 className="sorting-modal__close-button"
               >
-                Close
+                {t('common.close')}
               </button>
             </div>
           </div>

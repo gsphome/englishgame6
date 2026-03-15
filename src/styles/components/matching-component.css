@@ -83,6 +83,12 @@
   margin-bottom: 0.625rem;
 }
 
+@media (max-width: 768px) {
+  .matching-component__grid {
+    margin-bottom: 0.375rem;
+  }
+}
+
 .matching-component__columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -686,6 +692,15 @@ button.matching-component__item.matching-component__item--incorrect .matching-co
 @media (max-width: 768px) {
   .matching-component {
     padding: 0.375rem;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  /* Push game controls to bottom of viewport */
+  .matching-component > .game-controls {
+    margin-top: auto;
   }
 
   .matching-component__column-header {

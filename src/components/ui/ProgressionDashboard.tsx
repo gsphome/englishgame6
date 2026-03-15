@@ -2,6 +2,8 @@ import React from 'react';
 import { useProgression } from '../../hooks/useProgression';
 import { useAppStore } from '../../stores/appStore';
 import { useProgressStore } from '../../stores/progressStore';
+import { useSettingsStore } from '../../stores/settingsStore';
+import { useTranslation } from '../../utils/i18n';
 import { toast } from '../../stores/toastStore';
 import { CheckCircle, Lock, Play, ChevronDown, ChevronRight } from 'lucide-react';
 import type { LearningModule } from '../../types';
@@ -18,6 +20,8 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
   const { setPreviousMenuContext } = useAppStore();
   const { isModuleCompleted } = useProgressStore();
   const progression = useProgression();
+  const { language } = useSettingsStore();
+  const { t } = useTranslation(language);
   const [expandedUnits, setExpandedUnits] = React.useState<Set<number>>(new Set());
   const [isDarkMode, setIsDarkMode] = React.useState(false);
 
@@ -141,18 +145,17 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
 
   const handleContinueLearning = () => {
     if (nextRecommended) {
-      // Show toast when continuing a module (same as MainMenu)
       const modeLabels: Record<string, string> = {
-        flashcard: 'Flashcards',
-        quiz: 'Quiz',
-        completion: 'Completar oraciones',
-        sorting: 'Ejercicio de clasificación',
-        matching: 'Ejercicio de emparejamiento',
+        flashcard: t('mainMenu.modeFlashcard'),
+        quiz: t('mainMenu.modeQuiz'),
+        completion: t('mainMenu.modeCompletion'),
+        sorting: t('mainMenu.modeSorting'),
+        matching: t('mainMenu.modeMatching'),
       };
 
       toast.info(
-        'Continuando módulo',
-        `${nextRecommended.name} - ${modeLabels[nextRecommended.learningMode] || 'Ejercicio'}`,
+        t('mainMenu.startingModule'),
+        `${nextRecommended.name} - ${modeLabels[nextRecommended.learningMode] || t('mainMenu.modeDefault')}`,
         { duration: 1500 }
       );
 
@@ -165,27 +168,25 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
   };
 
   const handleModuleClick = (module: LearningModule) => {
-    // Check if module is accessible (same logic as MainMenu)
     if (!progression.canAccessModule(module.id)) {
       const missingPrereqs = progression.getMissingPrerequisites(module.id);
       const prereqNames = missingPrereqs.map(p => p.name).join(', ');
 
-      toast.warning('Módulo bloqueado', `Completa primero: ${prereqNames}`, { duration: 3000 });
+      toast.warning(t('mainMenu.moduleBlocked'), t('mainMenu.moduleBlockedDesc', undefined, { prereqs: prereqNames }), { duration: 3000 });
       return;
     }
 
-    // Show toast when starting a module (same as MainMenu)
     const modeLabels: Record<string, string> = {
-      flashcard: 'Flashcards',
-      quiz: 'Quiz',
-      completion: 'Completar oraciones',
-      sorting: 'Ejercicio de clasificación',
-      matching: 'Ejercicio de emparejamiento',
+      flashcard: t('mainMenu.modeFlashcard'),
+      quiz: t('mainMenu.modeQuiz'),
+      completion: t('mainMenu.modeCompletion'),
+      sorting: t('mainMenu.modeSorting'),
+      matching: t('mainMenu.modeMatching'),
     };
 
     toast.info(
-      'Iniciando módulo',
-      `${module.name} - ${modeLabels[module.learningMode] || 'Ejercicio'}`,
+      t('mainMenu.startingModule'),
+      `${module.name} - ${modeLabels[module.learningMode] || t('mainMenu.modeDefault')}`,
       { duration: 1500 }
     );
 
@@ -197,15 +198,15 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
   };
 
   const getUnitTitle = (unit: number): string => {
-    const titles = {
-      1: 'Foundation',
-      2: 'Elementary',
-      3: 'Intermediate',
-      4: 'Upper-Intermediate',
-      5: 'Advanced',
-      6: 'Mastery',
+    const titles: Record<number, string> = {
+      1: t('mainMenu.unitFoundation'),
+      2: t('mainMenu.unitElementary'),
+      3: t('mainMenu.unitIntermediate'),
+      4: t('mainMenu.unitUpperIntermediate'),
+      5: t('mainMenu.unitAdvanced'),
+      6: t('mainMenu.unitMastery'),
     };
-    return titles[unit as keyof typeof titles] || `Unit ${unit}`;
+    return titles[unit] || t('mainMenu.unit', undefined, { unit });
   };
 
   const getLevelColor = (level: string): string => {
@@ -274,7 +275,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
                 onClick={handleContinueLearning}
               >
                 <Play className="progression-dashboard__continue-icon" />
-                Continue
+                {t('common.continue')}
               </button>
             </div>
           </div>
@@ -313,7 +314,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
                     <h3 className="progression-dashboard__unit-title">{getUnitTitle(unit)}</h3>
                     {hasNextModule && !isExpanded && (
                       <div className="progression-dashboard__unit-next-indicator">
-                        <span className="progression-dashboard__unit-next-label">Next</span>
+                        <span className="progression-dashboard__unit-next-label">{t('learningPath.nextRecommended')}</span>
                       </div>
                     )}
                   </div>
@@ -386,7 +387,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
 
                           {isNext && (
                             <div className="progression-dashboard__next-indicator">
-                              <span className="progression-dashboard__next-label">Next</span>
+                              <span className="progression-dashboard__next-label">{t('learningPath.nextRecommended')}</span>
                             </div>
                           )}
                         </div>

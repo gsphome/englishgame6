@@ -10,6 +10,7 @@ import '../../styles/components/content-renderer.css';
 interface ContentRendererProps {
   content: StructuredContent;
   className?: string;
+  loadingText?: string;
 }
 
 interface ContentSegmentProps {
@@ -75,9 +76,9 @@ const ContentSegmentComponent: React.FC<ContentSegmentProps> = ({ segment, forma
   }
 };
 
-export const ContentRenderer: React.FC<ContentRendererProps> = ({ content, className = '' }) => {
+export const ContentRenderer: React.FC<ContentRendererProps> = ({ content, className = '', loadingText = 'Loading...' }) => {
   if (!content || !content.segments || content.segments.length === 0) {
-    return <span className={`content-renderer ${className}`}>Loading...</span>;
+    return <span className={`content-renderer ${className}`}>{loadingText}</span>;
   }
 
   return (

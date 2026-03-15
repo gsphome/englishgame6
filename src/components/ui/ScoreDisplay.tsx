@@ -1,11 +1,15 @@
 import React from 'react';
 import { useAppStore } from '../../stores/appStore';
 import { useUserStore } from '../../stores/userStore';
+import { useSettingsStore } from '../../stores/settingsStore';
+import { useTranslation } from '../../utils/i18n';
 import '../../styles/components/score-display.css';
 
 export const ScoreDisplay: React.FC = () => {
   const { sessionScore, globalScore, currentView } = useAppStore();
   const { getTotalScore } = useUserStore();
+  const { language } = useSettingsStore();
+  const { t } = useTranslation(language);
 
   // Determine what to show based on current view
   const isInGame = currentView !== 'menu';
@@ -33,7 +37,7 @@ export const ScoreDisplay: React.FC = () => {
         {isInGame ? (
           // Compact session score with fixed layout
           <div className="score-display-compact__session">
-            <div className="score-display-compact__icon" role="img" aria-label="Session score">
+            <div className="score-display-compact__icon" role="img" aria-label={t('scores.sessionScore')}>
               🎯
             </div>
             <div className="score-display-compact__values">
@@ -64,7 +68,7 @@ export const ScoreDisplay: React.FC = () => {
           // Compact global score with level indicator
           <div className="score-display-compact__global">
             <div className="score-display-compact__main">
-              <div className="score-display-compact__icon" role="img" aria-label="Global score">
+              <div className="score-display-compact__icon" role="img" aria-label={t('scores.globalScore')}>
                 🌍
               </div>
               <div className="score-display-compact__values">

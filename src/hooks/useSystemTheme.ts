@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
 import { useSettingsStore } from '../stores/settingsStore';
-import { setupSystemThemeListener, detectSystemTheme } from '../utils/themeInitializer';
+import { setupSystemThemeListener } from '../utils/themeInitializer';
 
 /**
  * Hook to sync with system theme changes
- * Only updates the theme if user hasn't manually set a preference
+ * Only follows system changes if user has an explicit stored preference
+ * that already matches the system theme (i.e., user chose to be in sync).
+ * New users (no stored preference) always stay on light mode.
  */
 export function useSystemTheme() {
   const { setTheme } = useSettingsStore();
@@ -12,23 +14,24 @@ export function useSystemTheme() {
   useEffect(() => {
     // Set up listener for system theme changes
     const cleanup = setupSystemThemeListener(newTheme => {
-      // Only auto-update if user hasn't stored a manual preference
       try {
         const storedSettings = localStorage.getItem('settings-storage');
         if (!storedSettings) {
-          // No stored preference, follow system
+          // No stored preference = new user, don't auto-switch to dark
+          return;
+        }
+        const parsed = JSON.parse(storedSettings);
+        if (parsed.state?.theme && parsed.state.theme !== newTheme) {
+          // User has a stored preference that differs from system — respect it
+          return;
+        }
+        if (parsed.state?.theme === newTheme) {
+          // Theme already matches system, keep in sync
           setTheme(newTheme);
-        } else {
-          const parsed = JSON.parse(storedSettings);
-          // If theme was set to system preference initially, keep following system
-          if (!parsed.state?.theme || parsed.state.theme === detectSystemTheme()) {
-            setTheme(newTheme);
-          }
         }
       } catch (error) {
         console.warn('Failed to check stored theme preference:', error);
-        // On error, follow system theme
-        setTheme(newTheme);
+        // On error, don't change theme — stay on current
       }
     });
 

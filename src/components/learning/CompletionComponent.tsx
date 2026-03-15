@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Check, X, ArrowRight, Home } from 'lucide-react';
 import { useAppStore } from '../../stores/appStore';
 import { useUserStore } from '../../stores/userStore';
@@ -36,23 +36,29 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
   const [showResult, setShowResult] = useState(false);
   const [startTime] = useState(Date.now());
   const inputRef = useRef<EditableInputHandle>(null);
+  // Flag to ignore Enter key briefly after advancing to next question
+  const ignoreEnterRef = useRef(false);
 
-  const { updateSessionScore } = useAppStore();
+  const updateSessionScore = useAppStore(state => state.updateSessionScore);
   const { updateUserScore } = useUserStore();
   const { language, randomizeItems } = useSettingsStore();
   const { returnToMenu } = useMenuNavigation();
+
+  // Compute exercises once on mount — ref prevents re-shuffling on score updates
+  const processedExercisesRef = useRef<CompletionData[] | null>(null);
+  if (processedExercisesRef.current === null) {
+    processedExercisesRef.current = module?.data
+      ? conditionalShuffle(module.data as CompletionData[], randomizeItems)
+      : [];
+  }
+  const processedExercises = processedExercisesRef.current;
+
   const { addProgressEntry } = useProgressStore();
   const { t } = useTranslation(language);
   const { showCorrectAnswer, showIncorrectAnswer, showModuleCompleted } = useToast();
   useLearningCleanup();
 
   const handleReturnToMenu = () => returnToMenu();
-
-  // Process exercises with optional randomization based on settings
-  const processedExercises = useMemo(() => {
-    if (!module?.data) return [];
-    return conditionalShuffle(module.data as CompletionData[], randomizeItems);
-  }, [module?.data, randomizeItems]);
 
   const currentExercise = processedExercises[currentIndex];
 
@@ -88,11 +94,19 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
 
   const handleNext = useCallback(() => {
     if (currentIndex < processedExercises.length - 1) {
+      // Imperatively clear the contentEditable div BEFORE state updates
+      // so the old text doesn't carry over (isFocused guard in useEffect would skip it)
+      inputRef.current?.clear();
       setCurrentIndex(currentIndex + 1);
       setAnswer('');
       setShowResult(false);
-      // Focus after React re-renders the new exercise
-      requestAnimationFrame(() => inputRef.current?.focus());
+      // Block Enter for a short window so the keyup of the same Enter
+      // doesn't immediately trigger checkAnswer on the new question
+      ignoreEnterRef.current = true;
+      setTimeout(() => {
+        ignoreEnterRef.current = false;
+        requestAnimationFrame(() => inputRef.current?.focus());
+      }, 150);
     } else {
       const timeSpent = Math.floor((Date.now() - startTime) / 1000);
       const { sessionScore } = useAppStore.getState();
@@ -129,6 +143,7 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
     if (processedExercises.length === 0) return;
 
     const handleKeyPress = (e: KeyboardEvent) => {
+      if (ignoreEnterRef.current) return;
       if (e.key === 'Enter' && !showResult) {
         if (answer.trim()) {
           checkAnswer();
@@ -243,7 +258,7 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
         {currentExercise?.tip && (
           <div className="completion-component__tip">
             <p className="completion-component__tip-text">
-              💡 <strong>Tip:</strong> {currentExercise.tip}
+              💡 <strong>{t('learning.tip')}</strong> {currentExercise.tip}
             </p>
           </div>
         )}
@@ -277,7 +292,7 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
               {/* Correct answer flows naturally after incorrect */}
               {answer.toLowerCase().trim() !== currentExercise?.correct?.toLowerCase().trim() && (
                 <span className="completion-component__correct-answer">
-                  - Answer: <strong>{currentExercise?.correct}</strong>
+                  - {t('learning.answer')} <strong>{currentExercise?.correct}</strong>
                 </span>
               )}
             </div>
@@ -286,7 +301,7 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
             {currentExercise?.explanation && (
               <div className="completion-component__explanation">
                 <div className="completion-component__explanation-text">
-                  <span className="completion-component__explanation-label">Explanation:</span>{' '}
+                  <span className="completion-component__explanation-label">{t('learning.explanation')}</span>{' '}
                   <ContentRenderer
                     content={ContentAdapter.ensureStructured(
                       currentExercise.explanation,

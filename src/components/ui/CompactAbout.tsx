@@ -138,7 +138,7 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
                 target="_blank"
                 rel="noopener noreferrer"
                 className="compact-about__developer-link"
-                aria-label="GitHub Profile"
+                aria-label={t('about.githubProfile')}
               >
                 <Github className="compact-about__link-icon" />
                 <span>GitHub</span>
@@ -184,7 +184,7 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
               <button
                 onClick={() => setShowScreenInfo(false)}
                 className="screen-info-modal__close-btn"
-                aria-label="Close screen info"
+                aria-label={t('about.closeScreenInfo')}
               >
                 <X className="screen-info-modal__close-icon" />
               </button>
@@ -195,25 +195,25 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
                 return (
                   <div className="screen-info-modal__grid">
                     <div className="screen-info-modal__item">
-                      <span className="screen-info-modal__label">Resolution:</span>
+                      <span className="screen-info-modal__label">{t('about.screenResolution')}</span>
                       <span className="screen-info-modal__value">{screenInfo.resolution}</span>
                     </div>
                     <div className="screen-info-modal__item">
-                      <span className="screen-info-modal__label">Viewport:</span>
+                      <span className="screen-info-modal__label">{t('about.screenViewport')}</span>
                       <span className="screen-info-modal__value">{screenInfo.viewport}</span>
                     </div>
                     <div className="screen-info-modal__item">
-                      <span className="screen-info-modal__label">Pixel Ratio:</span>
+                      <span className="screen-info-modal__label">{t('about.screenPixelRatio')}</span>
                       <span className="screen-info-modal__value">
                         {screenInfo.devicePixelRatio}x
                       </span>
                     </div>
                     <div className="screen-info-modal__item">
-                      <span className="screen-info-modal__label">Color Depth:</span>
+                      <span className="screen-info-modal__label">{t('about.screenColorDepth')}</span>
                       <span className="screen-info-modal__value">{screenInfo.colorDepth} bits</span>
                     </div>
                     <div className="screen-info-modal__item">
-                      <span className="screen-info-modal__label">Orientation:</span>
+                      <span className="screen-info-modal__label">{t('about.screenOrientation')}</span>
                       <span className="screen-info-modal__value">{screenInfo.orientation}</span>
                     </div>
                   </div>

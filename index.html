@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="description" content="FluentFlow - English Learning Platform" />
     <meta name="theme-color" content="#ffffff" id="theme-color-meta" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="light" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="mobile-web-app-capable" content="yes" />
@@ -28,9 +28,8 @@
                 if (stored) {
                     var parsed = JSON.parse(stored);
                     if (parsed.state && parsed.state.theme) theme = parsed.state.theme;
-                } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    theme = 'dark';
                 }
+                // No stored preference: always default to light mode
 
                 document.documentElement.classList.add(theme);
                 document.documentElement.classList.remove(theme === 'dark' ? 'light' : 'dark');
@@ -38,9 +37,8 @@
                 var meta = document.getElementById('theme-color-meta');
                 if (meta) meta.setAttribute('content', theme === 'dark' ? '#1f2937' : '#ffffff');
             } catch (e) {
-                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    document.documentElement.classList.add('dark');
-                }
+                // On error, default to light mode
+                document.documentElement.classList.add('light');
             }
         })();
     </script>

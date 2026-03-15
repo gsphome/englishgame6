@@ -75,8 +75,19 @@
 }
 
 .progression-dashboard--dark-theme .progression-dashboard__module--next {
-  background-color: rgba(59, 130, 246, 0.1);
-  border-color: var(--theme-primary-blue, #3b82f6);
+  background-color: rgba(59, 130, 246, 0.08);
+  border-color: rgba(96, 165, 250, 0.4);
+}
+
+/* Softer next badge in dark mode */
+.progression-dashboard--dark-theme .progression-dashboard__next-indicator {
+  background: rgba(96, 165, 250, 0.25);
+  color: #93c5fd;
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__unit-next-indicator {
+  background: rgba(96, 165, 250, 0.25);
+  color: #93c5fd;
 }
 
 .progression-dashboard--dark-theme .progression-dashboard__module-icon {

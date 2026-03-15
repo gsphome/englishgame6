@@ -33,8 +33,9 @@ const MatchingComponent: React.FC<MatchingComponentProps> = ({ module }) => {
   const [showExplanation, setShowExplanation] = useState(false);
   const [selectedTerm, setSelectedTerm] = useState<any>(null);
   const currentModuleIdRef = useRef<string | null>(null);
+  const pairsRef = useRef<{ left: string; right: string; explanation: string }[]>([]);
 
-  const { updateSessionScore } = useAppStore();
+  const updateSessionScore = useAppStore(state => state.updateSessionScore);
   const { updateUserScore } = useUserStore();
   const { language, randomizeItems } = useSettingsStore();
   const { returnToMenu } = useMenuNavigation();
@@ -93,15 +94,19 @@ const MatchingComponent: React.FC<MatchingComponentProps> = ({ module }) => {
     currentModuleIdRef.current = module.id;
 
     // Expect data to be an array of {left, right, explanation} objects
-    const pairs = (module.data as any[]).map((item: any) => ({
+    const initialPairs = (module.data as any[]).map((item: any) => ({
       left: item.left || '',
       right: item.right || '',
       explanation: item.explanation || '',
     }));
 
-    if (pairs.length > 0) {
-      const terms = pairs.map((pair: { left: string; right: string }) => pair.left);
-      const definitions = pairs.map((pair: { left: string; right: string }) => pair.right);
+    // Store pairs in ref so they're stable across re-renders
+    // (select in useModuleData can re-shuffle on each render)
+    pairsRef.current = initialPairs;
+
+    if (initialPairs.length > 0) {
+      const terms = initialPairs.map((pair: { left: string; right: string }) => pair.left);
+      const definitions = initialPairs.map((pair: { left: string; right: string }) => pair.right);
 
       setLeftItems(conditionalShuffle(terms, randomizeItems));
       setRightItems(conditionalShuffle(definitions, randomizeItems));
@@ -123,16 +128,8 @@ const MatchingComponent: React.FC<MatchingComponentProps> = ({ module }) => {
     );
   }
 
-  const getPairs = (): { left: string; right: string; explanation: string }[] => {
-    if (!module.data) return [];
-    return (module.data as any[]).map((item: any) => ({
-      left: item.left || '',
-      right: item.right || '',
-      explanation: item.explanation || '',
-    }));
-  };
-
-  const pairs = getPairs();
+  // Use stable pairs from ref (set once during initialization)
+  const pairs = pairsRef.current;
 
   const handleLeftClick = (item: string) => {
     if (showResult || matches[item]) return;
@@ -370,7 +367,7 @@ const MatchingComponent: React.FC<MatchingComponentProps> = ({ module }) => {
                 <button
                   key={`right-${index}`}
                   onClick={() => handleRightClick(item)}
-                  disabled={isMatched}
+                  disabled={isMatched && !showResult}
                   className={`${className} matching-component__button matching-component__button--secondary`}
                 >
                   <div className="matching-component__item-content">

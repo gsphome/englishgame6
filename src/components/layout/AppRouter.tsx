@@ -96,7 +96,7 @@ const ModuleError: React.FC<{ error: Error; moduleId: string; onRetry: () => voi
 }) => {
   const { language } = useSettingsStore();
   const { t } = useTranslation(language);
-  const { setCurrentView } = useAppStore();
+  const setCurrentView = useAppStore(state => state.setCurrentView);
 
   // Check if this is an offline error
   const isOfflineError = error instanceof ModuleNotAvailableOfflineError;
@@ -191,7 +191,8 @@ const LearningComponentWrapper: React.FC<LearningComponentWrapperProps> = ({
 };
 
 export const AppRouter: React.FC = () => {
-  const { currentView, currentModule } = useAppStore();
+  const currentView = useAppStore(state => state.currentView);
+  const currentModule = useAppStore(state => state.currentModule);
   const { language } = useSettingsStore();
   const { t } = useTranslation(language);
 

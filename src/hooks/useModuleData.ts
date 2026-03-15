@@ -12,6 +12,15 @@ export const useModuleData = (moduleId: string) => {
   // a single component lifecycle but changes on remount (new session).
   const sessionKey = React.useRef(Date.now()).current;
 
+  // Cache the select result so filterModuleData (which shuffles) only runs once
+  // per raw data identity. Without this, select runs on every render and
+  // produces different shuffled subsets, breaking components that compare
+  // against the original data (e.g., MatchingComponent's pair checking).
+  const cachedSelectRef = React.useRef<{ rawData: unknown; result: LearningModule | null }>({
+    rawData: null,
+    result: null,
+  });
+
   return useQuery({
     queryKey: ['module', moduleId, sessionKey],
     queryFn: async () => {
@@ -23,6 +32,11 @@ export const useModuleData = (moduleId: string) => {
     },
     networkMode: 'always', // Allow queries offline - service worker handles caching
     select: (module: LearningModule) => {
+      // Return cached result if raw data hasn't changed (same reference)
+      if (cachedSelectRef.current.rawData === module.data && cachedSelectRef.current.result) {
+        return cachedSelectRef.current.result;
+      }
+
       // Apply filtering using the service layer
       if (module.data && Array.isArray(module.data)) {
         // Determine limit based on game settings
@@ -61,9 +75,12 @@ export const useModuleData = (moduleId: string) => {
           moduleId
         );
 
-        return { ...module, data: filteredData };
+        const result = { ...module, data: filteredData };
+        cachedSelectRef.current = { rawData: module.data, result };
+        return result;
       }
 
+      cachedSelectRef.current = { rawData: module.data, result: module };
       return module;
     },
     staleTime: 10 * 60 * 1000, // 10 minutes

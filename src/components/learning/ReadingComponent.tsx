@@ -246,7 +246,16 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
                   onClick={() => setVocabularyExpanded(!vocabularyExpanded)}
                   aria-expanded={vocabularyExpanded}
                   aria-controls="vocabulary-content"
-                  aria-label={`${vocabularyExpanded ? 'Collapse' : 'Expand'} key vocabulary section with ${readingData.keyVocabulary.length} ${readingData.keyVocabulary.length === 1 ? 'term' : 'terms'}`}
+                  aria-label={t('reading.accessibility.vocabularySectionLabel', undefined, {
+                    action: vocabularyExpanded
+                      ? t('reading.accessibility.collapseSection')
+                      : t('reading.accessibility.expandSection'),
+                    count: readingData.keyVocabulary.length,
+                    unit:
+                      readingData.keyVocabulary.length === 1
+                        ? t('reading.accessibility.termSingular')
+                        : t('reading.accessibility.termPlural'),
+                  })}
                 >
                   <span className="reading-component__summary-section-title">
                     {t('reading.component.keyVocabulary')}
@@ -261,7 +270,7 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
                     id="vocabulary-content"
                     className="reading-component__vocabulary-grid"
                     role="region"
-                    aria-label="Key vocabulary terms"
+                    aria-label={t('reading.component.keyVocabulary')}
                   >
                     {readingData.keyVocabulary.map((term, index) => (
                       <div key={index} className="reading-component__vocabulary-card">
@@ -306,7 +315,16 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
                   onClick={() => setGrammarExpanded(!grammarExpanded)}
                   aria-expanded={grammarExpanded}
                   aria-controls="grammar-content"
-                  aria-label={`${grammarExpanded ? 'Collapse' : 'Expand'} grammar points section with ${readingData.grammarPoints.length} ${readingData.grammarPoints.length === 1 ? 'rule' : 'rules'}`}
+                  aria-label={t('reading.accessibility.grammarSectionLabel', undefined, {
+                    action: grammarExpanded
+                      ? t('reading.accessibility.collapseSection')
+                      : t('reading.accessibility.expandSection'),
+                    count: readingData.grammarPoints.length,
+                    unit:
+                      readingData.grammarPoints.length === 1
+                        ? t('reading.accessibility.ruleSingular')
+                        : t('reading.accessibility.rulePlural'),
+                  })}
                 >
                   <span className="reading-component__summary-section-title">
                     {t('reading.component.grammarPoints')}
@@ -317,7 +335,7 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
                   <ChevronDown className="reading-component__summary-section-icon" />
                 </button>
                 {grammarExpanded && readingData.grammarPoints && (
-                  <div id="grammar-content" role="region" aria-label="Grammar points">
+                  <div id="grammar-content" role="region" aria-label={t('reading.component.grammarPoints')}>
                     {readingData.grammarPoints.map((point, index) => (
                       <div key={index} className="reading-component__grammar-point">
                         <div className="reading-component__grammar-point-header">

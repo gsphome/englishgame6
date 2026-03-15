@@ -13,6 +13,7 @@ interface EditableInputProps {
 
 export interface EditableInputHandle {
   focus: () => void;
+  clear: () => void;
 }
 
 /**
@@ -37,10 +38,16 @@ export const EditableInput = forwardRef<EditableInputHandle, EditableInputProps>
     // Track whether the div currently has focus to avoid cursor-reset on mobile
     const isFocused = useRef(false);
 
-    // Expose focus() to parent components for imperative control
+    // Expose focus() and clear() to parent components for imperative control
     useImperativeHandle(ref, () => ({
       focus() {
         focusAtEnd();
+      },
+      clear() {
+        if (divRef.current) {
+          // Remove all child nodes (text, <br>, <div>) — not just textContent
+          divRef.current.innerHTML = '';
+        }
       },
     }));
 
@@ -76,8 +83,22 @@ export const EditableInput = forwardRef<EditableInputHandle, EditableInputProps>
     }, [autoFocus, disabled]);
 
     const handleInput = (e: React.FormEvent<HTMLDivElement>) => {
-      const newValue = e.currentTarget.textContent || '';
-      onChange(newValue);
+      const el = e.currentTarget;
+      // Strip any <br> or block elements that contentEditable may insert on Enter
+      const raw = el.textContent || '';
+      const clean = raw.replace(/\n/g, '');
+      if (raw !== clean || el.innerHTML.includes('<br') || el.innerHTML.includes('<div')) {
+        // Nuke HTML artifacts and restore clean text
+        el.textContent = clean;
+        // Restore cursor to end
+        const range = document.createRange();
+        const sel = window.getSelection();
+        range.selectNodeContents(el);
+        range.collapse(false);
+        sel?.removeAllRanges();
+        sel?.addRange(range);
+      }
+      onChange(clean);
     };
 
     const handleFocus = () => {

@@ -1203,18 +1203,26 @@
 
 /* === MOBILE SMALL (< 768px) - Responsive dimensions === */
 @media (max-width: 767px) {
-  /* Mobile: Fluid height based on viewport — use dvh for browser chrome awareness */
+  /* Mobile: natural height but minimum matches the all-modules grid height */
   .reading-component__container {
     max-width: 100%;
-    height: clamp(300px, 60dvh, 480px);
+    height: auto;
+    min-height: var(--menu-content-height-mobile);
     margin: 0;
     padding: 0.25rem;
   }
 
-  /* Mobile: Compact padding with scroll */
+  /* Mobile: Compact padding, natural height */
   .reading-component__content {
+    flex: 0 0 auto;
     padding: 0.375rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0;
+    overflow-y: visible;
+  }
+
+  /* Push game controls to bottom of container */
+  .reading-component__container > .game-controls {
+    margin-top: auto;
   }
 
   /* Mobile: Single column vocabulary */
@@ -1400,14 +1408,14 @@
 
 /* Dark theme - Local overrides */
 html.dark .reading-component__container {
-  --reading-bg-primary: var(--theme-bg-primary, #f9fafb);
-  --reading-bg-secondary: var(--theme-bg-secondary, #f9fafb);
-  --reading-bg-tertiary: var(--theme-bg-tertiary, #f3f4f6);
-  --reading-text-primary: var(--theme-text-primary);
-  --reading-text-secondary: var(--theme-text-secondary);
-  --reading-accent-primary: var(--theme-accent-primary, #3b82f6);
-  --reading-accent-secondary: var(--theme-accent-secondary, #8b5cf6);
-  --reading-border-primary: var(--theme-border-primary, #e5e7eb);
+  --reading-bg-primary: var(--theme-bg-primary, #1f2937);
+  --reading-bg-secondary: var(--theme-bg-secondary, #283548);
+  --reading-bg-tertiary: var(--theme-bg-tertiary, #374151);
+  --reading-text-primary: var(--theme-text-primary, #f3f4f6);
+  --reading-text-secondary: var(--theme-text-secondary, #d1d5db);
+  --reading-accent-primary: var(--theme-accent-primary, #60a5fa);
+  --reading-accent-secondary: var(--theme-accent-secondary, #a78bfa);
+  --reading-border-primary: var(--theme-border-primary, #4b5563);
   --reading-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   background: linear-gradient(
     135deg,

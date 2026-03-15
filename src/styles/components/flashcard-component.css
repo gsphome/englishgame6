@@ -249,6 +249,20 @@
 }
 
 /* === CRITICAL: Mobile ≤400px - Translation Visibility Fix === */
+@media (max-width: 639px) {
+  .flashcard-component__container {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  /* Push game controls to bottom of viewport */
+  .flashcard-component__container > .game-controls {
+    margin-top: auto;
+  }
+}
+
 @media (max-width: 400px) {
   .flashcard-component__container {
     margin: 0.0625rem auto;

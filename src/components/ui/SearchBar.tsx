@@ -6,6 +6,9 @@ interface SearchBarProps {
   query: string;
   onQueryChange: (query: string) => void;
   placeholder?: string;
+  label?: string;
+  description?: string;
+  clearLabel?: string;
   disabled?: boolean;
 }
 
@@ -13,6 +16,9 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   query,
   onQueryChange,
   placeholder = 'Search modules...',
+  label = 'Search learning modules',
+  description = 'Search learning modules by name, category, or topic',
+  clearLabel,
   disabled = false,
 }) => {
   const searchId = useId();
@@ -41,7 +47,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   return (
     <div className="search-bar" role="search">
       <label htmlFor={searchId} className="sr-only">
-        Search learning modules
+        {label}
       </label>
       <div className="search-bar__icon" aria-hidden="true">
         <Search className="search-bar__icon-svg" />
@@ -55,7 +61,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         className="search-bar__input"
         data-placeholder={!query ? placeholder : ''}
         role="searchbox"
-        aria-label="Search learning modules by name, category, or topic"
+        aria-label={description}
         aria-describedby={query ? clearButtonId : undefined}
         data-form-type="other"
         suppressContentEditableWarning
@@ -65,7 +71,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
           id={clearButtonId}
           onClick={() => onQueryChange('')}
           className="search-bar__clear"
-          aria-label={`Clear search query: ${query}`}
+          aria-label={clearLabel ? `${clearLabel}: ${query}` : `Clear: ${query}`}
           type="button"
         >
           <X className="search-bar__clear-icon" />

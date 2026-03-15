@@ -67,7 +67,7 @@ export const CompactProfile: React.FC<CompactProfileProps> = ({ isOpen, onClose 
       preferences: {
         language: 'en',
         dailyGoal: 10,
-        categories: [],
+        categories: ['Vocabulary', 'Grammar', 'PhrasalVerbs', 'Idioms'],
         difficulty: 3,
         notifications: true,
       },

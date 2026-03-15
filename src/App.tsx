@@ -45,7 +45,7 @@ const queryClient = new QueryClient({
 });
 
 const AppContent: React.FC = () => {
-  const { currentView } = useAppStore();
+  const currentView = useAppStore(state => state.currentView);
   const {
     offlineEnabled,
     downloadedLevels,

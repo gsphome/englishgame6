@@ -113,14 +113,14 @@ export const MainMenu: React.FC = () => {
   // Show toast on error
   useEffect(() => {
     if (error) {
-      toast.error('Error de conexión', 'No se pudieron cargar los módulos. Verifica tu conexión.', {
+      toast.error(t('mainMenu.connectionError'), t('mainMenu.connectionErrorDesc'), {
         action: {
-          label: 'Reintentar',
+          label: t('mainMenu.retryAction'),
           onClick: () => window.location.reload(),
         },
       });
     }
-  }, [error]);
+  }, [error, t]);
 
   const handleModuleClick = (module: any) => {
     // Check if module is accessible
@@ -128,7 +128,7 @@ export const MainMenu: React.FC = () => {
       const missingPrereqs = progression.getMissingPrerequisites(module.id);
       const prereqNames = missingPrereqs.map(p => p.name).join(', ');
 
-      toast.warning('Módulo bloqueado', `Completa primero: ${prereqNames}`, { duration: 3000 });
+      toast.warning(t('mainMenu.moduleBlocked'), t('mainMenu.moduleBlockedDesc', undefined, { prereqs: prereqNames }), { duration: 3000 });
       return;
     }
 
@@ -147,17 +147,17 @@ export const MainMenu: React.FC = () => {
 
     // Show toast when starting a module
     const modeLabels: Record<string, string> = {
-      flashcard: 'Flashcards',
-      quiz: 'Quiz',
-      completion: 'Completar oraciones',
-      sorting: 'Ejercicio de clasificación',
-      matching: 'Ejercicio de emparejamiento',
-      reading: 'Lectura',
+      flashcard: t('mainMenu.modeFlashcard'),
+      quiz: t('mainMenu.modeQuiz'),
+      completion: t('mainMenu.modeCompletion'),
+      sorting: t('mainMenu.modeSorting'),
+      matching: t('mainMenu.modeMatching'),
+      reading: t('mainMenu.modeReading'),
     };
 
     toast.info(
-      'Iniciando módulo',
-      `${module.name} - ${modeLabels[module.learningMode] || 'Ejercicio'}`,
+      t('mainMenu.startingModule'),
+      `${module.name} - ${modeLabels[module.learningMode] || t('mainMenu.modeDefault')}`,
       { duration: 1500 }
     );
 
@@ -176,6 +176,8 @@ export const MainMenu: React.FC = () => {
             query=""
             onQueryChange={() => {}}
             placeholder={t('common.searchPlaceholder')}
+            label={t('common.searchLabel')}
+            description={t('common.searchDescription')}
             disabled={true}
           />
         </div>
@@ -195,9 +197,9 @@ export const MainMenu: React.FC = () => {
           <button
             onClick={() => window.location.reload()}
             className="main-menu__error-btn"
-            aria-label="Retry loading modules"
+            aria-label={t('mainMenu.retryLoading')}
           >
-            Try Again
+            {t('mainMenu.tryAgain')}
           </button>
         </div>
       </div>
@@ -213,6 +215,9 @@ export const MainMenu: React.FC = () => {
             query={query}
             onQueryChange={setQuery}
             placeholder={t('common.searchPlaceholder')}
+            label={t('common.searchLabel')}
+            description={t('common.searchDescription')}
+            clearLabel={t('common.clearSearch')}
           />
         </div>
 
@@ -220,18 +225,18 @@ export const MainMenu: React.FC = () => {
           <button
             className={`main-menu__view-btn ${viewMode === 'progression' ? 'main-menu__view-btn--active' : ''}`}
             onClick={() => setViewMode('progression')}
-            aria-label="Progression view"
+            aria-label={t('mainMenu.progressViewLabel')}
           >
             <BarChart3 className="main-menu__view-icon" />
-            Progress
+            {t('mainMenu.progressView')}
           </button>
           <button
             className={`main-menu__view-btn ${viewMode === 'list' ? 'main-menu__view-btn--active' : ''}`}
             onClick={() => setViewMode('list')}
-            aria-label="List view"
+            aria-label={t('mainMenu.listViewLabel')}
           >
             <List className="main-menu__view-icon" />
-            All Modules
+            {t('mainMenu.allModules')}
           </button>
         </div>
       </div>
@@ -242,10 +247,10 @@ export const MainMenu: React.FC = () => {
         results.length === 0 ? (
           <div className="main-menu__no-results" role="status" aria-live="polite">
             <p className="main-menu__no-results-text">
-              No modules found for "<strong>{query}</strong>"
+              {t('mainMenu.noModulesFound', undefined, { query })}
             </p>
             <p className="main-menu__no-results-hint">
-              Try adjusting your search terms or browse all available modules.
+              {t('mainMenu.searchHint')}
             </p>
           </div>
         ) : (
@@ -254,7 +259,7 @@ export const MainMenu: React.FC = () => {
               <div
                 className="main-menu__grid-container"
                 role="grid"
-                aria-label={`${results.length} learning modules available`}
+                aria-label={t('mainMenu.modulesAvailable', undefined, { count: results.length })}
               >
                 {results.map((module, index) => (
                   <ModuleCard
@@ -270,7 +275,7 @@ export const MainMenu: React.FC = () => {
               </div>
             </div>
             <div className="main-menu__results-count" role="status" aria-live="polite">
-              Showing <strong>{results.length}</strong> of <strong>{modules.length}</strong> modules
+              {t('mainMenu.showingResults', undefined, { count: results.length, total: modules.length })}
             </div>
           </>
         )
@@ -283,7 +288,7 @@ export const MainMenu: React.FC = () => {
           <div
             className="main-menu__grid-container"
             role="grid"
-            aria-label={`${modules.length} learning modules available`}
+            aria-label={t('mainMenu.modulesAvailable', undefined, { count: modules.length })}
           >
             {modules.map((module, index) => (
               <ModuleCard

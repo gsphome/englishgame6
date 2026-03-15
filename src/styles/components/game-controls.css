@@ -13,6 +13,7 @@
   border: 1px solid var(--theme-border-soft, #f3f4f6);
   margin-top: 0.5rem;
   flex-wrap: wrap;
+  flex-shrink: 0; /* Never compress — always visible */
 }
 
 /* === NAVIGATION BUTTONS === */
@@ -62,6 +63,12 @@
 
 /* Mobile icon size adjustments for better visibility */
 @media (max-width: 768px) {
+  .game-controls {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+  }
+
   .game-controls__nav-icon {
     width: 1.125rem;
     height: 1.125rem;

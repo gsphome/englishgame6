@@ -3,6 +3,34 @@
   min-height: calc(100dvh - 64px);
   height: 100%;
 }
+
+/* All learning component containers on mobile */
+@media (max-width: 639px) {
+  .layout-main > .completion-component__container,
+  .layout-main > .quiz-component__container,
+  .layout-main > .flashcard-component__container,
+  .layout-main > .sorting-component,
+  .layout-main > .matching-component,
+  .layout-main > .reading-component__container {
+    margin: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    max-width: 100%;
+  }
+
+  /* All learning modules: natural column flow, no forced stretch */
+  .layout-main > .completion-component__container,
+  .layout-main > .quiz-component__container,
+  .layout-main > .flashcard-component__container,
+  .layout-main > .sorting-component,
+  .layout-main > .matching-component,
+  .layout-main > .reading-component__container {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .app-router__loader::before {
   content: '';
   position: absolute;

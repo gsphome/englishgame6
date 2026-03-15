@@ -9,6 +9,7 @@
 .learning-progress-header {
   margin-bottom: 1rem;
   text-align: center;
+  flex-shrink: 0; /* Never compress in flex column layouts */
 }
 
 .learning-progress-header__top {

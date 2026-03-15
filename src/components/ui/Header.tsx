@@ -25,7 +25,7 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = () => {
-  const { currentView } = useAppStore();
+  const currentView = useAppStore(state => state.currentView);
   const { user } = useUserStore();
   const { developmentMode, language, offlineEnabled } = useSettingsStore();
   const { returnToMenu } = useMenuNavigation();
@@ -212,7 +212,7 @@ export const Header: React.FC<HeaderProps> = () => {
             className="header-side-menu"
             onClick={e => e.stopPropagation()}
             role="navigation"
-            aria-label="Main navigation and settings"
+            aria-label={t('navigation.navigationAndSettings')}
           >
             <div className="header-side-menu__header">
               <h2 className="header-side-menu__title">FluentFlow</h2>
