@@ -75,7 +75,7 @@
 }
 
 .progression-dashboard--dark-theme .progression-dashboard__module--next {
-  background-color: rgba(59, 130, 246, 0.08);
+  background: rgba(59, 130, 246, 0.08);
   border-color: rgba(96, 165, 250, 0.4);
 }
 
