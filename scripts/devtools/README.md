@@ -1,105 +1,141 @@
-# DevTools Test Artifacts
+# DevTools Testing & Artifacts
 
-Este directorio contiene todos los artifacts generados por Chrome DevTools MCP durante testing y debugging.
+Directorio para pruebas E2E con Chrome DevTools MCP y artifacts generados durante testing/debugging.
+Ejecutar contra producción: `https://gsphome.github.io/englishgame6/`
 
-## Estructura
+## Test Scripts
+
+| Script | Cobertura |
+|--------|-----------|
+| `validate-learning-modes.md` | 6 modos de aprendizaje + 8 validaciones generales + anti-remount |
+| `validate-modals.md` | 10 modales + 10 validaciones generales (z-index, scroll, a11y, dark mode) |
+| `automated-offline-test.md` | 8 tests offline: cache, next-module, sync, performance |
+
+## Prerequisitos
+
+### Chrome con Remote Debugging
+
+```bash
+# macOS
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222
+
+# Linux
+google-chrome --remote-debugging-port=9222
+```
+
+### MCP Chrome DevTools
+
+Configurado en `.kiro/settings/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-server-chrome-devtools@latest"],
+      "disabled": false
+    }
+  }
+}
+```
+
+## Workflow recomendado
 
 ```
-scripts/devtools/
-├── README.md                           # Este archivo
-├── {categoria}-{numero}-{desc}.png     # Screenshots
-├── {categoria}-{numero}-{desc}.txt     # DOM snapshots
-├── {categoria}-{numero}-{desc}.json    # Performance traces
-└── {categoria}-test-results.md         # Reportes de testing
+1. Hacer cambios en código
+2. npm run build:full (pull + quality + security + build + push + deploy)
+3. Ejecutar test scripts relevantes con Chrome DevTools MCP
+4. Si hay issues, debuggear directamente en el sitio live
 ```
 
-## Convención de Nombres
+### Post-deploy rápido
 
-### Formato
+1. `validate-learning-modes.md` → Checklist rápido (sección final)
+2. `validate-modals.md` → Checklist rápido (sección final)
+3. `automated-offline-test.md` → Tests 1, 3, 6
+
+### Regresión completa
+
+Ejecutar los 3 scripts completos en orden:
+1. Learning modes (funcionalidad core)
+2. Modals (UI/UX)
+3. Offline (PWA/cache)
+
+## Artifacts
+
+### Convención de nombres
+
 ```
 {categoria}-{numero}-{descripcion}.{extension}
 ```
 
-### Categorías
-- `offline-` - Testing de modo offline y PWA
-- `edge-` - Casos de borde y edge cases
-- `perf-` - Performance testing y audits
-- `network-` - Network debugging y API calls
-- `issue-` - Debugging de issues específicos
-- `visual-` - Testing visual y screenshots comparativos
+Categorías: `offline-`, `edge-`, `perf-`, `network-`, `issue-`, `visual-`
 
-### Ejemplos
-```
-offline-test-01-initial-online.png
-offline-test-02-offline-activated.txt
-edge-01-module-online.png
-perf-01-lighthouse-report.json
-network-01-api-calls.txt
-issue-123-snapshot.txt
-```
+### Tipos
 
-## Tipos de Archivos
+| Extensión | Herramienta MCP | Uso |
+|-----------|----------------|-----|
+| `.png` | `take_screenshot` | Capturas visuales |
+| `.txt` | `take_snapshot` | DOM a11y tree con UIDs |
+| `.json` | `performance_stop_trace` | Performance traces |
 
-### Screenshots (.png, .jpg)
-Capturas visuales de la aplicación en diferentes estados.
-
-**Uso:**
-```javascript
-take_screenshot(
-  filePath: "scripts/devtools/offline-01-screenshot.png",
-  fullPage: true
-)
-```
-
-### Snapshots (.txt)
-Estructura DOM (a11y tree) con UIDs para interacción.
-
-**Uso:**
-```javascript
-take_snapshot(
-  filePath: "scripts/devtools/offline-01-snapshot.txt"
-)
-```
-
-### Performance Traces (.json)
-Datos de performance traces para análisis detallado.
-
-**Uso:**
-```javascript
-performance_stop_trace(
-  filePath: "scripts/devtools/perf-01-trace.json"
-)
-```
-
-### Reportes (.md)
-Documentación de resultados de testing con análisis y conclusiones.
-
-## Limpieza
-
-Los artifacts antiguos deben limpiarse periódicamente:
+### Limpieza
 
 ```bash
-# Eliminar artifacts de más de 30 días
-find scripts/devtools -type f -mtime +30 -delete
-
-# Eliminar todos los artifacts (mantener README)
-find scripts/devtools -type f ! -name 'README.md' -delete
+# Eliminar artifacts (mantener docs)
+find scripts/devtools -type f \( -name '*.png' -o -name '*.txt' -o -name '*.json' \) -delete
 ```
 
-## Gitignore
+## Offline Testing - Edge Cases
 
-Los artifacts NO deben commitearse a git (excepto reportes importantes):
+### Next-module offline
+- El cálculo requiere datos de módulos que pueden no estar cacheados
+- Verificar que `getNextRecommendedModule()` funciona con datos cacheados
 
-```gitignore
-# En .gitignore
-scripts/devtools/*.png
-scripts/devtools/*.jpg
-scripts/devtools/*.txt
-scripts/devtools/*.json
-!scripts/devtools/README.md
-!scripts/devtools/*-results.md
+### Scroll automático a next-module
+- Puede fallar si el módulo no está renderizado aún
+- Verificar timing de `scrollToNextModule` en `MainMenu.tsx`
+
+### Next-module con prerequisites
+- Módulos bloqueados no deben aparecer como next
+- Verificar `isModuleUnlocked()` offline
+
+### Persistencia del progreso
+- Zustand persist middleware debe funcionar offline
+- Verificar localStorage después de completar módulos
+
+## Debugging
+
+### Console / localStorage / Service Worker
+
+```javascript
+// Estado de progresión
+const state = JSON.parse(localStorage.getItem('fluentflow-progress'));
+
+// Service Worker
+const reg = await navigator.serviceWorker.getRegistration();
+console.log({ active: !!reg?.active, waiting: !!reg?.waiting });
+
+// Cache storage
+const names = await caches.keys();
+caches.open('fluentflow-v1').then(c => c.keys().then(console.log));
 ```
 
-## Referencia
+### Troubleshooting
 
-Ver skill completo: `~/.kiro/skills/chrome-devtools-debugging.md`
+| Problema | Solución |
+|----------|----------|
+| Chrome no conecta | Verificar `lsof -i :9222`, reiniciar Chrome con `--remote-debugging-port=9222` |
+| Service Worker no registra | `curl -I https://gsphome.github.io/englishgame6/service-worker.js` |
+| Módulos no se cachean | Revisar estrategia de cache en `service-worker.js` |
+| Next-module no actualiza | Verificar `useProgression.ts` (`refetchOnMount: true`) |
+
+## Archivos clave
+
+| Archivo | Responsabilidad |
+|---------|----------------|
+| `src/services/progressionService.ts` | Lógica de progresión y next-module |
+| `src/hooks/useProgression.ts` | Hook con `getNextRecommendedModule()` |
+| `src/components/ui/MainMenu.tsx` | Scroll automático a next-module |
+| `src/components/ui/ModuleCard.tsx` | Renderizado de next-module destacado |
+| `public/service-worker.js` | Cache de módulos JSON |

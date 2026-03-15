@@ -11,6 +11,12 @@ Herramientas organizadas por funcionalidad para el mantenimiento del proyecto.
 - `dev-tools.js` - Orquestador de pipelines (quality/security/build/full)
 - `simulate-github-pages.js` - Simulacion local de GitHub Pages
 
+### devtools/
+- `validate-learning-modes.md` - Tests E2E para los 6 modos de aprendizaje
+- `validate-modals.md` - Tests E2E para los 10 modales de la app
+- `automated-offline-test.md` - Tests de modo offline y PWA
+- Artifacts de testing (screenshots, snapshots, traces)
+
 ### git/
 - `smart-commit.js` - Commits inteligentes con AI
 - `github-actions-status.js` - Estado de GitHub Actions
@@ -60,4 +66,13 @@ npm run gh:status          # Estado GitHub Actions
 npm run gh:current         # Workflows activos
 npm run gh:watch           # Monitorear en tiempo real
 npm run deploy:status      # Estado deployment
+```
+
+## DevTools Testing
+
+Tests E2E con Chrome DevTools MCP contra produccion. Ver `scripts/devtools/README.md` para setup y workflow.
+
+```bash
+# Post-deploy rapido: ejecutar checklists finales de cada script
+# Regresion completa: ejecutar los 3 scripts en orden
 ```
