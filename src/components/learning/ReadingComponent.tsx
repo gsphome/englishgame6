@@ -201,8 +201,8 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
                 <span className="reading-component__sections-badge">
                   {readingSections.length}{' '}
                   {readingSections.length === 1
-                    ? t('reading.component.section', undefined, { default: 'section' })
-                    : t('reading.component.sections', undefined, { default: 'sections' })}
+                    ? t('reading.component.section')
+                    : t('reading.component.sections')}
                 </span>
               </div>
             )}
@@ -226,16 +226,14 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
             {/* Call to action */}
             <div className="reading-component__objectives-cta">
               <p className="reading-component__objectives-cta-text">
-                {t('reading.component.readyToStart', undefined, {
-                  default: "Ready to start? Let's begin!",
-                })}
+                {t('reading.component.readyToStart')}
               </p>
             </div>
           </div>
         ) : isSummaryPage ? (
           <div className="reading-component__summary-page">
             <h3 className="reading-component__summary-title">
-              {t('reading.component.summary', undefined, { default: 'Summary & Review' })}
+              {t('reading.component.summary')}
             </h3>
 
             {/* Key Vocabulary Section - Enhanced Collapsible */}
@@ -357,7 +355,7 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
                         {point.examples && point.examples.length > 0 && (
                           <div className="reading-component__grammar-examples">
                             <div className="reading-component__grammar-examples-title">
-                              {t('reading.component.examples', undefined, { default: 'Examples' })}
+                              {t('reading.component.examples')}
                             </div>
                             <ul className="reading-component__grammar-examples-list">
                               {point.examples.map((example, exIndex) => (
@@ -568,7 +566,7 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
         >
           <span>
             {isObjectivesPage
-              ? t('reading.component.startReading', undefined, { default: 'Start Reading' })
+              ? t('reading.component.startReading')
               : isSummaryPage ||
                   (!hasSummaryContent && currentSectionIndex === readingSections.length - 1)
                 ? t('reading.component.completeReading')

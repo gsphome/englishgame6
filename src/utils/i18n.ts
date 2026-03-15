@@ -456,6 +456,8 @@ const translations = {
         readyToStart: "Ready to start? Let's begin!",
         summary: 'Summary & Review',
         examples: 'Examples',
+        section: 'section',
+        sections: 'sections',
       },
       navigation: {
         returnToMenu: 'Return to Main Menu',
@@ -961,6 +963,8 @@ const translations = {
         readyToStart: '¿Listo para comenzar? ¡Empecemos!',
         summary: 'Resumen y Repaso',
         examples: 'Ejemplos',
+        section: 'sección',
+        sections: 'secciones',
       },
       navigation: {
         returnToMenu: 'Volver al Menú Principal',
