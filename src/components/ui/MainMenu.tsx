@@ -128,7 +128,11 @@ export const MainMenu: React.FC = () => {
       const missingPrereqs = progression.getMissingPrerequisites(module.id);
       const prereqNames = missingPrereqs.map(p => p.name).join(', ');
 
-      toast.warning(t('mainMenu.moduleBlocked'), t('mainMenu.moduleBlockedDesc', undefined, { prereqs: prereqNames }), { duration: 3000 });
+      toast.warning(
+        t('mainMenu.moduleBlocked'),
+        t('mainMenu.moduleBlockedDesc', undefined, { prereqs: prereqNames }),
+        { duration: 3000 }
+      );
       return;
     }
 
@@ -249,9 +253,7 @@ export const MainMenu: React.FC = () => {
             <p className="main-menu__no-results-text">
               {t('mainMenu.noModulesFound', undefined, { query })}
             </p>
-            <p className="main-menu__no-results-hint">
-              {t('mainMenu.searchHint')}
-            </p>
+            <p className="main-menu__no-results-hint">{t('mainMenu.searchHint')}</p>
           </div>
         ) : (
           <>
@@ -275,7 +277,10 @@ export const MainMenu: React.FC = () => {
               </div>
             </div>
             <div className="main-menu__results-count" role="status" aria-live="polite">
-              {t('mainMenu.showingResults', undefined, { count: results.length, total: modules.length })}
+              {t('mainMenu.showingResults', undefined, {
+                count: results.length,
+                total: modules.length,
+              })}
             </div>
           </>
         )

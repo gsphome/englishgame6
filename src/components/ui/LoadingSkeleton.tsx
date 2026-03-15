@@ -47,7 +47,9 @@ export const LoadingSkeleton: React.FC<LoadingSkeletonProps> = ({
   };
 
   if (count === 1) {
-    return <div className={skeletonClasses} style={style} aria-label={t('common.loadingContent')} />;
+    return (
+      <div className={skeletonClasses} style={style} aria-label={t('common.loadingContent')} />
+    );
   }
 
   return (

@@ -37,7 +37,11 @@ export const ScoreDisplay: React.FC = () => {
         {isInGame ? (
           // Compact session score with fixed layout
           <div className="score-display-compact__session">
-            <div className="score-display-compact__icon" role="img" aria-label={t('scores.sessionScore')}>
+            <div
+              className="score-display-compact__icon"
+              role="img"
+              aria-label={t('scores.sessionScore')}
+            >
               🎯
             </div>
             <div className="score-display-compact__values">
@@ -68,7 +72,11 @@ export const ScoreDisplay: React.FC = () => {
           // Compact global score with level indicator
           <div className="score-display-compact__global">
             <div className="score-display-compact__main">
-              <div className="score-display-compact__icon" role="img" aria-label={t('scores.globalScore')}>
+              <div
+                className="score-display-compact__icon"
+                role="img"
+                aria-label={t('scores.globalScore')}
+              >
                 🌍
               </div>
               <div className="score-display-compact__values">

@@ -76,7 +76,11 @@ const ContentSegmentComponent: React.FC<ContentSegmentProps> = ({ segment, forma
   }
 };
 
-export const ContentRenderer: React.FC<ContentRendererProps> = ({ content, className = '', loadingText = 'Loading...' }) => {
+export const ContentRenderer: React.FC<ContentRendererProps> = ({
+  content,
+  className = '',
+  loadingText = 'Loading...',
+}) => {
   if (!content || !content.segments || content.segments.length === 0) {
     return <span className={`content-renderer ${className}`}>{loadingText}</span>;
   }

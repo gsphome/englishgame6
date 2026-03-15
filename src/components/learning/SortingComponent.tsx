@@ -550,7 +550,9 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
 
                 {showResult && hasErrors && (
                   <div className="sorting-component__feedback sorting-component__feedback--error">
-                    <span className="sorting-component__feedback-label">{t('learning.correctItems')}</span>{' '}
+                    <span className="sorting-component__feedback-label">
+                      {t('learning.correctItems')}
+                    </span>{' '}
                     <span className="sorting-component__feedback-text">
                       {category.items.map((item, idx) => (
                         <span key={idx}>
@@ -680,7 +682,9 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
 
                       <div className="sorting-modal__card-content">
                         <div className="sorting-modal__card-field">
-                          <span className="sorting-modal__card-label">{t('learning.correctAnswer')}</span>
+                          <span className="sorting-modal__card-label">
+                            {t('learning.correctAnswer')}
+                          </span>
                           <p className="sorting-modal__card-value sorting-modal__card-value--correct">
                             {result.correctCategory}
                           </p>
@@ -688,7 +692,9 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
 
                         {!result.isCorrect && (
                           <div className="sorting-modal__card-field">
-                            <span className="sorting-modal__card-label">{t('learning.yourAnswer')}</span>
+                            <span className="sorting-modal__card-label">
+                              {t('learning.yourAnswer')}
+                            </span>
                             <p className="sorting-modal__card-value sorting-modal__card-value--incorrect">
                               {result.userCategory}
                             </p>
@@ -697,7 +703,9 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
 
                         {result.explanation && (
                           <div className="sorting-modal__card-field">
-                            <span className="sorting-modal__card-label">{t('learning.explanation')}</span>
+                            <span className="sorting-modal__card-label">
+                              {t('learning.explanation')}
+                            </span>
                             <p className="sorting-modal__card-explanation">{result.explanation}</p>
                           </div>
                         )}

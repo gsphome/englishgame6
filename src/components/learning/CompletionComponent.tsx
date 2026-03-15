@@ -301,7 +301,9 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
             {currentExercise?.explanation && (
               <div className="completion-component__explanation">
                 <div className="completion-component__explanation-text">
-                  <span className="completion-component__explanation-label">{t('learning.explanation')}</span>{' '}
+                  <span className="completion-component__explanation-label">
+                    {t('learning.explanation')}
+                  </span>{' '}
                   <ContentRenderer
                     content={ContentAdapter.ensureStructured(
                       currentExercise.explanation,

@@ -195,7 +195,9 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
                 return (
                   <div className="screen-info-modal__grid">
                     <div className="screen-info-modal__item">
-                      <span className="screen-info-modal__label">{t('about.screenResolution')}</span>
+                      <span className="screen-info-modal__label">
+                        {t('about.screenResolution')}
+                      </span>
                       <span className="screen-info-modal__value">{screenInfo.resolution}</span>
                     </div>
                     <div className="screen-info-modal__item">
@@ -203,17 +205,23 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
                       <span className="screen-info-modal__value">{screenInfo.viewport}</span>
                     </div>
                     <div className="screen-info-modal__item">
-                      <span className="screen-info-modal__label">{t('about.screenPixelRatio')}</span>
+                      <span className="screen-info-modal__label">
+                        {t('about.screenPixelRatio')}
+                      </span>
                       <span className="screen-info-modal__value">
                         {screenInfo.devicePixelRatio}x
                       </span>
                     </div>
                     <div className="screen-info-modal__item">
-                      <span className="screen-info-modal__label">{t('about.screenColorDepth')}</span>
+                      <span className="screen-info-modal__label">
+                        {t('about.screenColorDepth')}
+                      </span>
                       <span className="screen-info-modal__value">{screenInfo.colorDepth} bits</span>
                     </div>
                     <div className="screen-info-modal__item">
-                      <span className="screen-info-modal__label">{t('about.screenOrientation')}</span>
+                      <span className="screen-info-modal__label">
+                        {t('about.screenOrientation')}
+                      </span>
                       <span className="screen-info-modal__value">{screenInfo.orientation}</span>
                     </div>
                   </div>

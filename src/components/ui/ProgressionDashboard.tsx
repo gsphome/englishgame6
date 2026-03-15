@@ -172,7 +172,11 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
       const missingPrereqs = progression.getMissingPrerequisites(module.id);
       const prereqNames = missingPrereqs.map(p => p.name).join(', ');
 
-      toast.warning(t('mainMenu.moduleBlocked'), t('mainMenu.moduleBlockedDesc', undefined, { prereqs: prereqNames }), { duration: 3000 });
+      toast.warning(
+        t('mainMenu.moduleBlocked'),
+        t('mainMenu.moduleBlockedDesc', undefined, { prereqs: prereqNames }),
+        { duration: 3000 }
+      );
       return;
     }
 
@@ -314,7 +318,9 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
                     <h3 className="progression-dashboard__unit-title">{getUnitTitle(unit)}</h3>
                     {hasNextModule && !isExpanded && (
                       <div className="progression-dashboard__unit-next-indicator">
-                        <span className="progression-dashboard__unit-next-label">{t('learningPath.nextRecommended')}</span>
+                        <span className="progression-dashboard__unit-next-label">
+                          {t('learningPath.nextRecommended')}
+                        </span>
                       </div>
                     )}
                   </div>
@@ -387,7 +393,9 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
 
                           {isNext && (
                             <div className="progression-dashboard__next-indicator">
-                              <span className="progression-dashboard__next-label">{t('learningPath.nextRecommended')}</span>
+                              <span className="progression-dashboard__next-label">
+                                {t('learningPath.nextRecommended')}
+                              </span>
                             </div>
                           )}
                         </div>
