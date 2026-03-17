@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useMemo, useCallback, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Home, ChevronDown, ChevronUp } from 'lucide-react';
 import { useUserStore } from '../../stores/userStore';
 import { useSettingsStore } from '../../stores/settingsStore';
@@ -26,7 +26,7 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
   const [grammarExpanded, setGrammarExpanded] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [initialHeight, setInitialHeight] = useState<number | null>(null);
+  const initialHeightRef = useRef<number>(0);
 
   const { updateUserScore } = useUserStore();
   const { language } = useSettingsStore();
@@ -36,14 +36,15 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
   useLearningCleanup();
 
   // Capture initial height from objectives page to prevent layout jumps
-  useEffect(() => {
-    if (currentSectionIndex === -1 && containerRef.current && initialHeight === null) {
+  useLayoutEffect(() => {
+    if (currentSectionIndex === -1 && containerRef.current && initialHeightRef.current === 0) {
       const height = containerRef.current.getBoundingClientRect().height;
       if (height > 0) {
-        setInitialHeight(height);
+        initialHeightRef.current = height;
+        containerRef.current.style.minHeight = `${height}px`;
       }
     }
-  }, [currentSectionIndex, initialHeight]);
+  });
 
   const handleReturnToMenu = () => returnToMenu();
 
@@ -177,7 +178,6 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
     <div
       ref={containerRef}
       className="reading-component__container"
-      style={initialHeight ? { minHeight: `${initialHeight}px` } : undefined}
     >
       {/* Unified progress header */}
       <LearningProgressHeader
