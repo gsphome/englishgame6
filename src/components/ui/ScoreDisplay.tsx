@@ -6,7 +6,9 @@ import { useTranslation } from '../../utils/i18n';
 import '../../styles/components/score-display.css';
 
 export const ScoreDisplay: React.FC = () => {
-  const { sessionScore, globalScore, currentView } = useAppStore();
+  const sessionScore = useAppStore(state => state.sessionScore);
+  const globalScore = useAppStore(state => state.globalScore);
+  const currentView = useAppStore(state => state.currentView);
   const { getTotalScore } = useUserStore();
   const { language } = useSettingsStore();
   const { t } = useTranslation(language);

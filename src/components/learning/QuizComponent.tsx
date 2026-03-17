@@ -250,6 +250,7 @@ const QuizComponent: React.FC<QuizComponentProps> = ({ module }) => {
               ? 'quiz-component__explanation-container--visible'
               : 'quiz-component__explanation-container--hidden'
           }`}
+          aria-hidden={!(showResult && currentQuestion?.explanation)}
         >
           <div className="quiz-component__explanation">
             <h4

@@ -494,6 +494,7 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
               ? 'completion-component__result-container--visible'
               : 'completion-component__result-container--hidden'
           }`}
+          aria-hidden={!showResult}
         >
           <div className="completion-component__result">
             {/* Ultra-compact result feedback */}

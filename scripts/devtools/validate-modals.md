@@ -1217,6 +1217,104 @@ height: 800
 
 ---
 
+## 11. Modales dentro de learning modes
+
+Verificar que abrir/cerrar modales no afecta el estado del learning mode activo.
+
+### 11a. Settings dentro de Quiz
+
+```
+# Navegar a quiz
+mcp_chrome_devtools_evaluate_script
+function: "() => { window.location.hash = '#/learn/quiz-basic-vocabulary-a1'; return 'ok'; }"
+
+mcp_chrome_devtools_wait_for
+text: ["Which word means", "What does", "What do", "Which is"]
+timeout: 5000
+
+# Responder una pregunta
+mcp_chrome_devtools_take_snapshot
+# ANOTAR: pregunta, index (ej: 1/10), score
+mcp_chrome_devtools_click
+uid: {uid-opcion}
+includeSnapshot: true
+# ANOTAR: score actualizado, pregunta NO cambió
+
+# Abrir side menu → Settings
+mcp_chrome_devtools_click
+uid: {uid-menu-btn}
+includeSnapshot: true
+
+mcp_chrome_devtools_click
+uid: {uid-settings-item}
+includeSnapshot: true
+
+# Cerrar con Escape
+mcp_chrome_devtools_press_key
+key: "Escape"
+includeSnapshot: true
+```
+
+**Validar:**
+- ✓ Pregunta es la misma que antes de abrir Settings
+- ✓ Score no cambió
+- ✓ Index no cambió (sigue ej: 1/10)
+- ✓ Botones de quiz siguen funcionales
+
+### 11b. About dentro de Quiz
+
+```
+# Abrir side menu → About
+mcp_chrome_devtools_click
+uid: {uid-menu-btn}
+includeSnapshot: true
+
+mcp_chrome_devtools_click
+uid: {uid-about-item}
+includeSnapshot: true
+
+# Cerrar con Escape
+mcp_chrome_devtools_press_key
+key: "Escape"
+includeSnapshot: true
+```
+
+**Validar:**
+- ✓ Estado del quiz intacto (misma pregunta, score, index)
+
+### 11c. Profile dentro de Quiz
+
+```
+# Abrir side menu → Profile/Login
+mcp_chrome_devtools_click
+uid: {uid-menu-btn}
+includeSnapshot: true
+
+mcp_chrome_devtools_click
+uid: {uid-profile-item}
+includeSnapshot: true
+
+# Cerrar con Escape
+mcp_chrome_devtools_press_key
+key: "Escape"
+includeSnapshot: true
+```
+
+**Validar:**
+- ✓ Estado del quiz intacto
+
+### 11d. Modales dentro de otros modos
+
+Repetir 11a-11c desde:
+- Completion mode (`#/learn/completion-basic-sentences-a1`)
+- Flashcard mode (`#/learn/flashcard-basic-vocabulary-a1`)
+
+**Validar en cada caso:**
+- ✓ Completion: misma oración, mismo input, mismo score
+- ✓ Flashcard: misma tarjeta, mismo index, mismo estado flip
+
+---
+
 ## Señales de regresión
 
 | Síntoma | Causa probable |
@@ -1255,4 +1353,5 @@ height: 800
 [ ] Mobile: modales no desbordan, botones accesibles
 [ ] Console: sin errores de React al abrir/cerrar modales
 [ ] Portal: modales compact-* renderizados en body (no en header)
+[ ] Modales en learning: Settings/About/Profile no afectan estado de quiz/completion/flashcard
 ```

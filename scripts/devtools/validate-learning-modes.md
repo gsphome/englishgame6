@@ -638,6 +638,79 @@ function: "() => {
 
 ---
 
+## 9. Revisión visual multi-viewport
+
+Revisión visual exhaustiva combinando viewports, temas e idiomas.
+
+### Setup
+
+```
+# Habilitar Dev Mode para bypass de prerequisites
+mcp_chrome_devtools_evaluate_script
+function: "() => {
+  const raw = localStorage.getItem('settings-storage');
+  const data = JSON.parse(raw);
+  data.state.devMode = true;
+  localStorage.setItem('settings-storage', JSON.stringify(data));
+  location.reload();
+  return 'Dev mode enabled';
+}"
+```
+
+### Combinaciones recomendadas
+
+| # | Viewport | Tema | Idioma | Resize |
+|---|----------|------|--------|--------|
+| 1 | Desktop | Light | English | `width: 1280, height: 800` |
+| 2 | Mobile | Dark | Español | `width: 375, height: 667` |
+| 3 | Desktop | Dark | Español | `width: 1280, height: 800` |
+| 4 | Tablet | Dark | Español | `width: 768, height: 1024` |
+
+### Para cada combinación, verificar:
+
+**Modos de aprendizaje** (navegar con `window.location.hash`):
+- Quiz: pregunta, opciones, explicación, botones
+- Completion: oración con blank, input, tip, botones
+- Flashcard: tarjeta, flip/prev/next
+- Matching: columnas términos/definiciones, botones
+- Sorting: palabras disponibles, categorías, botones
+- Reading: objetivos, navegación de secciones
+
+**Menú principal:**
+- Cards de módulos con nivel, tipo, duración
+- Barra de búsqueda
+- Niveles colapsables (Fundamentos, Elemental, etc.)
+- Botón "Continuar" en next-module
+
+**Modales (abrir desde side menu):**
+- Settings: 4 tabs (General/Juegos/Categorías/Offline)
+- About: versión, features, developer, tech stack
+- Progress Dashboard: stats, gráfico semanal
+- Learning Path: círculos SVG por nivel
+- Profile: formulario con validación
+
+### Verificar horizontal overflow
+
+```
+mcp_chrome_devtools_evaluate_script
+function: "() => ({
+  overflow: document.documentElement.scrollWidth > document.documentElement.clientWidth,
+  scrollWidth: document.documentElement.scrollWidth,
+  clientWidth: document.documentElement.clientWidth
+})"
+```
+
+- ✓ `overflow: false` en todos los viewports
+
+### Screenshots (opcionales, gitignored)
+
+```
+mcp_chrome_devtools_take_screenshot
+filePath: "scripts/devtools/review-{viewport}-{theme}-{lang}-{mode}.png"
+```
+
+---
+
 ## Checklist rápido post-deploy
 
 ```
@@ -651,4 +724,6 @@ function: "() => {
 [ ] Reading: navegar secciones, finish vuelve al menú
 [ ] Console sin errores de React
 [ ] Progreso persiste después de reload
+[ ] Sin overflow horizontal en mobile/tablet/desktop
+[ ] Modales no afectan estado de learning mode activo
 ```
