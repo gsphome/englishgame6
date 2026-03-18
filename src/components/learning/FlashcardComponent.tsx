@@ -83,6 +83,15 @@ const FlashcardComponent: React.FC<FlashcardComponentProps> = ({ module }) => {
     setIsFlipped(!isFlipped);
   }, [isFlipped]);
 
+  // Reveal-then-advance: flip first, then advance on second action
+  const handleRevealOrNext = useCallback(() => {
+    if (isFlipped) {
+      handleNext();
+    } else {
+      handleFlip();
+    }
+  }, [isFlipped, handleNext, handleFlip]);
+
   // Keyboard navigation
   useEffect(() => {
     if (processedFlashcards.length === 0) return;
@@ -90,21 +99,14 @@ const FlashcardComponent: React.FC<FlashcardComponentProps> = ({ module }) => {
     const handleKeyPress = (e: KeyboardEvent) => {
       switch (e.key) {
         case 'ArrowRight':
+        case 'Enter':
+        case ' ':
           e.preventDefault();
-          handleNext();
+          handleRevealOrNext();
           break;
         case 'ArrowLeft':
           e.preventDefault();
           handlePrev();
-          break;
-        case 'Enter':
-        case ' ':
-          e.preventDefault();
-          if (isFlipped) {
-            handleNext();
-          } else {
-            handleFlip();
-          }
           break;
         case 'Escape':
           returnToMenu();
@@ -115,11 +117,8 @@ const FlashcardComponent: React.FC<FlashcardComponentProps> = ({ module }) => {
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, [
-    currentIndex,
     processedFlashcards.length,
-    isFlipped,
-    handleFlip,
-    handleNext,
+    handleRevealOrNext,
     handlePrev,
     returnToMenu,
   ]);
@@ -254,12 +253,14 @@ const FlashcardComponent: React.FC<FlashcardComponentProps> = ({ module }) => {
         </button>
 
         <button
-          onClick={handleNext}
+          onClick={handleRevealOrNext}
           className="game-controls__nav-btn"
           title={
-            currentIndex === processedFlashcards.length - 1
-              ? t('learning.finishFlashcards')
-              : t('learning.nextCard')
+            !isFlipped
+              ? t('learning.flip')
+              : currentIndex === processedFlashcards.length - 1
+                ? t('learning.finishFlashcards')
+                : t('learning.nextCard')
           }
         >
           <ChevronRight className="game-controls__nav-icon" />
