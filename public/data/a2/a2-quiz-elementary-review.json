@@ -19,7 +19,7 @@
       "cousin"
     ],
     "correct": "grandmother",
-    "explanation": "Grandmother is your father<s or mother>s mother."
+    "explanation": "Grandmother is your father's or mother's mother."
   },
   {
     "question": "Where do you usually cook food?",
@@ -96,7 +96,7 @@
       "grandfather"
     ],
     "correct": "uncle",
-    "explanation": "Uncle is your father<s or mother>s brother."
+    "explanation": "Uncle is your father's or mother's brother."
   },
   {
     "question": "What is the past tense of <have>?",
@@ -162,7 +162,7 @@
       "son"
     ],
     "correct": "nephew",
-    "explanation": "Nephew is your brother<s or sister>s son."
+    "explanation": "Nephew is your brother's or sister's son."
   },
   {
     "question": "Where do you usually watch TV?",
@@ -242,7 +242,7 @@
     "explanation": "<Came> is the irregular past tense form of <come>."
   },
   {
-    "question": "Which word means <your mother>s sister'?",
+    "question": "Which word means your <mother's sister>?",
     "options": [
       "cousin",
       "niece",
@@ -250,7 +250,7 @@
       "grandmother"
     ],
     "correct": "aunt",
-    "explanation": "Aunt is your father<s or mother>s sister."
+    "explanation": "Aunt is your father's or mother's sister."
   },
   {
     "question": "Where do you take a shower?",
@@ -330,7 +330,7 @@
     "explanation": "<Gave> is the irregular past tense form of <give>."
   },
   {
-    "question": "Which word means <your sister>s daughter'?",
+    "question": "Which word means your <sister's daughter>?",
     "options": [
       "cousin",
       "daughter",
@@ -338,7 +338,7 @@
       "aunt"
     ],
     "correct": "niece",
-    "explanation": "Niece is your brother<s or sister>s daughter."
+    "explanation": "Niece is your brother's or sister's daughter."
   },
   {
     "question": "Where do you grow flowers and plants?",
