@@ -3,140 +3,140 @@
     "front": "Have breakfast",
     "back": "Desayunar",
     "ipa": "/hæv ˈbrekfəst/",
-    "example": "I have breakfast at 8 AM.",
+    "example": "I <have breakfast> at 8 AM.",
     "example_es": "Desayuno a las 8 AM."
   },
   {
     "front": "Come home",
     "back": "Llegar a casa",
     "ipa": "/kʌm hoʊm/",
-    "example": "I come home after work.",
+    "example": "I <come home> after work.",
     "example_es": "Llego a casa después del trabajo."
   },
   {
     "front": "Directions",
     "back": "Direcciones / Indicaciones",
     "ipa": "/dəˈrekʃənz/",
-    "example": "Can you give me directions to the park?",
+    "example": "Can you give me <directions> to the park?",
     "example_es": "¿Puedes darme indicaciones para llegar al parque?"
   },
   {
     "front": "Have lunch",
     "back": "Almorzar",
     "ipa": "/hæv lʌntʃ/",
-    "example": "We have lunch at noon.",
+    "example": "We <have lunch> at noon.",
     "example_es": "Almorzamos al mediodía."
   },
   {
     "front": "Have dinner",
     "back": "Cenar",
     "ipa": "/hæv ˈdɪnər/",
-    "example": "They have dinner at 7 PM.",
+    "example": "They <have dinner> at 7 PM.",
     "example_es": "Cenan a las 7 PM."
   },
   {
     "front": "Go to bed",
     "back": "Ir a la cama",
     "ipa": "/ɡoʊ tə bed/",
-    "example": "I go to bed at 10 PM.",
+    "example": "I <go to bed> at 10 PM.",
     "example_es": "Me voy a la cama a las 10 PM."
   },
   {
     "front": "Take a shower",
     "back": "Ducharse",
     "ipa": "/teɪk ə ˈʃaʊər/",
-    "example": "I take a shower every morning.",
+    "example": "I <take a shower> every morning.",
     "example_es": "Me ducho todas las mañanas."
   },
   {
     "front": "Brush teeth",
     "back": "Cepillarse los dientes",
     "ipa": "/brʌʃ tiːθ/",
-    "example": "Brush your teeth before bed.",
-    "example_es": "Cepíllate los dientes antes de dormir."
+    "example": "<Brush> your teeth before bed.",
+    "example_es": "Cepíllate los <dientes> antes de dormir."
   },
   {
     "front": "Get dressed",
     "back": "Vestirse",
     "ipa": "/ɡet drest/",
-    "example": "I get dressed quickly in the morning.",
+    "example": "I <get dressed> quickly in the morning.",
     "example_es": "Me visto rápido por la mañana."
   },
   {
     "front": "Go shopping",
     "back": "Ir de compras",
     "ipa": "/ɡoʊ ˈʃɑːpɪŋ/",
-    "example": "We go shopping on Saturdays.",
+    "example": "We <go shopping> on Saturdays.",
     "example_es": "Vamos de compras los sábados."
   },
   {
     "front": "Do homework",
     "back": "Hacer la tarea",
     "ipa": "/duː ˈhoʊmwɜːrk/",
-    "example": "She does homework after school.",
-    "example_es": "Ella hace la tarea después de la escuela."
+    "example": "She does <homework> after school.",
+    "example_es": "Ella hace la <tarea> después de la escuela."
   },
   {
     "front": "Watch TV",
     "back": "Ver televisión",
     "ipa": "/wɑːtʃ tiː viː/",
-    "example": "We watch TV in the evening.",
+    "example": "We <watch TV> in the evening.",
     "example_es": "Vemos televisión por la noche."
   },
   {
     "front": "Listen to music",
     "back": "Escuchar música",
     "ipa": "/ˈlɪsən tə ˈmjuːzɪk/",
-    "example": "I listen to music on the bus.",
+    "example": "I <listen to music> on the bus.",
     "example_es": "Escucho música en el autobús."
   },
   {
     "front": "Play sports",
     "back": "Hacer deporte",
     "ipa": "/pleɪ spɔːrts/",
-    "example": "He plays sports after school.",
-    "example_es": "Él hace deporte después de la escuela."
+    "example": "He plays <sports> after school.",
+    "example_es": "Él hace <deporte> después de la escuela."
   },
   {
     "front": "Cook dinner",
     "back": "Cocinar la cena",
     "ipa": "/kʊk ˈdɪnər/",
-    "example": "My mom cooks dinner every day.",
-    "example_es": "Mi mamá cocina la cena todos los días."
+    "example": "My mom cooks <dinner> every day.",
+    "example_es": "Mi mamá cocina la <cena> todos los días."
   },
   {
     "front": "Clean the house",
     "back": "Limpiar la casa",
     "ipa": "/kliːn ðə haʊs/",
-    "example": "We clean the house on weekends.",
+    "example": "We <clean the house> on weekends.",
     "example_es": "Limpiamos la casa los fines de semana."
   },
   {
     "front": "Walk the dog",
     "back": "Pasear al perro",
     "ipa": "/wɔːk ðə dɔːɡ/",
-    "example": "I walk the dog every morning.",
+    "example": "I <walk the dog> every morning.",
     "example_es": "Paseo al perro todas las mañanas."
   },
   {
     "front": "Read a book",
     "back": "Leer un libro",
     "ipa": "/riːd ə bʊk/",
-    "example": "She reads a book before bed.",
-    "example_es": "Ella lee un libro antes de dormir."
+    "example": "She reads a <book> before bed.",
+    "example_es": "Ella lee un <libro> antes de dormir."
   },
   {
     "front": "Go for a walk",
     "back": "Ir a caminar",
     "ipa": "/ɡoʊ fɔːr ə wɔːk/",
-    "example": "Let's go for a walk in the park.",
+    "example": "Let's <go for a walk> in the park.",
     "example_es": "Vamos a caminar por el parque."
   },
   {
     "front": "Take the bus",
     "back": "Tomar el autobús",
     "ipa": "/teɪk ðə bʌs/",
-    "example": "I take the bus to school.",
+    "example": "I <take the bus> to school.",
     "example_es": "Tomo el autobús a la escuela."
   }
 ]

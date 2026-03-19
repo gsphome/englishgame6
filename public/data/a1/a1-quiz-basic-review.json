@@ -118,7 +118,7 @@
       "When is your name?"
     ],
     "correct": "What is your name?",
-    "explanation": "Use 'What is your name?' to ask for someone's name."
+    "explanation": "Use '<What is your name?>' to ask for someone's name."
   },
   {
     "question": "Which preposition goes with <in the morning>?",
@@ -195,7 +195,7 @@
       "Book of Mary"
     ],
     "correct": "Mary's book",
-    "explanation": "Use apostrophe + s ('s) to show possession: Mary's book."
+    "explanation": "Use apostrophe + s ('s) to show possession: <Mary's book>."
   },
   {
     "question": "Which color is the sun usually described as?",
@@ -206,7 +206,7 @@
       "black"
     ],
     "correct": "yellow",
-    "explanation": "The sun is usually described as yellow in color."
+    "explanation": "The sun is usually described as <yellow> in color."
   },
   {
     "question": "What do you say when you meet someone for the first time?",
@@ -272,7 +272,7 @@
       "Help me now"
     ],
     "correct": "Can you help me?",
-    "explanation": "'Can you help me?' is a polite way to ask for help."
+    "explanation": "'<Can you help me?>' is a polite way to ask for help."
   },
   {
     "question": "What preposition is used with transportation?",
@@ -349,7 +349,7 @@
       "When time is it?"
     ],
     "correct": "What time is it?",
-    "explanation": "'What time is it?' is the correct way to ask about the current time."
+    "explanation": "'<What time is it?>' is the correct way to ask about the current time."
   },
   {
     "question": "Which word means <not much> for uncountable nouns?",
@@ -382,7 +382,7 @@
       "When are you from?"
     ],
     "correct": "Where are you from?",
-    "explanation": "'Where are you from?' asks about someone's place of origin."
+    "explanation": "'<Where are you from?>' asks about someone's place of origin."
   },
   {
     "question": "What is the correct form: 'We ___ students'?",
@@ -426,7 +426,7 @@
       "When are you?"
     ],
     "correct": "How are you?",
-    "explanation": "'How are you?' asks about someone's condition or well-being."
+    "explanation": "'<How are you?>' asks about someone's condition or well-being."
   },
   {
     "question": "Which word shows possession for <I>?",

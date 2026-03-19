@@ -98,15 +98,16 @@ export class ContentParser {
   }
 
   /**
-   * Parse flashcard content (simpler patterns)
+   * Parse flashcard content with formatting patterns
+   * Supports <term>, **emphasis**, `code` and {{variable}} markers
    */
   static parseFlashcardContent(text: string): StructuredContent {
-    // For now, flashcards use simpler parsing
-    // Can be enhanced later with specific patterns
-    return {
-      segments: [{ type: 'text', content: text }],
-      format: 'flashcard',
-    };
+    if (!text || typeof text !== 'string') {
+      return { segments: [{ type: 'text', content: '' }], format: 'flashcard' };
+    }
+
+    const result = this.parseQuizContent(text);
+    return { ...result, format: 'flashcard' };
   }
 
   /**

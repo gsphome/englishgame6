@@ -3,140 +3,140 @@
     "front": "Curriculum",
     "back": "Plan de estudios",
     "ipa": "/kəˈrɪkjələm/",
-    "example": "The school updated its curriculum this year.",
-    "example_es": "La escuela actualizó su plan de estudios este año."
+    "example": "The school updated its <curriculum> this year.",
+    "example_es": "La escuela actualizó su <plan de estudios> este año."
   },
   {
     "front": "Graduate",
     "back": "Graduarse / Graduado",
     "ipa": "/ˈɡrædʒuːeɪt/",
-    "example": "She will graduate from university next June.",
+    "example": "She will <graduate> from university next June.",
     "example_es": "Ella se graduará de la universidad en junio."
   },
   {
     "front": "Tuition",
     "back": "Matrícula / Colegiatura",
     "ipa": "/tuːˈɪʃən/",
-    "example": "University tuition is very expensive.",
+    "example": "University <tuition> is very expensive.",
     "example_es": "La matrícula universitaria es muy cara."
   },
   {
     "front": "Semester",
     "back": "Semestre",
     "ipa": "/sɪˈmestər/",
-    "example": "The first semester starts in September.",
-    "example_es": "El primer semestre empieza en septiembre."
+    "example": "The first <semester> starts in September.",
+    "example_es": "El primer <semestre> empieza en septiembre."
   },
   {
     "front": "Renewable energy",
     "back": "Energía renovable",
     "ipa": "/rɪˈnjuːəbəl ˈenərdʒi/",
-    "example": "Solar power is a type of renewable energy.",
-    "example_es": "La energía solar es un tipo de energía renovable."
+    "example": "Solar power is a type of <renewable energy>.",
+    "example_es": "La energía solar es un tipo de <energía renovable>."
   },
   {
     "front": "Carbon footprint",
     "back": "Huella de carbono",
     "ipa": "/ˈkɑːrbən ˈfʊtprɪnt/",
-    "example": "We should reduce our carbon footprint.",
-    "example_es": "Deberíamos reducir nuestra huella de carbono."
+    "example": "We should reduce our <carbon footprint>.",
+    "example_es": "Deberíamos reducir nuestra <huella de carbono>."
   },
   {
     "front": "Emissions",
     "back": "Emisiones",
     "ipa": "/ɪˈmɪʃənz/",
-    "example": "The factory reduced its carbon emissions.",
-    "example_es": "La fábrica redujo sus emisiones de carbono."
+    "example": "The factory reduced its carbon <emissions>.",
+    "example_es": "La fábrica redujo sus <emisiones> de carbono."
   },
   {
     "front": "Influencer",
     "back": "Influencer / Persona influyente",
     "ipa": "/ˈɪnfluːənsər/",
-    "example": "She's a popular social media influencer.",
+    "example": "She's a popular social media <influencer>.",
     "example_es": "Ella es una influencer popular en redes sociales."
   },
   {
     "front": "Viral",
     "back": "Viral",
     "ipa": "/ˈvaɪrəl/",
-    "example": "The video went viral overnight.",
-    "example_es": "El video se hizo viral de la noche a la mañana."
+    "example": "The video went <viral> overnight.",
+    "example_es": "El video se hizo <viral> de la noche a la mañana."
   },
   {
     "front": "Engagement",
     "back": "Interacción / Compromiso",
     "ipa": "/ɪnˈɡeɪdʒmənt/",
-    "example": "The post had high engagement on social media.",
+    "example": "The post had high <engagement> on social media.",
     "example_es": "La publicación tuvo alta interacción en redes sociales."
   },
   {
     "front": "Hashtag",
     "back": "Hashtag / Etiqueta",
     "ipa": "/ˈhæʃtæɡ/",
-    "example": "Use a hashtag to make your post easier to find.",
+    "example": "Use a <hashtag> to make your post easier to find.",
     "example_es": "Usa un hashtag para que tu publicación sea más fácil de encontrar."
   },
   {
     "front": "Cyberbullying",
     "back": "Ciberacoso",
     "ipa": "/ˈsaɪbərˌbʊliɪŋ/",
-    "example": "Schools are working to prevent cyberbullying.",
-    "example_es": "Las escuelas trabajan para prevenir el ciberacoso."
+    "example": "Schools are working to prevent <cyberbullying>.",
+    "example_es": "Las escuelas trabajan para prevenir el <ciberacoso>."
   },
   {
     "front": "Scholarship",
     "back": "Beca",
     "ipa": "/ˈskɒlərʃɪp/",
-    "example": "She won a scholarship to study abroad.",
-    "example_es": "Ella ganó una beca para estudiar en el extranjero."
+    "example": "She won a <scholarship> to study abroad.",
+    "example_es": "Ella ganó una <beca> para estudiar en el extranjero."
   },
   {
     "front": "Sustainability",
     "back": "Sostenibilidad",
     "ipa": "/səˌsteɪnəˈbɪləti/",
-    "example": "Sustainability is important for the future.",
-    "example_es": "La sostenibilidad es importante para el futuro."
+    "example": "<Sustainability> is important for the future.",
+    "example_es": "La <sostenibilidad> es importante para el futuro."
   },
   {
     "front": "Pollution",
     "back": "Contaminación",
     "ipa": "/pəˈluːʃən/",
-    "example": "Air pollution is a serious problem in big cities.",
-    "example_es": "La contaminación del aire es un problema serio en las grandes ciudades."
+    "example": "Air <pollution> is a serious problem in big cities.",
+    "example_es": "La <contaminación> del aire es un problema serio en las grandes ciudades."
   },
   {
     "front": "Algorithm",
     "back": "Algoritmo",
     "ipa": "/ˈælɡərɪðəm/",
-    "example": "Social media algorithms decide what you see.",
+    "example": "Social media <algorithms> decide what you see.",
     "example_es": "Los algoritmos de redes sociales deciden lo que ves."
   },
   {
     "front": "Content creator",
     "back": "Creador de contenido",
     "ipa": "/ˈkɒntent kriˈeɪtər/",
-    "example": "He works as a content creator on YouTube.",
-    "example_es": "Él trabaja como creador de contenido en YouTube."
+    "example": "He works as a <content creator> on YouTube.",
+    "example_es": "Él trabaja como <creador de contenido> en YouTube."
   },
   {
     "front": "Climate change",
     "back": "Cambio climático",
     "ipa": "/ˈklaɪmət tʃeɪndʒ/",
-    "example": "Climate change affects everyone on the planet.",
-    "example_es": "El cambio climático afecta a todos en el planeta."
+    "example": "<Climate change> affects everyone on the planet.",
+    "example_es": "El <cambio climático> afecta a todos en el planeta."
   },
   {
     "front": "Degree",
     "back": "Título universitario",
     "ipa": "/dɪˈɡriː/",
-    "example": "She has a degree in engineering.",
+    "example": "She has a <degree> in engineering.",
     "example_es": "Ella tiene un título en ingeniería."
   },
   {
     "front": "Recycle",
     "back": "Reciclar",
     "ipa": "/riːˈsaɪkəl/",
-    "example": "We should recycle plastic and paper.",
-    "example_es": "Deberíamos reciclar plástico y papel."
+    "example": "We should <recycle> plastic and paper.",
+    "example_es": "Deberíamos <reciclar> plástico y papel."
   }
 ]

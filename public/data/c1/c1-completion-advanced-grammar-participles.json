@@ -74,7 +74,7 @@
       "reads"
     ],
     "correct": "reading",
-    "explanation": "Un participio presente se usa para reducir una cláusula adjetiva ('The man who is reading...')."
+    "explanation": "Un participio presente se usa para reducir una cláusula adjetiva ('The man who is <reading>...')."
   },
   {
     "sentence": "She felt _ after the long journey.",
@@ -118,7 +118,7 @@
       "makes"
     ],
     "correct": "made",
-    "explanation": "Cláusula de participio pasado para dar más información sobre el sustantivo ('The car which was made...')."
+    "explanation": "Cláusula de participio pasado para dar más información sobre el sustantivo ('The car which was <made>...')."
   },
   {
     "sentence": "I find this subject very _.",
@@ -173,7 +173,7 @@
       "was given"
     ],
     "correct": "given",
-    "explanation": "Cláusula de participio pasado en función adjetival ('The speech that was given...')."
+    "explanation": "Cláusula de participio pasado en función adjetival ('The speech that was <given>...')."
   },
   {
     "sentence": "Feeling _, she went to bed early.",

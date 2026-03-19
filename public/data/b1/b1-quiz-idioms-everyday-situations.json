@@ -30,7 +30,7 @@
       "exercise"
     ],
     "correct": "go to sleep",
-    "explanation": "This idiom means to go to bed or go to sleep."
+    "explanation": "This idiom means to go to bed or <go to sleep>."
   },
   {
     "question": "If you <bite the bullet>, you:",
@@ -52,7 +52,7 @@
       "sweet food"
     ],
     "correct": "very easy",
-    "explanation": "This idiom means something that is very easy to do."
+    "explanation": "This idiom means something that is <very easy> to do."
   },
   {
     "question": "If someone <lets the cat out of the bag>, they:",
@@ -63,7 +63,7 @@
       "go shopping"
     ],
     "correct": "reveal a secret",
-    "explanation": "This idiom means to accidentally reveal a secret or surprise."
+    "explanation": "This idiom means to accidentally <reveal a secret> or surprise."
   },
   {
     "question": "What does <cost an arm and a leg> mean?",
@@ -118,7 +118,7 @@
       "drink more water"
     ],
     "correct": "don't worry about past mistakes",
-    "explanation": "This idiom means don't be upset about something that has already happened and cannot be changed."
+    "explanation": "This idiom means <don>'t be upset about something that has already happened and cannot be changed."
   },
   {
     "question": "If you <jump on the bandwagon>, you:",
@@ -162,7 +162,7 @@
       "on a farm"
     ],
     "correct": "never",
-    "explanation": "This idiom means something will never happen."
+    "explanation": "This idiom means something will <never> happen."
   },
   {
     "question": "If you <get cold feet>, you:",
@@ -173,7 +173,7 @@
       "go outside"
     ],
     "correct": "become nervous",
-    "explanation": "This idiom means to become nervous or afraid about doing something."
+    "explanation": "This idiom means to <become nervous> or afraid about doing something."
   },
   {
     "question": "What does <break a leg> mean?",
@@ -184,7 +184,7 @@
       "run fast"
     ],
     "correct": "good luck",
-    "explanation": "This idiom is used to wish someone good luck, especially before a performance."
+    "explanation": "This idiom is used to wish someone <good luck>, especially before a performance."
   },
   {
     "question": "If something is <a blessing in disguise>, it:",
@@ -305,7 +305,7 @@
       "calls someone"
     ],
     "correct": "sounds familiar",
-    "explanation": "This idiom means something sounds familiar or reminds you of something."
+    "explanation": "This idiom means something <sounds familiar> or reminds you of something."
   },
   {
     "question": "What does <get your act together> mean?",
@@ -316,7 +316,7 @@
       "work with others"
     ],
     "correct": "organize yourself",
-    "explanation": "This idiom means to organize yourself and start behaving responsibly."
+    "explanation": "This idiom means to <organize yourself> and start behaving responsibly."
   },
   {
     "question": "If you <face the music>, you:",
@@ -404,7 +404,7 @@
       "plan ahead"
     ],
     "correct": "stop working",
-    "explanation": "This idiom means to stop working or end an activity for the day."
+    "explanation": "This idiom means to <stop working> or end an activity for the day."
   },
   {
     "question": "If you <get the hang of it>, you:",
@@ -437,7 +437,7 @@
       "eat fruit"
     ],
     "correct": "watch carefully",
-    "explanation": "This idiom means to watch carefully and be alert for something."
+    "explanation": "This idiom means to <watch carefully> and be alert for something."
   },
   {
     "question": "What does <raining cats and dogs> mean?",

@@ -19,7 +19,7 @@
       "cousin"
     ],
     "correct": "grandmother",
-    "explanation": "Grandmother is your father's or mother's mother."
+    "explanation": "<Grandmother> is your father's or mother's mother."
   },
   {
     "question": "Where do you usually cook food?",
@@ -30,7 +30,7 @@
       "garage"
     ],
     "correct": "kitchen",
-    "explanation": "The kitchen is the room where food is prepared and cooked."
+    "explanation": "The <kitchen> is the room where food is prepared and cooked."
   },
   {
     "question": "What is the comparative form of <big>?",
@@ -52,7 +52,7 @@
       "next week"
     ],
     "correct": "yesterday",
-    "explanation": "Yesterday refers to the day that came before today."
+    "explanation": "<Yesterday> refers to the day that came before today."
   },
   {
     "question": "What is the past tense of <eat>?",
@@ -74,7 +74,7 @@
       "living room"
     ],
     "correct": "bedroom",
-    "explanation": "The bedroom is the room where you sleep."
+    "explanation": "The <bedroom> is the room where you sleep."
   },
   {
     "question": "What is the superlative form of <good>?",
@@ -96,7 +96,7 @@
       "grandfather"
     ],
     "correct": "uncle",
-    "explanation": "Uncle is your father's or mother's brother."
+    "explanation": "<Uncle> is your father's or mother's brother."
   },
   {
     "question": "What is the past tense of <have>?",
@@ -118,7 +118,7 @@
       "garage"
     ],
     "correct": "bathroom",
-    "explanation": "The bathroom is where you wash your hands and take care of personal hygiene."
+    "explanation": "The <bathroom> is where you wash your hands and take care of personal hygiene."
   },
   {
     "question": "What is the comparative form of <easy>?",
@@ -162,7 +162,7 @@
       "son"
     ],
     "correct": "nephew",
-    "explanation": "Nephew is your brother's or sister's son."
+    "explanation": "<Nephew> is your brother's or sister's son."
   },
   {
     "question": "Where do you usually watch TV?",
@@ -173,7 +173,7 @@
       "closet"
     ],
     "correct": "living room",
-    "explanation": "The living room is where families typically watch TV and relax."
+    "explanation": "The <living room> is where families typically watch TV and relax."
   },
   {
     "question": "What is the superlative form of <tall>?",
@@ -217,7 +217,7 @@
       "bathroom"
     ],
     "correct": "garage",
-    "explanation": "The garage is where cars are typically parked and stored."
+    "explanation": "The <garage> is where cars are typically parked and stored."
   },
   {
     "question": "What is the comparative form of <bad>?",
@@ -250,7 +250,7 @@
       "grandmother"
     ],
     "correct": "aunt",
-    "explanation": "Aunt is your father's or mother's sister."
+    "explanation": "<Aunt> is your father's or mother's sister."
   },
   {
     "question": "Where do you take a shower?",
@@ -261,7 +261,7 @@
       "living room"
     ],
     "correct": "bathroom",
-    "explanation": "The bathroom is where you take showers and baths."
+    "explanation": "The <bathroom> is where you take showers and baths."
   },
   {
     "question": "What is the superlative form of <small>?",
@@ -305,7 +305,7 @@
       "garage"
     ],
     "correct": "dining room",
-    "explanation": "The dining room is where families typically eat their meals."
+    "explanation": "The <dining room> is where families typically eat their meals."
   },
   {
     "question": "What is the comparative form of <hot>?",
@@ -338,7 +338,7 @@
       "aunt"
     ],
     "correct": "niece",
-    "explanation": "Niece is your brother's or sister's daughter."
+    "explanation": "<Niece> is your brother's or sister's daughter."
   },
   {
     "question": "Where do you grow flowers and plants?",
@@ -349,7 +349,7 @@
       "bedroom"
     ],
     "correct": "garden",
-    "explanation": "The garden is where flowers, plants, and vegetables are grown."
+    "explanation": "The <garden> is where flowers, plants, and vegetables are grown."
   },
   {
     "question": "What is the superlative form of <fast>?",
@@ -393,7 +393,7 @@
       "dining room"
     ],
     "correct": "attic",
-    "explanation": "The attic is the space under the roof where old things are often stored."
+    "explanation": "The <attic> is the space under the roof where old things are often stored."
   },
   {
     "question": "What is the comparative form of <cold>?",
@@ -426,7 +426,7 @@
       "classmates"
     ],
     "correct": "relatives",
-    "explanation": "Relatives are all the people who are part of your extended family."
+    "explanation": "<Relatives> are all the people who are part of your extended family."
   },
   {
     "question": "What is the superlative form of <young>?",

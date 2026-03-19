@@ -3,140 +3,140 @@
     "front": "Interrogate",
     "back": "Interrogar / Cuestionar críticamente",
     "ipa": "/ɪnˈterəɡeɪt/",
-    "example": "The paper interrogates assumptions about cultural identity.",
-    "example_es": "El artículo cuestiona críticamente las suposiciones sobre identidad cultural."
+    "example": "The paper <interrogates> assumptions about cultural identity.",
+    "example_es": "El artículo cuestiona <críticamente> las suposiciones sobre identidad cultural."
   },
   {
     "front": "Lacuna",
     "back": "Laguna / Vacío",
     "ipa": "/ləˈkjuːnə/",
-    "example": "There is a significant lacuna in the existing research.",
+    "example": "There is a significant <lacuna> in the existing research.",
     "example_es": "Hay una laguna significativa en la investigación existente."
   },
   {
     "front": "Epistemology",
     "back": "Epistemología",
     "ipa": "/ɪˌpɪstəˈmɒlədʒi/",
-    "example": "Epistemology examines the nature of knowledge.",
-    "example_es": "La epistemología examina la naturaleza del conocimiento."
+    "example": "<Epistemology> examines the nature of knowledge.",
+    "example_es": "La <epistemología> examina la naturaleza del conocimiento."
   },
   {
     "front": "Ethnocentrism",
     "back": "Etnocentrismo",
     "ipa": "/ˌeθnoʊˈsentrɪzəm/",
-    "example": "Ethnocentrism can bias research conclusions.",
-    "example_es": "El etnocentrismo puede sesgar las conclusiones de la investigación."
+    "example": "<Ethnocentrism> can bias research conclusions.",
+    "example_es": "El <etnocentrismo> puede sesgar las conclusiones de la investigación."
   },
   {
     "front": "Essentialize",
     "back": "Esencializar",
     "ipa": "/ɪˈsenʃəlaɪz/",
-    "example": "We should avoid essentializing complex cultures.",
-    "example_es": "Debemos evitar esencializar culturas complejas."
+    "example": "We should avoid <essentializing> complex cultures.",
+    "example_es": "Debemos evitar <esencializar> culturas complejas."
   },
   {
     "front": "Cosmopolitanism",
     "back": "Cosmopolitismo",
     "ipa": "/ˌkɒzməˈpɒlɪtənɪzəm/",
-    "example": "Cosmopolitanism promotes global citizenship.",
-    "example_es": "El cosmopolitismo promueve la ciudadanía global."
+    "example": "<Cosmopolitanism> promotes global citizenship.",
+    "example_es": "El <cosmopolitismo> promueve la ciudadanía global."
   },
   {
     "front": "Intersectionality",
     "back": "Interseccionalidad",
     "ipa": "/ˌɪntərˌsekʃəˈnæləti/",
-    "example": "Intersectionality examines overlapping social identities.",
-    "example_es": "La interseccionalidad examina las identidades sociales superpuestas."
+    "example": "<Intersectionality> examines overlapping social identities.",
+    "example_es": "La <interseccionalidad> examina las identidades sociales superpuestas."
   },
   {
     "front": "Glocalization",
     "back": "Glocalización",
     "ipa": "/ˌɡloʊkəlaɪˈzeɪʃən/",
-    "example": "Glocalization adapts global products to local markets.",
-    "example_es": "La glocalización adapta productos globales a mercados locales."
+    "example": "<Glocalization> adapts global products to local markets.",
+    "example_es": "La <glocalización> adapta productos globales a mercados locales."
   },
   {
     "front": "Recalibrate",
     "back": "Recalibrar",
     "ipa": "/riːˈkælɪbreɪt/",
-    "example": "We need to recalibrate our approach.",
-    "example_es": "Necesitamos recalibrar nuestro enfoque."
+    "example": "We need to <recalibrate> our approach.",
+    "example_es": "Necesitamos <recalibrar> nuestro enfoque."
   },
   {
     "front": "Seismic",
     "back": "Sísmico / De gran impacto",
     "ipa": "/ˈsaɪzmɪk/",
-    "example": "The policy caused a seismic shift in the industry.",
+    "example": "The policy caused a <seismic> shift in the industry.",
     "example_es": "La política causó un cambio sísmico en la industria."
   },
   {
     "front": "Preeminent",
     "back": "Preeminente",
     "ipa": "/priːˈemɪnənt/",
-    "example": "She is the preeminent scholar in her field.",
-    "example_es": "Ella es la académica preeminente en su campo."
+    "example": "She is the <preeminent> scholar in her field.",
+    "example_es": "Ella es la académica <preeminente> en su campo."
   },
   {
     "front": "Paradigm shift",
     "back": "Cambio de paradigma",
     "ipa": "/ˈpærədaɪm ʃɪft/",
-    "example": "AI represents a paradigm shift in technology.",
-    "example_es": "La IA representa un cambio de paradigma en tecnología."
+    "example": "AI represents a <paradigm shift> in technology.",
+    "example_es": "La IA representa un <cambio de paradigma> en tecnología."
   },
   {
     "front": "Discourse",
     "back": "Discurso",
     "ipa": "/ˈdɪskɔːrs/",
-    "example": "Academic discourse requires precise language.",
-    "example_es": "El discurso académico requiere un lenguaje preciso."
+    "example": "Academic <discourse> requires precise language.",
+    "example_es": "El <discurso> académico requiere un lenguaje preciso."
   },
   {
     "front": "Hegemony",
     "back": "Hegemonía",
     "ipa": "/hɪˈdʒeməni/",
-    "example": "Cultural hegemony shapes public opinion.",
-    "example_es": "La hegemonía cultural moldea la opinión pública."
+    "example": "Cultural <hegemony> shapes public opinion.",
+    "example_es": "La <hegemonía> cultural moldea la opinión pública."
   },
   {
     "front": "Empirical",
     "back": "Empírico",
     "ipa": "/ɪmˈpɪrɪkəl/",
-    "example": "The study is based on empirical evidence.",
+    "example": "The study is based on <empirical> evidence.",
     "example_es": "El estudio se basa en evidencia empírica."
   },
   {
     "front": "Nuance",
     "back": "Matiz",
     "ipa": "/ˈnjuːɑːns/",
-    "example": "The argument lacks nuance.",
+    "example": "The argument lacks <nuance>.",
     "example_es": "El argumento carece de matices."
   },
   {
     "front": "Corroborate",
     "back": "Corroborar",
     "ipa": "/kəˈrɒbəreɪt/",
-    "example": "Further studies corroborate these findings.",
+    "example": "Further studies <corroborate> these findings.",
     "example_es": "Estudios adicionales corroboran estos hallazgos."
   },
   {
     "front": "Juxtapose",
     "back": "Yuxtaponer",
     "ipa": "/ˌdʒʌkstəˈpoʊz/",
-    "example": "The author juxtaposes tradition and modernity.",
+    "example": "The author <juxtaposes> tradition and modernity.",
     "example_es": "El autor yuxtapone tradición y modernidad."
   },
   {
     "front": "Proliferation",
     "back": "Proliferación",
     "ipa": "/prəˌlɪfəˈreɪʃən/",
-    "example": "The proliferation of misinformation is concerning.",
-    "example_es": "La proliferación de desinformación es preocupante."
+    "example": "The <proliferation> of misinformation is concerning.",
+    "example_es": "La <proliferación> de desinformación es preocupante."
   },
   {
     "front": "Ubiquitous",
     "back": "Ubicuo / Omnipresente",
     "ipa": "/juːˈbɪkwɪtəs/",
-    "example": "Smartphones have become ubiquitous.",
+    "example": "Smartphones have become <ubiquitous>.",
     "example_es": "Los smartphones se han vuelto omnipresentes."
   }
 ]

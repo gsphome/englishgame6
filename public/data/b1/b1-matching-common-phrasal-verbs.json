@@ -7,7 +7,7 @@
   {
     "left": "call off",
     "right": "cancel",
-    "explanation": "To cancel an event or arrangement"
+    "explanation": "To <cancel> an event or arrangement"
   },
   {
     "left": "come across",
@@ -102,7 +102,7 @@
   {
     "left": "hold on",
     "right": "wait",
-    "explanation": "To wait for a short time"
+    "explanation": "To <wait> for a short time"
   },
   {
     "left": "keep up",
@@ -157,7 +157,7 @@
   {
     "left": "get over",
     "right": "recover from",
-    "explanation": "To recover from an illness or difficult experience"
+    "explanation": "To <recover from> an illness or difficult experience"
   },
   {
     "left": "go through",

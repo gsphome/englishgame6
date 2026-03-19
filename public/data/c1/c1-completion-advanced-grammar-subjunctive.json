@@ -118,7 +118,7 @@
       "to be"
     ],
     "correct": "be",
-    "explanation": "Después de 'It is imperative that...', se usa el subjuntivo pasivo 'be + participio pasado'."
+    "explanation": "Después de 'It is imperative that...', se usa el subjuntivo pasivo '<be> + participio pasado'."
   },
   {
     "sentence": "He acts as though he _ the boss.",
@@ -360,7 +360,7 @@
       "to be"
     ],
     "correct": "be",
-    "explanation": "Después de 'request that...', se usa el subjuntivo pasivo 'be + participio pasado'."
+    "explanation": "Después de 'request that...', se usa el subjuntivo pasivo '<be> + participio pasado'."
   },
   {
     "sentence": "I wish you _ listen to me.",
@@ -371,7 +371,7 @@
       "could"
     ],
     "correct": "would",
-    "explanation": "Se usa 'wish + would + infinitivo' para expresar un deseo de que alguien cambie su comportamiento."
+    "explanation": "Se usa 'wish + <would> + infinitivo' para expresar un deseo de que alguien cambie su comportamiento."
   },
   {
     "sentence": "It's essential that he _ the contract carefully.",

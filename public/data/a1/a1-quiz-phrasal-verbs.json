@@ -8,7 +8,7 @@
       "wake out"
     ],
     "correct": "wake up",
-    "explanation": "Wake up means to stop sleeping and become awake."
+    "explanation": "<Wake up> means to stop sleeping and become awake."
   },
   {
     "question": "Please ______ the TV. It's too loud.",
@@ -19,7 +19,7 @@
       "turn at"
     ],
     "correct": "turn down",
-    "explanation": "Turn down means to reduce the volume."
+    "explanation": "<Turn down> means to reduce the volume."
   },
   {
     "question": "Can you ______ this word in the dictionary?",
@@ -30,7 +30,7 @@
       "look in"
     ],
     "correct": "look up",
-    "explanation": "Look up means to search for information."
+    "explanation": "<Look up> means to search for information."
   },
   {
     "question": "I ______ at 7 AM every day.",
@@ -41,7 +41,7 @@
       "get at"
     ],
     "correct": "get up",
-    "explanation": "Get up means to rise from bed."
+    "explanation": "<Get up> means to rise from bed."
   },
   {
     "question": "Please ______ your shoes before entering.",
@@ -52,7 +52,7 @@
       "take down"
     ],
     "correct": "take off",
-    "explanation": "Take off means to remove clothing or shoes."
+    "explanation": "<Take off> means to remove clothing or shoes."
   },
   {
     "question": "I need to ______ my homework.",
@@ -63,7 +63,7 @@
       "hand up"
     ],
     "correct": "hand in",
-    "explanation": "Hand in means to submit or deliver something."
+    "explanation": "<Hand in> means to submit or deliver something."
   },
   {
     "question": "Let's ______ the meeting until tomorrow.",
@@ -74,7 +74,7 @@
       "put down"
     ],
     "correct": "put off",
-    "explanation": "Put off means to postpone or delay."
+    "explanation": "<Put off> means to postpone or delay."
   },
   {
     "question": "Can you ______ the lights, please?",
@@ -85,7 +85,7 @@
       "turn at"
     ],
     "correct": "turn off",
-    "explanation": "Turn off means to stop a device from operating."
+    "explanation": "<Turn off> means to stop a device from operating."
   },
   {
     "question": "I ______ my old friend yesterday.",
@@ -107,7 +107,7 @@
       "fill at"
     ],
     "correct": "fill in",
-    "explanation": "Fill in means to complete a form with information."
+    "explanation": "<Fill in> means to complete a form with information."
   },
   {
     "question": "I need to ______ some money from the bank.",
@@ -118,7 +118,7 @@
       "take down"
     ],
     "correct": "take out",
-    "explanation": "Take out means to withdraw money."
+    "explanation": "<Take out> means to withdraw money."
   },
   {
     "question": "Let's ______ this problem together.",
@@ -129,7 +129,7 @@
       "work down"
     ],
     "correct": "work out",
-    "explanation": "Work out means to solve or resolve."
+    "explanation": "<Work out> means to solve or resolve."
   },
   {
     "question": "I ______ my jacket because it was cold.",
@@ -140,7 +140,7 @@
       "put down"
     ],
     "correct": "put on",
-    "explanation": "Put on means to dress yourself in clothing."
+    "explanation": "<Put on> means to dress yourself in clothing."
   },
   {
     "question": "Can you ______ the music? I can't hear it.",
@@ -151,7 +151,7 @@
       "turn in"
     ],
     "correct": "turn up",
-    "explanation": "Turn up means to increase the volume."
+    "explanation": "<Turn up> means to increase the volume."
   },
   {
     "question": "I need to ______ my room.",
@@ -162,7 +162,7 @@
       "clean at"
     ],
     "correct": "clean up",
-    "explanation": "Clean up means to tidy or organize."
+    "explanation": "<Clean up> means to tidy or organize."
   },
   {
     "question": "Please ______ for a moment.",
@@ -173,7 +173,7 @@
       "sit at"
     ],
     "correct": "sit down",
-    "explanation": "Sit down means to take a seat."
+    "explanation": "<Sit down> means to take a seat."
   },
   {
     "question": "I ______ smoking last year.",
@@ -195,7 +195,7 @@
       "go away"
     ],
     "correct": "go away",
-    "explanation": "Go away means to leave a place."
+    "explanation": "<Go away> means to leave a place."
   },
   {
     "question": "I need to ______ my email.",
@@ -206,7 +206,7 @@
       "check on"
     ],
     "correct": "check out",
-    "explanation": "Check out means to examine or review."
+    "explanation": "<Check out> means to examine or review."
   },
   {
     "question": "Please ______ the door when you leave.",
@@ -217,6 +217,6 @@
       "close off"
     ],
     "correct": "close up",
-    "explanation": "Close up means to shut completely."
+    "explanation": "<Close up> means to shut completely."
   }
 ]
