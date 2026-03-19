@@ -426,12 +426,6 @@ html.dark {
 }
 
 /* === QUICK ACTIONS === */
-.header-redesigned__quick-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--header-spacing-sm);
-}
-
 /* === HAMBURGER MENU === */
 .header-side-menu {
   position: fixed;

@@ -161,10 +161,7 @@ export const Header: React.FC<HeaderProps> = () => {
             </div>
           )}
 
-          {/* Quick Actions - Only Essential Controls */}
-          <div className="header-redesigned__quick-actions">
-            {/* Progress dashboard moved to hamburger menu for better UX */}
-          </div>
+          {/* Quick Actions removed - controls moved to hamburger menu */}
         </div>
       </div>
 
