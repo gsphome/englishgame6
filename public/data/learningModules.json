@@ -440,23 +440,6 @@
     "difficulty": 2
   },
   {
-    "id": "reading-culture-a2",
-    "name": "Culture Reading",
-    "learningMode": "reading",
-    "dataPath": "data/a2/a2-reading-culture.json",
-    "level": [
-      "a2"
-    ],
-    "category": "Reading",
-    "unit": 2,
-    "prerequisites": [
-      "reading-business-a2"
-    ],
-    "description": "Understanding English-speaking cultures and customs",
-    "estimatedTime": 10,
-    "difficulty": 2
-  },
-  {
     "id": "matching-time-expressions-a2",
     "name": "Time Expressions",
     "learningMode": "matching",
@@ -467,17 +450,17 @@
     "category": "Vocabulary",
     "unit": 2,
     "prerequisites": [
-      "reading-culture-a2"
+      "reading-business-a2"
     ],
     "description": "Time expressions and temporal phrases",
     "estimatedTime": 5,
     "difficulty": 2
   },
   {
-    "id": "reading-technology-a2",
-    "name": "Technology Reading",
+    "id": "reading-culture-a2",
+    "name": "Culture Reading",
     "learningMode": "reading",
-    "dataPath": "data/a2/a2-reading-technology.json",
+    "dataPath": "data/a2/a2-reading-culture.json",
     "level": [
       "a2"
     ],
@@ -486,24 +469,7 @@
     "prerequisites": [
       "matching-time-expressions-a2"
     ],
-    "description": "Technology and digital communication vocabulary",
-    "estimatedTime": 10,
-    "difficulty": 2
-  },
-  {
-    "id": "reading-health-a2",
-    "name": "Health Reading",
-    "learningMode": "reading",
-    "dataPath": "data/a2/a2-reading-health.json",
-    "level": [
-      "a2"
-    ],
-    "category": "Reading",
-    "unit": 2,
-    "prerequisites": [
-      "reading-technology-a2"
-    ],
-    "description": "Health, wellness, and medical vocabulary",
+    "description": "Understanding English-speaking cultures and customs",
     "estimatedTime": 10,
     "difficulty": 2
   },
@@ -518,10 +484,27 @@
     "category": "Vocabulary",
     "unit": 2,
     "prerequisites": [
-      "reading-health-a2"
+      "reading-culture-a2"
     ],
     "description": "Family members and relationships vocabulary",
     "estimatedTime": 5,
+    "difficulty": 2
+  },
+  {
+    "id": "reading-technology-a2",
+    "name": "Technology Reading",
+    "learningMode": "reading",
+    "dataPath": "data/a2/a2-reading-technology.json",
+    "level": [
+      "a2"
+    ],
+    "category": "Reading",
+    "unit": 2,
+    "prerequisites": [
+      "flashcard-family-a2"
+    ],
+    "description": "Technology and digital communication vocabulary",
+    "estimatedTime": 10,
     "difficulty": 2
   },
   {
@@ -535,7 +518,7 @@
     "category": "Vocabulary",
     "unit": 2,
     "prerequisites": [
-      "flashcard-family-a2"
+      "reading-technology-a2"
     ],
     "description": "Home, furniture and household items",
     "estimatedTime": 5,
@@ -559,6 +542,74 @@
     "difficulty": 2
   },
   {
+    "id": "reading-health-a2",
+    "name": "Health Reading",
+    "learningMode": "reading",
+    "dataPath": "data/a2/a2-reading-health.json",
+    "level": [
+      "a2"
+    ],
+    "category": "Reading",
+    "unit": 2,
+    "prerequisites": [
+      "quiz-family-home-a2"
+    ],
+    "description": "Health, wellness, and medical vocabulary",
+    "estimatedTime": 10,
+    "difficulty": 2
+  },
+  {
+    "id": "flashcard-culture-health-vocab-a2",
+    "name": "Culture & Health Vocabulary",
+    "learningMode": "flashcard",
+    "dataPath": "data/a2/a2-flashcard-culture-health-vocab.json",
+    "level": [
+      "a2"
+    ],
+    "category": "Vocabulary",
+    "unit": 2,
+    "prerequisites": [
+      "reading-health-a2"
+    ],
+    "description": "Culture, health and technology vocabulary (20 words)",
+    "estimatedTime": 5,
+    "difficulty": 2
+  },
+  {
+    "id": "quiz-culture-health-vocab-a2",
+    "name": "Culture & Health Quiz",
+    "learningMode": "quiz",
+    "dataPath": "data/a2/a2-quiz-culture-health-vocab.json",
+    "level": [
+      "a2"
+    ],
+    "category": "Vocabulary",
+    "unit": 2,
+    "prerequisites": [
+      "flashcard-culture-health-vocab-a2"
+    ],
+    "description": "Test your knowledge of culture, health and technology vocabulary",
+    "estimatedTime": 5,
+    "difficulty": 2
+  },
+  {
+    "id": "completion-reading-vocab-a2",
+    "name": "Reading Vocabulary Practice",
+    "learningMode": "completion",
+    "dataPath": "data/a2/a2-completion-reading-vocab.json",
+    "level": [
+      "a2"
+    ],
+    "category": "Vocabulary",
+    "unit": 2,
+    "prerequisites": [
+      "quiz-culture-health-vocab-a2"
+    ],
+    "description": "Complete sentences reinforcing reading vocabulary",
+    "estimatedTime": 5,
+    "difficulty": 2
+  },
+  {
     "id": "flashcard-daily-activities-a2",
     "name": "Daily Activities & Feelings",
     "learningMode": "flashcard",
@@ -572,7 +623,7 @@
     "estimatedTime": 8,
     "difficulty": 2,
     "prerequisites": [
-      "quiz-family-home-a2"
+      "completion-reading-vocab-a2"
     ]
   },
   {
@@ -780,57 +831,6 @@
     "difficulty": 2
   },
   {
-    "id": "flashcard-culture-health-vocab-a2",
-    "name": "Culture & Health Vocabulary",
-    "learningMode": "flashcard",
-    "dataPath": "data/a2/a2-flashcard-culture-health-vocab.json",
-    "level": [
-      "a2"
-    ],
-    "category": "Vocabulary",
-    "unit": 2,
-    "prerequisites": [
-      "quiz-elementary-idioms-a2"
-    ],
-    "description": "Culture, health and technology vocabulary (20 words)",
-    "estimatedTime": 5,
-    "difficulty": 2
-  },
-  {
-    "id": "quiz-culture-health-vocab-a2",
-    "name": "Culture & Health Quiz",
-    "learningMode": "quiz",
-    "dataPath": "data/a2/a2-quiz-culture-health-vocab.json",
-    "level": [
-      "a2"
-    ],
-    "category": "Vocabulary",
-    "unit": 2,
-    "prerequisites": [
-      "flashcard-culture-health-vocab-a2"
-    ],
-    "description": "Test your knowledge of culture, health and technology vocabulary",
-    "estimatedTime": 5,
-    "difficulty": 2
-  },
-  {
-    "id": "completion-reading-vocab-a2",
-    "name": "Reading Vocabulary Practice",
-    "learningMode": "completion",
-    "dataPath": "data/a2/a2-completion-reading-vocab.json",
-    "level": [
-      "a2"
-    ],
-    "category": "Vocabulary",
-    "unit": 2,
-    "prerequisites": [
-      "quiz-culture-health-vocab-a2"
-    ],
-    "description": "Complete sentences reinforcing reading vocabulary",
-    "estimatedTime": 5,
-    "difficulty": 2
-  },
-  {
     "id": "quiz-elementary-review-a2",
     "name": "Elementary Review",
     "learningMode": "quiz",
@@ -841,7 +841,7 @@
     "category": "Review",
     "unit": 2,
     "prerequisites": [
-      "completion-reading-vocab-a2"
+      "quiz-elementary-idioms-a2"
     ],
     "description": "Comprehensive review of A2 level concepts",
     "estimatedTime": 5,
@@ -865,40 +865,6 @@
     "difficulty": 3
   },
   {
-    "id": "reading-environment-b1",
-    "name": "Environment Reading",
-    "learningMode": "reading",
-    "dataPath": "data/b1/b1-reading-environment.json",
-    "level": [
-      "b1"
-    ],
-    "category": "Reading",
-    "unit": 3,
-    "prerequisites": [
-      "reading-education-b1"
-    ],
-    "description": "Environmental issues and sustainability",
-    "estimatedTime": 12,
-    "difficulty": 3
-  },
-  {
-    "id": "reading-social-media-b1",
-    "name": "Social Media Reading",
-    "learningMode": "reading",
-    "dataPath": "data/b1/b1-reading-social-media.json",
-    "level": [
-      "b1"
-    ],
-    "category": "Reading",
-    "unit": 3,
-    "prerequisites": [
-      "reading-environment-b1"
-    ],
-    "description": "Social media and modern communication",
-    "estimatedTime": 12,
-    "difficulty": 3
-  },
-  {
     "id": "flashcard-travel-leisure-b1",
     "name": "Travel & Leisure",
     "learningMode": "flashcard",
@@ -909,7 +875,7 @@
     "category": "Vocabulary",
     "unit": 3,
     "prerequisites": [
-      "reading-social-media-b1"
+      "reading-education-b1"
     ],
     "description": "Travel, leisure and vacation vocabulary",
     "estimatedTime": 5,
@@ -933,6 +899,23 @@
     "difficulty": 3
   },
   {
+    "id": "reading-environment-b1",
+    "name": "Environment Reading",
+    "learningMode": "reading",
+    "dataPath": "data/b1/b1-reading-environment.json",
+    "level": [
+      "b1"
+    ],
+    "category": "Reading",
+    "unit": 3,
+    "prerequisites": [
+      "quiz-travel-leisure-b1"
+    ],
+    "description": "Environmental issues and sustainability",
+    "estimatedTime": 12,
+    "difficulty": 3
+  },
+  {
     "id": "sorting-modal-verbs-b1",
     "name": "Modal Verbs",
     "learningMode": "sorting",
@@ -943,7 +926,7 @@
     "category": "Grammar",
     "unit": 3,
     "prerequisites": [
-      "quiz-travel-leisure-b1"
+      "reading-environment-b1"
     ],
     "description": "Modal verbs and their uses",
     "estimatedTime": 5,
@@ -967,6 +950,23 @@
     "difficulty": 3
   },
   {
+    "id": "reading-social-media-b1",
+    "name": "Social Media Reading",
+    "learningMode": "reading",
+    "dataPath": "data/b1/b1-reading-social-media.json",
+    "level": [
+      "b1"
+    ],
+    "category": "Reading",
+    "unit": 3,
+    "prerequisites": [
+      "sorting-prepositions-b1"
+    ],
+    "description": "Social media and modern communication",
+    "estimatedTime": 12,
+    "difficulty": 3
+  },
+  {
     "id": "flashcard-work-career-b1",
     "name": "Work & Career",
     "learningMode": "flashcard",
@@ -980,8 +980,59 @@
     "estimatedTime": 8,
     "difficulty": 3,
     "prerequisites": [
-      "sorting-prepositions-b1"
+      "reading-social-media-b1"
     ]
+  },
+  {
+    "id": "flashcard-reading-vocab-b1",
+    "name": "Reading Vocabulary",
+    "learningMode": "flashcard",
+    "dataPath": "data/b1/b1-flashcard-reading-vocab.json",
+    "level": [
+      "b1"
+    ],
+    "category": "Vocabulary",
+    "unit": 3,
+    "prerequisites": [
+      "flashcard-work-career-b1"
+    ],
+    "description": "Education, environment and social media vocabulary (20 words)",
+    "estimatedTime": 5,
+    "difficulty": 3
+  },
+  {
+    "id": "quiz-reading-vocab-b1",
+    "name": "Reading Vocabulary Quiz",
+    "learningMode": "quiz",
+    "dataPath": "data/b1/b1-quiz-reading-vocab.json",
+    "level": [
+      "b1"
+    ],
+    "category": "Vocabulary",
+    "unit": 3,
+    "prerequisites": [
+      "flashcard-reading-vocab-b1"
+    ],
+    "description": "Test your knowledge of intermediate reading vocabulary",
+    "estimatedTime": 5,
+    "difficulty": 3
+  },
+  {
+    "id": "matching-reading-vocab-b1",
+    "name": "Reading Vocabulary Matching",
+    "learningMode": "matching",
+    "dataPath": "data/b1/b1-matching-reading-vocab.json",
+    "level": [
+      "b1"
+    ],
+    "category": "Vocabulary",
+    "unit": 3,
+    "prerequisites": [
+      "quiz-reading-vocab-b1"
+    ],
+    "description": "Match intermediate vocabulary with Spanish translations",
+    "estimatedTime": 5,
+    "difficulty": 3
   },
   {
     "id": "completion-future-forms-b1",
@@ -994,7 +1045,7 @@
     "category": "Grammar",
     "unit": 3,
     "prerequisites": [
-      "flashcard-work-career-b1"
+      "matching-reading-vocab-b1"
     ],
     "description": "Different ways to express future",
     "estimatedTime": 5,
@@ -1205,57 +1256,6 @@
     "difficulty": 3
   },
   {
-    "id": "flashcard-reading-vocab-b1",
-    "name": "Reading Vocabulary",
-    "learningMode": "flashcard",
-    "dataPath": "data/b1/b1-flashcard-reading-vocab.json",
-    "level": [
-      "b1"
-    ],
-    "category": "Vocabulary",
-    "unit": 3,
-    "prerequisites": [
-      "quiz-idioms-challenge-b1"
-    ],
-    "description": "Education, environment and social media vocabulary (20 words)",
-    "estimatedTime": 5,
-    "difficulty": 3
-  },
-  {
-    "id": "quiz-reading-vocab-b1",
-    "name": "Reading Vocabulary Quiz",
-    "learningMode": "quiz",
-    "dataPath": "data/b1/b1-quiz-reading-vocab.json",
-    "level": [
-      "b1"
-    ],
-    "category": "Vocabulary",
-    "unit": 3,
-    "prerequisites": [
-      "flashcard-reading-vocab-b1"
-    ],
-    "description": "Test your knowledge of intermediate reading vocabulary",
-    "estimatedTime": 5,
-    "difficulty": 3
-  },
-  {
-    "id": "matching-reading-vocab-b1",
-    "name": "Reading Vocabulary Matching",
-    "learningMode": "matching",
-    "dataPath": "data/b1/b1-matching-reading-vocab.json",
-    "level": [
-      "b1"
-    ],
-    "category": "Vocabulary",
-    "unit": 3,
-    "prerequisites": [
-      "quiz-reading-vocab-b1"
-    ],
-    "description": "Match intermediate vocabulary with Spanish translations",
-    "estimatedTime": 5,
-    "difficulty": 3
-  },
-  {
     "id": "quiz-intermediate-review-b1",
     "name": "Intermediate Review",
     "learningMode": "quiz",
@@ -1266,7 +1266,7 @@
     "category": "Review",
     "unit": 3,
     "prerequisites": [
-      "matching-reading-vocab-b1"
+      "quiz-idioms-challenge-b1"
     ],
     "description": "Comprehensive review of B1 level concepts",
     "estimatedTime": 5,
@@ -1290,23 +1290,6 @@
     "difficulty": 4
   },
   {
-    "id": "reading-global-issues-b2",
-    "name": "Global Issues",
-    "learningMode": "reading",
-    "dataPath": "data/b2/b2-reading-global-issues.json",
-    "level": [
-      "b2"
-    ],
-    "category": "Reading",
-    "unit": 4,
-    "prerequisites": [
-      "reading-professional-b2"
-    ],
-    "description": "Global challenges and societal issues",
-    "estimatedTime": 15,
-    "difficulty": 4
-  },
-  {
     "id": "sorting-connector-words-b2",
     "name": "Connector Words",
     "learningMode": "sorting",
@@ -1317,61 +1300,10 @@
     "category": "Grammar",
     "unit": 4,
     "prerequisites": [
-      "reading-global-issues-b2"
+      "reading-professional-b2"
     ],
     "description": "Discourse markers and connectors",
     "estimatedTime": 5,
-    "difficulty": 4
-  },
-  {
-    "id": "reading-innovation-b2",
-    "name": "Innovation & Entrepreneurship",
-    "learningMode": "reading",
-    "dataPath": "data/b2/b2-reading-innovation.json",
-    "level": [
-      "b2"
-    ],
-    "category": "Reading",
-    "unit": 4,
-    "prerequisites": [
-      "sorting-connector-words-b2"
-    ],
-    "description": "Startups, innovation, and business development",
-    "estimatedTime": 15,
-    "difficulty": 4
-  },
-  {
-    "id": "completion-used-to-b2",
-    "name": "Used To",
-    "learningMode": "completion",
-    "dataPath": "data/b2/b2-completion-used-to.json",
-    "level": [
-      "b2"
-    ],
-    "category": "Grammar",
-    "unit": 4,
-    "prerequisites": [
-      "reading-innovation-b2"
-    ],
-    "description": "Advanced usage of <used to>, <be used to>, and <get used to>",
-    "estimatedTime": 8,
-    "difficulty": 4
-  },
-  {
-    "id": "quiz-used-to-advanced-b2",
-    "name": "Used To - Advanced",
-    "learningMode": "quiz",
-    "dataPath": "data/b2/b2-quiz-used-to-advanced.json",
-    "level": [
-      "b2"
-    ],
-    "category": "Grammar",
-    "unit": 4,
-    "prerequisites": [
-      "completion-used-to-b2"
-    ],
-    "description": "Advanced quiz on complex usage patterns of <used to> structures",
-    "estimatedTime": 10,
     "difficulty": 4
   },
   {
@@ -1385,7 +1317,7 @@
     "category": "Vocabulary",
     "unit": 4,
     "prerequisites": [
-      "quiz-used-to-advanced-b2"
+      "sorting-connector-words-b2"
     ],
     "description": "Essential IELTS vocabulary: General, Technology, and Clothing (120 words)",
     "estimatedTime": 12,
@@ -1409,6 +1341,23 @@
     "difficulty": 4
   },
   {
+    "id": "reading-global-issues-b2",
+    "name": "Global Issues",
+    "learningMode": "reading",
+    "dataPath": "data/b2/b2-reading-global-issues.json",
+    "level": [
+      "b2"
+    ],
+    "category": "Reading",
+    "unit": 4,
+    "prerequisites": [
+      "quiz-ielts-vocabulary-b2"
+    ],
+    "description": "Global challenges and societal issues",
+    "estimatedTime": 15,
+    "difficulty": 4
+  },
+  {
     "id": "flashcard-clothing-style-b2",
     "name": "Clothing & Style",
     "learningMode": "flashcard",
@@ -1419,7 +1368,7 @@
     "category": "Vocabulary",
     "unit": 4,
     "prerequisites": [
-      "quiz-ielts-vocabulary-b2"
+      "reading-global-issues-b2"
     ],
     "description": "Fashion, clothing, accessories, and style vocabulary",
     "estimatedTime": 8,
@@ -1460,6 +1409,23 @@
     "difficulty": 4
   },
   {
+    "id": "reading-innovation-b2",
+    "name": "Innovation & Entrepreneurship",
+    "learningMode": "reading",
+    "dataPath": "data/b2/b2-reading-innovation.json",
+    "level": [
+      "b2"
+    ],
+    "category": "Reading",
+    "unit": 4,
+    "prerequisites": [
+      "completion-clothing-emotions-b2"
+    ],
+    "description": "Startups, innovation, and business development",
+    "estimatedTime": 15,
+    "difficulty": 4
+  },
+  {
     "id": "flashcard-success-failure-b2",
     "name": "Success & Failure",
     "learningMode": "flashcard",
@@ -1470,7 +1436,7 @@
     "category": "Vocabulary",
     "unit": 4,
     "prerequisites": [
-      "completion-clothing-emotions-b2"
+      "reading-innovation-b2"
     ],
     "description": "Achievement, perseverance, ambition, and adversity vocabulary",
     "estimatedTime": 8,
@@ -1494,37 +1460,54 @@
     "difficulty": 4
   },
   {
-    "id": "reading-idioms-b2",
-    "name": "Idioms in Professional Contexts",
-    "learningMode": "reading",
-    "dataPath": "data/b2/b2-reading-idioms.json",
+    "id": "flashcard-reading-vocab-b2",
+    "name": "Reading Vocabulary",
+    "learningMode": "flashcard",
+    "dataPath": "data/b2/b2-flashcard-reading-vocab.json",
     "level": [
       "b2"
     ],
-    "category": "Idioms",
+    "category": "Vocabulary",
     "unit": 4,
     "prerequisites": [
       "quiz-success-failure-b2"
     ],
-    "description": "Business and global issue idioms for upper-intermediate learners",
-    "estimatedTime": 12,
+    "description": "Professional, innovation and global issues vocabulary (20 words)",
+    "estimatedTime": 5,
     "difficulty": 4
   },
   {
-    "id": "flashcard-time-idioms-b2",
-    "name": "Time Idioms",
-    "learningMode": "flashcard",
-    "dataPath": "data/b2/b2-flashcard-time-idioms.json",
+    "id": "completion-used-to-b2",
+    "name": "Used To",
+    "learningMode": "completion",
+    "dataPath": "data/b2/b2-completion-used-to.json",
     "level": [
       "b2"
     ],
-    "category": "Idioms",
+    "category": "Grammar",
     "unit": 4,
     "prerequisites": [
-      "reading-idioms-b2"
+      "flashcard-reading-vocab-b2"
     ],
-    "description": "Common idioms related to time expressions",
-    "estimatedTime": 6,
+    "description": "Advanced usage of <used to>, <be used to>, and <get used to>",
+    "estimatedTime": 8,
+    "difficulty": 4
+  },
+  {
+    "id": "quiz-used-to-advanced-b2",
+    "name": "Used To - Advanced",
+    "learningMode": "quiz",
+    "dataPath": "data/b2/b2-quiz-used-to-advanced.json",
+    "level": [
+      "b2"
+    ],
+    "category": "Grammar",
+    "unit": 4,
+    "prerequisites": [
+      "completion-used-to-b2"
+    ],
+    "description": "Advanced quiz on complex usage patterns of <used to> structures",
+    "estimatedTime": 10,
     "difficulty": 4
   },
   {
@@ -1541,7 +1524,7 @@
     "estimatedTime": 8,
     "difficulty": 4,
     "prerequisites": [
-      "flashcard-time-idioms-b2"
+      "quiz-used-to-advanced-b2"
     ]
   },
   {
@@ -1596,6 +1579,40 @@
     ]
   },
   {
+    "id": "reading-idioms-b2",
+    "name": "Idioms in Professional Contexts",
+    "learningMode": "reading",
+    "dataPath": "data/b2/b2-reading-idioms.json",
+    "level": [
+      "b2"
+    ],
+    "category": "Idioms",
+    "unit": 4,
+    "prerequisites": [
+      "completion-passive-advanced-b2"
+    ],
+    "description": "Business and global issue idioms for upper-intermediate learners",
+    "estimatedTime": 12,
+    "difficulty": 4
+  },
+  {
+    "id": "flashcard-time-idioms-b2",
+    "name": "Time Idioms",
+    "learningMode": "flashcard",
+    "dataPath": "data/b2/b2-flashcard-time-idioms.json",
+    "level": [
+      "b2"
+    ],
+    "category": "Idioms",
+    "unit": 4,
+    "prerequisites": [
+      "reading-idioms-b2"
+    ],
+    "description": "Common idioms related to time expressions",
+    "estimatedTime": 6,
+    "difficulty": 4
+  },
+  {
     "id": "reading-phrasal-verbs-b2",
     "name": "Phrasal Verbs in Academic Discourse",
     "learningMode": "reading",
@@ -1606,7 +1623,7 @@
     "category": "PhrasalVerbs",
     "unit": 4,
     "prerequisites": [
-      "completion-passive-advanced-b2"
+      "flashcard-time-idioms-b2"
     ],
     "description": "Advanced phrasal verbs in professional and academic contexts",
     "estimatedTime": 12,
@@ -1715,23 +1732,6 @@
     "difficulty": 4
   },
   {
-    "id": "flashcard-reading-vocab-b2",
-    "name": "Reading Vocabulary",
-    "learningMode": "flashcard",
-    "dataPath": "data/b2/b2-flashcard-reading-vocab.json",
-    "level": [
-      "b2"
-    ],
-    "category": "Vocabulary",
-    "unit": 4,
-    "prerequisites": [
-      "quiz-phrasal-verbs-b2"
-    ],
-    "description": "Professional, innovation and global issues vocabulary (20 words)",
-    "estimatedTime": 5,
-    "difficulty": 4
-  },
-  {
     "id": "quiz-upper-intermediate-review-b2",
     "name": "Upper-Intermediate Review",
     "learningMode": "quiz",
@@ -1742,7 +1742,7 @@
     "category": "Review",
     "unit": 4,
     "prerequisites": [
-      "flashcard-reading-vocab-b2"
+      "quiz-phrasal-verbs-b2"
     ],
     "description": "Comprehensive review of B2 level concepts: used to, phrasal verbs, connectors, and professional vocabulary",
     "estimatedTime": 10,
@@ -1766,57 +1766,6 @@
     "difficulty": 5
   },
   {
-    "id": "reading-leadership-c1",
-    "name": "Leadership & Management",
-    "learningMode": "reading",
-    "dataPath": "data/c1/c1-reading-leadership.json",
-    "level": [
-      "c1"
-    ],
-    "category": "Reading",
-    "unit": 5,
-    "prerequisites": [
-      "reading-academic-c1"
-    ],
-    "description": "Leadership theories and organizational management",
-    "estimatedTime": 18,
-    "difficulty": 5
-  },
-  {
-    "id": "sorting-formal-register-c1",
-    "name": "Formal Register",
-    "learningMode": "sorting",
-    "dataPath": "data/c1/c1-sorting-formal-register.json",
-    "level": [
-      "c1"
-    ],
-    "category": "Vocabulary",
-    "unit": 5,
-    "prerequisites": [
-      "reading-leadership-c1"
-    ],
-    "description": "Sort expressions by register: Formal, Neutral, and Informal (40 items)",
-    "estimatedTime": 8,
-    "difficulty": 5
-  },
-  {
-    "id": "reading-cultural-analysis-c1",
-    "name": "Cultural Analysis",
-    "learningMode": "reading",
-    "dataPath": "data/c1/c1-reading-cultural-analysis.json",
-    "level": [
-      "c1"
-    ],
-    "category": "Reading",
-    "unit": 5,
-    "prerequisites": [
-      "sorting-formal-register-c1"
-    ],
-    "description": "Cross-cultural communication and analysis",
-    "estimatedTime": 18,
-    "difficulty": 5
-  },
-  {
     "id": "flashcard-ielts-business-c1",
     "name": "Business",
     "learningMode": "flashcard",
@@ -1827,7 +1776,7 @@
     "category": "Vocabulary",
     "unit": 5,
     "prerequisites": [
-      "reading-cultural-analysis-c1"
+      "reading-academic-c1"
     ],
     "description": "Business and professional vocabulary",
     "estimatedTime": 5,
@@ -1851,6 +1800,23 @@
     "difficulty": 5
   },
   {
+    "id": "reading-leadership-c1",
+    "name": "Leadership & Management",
+    "learningMode": "reading",
+    "dataPath": "data/c1/c1-reading-leadership.json",
+    "level": [
+      "c1"
+    ],
+    "category": "Reading",
+    "unit": 5,
+    "prerequisites": [
+      "quiz-ielts-business-c1"
+    ],
+    "description": "Leadership theories and organizational management",
+    "estimatedTime": 18,
+    "difficulty": 5
+  },
+  {
     "id": "flashcard-ielts-home-daily-life-c1",
     "name": "Home & Daily Life",
     "learningMode": "flashcard",
@@ -1861,7 +1827,7 @@
     "category": "Vocabulary",
     "unit": 5,
     "prerequisites": [
-      "quiz-ielts-business-c1"
+      "reading-leadership-c1"
     ],
     "description": "Advanced home and daily life vocabulary",
     "estimatedTime": 5,
@@ -1885,6 +1851,40 @@
     "difficulty": 5
   },
   {
+    "id": "reading-cultural-analysis-c1",
+    "name": "Cultural Analysis",
+    "learningMode": "reading",
+    "dataPath": "data/c1/c1-reading-cultural-analysis.json",
+    "level": [
+      "c1"
+    ],
+    "category": "Reading",
+    "unit": 5,
+    "prerequisites": [
+      "completion-ielts-home-life-c1"
+    ],
+    "description": "Cross-cultural communication and analysis",
+    "estimatedTime": 18,
+    "difficulty": 5
+  },
+  {
+    "id": "sorting-formal-register-c1",
+    "name": "Formal Register",
+    "learningMode": "sorting",
+    "dataPath": "data/c1/c1-sorting-formal-register.json",
+    "level": [
+      "c1"
+    ],
+    "category": "Vocabulary",
+    "unit": 5,
+    "prerequisites": [
+      "reading-cultural-analysis-c1"
+    ],
+    "description": "Sort expressions by register: Formal, Neutral, and Informal (40 items)",
+    "estimatedTime": 8,
+    "difficulty": 5
+  },
+  {
     "id": "flashcard-ielts-problem-solving-c1",
     "name": "Problem Solving",
     "learningMode": "flashcard",
@@ -1895,7 +1895,7 @@
     "category": "Vocabulary",
     "unit": 5,
     "prerequisites": [
-      "completion-ielts-home-life-c1"
+      "sorting-formal-register-c1"
     ],
     "description": "Advanced problem solving vocabulary",
     "estimatedTime": 5,
@@ -1919,6 +1919,40 @@
     "difficulty": 5
   },
   {
+    "id": "flashcard-reading-vocab-c1",
+    "name": "Reading Vocabulary",
+    "learningMode": "flashcard",
+    "dataPath": "data/c1/c1-flashcard-reading-vocab.json",
+    "level": [
+      "c1"
+    ],
+    "category": "Vocabulary",
+    "unit": 5,
+    "prerequisites": [
+      "quiz-problem-solving-c1"
+    ],
+    "description": "Advanced academic and scholarly vocabulary (20 words)",
+    "estimatedTime": 5,
+    "difficulty": 5
+  },
+  {
+    "id": "quiz-reading-vocab-c1",
+    "name": "Reading Vocabulary Quiz",
+    "learningMode": "quiz",
+    "dataPath": "data/c1/c1-quiz-reading-vocab.json",
+    "level": [
+      "c1"
+    ],
+    "category": "Vocabulary",
+    "unit": 5,
+    "prerequisites": [
+      "flashcard-reading-vocab-c1"
+    ],
+    "description": "Test your knowledge of advanced academic vocabulary",
+    "estimatedTime": 5,
+    "difficulty": 5
+  },
+  {
     "id": "flashcard-nature-animals-c1",
     "name": "Nature & Animals",
     "learningMode": "flashcard",
@@ -1929,7 +1963,7 @@
     "category": "Vocabulary",
     "unit": 5,
     "prerequisites": [
-      "quiz-problem-solving-c1"
+      "quiz-reading-vocab-c1"
     ],
     "description": "Advanced nature, fauna, flora, and ecosystem vocabulary",
     "estimatedTime": 8,
@@ -2174,40 +2208,6 @@
     "difficulty": 5
   },
   {
-    "id": "flashcard-reading-vocab-c1",
-    "name": "Reading Vocabulary",
-    "learningMode": "flashcard",
-    "dataPath": "data/c1/c1-flashcard-reading-vocab.json",
-    "level": [
-      "c1"
-    ],
-    "category": "Vocabulary",
-    "unit": 5,
-    "prerequisites": [
-      "quiz-phrasal-verbs-c1"
-    ],
-    "description": "Advanced academic and scholarly vocabulary (20 words)",
-    "estimatedTime": 5,
-    "difficulty": 5
-  },
-  {
-    "id": "quiz-reading-vocab-c1",
-    "name": "Reading Vocabulary Quiz",
-    "learningMode": "quiz",
-    "dataPath": "data/c1/c1-quiz-reading-vocab.json",
-    "level": [
-      "c1"
-    ],
-    "category": "Vocabulary",
-    "unit": 5,
-    "prerequisites": [
-      "flashcard-reading-vocab-c1"
-    ],
-    "description": "Test your knowledge of advanced academic vocabulary",
-    "estimatedTime": 5,
-    "difficulty": 5
-  },
-  {
     "id": "quiz-advanced-grammar-review-c1",
     "name": "Advanced Grammar Review",
     "learningMode": "quiz",
@@ -2218,7 +2218,7 @@
     "category": "Review",
     "unit": 5,
     "prerequisites": [
-      "quiz-reading-vocab-c1"
+      "quiz-phrasal-verbs-c1"
     ],
     "description": "Comprehensive review of C1 grammar: conditionals, inversions, participles, subjunctive",
     "estimatedTime": 8,
@@ -2242,40 +2242,6 @@
     "difficulty": 5
   },
   {
-    "id": "reading-philosophical-c2",
-    "name": "Philosophical Thought",
-    "learningMode": "reading",
-    "dataPath": "data/c2/c2-reading-philosophical.json",
-    "level": [
-      "c2"
-    ],
-    "category": "Reading",
-    "unit": 6,
-    "prerequisites": [
-      "reading-specialized-c2"
-    ],
-    "description": "Philosophy and abstract reasoning",
-    "estimatedTime": 20,
-    "difficulty": 5
-  },
-  {
-    "id": "reading-literary-c2",
-    "name": "Literary Analysis",
-    "learningMode": "reading",
-    "dataPath": "data/c2/c2-reading-literary.json",
-    "level": [
-      "c2"
-    ],
-    "category": "Reading",
-    "unit": 6,
-    "prerequisites": [
-      "reading-philosophical-c2"
-    ],
-    "description": "Literary criticism and critical theory",
-    "estimatedTime": 20,
-    "difficulty": 5
-  },
-  {
     "id": "flashcard-academic-c2",
     "name": "Academic Vocabulary",
     "learningMode": "flashcard",
@@ -2286,7 +2252,7 @@
     "category": "Vocabulary",
     "unit": 6,
     "prerequisites": [
-      "reading-literary-c2"
+      "reading-specialized-c2"
     ],
     "description": "Advanced academic and scholarly vocabulary",
     "estimatedTime": 5,
@@ -2327,6 +2293,23 @@
     "difficulty": 5
   },
   {
+    "id": "reading-philosophical-c2",
+    "name": "Philosophical Thought",
+    "learningMode": "reading",
+    "dataPath": "data/c2/c2-reading-philosophical.json",
+    "level": [
+      "c2"
+    ],
+    "category": "Reading",
+    "unit": 6,
+    "prerequisites": [
+      "quiz-academic-writing-c2"
+    ],
+    "description": "Philosophy and abstract reasoning",
+    "estimatedTime": 20,
+    "difficulty": 5
+  },
+  {
     "id": "flashcard-critical-analysis-c2",
     "name": "Critical Analysis",
     "learningMode": "flashcard",
@@ -2337,7 +2320,7 @@
     "category": "Vocabulary",
     "unit": 6,
     "prerequisites": [
-      "quiz-academic-writing-c2"
+      "reading-philosophical-c2"
     ],
     "description": "Advanced critical thinking and philosophical vocabulary",
     "estimatedTime": 8,
@@ -2361,6 +2344,91 @@
     "difficulty": 5
   },
   {
+    "id": "reading-literary-c2",
+    "name": "Literary Analysis",
+    "learningMode": "reading",
+    "dataPath": "data/c2/c2-reading-literary.json",
+    "level": [
+      "c2"
+    ],
+    "category": "Reading",
+    "unit": 6,
+    "prerequisites": [
+      "quiz-critical-analysis-c2"
+    ],
+    "description": "Literary criticism and critical theory",
+    "estimatedTime": 20,
+    "difficulty": 5
+  },
+  {
+    "id": "flashcard-reading-vocab-c2",
+    "name": "Reading Vocabulary",
+    "learningMode": "flashcard",
+    "dataPath": "data/c2/c2-flashcard-reading-vocab.json",
+    "level": [
+      "c2"
+    ],
+    "category": "Vocabulary",
+    "unit": 6,
+    "prerequisites": [
+      "reading-literary-c2"
+    ],
+    "description": "Philosophical and literary vocabulary for near-native proficiency (20 words)",
+    "estimatedTime": 5,
+    "difficulty": 5
+  },
+  {
+    "id": "quiz-reading-vocab-c2",
+    "name": "Reading Vocabulary Quiz",
+    "learningMode": "quiz",
+    "dataPath": "data/c2/c2-quiz-reading-vocab.json",
+    "level": [
+      "c2"
+    ],
+    "category": "Vocabulary",
+    "unit": 6,
+    "prerequisites": [
+      "flashcard-reading-vocab-c2"
+    ],
+    "description": "Test your knowledge of mastery-level vocabulary",
+    "estimatedTime": 5,
+    "difficulty": 5
+  },
+  {
+    "id": "completion-reading-vocab-c2",
+    "name": "Reading Vocabulary Practice",
+    "learningMode": "completion",
+    "dataPath": "data/c2/c2-completion-reading-vocab.json",
+    "level": [
+      "c2"
+    ],
+    "category": "Vocabulary",
+    "unit": 6,
+    "prerequisites": [
+      "quiz-reading-vocab-c2"
+    ],
+    "description": "Complete sentences with advanced philosophical and literary terms",
+    "estimatedTime": 8,
+    "difficulty": 5
+  },
+  {
+    "id": "matching-reading-vocab-c2",
+    "name": "Reading Vocabulary Matching",
+    "learningMode": "matching",
+    "dataPath": "data/c2/c2-matching-reading-vocab.json",
+    "level": [
+      "c2"
+    ],
+    "category": "Vocabulary",
+    "unit": 6,
+    "prerequisites": [
+      "completion-reading-vocab-c2"
+    ],
+    "description": "Match mastery-level vocabulary with Spanish translations",
+    "estimatedTime": 5,
+    "difficulty": 5
+  },
+  {
     "id": "completion-advanced-collocations-idioms-c2",
     "name": "Advanced Collocations",
     "learningMode": "completion",
@@ -2371,7 +2439,7 @@
     "category": "Vocabulary",
     "unit": 6,
     "prerequisites": [
-      "quiz-critical-analysis-c2"
+      "matching-reading-vocab-c2"
     ],
     "description": "Sophisticated collocations and idioms",
     "estimatedTime": 5,
@@ -2565,74 +2633,6 @@
     "difficulty": 5
   },
   {
-    "id": "flashcard-reading-vocab-c2",
-    "name": "Reading Vocabulary",
-    "learningMode": "flashcard",
-    "dataPath": "data/c2/c2-flashcard-reading-vocab.json",
-    "level": [
-      "c2"
-    ],
-    "category": "Vocabulary",
-    "unit": 6,
-    "prerequisites": [
-      "quiz-mastery-idioms-c2"
-    ],
-    "description": "Philosophical and literary vocabulary for near-native proficiency (20 words)",
-    "estimatedTime": 5,
-    "difficulty": 5
-  },
-  {
-    "id": "quiz-reading-vocab-c2",
-    "name": "Reading Vocabulary Quiz",
-    "learningMode": "quiz",
-    "dataPath": "data/c2/c2-quiz-reading-vocab.json",
-    "level": [
-      "c2"
-    ],
-    "category": "Vocabulary",
-    "unit": 6,
-    "prerequisites": [
-      "flashcard-reading-vocab-c2"
-    ],
-    "description": "Test your knowledge of mastery-level vocabulary",
-    "estimatedTime": 5,
-    "difficulty": 5
-  },
-  {
-    "id": "completion-reading-vocab-c2",
-    "name": "Reading Vocabulary Practice",
-    "learningMode": "completion",
-    "dataPath": "data/c2/c2-completion-reading-vocab.json",
-    "level": [
-      "c2"
-    ],
-    "category": "Vocabulary",
-    "unit": 6,
-    "prerequisites": [
-      "quiz-reading-vocab-c2"
-    ],
-    "description": "Complete sentences with advanced philosophical and literary terms",
-    "estimatedTime": 8,
-    "difficulty": 5
-  },
-  {
-    "id": "matching-reading-vocab-c2",
-    "name": "Reading Vocabulary Matching",
-    "learningMode": "matching",
-    "dataPath": "data/c2/c2-matching-reading-vocab.json",
-    "level": [
-      "c2"
-    ],
-    "category": "Vocabulary",
-    "unit": 6,
-    "prerequisites": [
-      "completion-reading-vocab-c2"
-    ],
-    "description": "Match mastery-level vocabulary with Spanish translations",
-    "estimatedTime": 5,
-    "difficulty": 5
-  },
-  {
     "id": "quiz-mastery-assessment-c2",
     "name": "Mastery Assessment",
     "learningMode": "quiz",
@@ -2643,7 +2643,7 @@
     "category": "Review",
     "unit": 6,
     "prerequisites": [
-      "matching-reading-vocab-c2"
+      "quiz-mastery-idioms-c2"
     ],
     "description": "Comprehensive mastery assessment",
     "estimatedTime": 5,
