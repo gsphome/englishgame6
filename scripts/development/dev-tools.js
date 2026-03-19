@@ -195,7 +195,6 @@ async function runWorkflow(workflowKey) {
 
   const startTime = Date.now();
   let allSuccess = true;
-  let githubActionsStatus = null;
 
   for (const step of workflow.steps) {
     if (step.type === 'pipeline') {
@@ -216,30 +215,6 @@ async function runWorkflow(workflowKey) {
           break;
         }
       }
-
-      // Capture GitHub Actions final status for full workflow
-      if (workflowKey === 'full' && step.desc === 'Final GitHub Actions status') {
-        try {
-          const { execSync } = await import('child_process');
-          const output = execSync('node scripts/git/github-actions-status.js current', {
-            encoding: 'utf8',
-            cwd: rootDir
-          });
-
-          // Parse the output to determine if GitHub Actions succeeded
-          if (output.includes('Pipeline Status: SUCCESS')) {
-            githubActionsStatus = 'SUCCESS';
-          } else if (output.includes('Pipeline Status: FAILED')) {
-            githubActionsStatus = 'FAILED';
-          } else if (output.includes('Pipeline Status: IN PROGRESS')) {
-            githubActionsStatus = 'IN_PROGRESS';
-          } else {
-            githubActionsStatus = 'UNKNOWN';
-          }
-        } catch (error) {
-          githubActionsStatus = 'ERROR';
-        }
-      }
     }
   }
 
@@ -248,29 +223,18 @@ async function runWorkflow(workflowKey) {
   if (allSuccess) {
     logSuccess(`${workflow.name} completed successfully in ${totalDuration}s`);
 
-    // Special message for full workflow completion with GitHub Actions status
+    // Concise summary for full workflow (bot-friendly)
     if (workflowKey === 'full') {
+      let commitSha = 'unknown';
+      try {
+        commitSha = execSync('git rev-parse --short HEAD', { encoding: 'utf8', cwd: rootDir }).trim();
+      } catch {}
+
       console.log('\n' + '='.repeat(50));
-      log('🎉 Pipeline Complete!', colors.bright + colors.green);
-      console.log('='.repeat(50));
-
-      const statusIcon = {
-        SUCCESS: '✅', FAILED: '❌', IN_PROGRESS: '⏳'
-      }[githubActionsStatus] || '⚠️';
-
-      log(`  Local:   ✅ All pipelines passed (${totalDuration}s)`, colors.green);
-      log(`  Remote:  ${statusIcon} GitHub Actions ${githubActionsStatus || 'UNKNOWN'}`, 
-        githubActionsStatus === 'SUCCESS' ? colors.green : 
-        githubActionsStatus === 'FAILED' ? colors.red : colors.yellow);
-      log(`  Site:    https://gsphome.github.io/englishgame6/`, colors.cyan);
-
-      if (githubActionsStatus === 'IN_PROGRESS' || !githubActionsStatus) {
-        log(`  Monitor: npm run gh:watch`, colors.cyan);
-      }
-      if (githubActionsStatus === 'FAILED') {
-        log(`  Debug:   gh run view --log-failed`, colors.yellow);
-      }
-
+      log('✅ Build exitoso', colors.bright + colors.green);
+      log(`  🔗 https://gsphome.github.io/englishgame6/`, colors.cyan);
+      log(`  📝 Commit: ${commitSha}`, colors.white);
+      log(`  ⏱️ Tiempo: ${totalDuration}s`, colors.white);
       console.log('='.repeat(50));
     }
   } else {
@@ -278,10 +242,7 @@ async function runWorkflow(workflowKey) {
 
     if (workflowKey === 'full') {
       console.log('\n' + '='.repeat(50));
-      log('❌ Pipeline Failed', colors.bright + colors.red);
-      console.log('='.repeat(50));
-      log(`  Duration: ${totalDuration}s`, colors.white);
-      log(`  Fix the errors above and run again`, colors.yellow);
+      log(`❌ Build falló (${totalDuration}s)`, colors.bright + colors.red);
       console.log('='.repeat(50));
     }
   }
