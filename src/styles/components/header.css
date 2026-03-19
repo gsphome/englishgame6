@@ -104,7 +104,7 @@ html.dark {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 var(--header-spacing-sm);
+  padding: 0 4px;
   height: 100%;
 }
 
@@ -146,6 +146,12 @@ html.dark {
     padding: 0 var(--header-spacing-lg);
   }
 
+  .header-redesigned__menu-btn,
+  .header-redesigned__user-btn,
+  .header-redesigned__login-btn {
+    padding: var(--header-spacing-sm);
+  }
+
   .header-redesigned__left,
   .header-redesigned__right {
     gap: var(--header-spacing-md);
@@ -182,7 +188,7 @@ html.dark {
   gap: var(--header-spacing-xs);
   min-width: var(--button-size-mobile);
   min-height: var(--button-size-mobile);
-  padding: var(--header-spacing-sm);
+  padding: 6px;
   border-radius: 8px;
   border: none;
   background-color: transparent;
