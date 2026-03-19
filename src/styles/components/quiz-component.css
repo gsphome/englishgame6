@@ -134,6 +134,7 @@
   text-align: left;
   width: 100%;
   box-shadow: var(--shadow-subtle);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .quiz-component__option--correct {
@@ -269,14 +270,18 @@
   background-color: var(--theme-bg-elevated, #1f2937);
   border-color: var(--theme-border-soft, #4b5563);
   box-shadow: var(--shadow-subtle);
+  -webkit-tap-highlight-color: transparent;
 }
 
-.dark
-  .quiz-component__option:hover:not(.quiz-component__option--correct):not(
-    .quiz-component__option--incorrect
-  ) {
-  background-color: var(--theme-bg-subtle, #374151);
-  box-shadow: var(--shadow-card-hover);
+/* Only apply hover on devices that support it (prevents sticky hover on touch) */
+@media (hover: hover) {
+  .dark
+    .quiz-component__option:hover:not(.quiz-component__option--correct):not(
+      .quiz-component__option--incorrect
+    ) {
+    background-color: var(--theme-bg-subtle, #374151);
+    box-shadow: var(--shadow-card-hover);
+  }
 }
 
 .dark .quiz-component__option-number {
