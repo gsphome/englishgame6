@@ -1,7 +1,7 @@
 /**
  * FluentFlow Service Worker
  * Strategy: Network-first with Cache API fallback for offline mode.
- * Only JSON data files and HTML are intercepted — JS/CSS use browser HTTP cache.
+ * Hashed assets use cache-first with network fallback.
  */
 
 const CACHE_NAME = 'fluentflow-v2';
@@ -49,9 +49,14 @@ self.addEventListener('fetch', event => {
       caches.open(CACHE_NAME).then(async cache => {
         const cached = await cache.match(event.request);
         if (cached) return cached;
-        const response = await fetch(event.request);
-        if (response.ok) cache.put(event.request, response.clone());
-        return response;
+        try {
+          const response = await fetch(event.request);
+          if (response.ok) cache.put(event.request, response.clone());
+          return response;
+        } catch {
+          // Network failed and not in cache — return 503 so the app can handle it
+          return new Response('', { status: 503, statusText: 'Asset unavailable offline' });
+        }
       })
     );
     return;
