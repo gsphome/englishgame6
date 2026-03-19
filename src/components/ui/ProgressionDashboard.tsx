@@ -383,7 +383,9 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
                         <div
                           key={module.id}
                           className={`progression-dashboard__module progression-dashboard__module--${status} ${isNext ? 'progression-dashboard__module--next' : ''}`}
-                          onClick={status !== 'locked' ? () => handleModuleClick(module) : undefined}
+                          onClick={
+                            status !== 'locked' ? () => handleModuleClick(module) : undefined
+                          }
                           aria-disabled={status === 'locked'}
                         >
                           <div className="progression-dashboard__module-icon">
