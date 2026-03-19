@@ -253,52 +253,36 @@ async function runWorkflow(workflowKey) {
       console.log('\n' + '='.repeat(50));
       log('🎉 Pipeline Complete!', colors.bright + colors.green);
       console.log('='.repeat(50));
-      log('✅ All local pipelines passed', colors.green);
-      log('✅ Code committed and pushed to GitHub', colors.green);
-      log('✅ GitHub Actions monitoring completed', colors.green);
 
-      // Show final GitHub Actions status
-      if (githubActionsStatus) {
-        console.log('');
-        switch (githubActionsStatus) {
-          case 'SUCCESS':
-            log('🎯 Status: Local ✅ | Remote ✅', colors.bright + colors.green);
-            break;
-          case 'FAILED':
-            log('🎯 Status: Local ✅ | Remote ❌', colors.bright + colors.red);
-            log('🔍 Check: GitHub Actions logs', colors.yellow);
-            break;
-          case 'IN_PROGRESS':
-            log('🎯 Status: Local ✅ | Remote ⏳', colors.bright + colors.yellow);
-            log('💡 Monitor: npm run gh:watch', colors.cyan);
-            break;
-          default:
-            log('🎯 FINAL STATUS: GITHUB ACTIONS STATUS UNKNOWN ⚠️', colors.bright + colors.yellow);
-            log('✅ Local pipelines: PASSED', colors.green);
-            log('⚠️  GitHub Actions: UNKNOWN', colors.yellow);
-            log('💡 Use "npm run gh:watch" to check status', colors.cyan);
-            break;
-        }
+      const statusIcon = {
+        SUCCESS: '✅', FAILED: '❌', IN_PROGRESS: '⏳'
+      }[githubActionsStatus] || '⚠️';
+
+      log(`  Local:   ✅ All pipelines passed (${totalDuration}s)`, colors.green);
+      log(`  Remote:  ${statusIcon} GitHub Actions ${githubActionsStatus || 'UNKNOWN'}`, 
+        githubActionsStatus === 'SUCCESS' ? colors.green : 
+        githubActionsStatus === 'FAILED' ? colors.red : colors.yellow);
+      log(`  Site:    https://gsphome.github.io/englishgame6/`, colors.cyan);
+
+      if (githubActionsStatus === 'IN_PROGRESS' || !githubActionsStatus) {
+        log(`  Monitor: npm run gh:watch`, colors.cyan);
+      }
+      if (githubActionsStatus === 'FAILED') {
+        log(`  Debug:   gh run view --log-failed`, colors.yellow);
       }
 
-      console.log('');
-      log('🎯 Local: ✅ | Remote: ⏳ (Est. 3-5min)', colors.bright + colors.green);
-      log('🔄 Monitor: npm run gh:watch', colors.cyan);
-      log('🌐 Live: https://gsphome.github.io/englishgame6/', colors.cyan);
       console.log('='.repeat(50));
     }
   } else {
     logError(`${workflow.name} failed after ${totalDuration}s`);
 
     if (workflowKey === 'full') {
-      console.log('\n' + '='.repeat(60));
-      log('❌ DEVELOPMENT FLOW FAILED!', colors.bright + colors.red);
-      console.log('='.repeat(60));
-      log('🎯 FINAL STATUS: LOCAL PIPELINE FAILED ❌', colors.bright + colors.red);
-      log('❌ One or more local pipelines failed', colors.red);
-      log('🔍 Check the error messages above for details', colors.yellow);
-      log('🔧 Fix the issues and run again', colors.cyan);
-      console.log('='.repeat(60));
+      console.log('\n' + '='.repeat(50));
+      log('❌ Pipeline Failed', colors.bright + colors.red);
+      console.log('='.repeat(50));
+      log(`  Duration: ${totalDuration}s`, colors.white);
+      log(`  Fix the errors above and run again`, colors.yellow);
+      console.log('='.repeat(50));
     }
   }
 
