@@ -635,6 +635,10 @@
   padding: 0.25rem 0.5rem;
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%);
   border-bottom: 2px solid #3b82f6;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .reading-component__vocabulary-content {
