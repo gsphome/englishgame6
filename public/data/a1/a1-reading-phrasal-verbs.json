@@ -1,0 +1,106 @@
+{
+  "title": "Phrasal Verbs in Everyday Life",
+  "estimatedReadingTime": 6,
+  "learningObjectives": [
+    "Understand basic phrasal verbs in context",
+    "Learn how phrasal verbs are used in daily conversations",
+    "Recognize common phrasal verbs in simple stories",
+    "Build confidence using phrasal verbs naturally"
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "title": "What Are Phrasal Verbs?",
+      "type": "introduction",
+      "content": "Phrasal verbs are very common in English. They are verbs with a small word after them, like 'get up', 'look for', or 'turn on'. The small word changes the meaning of the verb. For example, 'look' means to see, but 'look for' means to search. Let's see how people use phrasal verbs every day."
+    },
+    {
+      "id": "morning-routine",
+      "title": "A Morning Routine",
+      "type": "theory",
+      "content": "Every morning, Tom wakes up at 7 o'clock. He gets up slowly and turns on the light. He puts on his clothes and goes downstairs. He sits down at the table and picks up his phone to check messages. Then he goes out to catch the bus.\n\nNotice the phrasal verbs:\n• Wake up - stop sleeping\n• Get up - leave the bed\n• Turn on - start a machine or light\n• Put on - wear clothes\n• Sit down - take a seat\n• Pick up - take something with your hand\n• Go out - leave the house"
+    },
+    {
+      "id": "at-school",
+      "title": "At School",
+      "type": "theory",
+      "content": "At school, the teacher says: 'Please sit down and take out your books.' The students look at the board. When they don't understand, they ask the teacher: 'Can you slow down, please?' At the end of class, the teacher says: 'Please hand in your homework and clean up your desk.'\n\nPhrasal verbs at school:\n• Take out - remove from a bag\n• Look at - direct your eyes to something\n• Slow down - go less fast\n• Hand in - give to the teacher\n• Clean up - make tidy"
+    },
+    {
+      "id": "examples",
+      "title": "More Examples",
+      "type": "examples",
+      "content": "Example 1: 'I need to find out what time the movie starts.' (find out = discover)\n\nExample 2: 'Can you turn off the TV? It's too loud.' (turn off = stop a machine)\n\nExample 3: 'She always comes back home at 5 PM.' (come back = return)\n\nExample 4: 'Let's go on with the lesson.' (go on = continue)"
+    },
+    {
+      "id": "summary",
+      "title": "Key Takeaways",
+      "type": "summary",
+      "content": "Remember:\n• Phrasal verbs = verb + small word (up, down, on, off, out, in)\n• They are very common in everyday English\n• The small word changes the meaning of the verb\n• Practice using them in simple sentences\n• You already know many: wake up, sit down, turn on!"
+    }
+  ],
+  "keyVocabulary": [
+    {
+      "term": "wake up",
+      "definition": "To stop sleeping",
+      "example": "I wake up at 7 every morning.",
+      "pronunciation": "/weɪk ʌp/"
+    },
+    {
+      "term": "get up",
+      "definition": "To leave the bed and stand",
+      "example": "She gets up early on weekdays.",
+      "pronunciation": "/ɡet ʌp/"
+    },
+    {
+      "term": "turn on",
+      "definition": "To start a machine or light",
+      "example": "Please turn on the light.",
+      "pronunciation": "/tɜːrn ɒn/"
+    },
+    {
+      "term": "turn off",
+      "definition": "To stop a machine or light",
+      "example": "Turn off the TV before bed.",
+      "pronunciation": "/tɜːrn ɒf/"
+    },
+    {
+      "term": "put on",
+      "definition": "To wear clothes",
+      "example": "Put on your jacket, it's cold.",
+      "pronunciation": "/pʊt ɒn/"
+    },
+    {
+      "term": "pick up",
+      "definition": "To take something with your hand",
+      "example": "Pick up your bag from the floor.",
+      "pronunciation": "/pɪk ʌp/"
+    },
+    {
+      "term": "find out",
+      "definition": "To discover information",
+      "example": "I need to find out the answer.",
+      "pronunciation": "/faɪnd aʊt/"
+    },
+    {
+      "term": "come back",
+      "definition": "To return to a place",
+      "example": "Come back home before dark.",
+      "pronunciation": "/kʌm bæk/"
+    }
+  ],
+  "grammarPoints": [
+    {
+      "rule": "Phrasal Verb Structure",
+      "explanation": "A phrasal verb is a verb + particle (preposition or adverb). The particle changes the meaning.",
+      "examples": [
+        "look + up = search for information",
+        "turn + on = start",
+        "get + up = rise from bed"
+      ],
+      "commonMistakes": [
+        "Forgetting the particle: 'I woke at 7' should be 'I woke up at 7'"
+      ]
+    }
+  ]
+}

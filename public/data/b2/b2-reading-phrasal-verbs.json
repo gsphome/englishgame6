@@ -1,0 +1,106 @@
+{
+  "title": "Phrasal Verbs in Professional and Academic Discourse",
+  "estimatedReadingTime": 12,
+  "learningObjectives": [
+    "Master phrasal verbs used in professional and academic contexts",
+    "Understand nuanced meanings and register differences",
+    "Learn phrasal verbs for argumentation and critical discussion",
+    "Practice using phrasal verbs in formal and informal writing"
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Advanced Phrasal Verbs",
+      "type": "introduction",
+      "content": "At the B2 level, phrasal verbs become more nuanced. The same verb can carry different connotations depending on context. You'll encounter them in business reports, academic discussions, and sophisticated conversations. Mastering these will elevate your English from competent to impressive."
+    },
+    {
+      "id": "business-context",
+      "title": "In Business and Innovation",
+      "type": "theory",
+      "content": "The startup world relies heavily on phrasal verbs:\n\nThe founders set out to disrupt the traditional market. They drew up a business plan and reached out to investors. After several pitches, one investor bought into their vision. The company scaled up quickly, but they had to iron out several technical issues. When a competitor tried to muscle in on their market, they doubled down on innovation.\n\nBusiness phrasal verbs:\n• Set out - begin with a specific intention\n• Draw up - create a formal document\n• Reach out - contact someone\n• Buy into - believe in or invest in an idea\n• Scale up - increase in size or scope\n• Iron out - resolve problems\n• Muscle in on - force entry into a market\n• Double down on - increase commitment to something"
+    },
+    {
+      "id": "academic-context",
+      "title": "In Academic Discussion",
+      "type": "theory",
+      "content": "Academic English also uses phrasal verbs, though often in more formal ways:\n\nThe researcher set about examining the data systematically. Her findings pointed to a significant disparity in outcomes. Critics weighed in with alternative interpretations, but her methodology held up under scrutiny. The study touched on issues of systemic inequality and called for further investigation.\n\nAcademic phrasal verbs:\n• Set about - begin doing something methodically\n• Point to - indicate or suggest\n• Weigh in - contribute an opinion\n• Hold up - remain valid under examination\n• Touch on - briefly discuss\n• Call for - demand or require"
+    },
+    {
+      "id": "examples",
+      "title": "Register and Nuance",
+      "type": "examples",
+      "content": "Example 1: Formal: 'The committee ruled out the proposal.' Informal: 'We ruled out going to the beach.'\n\nExample 2: Formal: 'The report accounts for regional variations.' Informal: 'That accounts for why he was late.'\n\nExample 3: Formal: 'The initiative seeks to phase out fossil fuels.' Informal: 'They're phasing out the old menu.'\n\nExample 4: Formal: 'The findings bear out the hypothesis.' Informal: 'The evidence bears out what I said.'"
+    },
+    {
+      "id": "summary",
+      "title": "Key Takeaways",
+      "type": "summary",
+      "content": "Remember:\n• B2 phrasal verbs often carry subtle differences in meaning\n• The same phrasal verb can work in both formal and informal registers\n• Business English is rich in phrasal verbs — essential for professional growth\n• Academic phrasal verbs help you discuss research and ideas\n• Pay attention to collocations: which nouns typically follow each phrasal verb"
+    }
+  ],
+  "keyVocabulary": [
+    {
+      "term": "set out",
+      "definition": "To begin a journey or task with a specific purpose",
+      "example": "They set out to change the industry.",
+      "pronunciation": "/set aʊt/"
+    },
+    {
+      "term": "draw up",
+      "definition": "To prepare a formal document or plan",
+      "example": "The lawyer drew up the contract.",
+      "pronunciation": "/drɔː ʌp/"
+    },
+    {
+      "term": "buy into",
+      "definition": "To believe in an idea or invest in something",
+      "example": "Investors bought into the vision.",
+      "pronunciation": "/baɪ ˈɪntuː/"
+    },
+    {
+      "term": "scale up",
+      "definition": "To increase the size or scope of something",
+      "example": "The company scaled up production.",
+      "pronunciation": "/skeɪl ʌp/"
+    },
+    {
+      "term": "iron out",
+      "definition": "To resolve problems or difficulties",
+      "example": "We need to iron out the details.",
+      "pronunciation": "/ˈaɪərn aʊt/"
+    },
+    {
+      "term": "weigh in",
+      "definition": "To contribute an opinion to a discussion",
+      "example": "Several experts weighed in on the debate.",
+      "pronunciation": "/weɪ ɪn/"
+    },
+    {
+      "term": "hold up",
+      "definition": "To remain valid under scrutiny",
+      "example": "The theory holds up under examination.",
+      "pronunciation": "/hoʊld ʌp/"
+    },
+    {
+      "term": "phase out",
+      "definition": "To gradually stop using something",
+      "example": "The government plans to phase out coal.",
+      "pronunciation": "/feɪz aʊt/"
+    }
+  ],
+  "grammarPoints": [
+    {
+      "rule": "Phrasal Verbs in Formal Writing",
+      "explanation": "While phrasal verbs are often considered informal, many are perfectly acceptable in formal writing. The key is choosing the right one for the context.",
+      "examples": [
+        "Formal: 'The study set out to examine...' (acceptable)",
+        "Formal: 'The findings point to...' (acceptable)",
+        "Too informal for academic writing: 'The researchers messed up the data.'"
+      ],
+      "commonMistakes": [
+        "Avoiding all phrasal verbs in formal writing — many are appropriate and natural"
+      ]
+    }
+  ]
+}

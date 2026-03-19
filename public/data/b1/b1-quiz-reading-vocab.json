@@ -1,0 +1,222 @@
+[
+  {
+    "question": "A <curriculum> is...",
+    "options": [
+      "a plan of subjects taught at a school",
+      "a type of exam",
+      "a school building",
+      "a teacher's salary"
+    ],
+    "correct": "a plan of subjects taught at a school",
+    "explanation": "A <curriculum> is the set of courses and content taught at a school or university."
+  },
+  {
+    "question": "When you <graduate>, you...",
+    "options": [
+      "complete your studies and receive a degree",
+      "start a new course",
+      "fail an exam",
+      "change schools"
+    ],
+    "correct": "complete your studies and receive a degree",
+    "explanation": "To <graduate> means to successfully finish a course of study."
+  },
+  {
+    "question": "<Tuition> refers to...",
+    "options": [
+      "the money paid for education",
+      "the school uniform",
+      "the textbooks",
+      "the school bus"
+    ],
+    "correct": "the money paid for education",
+    "explanation": "<Tuition> is the fee charged for instruction at a school or university."
+  },
+  {
+    "question": "A <semester> is...",
+    "options": [
+      "half of an academic year",
+      "a full academic year",
+      "a single class",
+      "a type of exam"
+    ],
+    "correct": "half of an academic year",
+    "explanation": "A <semester> is one of the two periods that divide the academic year."
+  },
+  {
+    "question": "<Renewable energy> comes from...",
+    "options": [
+      "sources that won't run out, like sun and wind",
+      "coal and oil",
+      "nuclear power only",
+      "natural gas"
+    ],
+    "correct": "sources that won't run out, like sun and wind",
+    "explanation": "<Renewable energy> comes from natural sources that are constantly replenished."
+  },
+  {
+    "question": "Your <carbon footprint> measures...",
+    "options": [
+      "the amount of CO2 you produce",
+      "the size of your shoes",
+      "how far you walk",
+      "your weight"
+    ],
+    "correct": "the amount of CO2 you produce",
+    "explanation": "Your <carbon footprint> is the total amount of greenhouse gases you produce."
+  },
+  {
+    "question": "<Emissions> are...",
+    "options": [
+      "gases released into the atmosphere",
+      "types of energy",
+      "recycling methods",
+      "weather patterns"
+    ],
+    "correct": "gases released into the atmosphere",
+    "explanation": "<Emissions> are substances, especially gases, released into the air."
+  },
+  {
+    "question": "An <influencer> is someone who...",
+    "options": [
+      "has many followers and affects people's opinions online",
+      "works in a factory",
+      "teaches at a university",
+      "writes for a newspaper"
+    ],
+    "correct": "has many followers and affects people's opinions online",
+    "explanation": "An <influencer> is a person with a large social media following who can affect others' decisions."
+  },
+  {
+    "question": "When something goes <viral>, it...",
+    "options": [
+      "spreads very quickly on the internet",
+      "becomes very expensive",
+      "disappears from the internet",
+      "becomes illegal"
+    ],
+    "correct": "spreads very quickly on the internet",
+    "explanation": "When content goes <viral>, it is shared rapidly by many people online."
+  },
+  {
+    "question": "<Engagement> on social media means...",
+    "options": [
+      "likes, comments, and shares on a post",
+      "the number of friends you have",
+      "the time you spend online",
+      "the cost of advertising"
+    ],
+    "correct": "likes, comments, and shares on a post",
+    "explanation": "<Engagement> measures how much people interact with content through likes, comments, and shares."
+  },
+  {
+    "question": "A <hashtag> is used to...",
+    "options": [
+      "categorize content on social media",
+      "send private messages",
+      "block other users",
+      "delete posts"
+    ],
+    "correct": "categorize content on social media",
+    "explanation": "A <hashtag> (#) is used to label and find content about specific topics."
+  },
+  {
+    "question": "<Cyberbullying> is...",
+    "options": [
+      "bullying that happens online",
+      "a computer virus",
+      "a type of video game",
+      "online shopping"
+    ],
+    "correct": "bullying that happens online",
+    "explanation": "<Cyberbullying> is the use of technology to harass, threaten, or embarrass someone."
+  },
+  {
+    "question": "A <scholarship> is...",
+    "options": [
+      "money given to a student to help pay for education",
+      "a type of exam",
+      "a school subject",
+      "a student's grade"
+    ],
+    "correct": "money given to a student to help pay for education",
+    "explanation": "A <scholarship> is financial aid awarded to students based on merit or need."
+  },
+  {
+    "question": "<Sustainability> means...",
+    "options": [
+      "using resources without harming the future",
+      "making things faster",
+      "spending more money",
+      "building bigger cities"
+    ],
+    "correct": "using resources without harming the future",
+    "explanation": "<Sustainability> is the practice of using resources responsibly for future generations."
+  },
+  {
+    "question": "<Pollution> is...",
+    "options": [
+      "harmful substances in the environment",
+      "clean air",
+      "recycled materials",
+      "natural resources"
+    ],
+    "correct": "harmful substances in the environment",
+    "explanation": "<Pollution> is the presence of harmful substances that damage the environment."
+  },
+  {
+    "question": "An <algorithm> is...",
+    "options": [
+      "a set of rules a computer follows to solve problems",
+      "a type of social media",
+      "a computer screen",
+      "an internet connection"
+    ],
+    "correct": "a set of rules a computer follows to solve problems",
+    "explanation": "An <algorithm> is a process or set of rules followed by a computer to perform calculations."
+  },
+  {
+    "question": "A <content creator> is someone who...",
+    "options": [
+      "makes videos, articles, or posts for the internet",
+      "repairs computers",
+      "sells phones",
+      "designs websites only"
+    ],
+    "correct": "makes videos, articles, or posts for the internet",
+    "explanation": "A <content creator> produces digital content like videos, blogs, or social media posts."
+  },
+  {
+    "question": "<Climate change> refers to...",
+    "options": [
+      "long-term changes in global temperatures and weather",
+      "daily weather forecasts",
+      "seasonal changes",
+      "local temperature"
+    ],
+    "correct": "long-term changes in global temperatures and weather",
+    "explanation": "<Climate change> refers to significant, long-term shifts in global climate patterns."
+  },
+  {
+    "question": "A university <degree> is...",
+    "options": [
+      "a qualification awarded after completing studies",
+      "a type of exam",
+      "a school subject",
+      "a student ID card"
+    ],
+    "correct": "a qualification awarded after completing studies",
+    "explanation": "A <degree> is an academic qualification given by a university after completing a program."
+  },
+  {
+    "question": "To <recycle> means to...",
+    "options": [
+      "convert waste into reusable material",
+      "throw things away",
+      "buy new products",
+      "burn garbage"
+    ],
+    "correct": "convert waste into reusable material",
+    "explanation": "To <recycle> means to process used materials so they can be used again."
+  }
+]

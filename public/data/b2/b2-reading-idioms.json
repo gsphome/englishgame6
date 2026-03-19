@@ -1,0 +1,94 @@
+{
+  "title": "Idioms in Professional and Global Contexts",
+  "estimatedReadingTime": 12,
+  "learningObjectives": [
+    "Learn idioms used in business, innovation, and global discussions",
+    "Understand cultural context behind common idioms",
+    "Practice using idioms in professional communication",
+    "Recognize idioms in news articles and reports"
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Professional Idioms",
+      "type": "introduction",
+      "content": "At the B2 level, idioms become tools for sophisticated communication. In business meetings, negotiations, and professional writing, the right idiom can make your point memorable and impactful. These idioms are commonly used in international business and media."
+    },
+    {
+      "id": "business-idioms",
+      "title": "Business and Innovation Idioms",
+      "type": "theory",
+      "content": "The business world has its own idiom vocabulary:\n\n• The bottom line - The most important fact. 'The bottom line is we need more funding.'\n• A game changer - Something that completely changes the situation. 'AI is a game changer for healthcare.'\n• Ahead of the curve - More advanced than others. 'Companies that iterate quickly stay ahead of the curve.'\n• Move the goalposts - Change the rules unfairly. 'The client keeps moving the goalposts.'\n• A level playing field - Fair conditions for everyone. 'We need a level playing field for all businesses.'\n• Get traction - Start to gain momentum. 'The new product is finally getting traction in the market.'"
+    },
+    {
+      "id": "global-idioms",
+      "title": "Idioms for Global Issues",
+      "type": "theory",
+      "content": "When discussing global challenges, these idioms are useful:\n\n• The tip of the iceberg - Only a small visible part of a larger problem. 'The reported cases are just the tip of the iceberg.'\n• A double-edged sword - Something with both advantages and disadvantages. 'Social media is a double-edged sword for accountability.'\n• Turn a blind eye - Deliberately ignore something. 'We can't turn a blind eye to humanitarian crises.'\n• The elephant in the room - An obvious problem nobody wants to discuss. 'Climate change is the elephant in the room.'\n• A slippery slope - A course of action likely to lead to worse things. 'Reducing oversight is a slippery slope.'"
+    },
+    {
+      "id": "examples",
+      "title": "Idioms in Professional Contexts",
+      "type": "examples",
+      "content": "Example 1: 'The startup gained traction after its initiative for accountability went viral.'\n\nExample 2: 'The disparity in wages is just the tip of the iceberg — systemic issues run much deeper.'\n\nExample 3: 'The new policy is a game changer, but critics say it's a double-edged sword.'\n\nExample 4: 'We need to stay ahead of the curve and iterate on our approach before competitors disrupt the market.'"
+    },
+    {
+      "id": "summary",
+      "title": "Key Takeaways",
+      "type": "summary",
+      "content": "Remember:\n• Business idioms make you sound confident in professional settings\n• Global issue idioms help you discuss complex topics effectively\n• Use idioms sparingly in formal reports — they work best in presentations and discussions\n• Many idioms have equivalents in other languages — use that to remember them\n• Practice by reading business news and identifying idioms"
+    }
+  ],
+  "keyVocabulary": [
+    {
+      "term": "the bottom line",
+      "definition": "The most important fact or result",
+      "example": "The bottom line is we need to cut costs.",
+      "pronunciation": "/ðə ˈbɒtəm laɪn/"
+    },
+    {
+      "term": "a game changer",
+      "definition": "Something that completely changes a situation",
+      "example": "This technology is a real game changer.",
+      "pronunciation": "/ə ɡeɪm ˈtʃeɪndʒər/"
+    },
+    {
+      "term": "ahead of the curve",
+      "definition": "More advanced or progressive than others",
+      "example": "Their research is ahead of the curve.",
+      "pronunciation": "/əˈhed əv ðə kɜːrv/"
+    },
+    {
+      "term": "the tip of the iceberg",
+      "definition": "A small visible part of a much larger problem",
+      "example": "These complaints are the tip of the iceberg.",
+      "pronunciation": "/ðə tɪp əv ðə ˈaɪsbɜːrɡ/"
+    },
+    {
+      "term": "a double-edged sword",
+      "definition": "Something with both positive and negative effects",
+      "example": "Fame is a double-edged sword.",
+      "pronunciation": "/ə ˈdʌbəl edʒd sɔːrd/"
+    },
+    {
+      "term": "the elephant in the room",
+      "definition": "An obvious problem that nobody wants to discuss",
+      "example": "Inequality is the elephant in the room.",
+      "pronunciation": "/ðə ˈelɪfənt ɪn ðə ruːm/"
+    }
+  ],
+  "grammarPoints": [
+    {
+      "rule": "Idioms with Articles",
+      "explanation": "Many idioms require specific articles (a, the) that cannot be changed. 'The bottom line' always uses 'the', while 'a game changer' uses 'a'.",
+      "examples": [
+        "THE bottom line (always 'the')",
+        "A game changer (always 'a')",
+        "THE tip of THE iceberg (always 'the')"
+      ],
+      "commonMistakes": [
+        "Changing the article: 'a bottom line' or 'the game changer' — these change the meaning"
+      ]
+    }
+  ]
+}

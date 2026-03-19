@@ -1,0 +1,113 @@
+{
+  "title": "Phrasal Verbs and Idioms in Academic and Professional Discourse",
+  "estimatedReadingTime": 15,
+  "learningObjectives": [
+    "Master sophisticated phrasal verbs in academic writing",
+    "Understand idioms used in professional and intellectual discourse",
+    "Analyze the interplay between figurative language and register",
+    "Use phrasal verbs and idioms with precision in advanced contexts"
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Language at the C1 Level",
+      "type": "introduction",
+      "content": "At the C1 level, your command of phrasal verbs and idioms should be nuanced and precise. You need to understand not just what these expressions mean, but when and how to deploy them effectively. Academic papers, professional presentations, and intellectual debates all require a sophisticated grasp of figurative language."
+    },
+    {
+      "id": "academic-discourse",
+      "title": "Phrasal Verbs in Academic Writing",
+      "type": "theory",
+      "content": "Academic discourse employs phrasal verbs more than many learners realize:\n\nThe researcher set forth a compelling argument that interrogated prevailing assumptions. Her work built on earlier studies but broke away from conventional epistemology. She delved into the lacuna in existing literature and brought to light several overlooked factors. Her conclusions touched upon ethnocentrism in research methodology and called into question the universality of Western frameworks.\n\nAcademic phrasal verbs:\n• Set forth - present formally\n• Build on - use as a foundation\n• Break away from - depart from tradition\n• Delve into - investigate deeply\n• Bring to light - reveal or discover\n• Touch upon - briefly address\n• Call into question - challenge the validity of"
+    },
+    {
+      "id": "professional-idioms",
+      "title": "Idioms in Professional Leadership",
+      "type": "theory",
+      "content": "Leadership and management discourse is rich with idioms:\n\n• Raise the bar - Set higher standards. 'The new CEO raised the bar for corporate accountability.'\n• Weather the storm - Survive a difficult period. 'The company weathered the storm of the recession.'\n• Move the needle - Make a significant impact. 'This initiative will move the needle on diversity.'\n• Read the room - Understand the mood of a group. 'A good leader knows how to read the room.'\n• Throw someone under the bus - Blame someone unfairly. 'He threw his colleague under the bus to save himself.'\n• Have skin in the game - Have a personal stake in the outcome. 'Investors with skin in the game make better decisions.'"
+    },
+    {
+      "id": "examples",
+      "title": "Sophisticated Usage",
+      "type": "examples",
+      "content": "Example 1: 'The study delved into the intersectionality of race and class, bringing to light a preeminent concern in contemporary sociology.'\n\nExample 2: 'The CEO's cosmopolitanism helped the company break away from a parochial worldview and recalibrate its global strategy.'\n\nExample 3: 'Critics called into question the epistemological foundations of the research, arguing it essentialized complex cultural phenomena.'\n\nExample 4: 'The seismic shift in policy raised the bar for accountability across the entire sector.'"
+    },
+    {
+      "id": "register-analysis",
+      "title": "Register and Appropriateness",
+      "type": "theory",
+      "content": "Understanding register is crucial at C1:\n\nFormal academic: 'The findings call into question previous assumptions.' (appropriate)\nInformal equivalent: 'The findings blow holes in what we thought.' (too casual for papers)\n\nFormal professional: 'We need to raise the bar on quality.' (appropriate in meetings)\nToo casual: 'We need to step up our game.' (acceptable but less professional)\n\nThe key is matching your language to your audience and purpose. In a board meeting, 'move the needle' is perfect. In an academic paper, 'yield significant results' is more appropriate."
+    },
+    {
+      "id": "summary",
+      "title": "Key Takeaways",
+      "type": "summary",
+      "content": "Remember:\n• C1 phrasal verbs carry precise academic and professional meanings\n• Idioms at this level are tools for persuasion and impact\n• Register awareness is essential — match your language to the context\n• Many academic phrasal verbs have Latin-origin synonyms for very formal writing\n• Practice by reading academic journals and professional publications"
+    }
+  ],
+  "keyVocabulary": [
+    {
+      "term": "set forth",
+      "definition": "To present or state something formally",
+      "example": "The author set forth a new theory.",
+      "pronunciation": "/set fɔːrθ/"
+    },
+    {
+      "term": "delve into",
+      "definition": "To investigate or research something deeply",
+      "example": "The study delves into cultural identity.",
+      "pronunciation": "/delv ˈɪntuː/"
+    },
+    {
+      "term": "call into question",
+      "definition": "To challenge the truth or validity of something",
+      "example": "New evidence calls the theory into question.",
+      "pronunciation": "/kɔːl ˈɪntuː ˈkwestʃən/"
+    },
+    {
+      "term": "bring to light",
+      "definition": "To reveal or make known something hidden",
+      "example": "The investigation brought corruption to light.",
+      "pronunciation": "/brɪŋ tə laɪt/"
+    },
+    {
+      "term": "raise the bar",
+      "definition": "To set a higher standard",
+      "example": "This innovation raises the bar for the industry.",
+      "pronunciation": "/reɪz ðə bɑːr/"
+    },
+    {
+      "term": "move the needle",
+      "definition": "To make a noticeable difference or impact",
+      "example": "Will this policy move the needle on inequality?",
+      "pronunciation": "/muːv ðə ˈniːdəl/"
+    },
+    {
+      "term": "weather the storm",
+      "definition": "To survive a difficult period successfully",
+      "example": "The organization weathered the financial storm.",
+      "pronunciation": "/ˈweðər ðə stɔːrm/"
+    },
+    {
+      "term": "read the room",
+      "definition": "To understand the mood or feelings of a group",
+      "example": "A skilled negotiator can read the room.",
+      "pronunciation": "/riːd ðə ruːm/"
+    }
+  ],
+  "grammarPoints": [
+    {
+      "rule": "Phrasal Verbs vs Latin-Origin Equivalents",
+      "explanation": "In very formal academic writing, phrasal verbs sometimes have more formal single-word equivalents derived from Latin or French. Both are correct, but the choice affects register.",
+      "examples": [
+        "set forth = propound/present",
+        "delve into = investigate/examine",
+        "bring to light = reveal/uncover",
+        "call into question = challenge/dispute"
+      ],
+      "commonMistakes": [
+        "Always replacing phrasal verbs with formal equivalents — this can make writing sound stilted and unnatural"
+      ]
+    }
+  ]
+}

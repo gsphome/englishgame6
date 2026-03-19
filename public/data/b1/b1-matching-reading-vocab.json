@@ -1,0 +1,102 @@
+[
+  {
+    "left": "curriculum",
+    "right": "plan de estudios",
+    "explanation": "A curriculum is the set of courses and content taught at a school"
+  },
+  {
+    "left": "graduate",
+    "right": "graduarse",
+    "explanation": "To graduate means to complete studies and receive a qualification"
+  },
+  {
+    "left": "tuition",
+    "right": "matrícula universitaria",
+    "explanation": "Tuition is the fee paid for education"
+  },
+  {
+    "left": "semester",
+    "right": "semestre",
+    "explanation": "A semester is half of an academic year"
+  },
+  {
+    "left": "renewable energy",
+    "right": "energía renovable",
+    "explanation": "Energy from sources that won't run out, like solar and wind"
+  },
+  {
+    "left": "carbon footprint",
+    "right": "huella de carbono",
+    "explanation": "The total amount of greenhouse gases produced by a person or activity"
+  },
+  {
+    "left": "emissions",
+    "right": "emisiones",
+    "explanation": "Gases or substances released into the atmosphere"
+  },
+  {
+    "left": "influencer",
+    "right": "persona influyente en redes",
+    "explanation": "Someone with many followers who affects opinions online"
+  },
+  {
+    "left": "viral",
+    "right": "viral",
+    "explanation": "Content that spreads very quickly on the internet"
+  },
+  {
+    "left": "engagement",
+    "right": "interacción en redes",
+    "explanation": "The level of interaction (likes, comments, shares) on social media"
+  },
+  {
+    "left": "hashtag",
+    "right": "etiqueta (#)",
+    "explanation": "A word or phrase preceded by # used to categorize content"
+  },
+  {
+    "left": "cyberbullying",
+    "right": "ciberacoso",
+    "explanation": "Bullying that takes place online or through digital devices"
+  },
+  {
+    "left": "scholarship",
+    "right": "beca",
+    "explanation": "Financial aid given to students for their education"
+  },
+  {
+    "left": "sustainability",
+    "right": "sostenibilidad",
+    "explanation": "Using resources responsibly to protect the future"
+  },
+  {
+    "left": "pollution",
+    "right": "contaminación",
+    "explanation": "Harmful substances that damage the environment"
+  },
+  {
+    "left": "algorithm",
+    "right": "algoritmo",
+    "explanation": "A set of rules a computer follows to solve problems"
+  },
+  {
+    "left": "climate change",
+    "right": "cambio climático",
+    "explanation": "Long-term shifts in global temperatures and weather patterns"
+  },
+  {
+    "left": "degree",
+    "right": "título universitario",
+    "explanation": "An academic qualification from a university"
+  },
+  {
+    "left": "recycle",
+    "right": "reciclar",
+    "explanation": "To process waste materials for reuse"
+  },
+  {
+    "left": "content creator",
+    "right": "creador de contenido",
+    "explanation": "Someone who produces digital content for online platforms"
+  }
+]

@@ -1,0 +1,94 @@
+{
+  "title": "Idioms for Everyday Conversations",
+  "estimatedReadingTime": 8,
+  "learningObjectives": [
+    "Learn idioms commonly used in everyday conversations",
+    "Understand idioms through stories and dialogues",
+    "Practice using idioms in the correct context",
+    "Expand your knowledge of figurative language"
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Why Learn Idioms?",
+      "type": "introduction",
+      "content": "Native English speakers use idioms all the time. If you understand idioms, you can follow conversations better and sound more natural. At the A2 level, you can learn idioms about feelings, time, and common situations. These idioms will help you in daily conversations."
+    },
+    {
+      "id": "feelings-idioms",
+      "title": "Idioms About Feelings",
+      "type": "theory",
+      "content": "English has many idioms to describe how we feel:\n\n• On cloud nine - Very happy. 'She passed her exam and she's on cloud nine!'\n• Down in the dumps - Very sad. 'He lost his job and he's down in the dumps.'\n• Butterflies in my stomach - Nervous. 'I have butterflies in my stomach before the interview.'\n• Over the moon - Extremely happy. 'They're over the moon about the new baby.'\n• Sick and tired - Very annoyed. 'I'm sick and tired of this rain!'"
+    },
+    {
+      "id": "time-idioms",
+      "title": "Idioms About Time",
+      "type": "theory",
+      "content": "Time idioms are very useful:\n\n• In the nick of time - Just before it's too late. 'We arrived at the airport in the nick of time.'\n• Once in a blue moon - Very rarely. 'I eat fast food once in a blue moon.'\n• Around the clock - All day and night. 'The hospital works around the clock.'\n• Better late than never - It's good you came, even if late. 'You're here! Better late than never.'\n• Time flies - Time passes quickly. 'Time flies when you're having fun!'"
+    },
+    {
+      "id": "examples",
+      "title": "Idioms in Conversations",
+      "type": "examples",
+      "content": "Example 1: A: 'How was your holiday?' B: 'Amazing! I was on cloud nine the whole time.'\n\nExample 2: A: 'Do you often go to the cinema?' B: 'Once in a blue moon. I prefer watching movies at home.'\n\nExample 3: A: 'Sorry I'm late!' B: 'Better late than never! Come in.'\n\nExample 4: A: 'I can't believe it's December already!' B: 'I know! Time flies!'"
+    },
+    {
+      "id": "summary",
+      "title": "Key Takeaways",
+      "type": "summary",
+      "content": "Remember:\n• Idioms about feelings help you express emotions naturally\n• Time idioms are used in everyday conversations\n• Learn idioms in context, not just as definitions\n• Practice using one new idiom each day\n• Listen for idioms in movies and songs"
+    }
+  ],
+  "keyVocabulary": [
+    {
+      "term": "on cloud nine",
+      "definition": "Extremely happy",
+      "example": "I got the job! I'm on cloud nine!",
+      "pronunciation": "/ɒn klaʊd naɪn/"
+    },
+    {
+      "term": "down in the dumps",
+      "definition": "Feeling very sad",
+      "example": "She's been down in the dumps since her cat died.",
+      "pronunciation": "/daʊn ɪn ðə dʌmps/"
+    },
+    {
+      "term": "once in a blue moon",
+      "definition": "Very rarely",
+      "example": "We go to that restaurant once in a blue moon.",
+      "pronunciation": "/wʌns ɪn ə bluː muːn/"
+    },
+    {
+      "term": "time flies",
+      "definition": "Time passes very quickly",
+      "example": "Time flies when you're having fun.",
+      "pronunciation": "/taɪm flaɪz/"
+    },
+    {
+      "term": "in the nick of time",
+      "definition": "Just before it's too late",
+      "example": "The firefighters arrived in the nick of time.",
+      "pronunciation": "/ɪn ðə nɪk əv taɪm/"
+    },
+    {
+      "term": "better late than never",
+      "definition": "It's better to arrive late than not at all",
+      "example": "You finally finished! Better late than never.",
+      "pronunciation": "/ˈbetər leɪt ðæn ˈnevər/"
+    }
+  ],
+  "grammarPoints": [
+    {
+      "rule": "Idioms and Tenses",
+      "explanation": "Most idioms can be used in different tenses. The key words stay the same, but the verb can change.",
+      "examples": [
+        "I'm on cloud nine. (present)",
+        "She was on cloud nine. (past)",
+        "He'll be on cloud nine. (future)"
+      ],
+      "commonMistakes": [
+        "Mixing up similar idioms: 'on cloud seven' — Wrong! Say 'on cloud nine'"
+      ]
+    }
+  ]
+}

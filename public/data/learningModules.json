@@ -321,6 +321,91 @@
     "difficulty": 1
   },
   {
+    "id": "reading-phrasal-verbs-a1",
+    "name": "Phrasal Verbs in Everyday Life",
+    "learningMode": "reading",
+    "dataPath": "data/a1/a1-reading-phrasal-verbs.json",
+    "level": [
+      "a1"
+    ],
+    "category": "PhrasalVerbs",
+    "unit": 1,
+    "prerequisites": [
+      "quiz-basic-idioms-a1"
+    ],
+    "description": "Learn basic phrasal verbs through everyday stories and examples",
+    "estimatedTime": 6,
+    "difficulty": 1
+  },
+  {
+    "id": "reading-idioms-a1",
+    "name": "Common Idioms in Daily Life",
+    "learningMode": "reading",
+    "dataPath": "data/a1/a1-reading-idioms.json",
+    "level": [
+      "a1"
+    ],
+    "category": "Idioms",
+    "unit": 1,
+    "prerequisites": [
+      "reading-phrasal-verbs-a1"
+    ],
+    "description": "Discover common English idioms through simple stories",
+    "estimatedTime": 6,
+    "difficulty": 1
+  },
+  {
+    "id": "flashcard-daily-life-vocab-a1",
+    "name": "Daily Life Vocabulary",
+    "learningMode": "flashcard",
+    "dataPath": "data/a1/a1-flashcard-daily-life-vocab.json",
+    "level": [
+      "a1"
+    ],
+    "category": "Vocabulary",
+    "unit": 1,
+    "prerequisites": [
+      "reading-idioms-a1"
+    ],
+    "description": "Essential daily routines and activities vocabulary (20 words)",
+    "estimatedTime": 5,
+    "difficulty": 1
+  },
+  {
+    "id": "quiz-daily-life-vocab-a1",
+    "name": "Daily Life Vocabulary Quiz",
+    "learningMode": "quiz",
+    "dataPath": "data/a1/a1-quiz-daily-life-vocab.json",
+    "level": [
+      "a1"
+    ],
+    "category": "Vocabulary",
+    "unit": 1,
+    "prerequisites": [
+      "flashcard-daily-life-vocab-a1"
+    ],
+    "description": "Test your knowledge of daily life vocabulary",
+    "estimatedTime": 5,
+    "difficulty": 1
+  },
+  {
+    "id": "completion-everyday-expressions-a1",
+    "name": "Everyday Expressions Practice",
+    "learningMode": "completion",
+    "dataPath": "data/a1/a1-completion-everyday-expressions.json",
+    "level": [
+      "a1"
+    ],
+    "category": "Vocabulary",
+    "unit": 1,
+    "prerequisites": [
+      "quiz-daily-life-vocab-a1"
+    ],
+    "description": "Complete sentences with everyday expressions, phrasal verbs and idioms",
+    "estimatedTime": 5,
+    "difficulty": 1
+  },
+  {
     "id": "quiz-basic-review-a1",
     "name": "Basic Review",
     "learningMode": "quiz",
@@ -331,7 +416,7 @@
     "category": "Review",
     "unit": 1,
     "prerequisites": [
-      "quiz-basic-idioms-a1"
+      "completion-everyday-expressions-a1"
     ],
     "description": "Comprehensive review of A1 level concepts",
     "estimatedTime": 5,
@@ -661,6 +746,91 @@
     "difficulty": 2
   },
   {
+    "id": "reading-phrasal-verbs-a2",
+    "name": "Phrasal Verbs in Daily Situations",
+    "learningMode": "reading",
+    "dataPath": "data/a2/a2-reading-phrasal-verbs.json",
+    "level": [
+      "a2"
+    ],
+    "category": "PhrasalVerbs",
+    "unit": 2,
+    "prerequisites": [
+      "quiz-elementary-idioms-a2"
+    ],
+    "description": "Learn phrasal verbs used in work, shopping and social situations",
+    "estimatedTime": 8,
+    "difficulty": 2
+  },
+  {
+    "id": "reading-idioms-a2",
+    "name": "Idioms for Everyday Conversations",
+    "learningMode": "reading",
+    "dataPath": "data/a2/a2-reading-idioms.json",
+    "level": [
+      "a2"
+    ],
+    "category": "Idioms",
+    "unit": 2,
+    "prerequisites": [
+      "reading-phrasal-verbs-a2"
+    ],
+    "description": "Discover idioms about feelings, time and common situations",
+    "estimatedTime": 8,
+    "difficulty": 2
+  },
+  {
+    "id": "flashcard-culture-health-vocab-a2",
+    "name": "Culture & Health Vocabulary",
+    "learningMode": "flashcard",
+    "dataPath": "data/a2/a2-flashcard-culture-health-vocab.json",
+    "level": [
+      "a2"
+    ],
+    "category": "Vocabulary",
+    "unit": 2,
+    "prerequisites": [
+      "reading-idioms-a2"
+    ],
+    "description": "Culture, health and technology vocabulary (20 words)",
+    "estimatedTime": 5,
+    "difficulty": 2
+  },
+  {
+    "id": "quiz-culture-health-vocab-a2",
+    "name": "Culture & Health Quiz",
+    "learningMode": "quiz",
+    "dataPath": "data/a2/a2-quiz-culture-health-vocab.json",
+    "level": [
+      "a2"
+    ],
+    "category": "Vocabulary",
+    "unit": 2,
+    "prerequisites": [
+      "flashcard-culture-health-vocab-a2"
+    ],
+    "description": "Test your knowledge of culture, health and technology vocabulary",
+    "estimatedTime": 5,
+    "difficulty": 2
+  },
+  {
+    "id": "completion-reading-vocab-a2",
+    "name": "Reading Vocabulary Practice",
+    "learningMode": "completion",
+    "dataPath": "data/a2/a2-completion-reading-vocab.json",
+    "level": [
+      "a2"
+    ],
+    "category": "Vocabulary",
+    "unit": 2,
+    "prerequisites": [
+      "quiz-culture-health-vocab-a2"
+    ],
+    "description": "Complete sentences reinforcing reading vocabulary",
+    "estimatedTime": 5,
+    "difficulty": 2
+  },
+  {
     "id": "quiz-elementary-review-a2",
     "name": "Elementary Review",
     "learningMode": "quiz",
@@ -671,7 +841,7 @@
     "category": "Review",
     "unit": 2,
     "prerequisites": [
-      "quiz-elementary-idioms-a2"
+      "completion-reading-vocab-a2"
     ],
     "description": "Comprehensive review of A2 level concepts",
     "estimatedTime": 5,
@@ -1001,6 +1171,91 @@
     "difficulty": 3
   },
   {
+    "id": "reading-phrasal-verbs-b1",
+    "name": "Phrasal Verbs in Professional Life",
+    "learningMode": "reading",
+    "dataPath": "data/b1/b1-reading-phrasal-verbs.json",
+    "level": [
+      "b1"
+    ],
+    "category": "PhrasalVerbs",
+    "unit": 3,
+    "prerequisites": [
+      "quiz-idioms-challenge-b1"
+    ],
+    "description": "Master phrasal verbs for professional and social contexts",
+    "estimatedTime": 10,
+    "difficulty": 3
+  },
+  {
+    "id": "reading-idioms-b1",
+    "name": "Idioms in Work and Education",
+    "learningMode": "reading",
+    "dataPath": "data/b1/b1-reading-idioms.json",
+    "level": [
+      "b1"
+    ],
+    "category": "Idioms",
+    "unit": 3,
+    "prerequisites": [
+      "reading-phrasal-verbs-b1"
+    ],
+    "description": "Learn idioms for professional and educational settings",
+    "estimatedTime": 10,
+    "difficulty": 3
+  },
+  {
+    "id": "flashcard-reading-vocab-b1",
+    "name": "Reading Vocabulary",
+    "learningMode": "flashcard",
+    "dataPath": "data/b1/b1-flashcard-reading-vocab.json",
+    "level": [
+      "b1"
+    ],
+    "category": "Vocabulary",
+    "unit": 3,
+    "prerequisites": [
+      "reading-idioms-b1"
+    ],
+    "description": "Education, environment and social media vocabulary (20 words)",
+    "estimatedTime": 5,
+    "difficulty": 3
+  },
+  {
+    "id": "quiz-reading-vocab-b1",
+    "name": "Reading Vocabulary Quiz",
+    "learningMode": "quiz",
+    "dataPath": "data/b1/b1-quiz-reading-vocab.json",
+    "level": [
+      "b1"
+    ],
+    "category": "Vocabulary",
+    "unit": 3,
+    "prerequisites": [
+      "flashcard-reading-vocab-b1"
+    ],
+    "description": "Test your knowledge of intermediate reading vocabulary",
+    "estimatedTime": 5,
+    "difficulty": 3
+  },
+  {
+    "id": "matching-reading-vocab-b1",
+    "name": "Reading Vocabulary Matching",
+    "learningMode": "matching",
+    "dataPath": "data/b1/b1-matching-reading-vocab.json",
+    "level": [
+      "b1"
+    ],
+    "category": "Vocabulary",
+    "unit": 3,
+    "prerequisites": [
+      "quiz-reading-vocab-b1"
+    ],
+    "description": "Match intermediate vocabulary with Spanish translations",
+    "estimatedTime": 5,
+    "difficulty": 3
+  },
+  {
     "id": "quiz-intermediate-review-b1",
     "name": "Intermediate Review",
     "learningMode": "quiz",
@@ -1011,7 +1266,7 @@
     "category": "Review",
     "unit": 3,
     "prerequisites": [
-      "quiz-idioms-challenge-b1"
+      "matching-reading-vocab-b1"
     ],
     "description": "Comprehensive review of B1 level concepts",
     "estimatedTime": 5,
@@ -1426,6 +1681,57 @@
     "difficulty": 4
   },
   {
+    "id": "reading-phrasal-verbs-b2",
+    "name": "Phrasal Verbs in Academic Discourse",
+    "learningMode": "reading",
+    "dataPath": "data/b2/b2-reading-phrasal-verbs.json",
+    "level": [
+      "b2"
+    ],
+    "category": "PhrasalVerbs",
+    "unit": 4,
+    "prerequisites": [
+      "quiz-phrasal-verbs-b2"
+    ],
+    "description": "Advanced phrasal verbs in professional and academic contexts",
+    "estimatedTime": 12,
+    "difficulty": 4
+  },
+  {
+    "id": "reading-idioms-b2",
+    "name": "Idioms in Professional Contexts",
+    "learningMode": "reading",
+    "dataPath": "data/b2/b2-reading-idioms.json",
+    "level": [
+      "b2"
+    ],
+    "category": "Idioms",
+    "unit": 4,
+    "prerequisites": [
+      "reading-phrasal-verbs-b2"
+    ],
+    "description": "Business and global issue idioms for upper-intermediate learners",
+    "estimatedTime": 12,
+    "difficulty": 4
+  },
+  {
+    "id": "flashcard-reading-vocab-b2",
+    "name": "Reading Vocabulary",
+    "learningMode": "flashcard",
+    "dataPath": "data/b2/b2-flashcard-reading-vocab.json",
+    "level": [
+      "b2"
+    ],
+    "category": "Vocabulary",
+    "unit": 4,
+    "prerequisites": [
+      "reading-idioms-b2"
+    ],
+    "description": "Professional, innovation and global issues vocabulary (20 words)",
+    "estimatedTime": 5,
+    "difficulty": 4
+  },
+  {
     "id": "quiz-upper-intermediate-review-b2",
     "name": "Upper-Intermediate Review",
     "learningMode": "quiz",
@@ -1436,7 +1742,7 @@
     "category": "Review",
     "unit": 4,
     "prerequisites": [
-      "quiz-phrasal-verbs-b2"
+      "flashcard-reading-vocab-b2"
     ],
     "description": "Comprehensive review of B2 level concepts: used to, phrasal verbs, connectors, and professional vocabulary",
     "estimatedTime": 10,
@@ -1851,6 +2157,57 @@
     "difficulty": 5
   },
   {
+    "id": "reading-phrasal-verbs-idioms-c1",
+    "name": "Phrasal Verbs & Idioms in Discourse",
+    "learningMode": "reading",
+    "dataPath": "data/c1/c1-reading-phrasal-verbs-idioms.json",
+    "level": [
+      "c1"
+    ],
+    "category": "Reading",
+    "unit": 5,
+    "prerequisites": [
+      "quiz-phrasal-verbs-c1"
+    ],
+    "description": "Sophisticated phrasal verbs and idioms in academic and professional discourse",
+    "estimatedTime": 15,
+    "difficulty": 5
+  },
+  {
+    "id": "flashcard-reading-vocab-c1",
+    "name": "Reading Vocabulary",
+    "learningMode": "flashcard",
+    "dataPath": "data/c1/c1-flashcard-reading-vocab.json",
+    "level": [
+      "c1"
+    ],
+    "category": "Vocabulary",
+    "unit": 5,
+    "prerequisites": [
+      "reading-phrasal-verbs-idioms-c1"
+    ],
+    "description": "Advanced academic and scholarly vocabulary (20 words)",
+    "estimatedTime": 5,
+    "difficulty": 5
+  },
+  {
+    "id": "quiz-reading-vocab-c1",
+    "name": "Reading Vocabulary Quiz",
+    "learningMode": "quiz",
+    "dataPath": "data/c1/c1-quiz-reading-vocab.json",
+    "level": [
+      "c1"
+    ],
+    "category": "Vocabulary",
+    "unit": 5,
+    "prerequisites": [
+      "flashcard-reading-vocab-c1"
+    ],
+    "description": "Test your knowledge of advanced academic vocabulary",
+    "estimatedTime": 5,
+    "difficulty": 5
+  },
+  {
     "id": "quiz-advanced-grammar-review-c1",
     "name": "Advanced Grammar Review",
     "learningMode": "quiz",
@@ -1861,7 +2218,7 @@
     "category": "Review",
     "unit": 5,
     "prerequisites": [
-      "quiz-phrasal-verbs-c1"
+      "quiz-reading-vocab-c1"
     ],
     "description": "Comprehensive review of C1 grammar: conditionals, inversions, participles, subjunctive",
     "estimatedTime": 8,
@@ -2191,6 +2548,91 @@
     "difficulty": 5
   },
   {
+    "id": "reading-phrasal-verbs-idioms-c2",
+    "name": "Figurative Language in Scholarly Discourse",
+    "learningMode": "reading",
+    "dataPath": "data/c2/c2-reading-phrasal-verbs-idioms.json",
+    "level": [
+      "c2"
+    ],
+    "category": "Reading",
+    "unit": 6,
+    "prerequisites": [
+      "quiz-mastery-idioms-c2"
+    ],
+    "description": "Mastery-level phrasal verbs and idioms in philosophical and literary discourse",
+    "estimatedTime": 18,
+    "difficulty": 5
+  },
+  {
+    "id": "flashcard-reading-vocab-c2",
+    "name": "Reading Vocabulary",
+    "learningMode": "flashcard",
+    "dataPath": "data/c2/c2-flashcard-reading-vocab.json",
+    "level": [
+      "c2"
+    ],
+    "category": "Vocabulary",
+    "unit": 6,
+    "prerequisites": [
+      "reading-phrasal-verbs-idioms-c2"
+    ],
+    "description": "Philosophical and literary vocabulary for near-native proficiency (20 words)",
+    "estimatedTime": 5,
+    "difficulty": 5
+  },
+  {
+    "id": "quiz-reading-vocab-c2",
+    "name": "Reading Vocabulary Quiz",
+    "learningMode": "quiz",
+    "dataPath": "data/c2/c2-quiz-reading-vocab.json",
+    "level": [
+      "c2"
+    ],
+    "category": "Vocabulary",
+    "unit": 6,
+    "prerequisites": [
+      "flashcard-reading-vocab-c2"
+    ],
+    "description": "Test your knowledge of mastery-level vocabulary",
+    "estimatedTime": 5,
+    "difficulty": 5
+  },
+  {
+    "id": "completion-reading-vocab-c2",
+    "name": "Reading Vocabulary Practice",
+    "learningMode": "completion",
+    "dataPath": "data/c2/c2-completion-reading-vocab.json",
+    "level": [
+      "c2"
+    ],
+    "category": "Vocabulary",
+    "unit": 6,
+    "prerequisites": [
+      "quiz-reading-vocab-c2"
+    ],
+    "description": "Complete sentences with advanced philosophical and literary terms",
+    "estimatedTime": 8,
+    "difficulty": 5
+  },
+  {
+    "id": "matching-reading-vocab-c2",
+    "name": "Reading Vocabulary Matching",
+    "learningMode": "matching",
+    "dataPath": "data/c2/c2-matching-reading-vocab.json",
+    "level": [
+      "c2"
+    ],
+    "category": "Vocabulary",
+    "unit": 6,
+    "prerequisites": [
+      "completion-reading-vocab-c2"
+    ],
+    "description": "Match mastery-level vocabulary with Spanish translations",
+    "estimatedTime": 5,
+    "difficulty": 5
+  },
+  {
     "id": "quiz-mastery-assessment-c2",
     "name": "Mastery Assessment",
     "learningMode": "quiz",
@@ -2201,7 +2643,7 @@
     "category": "Review",
     "unit": 6,
     "prerequisites": [
-      "quiz-mastery-idioms-c2"
+      "matching-reading-vocab-c2"
     ],
     "description": "Comprehensive mastery assessment",
     "estimatedTime": 5,

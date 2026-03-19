@@ -1,0 +1,122 @@
+[
+  {
+    "sentence": "In many countries, it's a ______ to remove your shoes before entering a house.",
+    "correct": "custom",
+    "explanation": "A <custom> is a traditional way of doing things in a culture.",
+    "tip": "Complete with the word for a traditional practice"
+  },
+  {
+    "sentence": "Good table ______ includes not talking with your mouth full.",
+    "correct": "etiquette",
+    "explanation": "<Etiquette> refers to the rules of polite behavior.",
+    "tip": "Complete with the word for polite behavior rules"
+  },
+  {
+    "sentence": "We ______ my grandmother's birthday with a big party.",
+    "correct": "celebrate",
+    "explanation": "To <celebrate> means to do something special for a happy occasion.",
+    "tip": "Complete with the verb for marking a special occasion"
+  },
+  {
+    "sentence": "She will ______ the dinner party at her apartment.",
+    "correct": "host",
+    "explanation": "To <host> means to organize an event and welcome guests.",
+    "tip": "Complete with the verb for organizing an event"
+  },
+  {
+    "sentence": "The doctor wrote a ______ for some antibiotics.",
+    "correct": "prescription",
+    "explanation": "A <prescription> is a doctor's written order for medicine.",
+    "tip": "Complete with the word for a doctor's medicine order"
+  },
+  {
+    "sentence": "He stayed home because he had a high ______.",
+    "correct": "fever",
+    "explanation": "A <fever> is when your body temperature is higher than normal.",
+    "tip": "Complete with the word for high body temperature"
+  },
+  {
+    "sentence": "I have a dental ______ next Monday.",
+    "correct": "check-up",
+    "explanation": "A <check-up> is a routine examination by a doctor or dentist.",
+    "tip": "Complete with the word for a routine medical visit"
+  },
+  {
+    "sentence": "Which web ______ do you use? Chrome or Firefox?",
+    "correct": "browser",
+    "explanation": "A <browser> is software used to access websites on the internet.",
+    "tip": "Complete with the word for internet viewing software"
+  },
+  {
+    "sentence": "The hotel has free ______ for all guests.",
+    "correct": "Wi-Fi",
+    "explanation": "<Wi-Fi> is wireless internet access.",
+    "tip": "Complete with the word for wireless internet"
+  },
+  {
+    "sentence": "Eating grapes at midnight is a Spanish New Year ______.",
+    "correct": "tradition",
+    "explanation": "A <tradition> is a custom passed down through generations.",
+    "tip": "Complete with the word for a long-standing custom"
+  },
+  {
+    "sentence": "A headache can be a ______ of stress.",
+    "correct": "symptom",
+    "explanation": "A <symptom> is a sign that indicates a health problem.",
+    "tip": "Complete with the word for a sign of illness"
+  },
+  {
+    "sentence": "Take this ______ twice a day after meals.",
+    "correct": "medicine",
+    "explanation": "<Medicine> is a substance used to treat illness.",
+    "tip": "Complete with the word for treatment substance"
+  },
+  {
+    "sentence": "I made an ______ with the dentist for Friday.",
+    "correct": "appointment",
+    "explanation": "An <appointment> is a scheduled meeting at a specific time.",
+    "tip": "Complete with the word for a scheduled meeting"
+  },
+  {
+    "sentence": "You can ______ the app from the App Store.",
+    "correct": "download",
+    "explanation": "To <download> means to transfer files from the internet to your device.",
+    "tip": "Complete with the verb for getting files from the internet"
+  },
+  {
+    "sentence": "Your ______ must have at least 8 characters.",
+    "correct": "password",
+    "explanation": "A <password> is a secret code used to protect your accounts.",
+    "tip": "Complete with the word for a secret access code"
+  },
+  {
+    "sentence": "I need to ______ these photos to my social media.",
+    "correct": "upload",
+    "explanation": "To <upload> means to send files from your device to the internet.",
+    "tip": "Complete with the verb for sending files to the internet"
+  },
+  {
+    "sentence": "The graduation ______ was very emotional.",
+    "correct": "ceremony",
+    "explanation": "A <ceremony> is a formal event with special traditions.",
+    "tip": "Complete with the word for a formal event"
+  },
+  {
+    "sentence": "She can't eat peanuts because she has an ______.",
+    "correct": "allergy",
+    "explanation": "An <allergy> is a negative reaction to certain substances.",
+    "tip": "Complete with the word for a negative reaction to substances"
+  },
+  {
+    "sentence": "Visit our ______ for more information about the course.",
+    "correct": "website",
+    "explanation": "A <website> is a collection of pages on the internet.",
+    "tip": "Complete with the word for internet pages"
+  },
+  {
+    "sentence": "The summer music ______ attracts thousands of visitors.",
+    "correct": "festival",
+    "explanation": "A <festival> is an organized celebration event.",
+    "tip": "Complete with the word for a celebration event"
+  }
+]

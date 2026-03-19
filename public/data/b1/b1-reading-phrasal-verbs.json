@@ -1,0 +1,106 @@
+{
+  "title": "Phrasal Verbs in Professional and Social Life",
+  "estimatedReadingTime": 10,
+  "learningObjectives": [
+    "Master phrasal verbs used in professional environments",
+    "Understand phrasal verbs in social and informal contexts",
+    "Learn to distinguish between literal and figurative meanings",
+    "Practice using phrasal verbs in complex sentences"
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Phrasal Verbs at the Intermediate Level",
+      "type": "introduction",
+      "content": "At the B1 level, you need phrasal verbs for more complex situations — at work, in social life, and when discussing plans. Many phrasal verbs have multiple meanings depending on context. Understanding these will make your English sound much more natural and fluent."
+    },
+    {
+      "id": "workplace",
+      "title": "In the Workplace",
+      "type": "theory",
+      "content": "Modern workplaces are full of phrasal verbs. Here's a typical day:\n\nThe team needs to come up with a new marketing strategy. The manager asks everyone to think it over before the meeting. During the meeting, they bring up several ideas and talk them through. Some ideas are turned down, but they end up choosing a creative approach. The deadline is coming up, so they need to get on with the work quickly.\n\nWorkplace phrasal verbs:\n• Come up with - create/invent an idea\n• Think over - consider carefully\n• Bring up - mention a topic\n• Talk through - discuss in detail\n• Turn down - reject\n• End up - finally arrive at a result\n• Come up - approach (in time)\n• Get on with - continue doing"
+    },
+    {
+      "id": "social-life",
+      "title": "Social Situations",
+      "type": "theory",
+      "content": "Phrasal verbs are essential in social English:\n\nI was supposed to meet my friend, but she called off our plans because she wasn't feeling well. I decided to hang out with other friends instead. We ended up going to a new restaurant. The food was amazing — it really lived up to the reviews. We caught up on each other's news and had a great time.\n\nSocial phrasal verbs:\n• Call off - cancel\n• Hang out - spend time casually\n• Live up to - meet expectations\n• Catch up - exchange recent news\n• Get along with - have a good relationship\n• Fall out with - have an argument and stop being friends"
+    },
+    {
+      "id": "examples",
+      "title": "Multiple Meanings",
+      "type": "examples",
+      "content": "Many phrasal verbs have more than one meaning:\n\nExample 1: 'Pick up' — a) 'Pick up the phone' (answer) b) 'Pick up a language' (learn informally) c) 'Pick up someone' (collect by car)\n\nExample 2: 'Take off' — a) 'The plane took off' (left the ground) b) 'Take off your coat' (remove) c) 'Her career took off' (became successful)\n\nExample 3: 'Work out' — a) 'I work out at the gym' (exercise) b) 'Things worked out well' (had a good result) c) 'Work out the answer' (calculate)"
+    },
+    {
+      "id": "summary",
+      "title": "Key Takeaways",
+      "type": "summary",
+      "content": "Remember:\n• Context determines the meaning of phrasal verbs with multiple definitions\n• Professional English uses many phrasal verbs — learn them for career growth\n• Social phrasal verbs make you sound natural in conversations\n• Practice by reading articles and noting phrasal verbs you find\n• Try to use at least one new phrasal verb each day in conversation"
+    }
+  ],
+  "keyVocabulary": [
+    {
+      "term": "come up with",
+      "definition": "To think of an idea or plan",
+      "example": "We need to come up with a solution.",
+      "pronunciation": "/kʌm ʌp wɪð/"
+    },
+    {
+      "term": "think over",
+      "definition": "To consider something carefully",
+      "example": "Let me think it over before I decide.",
+      "pronunciation": "/θɪŋk ˈoʊvər/"
+    },
+    {
+      "term": "bring up",
+      "definition": "To mention a topic in conversation",
+      "example": "She brought up an interesting point.",
+      "pronunciation": "/brɪŋ ʌp/"
+    },
+    {
+      "term": "turn down",
+      "definition": "To reject an offer or request",
+      "example": "He turned down the job offer.",
+      "pronunciation": "/tɜːrn daʊn/"
+    },
+    {
+      "term": "call off",
+      "definition": "To cancel an event or arrangement",
+      "example": "They called off the meeting.",
+      "pronunciation": "/kɔːl ɒf/"
+    },
+    {
+      "term": "catch up",
+      "definition": "To exchange recent news with someone",
+      "example": "Let's meet for coffee and catch up.",
+      "pronunciation": "/kætʃ ʌp/"
+    },
+    {
+      "term": "live up to",
+      "definition": "To meet expectations or standards",
+      "example": "The movie didn't live up to the hype.",
+      "pronunciation": "/lɪv ʌp tuː/"
+    },
+    {
+      "term": "get on with",
+      "definition": "To continue doing something",
+      "example": "Let's get on with the project.",
+      "pronunciation": "/ɡet ɒn wɪð/"
+    }
+  ],
+  "grammarPoints": [
+    {
+      "rule": "Phrasal Verbs with Multiple Meanings",
+      "explanation": "Many common phrasal verbs have 2-3 different meanings. The context of the sentence tells you which meaning is intended.",
+      "examples": [
+        "The plane took off. (= left the ground)",
+        "She took off her shoes. (= removed)",
+        "His business really took off. (= became successful)"
+      ],
+      "commonMistakes": [
+        "Using the wrong meaning in context: 'I need to work out the gym' — Wrong! Say 'I need to work out at the gym'"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "front": "Custom",
+    "back": "Costumbre",
+    "ipa": "/ˈkʌstəm/",
+    "example": "It's a custom to shake hands when you meet someone.",
+    "example_es": "Es costumbre dar la mano cuando conoces a alguien."
+  },
+  {
+    "front": "Etiquette",
+    "back": "Etiqueta / Protocolo",
+    "ipa": "/ˈetɪket/",
+    "example": "Table etiquette is important at formal dinners.",
+    "example_es": "La etiqueta en la mesa es importante en cenas formales."
+  },
+  {
+    "front": "Celebrate",
+    "back": "Celebrar",
+    "ipa": "/ˈselɪbreɪt/",
+    "example": "We celebrate Christmas with our family.",
+    "example_es": "Celebramos la Navidad con nuestra familia."
+  },
+  {
+    "front": "Host",
+    "back": "Anfitrión / Organizar",
+    "ipa": "/hoʊst/",
+    "example": "She will host the party at her house.",
+    "example_es": "Ella organizará la fiesta en su casa."
+  },
+  {
+    "front": "Prescription",
+    "back": "Receta médica",
+    "ipa": "/prɪˈskrɪpʃən/",
+    "example": "The doctor gave me a prescription for antibiotics.",
+    "example_es": "El doctor me dio una receta para antibióticos."
+  },
+  {
+    "front": "Fever",
+    "back": "Fiebre",
+    "ipa": "/ˈfiːvər/",
+    "example": "She has a high fever and needs to rest.",
+    "example_es": "Ella tiene fiebre alta y necesita descansar."
+  },
+  {
+    "front": "Check-up",
+    "back": "Revisión médica",
+    "ipa": "/ˈtʃekʌp/",
+    "example": "I have a check-up at the doctor's next week.",
+    "example_es": "Tengo una revisión médica la próxima semana."
+  },
+  {
+    "front": "Browser",
+    "back": "Navegador",
+    "ipa": "/ˈbraʊzər/",
+    "example": "I use Chrome as my web browser.",
+    "example_es": "Uso Chrome como mi navegador web."
+  },
+  {
+    "front": "Wi-Fi",
+    "back": "Wi-Fi / Internet inalámbrico",
+    "ipa": "/ˈwaɪfaɪ/",
+    "example": "Is there free Wi-Fi in this café?",
+    "example_es": "¿Hay Wi-Fi gratis en este café?"
+  },
+  {
+    "front": "Tradition",
+    "back": "Tradición",
+    "ipa": "/trəˈdɪʃən/",
+    "example": "It's a tradition to eat turkey on Thanksgiving.",
+    "example_es": "Es tradición comer pavo en Acción de Gracias."
+  },
+  {
+    "front": "Festival",
+    "back": "Festival",
+    "ipa": "/ˈfestɪvəl/",
+    "example": "The music festival is in July.",
+    "example_es": "El festival de música es en julio."
+  },
+  {
+    "front": "Symptom",
+    "back": "Síntoma",
+    "ipa": "/ˈsɪmptəm/",
+    "example": "A cough is a common symptom of a cold.",
+    "example_es": "La tos es un síntoma común del resfriado."
+  },
+  {
+    "front": "Medicine",
+    "back": "Medicina / Medicamento",
+    "ipa": "/ˈmedɪsɪn/",
+    "example": "Take this medicine three times a day.",
+    "example_es": "Toma este medicamento tres veces al día."
+  },
+  {
+    "front": "Appointment",
+    "back": "Cita",
+    "ipa": "/əˈpɔɪntmənt/",
+    "example": "I have a doctor's appointment at 3 PM.",
+    "example_es": "Tengo una cita con el doctor a las 3 PM."
+  },
+  {
+    "front": "Download",
+    "back": "Descargar",
+    "ipa": "/ˈdaʊnloʊd/",
+    "example": "You can download the app for free.",
+    "example_es": "Puedes descargar la aplicación gratis."
+  },
+  {
+    "front": "Password",
+    "back": "Contraseña",
+    "ipa": "/ˈpæswɜːrd/",
+    "example": "Don't share your password with anyone.",
+    "example_es": "No compartas tu contraseña con nadie."
+  },
+  {
+    "front": "Upload",
+    "back": "Subir / Cargar",
+    "ipa": "/ˈʌploʊd/",
+    "example": "I need to upload my photos to the cloud.",
+    "example_es": "Necesito subir mis fotos a la nube."
+  },
+  {
+    "front": "Ceremony",
+    "back": "Ceremonia",
+    "ipa": "/ˈserɪmoʊni/",
+    "example": "The wedding ceremony was beautiful.",
+    "example_es": "La ceremonia de boda fue hermosa."
+  },
+  {
+    "front": "Allergy",
+    "back": "Alergia",
+    "ipa": "/ˈælɜːrdʒi/",
+    "example": "He has an allergy to peanuts.",
+    "example_es": "Él tiene alergia a los cacahuetes."
+  },
+  {
+    "front": "Website",
+    "back": "Sitio web",
+    "ipa": "/ˈwebsaɪt/",
+    "example": "Visit our website for more information.",
+    "example_es": "Visita nuestro sitio web para más información."
+  }
+]

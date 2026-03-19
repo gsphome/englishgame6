@@ -1,0 +1,222 @@
+[
+  {
+    "question": "A <custom> is...",
+    "options": [
+      "a traditional way of doing things",
+      "a type of clothing",
+      "a kind of food",
+      "a musical instrument"
+    ],
+    "correct": "a traditional way of doing things",
+    "explanation": "A <custom> is a traditional practice or behavior in a culture."
+  },
+  {
+    "question": "What is <etiquette>?",
+    "options": [
+      "Rules of polite behavior",
+      "A type of sport",
+      "A cooking method",
+      "A musical style"
+    ],
+    "correct": "Rules of polite behavior",
+    "explanation": "<Etiquette> refers to the rules and conventions of polite behavior in society."
+  },
+  {
+    "question": "When you <celebrate>, you...",
+    "options": [
+      "have a party or special event for something good",
+      "feel sad about something",
+      "go to work",
+      "clean the house"
+    ],
+    "correct": "have a party or special event for something good",
+    "explanation": "To <celebrate> means to do something special to mark a happy occasion."
+  },
+  {
+    "question": "A <host> is someone who...",
+    "options": [
+      "organizes and welcomes guests",
+      "cleans the house",
+      "cooks the food",
+      "delivers packages"
+    ],
+    "correct": "organizes and welcomes guests",
+    "explanation": "A <host> is the person who organizes an event and welcomes guests."
+  },
+  {
+    "question": "You need a <prescription> to...",
+    "options": [
+      "buy certain medicines",
+      "enter a building",
+      "travel abroad",
+      "open a bank account"
+    ],
+    "correct": "buy certain medicines",
+    "explanation": "A <prescription> is a doctor's written order for medicine."
+  },
+  {
+    "question": "If you have a <fever>, your body temperature is...",
+    "options": [
+      "higher than normal",
+      "lower than normal",
+      "exactly normal",
+      "changing constantly"
+    ],
+    "correct": "higher than normal",
+    "explanation": "A <fever> means your body temperature is above the normal 37°C / 98.6°F."
+  },
+  {
+    "question": "A <check-up> is...",
+    "options": [
+      "a routine medical examination",
+      "a type of payment",
+      "a sports competition",
+      "a school test"
+    ],
+    "correct": "a routine medical examination",
+    "explanation": "A <check-up> is a regular visit to the doctor to make sure you are healthy."
+  },
+  {
+    "question": "A <browser> is used to...",
+    "options": [
+      "access websites on the internet",
+      "make phone calls",
+      "send text messages",
+      "take photographs"
+    ],
+    "correct": "access websites on the internet",
+    "explanation": "A <browser> is software like Chrome or Firefox used to view websites."
+  },
+  {
+    "question": "You need <Wi-Fi> to...",
+    "options": [
+      "connect to the internet wirelessly",
+      "charge your phone",
+      "make a phone call",
+      "listen to the radio"
+    ],
+    "correct": "connect to the internet wirelessly",
+    "explanation": "<Wi-Fi> is a wireless technology that allows devices to connect to the internet."
+  },
+  {
+    "question": "A <tradition> is...",
+    "options": [
+      "something people do for many years as part of their culture",
+      "a new invention",
+      "a type of technology",
+      "a kind of medicine"
+    ],
+    "correct": "something people do for many years as part of their culture",
+    "explanation": "A <tradition> is a custom or belief passed down through generations."
+  },
+  {
+    "question": "A <symptom> is...",
+    "options": [
+      "a sign that you are sick",
+      "a type of medicine",
+      "a doctor's tool",
+      "a hospital room"
+    ],
+    "correct": "a sign that you are sick",
+    "explanation": "A <symptom> is a physical sign that indicates illness, like a cough or fever."
+  },
+  {
+    "question": "You take <medicine> when you...",
+    "options": [
+      "are sick and need to get better",
+      "are hungry",
+      "want to exercise",
+      "need to study"
+    ],
+    "correct": "are sick and need to get better",
+    "explanation": "<Medicine> is a substance used to treat illness and help you recover."
+  },
+  {
+    "question": "An <appointment> is...",
+    "options": [
+      "a scheduled meeting at a specific time",
+      "a surprise visit",
+      "a random event",
+      "a type of holiday"
+    ],
+    "correct": "a scheduled meeting at a specific time",
+    "explanation": "An <appointment> is a planned meeting, often with a doctor or professional."
+  },
+  {
+    "question": "To <download> means to...",
+    "options": [
+      "transfer files from the internet to your device",
+      "delete files from your device",
+      "send files to someone",
+      "print a document"
+    ],
+    "correct": "transfer files from the internet to your device",
+    "explanation": "To <download> means to copy data from the internet to your computer or phone."
+  },
+  {
+    "question": "A <password> is used to...",
+    "options": [
+      "protect your accounts and information",
+      "remember your name",
+      "find your phone",
+      "pay for things"
+    ],
+    "correct": "protect your accounts and information",
+    "explanation": "A <password> is a secret word or phrase used to access protected accounts."
+  },
+  {
+    "question": "To <upload> means to...",
+    "options": [
+      "send files from your device to the internet",
+      "download files",
+      "delete files",
+      "copy files to a USB"
+    ],
+    "correct": "send files from your device to the internet",
+    "explanation": "To <upload> means to transfer files from your device to a website or cloud."
+  },
+  {
+    "question": "A <ceremony> is...",
+    "options": [
+      "a formal event with special traditions",
+      "a casual meeting",
+      "a daily routine",
+      "a type of exercise"
+    ],
+    "correct": "a formal event with special traditions",
+    "explanation": "A <ceremony> is a formal event, like a wedding or graduation."
+  },
+  {
+    "question": "If you have an <allergy>, you...",
+    "options": [
+      "react badly to certain things like food or pollen",
+      "feel very happy",
+      "are very hungry",
+      "need glasses"
+    ],
+    "correct": "react badly to certain things like food or pollen",
+    "explanation": "An <allergy> is a negative physical reaction to certain substances."
+  },
+  {
+    "question": "A <website> is...",
+    "options": [
+      "a page or group of pages on the internet",
+      "a type of book",
+      "a TV channel",
+      "a radio station"
+    ],
+    "correct": "a page or group of pages on the internet",
+    "explanation": "A <website> is a collection of web pages accessible through the internet."
+  },
+  {
+    "question": "A <festival> is...",
+    "options": [
+      "a special event with music, food, or cultural activities",
+      "a regular workday",
+      "a type of school",
+      "a kind of transport"
+    ],
+    "correct": "a special event with music, food, or cultural activities",
+    "explanation": "A <festival> is an organized event celebrating something, often with entertainment."
+  }
+]

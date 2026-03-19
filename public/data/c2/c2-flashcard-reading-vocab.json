@@ -1,0 +1,142 @@
+[
+  {
+    "front": "Aporia",
+    "back": "Aporía (contradicción irresoluble)",
+    "ipa": "/əˈpɔːriə/",
+    "example": "The text reveals an aporia at the heart of the argument.",
+    "example_es": "El texto revela una aporía en el corazón del argumento."
+  },
+  {
+    "front": "Palimpsest",
+    "back": "Palimpsesto",
+    "ipa": "/ˈpælɪmpsest/",
+    "example": "The city is a palimpsest of historical layers.",
+    "example_es": "La ciudad es un palimpsesto de capas históricas."
+  },
+  {
+    "front": "Heteroglossia",
+    "back": "Heteroglosia (multiplicidad de voces)",
+    "ipa": "/ˌhetərəˈɡlɒsiə/",
+    "example": "Bakhtin's concept of heteroglossia transformed literary theory.",
+    "example_es": "El concepto de heteroglosia de Bajtín transformó la teoría literaria."
+  },
+  {
+    "front": "Subaltern",
+    "back": "Subalterno",
+    "ipa": "/sʌˈbɔːltərn/",
+    "example": "Spivak asked whether the subaltern can speak.",
+    "example_es": "Spivak preguntó si el subalterno puede hablar."
+  },
+  {
+    "front": "Ekphrasis",
+    "back": "Écfrasis (descripción literaria de arte visual)",
+    "ipa": "/ˈekfrəsɪs/",
+    "example": "Keats's 'Ode on a Grecian Urn' is a famous ekphrasis.",
+    "example_es": "La 'Oda a una urna griega' de Keats es una famosa écfrasis."
+  },
+  {
+    "front": "Ontology",
+    "back": "Ontología",
+    "ipa": "/ɒnˈtɒlədʒi/",
+    "example": "Ontology examines the nature of being and existence.",
+    "example_es": "La ontología examina la naturaleza del ser y la existencia."
+  },
+  {
+    "front": "Categorical imperative",
+    "back": "Imperativo categórico",
+    "ipa": "/ˌkætəˈɡɒrɪkəl ɪmˈperətɪv/",
+    "example": "Kant's categorical imperative is a foundation of moral philosophy.",
+    "example_es": "El imperativo categórico de Kant es un fundamento de la filosofía moral."
+  },
+  {
+    "front": "Qualia",
+    "back": "Qualia (experiencias subjetivas)",
+    "ipa": "/ˈkwɑːliə/",
+    "example": "The problem of qualia challenges materialist philosophy.",
+    "example_es": "El problema de los qualia desafía la filosofía materialista."
+  },
+  {
+    "front": "Vicious circularity",
+    "back": "Circularidad viciosa",
+    "ipa": "/ˈvɪʃəs ˌsɜːrkjəˈlærəti/",
+    "example": "The argument suffers from vicious circularity.",
+    "example_es": "El argumento sufre de circularidad viciosa."
+  },
+  {
+    "front": "Inviolability",
+    "back": "Inviolabilidad",
+    "ipa": "/ɪnˌvaɪələˈbɪləti/",
+    "example": "The inviolability of human rights is a core principle.",
+    "example_es": "La inviolabilidad de los derechos humanos es un principio fundamental."
+  },
+  {
+    "front": "Jurisprudence",
+    "back": "Jurisprudencia",
+    "ipa": "/ˌdʒʊərɪsˈpruːdəns/",
+    "example": "Legal jurisprudence evolves with societal changes.",
+    "example_es": "La jurisprudencia legal evoluciona con los cambios sociales."
+  },
+  {
+    "front": "Pathophysiology",
+    "back": "Fisiopatología",
+    "ipa": "/ˌpæθoʊˌfɪziˈɒlədʒi/",
+    "example": "Understanding the pathophysiology is essential for treatment.",
+    "example_es": "Comprender la fisiopatología es esencial para el tratamiento."
+  },
+  {
+    "front": "Arbitrage",
+    "back": "Arbitraje",
+    "ipa": "/ˈɑːrbɪtrɑːʒ/",
+    "example": "Intellectual arbitrage between disciplines yields new insights.",
+    "example_es": "El arbitraje intelectual entre disciplinas produce nuevas perspectivas."
+  },
+  {
+    "front": "Topology",
+    "back": "Topología",
+    "ipa": "/təˈpɒlədʒi/",
+    "example": "The topology of the argument reveals hidden connections.",
+    "example_es": "La topología del argumento revela conexiones ocultas."
+  },
+  {
+    "front": "Requisite",
+    "back": "Requisito / Necesario",
+    "ipa": "/ˈrekwɪzɪt/",
+    "example": "The requisite expertise is rare in this field.",
+    "example_es": "La experiencia requisita es rara en este campo."
+  },
+  {
+    "front": "Dialectic",
+    "back": "Dialéctica",
+    "ipa": "/ˌdaɪəˈlektɪk/",
+    "example": "Hegel's dialectic involves thesis, antithesis, and synthesis.",
+    "example_es": "La dialéctica de Hegel involucra tesis, antítesis y síntesis."
+  },
+  {
+    "front": "Hermeneutics",
+    "back": "Hermenéutica",
+    "ipa": "/ˌhɜːrməˈnjuːtɪks/",
+    "example": "Hermeneutics is the theory of text interpretation.",
+    "example_es": "La hermenéutica es la teoría de la interpretación de textos."
+  },
+  {
+    "front": "Teleological",
+    "back": "Teleológico",
+    "ipa": "/ˌteliəˈlɒdʒɪkəl/",
+    "example": "A teleological argument explains things by their purpose.",
+    "example_es": "Un argumento teleológico explica las cosas por su propósito."
+  },
+  {
+    "front": "Phenomenology",
+    "back": "Fenomenología",
+    "ipa": "/fɪˌnɒmɪˈnɒlədʒi/",
+    "example": "Phenomenology studies the structures of conscious experience.",
+    "example_es": "La fenomenología estudia las estructuras de la experiencia consciente."
+  },
+  {
+    "front": "Epistemic",
+    "back": "Epistémico",
+    "ipa": "/ˌepɪˈstemɪk/",
+    "example": "There is an epistemic gap in our understanding.",
+    "example_es": "Hay una brecha epistémica en nuestra comprensión."
+  }
+]

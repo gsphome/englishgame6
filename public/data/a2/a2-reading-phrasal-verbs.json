@@ -1,0 +1,106 @@
+{
+  "title": "Phrasal Verbs in Daily Situations",
+  "estimatedReadingTime": 8,
+  "learningObjectives": [
+    "Learn phrasal verbs used in common daily situations",
+    "Understand phrasal verbs in short stories and dialogues",
+    "Practice recognizing separable and inseparable phrasal verbs",
+    "Build vocabulary for talking about routines and activities"
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "title": "Phrasal Verbs Around Us",
+      "type": "introduction",
+      "content": "Phrasal verbs are everywhere in English! When you talk to friends, watch movies, or read messages, you hear phrasal verbs all the time. At the A2 level, you can learn more phrasal verbs to talk about your daily life, work, and hobbies. Let's explore some common ones in real situations."
+    },
+    {
+      "id": "at-work",
+      "title": "At Work",
+      "type": "theory",
+      "content": "Sarah works in an office. Every morning, she logs in to her computer and checks her emails. She often has to deal with problems from customers. When she finishes a task, she moves on to the next one. Sometimes her boss asks her to fill in a form or look into a complaint.\n\nWork phrasal verbs:\n• Log in - enter a computer system\n• Deal with - handle a problem\n• Move on - go to the next thing\n• Fill in - complete a form\n• Look into - investigate something"
+    },
+    {
+      "id": "shopping",
+      "title": "Going Shopping",
+      "type": "theory",
+      "content": "At the store, you try on clothes before you buy them. If something is too expensive, you put it back. When you find something you like, you pick it out. At the checkout, you pay for your items and the cashier wraps them up.\n\nShopping phrasal verbs:\n• Try on - test clothes by wearing them\n• Put back - return something to its place\n• Pick out - choose something\n• Pay for - give money for something\n• Wrap up - cover in paper"
+    },
+    {
+      "id": "examples",
+      "title": "Conversation Examples",
+      "type": "examples",
+      "content": "Example 1: 'I need to drop off this package at the post office.' (drop off = deliver)\n\nExample 2: 'Can you look after my cat this weekend?' (look after = take care of)\n\nExample 3: 'We ran out of milk. Can you buy some?' (run out of = have no more)\n\nExample 4: 'I'm looking forward to the holiday!' (look forward to = feel excited about)"
+    },
+    {
+      "id": "summary",
+      "title": "Key Takeaways",
+      "type": "summary",
+      "content": "Remember:\n• Phrasal verbs are used in every situation: work, shopping, home\n• Some phrasal verbs can be separated: 'pick it out' or 'pick out a shirt'\n• Three-word phrasal verbs like 'look forward to' cannot be separated\n• Practice by using phrasal verbs when you describe your day\n• Read and listen to English to find new phrasal verbs naturally"
+    }
+  ],
+  "keyVocabulary": [
+    {
+      "term": "deal with",
+      "definition": "To handle or manage a problem",
+      "example": "I have to deal with many emails every day.",
+      "pronunciation": "/diːl wɪð/"
+    },
+    {
+      "term": "fill in",
+      "definition": "To complete a form or document",
+      "example": "Please fill in this application form.",
+      "pronunciation": "/fɪl ɪn/"
+    },
+    {
+      "term": "look into",
+      "definition": "To investigate or examine",
+      "example": "The manager will look into the problem.",
+      "pronunciation": "/lʊk ˈɪntuː/"
+    },
+    {
+      "term": "try on",
+      "definition": "To test clothes by wearing them",
+      "example": "Can I try on this dress?",
+      "pronunciation": "/traɪ ɒn/"
+    },
+    {
+      "term": "drop off",
+      "definition": "To deliver or leave something somewhere",
+      "example": "I'll drop off the books at the library.",
+      "pronunciation": "/drɒp ɒf/"
+    },
+    {
+      "term": "look after",
+      "definition": "To take care of someone or something",
+      "example": "She looks after her younger brother.",
+      "pronunciation": "/lʊk ˈɑːftər/"
+    },
+    {
+      "term": "run out of",
+      "definition": "To have no more of something",
+      "example": "We ran out of sugar.",
+      "pronunciation": "/rʌn aʊt əv/"
+    },
+    {
+      "term": "look forward to",
+      "definition": "To feel excited about something in the future",
+      "example": "I'm looking forward to the weekend.",
+      "pronunciation": "/lʊk ˈfɔːrwərd tuː/"
+    }
+  ],
+  "grammarPoints": [
+    {
+      "rule": "Separable vs Inseparable Phrasal Verbs",
+      "explanation": "Some phrasal verbs can be separated by an object: 'pick out a shirt' or 'pick a shirt out'. Others cannot be separated: 'look after the baby' (NOT 'look the baby after').",
+      "examples": [
+        "Try on the jacket / Try the jacket on (separable)",
+        "Look after the children (inseparable)",
+        "Fill in the form / Fill the form in (separable)"
+      ],
+      "commonMistakes": [
+        "Separating inseparable verbs: 'look the baby after' — Wrong! Say 'look after the baby'"
+      ]
+    }
+  ]
+}

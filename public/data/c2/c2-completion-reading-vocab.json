@@ -1,0 +1,122 @@
+[
+  {
+    "sentence": "The text reveals an ______ at the heart of the deconstructionist argument.",
+    "correct": "aporia",
+    "explanation": "An <aporia> is an irresolvable internal contradiction in a philosophical argument.",
+    "tip": "Complete with the term for an irresolvable contradiction"
+  },
+  {
+    "sentence": "The city's architecture is a ______ of colonial, modern, and postmodern layers.",
+    "correct": "palimpsest",
+    "explanation": "A <palimpsest> metaphorically describes something with multiple overlapping layers of history.",
+    "tip": "Complete with the term for layered historical traces"
+  },
+  {
+    "sentence": "Bakhtin's concept of ______ emphasizes the multiplicity of voices in any text.",
+    "correct": "heteroglossia",
+    "explanation": "<Heteroglossia> refers to the coexistence of diverse social languages within a single text.",
+    "tip": "Complete with Bakhtin's term for multiple voices"
+  },
+  {
+    "sentence": "Spivak's question about whether the ______ can speak remains central to postcolonial studies.",
+    "correct": "subaltern",
+    "explanation": "The <subaltern> refers to marginalized populations excluded from hegemonic power structures.",
+    "tip": "Complete with the term for marginalized groups"
+  },
+  {
+    "sentence": "The poem's vivid ______ brings the painting to life through language.",
+    "correct": "ekphrasis",
+    "explanation": "<Ekphrasis> is the literary description or representation of a visual work of art.",
+    "tip": "Complete with the term for literary description of visual art"
+  },
+  {
+    "sentence": "Questions of ______ — what exists and what it means to exist — underpin the entire philosophical tradition.",
+    "correct": "ontology",
+    "explanation": "<Ontology> is the branch of philosophy dealing with the nature of being and existence.",
+    "tip": "Complete with the philosophical study of being"
+  },
+  {
+    "sentence": "Kant's ______ ______ demands that we act only according to universalizable principles.",
+    "correct": "categorical imperative",
+    "explanation": "The <categorical imperative> is Kant's foundational principle of moral philosophy.",
+    "tip": "Complete with Kant's universal moral law (two words)"
+  },
+  {
+    "sentence": "The hard problem of consciousness centers on explaining subjective ______.",
+    "correct": "qualia",
+    "explanation": "<Qualia> are the subjective, phenomenal qualities of conscious experience.",
+    "tip": "Complete with the term for subjective conscious experiences"
+  },
+  {
+    "sentence": "The argument suffers from ______ ______, assuming what it sets out to prove.",
+    "correct": "vicious circularity",
+    "explanation": "<Vicious circularity> occurs when an argument's conclusion is presupposed in its premises.",
+    "tip": "Complete with the term for circular reasoning (two words)"
+  },
+  {
+    "sentence": "The ______ of human dignity is a cornerstone of international law.",
+    "correct": "inviolability",
+    "explanation": "<Inviolability> means the quality of being sacred and not to be transgressed.",
+    "tip": "Complete with the term for being untouchable/sacred"
+  },
+  {
+    "sentence": "Legal ______ has evolved significantly since the Enlightenment.",
+    "correct": "jurisprudence",
+    "explanation": "<Jurisprudence> is the theory and philosophy of law.",
+    "tip": "Complete with the term for the philosophy of law"
+  },
+  {
+    "sentence": "Understanding the ______ of the disease is essential for developing effective treatments.",
+    "correct": "pathophysiology",
+    "explanation": "<Pathophysiology> studies the functional changes associated with disease.",
+    "tip": "Complete with the study of disease mechanisms"
+  },
+  {
+    "sentence": "Intellectual ______ between competing theories can yield unexpected insights.",
+    "correct": "arbitrage",
+    "explanation": "<Arbitrage> metaphorically means exploiting differences between frameworks productively.",
+    "tip": "Complete with the term for exploiting differences between systems"
+  },
+  {
+    "sentence": "The ______ of the argument reveals connections invisible at the surface level.",
+    "correct": "topology",
+    "explanation": "<Topology> metaphorically refers to the structural arrangement within a system of ideas.",
+    "tip": "Complete with the term for structural arrangement"
+  },
+  {
+    "sentence": "The ______ interdisciplinary expertise is rarely found in a single researcher.",
+    "correct": "requisite",
+    "explanation": "<Requisite> means necessary or required for a particular purpose.",
+    "tip": "Complete with the adjective meaning 'necessary'"
+  },
+  {
+    "sentence": "Hegel's ______ proceeds through thesis, antithesis, and synthesis.",
+    "correct": "dialectic",
+    "explanation": "The <dialectic> is a method of resolving opposing ideas through reasoned argument.",
+    "tip": "Complete with Hegel's method of reasoning"
+  },
+  {
+    "sentence": "Biblical ______ has a long tradition in Western scholarship.",
+    "correct": "hermeneutics",
+    "explanation": "<Hermeneutics> is the theory and methodology of interpretation.",
+    "tip": "Complete with the study of interpretation"
+  },
+  {
+    "sentence": "A ______ explanation accounts for phenomena by reference to their purpose.",
+    "correct": "teleological",
+    "explanation": "<Teleological> relates to explaining things by their purpose or end goals.",
+    "tip": "Complete with the adjective meaning 'purpose-based'"
+  },
+  {
+    "sentence": "Husserl's ______ seeks to describe experience as it presents itself to consciousness.",
+    "correct": "phenomenology",
+    "explanation": "<Phenomenology> studies the structures of subjective experience.",
+    "tip": "Complete with Husserl's philosophical method"
+  },
+  {
+    "sentence": "There remains a significant ______ gap in our understanding of consciousness.",
+    "correct": "epistemic",
+    "explanation": "<Epistemic> relates to knowledge and the conditions for its possibility.",
+    "tip": "Complete with the adjective relating to knowledge"
+  }
+]

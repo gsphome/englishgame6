@@ -1,0 +1,102 @@
+[
+  {
+    "left": "aporia",
+    "right": "contradicción irresoluble",
+    "explanation": "An irresolvable internal contradiction in a text or argument"
+  },
+  {
+    "left": "palimpsest",
+    "right": "capas superpuestas de significado",
+    "explanation": "Something with multiple layers of meaning or history"
+  },
+  {
+    "left": "heteroglossia",
+    "right": "multiplicidad de voces en un texto",
+    "explanation": "The coexistence of multiple social languages within a text"
+  },
+  {
+    "left": "subaltern",
+    "right": "grupos marginados del poder",
+    "explanation": "Populations excluded from hegemonic power structures"
+  },
+  {
+    "left": "ekphrasis",
+    "right": "descripción literaria de arte visual",
+    "explanation": "Literary representation of a visual work of art"
+  },
+  {
+    "left": "ontology",
+    "right": "estudio del ser y la existencia",
+    "explanation": "The philosophical study of being and existence"
+  },
+  {
+    "left": "categorical imperative",
+    "right": "ley moral universal de Kant",
+    "explanation": "Kant's principle of acting according to universalizable rules"
+  },
+  {
+    "left": "qualia",
+    "right": "experiencias subjetivas de la conciencia",
+    "explanation": "The subjective, phenomenal qualities of conscious experience"
+  },
+  {
+    "left": "vicious circularity",
+    "right": "razonamiento circular vicioso",
+    "explanation": "When an argument's conclusion is assumed in its premises"
+  },
+  {
+    "left": "inviolability",
+    "right": "cualidad de ser sagrado e intocable",
+    "explanation": "The quality of being too important to be broken or violated"
+  },
+  {
+    "left": "jurisprudence",
+    "right": "teoría y filosofía del derecho",
+    "explanation": "The theoretical study of law and legal systems"
+  },
+  {
+    "left": "pathophysiology",
+    "right": "estudio de mecanismos de enfermedad",
+    "explanation": "The study of functional changes associated with disease"
+  },
+  {
+    "left": "arbitrage",
+    "right": "aprovechamiento de diferencias entre sistemas",
+    "explanation": "Exploiting differences between frameworks for new insights"
+  },
+  {
+    "left": "topology",
+    "right": "estructura y conexiones de un argumento",
+    "explanation": "The structural arrangement within a system of ideas"
+  },
+  {
+    "left": "requisite",
+    "right": "necesario / requerido",
+    "explanation": "Made necessary by particular circumstances; essential"
+  },
+  {
+    "left": "dialectic",
+    "right": "resolución de ideas opuestas",
+    "explanation": "Method of argument through thesis, antithesis, and synthesis"
+  },
+  {
+    "left": "hermeneutics",
+    "right": "teoría de la interpretación",
+    "explanation": "The theory and methodology of interpretation"
+  },
+  {
+    "left": "teleological",
+    "right": "relativo al propósito o finalidad",
+    "explanation": "Explaining phenomena by their purpose or design"
+  },
+  {
+    "left": "phenomenology",
+    "right": "estudio de la experiencia consciente",
+    "explanation": "The philosophical study of structures of experience"
+  },
+  {
+    "left": "epistemic",
+    "right": "relativo al conocimiento",
+    "explanation": "Pertaining to knowledge and its conditions"
+  }
+]

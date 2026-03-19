@@ -1,0 +1,222 @@
+[
+  {
+    "question": "What does <have breakfast> mean?",
+    "options": [
+      "Eat the morning meal",
+      "Cook lunch",
+      "Go to a restaurant",
+      "Buy food"
+    ],
+    "correct": "Eat the morning meal",
+    "explanation": "<Have breakfast> means to eat the first meal of the day, in the morning."
+  },
+  {
+    "question": "If you <come home>, you...",
+    "options": [
+      "return to your house",
+      "leave your house",
+      "buy a house",
+      "clean your house"
+    ],
+    "correct": "return to your house",
+    "explanation": "<Come home> means to return to the place where you live."
+  },
+  {
+    "question": "You need <directions> when you...",
+    "options": [
+      "don't know the way",
+      "are hungry",
+      "feel tired",
+      "want to sleep"
+    ],
+    "correct": "don't know the way",
+    "explanation": "<Directions> are instructions that tell you how to get to a place."
+  },
+  {
+    "question": "What do you do when you <go to bed>?",
+    "options": [
+      "Sleep",
+      "Eat",
+      "Study",
+      "Play"
+    ],
+    "correct": "Sleep",
+    "explanation": "<Go to bed> means to go to your bed to sleep."
+  },
+  {
+    "question": "When do people usually <have dinner>?",
+    "options": [
+      "In the evening",
+      "In the morning",
+      "At midnight",
+      "At noon"
+    ],
+    "correct": "In the evening",
+    "explanation": "<Have dinner> means to eat the evening meal, usually between 6 and 9 PM."
+  },
+  {
+    "question": "What does <take a shower> mean?",
+    "options": [
+      "Wash your body with water",
+      "Go swimming",
+      "Drink water",
+      "Clean the bathroom"
+    ],
+    "correct": "Wash your body with water",
+    "explanation": "<Take a shower> means to wash yourself under running water."
+  },
+  {
+    "question": "You <brush your teeth> with a...",
+    "options": [
+      "toothbrush",
+      "comb",
+      "towel",
+      "spoon"
+    ],
+    "correct": "toothbrush",
+    "explanation": "We use a toothbrush and toothpaste to <brush our teeth>."
+  },
+  {
+    "question": "What does <get dressed> mean?",
+    "options": [
+      "Put on clothes",
+      "Take off clothes",
+      "Buy clothes",
+      "Wash clothes"
+    ],
+    "correct": "Put on clothes",
+    "explanation": "<Get dressed> means to put on your clothes."
+  },
+  {
+    "question": "Where do you <go shopping>?",
+    "options": [
+      "At a store or mall",
+      "At school",
+      "At the park",
+      "At the hospital"
+    ],
+    "correct": "At a store or mall",
+    "explanation": "We <go shopping> at stores, malls, or markets to buy things."
+  },
+  {
+    "question": "Students <do homework>...",
+    "options": [
+      "after school",
+      "during breakfast",
+      "while sleeping",
+      "at the cinema"
+    ],
+    "correct": "after school",
+    "explanation": "Students usually <do homework> after school at home."
+  },
+  {
+    "question": "What does <watch TV> mean?",
+    "options": [
+      "Look at television programs",
+      "Listen to the radio",
+      "Read a newspaper",
+      "Play video games"
+    ],
+    "correct": "Look at television programs",
+    "explanation": "<Watch TV> means to look at programs on television."
+  },
+  {
+    "question": "You <listen to music> with your...",
+    "options": [
+      "ears",
+      "eyes",
+      "hands",
+      "nose"
+    ],
+    "correct": "ears",
+    "explanation": "We use our ears to <listen to music>."
+  },
+  {
+    "question": "What does <play sports> mean?",
+    "options": [
+      "Do physical activities like football or tennis",
+      "Watch sports on TV",
+      "Read about sports",
+      "Talk about sports"
+    ],
+    "correct": "Do physical activities like football or tennis",
+    "explanation": "<Play sports> means to participate in physical activities and games."
+  },
+  {
+    "question": "Who usually <cooks dinner> at home?",
+    "options": [
+      "A family member",
+      "The teacher",
+      "The doctor",
+      "The bus driver"
+    ],
+    "correct": "A family member",
+    "explanation": "Usually a parent or family member <cooks dinner> at home."
+  },
+  {
+    "question": "What does <clean the house> mean?",
+    "options": [
+      "Make the house tidy and neat",
+      "Build a new house",
+      "Paint the house",
+      "Sell the house"
+    ],
+    "correct": "Make the house tidy and neat",
+    "explanation": "<Clean the house> means to tidy up, sweep, and make everything neat."
+  },
+  {
+    "question": "You <walk the dog> in the...",
+    "options": [
+      "park or street",
+      "kitchen",
+      "bedroom",
+      "bathroom"
+    ],
+    "correct": "park or street",
+    "explanation": "People <walk the dog> outside, usually in the park or on the street."
+  },
+  {
+    "question": "What does <read a book> mean?",
+    "options": [
+      "Look at and understand written words",
+      "Write a story",
+      "Draw pictures",
+      "Watch a movie"
+    ],
+    "correct": "Look at and understand written words",
+    "explanation": "<Read a book> means to look at the pages and understand the written text."
+  },
+  {
+    "question": "When you <go for a walk>, you...",
+    "options": [
+      "walk outside for exercise or fun",
+      "drive a car",
+      "ride a bicycle",
+      "take a taxi"
+    ],
+    "correct": "walk outside for exercise or fun",
+    "explanation": "<Go for a walk> means to walk outside, usually for exercise or pleasure."
+  },
+  {
+    "question": "You <take the bus> to...",
+    "options": [
+      "travel to a place",
+      "buy a bus",
+      "drive a bus",
+      "wash a bus"
+    ],
+    "correct": "travel to a place",
+    "explanation": "<Take the bus> means to use the bus as transportation to go somewhere."
+  },
+  {
+    "question": "What does <have lunch> mean?",
+    "options": [
+      "Eat the midday meal",
+      "Skip a meal",
+      "Cook breakfast",
+      "Order dinner"
+    ],
+    "correct": "Eat the midday meal",
+    "explanation": "<Have lunch> means to eat the meal in the middle of the day, usually around noon."
+  }
+]
