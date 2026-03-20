@@ -42,12 +42,6 @@
     "example_es": "El argumento teleológico se centra en el propósito y el diseño."
   },
   {
-    "front": "empiricism",
-    "back": "empirismo / conocimiento basado en experiencia",
-    "example": "<Empiricism> emphasizes observation and experimentation.",
-    "example_es": "El empirismo enfatiza la observación y la experimentación."
-  },
-  {
     "front": "rationalism",
     "back": "racionalismo / conocimiento basado en razón",
     "example": "<Rationalism> prioritizes logical reasoning over sensory experience.",
@@ -237,6 +231,12 @@
     "front": "Denouement",
     "back": "desenlace",
     "example": "The <denouement> of the play was unexpected.",
+    "example_es": ""
+  },
+  {
+    "front": "Intertextuality",
+    "back": "intertextualidad",
+    "example": "<Intertextuality> refers to how texts reference other texts.",
     "example_es": ""
   }
 ]

@@ -36,12 +36,6 @@
     "example_es": "Démosle el <beneficio> de la duda."
   },
   {
-    "front": "Hit the nail on the head",
-    "back": "Dar en el clavo",
-    "example": "You <hit the nail on the head> with that analysis.",
-    "example_es": "Diste en el clavo con ese análisis."
-  },
-  {
     "front": "In the long run",
     "back": "A largo plazo",
     "example": "Exercise is good for you <in the long run>.",
@@ -82,12 +76,6 @@
     "back": "Improvisar / ver sobre la marcha",
     "example": "We don't have a plan — let's <play it by ear>.",
     "example_es": "No tenemos plan — improvisemos."
-  },
-  {
-    "front": "Read between the lines",
-    "back": "Leer entre líneas",
-    "example": "If you <read between the lines>, she's not happy.",
-    "example_es": "Si lees entre líneas, ella no está contenta."
   },
   {
     "front": "Speak of the devil",
@@ -238,5 +226,17 @@
     "back": "En el aire / sin decidir",
     "example": "Our vacation plans are still <up in the air>.",
     "example_es": "Nuestros planes de vacaciones aún están en el aire."
+  },
+  {
+    "front": "Spill the beans",
+    "back": "revelar un secreto",
+    "example": "She accidentally <spilled the beans> about the surprise party.",
+    "example_es": ""
+  },
+  {
+    "front": "Under the weather",
+    "back": "sentirse mal / enfermo",
+    "example": "I'm feeling <under the weather> today.",
+    "example_es": ""
   }
 ]

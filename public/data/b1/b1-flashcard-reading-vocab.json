@@ -140,32 +140,11 @@
     "example_es": "Deberíamos <reciclar> plástico y papel."
   },
   {
-    "front": "Sustainable",
-    "back": "Sostenible",
-    "ipa": "/səˈsteɪnəbəl/",
-    "example": "We need <sustainable> energy sources.",
-    "example_es": "Necesitamos fuentes de energía <sostenibles>."
-  },
-  {
-    "front": "Biodiversity",
-    "back": "Biodiversidad",
-    "ipa": "/ˌbaɪoʊdaɪˈvɜːrsəti/",
-    "example": "<Biodiversity> is essential for healthy ecosystems.",
-    "example_es": "La <biodiversidad> es esencial para ecosistemas saludables."
-  },
-  {
     "front": "Renewable",
     "back": "Renovable",
     "ipa": "/rɪˈnjuːəbəl/",
     "example": "Solar power is a <renewable> energy.",
     "example_es": "La energía solar es una energía <renovable>."
-  },
-  {
-    "front": "Deforestation",
-    "back": "Deforestación",
-    "ipa": "/diːˌfɒrɪˈsteɪʃən/",
-    "example": "<Deforestation> destroys animal habitats.",
-    "example_es": "La <deforestación> destruye hábitats animales."
   },
   {
     "front": "Entrepreneur",
@@ -259,13 +238,6 @@
     "example_es": "El artículo muestra un claro <sesgo>."
   },
   {
-    "front": "Empathy",
-    "back": "Empatía",
-    "ipa": "/ˈempəθi/",
-    "example": "<Empathy> helps us understand others.",
-    "example_es": "La <empatía> nos ayuda a entender a otros."
-  },
-  {
     "front": "Enrollment",
     "back": "inscripción / matrícula",
     "ipa": "",
@@ -277,6 +249,34 @@
     "back": "infraestructura",
     "ipa": "",
     "example": "The city needs better <infrastructure>.",
+    "example_es": ""
+  },
+  {
+    "front": "Demographic",
+    "back": "demográfico",
+    "ipa": "",
+    "example": "<Demographic> changes affect the economy.",
+    "example_es": ""
+  },
+  {
+    "front": "Advocacy",
+    "back": "defensa / promoción",
+    "ipa": "",
+    "example": "<Advocacy> for human rights is essential.",
+    "example_es": ""
+  },
+  {
+    "front": "Phenomenon",
+    "back": "fenómeno",
+    "ipa": "",
+    "example": "Climate change is a global <phenomenon>.",
+    "example_es": ""
+  },
+  {
+    "front": "Hypothesis",
+    "back": "hipótesis",
+    "ipa": "",
+    "example": "The scientist tested her <hypothesis> in the lab.",
     "example_es": ""
   }
 ]

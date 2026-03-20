@@ -63,13 +63,6 @@
     "example_es": "Debe haber rendición de cuentas por estas decisiones."
   },
   {
-    "front": "Stakeholder",
-    "back": "Parte interesada",
-    "ipa": "/ˈsteɪkhoʊldər/",
-    "example": "All <stakeholders> were consulted before the decision.",
-    "example_es": "Todas las partes interesadas fueron consultadas antes de la decisión."
-  },
-  {
     "front": "Leverage",
     "back": "Apalancamiento / Aprovechar",
     "ipa": "/ˈlevərɪdʒ/",
@@ -277,6 +270,13 @@
     "back": "catalizador",
     "ipa": "",
     "example": "The protest was a <catalyst> for change.",
+    "example_es": ""
+  },
+  {
+    "front": "Feasibility",
+    "back": "viabilidad / factibilidad",
+    "ipa": "",
+    "example": "The <feasibility> study showed the project was viable.",
     "example_es": ""
   }
 ]

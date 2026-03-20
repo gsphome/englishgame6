@@ -14,13 +14,6 @@
     "example_es": "Hay una laguna significativa en la investigación existente."
   },
   {
-    "front": "Epistemology",
-    "back": "Epistemología",
-    "ipa": "/ɪˌpɪstəˈmɒlədʒi/",
-    "example": "<Epistemology> examines the nature of knowledge.",
-    "example_es": "La <epistemología> examina la naturaleza del conocimiento."
-  },
-  {
     "front": "Ethnocentrism",
     "back": "Etnocentrismo",
     "ipa": "/ˌeθnoʊˈsentrɪzəm/",
@@ -103,13 +96,6 @@
     "ipa": "/ɪmˈpɪrɪkəl/",
     "example": "The study is based on <empirical> evidence.",
     "example_es": "El estudio se basa en evidencia empírica."
-  },
-  {
-    "front": "Corroborate",
-    "back": "Corroborar",
-    "ipa": "/kəˈrɒbəreɪt/",
-    "example": "Further studies <corroborate> these findings.",
-    "example_es": "Estudios adicionales corroboran estos hallazgos."
   },
   {
     "front": "Juxtapose",
@@ -277,6 +263,20 @@
     "back": "proliferar",
     "ipa": "",
     "example": "Fake news sites continue to <proliferate> online.",
+    "example_es": ""
+  },
+  {
+    "front": "Pragmatic",
+    "back": "pragmático / práctico",
+    "ipa": "",
+    "example": "She took a <pragmatic> approach to the problem.",
+    "example_es": ""
+  },
+  {
+    "front": "Ambivalent",
+    "back": "ambivalente",
+    "ipa": "",
+    "example": "He felt <ambivalent> about the job offer.",
     "example_es": ""
   }
 ]

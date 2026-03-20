@@ -252,13 +252,6 @@
     "example_es": ""
   },
   {
-    "front": "Backpack",
-    "back": "mochila",
-    "ipa": "",
-    "example": "My <backpack> is heavy today.",
-    "example_es": ""
-  },
-  {
     "front": "Notebook",
     "back": "cuaderno",
     "ipa": "",
@@ -277,6 +270,13 @@
     "back": "lápiz",
     "ipa": "",
     "example": "I write with a <pencil> in class.",
+    "example_es": ""
+  },
+  {
+    "front": "Lunchbox",
+    "back": "lonchera / fiambrera",
+    "ipa": "",
+    "example": "Pack your <lunchbox> for school.",
     "example_es": ""
   }
 ]

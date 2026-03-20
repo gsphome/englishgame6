@@ -259,13 +259,6 @@
     "example_es": ""
   },
   {
-    "front": "Hiking",
-    "back": "senderismo",
-    "ipa": "",
-    "example": "We went <hiking> in the mountains.",
-    "example_es": ""
-  },
-  {
     "front": "Skating",
     "back": "patinaje",
     "ipa": "",
@@ -277,6 +270,13 @@
     "back": "voluntariado",
     "ipa": "",
     "example": "She enjoys <volunteering> at the shelter.",
+    "example_es": ""
+  },
+  {
+    "front": "Stretching",
+    "back": "estiramiento",
+    "ipa": "",
+    "example": "<Stretching> before exercise prevents injuries.",
     "example_es": ""
   }
 ]

@@ -18,22 +18,10 @@
     "example_es": "Lleva paraguas — está lloviendo a cántaros."
   },
   {
-    "front": "Under the weather",
-    "back": "Sentirse mal / enfermo",
-    "example": "I'm feeling <under the weather> today.",
-    "example_es": "Me siento mal hoy."
-  },
-  {
     "front": "Hold on",
     "back": "Espera un momento",
     "example": "<Hold on>, I'll be right back.",
     "example_es": "Espera, ya vuelvo."
-  },
-  {
-    "front": "Time flies",
-    "back": "El tiempo vuela",
-    "example": "<Time flies> when you're having fun.",
-    "example_es": "<El tiempo vuela> cuando te diviertes."
   },
   {
     "front": "Once in a blue moon",
@@ -238,5 +226,17 @@
     "back": "Como siempre / como de costumbre",
     "example": "He was late, <as usual>.",
     "example_es": "Llegó tarde, como siempre."
+  },
+  {
+    "front": "Piece of cake",
+    "back": "pan comido / muy fácil",
+    "example": "The test was a <piece of cake>.",
+    "example_es": ""
+  },
+  {
+    "front": "On cloud nine",
+    "back": "estar en las nubes de felicidad",
+    "example": "She was <on cloud nine> after getting the job.",
+    "example_es": ""
   }
 ]

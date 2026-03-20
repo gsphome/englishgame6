@@ -273,10 +273,10 @@
     "example_es": "Descanso el <fin de semana>."
   },
   {
-    "front": "Pillow",
-    "back": "almohada",
+    "front": "Towel",
+    "back": "toalla",
     "ipa": "",
-    "example": "I need a soft <pillow> to sleep well.",
+    "example": "Grab a <towel> after your shower.",
     "example_es": ""
   }
 ]

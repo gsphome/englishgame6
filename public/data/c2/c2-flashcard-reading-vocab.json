@@ -259,13 +259,6 @@
     "example_es": ""
   },
   {
-    "front": "Obfuscate",
-    "back": "ofuscar / confundir",
-    "ipa": "",
-    "example": "The politician tried to <obfuscate> the issue.",
-    "example_es": ""
-  },
-  {
     "front": "Perspicacious",
     "back": "perspicaz",
     "ipa": "",
@@ -277,6 +270,13 @@
     "back": "recalcitrante / rebelde",
     "ipa": "",
     "example": "The <recalcitrant> student refused to follow rules.",
+    "example_es": ""
+  },
+  {
+    "front": "Equanimity",
+    "back": "ecuanimidad",
+    "ipa": "",
+    "example": "She faced the crisis with remarkable <equanimity>.",
     "example_es": ""
   }
 ]
