@@ -210,11 +210,12 @@ html.dark .completion-component__sentence {
 }
 
 .completion-component__input--incorrect {
-  border-color: var(--theme-error, #ef4444);
-  background-color: #fee2e2;
-  color: #dc2626;
-  border-width: 2px;
-  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+  border-color: #dc2626;
+  background-color: #fecaca;
+  color: #991b1b;
+  border-width: 2.5px;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.25);
+  font-weight: 600;
 }
 
 .completion-component__input--disabled {
