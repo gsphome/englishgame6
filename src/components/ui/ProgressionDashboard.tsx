@@ -98,17 +98,18 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
     }
   }, [completedModulesCount, progression]);
 
-  // Auto-expand unit with next recommended module
+  // Auto-expand unit with next recommended module on initial load only
+  const hasAutoExpanded = React.useRef(false);
   React.useEffect(() => {
-    if (nextRecommended && !expandedUnits.has(nextRecommended.unit)) {
+    if (nextRecommended && !hasAutoExpanded.current) {
+      hasAutoExpanded.current = true;
       setExpandedUnits(prev => new Set([...prev, nextRecommended.unit]));
     }
-  }, [nextRecommended, expandedUnits]);
+  }, [nextRecommended]);
 
-  // Scroll to next module when unit is expanded
+  // Scroll to next module after initial auto-expand
   React.useEffect(() => {
-    if (nextRecommended && expandedUnits.has(nextRecommended.unit)) {
-      // Small delay to let the DOM update after expansion
+    if (nextRecommended && hasAutoExpanded.current) {
       const timer = setTimeout(() => {
         const nextModuleElement = document.querySelector('.progression-dashboard__module--next');
         if (nextModuleElement) {
@@ -120,7 +121,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
       }, 300);
       return () => clearTimeout(timer);
     }
-  }, [nextRecommended, expandedUnits]);
+  }, [nextRecommended]);
 
   const toggleUnit = (unit: number) => {
     const newExpanded = new Set(expandedUnits);
