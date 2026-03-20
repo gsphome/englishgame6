@@ -7,6 +7,7 @@ import { useUserStore } from '../../stores/userStore';
 import { useSettingsStore } from '../../stores/settingsStore';
 import { useTranslation } from '../../utils/i18n';
 import { useEscapeKey } from '../../hooks/useEscapeKey';
+import { EditableInput } from './EditableInput';
 import '../../styles/components/compact-profile.css';
 import '../../styles/components/modal-buttons.css';
 
@@ -59,6 +60,8 @@ export const CompactProfile: React.FC<CompactProfileProps> = ({ isOpen, onClose 
     handleSubmit,
     formState: { errors },
     watch,
+    setValue,
+    trigger,
   } = useForm<ProfileFormData>({
     resolver: zodResolver(profileSchema),
     defaultValues: user || {
@@ -76,6 +79,7 @@ export const CompactProfile: React.FC<CompactProfileProps> = ({ isOpen, onClose 
 
   const categories = ['Vocabulary', 'Grammar', 'PhrasalVerbs', 'Idioms'] as const;
   const watchedDifficulty = watch('preferences.difficulty');
+  const watchedName = watch('name');
 
   const onSubmit = (data: ProfileFormData) => {
     const newUser = {
@@ -138,8 +142,9 @@ export const CompactProfile: React.FC<CompactProfileProps> = ({ isOpen, onClose 
                 <label className="compact-profile__label compact-profile__label--required">
                   {t('profile.name')}
                 </label>
-                <input
-                  {...register('name')}
+                <EditableInput
+                  value={watchedName || ''}
+                  onChange={v => { setValue('name', v, { shouldValidate: true }); trigger('name'); }}
                   className={`compact-profile__input ${errors.name ? 'compact-profile__input--error' : ''}`}
                   placeholder={t('profile.enterName')}
                 />

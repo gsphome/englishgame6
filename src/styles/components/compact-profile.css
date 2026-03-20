@@ -205,11 +205,22 @@
   font-size: 0.8125rem;
   color: var(--theme-text-primary, #111827);
   transition: all 0.2s ease;
+  outline: none;
+  cursor: text;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-user-select: text;
+  user-select: text;
+  line-height: 1.5;
+  min-height: 2.25rem;
 }
 
-.compact-profile__input::placeholder {
+.compact-profile__input[data-empty='true']::before {
+  content: attr(data-placeholder);
   color: var(--theme-text-tertiary, #9ca3af);
   font-weight: 400;
+  pointer-events: none;
 }
 
 .compact-profile__input:focus {
