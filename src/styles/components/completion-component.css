@@ -170,6 +170,27 @@ html.dark .completion-component__text {
   color: var(--theme-text-primary, #ffffff);
 }
 
+/* Sentence container feedback states */
+.completion-component__sentence-container--correct {
+  background: linear-gradient(to right, #ecfdf5, #d1fae5);
+  border-color: #86efac;
+}
+
+.completion-component__sentence-container--incorrect {
+  background: linear-gradient(to right, #fef2f2, #fee2e2);
+  border-color: #fca5a5;
+}
+
+html.dark .completion-component__sentence-container--correct {
+  background: linear-gradient(to right, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.15));
+  border-color: rgba(52, 211, 153, 0.4);
+}
+
+html.dark .completion-component__sentence-container--incorrect {
+  background: linear-gradient(to right, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.15));
+  border-color: rgba(248, 113, 113, 0.4);
+}
+
 html.dark .completion-component__sentence {
   color: var(--theme-text-primary, #ffffff);
 }
@@ -202,20 +223,16 @@ html.dark .completion-component__sentence {
 /* Input States */
 .completion-component__input--correct {
   border-color: #059669;
-  background-color: #bbf7d0;
-  color: #065f46;
-  border-width: 2.5px;
-  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.25);
-  font-weight: 600;
+  background-color: #d1fae5;
+  border-width: 2px;
+  box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.2);
 }
 
 .completion-component__input--incorrect {
   border-color: #dc2626;
-  background-color: #fecaca;
-  color: #991b1b;
-  border-width: 2.5px;
-  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.25);
-  font-weight: 600;
+  background-color: #fee2e2;
+  border-width: 2px;
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
 }
 
 .completion-component__input--disabled {
@@ -237,20 +254,17 @@ html.dark .completion-component__sentence {
 
 /* Dark mode input states */
 html.dark .completion-component__input--correct {
-  background-color: rgba(16, 185, 129, 0.3);
-  color: #6ee7b7;
+  background-color: rgba(16, 185, 129, 0.25);
   border-color: #34d399;
-  border-width: 2.5px;
-  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.3);
-  font-weight: 600;
+  border-width: 2px;
+  box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.25);
 }
 
 html.dark .completion-component__input--incorrect {
-  background-color: rgba(239, 68, 68, 0.25);
-  color: #fca5a5;
+  background-color: rgba(239, 68, 68, 0.2);
   border-color: #f87171;
   border-width: 2px;
-  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.25);
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
 }
 
 html.dark .completion-component__input--disabled {
