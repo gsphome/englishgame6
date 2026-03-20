@@ -144,7 +144,10 @@ export const CompactProfile: React.FC<CompactProfileProps> = ({ isOpen, onClose 
                 </label>
                 <EditableInput
                   value={watchedName || ''}
-                  onChange={v => { setValue('name', v, { shouldValidate: true }); trigger('name'); }}
+                  onChange={v => {
+                    setValue('name', v, { shouldValidate: true });
+                    trigger('name');
+                  }}
                   className={`compact-profile__input ${errors.name ? 'compact-profile__input--error' : ''}`}
                   placeholder={t('profile.enterName')}
                 />
