@@ -215,7 +215,7 @@
   }
 }
 
-/* MOBILE: 311px - 419px - Ultra compact (consolidated range) */
+/* MOBILE: 311px - 419px - Compact with icon visible */
 @media (min-width: 311px) and (max-width: 419px) {
   .score-display-compact__container {
     padding: 0 0.25rem;
@@ -224,25 +224,15 @@
   }
 
   .score-display-compact__container--in-game {
-    min-width: 70px;
-    max-width: none;
+    min-width: 100px;
   }
 
   .score-display-compact__container--full {
-    min-width: 80px;
-    max-width: none;
+    min-width: 130px;
   }
 
   .score-display-compact__icon {
-    display: none;
-  }
-
-  .score-display-compact__divider {
-    display: none;
-  }
-
-  .score-display-compact__progress {
-    display: none;
+    font-size: 0.8rem;
   }
 
   .score-display-compact__values {
@@ -253,9 +243,23 @@
 
   .score-display-compact__accuracy {
     min-width: 16px;
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     text-align: center;
     flex-shrink: 0;
+  }
+
+  .score-display-compact__divider {
+    height: 14px;
+    margin: 0 0.125rem;
+  }
+
+  .score-display-compact__progress-label {
+    font-size: 0.6rem;
+  }
+
+  .score-display-compact__progress-bar {
+    width: 24px;
+    height: 3px;
   }
 }
 
@@ -306,52 +310,69 @@
 
 /* === GLOBAL MOBILE RULES === */
 
-/* Hide progress section for all mobile screens */
+/* Compact score display for mobile screens */
 @media (max-width: 519px) {
-  .score-display-compact__progress {
-    display: none !important;
-  }
-
-  .score-display-compact__icon {
-    display: none !important;
-  }
-
-  .score-display-compact__divider {
-    display: none !important;
-  }
-
-  .score-display-compact__container--in-game {
-    min-width: 80px !important;
-    max-width: none !important;
-  }
-
-  .score-display-compact__container--full {
-    min-width: 90px !important;
-    max-width: none !important;
-  }
-
-  .score-display-compact--menu {
-    min-width: 70px !important;
-    max-width: none !important;
-  }
-
   .score-display-compact__container {
-    padding: 0 0.375rem !important;
-    height: 28px !important;
-    justify-content: center !important;
+    padding: 0 0.375rem;
+    height: 28px;
+    justify-content: center;
     white-space: nowrap;
   }
 
+  .score-display-compact__container--in-game {
+    min-width: 110px;
+  }
+
+  .score-display-compact__container--full {
+    min-width: 150px;
+  }
+
+  .score-display-compact__icon {
+    font-size: 0.875rem;
+  }
+
+  .score-display-compact__divider {
+    height: 16px;
+    margin: 0 0.25rem;
+  }
+
+  .score-display-compact__progress {
+    gap: 0.25rem;
+  }
+
+  .score-display-compact__progress-label {
+    font-size: 0.625rem;
+  }
+
+  .score-display-compact__progress-bar {
+    width: 28px;
+    height: 3px;
+  }
+
   .score-display-compact__accuracy {
-    min-width: 16px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     text-align: center;
   }
 
   .score-display-compact__values {
-    gap: 0.25rem;
+    gap: 0.125rem;
     justify-content: center;
     white-space: nowrap;
+  }
+}
+
+/* MOBILE TINY: ≤360px - Hide progress only */
+@media (max-width: 360px) {
+  .score-display-compact__progress {
+    display: none;
+  }
+
+  .score-display-compact__divider {
+    display: none;
+  }
+
+  .score-display-compact__container--full {
+    min-width: 110px;
   }
 }
 
