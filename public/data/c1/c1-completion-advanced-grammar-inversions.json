@@ -216,7 +216,7 @@
     "tip": "'Only + time expression' at the start triggers inversion in the main clause."
   },
   {
-    "sentence": "Had I known, ______ I would have helped.",
+    "sentence": "Had I known about the problem, ______ immediately.",
     "options": [
       "I would have helped",
       "would I have helped",
@@ -224,8 +224,8 @@
       "did I help"
     ],
     "correct": "I would have helped",
-    "explanation": "En oraciones condicionales sin <if>, se invierte el sujeto y el verbo auxiliar.",
-    "tip": "Formal inversion: the auxiliary comes before the subject for emphasis."
+    "explanation": "After <Had I known> (inverted conditional), the main clause follows: <I would have helped>. This is a third conditional with inversion replacing 'If I had known'.",
+    "tip": "After an inverted conditional with 'Had + subject + past participle', complete the main clause."
   },
   {
     "sentence": "Should you need anything, ______ me know.",

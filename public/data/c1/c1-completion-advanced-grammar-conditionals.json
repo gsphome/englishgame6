@@ -9,7 +9,7 @@
     ],
     "correct": "were",
     "explanation": "En el segundo condicional (situaciones hipotéticas), se usa <were> para todos los pronombres, incluido <I>.",
-    "tip": "In hypothetical situations, use 'were' for all subjects."
+    "tip": "In hypothetical situations, use the subjunctive form for all subjects."
   },
   {
     "sentence": "Had I known about the traffic, I ______ a different route.",
@@ -141,7 +141,7 @@
     ],
     "correct": "were",
     "explanation": "En el segundo condicional, se prefiere <were> sobre <was> para todos los sujetos al expresar una hipótesis.",
-    "tip": "In hypothetical situations, use 'were' for all subjects."
+    "tip": "In hypothetical situations, use the subjunctive form for all subjects."
   },
   {
     "sentence": "If the weather ______ better, we would have gone to the beach.",
@@ -249,7 +249,7 @@
     ],
     "correct": "were",
     "explanation": "Segundo condicional para una situación hipotética irreal en el presente. Se usa <were> para todos los sujetos.",
-    "tip": "In hypothetical situations, use 'were' for all subjects."
+    "tip": "In hypothetical situations, use the subjunctive form for all subjects."
   },
   {
     "sentence": "Unless it ______ tomorrow, we will go for a picnic.",
@@ -321,7 +321,7 @@
     ],
     "correct": "were",
     "explanation": "Segundo condicional para dar un consejo. Se usa <were> para todos los sujetos.",
-    "tip": "In hypothetical situations, use 'were' for all subjects."
+    "tip": "In hypothetical situations, use the subjunctive form for all subjects."
   },
   {
     "sentence": "She ______ if she knew the answer.",
@@ -441,7 +441,7 @@
     ],
     "correct": "were",
     "explanation": "Segundo condicional para una situación hipotética irreal.",
-    "tip": "In hypothetical situations, use 'were' for all subjects."
+    "tip": "In hypothetical situations, use the subjunctive form for all subjects."
   },
   {
     "sentence": "They ______ if they had known about the party.",
@@ -477,6 +477,6 @@
     ],
     "correct": "were",
     "explanation": "Segundo condicional para una situación hipotética irreal.",
-    "tip": "In hypothetical situations, use 'were' for all subjects."
+    "tip": "In hypothetical situations, use the subjunctive form for all subjects."
   }
 ]
