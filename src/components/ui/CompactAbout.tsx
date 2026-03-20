@@ -132,7 +132,9 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
               <div className="compact-about__developer-info">
                 <span className="compact-about__developer-name">👨‍💻 Genil Suárez</span>
                 <div className="compact-about__developer-row">
-                <span className="compact-about__developer-title">{t('about.developerTitle')}</span>
+                  <span className="compact-about__developer-title">
+                    {t('about.developerTitle')}
+                  </span>
                   <a
                     href="https://github.com/genilsuarez"
                     target="_blank"
