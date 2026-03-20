@@ -131,18 +131,20 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
             <div className="compact-about__developer">
               <div className="compact-about__developer-info">
                 <span className="compact-about__developer-name">👨‍💻 Genil Suárez</span>
+                <div className="compact-about__developer-row">
                 <span className="compact-about__developer-title">{t('about.developerTitle')}</span>
+                  <a
+                    href="https://github.com/genilsuarez"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="compact-about__developer-link"
+                    aria-label={t('about.githubProfile')}
+                  >
+                    <Github className="compact-about__link-icon" />
+                    <span>GitHub</span>
+                  </a>
+                </div>
               </div>
-              <a
-                href="https://github.com/genilsuarez"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="compact-about__developer-link"
-                aria-label={t('about.githubProfile')}
-              >
-                <Github className="compact-about__link-icon" />
-                <span>GitHub</span>
-              </a>
             </div>
           </div>
 
