@@ -513,9 +513,10 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
               )}
             </div>
 
-            {/* Interactive Content - Tooltips */}
+            {/* Interactive Content - Tooltips (skip if section already has inline definitions) */}
             {currentSection?.interactive?.tooltips &&
-              currentSection.interactive.tooltips.length > 0 && (
+              currentSection.interactive.tooltips.length > 0 &&
+              !/[•·]\s*<[^>]+>\s*[–—-]/.test(currentSection.content || '') && (
                 <div className="reading-component__tooltips">
                   <h4 className="reading-component__tooltips-title">
                     {t('reading.component.keyTerm')}
