@@ -12,7 +12,7 @@
       "id": "intro",
       "title": "Talking About Health",
       "type": "introduction",
-      "content": "Health is one of the most important topics in life. When you travel or live in an English-speaking country, you need to know how to talk about health problems, visit a doctor, or buy medicine. This lesson teaches you essential health vocabulary and phrases. Remember: if you have a serious health problem, always seek professional medical help."
+      "content": "Health is one of the most important topics in life. When you travel or live in an English-speaking country, you need to know how to talk about health problems, visit a doctor, or buy medicine. This lesson teaches you essential health vocabulary and phrases.\n\nRemember: if you have a serious health problem, always seek professional medical help."
     },
     {
       "id": "body-symptoms",
@@ -24,13 +24,13 @@
       "id": "doctor-pharmacy",
       "title": "At the Doctor and Pharmacy",
       "type": "theory",
-      "content": "When you're sick, you <see a doctor> or <go to the doctor>. The doctor will <examine> you and ask about your symptoms. They might <prescribe> medicine - give you a written order for medication. You take this <prescription> to a <pharmacy> or <drugstore> to get your medicine. Common medicines: <pain reliever> (for pain), <cough syrup> (for coughs), <antibiotics> (for infections). Always follow the <dosage> - how much medicine to take."
+      "content": "When you're sick, you <see a doctor> or <go to the doctor>. The doctor will <examine> you and ask about your symptoms. They might <prescribe> medicine - give you a written order for medication.\n\nYou take this <prescription> to a <pharmacy> or <drugstore> to get your medicine. Common medicines: <pain reliever> (for pain), <cough syrup> (for coughs), <antibiotics> (for infections). Always follow the <dosage> - how much medicine to take."
     },
     {
       "id": "healthy-habits",
       "title": "Staying Healthy",
       "type": "theory",
-      "content": "Prevention is better than cure! Healthy habits include: <exercise> or <work out> regularly, <eat a balanced diet> with fruits and vegetables, <drink plenty of water>, <get enough sleep> (7-8 hours), <wash your hands> frequently, and <avoid stress>. Regular <check-ups> with your doctor help catch problems early. Don't smoke, and limit alcohol. A healthy lifestyle helps you feel better and prevents illness."
+      "content": "Prevention is better than cure! Healthy habits include: <exercise> or <work out> regularly, <eat a balanced diet> with fruits and vegetables, <drink plenty of water>, <get enough sleep> (7-8 hours), <wash your hands> frequently, and <avoid stress>. Regular <check-ups> with your doctor help catch problems early.\n\nDon't smoke, and limit alcohol. A healthy lifestyle helps you feel better and prevents illness."
     },
     {
       "id": "examples",
@@ -54,7 +54,7 @@
       "id": "summary",
       "title": "Health and Wellness Summary",
       "type": "summary",
-      "content": "Remember these key points: Learn body parts and common symptoms so you can describe problems. Know how to ask for help: <I need to see a doctor> or <Where is the nearest pharmacy?> Use <should> for health advice: <You should rest>. Take care of your health with good habits. In emergencies, call emergency services (911 in USA/Canada, 999 in UK). Don't be afraid to ask for help when you're sick!",
+      "content": "Remember these key points: Learn body parts and common symptoms so you can describe problems. Know how to ask for help: <I need to see a doctor> or <Where is the nearest pharmacy?> Use <should> for health advice: <You should rest>. Take care of your health with good habits.\n\nIn emergencies, call emergency services (911 in USA/Canada, 999 in UK). Don't be afraid to ask for help when you're sick!",
       "interactive": {
         "tooltips": [
           {
