@@ -907,7 +907,7 @@
   line-height: var(--reading-line-height-normal, 1.6);
 }
 
-/* === INTERACTIVE CONTENT - TOOLTIPS - Local touch targets === */
+/* === INTERACTIVE CONTENT - TOOLTIPS - Always-visible key term cards === */
 .reading-component__tooltips {
   margin: 0.75rem 0;
 }
@@ -922,57 +922,30 @@
 
 .reading-component__tooltips-grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: var(--reading-spacing-sm, 0.5rem);
 }
 
-.reading-component__tooltip-trigger {
-  position: relative;
+.reading-component__tooltip-card {
   background: var(--reading-bg-secondary);
   border: 1px solid var(--reading-border-primary);
   border-radius: var(--reading-border-radius, 0.5rem);
   padding: var(--reading-spacing-sm, 0.5rem) var(--reading-spacing-md);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: var(--reading-font-size-base);
-  color: var(--reading-text-primary);
-  min-height: var(--reading-touch-target, 44px);
   display: flex;
-  align-items: center;
-}
-
-.reading-component__tooltip-trigger:hover {
-  background: var(--reading-bg-tertiary);
-  border-color: var(--reading-accent-primary);
-}
-
-.reading-component__tooltip-trigger--active {
-  background: var(--reading-accent-primary);
-  color: var(--theme-text-on-accent, #ffffff);
-  border-color: var(--reading-accent-primary);
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .reading-component__tooltip-term {
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--reading-accent-primary);
   line-height: var(--reading-line-height-normal, 1.6);
 }
 
-.reading-component__tooltip-content {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  margin-top: var(--reading-spacing-xs, 0.25rem);
-  background: var(--reading-bg-primary);
-  border: 1px solid var(--reading-border-primary);
-  border-radius: var(--reading-border-radius, 0.5rem);
-  padding: var(--reading-spacing-sm, 0.5rem);
-  box-shadow: var(--reading-shadow);
-  z-index: 10;
+.reading-component__tooltip-definition {
   font-size: var(--reading-font-size-sm, 0.875rem);
   line-height: var(--reading-line-height-normal, 1.6);
-  color: var(--reading-text-primary);
-  min-width: 200px;
+  color: var(--reading-text-secondary);
 }
 
 /* === INTERACTIVE CONTENT - EXPANDABLES - Local touch targets === */
@@ -1362,12 +1335,6 @@
     max-width: 70ch; /* Optimal reading width for desktop */
   }
 
-  /* Desktop: Absolute positioned tooltips */
-  .reading-component__tooltip-content {
-    position: absolute;
-    min-width: 250px;
-  }
-
   /* Desktop: Objectives page enhancements */
   .reading-component__objectives-centered {
     padding: 1rem 1.5rem;
@@ -1424,13 +1391,6 @@
     grid-template-columns: 1fr;
     gap: 0.375rem;
     padding: 0.375rem;
-  }
-
-  /* Mobile: Relative positioned tooltips (no absolute) */
-  .reading-component__tooltip-content {
-    position: relative;
-    margin-top: var(--reading-spacing-sm, 0.5rem);
-    min-width: auto;
   }
 
   /* Mobile: Compact grammar points */
@@ -1692,19 +1652,9 @@ html.dark .reading-component__objectives-centered {
 }
 
 /* Dark theme - Tooltips */
-html.dark .reading-component__tooltip-trigger {
+html.dark .reading-component__tooltip-card {
   background: var(--reading-bg-secondary);
   border-color: var(--reading-border-primary);
-}
-
-html.dark .reading-component__tooltip-trigger:hover {
-  background: var(--reading-bg-tertiary);
-}
-
-html.dark .reading-component__tooltip-content {
-  background: var(--reading-bg-primary);
-  border-color: var(--reading-border-primary);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* Dark theme - Expandables */
@@ -1825,7 +1775,6 @@ html.dark .reading-component__grammar-mistake-item {
 
 /* Focus indicators - Local to reading component */
 .reading-component__no-data-btn:focus,
-.reading-component__tooltip-trigger:focus,
 .reading-component__expandable-trigger:focus {
   outline: 2px solid var(--reading-accent-primary);
   outline-offset: 2px;
@@ -1833,7 +1782,6 @@ html.dark .reading-component__grammar-mistake-item {
 
 /* Focus visible for keyboard navigation */
 .reading-component__no-data-btn:focus-visible,
-.reading-component__tooltip-trigger:focus-visible,
 .reading-component__expandable-trigger:focus-visible {
   outline: 3px solid var(--reading-accent-primary);
   outline-offset: 3px;
@@ -1843,7 +1791,6 @@ html.dark .reading-component__grammar-mistake-item {
 @media (prefers-reduced-motion: reduce) {
   .reading-component__vocabulary-card,
   .reading-component__grammar-point,
-  .reading-component__tooltip-trigger,
   .reading-component__expandable-trigger,
   .reading-component__summary-section-trigger,
   .reading-component__no-data-btn,
@@ -1881,12 +1828,11 @@ html.dark .reading-component__grammar-mistake-item {
   .reading-component__grammar-point,
   .reading-component__objectives,
   .reading-component__expandable,
-  .reading-component__tooltip-trigger {
+  .reading-component__tooltip-card {
     border-width: 2px;
   }
 
   .reading-component__no-data-btn:focus,
-  .reading-component__tooltip-trigger:focus,
   .reading-component__expandable-trigger:focus {
     outline-width: 3px;
   }
@@ -1910,7 +1856,6 @@ html.dark .reading-component__grammar-mistake-item {
     break-inside: avoid;
   }
 
-  .reading-component__tooltip-trigger,
   .reading-component__expandable-trigger {
     cursor: default;
   }

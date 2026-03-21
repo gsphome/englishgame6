@@ -21,7 +21,6 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(-1); // Start at -1 for objectives page
   const [startTime] = useState(Date.now());
   const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set());
-  const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
   const [vocabularyExpanded, setVocabularyExpanded] = useState(false);
   const [grammarExpanded, setGrammarExpanded] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -74,7 +73,6 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
       setCurrentSectionIndex(currentSectionIndex + 1);
       // Reset interactive states when changing sections
       setExpandedItems(new Set());
-      setActiveTooltip(null);
     } else {
       // End of reading
       const timeSpent = Math.floor((Date.now() - startTime) / 1000);
@@ -114,7 +112,6 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
       setCurrentSectionIndex(currentSectionIndex - 1);
       // Reset interactive states when changing sections
       setExpandedItems(new Set());
-      setActiveTooltip(null);
     }
   }, [currentSectionIndex]);
 
@@ -128,10 +125,6 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
       }
       return newSet;
     });
-  }, []);
-
-  const handleTooltipToggle = useCallback((term: string) => {
-    setActiveTooltip(prev => (prev === term ? null : term));
   }, []);
 
   // Keyboard navigation
@@ -519,27 +512,18 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
               !/[•·]\s*<[^>]+>\s*[–—-]/.test(currentSection.content || '') && (
                 <div className="reading-component__tooltips">
                   <h4 className="reading-component__tooltips-title">
-                    {t('reading.component.keyTerm')}
+                    {currentSection.interactive.tooltips.length === 1
+                      ? t('reading.component.keyTerm')
+                      : t('reading.component.keyTerms')}
                   </h4>
                   <div className="reading-component__tooltips-grid">
                     {currentSection.interactive.tooltips.map((tooltip, index) => (
-                      <button
-                        key={index}
-                        className={`reading-component__tooltip-trigger ${
-                          activeTooltip === tooltip.term
-                            ? 'reading-component__tooltip-trigger--active'
-                            : ''
-                        }`}
-                        onClick={() => handleTooltipToggle(tooltip.term)}
-                        aria-expanded={activeTooltip === tooltip.term}
-                      >
+                      <div key={index} className="reading-component__tooltip-card">
                         <span className="reading-component__tooltip-term">{tooltip.term}</span>
-                        {activeTooltip === tooltip.term && (
-                          <div className="reading-component__tooltip-content">
-                            {tooltip.definition}
-                          </div>
-                        )}
-                      </button>
+                        <span className="reading-component__tooltip-definition">
+                          {tooltip.definition}
+                        </span>
+                      </div>
                     ))}
                   </div>
                 </div>
