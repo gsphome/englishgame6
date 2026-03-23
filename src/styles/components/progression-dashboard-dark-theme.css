@@ -84,8 +84,8 @@
 }
 
 .progression-dashboard--dark-theme .progression-dashboard__module--next {
-  background: rgba(59, 130, 246, 0.08);
-  border-color: rgba(96, 165, 250, 0.4);
+  background: linear-gradient(135deg, #1e2a3e 0%, #1a2744 100%);
+  border-color: rgba(96, 165, 250, 0.6);
 }
 
 /* Softer next badge in dark mode */

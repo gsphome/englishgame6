@@ -381,11 +381,7 @@
 
 .progression-dashboard__module--next {
   border-color: var(--theme-accent-primary, #3b82f6);
-  background: linear-gradient(
-    135deg,
-    var(--theme-bg-primary, #f9fafb) 0%,
-    rgba(59, 130, 246, 0.05) 100%
-  );
+  background: linear-gradient(135deg, #e0edff 0%, #c7dbff 100%);
 }
 
 .progression-dashboard__module-icon {
