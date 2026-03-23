@@ -36,27 +36,7 @@
       "id": "rhetorical-function",
       "title": "The Rhetorical Power of Figurative Language",
       "type": "theory",
-      "content": "At the C2 level, understanding why a writer chooses a phrasal verb or idiom is as important as understanding what it means:\n\n<Tease out> implies patience and delicacy — the writer is handling fragile ideas.\n<Push back against> implies intellectual courage — the writer is challenging authority.\n<Grapple with> implies honest struggle — the writer acknowledges difficulty.\n<Do away with> implies decisive action — the writer is making a bold claim.\n\nThese choices are never accidental. They signal the writer's stance, confidence, and relationship to the material.",
-      "interactive": {
-        "tooltips": [
-          {
-            "term": "Tease out",
-            "definition": "To carefully extract or identify subtle elements"
-          },
-          {
-            "term": "Push back against",
-            "definition": "To resist or challenge an idea or authority"
-          },
-          {
-            "term": "Grapple with",
-            "definition": "To struggle intellectually with a complex problem"
-          },
-          {
-            "term": "Do away with",
-            "definition": "To eliminate or abolish something"
-          }
-        ]
-      }
+      "content": "At the C2 level, understanding why a writer chooses a phrasal verb or idiom is as important as understanding what it means:\n\n<Tease out> implies patience and delicacy — the writer is handling fragile ideas.\n<Push back against> implies intellectual courage — the writer is challenging authority.\n<Grapple with> implies honest struggle — the writer acknowledges difficulty.\n<Do away with> implies decisive action — the writer is making a bold claim.\n\nThese choices are never accidental. They signal the writer's stance, confidence, and relationship to the material."
     },
     {
       "id": "cognitive-metaphor",

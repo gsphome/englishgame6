@@ -54,15 +54,7 @@
       "id": "summary",
       "title": "Digital Citizenship",
       "type": "summary",
-      "content": "Social media is a powerful tool that requires responsible use. Key vocabulary includes platform names, features (post, like, share, follow), and concepts (viral, algorithm, influencer). Be a good <digital citizen>: think before you post, respect others, verify information, protect your privacy, and maintain healthy boundaries.\n\nRemember that social media shows curated versions of reality - don't compare your life to others' highlight reels. Use these platforms to connect meaningfully, learn, and share positively. Balance online and offline life for better well-being.",
-      "interactive": {
-        "tooltips": [
-          {
-            "term": "digital citizen",
-            "definition": "A person who uses technology and the internet responsibly."
-          }
-        ]
-      }
+      "content": "Social media is a powerful tool that requires responsible use. Key vocabulary includes platform names, features (post, like, share, follow), and concepts (viral, algorithm, influencer). Be a good <digital citizen>: think before you post, respect others, verify information, protect your privacy, and maintain healthy boundaries.\n\nRemember that social media shows curated versions of reality - don't compare your life to others' highlight reels. Use these platforms to connect meaningfully, learn, and share positively. Balance online and offline life for better well-being."
     }
   ],
   "keyVocabulary": [

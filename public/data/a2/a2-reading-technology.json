@@ -48,21 +48,13 @@
       "id": "examples-2",
       "title": "Tech Support Conversations",
       "type": "examples",
-      "content": "Example 1: WIFI PROBLEM - <My internet isn't working.> <Have you tried turning the router off and on again?> <Yes, but it's still not connecting.> <Let me check the settings.>\n\nExample 2: NEW PHONE - <How do I download an app?> <Open the App Store, search for the app, and tap Install.> <Thanks! That was easy.>\n\nExample 3: COMPUTER HELP - <My computer is very slow.> <You should close some programs and restart it.> <OK, I'll try that.>"
+      "content": "Example 1: WIFI PROBLEM - <My internet isn't working. — Have you tried turning the router off and on again? — Yes, but it's still not connecting. — Let me check the settings.>\n\nExample 2: NEW PHONE - <How do I download an app? — Open the App Store, search for the app, and tap Install. — Thanks! That was easy.>\n\nExample 3: COMPUTER HELP - <My computer is very slow. — You should close some programs and restart it. — OK, I'll try that.>"
     },
     {
       "id": "summary",
       "title": "Digital Literacy",
       "type": "summary",
-      "content": "Technology vocabulary is important in today's world. Learn the names of devices and their parts. Practice talking about apps, websites, and social media.\n\nWhen you have a tech problem, describe it clearly: <My phone won't charge> or <I can't connect to Wi-Fi>. Remember to stay safe online - use strong passwords and protect your privacy. Technology changes fast, so keep learning new terms!",
-      "interactive": {
-        "tooltips": [
-          {
-            "term": "My phone won't charge",
-            "definition": "My phone battery is not getting power"
-          }
-        ]
-      }
+      "content": "Technology vocabulary is important in today's world. Learn the names of devices and their parts. Practice talking about apps, websites, and social media.\n\nWhen you have a tech problem, describe it clearly: <My phone won't charge> or <I can't connect to Wi-Fi>. Remember to stay safe online - use strong passwords and protect your privacy. Technology changes fast, so keep learning new terms!"
     }
   ],
   "keyVocabulary": [

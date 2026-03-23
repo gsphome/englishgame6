@@ -48,25 +48,13 @@
       "id": "examples-2",
       "title": "Health Advice Dialogues",
       "type": "examples",
-      "content": "Example 1: FEELING ILL - <I have a terrible headache.> <You should take some paracetamol and drink water.> <Thanks, I'll do that.>\n\nExample 2: AT THE PHARMACY - <I need something for a cough.> <This cough syrup is very good. Take it three times a day.> <Thank you. How much is it?>\n\nExample 3: HEALTHY HABITS - <How do you stay healthy?> <I try to eat fruit every day and I walk to work.> <That's a great habit!>"
+      "content": "Example 1: FEELING ILL - <I have a terrible headache. — You should take some paracetamol and drink water. — Thanks, I'll do that.>\n\nExample 2: AT THE PHARMACY - <I need something for a cough. — This cough syrup is very good. Take it three times a day. — Thank you. How much is it?>\n\nExample 3: HEALTHY HABITS - <How do you stay healthy? — I try to eat fruit every day and I walk to work. — That's a great habit!>"
     },
     {
       "id": "summary",
       "title": "Health and Wellness Summary",
       "type": "summary",
-      "content": "Remember these key points: Learn body parts and common symptoms so you can describe problems. Know how to ask for help: <I need to see a doctor> or <Where is the nearest pharmacy?> Use <should> for health advice: <You should rest>. Take care of your health with good habits.\n\nIn emergencies, call emergency services (911 in USA/Canada, 999 in UK). Don't be afraid to ask for help when you're sick!",
-      "interactive": {
-        "tooltips": [
-          {
-            "term": "should",
-            "definition": "Used to give advice or say what is right to do"
-          },
-          {
-            "term": "You should rest",
-            "definition": "Advice telling someone to relax and recover"
-          }
-        ]
-      }
+      "content": "Remember these key points: Learn body parts and common symptoms so you can describe problems. Know how to ask for help: <I need to see a doctor> or <Where is the nearest pharmacy?> Use <should> for health advice: <You should rest>. Take care of your health with good habits.\n\nIn emergencies, call emergency services (911 in USA/Canada, 999 in UK). Don't be afraid to ask for help when you're sick!"
     }
   ],
   "keyVocabulary": [

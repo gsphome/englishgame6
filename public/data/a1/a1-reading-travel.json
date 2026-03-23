@@ -48,29 +48,13 @@
       "id": "examples-2",
       "title": "Travel Problem Solving",
       "type": "examples",
-      "content": "Example 1: LOST - <Excuse me, I'm lost. Where is the train station?> <Go straight and turn left. It's next to the park.> <Thank you very much!>\n\nExample 2: AT A SHOP - <How much is this?> <It's fifteen euros.> <Can I pay by card?> <Yes, of course.>\n\nExample 3: EMERGENCY - <I need help, please. I lost my passport.> <Don't worry. Go to the police station on Main Street.>"
+      "content": "Example 1: LOST - <Excuse me, I'm lost. Where is the train station? — Go straight and turn left. It's next to the park. — Thank you very much!>\n\nExample 2: AT A SHOP - <How much is this? — It's fifteen euros. — Can I pay by card? — Yes, of course.>\n\nExample 3: EMERGENCY - <I need help, please. I lost my passport. — Don't worry. Go to the police station on Main Street.>"
     },
     {
       "id": "summary",
       "title": "Travel Tips",
       "type": "summary",
-      "content": "Remember these key points: Always carry your passport and important documents. Learn basic phrases like <Where is...?>, <How much?>, and <I need help>. Be polite and say <please> and <thank you>.\n\nDon't be afraid to ask people to speak slowly. Keep a translation app on your phone for emergencies. Most importantly, enjoy your trip!",
-      "interactive": {
-        "tooltips": [
-          {
-            "term": "I need help",
-            "definition": "A phrase to ask for assistance"
-          },
-          {
-            "term": "please",
-            "definition": "A polite word used when asking for something"
-          },
-          {
-            "term": "thank you",
-            "definition": "A polite phrase to express gratitude"
-          }
-        ]
-      }
+      "content": "Remember these key points: Always carry your passport and important documents. Learn basic phrases like <Where is...?>, <How much?>, and <I need help>. Be polite and say <please> and <thank you>.\n\nDon't be afraid to ask people to speak slowly. Keep a translation app on your phone for emergencies. Most importantly, enjoy your trip!"
     }
   ],
   "keyVocabulary": [

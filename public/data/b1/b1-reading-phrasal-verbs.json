@@ -30,69 +30,13 @@
       "id": "examples",
       "title": "Multiple Meanings",
       "type": "examples",
-      "content": "Many phrasal verbs have more than one meaning:\n\nExample 1: <Pick up> — a) <Pick up the phone> (answer) b) <Pick up a language> (learn informally) c) <Pick up someone> (collect by car)\n\nExample 2: <Take off> — a) <The plane took off> (left the ground) b) <Take off your coat> (remove) c) <Her career took off> (became successful)\n\nExample 3: <Work out> — a) <I work out at the gym> (exercise) b) <Things worked out well> (had a good result) c) <Work out the answer> (calculate)",
-      "interactive": {
-        "tooltips": [
-          {
-            "term": "Pick up",
-            "definition": "To lift something, or to learn something informally."
-          },
-          {
-            "term": "Pick up the phone",
-            "definition": "To answer or make a telephone call."
-          },
-          {
-            "term": "Pick up a language",
-            "definition": "To learn a language naturally without formal study."
-          },
-          {
-            "term": "Pick up someone",
-            "definition": "To collect someone from a place, usually by car."
-          },
-          {
-            "term": "Take off",
-            "definition": "To leave the ground and begin flying, or to become successful."
-          },
-          {
-            "term": "The plane took off",
-            "definition": "The aircraft left the ground and began to fly."
-          }
-        ]
-      }
+      "content": "Example 1: PICK UP - <Pick up the phone (answer) / Pick up a language (learn informally) / Pick up someone (collect by car)>\n\nExample 2: TAKE OFF - <The plane took off (left the ground) / Take off your coat (remove) / Her career took off (became successful)>\n\nExample 3: WORK OUT - <I work out at the gym (exercise) / Things worked out well (had a good result) / Work out the answer (calculate)>"
     },
     {
       "id": "travel-leisure",
       "title": "Travel and Leisure",
       "type": "theory",
-      "content": "Phrasal verbs are essential when talking about travel and free time:\n\nPlanning: <Look into> different destinations before booking. <Set off> early to avoid traffic. <Check in> at the hotel when you arrive.\n\nDuring the trip: <Get around> the city by public transport. <Eat out> at local restaurants. <Hang out> at the beach.\n\nReturning: <Check out> of the hotel before noon. <Set off> for the airport. <Get back> home safely.\n\nPhrasal verbs for travel:\n• Look into - Research or investigate\n• Set off - Begin a journey\n• Check in/out - Register arrival/departure at a hotel\n• Get around - Travel within an area\n• Eat out - Have a meal at a restaurant\n• Get back - Return to a place",
-      "interactive": {
-        "tooltips": [
-          {
-            "term": "Look into",
-            "definition": "To investigate or examine something more closely."
-          },
-          {
-            "term": "Set off",
-            "definition": "To begin a journey or to cause something to start."
-          },
-          {
-            "term": "Check in",
-            "definition": "To register your arrival at a hotel, airport, or event."
-          },
-          {
-            "term": "Get around",
-            "definition": "To travel from place to place or to avoid something."
-          },
-          {
-            "term": "Eat out",
-            "definition": "To have a meal at a restaurant instead of at home."
-          },
-          {
-            "term": "Hang out",
-            "definition": "To spend time relaxing in a place or with friends."
-          }
-        ]
-      }
+      "content": "Phrasal verbs are essential when talking about travel and free time:\n\nPlanning: <Look into> different destinations before booking. <Set off> early to avoid traffic. <Check in> at the hotel when you arrive.\n\nDuring the trip: <Get around> the city by public transport. <Eat out> at local restaurants. <Hang out> at the beach.\n\nReturning: <Check out> of the hotel before noon. <Set off> for the airport. <Get back> home safely.\n\nPhrasal verbs for travel:\n• Look into - Research or investigate\n• Set off - Begin a journey\n• Check in/out - Register arrival/departure at a hotel\n• Get around - Travel within an area\n• Eat out - Have a meal at a restaurant\n• Get back - Return to a place"
     },
     {
       "id": "emotions-reactions",
@@ -104,7 +48,7 @@
       "id": "examples-2",
       "title": "Phrasal Verbs in Conversations",
       "type": "examples",
-      "content": "Example 1: PLANNING A TRIP - <We should look into flights to Barcelona. Let's set off early on Friday to avoid the rush.> <Good idea. I'll check in online the night before.>\n\nExample 2: EMOTIONAL SUPPORT - <You seem stressed. Do you want to talk about it?> <I've been bottling up my feelings about work. My boss let me down again.> <I'm sorry. Try not to put up with it — you should speak to HR.>\n\nExample 3: WEEKEND - <What did you get up to this weekend?> <We ate out on Saturday and hung out at the park on Sunday. It was really relaxing.>"
+      "content": "Example 1: PLANNING A TRIP - <We should look into flights to Barcelona. Let's set off early on Friday to avoid the rush. — Good idea. I'll check in online the night before.>\n\nExample 2: EMOTIONAL SUPPORT - <You seem stressed. Do you want to talk about it? — I've been bottling up my feelings about work. My boss let me down again. — I'm sorry. Try not to put up with it — you should speak to HR.>\n\nExample 3: WEEKEND - <What did you get up to this weekend? — We ate out on Saturday and hung out at the park on Sunday. It was really relaxing.>"
     },
     {
       "id": "summary",

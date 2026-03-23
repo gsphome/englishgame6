@@ -36,19 +36,7 @@
       "id": "register-analysis",
       "title": "Register and Appropriateness",
       "type": "theory",
-      "content": "Understanding register is crucial at C1:\n\nFormal academic: <The findings call into question previous assumptions.> (appropriate)\nInformal equivalent: <The findings blow holes in what we thought.> (too casual for papers)\n\nFormal professional: <We need to raise the bar on quality.> (appropriate in meetings)\nToo casual: <We need to step up our game.> (acceptable but less professional)\n\nThe key is matching your language to your audience and purpose. In a board meeting, <move the needle> is perfect. In an academic paper, <yield significant results> is more appropriate.",
-      "interactive": {
-        "tooltips": [
-          {
-            "term": "move the needle",
-            "definition": "To make a noticeable difference or impact"
-          },
-          {
-            "term": "yield significant results",
-            "definition": "To produce meaningful and measurable outcomes from an effort"
-          }
-        ]
-      }
+      "content": "Understanding register is crucial at C1:\n\nFormal academic: <The findings call into question previous assumptions.> (appropriate)\nInformal equivalent: <The findings blow holes in what we thought.> (too casual for papers)\n\nFormal professional: <We need to raise the bar on quality.> (appropriate in meetings)\nToo casual: <We need to step up our game.> (acceptable but less professional)\n\nThe key is matching your language to your audience and purpose. In a board meeting, <move the needle> is perfect. In an academic paper, <yield significant results> is more appropriate."
     },
     {
       "id": "nuance-collocations",
@@ -60,7 +48,7 @@
       "id": "examples-2",
       "title": "Advanced Idiomatic Usage",
       "type": "examples",
-      "content": "Example 1: ACADEMIC HEDGING - <While the data broadly bears out the hypothesis, it would be premature to draw definitive conclusions. By and large, the findings point to a correlation, but further research is needed to tease out the causal mechanisms at play.>\n\nExample 2: REGISTER CONTRAST - In a board meeting: <We need to iron out the remaining contractual issues before we can sign off on the deal.> In an academic paper: <Several methodological inconsistencies must be resolved before the findings can be considered definitive.> (Same meaning, different register.)\n\nExample 3: DIPLOMATIC DISAGREEMENT - <I take your point about the timeline, and there's certainly a case to be made for moving quickly. That said, I'd argue that cutting corners at this stage could come back to haunt us down the line.>"
+      "content": "Example 1: ACADEMIC HEDGING - <While the data broadly bears out the hypothesis, it would be premature to draw definitive conclusions. By and large, the findings point to a correlation, but further research is needed to tease out the causal mechanisms at play.>\n\nExample 2: REGISTER CONTRAST - <Board meeting: We need to iron out the remaining contractual issues before we can sign off on the deal. / Academic paper: Several methodological inconsistencies must be resolved before the findings can be considered definitive.>\n\nExample 3: DIPLOMATIC DISAGREEMENT - <I take your point about the timeline, and there's certainly a case to be made for moving quickly. That said, I'd argue that cutting corners at this stage could come back to haunt us down the line.>"
     },
     {
       "id": "summary",
