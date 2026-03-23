@@ -901,48 +901,58 @@ html.light .module-card--reading .module-card__icon svg {
   }
 }
 
-/* Current module indicator — glow overlay for visual hierarchy */
+/* Current module indicator — highlighted background + glow */
 .module-card--current {
   border: 3px solid rgba(37, 99, 235, 1);
+  background: linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.15) 0%,
+      rgba(59, 130, 246, 0.08) 100%
+    ),
+    linear-gradient(135deg, #f0f7ff 0%, #e0edff 100%);
   box-shadow:
     0 0 0 3px rgba(59, 130, 246, 0.3),
     0 0 16px rgba(59, 130, 246, 0.25),
     0 0 32px rgba(59, 130, 246, 0.1);
 }
 
-.module-card--current::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(59, 130, 246, 0.08);
-  border-radius: inherit;
-  pointer-events: none;
-  z-index: 1;
-}
-
 .module-card--current:hover {
   border: 3px solid rgba(37, 99, 235, 1);
+  background: linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.2) 0%,
+      rgba(59, 130, 246, 0.1) 100%
+    ),
+    linear-gradient(135deg, #e8f1ff 0%, #d6e6ff 100%);
   box-shadow:
     0 0 0 3px rgba(59, 130, 246, 0.35),
     0 0 20px rgba(59, 130, 246, 0.3),
     0 0 36px rgba(59, 130, 246, 0.12);
 }
 
-/* Dark mode: blue glow for contrast on dark backgrounds */
-.dark .module-card--current {
+/* Dark mode: blue-tinted background for contrast */
+html.dark .module-card--current {
   border: 3px solid #60a5fa;
+  background: linear-gradient(
+      135deg,
+      rgba(96, 165, 250, 0.2) 0%,
+      rgba(59, 130, 246, 0.12) 100%
+    ),
+    linear-gradient(135deg, #1e2a3e 0%, #1a2744 100%);
   box-shadow:
     0 0 0 3px rgba(96, 165, 250, 0.35),
     0 0 16px rgba(96, 165, 250, 0.3),
     0 0 32px rgba(96, 165, 250, 0.12);
 }
 
-.dark .module-card--current::after {
-  background: rgba(96, 165, 250, 0.1);
-}
-
-.dark .module-card--current:hover {
+html.dark .module-card--current:hover {
   border: 3px solid #60a5fa;
+  background: linear-gradient(
+      135deg,
+      rgba(96, 165, 250, 0.25) 0%,
+      rgba(59, 130, 246, 0.15) 100%
+    ),
+    linear-gradient(135deg, #1e2e48 0%, #1c2d4e 100%);
   box-shadow:
     0 0 0 3px rgba(96, 165, 250, 0.4),
     0 0 20px rgba(96, 165, 250, 0.35),
