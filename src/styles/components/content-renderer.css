@@ -104,6 +104,17 @@
   color: #60a5fa;
 }
 
+/* Reading format - clear term visibility */
+.content-renderer--reading .content-renderer__segment--term {
+  color: #2563eb;
+  font-weight: 600;
+  border-bottom: 1px dotted currentColor;
+}
+
+.dark .content-renderer--reading .content-renderer__segment--term {
+  color: #93c5fd;
+}
+
 /* Hover effects for interactive segments */
 .content-renderer__segment--term:hover,
 .content-renderer__segment--link:hover {
