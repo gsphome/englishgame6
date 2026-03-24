@@ -27,7 +27,11 @@ export class ContentParser {
     const hasAngleBrackets = /<[^>]+>/.test(text);
     const patterns = [
       { regex: /<([^>]+)>/g, type: 'term' as const }, // Modern: angle brackets (primary)
-      { regex: /"([^"]+)"/g, type: 'term' as const, validator: hasAngleBrackets ? (c: string) => !/<[^>]+>/.test(c) : undefined }, // Legacy: double quotes (skip if contains angle brackets)
+      {
+        regex: /"([^"]+)"/g,
+        type: 'term' as const,
+        validator: hasAngleBrackets ? (c: string) => !/<[^>]+>/.test(c) : undefined,
+      }, // Legacy: double quotes (skip if contains angle brackets)
       { regex: /'([^']+)'/g, type: 'term' as const, validator: ContentParser.isValidTerm }, // Legacy: single quotes
       { regex: /\*\*([^*]+)\*\*/g, type: 'emphasis' as const },
       { regex: /`([^`]+)`/g, type: 'code' as const },
@@ -62,7 +66,7 @@ export class ContentParser {
     });
 
     // Sort by position; for overlapping matches prefer shorter (more specific)
-    matches.sort((a, b) => a.start - b.start || (a.end - a.start) - (b.end - b.start));
+    matches.sort((a, b) => a.start - b.start || a.end - a.start - (b.end - b.start));
 
     // Build segments, skipping overlapping matches
     matches.forEach(match => {
@@ -223,7 +227,11 @@ export class ContentParser {
     const hasAngleBrackets = /<[^>]+>/.test(text);
     const patterns = [
       { regex: /<([^>]+)>/g, type: 'term' as const },
-      { regex: /"([^"]+)"/g, type: 'term' as const, validator: hasAngleBrackets ? (c: string) => !/<[^>]+>/.test(c) : undefined },
+      {
+        regex: /"([^"]+)"/g,
+        type: 'term' as const,
+        validator: hasAngleBrackets ? (c: string) => !/<[^>]+>/.test(c) : undefined,
+      },
       { regex: /\*\*([^*]+)\*\*/g, type: 'emphasis' as const },
       { regex: /`([^`]+)`/g, type: 'code' as const },
       { regex: /\{\{([^}]+)\}\}/g, type: 'variable' as const },
@@ -250,7 +258,7 @@ export class ContentParser {
       }
     });
 
-    matches.sort((a, b) => a.start - b.start || (a.end - a.start) - (b.end - b.start));
+    matches.sort((a, b) => a.start - b.start || a.end - a.start - (b.end - b.start));
 
     // Build segments, skipping overlapping matches
     matches.forEach(match => {
