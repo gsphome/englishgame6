@@ -30,7 +30,7 @@
       "id": "transportation",
       "title": "Getting Around",
       "type": "theory",
-      "content": "There are many ways to travel: taxi, bus, train, subway (metro), or rental car. To take a taxi, you can say <Taxi!> or go to a taxi stand. For public transport, you need to buy a ticket.\n\nAlways ask <How much?> for the price. To ask for directions, say <Excuse me, how do I get to...?> or <Where is...?>"
+      "content": "There are many ways to travel: taxi, bus, train, subway (metro), or rental car. To take a taxi, you can say <Taxi!> or go to a taxi stand. For public transport, you need to buy a ticket.\n\nAlways ask <How much?> for the price. To ask for directions, say <Excuse me>, how do I <get to>...? or <Where is...?>"
     },
     {
       "id": "examples",
