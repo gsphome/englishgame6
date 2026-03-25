@@ -346,5 +346,5 @@ html:not(.dark) .matching-component__item--unmatched .content-renderer__segment-
 
 .dark .sorting-component__sorted-item--correct .content-renderer__segment--term,
 .dark .sorting-component__sorted-item--incorrect .content-renderer__segment--term {
-  color: #ffffff;
+  color: inherit;
 }

@@ -328,6 +328,36 @@ html.dark .sorting-component__drop-zone--error {
   border-color: #dc2626;
 }
 
+html.dark .sorting-component__feedback--error {
+  background-color: rgba(220, 38, 38, 0.1);
+  border-color: #dc2626;
+  color: #fca5a5;
+}
+
+html.dark .sorting-component__feedback-label {
+  color: #fca5a5;
+}
+
+html.dark .sorting-component__feedback-text {
+  color: #e5e7eb;
+}
+
+html.dark .sorting-component__sorted-item--correct {
+  background-color: rgba(22, 163, 74, 0.2);
+  color: #86efac;
+  border-color: #16a34a;
+}
+
+html.dark .sorting-component__sorted-item--incorrect {
+  background-color: rgba(220, 38, 38, 0.2);
+  color: #fca5a5;
+  border-color: #dc2626;
+}
+
+html.dark .sorting-component__category-header {
+  color: var(--theme-text-primary, #f3f4f6);
+}
+
 /* === RESPONSIVE === */
 @media (min-width: 640px) {
   .sorting-component {
