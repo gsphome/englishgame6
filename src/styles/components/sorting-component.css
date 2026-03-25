@@ -526,8 +526,8 @@ html.dark .sorting-component__category-header {
     transition: opacity 0.2s ease;
   }
 
-  .sorting-component__sorted-item:hover::after,
-  .sorting-component__sorted-item:active::after {
+  .sorting-component__sorted-item--default:hover::after,
+  .sorting-component__sorted-item--default:active::after {
     opacity: 1;
   }
 
