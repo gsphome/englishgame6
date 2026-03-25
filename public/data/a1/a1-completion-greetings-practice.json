@@ -3,13 +3,13 @@
     "sentence": "Hello! My ______ is Maria.",
     "correct": "name",
     "explanation": "Use <name> to introduce yourself",
-    "tip": "Complete with the correct word"
+    "tip": "Complete with the word for how people identify you"
   },
   {
     "sentence": "Nice to ______ you!",
     "correct": "meet",
     "explanation": "Use <meet> when meeting someone for the first time",
-    "tip": "Complete with the correct verb"
+    "tip": "Complete with the verb used after 'Nice to'"
   },
   {
     "sentence": "How ______ you?",
@@ -27,7 +27,7 @@
     "sentence": "What's your ______?",
     "correct": "name",
     "explanation": "Use <name> to ask someone's name",
-    "tip": "Complete with the correct noun"
+    "tip": "Complete with the word that means 'how you are called'"
   },
   {
     "sentence": "Where are you ______?",
@@ -75,13 +75,13 @@
     "sentence": "How do you ______?",
     "correct": "do",
     "explanation": "Use <do> for formal greetings",
-    "tip": "Complete with the correct verb"
+    "tip": "Complete with the auxiliary verb in 'How ___ you do?'"
   },
   {
     "sentence": "Pleased to ______ you.",
     "correct": "meet",
     "explanation": "Use <meet> for formal introductions",
-    "tip": "Complete with the correct verb"
+    "tip": "Complete with the verb used after 'Pleased to'"
   },
   {
     "sentence": "This is my ______ John.",
@@ -93,7 +93,7 @@
     "sentence": "I ______ in Madrid.",
     "correct": "live",
     "explanation": "Use <live> to say where you reside",
-    "tip": "Complete with the correct verb"
+    "tip": "Complete with the verb that means 'to reside in a place'"
   },
   {
     "sentence": "I'm a ______.",
@@ -105,19 +105,19 @@
     "sentence": "What do you ______?",
     "correct": "do",
     "explanation": "Use <do> to ask about occupation",
-    "tip": "Complete with the correct verb"
+    "tip": "Complete with the auxiliary verb in 'What ___ you do?'"
   },
   {
     "sentence": "I ______ English.",
     "correct": "speak",
     "explanation": "Use <speak> to talk about languages",
-    "tip": "Complete with the correct verb"
+    "tip": "Complete with the verb for using a language"
   },
   {
     "sentence": "Goodbye! Take ______!",
     "correct": "care",
     "explanation": "Use <care> in the expression <take care>",
-    "tip": "Complete with the correct noun"
+    "tip": "Complete with the noun in 'Take ___!' (a farewell expression)"
   },
   {
     "sentence": "Have a ______ day!",
@@ -129,7 +129,7 @@
     "sentence": "I ______ English and Spanish.",
     "correct": "speak",
     "explanation": "Use <speak> to talk about languages",
-    "tip": "Complete with the correct verb"
+    "tip": "Complete with the verb for using a language"
   },
   {
     "sentence": "It's ______ to meet you.",

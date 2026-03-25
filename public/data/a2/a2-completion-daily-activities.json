@@ -243,7 +243,7 @@
     "sentence": "I ______ my teeth every morning.",
     "correct": "brush",
     "explanation": "Use <brush> for cleaning teeth",
-    "tip": "Complete with the correct verb"
+    "tip": "Complete with the verb for cleaning your teeth"
   },
   {
     "sentence": "She ______ the bus to work.",
@@ -255,7 +255,7 @@
     "sentence": "We ______ dinner at 7 PM.",
     "correct": "have",
     "explanation": "Use <have> with meals",
-    "tip": "Complete with the correct verb"
+    "tip": "Complete with the verb used for eating meals (we ___ dinner)"
   },
   {
     "sentence": "He ______ to bed at 10 PM.",
@@ -267,6 +267,6 @@
     "sentence": "They ______ TV after dinner.",
     "correct": "watch",
     "explanation": "Use <watch> with television",
-    "tip": "Complete with the correct verb"
+    "tip": "Complete with the verb for looking at a screen"
   }
 ]

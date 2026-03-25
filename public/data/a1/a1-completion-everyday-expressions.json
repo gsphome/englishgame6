@@ -135,7 +135,7 @@
     "sentence": "What ______ is it?",
     "correct": "time",
     "explanation": "Use <time> to ask about the hour",
-    "tip": "Complete with the correct noun"
+    "tip": "Complete with the word for hours and minutes"
   },
   {
     "sentence": "I ______ to go now. It's getting late.",
