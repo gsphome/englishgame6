@@ -37,8 +37,9 @@ function executeCommand(command, description, options = {}) {
         const important = lines.filter(l => {
           const trimmed = l.trim();
           if (!trimmed) return false;
-          // Skip success indicators
-          if (/^[✅✓ℹ️⚠️🔄🔍📊]/.test(trimmed)) return false;
+          // Skip lines with success/info indicators anywhere in the line
+          if (/[\u2705\u2713\u2714\u2139]/.test(trimmed)) return false;
+          if (trimmed.includes('✅') || trimmed.includes('✓') || trimmed.includes('ℹ️')) return false;
           // Only show actual error/failure lines
           return /\b(error|fail(ed|ure)?|fatal|exception)\b/i.test(trimmed);
         });
