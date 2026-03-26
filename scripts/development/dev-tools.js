@@ -19,14 +19,33 @@ const rootDir = dirname(dirname(__dirname));
 
 function executeCommand(command, description, options = {}) {
   const startTime = Date.now();
+  const quiet = options.quiet || process.env.BUILD_QUIET === '1';
   try {
     log(`🔄 ${description}...`, colors.cyan);
 
-    execSync(command, {
-      stdio: options.silent ? 'pipe' : 'inherit',
-      cwd: rootDir,
-      env: { ...process.env, FORCE_COLOR: '1' }
-    });
+    if (quiet) {
+      const output = execSync(command, {
+        stdio: 'pipe',
+        cwd: rootDir,
+        env: { ...process.env, FORCE_COLOR: '0' },
+        encoding: 'utf8',
+        maxBuffer: 10 * 1024 * 1024
+      });
+      // In quiet mode, only show warnings/errors from output
+      if (output) {
+        const lines = output.split('\n');
+        const important = lines.filter(l => /warning|error|fail|⚠|❌/i.test(l) && !/^✅|^ℹ️/.test(l));
+        if (important.length > 0) {
+          important.slice(0, 5).forEach(l => logInfo(l.trim()));
+        }
+      }
+    } else {
+      execSync(command, {
+        stdio: options.silent ? 'pipe' : 'inherit',
+        cwd: rootDir,
+        env: { ...process.env, FORCE_COLOR: '1' }
+      });
+    }
 
     const duration = ((Date.now() - startTime) / 1000).toFixed(1);
     logSuccess(`${description} completed in ${duration}s`);
@@ -34,6 +53,9 @@ function executeCommand(command, description, options = {}) {
   } catch (error) {
     const duration = ((Date.now() - startTime) / 1000).toFixed(1);
     logError(`${description} failed after ${duration}s`);
+    // In quiet mode, show the captured output on failure
+    if (quiet && error.stdout) console.log(error.stdout);
+    if (quiet && error.stderr) console.error(error.stderr);
     return false;
   }
 }
@@ -398,6 +420,7 @@ Commands:
 
 Options:
   --ci-mode        Optimize for CI environment (non-interactive)
+  --quiet, -q      Suppress command output (show only on failure)
   --silent         Suppress command output
   --no-git         Skip git status checks
 
@@ -419,7 +442,10 @@ async function main() {
 
   // Check for CI mode
   const isCIMode = args.includes('--ci-mode') || process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true';
-  const filteredArgs = args.filter(arg => arg !== '--ci-mode');
+  const isQuiet = args.includes('--quiet') || args.includes('-q');
+  const filteredArgs = args.filter(arg => !['--ci-mode', '--quiet', '-q'].includes(arg));
+
+  if (isQuiet) process.env.BUILD_QUIET = '1';
 
   // Configure for CI environment
   if (isCIMode) {
