@@ -746,7 +746,7 @@
   font-size: 0.75rem;
   line-height: 1.3;
   color: var(--reading-text-primary);
-  padding: 0.1875rem 0.3125rem;
+  padding: 0.125rem 0.25rem;
   background: var(--reading-bg-secondary);
   border-radius: 0.375rem;
 }
@@ -756,7 +756,7 @@
   line-height: 1.3;
   color: var(--reading-text-secondary);
   font-style: italic;
-  padding: 0.1875rem 0.3125rem;
+  padding: 0.125rem 0.25rem;
   background: var(--reading-bg-tertiary);
   border-radius: 0.5rem;
   font-family: monospace;
@@ -1162,7 +1162,7 @@
 
   .reading-component__vocabulary-definition,
   .reading-component__vocabulary-example {
-    padding: 0.1875rem 0.3125rem;
+    padding: 0.125rem 0.25rem;
     font-size: 0.75rem;
   }
 
@@ -1305,7 +1305,7 @@
 
   .reading-component__vocabulary-definition,
   .reading-component__vocabulary-example {
-    padding: 0.1875rem 0.3125rem;
+    padding: 0.125rem 0.25rem;
     font-size: 0.75rem;
   }
 
@@ -1478,7 +1478,7 @@
 
   .reading-component__vocabulary-definition,
   .reading-component__vocabulary-example {
-    padding: 0.25rem 0.375rem;
+    padding: 0.125rem 0.25rem;
     font-size: 0.75rem;
   }
 
