@@ -453,19 +453,26 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
                       if (isDialogue(quote)) {
                         return (
                           <div className="reading-component__dialogue">
-                            {quote.split('\n').filter(l => l.trim()).map((line, i) => {
-                              const speakerMatch = line.match(/^([A-Z]):\s(.+)$/);
-                              if (speakerMatch) {
-                                const [, speaker, text] = speakerMatch;
-                                return (
-                                  <div key={i} className="reading-component__dialogue-line">
-                                    <span className="reading-component__dialogue-speaker">{speaker}:</span>
-                                    <span className="reading-component__dialogue-text">{text}</span>
-                                  </div>
-                                );
-                              }
-                              return <div key={i}>{line}</div>;
-                            })}
+                            {quote
+                              .split('\n')
+                              .filter(l => l.trim())
+                              .map((line, i) => {
+                                const speakerMatch = line.match(/^([A-Z]):\s(.+)$/);
+                                if (speakerMatch) {
+                                  const [, speaker, text] = speakerMatch;
+                                  return (
+                                    <div key={i} className="reading-component__dialogue-line">
+                                      <span className="reading-component__dialogue-speaker">
+                                        {speaker}:
+                                      </span>
+                                      <span className="reading-component__dialogue-text">
+                                        {text}
+                                      </span>
+                                    </div>
+                                  );
+                                }
+                                return <div key={i}>{line}</div>;
+                              })}
                           </div>
                         );
                       }
