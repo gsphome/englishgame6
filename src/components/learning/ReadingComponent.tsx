@@ -438,13 +438,39 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
                   {currentSection.content.split('\n\n').map((example, index) => {
                     // Parse example format: "Example N: <Quote> (note)"
                     // Supports angle brackets, single quotes, and double quotes
-                    const angleBracketMatch = example.match(/^Example (\d+):\s*<([^>]+)>\s*(.*)$/);
+                    const angleBracketMatch = example.match(/^Example (\d+):\s*<([^>]+)>\s*(.*)$/s);
                     const dashAngleMatch = example.match(
-                      /^Example (\d+):\s*(.+?)\s*-\s*<([^>]+)>\s*(.*)$/
+                      /^Example (\d+):\s*(.+?)\s*-\s*<([\s\S]+?)>\s*(.*)$/
                     );
                     const dashQuoteMatch = example.match(
                       /^Example (\d+):\s*(.+?)\s*-\s*(['"])(.+?)\3\s*(.*)$/
                     );
+
+                    // Check if quote contains dialogue lines (A: ... B: ...)
+                    const isDialogue = (text: string) => /^[A-Z]:\s/m.test(text);
+
+                    const renderQuote = (quote: string) => {
+                      if (isDialogue(quote)) {
+                        return (
+                          <div className="reading-component__dialogue">
+                            {quote.split('\n').filter(l => l.trim()).map((line, i) => {
+                              const speakerMatch = line.match(/^([A-Z]):\s(.+)$/);
+                              if (speakerMatch) {
+                                const [, speaker, text] = speakerMatch;
+                                return (
+                                  <div key={i} className="reading-component__dialogue-line">
+                                    <span className="reading-component__dialogue-speaker">{speaker}:</span>
+                                    <span className="reading-component__dialogue-text">{text}</span>
+                                  </div>
+                                );
+                              }
+                              return <div key={i}>{line}</div>;
+                            })}
+                          </div>
+                        );
+                      }
+                      return <>&ldquo;{quote}&rdquo;</>;
+                    };
 
                     if (dashAngleMatch) {
                       const [, number, title, quote, note] = dashAngleMatch;
@@ -455,7 +481,7 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
                             <span className="reading-component__example-title">{title}</span>
                           </div>
                           <div className="reading-component__example-quote">
-                            &ldquo;{quote}&rdquo;
+                            {renderQuote(quote)}
                             {note?.trim() && (
                               <span className="reading-component__example-note">
                                 <ContentRenderer
@@ -474,7 +500,7 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
                         <div key={index} className="reading-component__example-card">
                           <div className="reading-component__example-quote">
                             <span className="reading-component__example-number">{number}</span>
-                            &ldquo;{quote}&rdquo;
+                            {renderQuote(quote)}
                             {note?.trim() && (
                               <span className="reading-component__example-note">
                                 <ContentRenderer
@@ -496,7 +522,7 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
                             <span className="reading-component__example-title">{title}</span>
                           </div>
                           <div className="reading-component__example-quote">
-                            &ldquo;{quote}&rdquo;
+                            {renderQuote(quote)}
                             {note?.trim() && (
                               <span className="reading-component__example-note">
                                 <ContentRenderer

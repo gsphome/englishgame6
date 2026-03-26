@@ -18,7 +18,7 @@
       "id": "basic-greetings",
       "title": "Common Greetings",
       "type": "theory",
-      "content": "Here are the most common greetings:\n\n• <Hello / Hi> - Use anytime\n• <Good morning> - Before 12:00 PM\n• Good afternoon - From 12:00 PM to 6:00 PM\n• Good evening - After 6:00 PM\n• How are you? - A friendly question after greeting\n\nWhen someone asks <How are you?>, you can answer: <I'm fine, thank you> or <I'm good, thanks>."
+      "content": "Here are the most common greetings:\n\n• <Hello / Hi> - Use anytime\n• <Good morning> - Before 12:00 PM\n• <Good afternoon> - From 12:00 PM to 6:00 PM\n• <Good evening> - After 6:00 PM\n• <How are you?> - A friendly question after greeting\n\nWhen someone asks <How are you?>, you can answer: <I'm fine, thank you> or <I'm good, thanks>."
     },
     {
       "id": "introductions",
@@ -36,19 +36,19 @@
       "id": "polite-words",
       "title": "Polite Expressions",
       "type": "theory",
-      "content": "Being polite is important in English. Here are essential polite words:\n\n• Please - When you ask for something\n• <Thank you / Thanks> - When someone helps you\n• You're welcome - Response to thank you\n• <Excuse me> - To get attention or apologize\n• Sorry - To apologize\n\nExample: \"<Excuse me>, can you help me, please?\" \"Yes, of course!\" \"<Thank you>!\" \"<You're welcome>!\""
+      "content": "Being polite is important in English. Here are essential polite words:\n\n• <Please> - When you ask for something\n• <Thank you / Thanks> - When someone helps you\n• <You're welcome> - Response to thank you\n• <Excuse me> - To get attention or apologize\n• <Sorry> - To apologize\n\nExample: \"<Excuse me>, can you help me, please?\" \"Yes, of course!\" \"<Thank you>!\" \"<You're welcome>!\""
     },
     {
       "id": "saying-goodbye",
       "title": "Saying Goodbye",
       "type": "theory",
-      "content": "Common ways to say goodbye:\n\n• <Goodbye / Bye> - Standard farewell\n• <See you later> - When you expect to meet again\n• Have a nice day - A friendly wish\n• Take care - Showing you care\n• <Good night> - Only in the evening\n\nExample: <See you later>! <Have a nice day>!"
+      "content": "Common ways to say goodbye:\n\n• <Goodbye / Bye> - Standard farewell\n• <See you later> - When you expect to meet again\n• <Have a nice day> - A friendly wish\n• <Take care> - Showing you care\n• <Good night> - Only in the evening\n\nExample: <See you later>! <Have a nice day>!"
     },
     {
       "id": "examples-2",
       "title": "Practice Dialogues",
       "type": "examples",
-      "content": "Example 1: AT A SHOP - <Good morning! How can I help you? — Hello! I'm looking for a book, please. — Here you are. — Thank you! Goodbye!>\n\nExample 2: MEETING A FRIEND - <Hi, Sarah! How are you? — I'm great, thanks! And you? — I'm fine. See you tomorrow! — Bye! Take care!>\n\nExample 3: ON THE PHONE - <Hello, this is Maria. — Hi Maria! Nice to hear from you. — Thanks for calling. Goodbye!>"
+      "content": "Example 1: AT A SHOP - <A: Good morning! How can I help you?\nB: Hello! I'm looking for a book, please.\nA: Here you are.\nB: Thank you! Goodbye!>\n\nExample 2: MEETING A FRIEND - <A: Hi, Sarah! How are you?\nB: I'm great, thanks! And you?\nA: I'm fine. See you tomorrow!\nB: Bye! Take care!>\n\nExample 3: ON THE PHONE - <A: Hello, this is Maria.\nB: Hi Maria! Nice to hear from you.\nA: Thanks for calling. Goodbye!>"
     },
     {
       "id": "summary",

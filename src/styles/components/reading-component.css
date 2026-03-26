@@ -243,6 +243,31 @@
   border-radius: 0.5rem;
 }
 
+/* === DIALOGUE FORMAT - A:/B: speaker lines === */
+.reading-component__dialogue {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  width: 100%;
+}
+
+.reading-component__dialogue-line {
+  display: flex;
+  gap: 0.375rem;
+  align-items: baseline;
+}
+
+.reading-component__dialogue-speaker {
+  font-weight: 700;
+  font-style: normal;
+  color: var(--reading-accent-primary);
+  flex-shrink: 0;
+}
+
+.reading-component__dialogue-text {
+  font-style: italic;
+}
+
 /* === NO DATA STATE - Self-contained === */
 .reading-component__no-data {
   display: flex;
