@@ -31,13 +31,17 @@ function executeCommand(command, description, options = {}) {
         encoding: 'utf8',
         maxBuffer: 10 * 1024 * 1024
       });
-      // In quiet mode, only show warnings/errors from output
+      // In quiet mode, only show actual errors from output
       if (output) {
         const lines = output.split('\n');
-        const important = lines.filter(l => 
-          /\b(error|fail(ed)?|fatal|exception)\b/i.test(l) && 
-          !/^✅|^ℹ️|found 0 vulnerabilities/.test(l)
-        );
+        const important = lines.filter(l => {
+          const trimmed = l.trim();
+          if (!trimmed) return false;
+          // Skip success indicators
+          if (/^[✅✓ℹ️⚠️🔄🔍📊]/.test(trimmed)) return false;
+          // Only show actual error/failure lines
+          return /\b(error|fail(ed|ure)?|fatal|exception)\b/i.test(trimmed);
+        });
         if (important.length > 0) {
           important.slice(0, 5).forEach(l => logWarning(l.trim()));
         }
