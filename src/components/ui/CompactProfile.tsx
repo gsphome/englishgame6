@@ -85,7 +85,12 @@ export const CompactProfile: React.FC<CompactProfileProps> = ({ isOpen, onClose 
       createdAt: user?.createdAt || new Date().toISOString(),
       preferences: {
         ...data.preferences,
-        categories: user?.preferences?.categories || ['Vocabulary', 'Grammar', 'PhrasalVerbs', 'Idioms'],
+        categories: user?.preferences?.categories || [
+          'Vocabulary',
+          'Grammar',
+          'PhrasalVerbs',
+          'Idioms',
+        ],
       },
     };
     setUser(newUser);
