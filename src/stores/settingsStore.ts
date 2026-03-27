@@ -113,7 +113,7 @@ export const useSettingsStore = create<SettingsState>()(
     }),
     {
       name: 'settings-storage',
-      version: 6,
+      version: 7,
       migrate: (persistedState: any, version: number) => {
         // Migration from version 1 to version 2
         if (version < 2) {
@@ -153,6 +153,19 @@ export const useSettingsStore = create<SettingsState>()(
             persistedState = {
               ...persistedState,
               categories: [...currentCategories, 'Idioms'],
+            };
+          }
+        }
+        // Migration from version 6 to version 7: ensure Reading and Review categories are included
+        if (version < 7) {
+          const currentCategories: string[] = persistedState.categories || [];
+          const toAdd: string[] = [];
+          if (!currentCategories.includes('Reading')) toAdd.push('Reading');
+          if (!currentCategories.includes('Review')) toAdd.push('Review');
+          if (toAdd.length > 0) {
+            persistedState = {
+              ...persistedState,
+              categories: [...currentCategories, ...toAdd],
             };
           }
         }

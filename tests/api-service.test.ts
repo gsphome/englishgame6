@@ -165,10 +165,10 @@ describe('API Service Integration Tests', () => {
       { category: 'PhrasalVerbs', level: 'b1', text: 'Item 4' },
     ];
 
-    it('should filter by categories', () => {
+    it('should not filter by categories (category filtering removed per Req 6.1)', () => {
       const result = filterModuleData(mockData, { categories: ['Vocabulary'] }, 'test-module');
-      expect(result).toHaveLength(2);
-      expect(result.every(item => item.category === 'Vocabulary')).toBe(true);
+      // filterModuleData no longer filters by category — all items are returned
+      expect(result).toHaveLength(4);
     });
 
     it('should filter by level', () => {

@@ -130,12 +130,6 @@ export function filterModuleData<
     return result;
   }
 
-  if (filters.categories && filters.categories.length > 0) {
-    result = result.filter(item =>
-      filters.categories!.includes(item.category || getCategoryFromId(moduleId))
-    );
-  }
-
   if (filters.level && filters.level !== 'all') {
     result = result.filter(
       item => (item.level || 'b1').toLowerCase() === filters.level!.toLowerCase()
@@ -147,18 +141,6 @@ export function filterModuleData<
   }
 
   return result;
-}
-
-function getCategoryFromId(moduleId: string): string {
-  if (
-    moduleId.includes('grammar') ||
-    moduleId.includes('conditional') ||
-    moduleId.includes('participle')
-  )
-    return 'Grammar';
-  if (moduleId.includes('phrasal')) return 'PhrasalVerbs';
-  if (moduleId.includes('idiom')) return 'Idioms';
-  return 'Vocabulary';
 }
 
 // Compat: apiService object used in useModuleData

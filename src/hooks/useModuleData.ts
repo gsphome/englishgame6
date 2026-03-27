@@ -4,8 +4,30 @@ import { useSettingsStore } from '../stores/settingsStore';
 import { apiService, fetchModules, fetchModuleData } from '../services/api';
 import type { LearningModule } from '../types';
 
+/**
+ * Pure function that returns the unselected categories containing prerequisites of a module.
+ * Used to show dependency indicators when categories are filtered out.
+ */
+export function getHiddenDependencies(
+  module: LearningModule,
+  allModules: LearningModule[],
+  selectedCategories: string[]
+): string[] {
+  const hiddenCategories = new Set<string>();
+  const moduleMap = new Map(allModules.map(m => [m.id, m]));
+
+  for (const prereqId of module.prerequisites) {
+    const prereq = moduleMap.get(prereqId);
+    if (prereq && !selectedCategories.includes(prereq.category)) {
+      hiddenCategories.add(prereq.category);
+    }
+  }
+
+  return Array.from(hiddenCategories);
+}
+
 export const useModuleData = (moduleId: string) => {
-  const { categories, level, gameSettings, developmentMode } = useSettingsStore();
+  const { level, gameSettings, developmentMode } = useSettingsStore();
 
   // Session key ensures a fresh shuffle each time the hook mounts (new game session).
   // We use a ref-like approach via a module-level map so the key is stable within
@@ -68,7 +90,6 @@ export const useModuleData = (moduleId: string) => {
         const filteredData = apiService.filterModuleData(
           module.data,
           {
-            categories: developmentMode ? [] : categories,
             level: developmentMode ? 'all' : level,
             limit,
           },

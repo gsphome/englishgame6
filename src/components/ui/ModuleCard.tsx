@@ -9,6 +9,7 @@ import {
   Lock,
   LockOpen,
   CheckCircle,
+  AlertTriangle,
 } from 'lucide-react';
 import { useModuleProgression } from '../../hooks/useProgression';
 import { useProgressStore } from '../../stores/progressStore';
@@ -25,6 +26,7 @@ interface ModuleCardProps {
   'aria-setsize'?: number;
   isNextRecommended?: boolean;
   isCurrentModule?: boolean;
+  hiddenDependencies?: string[];
 }
 
 const getIcon = (learningMode: string) => {
@@ -62,6 +64,7 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
   'aria-setsize': ariaSetsize,
   isNextRecommended = false,
   isCurrentModule = false,
+  hiddenDependencies,
 }) => {
   const progression = useModuleProgression(module.id);
   const { getModuleCompletion } = useProgressStore();
@@ -195,6 +198,21 @@ export const ModuleCard: React.FC<ModuleCardProps> = ({
             aria-hidden="true"
           >
             {statusInfo.statusIcon}
+          </div>
+        )}
+
+        {/* Dependency warning for hidden prerequisites */}
+        {hiddenDependencies && hiddenDependencies.length > 0 && (
+          <div
+            className="module-card__dependency-warning"
+            title={t('categoryFilter.dependencyWarning', undefined, {
+              categories: hiddenDependencies.join(', '),
+            })}
+            aria-label={t('categoryFilter.dependencyWarning', undefined, {
+              categories: hiddenDependencies.join(', '),
+            })}
+          >
+            <AlertTriangle size={14} />
           </div>
         )}
 

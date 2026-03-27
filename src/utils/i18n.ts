@@ -334,7 +334,15 @@ const translations = {
       grammar: 'Grammar',
       phrasalverbs: 'Phrasal Verbs',
       idioms: 'Idioms',
+      reading: 'Reading',
+      review: 'Review',
       all: 'All Categories',
+    },
+    categoryFilter: {
+      title: 'Categories',
+      collapse: 'Hide categories',
+      expand: 'Show categories',
+      dependencyWarning: 'Requires modules from {{categories}}',
     },
     levels: {
       all: 'All Levels',
@@ -848,7 +856,15 @@ const translations = {
       grammar: 'Gramática',
       phrasalverbs: 'Verbos Frasales',
       idioms: 'Modismos',
+      reading: 'Lectura',
+      review: 'Repaso',
       all: 'Todas las Categorías',
+    },
+    categoryFilter: {
+      title: 'Categorías',
+      collapse: 'Ocultar categorías',
+      expand: 'Mostrar categorías',
+      dependencyWarning: 'Requiere módulos de {{categories}}',
     },
     levels: {
       all: 'Todos los Niveles',

@@ -95,7 +95,6 @@ function resolveDataPath(dataPath: string): string {
  */
 async function getUrlsForLevels(
   levels: string[],
-  categories: string[],
   allModules: LearningModule[]
 ): Promise<Map<string, string[]>> {
   const urlsByLevel = new Map<string, string[]>();
@@ -103,15 +102,7 @@ async function getUrlsForLevels(
   for (const targetLevel of levels) {
     const modulesForLevel = allModules.filter(m => {
       const moduleLevels = Array.isArray(m.level) ? m.level : [m.level];
-      const hasLevel = moduleLevels.includes(targetLevel as any);
-
-      // If no categories selected, include all modules for this level
-      if (categories.length === 0) {
-        return hasLevel;
-      }
-
-      // If categories selected, also filter by category
-      return hasLevel && m.category && categories.includes(m.category);
+      return moduleLevels.includes(targetLevel as any);
     });
 
     const urls = modulesForLevel.filter(m => m.dataPath).map(m => resolveDataPath(m.dataPath!));
@@ -134,11 +125,10 @@ async function getUrlsForLevels(
  */
 export async function downloadLevels(
   levels: string[],
-  onProgress: (progress: DownloadProgress) => void,
-  categories: string[] = []
+  onProgress: (progress: DownloadProgress) => void
 ): Promise<DownloadProgress> {
   const allModules = await fetchModulesList();
-  const urlsByLevel = await getUrlsForLevels(levels, categories, allModules);
+  const urlsByLevel = await getUrlsForLevels(levels, allModules);
 
   // Collect all unique URLs to download
   const allUrls: string[] = [];
@@ -199,7 +189,7 @@ export async function downloadLevels(
  */
 export async function deleteLevelCache(level: string): Promise<void> {
   const allModules = await fetchModulesList();
-  const urlsByLevel = await getUrlsForLevels([level], [], allModules);
+  const urlsByLevel = await getUrlsForLevels([level], allModules);
   const urlsToDelete = urlsByLevel.get(level) ?? [];
 
   const cache = await caches.open(CACHE_NAME);

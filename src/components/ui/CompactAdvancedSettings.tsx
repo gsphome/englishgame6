@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { X, Settings, Save, Gamepad2, Palette, Wrench, WifiOff } from 'lucide-react';
+import { X, Settings, Save, Gamepad2, Palette, WifiOff } from 'lucide-react';
 import { useSettingsStore } from '../../stores/settingsStore';
 import { useTranslation } from '../../utils/i18n';
 import { validateGameSettings } from '../../utils/inputValidation';
@@ -31,7 +31,6 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
     level,
     developmentMode,
     randomizeItems,
-    categories,
     gameSettings,
     offlineEnabled,
     downloadedLevels,
@@ -40,7 +39,6 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
     setLevel,
     setDevelopmentMode,
     setRandomizeItems,
-    setCategories,
     setGameSetting,
     setOfflineEnabled,
     setDownloadedLevels,
@@ -49,9 +47,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
 
   const { t } = useTranslation(language);
   const [hasChanges, setHasChanges] = useState(false);
-  const [activeTab, setActiveTab] = useState<'general' | 'games' | 'categories' | 'offline'>(
-    'general'
-  );
+  const [activeTab, setActiveTab] = useState<'general' | 'games' | 'offline'>('general');
 
   // Offline state
   const cacheSupported = 'caches' in window;
@@ -72,7 +68,6 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
   const [localLevel, setLocalLevel] = useState(level);
   const [localDevelopmentMode, setLocalDevelopmentMode] = useState(developmentMode);
   const [localRandomizeItems, setLocalRandomizeItems] = useState(randomizeItems);
-  const [localCategories, setLocalCategories] = useState(categories);
   const [localGameSettings, setLocalGameSettings] = useState(gameSettings);
 
   // Reset local state when modal opens
@@ -83,14 +78,13 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
       setLocalLevel(level);
       setLocalDevelopmentMode(developmentMode);
       setLocalRandomizeItems(randomizeItems);
-      setLocalCategories(categories);
       setLocalGameSettings(gameSettings);
       setHasChanges(false);
     } else {
       // Reset download manager modal state when main modal closes
       setIsModalOpen(false);
     }
-  }, [isOpen, theme, language, level, developmentMode, randomizeItems, categories, gameSettings]);
+  }, [isOpen, theme, language, level, developmentMode, randomizeItems, gameSettings]);
 
   // Check for changes
   useEffect(() => {
@@ -100,7 +94,6 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
       localLevel !== level ||
       localDevelopmentMode !== developmentMode ||
       localRandomizeItems !== randomizeItems ||
-      JSON.stringify(localCategories) !== JSON.stringify(categories) ||
       JSON.stringify(localGameSettings) !== JSON.stringify(gameSettings);
     setHasChanges(changed);
   }, [
@@ -109,14 +102,12 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
     localLevel,
     localDevelopmentMode,
     localRandomizeItems,
-    localCategories,
     localGameSettings,
     theme,
     language,
     level,
     developmentMode,
     randomizeItems,
-    categories,
     gameSettings,
   ]);
 
@@ -171,8 +162,8 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
     setDownloadProgress(null);
 
     try {
-      // Clean approach: delete all cache and re-download only selected levels with current categories
-      // This ensures consistency between selected levels/categories and cached content
+      // Clean approach: delete all cache and re-download only selected levels
+      // This ensures consistency between selected levels and cached content
       await deleteAllCache();
 
       // Download selected levels with current category filters
@@ -181,8 +172,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
           selectedLevels,
           progress => {
             setDownloadProgress(progress);
-          },
-          categories
+          }
         );
 
         if (result.failed.length > 0) {
@@ -212,8 +202,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
         selectedLevels,
         progress => {
           setDownloadProgress(progress);
-        },
-        categories
+        }
       );
 
       setFailedUrls(result.failed);
@@ -234,7 +223,6 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
     failedUrls,
     isDownloading,
     selectedLevels,
-    categories,
     setDownloadedLevels,
     setLastDownloadDate,
   ]);
@@ -251,7 +239,6 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
     setLevel(localLevel);
     setDevelopmentMode(localDevelopmentMode);
     setRandomizeItems(localRandomizeItems);
-    setCategories(localCategories);
 
     // Apply validated game settings
     Object.entries(validatedSettings).forEach(([mode, settings]) => {
@@ -272,22 +259,6 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
     }
   };
 
-  const handleCategoryChange = (category: string, checked: boolean) => {
-    let newCategories: string[];
-    if (checked) {
-      newCategories = [...localCategories, category];
-    } else {
-      newCategories = localCategories.filter(c => c !== category);
-    }
-
-    // UX: If no categories selected, auto-select all for consistency
-    if (newCategories.length === 0) {
-      newCategories = [...allCategories];
-    }
-
-    setLocalCategories(newCategories);
-  };
-
   const handleGameSettingChange = (mode: string, setting: string, value: number) => {
     setLocalGameSettings({
       ...localGameSettings,
@@ -299,14 +270,6 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
   };
 
   if (!isOpen) return null;
-
-  const allCategories = ['Vocabulary', 'Grammar', 'PhrasalVerbs', 'Idioms'];
-  const categoryLabels = {
-    Vocabulary: t('settings.vocabulary'),
-    Grammar: t('settings.grammar'),
-    PhrasalVerbs: t('settings.phrasalVerbs'),
-    Idioms: t('settings.idioms'),
-  };
 
   return (
     <>
@@ -337,13 +300,6 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
             >
               <Gamepad2 className="compact-settings__tab-icon" />
               <span className="compact-settings__tab-title">{t('settings.tabGames')}</span>
-            </button>
-            <button
-              onClick={() => setActiveTab('categories')}
-              className={`compact-settings__tab ${activeTab === 'categories' ? 'compact-settings__tab--active' : ''}`}
-            >
-              <Wrench className="compact-settings__tab-icon" />
-              <span className="compact-settings__tab-title">{t('settings.tabCategories')}</span>
             </button>
             <button
               onClick={() => setActiveTab('offline')}
@@ -655,35 +611,6 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
                       </button>
                     </div>
                   </div>
-                </div>
-              </div>
-            )}
-
-            {/* Categories Tab */}
-            {activeTab === 'categories' && (
-              <div className="compact-settings__section">
-                <div className="compact-settings__categories">
-                  {allCategories.map(category => (
-                    <div key={category} className="compact-settings__category">
-                      <input
-                        type="checkbox"
-                        id={category}
-                        checked={localCategories.includes(category)}
-                        onChange={e => handleCategoryChange(category, e.target.checked)}
-                        className="compact-settings__category-checkbox"
-                      />
-                      <label htmlFor={category} className="compact-settings__category-label">
-                        {category === 'Vocabulary' &&
-                          `📚 ${categoryLabels[category as keyof typeof categoryLabels]}`}
-                        {category === 'Grammar' &&
-                          `📝 ${categoryLabels[category as keyof typeof categoryLabels]}`}
-                        {category === 'PhrasalVerbs' &&
-                          `🔗 ${categoryLabels[category as keyof typeof categoryLabels]}`}
-                        {category === 'Idioms' &&
-                          `💭 ${categoryLabels[category as keyof typeof categoryLabels]}`}
-                      </label>
-                    </div>
-                  ))}
                 </div>
               </div>
             )}

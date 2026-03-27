@@ -3,14 +3,17 @@ import { SearchBar } from './SearchBar';
 import { ModuleCard } from './ModuleCard';
 import { ModuleGridSkeleton } from './LoadingSkeleton';
 import { ProgressionDashboard } from './ProgressionDashboard';
-import { useAllModules } from '../../hooks/useModuleData';
+import { useQueryClient } from '@tanstack/react-query';
+import { useAllModules, getHiddenDependencies } from '../../hooks/useModuleData';
 import { useProgression } from '../../hooks/useProgression';
 import { useSearch } from '../../hooks/useSearch';
 import { useAppStore } from '../../stores/appStore';
 import { useSettingsStore } from '../../stores/settingsStore';
 import { useTranslation } from '../../utils/i18n';
+import type { LearningModule } from '../../types';
 import { toast } from '../../stores/toastStore';
 import { List, BarChart3, Search as SearchIcon } from 'lucide-react';
+import { CategoryFilter } from './CategoryFilter';
 import '../../styles/components/main-menu.css';
 
 export const MainMenu: React.FC = () => {
@@ -18,12 +21,16 @@ export const MainMenu: React.FC = () => {
   const progression = useProgression();
   const { query, setQuery, results } = useSearch(modules);
   const { setPreviousMenuContext, previousMenuContext } = useAppStore();
-  const { language } = useSettingsStore();
+  const { language, categories } = useSettingsStore();
   const { t } = useTranslation(language);
+  const queryClient = useQueryClient();
   const [viewMode, setViewMode] = useState<'progression' | 'list'>(previousMenuContext);
   const [highlightedModuleId, setHighlightedModuleId] = useState<string | null>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const hasScrolledToNext = useRef(false);
+
+  // Access raw (unfiltered) modules from the query cache for dependency calculations
+  const allModulesRaw = (queryClient.getQueryData<LearningModule[]>(['modules']) ?? []);
 
   // Persistent current module ID (next recommended)
   const currentModuleId = React.useMemo(() => {
@@ -250,6 +257,9 @@ export const MainMenu: React.FC = () => {
         </div>
       </div>
 
+      {/* Category filter between header and content */}
+      <CategoryFilter />
+
       {/* Content based on view mode and search */}
       {query ? (
         // Search results view
@@ -288,6 +298,7 @@ export const MainMenu: React.FC = () => {
                     aria-posinset={index + 1}
                     aria-setsize={results.length}
                     isCurrentModule={currentModuleId === module.id}
+                    hiddenDependencies={getHiddenDependencies(module, allModulesRaw, categories)}
                   />
                 ))}
               </div>
@@ -316,6 +327,7 @@ export const MainMenu: React.FC = () => {
                 aria-setsize={modules.length}
                 isNextRecommended={highlightedModuleId === module.id}
                 isCurrentModule={currentModuleId === module.id}
+                hiddenDependencies={getHiddenDependencies(module, allModulesRaw, categories)}
               />
             ))}
           </div>
