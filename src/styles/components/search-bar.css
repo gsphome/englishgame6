@@ -94,6 +94,7 @@
   transform: translateY(-50%);
   pointer-events: none;
   z-index: 2;
+  line-height: 0;
 }
 
 .search-bar__icon-svg {
