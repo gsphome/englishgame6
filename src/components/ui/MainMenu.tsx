@@ -30,7 +30,7 @@ export const MainMenu: React.FC = () => {
   const hasScrolledToNext = useRef(false);
 
   // Access raw (unfiltered) modules from the query cache for dependency calculations
-  const allModulesRaw = (queryClient.getQueryData<LearningModule[]>(['modules']) ?? []);
+  const allModulesRaw = queryClient.getQueryData<LearningModule[]>(['modules']) ?? [];
 
   // Persistent current module ID (next recommended)
   const currentModuleId = React.useMemo(() => {

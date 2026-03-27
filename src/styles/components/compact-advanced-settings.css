@@ -455,7 +455,6 @@
     inset 0 2px 4px rgba(255, 255, 255, 0.3);
 }
 
-
 /* Footer - using unified modal button system */
 /* === MOBILE OPTIMIZATION 400px - UNIFIED DESIGN SYSTEM === */
 @media (max-width: 400px) {
@@ -565,7 +564,6 @@
     padding: 0 0.5rem;
   }
 
-
   .compact-settings__tab {
     padding: 0.319rem; /* 15% reduction: 0.375rem * 0.85 = 0.319rem */
   }
@@ -593,7 +591,6 @@
   }
 
   /* Range styles removed - using stepper design */
-
 }
 
 .compact-settings__container {
@@ -811,7 +808,6 @@ html.dark .compact-settings__select:focus {
   border-color: var(--theme-accent-primary, #60a5fa);
   box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.25);
 }
-
 
 html.dark .compact-settings__content {
   background-color: var(--theme-bg-primary, #111827);
