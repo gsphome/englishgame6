@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from 'react';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { progressionService } from '../services/progressionService';
 import { useProgressStore } from '../stores/progressStore';
 import { useSettingsStore } from '../stores/settingsStore';
@@ -10,17 +10,22 @@ import type { LearningModule } from '../types';
  * Hook for managing module progression and prerequisites
  */
 export const useProgression = () => {
-  const { data: allModules = [], isLoading: modulesLoading } = useAllModules();
+  const { isLoading: modulesLoading } = useAllModules();
   const { getCompletedModuleIds, isModuleCompleted, completedModules } = useProgressStore();
   const { developmentMode } = useSettingsStore();
+  const queryClient = useQueryClient();
 
-  // Initialize progression service when modules are loaded
+  // Use raw (unfiltered) modules for progression — category filtering is visual only
+  // and must not affect prerequisite chains or module unlock status
+  const rawModules = queryClient.getQueryData<LearningModule[]>(['modules']) ?? [];
+
+  // Initialize progression service with ALL modules (unfiltered)
   useEffect(() => {
-    if (allModules.length > 0) {
+    if (rawModules.length > 0) {
       const completedIds = getCompletedModuleIds();
-      progressionService.initialize(allModules, completedIds);
+      progressionService.initialize(rawModules, completedIds);
     }
-  }, [allModules, getCompletedModuleIds]);
+  }, [rawModules, getCompletedModuleIds]);
 
   // Track completed modules for query invalidation
   // Using completedModules object directly ensures React detects changes
@@ -28,17 +33,17 @@ export const useProgression = () => {
 
   // Force re-initialization when completed modules change
   useEffect(() => {
-    if (allModules.length > 0 && completedModulesCount > 0) {
+    if (rawModules.length > 0 && completedModulesCount > 0) {
       const completedIds = getCompletedModuleIds();
       progressionService.setCompletedModules(completedIds);
     }
-  }, [completedModulesCount, allModules.length, getCompletedModuleIds]);
+  }, [completedModulesCount, rawModules.length, getCompletedModuleIds]);
 
-  // Get progression data
+  // Get progression data — keyed on raw modules count so it doesn't re-trigger on category changes
   const progressionData = useQuery({
-    queryKey: ['progression', allModules.length, completedModulesCount],
+    queryKey: ['progression', rawModules.length, completedModulesCount],
     queryFn: () => {
-      if (allModules.length === 0) {
+      if (rawModules.length === 0) {
         return {
           unlockedModules: [],
           lockedModules: [],
@@ -61,7 +66,7 @@ export const useProgression = () => {
         stats: progressionService.getProgressionStats(),
       };
     },
-    enabled: allModules.length > 0,
+    enabled: rawModules.length > 0,
     staleTime: 0, // No stale time - always refetch when dependencies change
     refetchOnMount: true, // Always refetch on mount
     refetchOnWindowFocus: false, // Don't refetch on window focus to avoid unnecessary updates

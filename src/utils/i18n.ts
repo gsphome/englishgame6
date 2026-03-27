@@ -332,7 +332,7 @@ const translations = {
     categories: {
       vocabulary: 'Vocabulary',
       grammar: 'Grammar',
-      phrasalverbs: 'Phrasal Verbs',
+      phrasalverbs: 'Phrasals',
       idioms: 'Idioms',
       reading: 'Reading',
       review: 'Review',
@@ -854,7 +854,7 @@ const translations = {
     categories: {
       vocabulary: 'Vocabulario',
       grammar: 'Gramática',
-      phrasalverbs: 'Verbos Frasales',
+      phrasalverbs: 'Frasales',
       idioms: 'Modismos',
       reading: 'Lectura',
       review: 'Repaso',

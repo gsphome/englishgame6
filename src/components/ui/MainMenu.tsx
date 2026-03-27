@@ -32,10 +32,22 @@ export const MainMenu: React.FC = () => {
   // Access raw (unfiltered) modules from the query cache for dependency calculations
   const allModulesRaw = queryClient.getQueryData<LearningModule[]>(['modules']) ?? [];
 
-  // Persistent current module ID (next recommended)
+  // Persistent current module ID (next recommended).
+  // If the recommended module is hidden by the category filter, fall back to the
+  // first visible unlocked-and-not-completed module so the highlight stays visible.
   const currentModuleId = React.useMemo(() => {
-    return progression.getNextRecommendedModule()?.id ?? null;
-  }, [progression]);
+    const recommended = progression.getNextRecommendedModule();
+    if (!recommended) return null;
+
+    const isVisible = modules.some(m => m.id === recommended.id);
+    if (isVisible) return recommended.id;
+
+    // Fallback: first unlocked, non-completed module in the visible list
+    const fallback = modules.find(
+      m => progression.canAccessModule(m.id) && progression.getModuleStatus(m.id) !== 'completed'
+    );
+    return fallback?.id ?? null;
+  }, [progression, modules]);
 
   // Sync view mode with stored context when component mounts
   useEffect(() => {
@@ -226,15 +238,18 @@ export const MainMenu: React.FC = () => {
     <div className="main-menu">
       {/* Header with view toggle */}
       <div className="main-menu__header">
-        <div className="main-menu__search">
-          <SearchBar
-            query={query}
-            onQueryChange={setQuery}
-            placeholder={t('common.searchPlaceholder')}
-            label={t('common.searchLabel')}
-            description={t('common.searchDescription')}
-            clearLabel={t('common.clearSearch')}
-          />
+        <div className="main-menu__search-row">
+          <div className="main-menu__search">
+            <SearchBar
+              query={query}
+              onQueryChange={setQuery}
+              placeholder={t('common.searchPlaceholder')}
+              label={t('common.searchLabel')}
+              description={t('common.searchDescription')}
+              clearLabel={t('common.clearSearch')}
+            />
+          </div>
+          <CategoryFilter inline />
         </div>
 
         <div className="main-menu__view-toggle">
@@ -256,9 +271,6 @@ export const MainMenu: React.FC = () => {
           </button>
         </div>
       </div>
-
-      {/* Category filter between header and content */}
-      <CategoryFilter />
 
       {/* Content based on view mode and search */}
       {query ? (

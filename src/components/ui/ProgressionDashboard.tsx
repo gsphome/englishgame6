@@ -20,7 +20,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
   const { setPreviousMenuContext } = useAppStore();
   const { isModuleCompleted } = useProgressStore();
   const progression = useProgression();
-  const { language } = useSettingsStore();
+  const { language, categories } = useSettingsStore();
   const { t } = useTranslation(language);
   const [expandedUnits, setExpandedUnits] = React.useState<Set<number>>(new Set());
   const [isDarkMode, setIsDarkMode] = React.useState(false);
@@ -238,6 +238,8 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
     const seen = new Set<string>();
     allModules.forEach(module => {
       if (seen.has(module.id)) return;
+      // Apply category filter — only show modules whose category is selected
+      if (categories.length > 0 && module.category && !categories.includes(module.category)) return;
       seen.add(module.id);
       if (!units[module.unit]) {
         units[module.unit] = [];
@@ -269,7 +271,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
       units[Number(unitKey)] = sorted;
     });
     return units;
-  }, [progression.unlockedModules, progression.lockedModules]);
+  }, [progression.unlockedModules, progression.lockedModules, categories]);
 
   return (
     <div
@@ -327,6 +329,10 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
           .map(([unitStr, modules]) => {
             const unit = Number(unitStr);
             const unitStatus = progression.getUnitCompletionStatus(unit);
+            // Use filtered module count for display; completed count from filtered modules
+            const filteredTotal = modules.length;
+            const filteredCompleted = modules.filter(m => isModuleCompleted(m.id)).length;
+            const filteredPercentage = filteredTotal > 0 ? Math.round((filteredCompleted / filteredTotal) * 100) : 0;
 
             const isExpanded = expandedUnits.has(unit);
             const hasNextModule = modules.some(m => nextRecommended?.id === m.id);
@@ -334,14 +340,14 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
             return (
               <div key={unit} className="progression-dashboard__unit">
                 <div
-                  className={`progression-dashboard__unit-header progression-dashboard__unit-header--clickable ${unitStatus.percentage === 100 ? 'progression-dashboard__unit-header--completed' : ''}`}
+                  className={`progression-dashboard__unit-header progression-dashboard__unit-header--clickable ${filteredPercentage === 100 ? 'progression-dashboard__unit-header--completed' : ''}`}
                   onClick={() => toggleUnit(unit)}
                 >
                   <div className="progression-dashboard__unit-info">
                     <div
-                      className={`progression-dashboard__unit-expand ${unitStatus.percentage === 100 ? 'progression-dashboard__unit-expand--completed' : ''}`}
+                      className={`progression-dashboard__unit-expand ${filteredPercentage === 100 ? 'progression-dashboard__unit-expand--completed' : ''}`}
                     >
-                      {unitStatus.percentage === 100 ? (
+                      {filteredPercentage === 100 ? (
                         <CheckCircle className="progression-dashboard__expand-icon progression-dashboard__expand-icon--completed" />
                       ) : isExpanded ? (
                         <ChevronDown className="progression-dashboard__expand-icon" />
@@ -360,13 +366,13 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
                   </div>
                   <div className="progression-dashboard__unit-progress">
                     <span className="progression-dashboard__unit-stats">
-                      {unitStatus.completed}/{unitStatus.total}
+                      {filteredCompleted}/{filteredTotal}
                     </span>
                     <div className="progression-dashboard__progress-bar">
                       <div
                         className="progression-dashboard__progress-fill"
                         style={
-                          { '--progress-width': `${unitStatus.percentage}%` } as React.CSSProperties
+                          { '--progress-width': `${filteredPercentage}%` } as React.CSSProperties
                         }
                       />
                     </div>

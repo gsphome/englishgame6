@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Tags, ChevronDown, ChevronUp } from 'lucide-react';
+import { Tags } from 'lucide-react';
 import { useSettingsStore } from '../../stores/settingsStore';
 import { useTranslation } from '../../utils/i18n';
 import type { Category } from '../../types';
@@ -32,10 +32,16 @@ const CATEGORY_I18N_KEYS: Record<Category, string> = {
   Review: 'categories.review',
 };
 
-export const CategoryFilter: React.FC = () => {
+interface CategoryFilterProps {
+  inline?: boolean;
+}
+
+export const CategoryFilter: React.FC<CategoryFilterProps> = ({ inline = false }) => {
   const { categories, setCategories, language } = useSettingsStore();
   const { t } = useTranslation(language);
   const [isExpanded, setIsExpanded] = useState(false);
+
+  const isFiltered = categories.length > 0 && categories.length < ALL_CATEGORIES.length;
 
   const handleToggleCategory = (category: Category) => {
     const isActive = categories.includes(category);
@@ -56,17 +62,16 @@ export const CategoryFilter: React.FC = () => {
   };
 
   return (
-    <div className="category-filter">
+    <div className={`category-filter${inline ? ' category-filter--inline' : ''}`}>
       <button
-        className="category-filter__toggle-btn"
+        className={`category-filter__toggle-btn${isFiltered ? ' category-filter__toggle-btn--filtered' : ''}`}
         onClick={() => setIsExpanded(prev => !prev)}
         aria-expanded={isExpanded}
         aria-label={isExpanded ? t('categoryFilter.collapse') : t('categoryFilter.expand')}
         type="button"
       >
         <Tags aria-hidden="true" />
-        {t('categoryFilter.title')}
-        {isExpanded ? <ChevronUp aria-hidden="true" /> : <ChevronDown aria-hidden="true" />}
+        {isFiltered && <span className="category-filter__badge">{categories.length}</span>}
       </button>
 
       <div
