@@ -129,38 +129,14 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
     });
   }, []);
 
-  // Scroll expanded summary section so its trigger is at the top of the scroll area
+  // Scroll expanded summary section so its trigger is at the top of the visible area
   useEffect(() => {
     if (!vocabularyExpanded && !grammarExpanded) return;
     const ref = vocabularyExpanded ? vocabularyRef : grammarRef;
-    const el = ref?.current;
-    if (!el) return;
-    // Find the nearest actually scrollable ancestor (overflow auto/scroll + content overflows)
-    const findScrollParent = (node: HTMLElement): HTMLElement | null => {
-      let parent = node.parentElement;
-      while (parent) {
-        const style = getComputedStyle(parent);
-        const overflowY = style.overflowY;
-        if (
-          (overflowY === 'auto' || overflowY === 'scroll') &&
-          parent.scrollHeight > parent.clientHeight
-        ) {
-          return parent;
-        }
-        parent = parent.parentElement;
-      }
-      return null;
-    };
+    const trigger = ref?.current?.querySelector('button');
+    if (!trigger) return;
     const timer = setTimeout(() => {
-      const scrollParent = findScrollParent(el);
-      if (scrollParent) {
-        const parentRect = scrollParent.getBoundingClientRect();
-        const elRect = el.getBoundingClientRect();
-        const offset = elRect.top - parentRect.top + scrollParent.scrollTop;
-        scrollParent.scrollTo({ top: offset, behavior: 'smooth' });
-      } else {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      trigger.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 50);
     return () => clearTimeout(timer);
   }, [vocabularyExpanded, grammarExpanded]);
