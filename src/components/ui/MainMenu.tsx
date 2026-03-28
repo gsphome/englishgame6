@@ -12,7 +12,7 @@ import { useSettingsStore } from '../../stores/settingsStore';
 import { useTranslation } from '../../utils/i18n';
 import type { LearningModule } from '../../types';
 import { toast } from '../../stores/toastStore';
-import { List, BarChart3, Search as SearchIcon, X as XIcon } from 'lucide-react';
+import { List, BarChart3, Search as SearchIcon, X as XIcon, Filter as FilterIcon } from 'lucide-react';
 import { CategoryFilter } from './CategoryFilter';
 import { ModeFilter } from './ModeFilter';
 import '../../styles/components/main-menu.css';
@@ -22,7 +22,7 @@ export const MainMenu: React.FC = () => {
   const progression = useProgression();
   const { query, setQuery, results } = useSearch(modules);
   const { setPreviousMenuContext, previousMenuContext } = useAppStore();
-  const { language, categories, learningModes } = useSettingsStore();
+  const { language, categories, learningModes, setCategories, setLearningModes } = useSettingsStore();
   const { t } = useTranslation(language);
   const queryClient = useQueryClient();
   const [viewMode, setViewMode] = useState<'progression' | 'list'>(previousMenuContext);
@@ -370,7 +370,28 @@ export const MainMenu: React.FC = () => {
         <ProgressionDashboard onModuleSelect={handleModuleClick} searchQuery={query} />
       ) : (
         // List view (original grid)
-        <div className="main-menu__grid" ref={gridRef}>
+        <>
+          {!query && (categories.length > 0 || learningModes?.length > 0) && (
+            <div className="main-menu__results-header" role="status" aria-live="polite">
+              <FilterIcon className="main-menu__results-header-icon" aria-hidden="true" />
+              <span className="main-menu__results-header-text">
+                {t('mainMenu.showingResults', undefined, {
+                  count: modules.length,
+                  total: allModulesRaw.length,
+                })}
+              </span>
+              <button
+                className="main-menu__clear-filters-btn"
+                type="button"
+                onClick={() => { setCategories([]); setLearningModes([]); setExpandedFilter(null); }}
+                aria-label={t('mainMenu.clearFilters')}
+              >
+                <XIcon size={14} aria-hidden="true" />
+                {t('mainMenu.clearFilters')}
+              </button>
+            </div>
+          )}
+          <div className="main-menu__grid" ref={gridRef}>
           <div
             className="main-menu__grid-container"
             role="grid"
@@ -397,6 +418,7 @@ export const MainMenu: React.FC = () => {
             ))}
           </div>
         </div>
+        </>
       )}
     </div>
   );

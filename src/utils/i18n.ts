@@ -39,6 +39,7 @@ const translations = {
       progressViewLabel: 'Progression view',
       listViewLabel: 'List view',
       showingResults: '{{count}} of {{total}} modules',
+      clearFilters: 'Clear',
       noModulesFound: 'No modules found for "{{query}}"',
       searchHint: 'Try adjusting your search terms or browse all available modules.',
       retryLoading: 'Retry loading modules',
@@ -566,6 +567,7 @@ const translations = {
       progressViewLabel: 'Vista de progresión',
       listViewLabel: 'Vista de lista',
       showingResults: '{{count}} de {{total}} módulos',
+      clearFilters: 'Limpiar',
       noModulesFound: 'No se encontraron módulos para "{{query}}"',
       searchHint:
         'Intenta ajustar los términos de búsqueda o explora todos los módulos disponibles.',
