@@ -54,7 +54,14 @@ interface SettingsState {
 const DEFAULT_CATEGORIES = ['Vocabulary', 'Grammar', 'PhrasalVerbs', 'Idioms', 'Reading', 'Review'];
 
 // Default learning modes
-const DEFAULT_LEARNING_MODES = ['flashcard', 'quiz', 'completion', 'sorting', 'matching', 'reading'];
+const DEFAULT_LEARNING_MODES = [
+  'flashcard',
+  'quiz',
+  'completion',
+  'sorting',
+  'matching',
+  'reading',
+];
 
 // Categories removed in v4 migration
 const REMOVED_CATEGORIES = ['Pronunciation', 'Listening', 'Writing', 'Speaking'];

@@ -38,7 +38,11 @@ interface CategoryFilterProps {
   onToggle?: () => void;
 }
 
-export const CategoryFilter: React.FC<CategoryFilterProps> = ({ inline = false, isExpanded: controlledExpanded, onToggle }) => {
+export const CategoryFilter: React.FC<CategoryFilterProps> = ({
+  inline = false,
+  isExpanded: controlledExpanded,
+  onToggle,
+}) => {
   const { categories, setCategories, language } = useSettingsStore();
   const { t } = useTranslation(language);
   const [internalExpanded, setInternalExpanded] = useState(false);

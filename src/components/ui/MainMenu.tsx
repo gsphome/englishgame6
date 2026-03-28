@@ -241,11 +241,13 @@ export const MainMenu: React.FC = () => {
     <div className="main-menu">
       {/* Header with view toggle */}
       <div className="main-menu__header">
-        <div className={`main-menu__search-row${isSearchExpanded ? ' main-menu__search-row--search-expanded' : ''}`}>
+        <div
+          className={`main-menu__search-row${isSearchExpanded ? ' main-menu__search-row--search-expanded' : ''}`}
+        >
           <div className="main-menu__search">
             <SearchBar
               query={query}
-              onQueryChange={(val) => {
+              onQueryChange={val => {
                 setQuery(val);
                 if (!val) setIsSearchExpanded(false);
               }}
@@ -269,12 +271,12 @@ export const MainMenu: React.FC = () => {
           <CategoryFilter
             inline
             isExpanded={expandedFilter === 'category'}
-            onToggle={() => setExpandedFilter(prev => prev === 'category' ? null : 'category')}
+            onToggle={() => setExpandedFilter(prev => (prev === 'category' ? null : 'category'))}
           />
           <ModeFilter
             inline
             isExpanded={expandedFilter === 'mode'}
-            onToggle={() => setExpandedFilter(prev => prev === 'mode' ? null : 'mode')}
+            onToggle={() => setExpandedFilter(prev => (prev === 'mode' ? null : 'mode'))}
           />
         </div>
 
@@ -336,7 +338,12 @@ export const MainMenu: React.FC = () => {
                     aria-posinset={index + 1}
                     aria-setsize={results.length}
                     isCurrentModule={currentModuleId === module.id}
-                    hiddenDependencies={getHiddenDependencies(module, allModulesRaw, categories, learningModes)}
+                    hiddenDependencies={getHiddenDependencies(
+                      module,
+                      allModulesRaw,
+                      categories,
+                      learningModes
+                    )}
                   />
                 ))}
               </div>
@@ -365,7 +372,12 @@ export const MainMenu: React.FC = () => {
                 aria-setsize={modules.length}
                 isNextRecommended={highlightedModuleId === module.id}
                 isCurrentModule={currentModuleId === module.id}
-                hiddenDependencies={getHiddenDependencies(module, allModulesRaw, categories, learningModes)}
+                hiddenDependencies={getHiddenDependencies(
+                  module,
+                  allModulesRaw,
+                  categories,
+                  learningModes
+                )}
               />
             ))}
           </div>

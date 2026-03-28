@@ -38,7 +38,11 @@ interface ModeFilterProps {
   onToggle?: () => void;
 }
 
-export const ModeFilter: React.FC<ModeFilterProps> = ({ inline = false, isExpanded: controlledExpanded, onToggle }) => {
+export const ModeFilter: React.FC<ModeFilterProps> = ({
+  inline = false,
+  isExpanded: controlledExpanded,
+  onToggle,
+}) => {
   const { learningModes = ALL_MODES as string[], setLearningModes, language } = useSettingsStore();
   const { t } = useTranslation(language);
   const [internalExpanded, setInternalExpanded] = useState(false);
@@ -98,9 +102,7 @@ export const ModeFilter: React.FC<ModeFilterProps> = ({ inline = false, isExpand
                 <span className="mode-filter__chip-icon" aria-hidden="true">
                   {MODE_ICONS[mode]}
                 </span>
-                <span className="mode-filter__chip-label">
-                  {t(MODE_I18N_KEYS[mode])}
-                </span>
+                <span className="mode-filter__chip-label">{t(MODE_I18N_KEYS[mode])}</span>
               </button>
             );
           })}
