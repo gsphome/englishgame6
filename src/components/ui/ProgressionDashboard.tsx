@@ -101,14 +101,6 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
     }
   }, [completedModulesCount, progression]);
 
-  // Auto-expand units with search results
-  React.useEffect(() => {
-    if (searchQuery.trim()) {
-      const unitsWithResults = Object.keys(modulesByUnit).map(Number);
-      setExpandedUnits(new Set(unitsWithResults));
-    }
-  }, [searchQuery, modulesByUnit]);
-
   // Auto-expand unit with next recommended module on initial load only
   const hasAutoExpanded = React.useRef(false);
   React.useEffect(() => {
@@ -302,6 +294,14 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
     });
     return units;
   }, [progression.unlockedModules, progression.lockedModules, categories, learningModes, searchQuery]);
+
+  // Auto-expand units with search results
+  React.useEffect(() => {
+    if (searchQuery.trim()) {
+      const unitsWithResults = Object.keys(modulesByUnit).map(Number);
+      setExpandedUnits(new Set(unitsWithResults));
+    }
+  }, [searchQuery, modulesByUnit]);
 
   return (
     <div
