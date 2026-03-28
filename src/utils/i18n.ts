@@ -30,6 +30,7 @@ const translations = {
       searchLabel: 'Search learning modules',
       searchDescription: 'Search learning modules by name, category, or topic',
       clearSearch: 'Clear search: {{query}}',
+      closeSearch: 'Close search',
       loadingContent: 'Loading content',
     },
     mainMenu: {
@@ -556,6 +557,7 @@ const translations = {
       searchLabel: 'Buscar módulos de aprendizaje',
       searchDescription: 'Buscar módulos por nombre, categoría o tema',
       clearSearch: 'Limpiar búsqueda: {{query}}',
+      closeSearch: 'Cerrar búsqueda',
       loadingContent: 'Cargando contenido',
     },
     mainMenu: {

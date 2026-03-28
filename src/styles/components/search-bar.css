@@ -123,6 +123,10 @@
   line-height: 1.3;
   color: var(--theme-text-primary, #374151);
   transition: all 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 2.5rem;
 }
 
 .search-bar__input::placeholder {
@@ -206,6 +210,15 @@
     /* Match category-filter toggle button height (2.8125rem) */
     height: 2.8125rem;
     min-height: 2.8125rem;
+  }
+
+  /* Hide search icon when focused on mobile */
+  .search-bar:focus-within .search-bar__icon {
+    display: none;
+  }
+
+  .search-bar:focus-within .search-bar__input {
+    padding-left: 0.75rem;
   }
 
   .search-bar__input {

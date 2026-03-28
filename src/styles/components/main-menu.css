@@ -113,6 +113,11 @@
   min-width: 0;
 }
 
+/* Search close button - hidden by default, shown on mobile */
+.main-menu__search-close {
+  display: none;
+}
+
 /* === MOBILE SEARCH EXPAND BEHAVIOR === */
 /* On mobile, when search is focused, expand to full width and hide filter buttons */
 @media (max-width: 639px) {
@@ -143,6 +148,38 @@
   .main-menu__search-row--search-expanded .main-menu__search {
     flex: 1;
     max-width: 100%;
+  }
+
+  /* Hide internal clear (X) button when external close button is visible */
+  .main-menu__search-row--search-expanded .search-bar__clear {
+    display: none;
+  }
+
+  /* Close button for mobile search */
+  .main-menu__search-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    background: none;
+    border: 1.5px solid var(--theme-border-medium, #e5e7eb);
+    border-radius: 0.5rem;
+    color: var(--theme-text-secondary, #6b7280);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .main-menu__search-close:hover {
+    color: var(--theme-text-primary, #374151);
+    border-color: var(--theme-text-secondary, #6b7280);
+  }
+
+  .main-menu__search-close:focus-visible {
+    outline: 2px solid var(--theme-primary-blue, #3b82f6);
+    outline-offset: 2px;
   }
 }
 
@@ -1031,6 +1068,16 @@ html.dark .main-menu__header {
 html.dark .main-menu__search {
   background: var(--theme-bg-elevated, #1f2937);
   border-color: var(--theme-border-soft, #4b5563);
+}
+
+html.dark .main-menu__search-close {
+  border-color: var(--theme-border-soft, #4b5563);
+  color: var(--theme-text-secondary, #9ca3af);
+}
+
+html.dark .main-menu__search-close:hover {
+  color: var(--theme-text-primary, #f9fafb);
+  border-color: var(--theme-text-secondary, #9ca3af);
 }
 
 /* Toggle Container Theme Variants */

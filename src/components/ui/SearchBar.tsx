@@ -51,6 +51,13 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     onQueryChange(newValue);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      divRef.current?.blur();
+    }
+  };
+
   const handlePaste = (e: React.ClipboardEvent<HTMLDivElement>) => {
     // Prevent pasting formatted text
     e.preventDefault();
@@ -71,6 +78,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         id={searchId}
         contentEditable={!disabled}
         onInput={handleInput}
+        onKeyDown={handleKeyDown}
         onPaste={handlePaste}
         onFocus={onSearchFocus}
         onBlur={onSearchBlur}

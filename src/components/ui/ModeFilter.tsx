@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Layers, CreditCard, HelpCircle, PenTool, BarChart3, Link, BookOpen } from 'lucide-react';
+import { Layers, CreditCard, HelpCircle, PenTool, BarChart3, Link, BookOpen, X } from 'lucide-react';
 import { useSettingsStore } from '../../stores/settingsStore';
 import { useTranslation } from '../../utils/i18n';
 import type { LearningMode } from '../../types';
@@ -88,6 +88,14 @@ export const ModeFilter: React.FC<ModeFilterProps> = ({
         role="group"
         aria-label={t('modeFilter.title')}
       >
+        <button
+          className="mode-filter__close"
+          onClick={handleToggle}
+          aria-label={t('modeFilter.collapse')}
+          type="button"
+        >
+          <X size={14} />
+        </button>
         <div className="mode-filter__chips">
           {ALL_MODES.map(mode => {
             const isActive = learningModes.includes(mode);

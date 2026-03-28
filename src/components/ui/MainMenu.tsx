@@ -12,7 +12,7 @@ import { useSettingsStore } from '../../stores/settingsStore';
 import { useTranslation } from '../../utils/i18n';
 import type { LearningModule } from '../../types';
 import { toast } from '../../stores/toastStore';
-import { List, BarChart3, Search as SearchIcon } from 'lucide-react';
+import { List, BarChart3, Search as SearchIcon, X as XIcon } from 'lucide-react';
 import { CategoryFilter } from './CategoryFilter';
 import { ModeFilter } from './ModeFilter';
 import '../../styles/components/main-menu.css';
@@ -249,7 +249,6 @@ export const MainMenu: React.FC = () => {
               query={query}
               onQueryChange={val => {
                 setQuery(val);
-                if (!val) setIsSearchExpanded(false);
               }}
               placeholder={t('common.searchPlaceholder')}
               label={t('common.searchLabel')}
@@ -268,6 +267,22 @@ export const MainMenu: React.FC = () => {
               }}
             />
           </div>
+          {isSearchExpanded && (
+            <button
+              className="main-menu__search-close"
+              onClick={() => {
+                setQuery('');
+                setIsSearchExpanded(false);
+                // Blur the search input to remove focus ring
+                const input = document.querySelector('.search-bar__input') as HTMLElement;
+                input?.blur();
+              }}
+              aria-label={t('common.closeSearch')}
+              type="button"
+            >
+              <XIcon size={16} />
+            </button>
+          )}
           <CategoryFilter
             inline
             isExpanded={expandedFilter === 'category'}

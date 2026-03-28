@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Tags } from 'lucide-react';
+import { Tags, X } from 'lucide-react';
 import { useSettingsStore } from '../../stores/settingsStore';
 import { useTranslation } from '../../utils/i18n';
 import type { Category } from '../../types';
@@ -88,6 +88,14 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
         role="group"
         aria-label={t('categoryFilter.title')}
       >
+        <button
+          className="category-filter__close"
+          onClick={handleToggle}
+          aria-label={t('categoryFilter.collapse')}
+          type="button"
+        >
+          <X size={14} />
+        </button>
         <div className="category-filter__chips">
           {ALL_CATEGORIES.map(category => {
             const isActive = categories.includes(category);
