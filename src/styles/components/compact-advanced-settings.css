@@ -166,7 +166,8 @@
 .compact-settings__content {
   padding: 0.625rem;
   flex: 1;
-  overflow: visible;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   min-height: 255px;

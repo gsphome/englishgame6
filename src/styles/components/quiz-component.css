@@ -234,6 +234,7 @@
 .quiz-component__explanation-container--visible {
   max-height: 4rem;
   opacity: 1;
+  overflow-y: auto;
 }
 
 .quiz-component__explanation {

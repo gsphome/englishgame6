@@ -313,6 +313,7 @@ html.dark .completion-component__input--neutral:focus {
 .completion-component__result-container--visible {
   max-height: 12rem;
   opacity: 1;
+  overflow-y: auto;
 }
 
 .completion-component__result {

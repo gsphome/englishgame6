@@ -960,6 +960,8 @@ html.dark .compact-about__container {
 .screen-info-modal__content {
   padding: 1rem;
   background-color: var(--theme-bg-elevated, #ffffff);
+  overflow-y: auto;
+  max-height: calc(80vh - 100px);
 }
 
 .screen-info-modal__grid {
