@@ -12,7 +12,13 @@ import { useSettingsStore } from '../../stores/settingsStore';
 import { useTranslation } from '../../utils/i18n';
 import type { LearningModule } from '../../types';
 import { toast } from '../../stores/toastStore';
-import { List, BarChart3, Search as SearchIcon, X as XIcon, Filter as FilterIcon } from 'lucide-react';
+import {
+  List,
+  BarChart3,
+  Search as SearchIcon,
+  X as XIcon,
+  Filter as FilterIcon,
+} from 'lucide-react';
 import { CategoryFilter } from './CategoryFilter';
 import { ModeFilter } from './ModeFilter';
 import '../../styles/components/main-menu.css';
@@ -22,7 +28,8 @@ export const MainMenu: React.FC = () => {
   const progression = useProgression();
   const { query, setQuery, results } = useSearch(modules);
   const { setPreviousMenuContext, previousMenuContext } = useAppStore();
-  const { language, categories, learningModes, setCategories, setLearningModes } = useSettingsStore();
+  const { language, categories, learningModes, setCategories, setLearningModes } =
+    useSettingsStore();
   const { t } = useTranslation(language);
   const queryClient = useQueryClient();
   const [viewMode, setViewMode] = useState<'progression' | 'list'>(previousMenuContext);
@@ -383,7 +390,11 @@ export const MainMenu: React.FC = () => {
               <button
                 className="main-menu__clear-filters-btn"
                 type="button"
-                onClick={() => { setCategories([]); setLearningModes([]); setExpandedFilter(null); }}
+                onClick={() => {
+                  setCategories([]);
+                  setLearningModes([]);
+                  setExpandedFilter(null);
+                }}
                 aria-label={t('mainMenu.clearFilters')}
               >
                 <XIcon size={14} aria-hidden="true" />
@@ -392,32 +403,32 @@ export const MainMenu: React.FC = () => {
             </div>
           )}
           <div className="main-menu__grid" ref={gridRef}>
-          <div
-            className="main-menu__grid-container"
-            role="grid"
-            aria-label={t('mainMenu.modulesAvailable', undefined, { count: modules.length })}
-          >
-            {modules.map((module, index) => (
-              <ModuleCard
-                key={module.id}
-                module={module}
-                onClick={() => handleModuleClick(module)}
-                tabIndex={0}
-                role="gridcell"
-                aria-posinset={index + 1}
-                aria-setsize={modules.length}
-                isNextRecommended={highlightedModuleId === module.id}
-                isCurrentModule={currentModuleId === module.id}
-                hiddenDependencies={getHiddenDependencies(
-                  module,
-                  allModulesRaw,
-                  categories,
-                  learningModes
-                )}
-              />
-            ))}
+            <div
+              className="main-menu__grid-container"
+              role="grid"
+              aria-label={t('mainMenu.modulesAvailable', undefined, { count: modules.length })}
+            >
+              {modules.map((module, index) => (
+                <ModuleCard
+                  key={module.id}
+                  module={module}
+                  onClick={() => handleModuleClick(module)}
+                  tabIndex={0}
+                  role="gridcell"
+                  aria-posinset={index + 1}
+                  aria-setsize={modules.length}
+                  isNextRecommended={highlightedModuleId === module.id}
+                  isCurrentModule={currentModuleId === module.id}
+                  hiddenDependencies={getHiddenDependencies(
+                    module,
+                    allModulesRaw,
+                    categories,
+                    learningModes
+                  )}
+                />
+              ))}
+            </div>
           </div>
-        </div>
         </>
       )}
     </div>
