@@ -3,6 +3,7 @@ import { X, Trash2 } from 'lucide-react';
 import { useSettingsStore } from '../../stores/settingsStore';
 import { useTranslation } from '../../utils/i18n';
 import { useEscapeKey } from '../../hooks/useEscapeKey';
+import { ConfirmModal } from './ConfirmModal';
 import {
   deleteLevelCache,
   deleteAllCache,
@@ -31,6 +32,7 @@ export const DownloadManagerModal: React.FC<DownloadManagerModalProps> = ({ isOp
 
   const [levelInfo, setLevelInfo] = useState<LevelStorageInfo[]>([]);
   const [totalSize, setTotalSize] = useState(0);
+  const [confirmTarget, setConfirmTarget] = useState<string | 'all' | null>(null);
 
   useEscapeKey(isOpen, onClose);
 
@@ -47,7 +49,7 @@ export const DownloadManagerModal: React.FC<DownloadManagerModalProps> = ({ isOp
     }
   }, [isOpen, refreshInfo]);
 
-  const handleDeleteLevel = useCallback(
+  const executeDeleteLevel = useCallback(
     async (level: string) => {
       await deleteLevelCache(level);
       const updatedLevels = downloadedLevels.filter(l => l !== level);
@@ -61,13 +63,23 @@ export const DownloadManagerModal: React.FC<DownloadManagerModalProps> = ({ isOp
     [downloadedLevels, setDownloadedLevels, setOfflineEnabled, setLastDownloadDate, refreshInfo]
   );
 
-  const handleDeleteAll = useCallback(async () => {
+  const executeDeleteAll = useCallback(async () => {
     await deleteAllCache();
     setDownloadedLevels([]);
     setOfflineEnabled(false);
     setLastDownloadDate(null);
     onClose();
   }, [setDownloadedLevels, setOfflineEnabled, setLastDownloadDate, onClose]);
+
+  const handleConfirmDelete = useCallback(async () => {
+    if (!confirmTarget) return;
+    if (confirmTarget === 'all') {
+      await executeDeleteAll();
+    } else {
+      await executeDeleteLevel(confirmTarget);
+    }
+    setConfirmTarget(null);
+  }, [confirmTarget, executeDeleteAll, executeDeleteLevel]);
 
   const handleOverlayClick = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
@@ -106,7 +118,7 @@ export const DownloadManagerModal: React.FC<DownloadManagerModalProps> = ({ isOp
                     </span>
                     <button
                       className="download-manager__item-delete"
-                      onClick={() => handleDeleteLevel(info.level)}
+                      onClick={() => setConfirmTarget(info.level)}
                       aria-label={`${t('offline.deleteLevel')} ${info.level.toUpperCase()}`}
                     >
                       <Trash2 size={14} />
@@ -124,7 +136,7 @@ export const DownloadManagerModal: React.FC<DownloadManagerModalProps> = ({ isOp
               <div className="modal__actions">
                 <button
                   className="download-manager__delete-all modal__btn modal__btn--primary"
-                  onClick={handleDeleteAll}
+                  onClick={() => setConfirmTarget('all')}
                 >
                   {t('offline.deleteAll')}
                 </button>
@@ -137,6 +149,24 @@ export const DownloadManagerModal: React.FC<DownloadManagerModalProps> = ({ isOp
           )}
         </div>
       </div>
+      <ConfirmModal
+        isOpen={confirmTarget !== null}
+        onClose={() => setConfirmTarget(null)}
+        onConfirm={handleConfirmDelete}
+        title={
+          confirmTarget === 'all'
+            ? t('offline.deleteAllConfirmTitle', 'Delete All Downloads')
+            : t('offline.deleteLevelConfirmTitle', 'Delete Level')
+        }
+        message={
+          confirmTarget === 'all'
+            ? t('offline.deleteAllConfirmMessage', 'This will remove all downloaded content. You will need to re-download levels for offline use.')
+            : t('offline.deleteLevelConfirmMessage', `Are you sure you want to delete the downloaded content for level ${confirmTarget?.toUpperCase()}?`)
+        }
+        confirmLabel={t('common.delete', 'Delete')}
+        cancelLabel={t('common.cancel', 'Cancel')}
+        variant="danger"
+      />
     </div>
   );
 };
