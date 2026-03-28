@@ -239,7 +239,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
     // Combine all modules and deduplicate by id
     const allModules = [...progression.unlockedModules, ...progression.lockedModules];
     const seen = new Set<string>();
-    
+
     // Apply search filter if query exists
     let filteredModules = allModules;
     if (searchQuery.trim()) {
@@ -250,7 +250,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
       });
       filteredModules = fuse.search(searchQuery).map(result => result.item);
     }
-    
+
     filteredModules.forEach(module => {
       if (seen.has(module.id)) return;
       // Apply category filter — only show modules whose category is selected
@@ -293,7 +293,13 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
       units[Number(unitKey)] = sorted;
     });
     return units;
-  }, [progression.unlockedModules, progression.lockedModules, categories, learningModes, searchQuery]);
+  }, [
+    progression.unlockedModules,
+    progression.lockedModules,
+    categories,
+    learningModes,
+    searchQuery,
+  ]);
 
   // Auto-expand units with search results
   React.useEffect(() => {
