@@ -14,11 +14,13 @@ import '../../styles/components/progression-dashboard-dark-theme.css';
 interface ProgressionDashboardProps {
   onModuleSelect: (module: LearningModule) => void;
   searchQuery?: string;
+  onClearSearch?: () => void;
 }
 
 export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
   onModuleSelect: _onModuleSelect,
   searchQuery = '',
+  onClearSearch,
 }) => {
   const { setPreviousMenuContext } = useAppStore();
   const { isModuleCompleted } = useProgressStore();
@@ -323,20 +325,19 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
               total: [...progression.unlockedModules, ...progression.lockedModules].length,
             })}
           </p>
-          {(categories.length > 0 || (learningModes?.length ?? 0) > 0) && (
-            <button
-              className="progression-dashboard__clear-filters-btn"
-              type="button"
-              onClick={() => {
-                setCategories([]);
-                setLearningModes([]);
-              }}
-              aria-label={t('mainMenu.clearFilters')}
-            >
-              <XIcon size={14} aria-hidden="true" />
-              {t('mainMenu.clearFilters')}
-            </button>
-          )}
+          <button
+            className="progression-dashboard__clear-filters-btn"
+            type="button"
+            onClick={() => {
+              setCategories([]);
+              setLearningModes([]);
+              onClearSearch?.();
+            }}
+            aria-label={t('mainMenu.clearFilters')}
+          >
+            <XIcon size={14} aria-hidden="true" />
+            {t('mainMenu.clearFilters')}
+          </button>
         </div>
       )}
 

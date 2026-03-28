@@ -374,7 +374,15 @@ export const MainMenu: React.FC = () => {
         )
       ) : viewMode === 'progression' ? (
         // Progression dashboard view
-        <ProgressionDashboard onModuleSelect={handleModuleClick} searchQuery={query} />
+        <ProgressionDashboard
+          onModuleSelect={handleModuleClick}
+          searchQuery={query}
+          onClearSearch={() => {
+            setQuery('');
+            setIsSearchExpanded(false);
+            setExpandedFilter(null);
+          }}
+        />
       ) : (
         // List view (original grid)
         <>
@@ -394,6 +402,8 @@ export const MainMenu: React.FC = () => {
                   setCategories([]);
                   setLearningModes([]);
                   setExpandedFilter(null);
+                  setQuery('');
+                  setIsSearchExpanded(false);
                 }}
                 aria-label={t('mainMenu.clearFilters')}
               >
