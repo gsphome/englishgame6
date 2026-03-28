@@ -134,14 +134,33 @@ const ReadingComponent: React.FC<ReadingComponentProps> = ({ module }) => {
     if (!vocabularyExpanded && !grammarExpanded) return;
     const ref = vocabularyExpanded ? vocabularyRef : grammarRef;
     const el = ref?.current;
-    const scrollContainer = contentRef.current;
-    if (!el || !scrollContainer) return;
-    // Use setTimeout to let the DOM settle after expand/collapse animations
+    if (!el) return;
+    // Find the nearest actually scrollable ancestor (overflow auto/scroll + content overflows)
+    const findScrollParent = (node: HTMLElement): HTMLElement | null => {
+      let parent = node.parentElement;
+      while (parent) {
+        const style = getComputedStyle(parent);
+        const overflowY = style.overflowY;
+        if (
+          (overflowY === 'auto' || overflowY === 'scroll') &&
+          parent.scrollHeight > parent.clientHeight
+        ) {
+          return parent;
+        }
+        parent = parent.parentElement;
+      }
+      return null;
+    };
     const timer = setTimeout(() => {
-      const containerRect = scrollContainer.getBoundingClientRect();
-      const elRect = el.getBoundingClientRect();
-      const offset = elRect.top - containerRect.top + scrollContainer.scrollTop;
-      scrollContainer.scrollTo({ top: offset, behavior: 'smooth' });
+      const scrollParent = findScrollParent(el);
+      if (scrollParent) {
+        const parentRect = scrollParent.getBoundingClientRect();
+        const elRect = el.getBoundingClientRect();
+        const offset = elRect.top - parentRect.top + scrollParent.scrollTop;
+        scrollParent.scrollTo({ top: offset, behavior: 'smooth' });
+      } else {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }, 50);
     return () => clearTimeout(timer);
   }, [vocabularyExpanded, grammarExpanded]);
