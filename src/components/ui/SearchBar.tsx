@@ -66,7 +66,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   };
 
   return (
-    <div className="search-bar" role="search">
+    <div className={`search-bar${query ? ' search-bar--has-query' : ''}`} role="search">
       <label htmlFor={searchId} className="sr-only">
         {label}
       </label>

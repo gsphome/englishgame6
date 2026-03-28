@@ -212,12 +212,14 @@
     min-height: 2.8125rem;
   }
 
-  /* Hide search icon when focused on mobile */
-  .search-bar:focus-within .search-bar__icon {
+  /* Hide search icon when focused or has text on mobile */
+  .search-bar:focus-within .search-bar__icon,
+  .search-bar--has-query .search-bar__icon {
     display: none;
   }
 
-  .search-bar:focus-within .search-bar__input {
+  .search-bar:focus-within .search-bar__input,
+  .search-bar--has-query .search-bar__input {
     padding-left: 0.75rem;
   }
 
