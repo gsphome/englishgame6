@@ -6,6 +6,7 @@ import { useTranslation } from '../../utils/i18n';
 import { ModuleNotAvailableOfflineError } from '../../utils/secureHttp';
 import { lazyWithRetry } from '../../utils/lazyWithRetry';
 import { LoadingSkeleton } from '../ui/LoadingSkeleton';
+import { OfflineModal } from '../ui/OfflineModal';
 import { MainMenu } from '../ui/MainMenu';
 import type { LearningModule } from '../../types';
 import '../../styles/components/app-router.css';
@@ -25,7 +26,7 @@ const ComponentLoader: React.FC = () => (
   </div>
 );
 
-// Error component for module loading failures
+// Error component for non-offline module loading failures
 const ModuleError: React.FC<{ error: Error; moduleId: string; onRetry: () => void }> = ({
   error,
   moduleId,
@@ -33,61 +34,28 @@ const ModuleError: React.FC<{ error: Error; moduleId: string; onRetry: () => voi
 }) => {
   const { language } = useSettingsStore();
   const { t } = useTranslation(language);
-  const setCurrentView = useAppStore(state => state.setCurrentView);
-
-  // Check if this is an offline error
-  const isOfflineError = error instanceof ModuleNotAvailableOfflineError;
-
-  const handleGoToSettings = () => {
-    setCurrentView('menu');
-    // Navigate to menu and let user access settings from there
-    window.location.hash = '#/menu';
-  };
 
   return (
     <div className="app-router__error">
       <div className="app-router__error-container">
-        <div className="app-router__error-icon">{isOfflineError ? '📡' : '⚠️'}</div>
+        <div className="app-router__error-icon">⚠️</div>
         <h3 className="app-router__error-title">
-          {isOfflineError
-            ? t('errors.moduleNotAvailableOffline')
-            : `${t('errors.failedToLoadModule')}: ${moduleId}`}
+          {`${t('errors.failedToLoadModule')}: ${moduleId}`}
         </h3>
-        <p className="app-router__error-message">
-          {isOfflineError ? t('errors.moduleNotAvailableOfflineDescription') : error.message}
-        </p>
+        <p className="app-router__error-message">{error.message}</p>
         <div className="app-router__error-actions">
-          {isOfflineError ? (
-            <>
-              <button
-                onClick={handleGoToSettings}
-                className="app-router__error-btn app-router__error-btn--primary"
-              >
-                {t('errors.goToOfflineSettings')}
-              </button>
-              <button
-                onClick={onRetry}
-                className="app-router__error-btn app-router__error-btn--secondary"
-              >
-                {t('errors.tryAgain')}
-              </button>
-            </>
-          ) : (
-            <>
-              <button
-                onClick={onRetry}
-                className="app-router__error-btn app-router__error-btn--primary"
-              >
-                {t('errors.tryAgain')}
-              </button>
-              <button
-                onClick={() => window.location.reload()}
-                className="app-router__error-btn app-router__error-btn--secondary"
-              >
-                {t('errors.goToHome')}
-              </button>
-            </>
-          )}
+          <button
+            onClick={onRetry}
+            className="app-router__error-btn app-router__error-btn--primary"
+          >
+            {t('errors.tryAgain')}
+          </button>
+          <button
+            onClick={() => window.location.reload()}
+            className="app-router__error-btn app-router__error-btn--secondary"
+          >
+            {t('errors.goToHome')}
+          </button>
         </div>
       </div>
     </div>
@@ -108,8 +76,14 @@ const LearningComponentWrapper: React.FC<LearningComponentWrapperProps> = ({
   const { language } = useSettingsStore();
   const { t } = useTranslation(language);
 
+  const isOfflineError = error instanceof ModuleNotAvailableOfflineError;
+
   if (isLoading) {
     return <ComponentLoader />;
+  }
+
+  if (error && isOfflineError) {
+    return <OfflineModal isOpen onRetry={() => refetch()} />;
   }
 
   if (error) {
