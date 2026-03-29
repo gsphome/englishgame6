@@ -2,7 +2,7 @@
   {
     "sentence": "She was ______ by her grandparents.",
     "correct": "brought up",
-    "explanation": "El phrasal verb <bring up> significa criar a un niño. En la oración se usa el pasado simple: <brought up> (pasado de <bring up>).",
+    "explanation": "El phrasal verb <bring up> significa criar a un niño. La oración está en voz pasiva (<was> + participio pasado). \"Bringing\" es gerundio/participio presente, que no forma la pasiva. El participio pasado de <bring> es <brought>, forma irregular.",
     "tip": "Grandparents did this — they raised the child."
   },
   {
