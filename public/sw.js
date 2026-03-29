@@ -8,7 +8,7 @@
  * especially WebKit-based browsers on iOS.
  */
 
-const CACHE_NAME = 'fluentflow-v2';
+const CACHE_NAME = 'fluentflow-v3';
 
 self.addEventListener('install', event => {
   event.waitUntil(self.skipWaiting());
@@ -67,19 +67,40 @@ async function precacheAssets(assets, baseUrl) {
     }
   }
 
-  // Clean up stale hashed assets from previous builds
+  // Clean up stale hashed assets from previous builds.
+  // Keep assets from the immediately previous build to avoid breaking
+  // clients that still reference old chunks (e.g. iOS Safari with stale HTML).
+  // Only remove assets that are TWO or more builds old.
   try {
+    const PREV_ASSETS_KEY = 'fluentflow-prev-assets';
     const keys = await cache.keys();
+    const prevAssetsJson = await caches.open(CACHE_NAME).then(c => c.match(PREV_ASSETS_KEY));
+    const prevAssets = prevAssetsJson ? new Set(await prevAssetsJson.json()) : new Set();
+
+    // Assets to remove: not in current build AND not in previous build
     for (const req of keys) {
       const pathname = new URL(req.url).pathname;
       if (
         pathname.includes('/assets/') &&
         /[-.][\da-f]{8,}\./.test(pathname) &&
-        !currentUrls.has(req.url)
+        !currentUrls.has(req.url) &&
+        !prevAssets.has(req.url)
       ) {
         await cache.delete(req);
       }
     }
+
+    // Save current assets as "previous" for next deploy cycle
+    const allHashedNow = keys
+      .map(r => r.url)
+      .filter(u => {
+        const p = new URL(u).pathname;
+        return p.includes('/assets/') && /[-.][\da-f]{8,}\./.test(p) && currentUrls.has(u);
+      });
+    await cache.put(
+      PREV_ASSETS_KEY,
+      new Response(JSON.stringify(allHashedNow), { headers: { 'Content-Type': 'application/json' } })
+    );
   } catch {
     // Non-critical
   }

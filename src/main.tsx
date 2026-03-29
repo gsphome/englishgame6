@@ -86,6 +86,7 @@ try {
 
   // App loaded successfully — clear any chunk retry flag
   clearChunkRetryFlag();
+  try { sessionStorage.removeItem('static-chunk-retry'); } catch { /* */ }
 } catch (error) {
   // Use basic console.error for critical initialization errors
   console.error('Failed to initialize React app:', error);
