@@ -72,9 +72,7 @@ export const CompactMyProgress: React.FC<CompactMyProgressProps> = ({
         <div className="my-progress__header">
           <div className="my-progress__title-section">
             <BarChart3 className="my-progress__icon" />
-            <h2 className="my-progress__title">
-              {t('modals.myProgress', 'Mi Progreso')}
-            </h2>
+            <h2 className="my-progress__title">{t('modals.myProgress', 'Mi Progreso')}</h2>
           </div>
           <button onClick={onClose} className="modal__close-btn" aria-label={t('common.close')}>
             <X className="modal__close-icon" />
@@ -115,12 +113,7 @@ export const CompactMyProgress: React.FC<CompactMyProgressProps> = ({
               t={t}
             />
           ) : (
-            <PathTab
-              stats={stats}
-              nextRecommended={nextRecommended}
-              unitInfo={unitInfo}
-              t={t}
-            />
+            <PathTab stats={stats} nextRecommended={nextRecommended} unitInfo={unitInfo} t={t} />
           )}
 
           <div className="modal__actions modal__actions--single">
@@ -160,28 +153,36 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
         <Trophy className="my-progress__stat-icon" />
         <div className="my-progress__stat-content">
           <span className="my-progress__stat-value">{totalScore.toLocaleString()}</span>
-          <span className="my-progress__stat-label">{t('dashboard.totalScore', 'Points earned')}</span>
+          <span className="my-progress__stat-label">
+            {t('dashboard.totalScore', 'Points earned')}
+          </span>
         </div>
       </div>
       <div className="my-progress__stat my-progress__stat--accuracy">
         <Target className="my-progress__stat-icon" />
         <div className="my-progress__stat-content">
           <span className="my-progress__stat-value">{avgScore}%</span>
-          <span className="my-progress__stat-label">{t('dashboard.learningAccuracy', 'Accuracy')}</span>
+          <span className="my-progress__stat-label">
+            {t('dashboard.learningAccuracy', 'Accuracy')}
+          </span>
         </div>
       </div>
       <div className="my-progress__stat my-progress__stat--sessions">
         <Clock className="my-progress__stat-icon" />
         <div className="my-progress__stat-content">
           <span className="my-progress__stat-value">{totalSessions}</span>
-          <span className="my-progress__stat-label">{t('dashboard.studySessions', 'Sessions')}</span>
+          <span className="my-progress__stat-label">
+            {t('dashboard.studySessions', 'Sessions')}
+          </span>
         </div>
       </div>
       <div className="my-progress__stat my-progress__stat--time">
         <TrendingUp className="my-progress__stat-icon" />
         <div className="my-progress__stat-content">
           <span className="my-progress__stat-value">{Math.round(totalTimeSpent / 60)}</span>
-          <span className="my-progress__stat-label">{t('dashboard.timeSpent', 'Time practiced')}</span>
+          <span className="my-progress__stat-label">
+            {t('dashboard.timeSpent', 'Time practiced')}
+          </span>
         </div>
       </div>
     </div>
@@ -206,7 +207,11 @@ const DashboardTab: React.FC<DashboardTabProps> = ({
                   <div className="my-progress__weekly-bar">
                     <div
                       className="my-progress__weekly-fill"
-                      style={{ '--bar-h': `${Math.max(day.averageScore || 0, 5)}%` } as React.CSSProperties}
+                      style={
+                        {
+                          '--bar-h': `${Math.max(day.averageScore || 0, 5)}%`,
+                        } as React.CSSProperties
+                      }
                     />
                   </div>
                   <span className="my-progress__weekly-day-label">{dayName}</span>
@@ -241,14 +246,18 @@ const PathTab: React.FC<PathTabProps> = ({ stats, nextRecommended, unitInfo, t }
       <div className="my-progress__overview-stat">
         <span className="my-progress__overview-emoji">📊</span>
         <span className="my-progress__overview-value">{stats.completionPercentage}%</span>
-        <span className="my-progress__overview-label">{t('learningPath.complete', 'Complete')}</span>
+        <span className="my-progress__overview-label">
+          {t('learningPath.complete', 'Complete')}
+        </span>
       </div>
       <div className="my-progress__overview-stat">
         <CheckCircle className="my-progress__overview-icon my-progress__overview-icon--completed" />
         <span className="my-progress__overview-value">
           {stats.completedModules} / {stats.totalModules}
         </span>
-        <span className="my-progress__overview-label">{t('learningPath.completed', 'Completed')}</span>
+        <span className="my-progress__overview-label">
+          {t('learningPath.completed', 'Completed')}
+        </span>
       </div>
     </div>
 
@@ -309,8 +318,12 @@ const PathTab: React.FC<PathTabProps> = ({ stats, nextRecommended, unitInfo, t }
                 </div>
               </div>
               <div className="my-progress__unit-label">
-                <span className="my-progress__unit-name" title={info?.name}>{info?.shortName}</span>
-                <span className="my-progress__unit-count">{unitStat.completed}/{unitStat.total}</span>
+                <span className="my-progress__unit-name" title={info?.name}>
+                  {info?.shortName}
+                </span>
+                <span className="my-progress__unit-count">
+                  {unitStat.completed}/{unitStat.total}
+                </span>
               </div>
             </div>
           );

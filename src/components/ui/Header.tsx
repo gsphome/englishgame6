@@ -263,7 +263,9 @@ export const Header: React.FC<HeaderProps> = () => {
                   aria-label={t('auth.viewProgressDashboard')}
                 >
                   <BarChart3 className="header-side-menu__icon" aria-hidden="true" />
-                  <span className="header-side-menu__text">{t('modals.myProgress', 'Mi Progreso')}</span>
+                  <span className="header-side-menu__text">
+                    {t('modals.myProgress', 'Mi Progreso')}
+                  </span>
                 </button>
               </div>
 
