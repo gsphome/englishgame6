@@ -2,7 +2,7 @@ import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { writeFileSync } from 'fs';
+import { writeFileSync, readdirSync } from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -22,10 +22,22 @@ export default defineConfig(({ mode }) => {
         jsxImportSource: 'react'
       }),
       {
-        name: 'build-info',
+        name: 'build-info-and-asset-manifest',
         closeBundle() {
           const outDir = resolve(__dirname, '../dist');
           writeFileSync(resolve(outDir, 'build-info.json'), JSON.stringify({ buildTime }));
+
+          // Generate asset-manifest.json listing all hashed assets for offline pre-caching
+          try {
+            const assetsDir = resolve(outDir, 'assets');
+            const files = readdirSync(assetsDir);
+            const assets = files
+              .filter(f => /\.(js|css)$/.test(f))
+              .map(f => `assets/${f}`);
+            writeFileSync(resolve(outDir, 'asset-manifest.json'), JSON.stringify(assets));
+          } catch {
+            // Non-critical: offline pre-caching will skip if manifest missing
+          }
         }
       }
     ],
