@@ -399,8 +399,6 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
                       </div>
                     </div>
                   </div>
-
-
                 </div>
               </div>
             )}
