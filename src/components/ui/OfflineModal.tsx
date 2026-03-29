@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Home, RotateCcw } from 'lucide-react';
 import { useSettingsStore } from '../../stores/settingsStore';
-import { useAppStore } from '../../stores/appStore';
+import { useMenuNavigation } from '../../hooks/useMenuNavigation';
 import { useTranslation } from '../../utils/i18n';
-import { useEscapeKey } from '../../hooks/useEscapeKey';
 import '../../styles/components/offline-modal.css';
 
 interface OfflineModalProps {
@@ -13,27 +13,25 @@ interface OfflineModalProps {
 export const OfflineModal: React.FC<OfflineModalProps> = ({ isOpen, onRetry }) => {
   const { language } = useSettingsStore();
   const { t } = useTranslation(language);
-  const setCurrentView = useAppStore(state => state.setCurrentView);
+  const { returnToMenu } = useMenuNavigation();
 
-  const handleGoToMenu = () => {
-    setCurrentView('menu');
-    window.location.hash = '#/menu';
-  };
+  const handleGoToMenu = () => returnToMenu();
 
-  useEscapeKey(isOpen, handleGoToMenu);
+  // Escape key to go home
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') handleGoToMenu();
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
   return (
-    <div className="offline-modal" role="presentation" onClick={handleGoToMenu}>
-      <div
-        className="offline-modal__container"
-        onClick={e => e.stopPropagation()}
-        role="alertdialog"
-        aria-modal="true"
-        aria-labelledby="offline-modal-title"
-        aria-describedby="offline-modal-message"
-      >
+    <div className="offline-modal" role="alert" aria-labelledby="offline-modal-title">
+      <div className="offline-modal__container">
         <div className="offline-modal__header">
           <span className="offline-modal__icon" aria-hidden="true">
             📡
@@ -43,7 +41,7 @@ export const OfflineModal: React.FC<OfflineModalProps> = ({ isOpen, onRetry }) =
           <h2 id="offline-modal-title" className="offline-modal__title">
             {t('errors.moduleNotAvailableOffline')}
           </h2>
-          <p id="offline-modal-message" className="offline-modal__message">
+          <p className="offline-modal__message">
             {t('errors.moduleNotAvailableOfflineDescription')}
           </p>
         </div>
@@ -52,12 +50,31 @@ export const OfflineModal: React.FC<OfflineModalProps> = ({ isOpen, onRetry }) =
             onClick={handleGoToMenu}
             className="offline-modal__btn offline-modal__btn--primary"
           >
-            {t('navigation.returnToMenu')}
+            {t('messages.returnToMenu')}
           </button>
           <button onClick={onRetry} className="offline-modal__btn offline-modal__btn--secondary">
             {t('errors.tryAgain')}
           </button>
         </div>
+      </div>
+
+      {/* Game controls bar with home button — matches learning components pattern */}
+      <div className="game-controls">
+        <button
+          onClick={handleGoToMenu}
+          className="game-controls__home-btn"
+          title={t('learning.returnToMainMenu')}
+        >
+          <Home className="game-controls__home-icon" />
+        </button>
+
+        <button
+          onClick={onRetry}
+          className="game-controls__primary-btn game-controls__primary-btn--blue"
+        >
+          <RotateCcw className="game-controls__primary-icon" />
+          <span>{t('errors.tryAgain')}</span>
+        </button>
       </div>
     </div>
   );

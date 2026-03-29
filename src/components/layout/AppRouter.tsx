@@ -1,7 +1,9 @@
 import React, { Suspense } from 'react';
+import { Home, RotateCcw } from 'lucide-react';
 import { useAppStore } from '../../stores/appStore';
 import { useSettingsStore } from '../../stores/settingsStore';
 import { useModuleData } from '../../hooks/useModuleData';
+import { useMenuNavigation } from '../../hooks/useMenuNavigation';
 import { useTranslation } from '../../utils/i18n';
 import { ModuleNotAvailableOfflineError } from '../../utils/secureHttp';
 import { lazyWithRetry } from '../../utils/lazyWithRetry';
@@ -34,6 +36,9 @@ const ModuleError: React.FC<{ error: Error; moduleId: string; onRetry: () => voi
 }) => {
   const { language } = useSettingsStore();
   const { t } = useTranslation(language);
+  const { returnToMenu } = useMenuNavigation();
+
+  const handleGoToMenu = () => returnToMenu();
 
   return (
     <div className="app-router__error">
@@ -51,12 +56,31 @@ const ModuleError: React.FC<{ error: Error; moduleId: string; onRetry: () => voi
             {t('errors.tryAgain')}
           </button>
           <button
-            onClick={() => window.location.reload()}
+            onClick={handleGoToMenu}
             className="app-router__error-btn app-router__error-btn--secondary"
           >
             {t('errors.goToHome')}
           </button>
         </div>
+      </div>
+
+      {/* Game controls bar for mobile — consistent with learning components */}
+      <div className="game-controls">
+        <button
+          onClick={handleGoToMenu}
+          className="game-controls__home-btn"
+          title={t('learning.returnToMainMenu')}
+        >
+          <Home className="game-controls__home-icon" />
+        </button>
+
+        <button
+          onClick={onRetry}
+          className="game-controls__primary-btn game-controls__primary-btn--blue"
+        >
+          <RotateCcw className="game-controls__primary-icon" />
+          <span>{t('errors.tryAgain')}</span>
+        </button>
       </div>
     </div>
   );
@@ -128,7 +152,12 @@ export const AppRouter: React.FC = () => {
     return (
       <div className="app-router__no-module">
         <p className="app-router__no-module-text">{t('messages.noModuleSelected')}</p>
-        <button onClick={() => window.location.reload()} className="app-router__no-module-btn">
+        <button
+          onClick={() => {
+            window.location.hash = '#/menu';
+          }}
+          className="app-router__no-module-btn"
+        >
           {t('messages.returnToMenu')}
         </button>
       </div>

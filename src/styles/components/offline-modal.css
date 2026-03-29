@@ -1,15 +1,13 @@
-/* Offline Module Modal - BEM */
+/* Offline Module View - BEM */
+/* Inline full-page view (not a modal overlay) with game-controls bar for mobile */
 
 .offline-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-  padding: 1rem;
+  min-height: calc(100dvh - 64px);
+  padding: 1.5rem;
   animation: offline-modal-fade-in var(--animation-fast, 150ms) var(--ease-smooth, ease-out);
 }
 
@@ -36,7 +34,7 @@
 .offline-modal__container {
   background-color: var(--theme-bg-elevated, #ffffff);
   border-radius: 14px;
-  box-shadow: var(--shadow-modal, 0 20px 60px rgba(0, 0, 0, 0.3));
+  box-shadow: var(--shadow-card, 0 4px 16px rgba(0, 0, 0, 0.08));
   max-width: 18rem;
   width: 100%;
   overflow: hidden;
@@ -120,6 +118,25 @@
 .offline-modal__btn:focus-visible {
   outline: 3px solid var(--theme-primary-blue, #3b82f6);
   outline-offset: 2px;
+}
+
+/* Hide inline actions on mobile — game-controls bar handles it */
+@media (max-width: 639px) {
+  .offline-modal__actions {
+    display: none;
+  }
+
+  .offline-modal {
+    min-height: calc(100dvh - 64px - 4rem);
+    padding: 1rem;
+  }
+}
+
+/* Hide game-controls bar on desktop — inline buttons are enough */
+@media (min-width: 640px) {
+  .offline-modal > .game-controls {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

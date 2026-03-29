@@ -135,6 +135,21 @@
 }
 
 /* === MOBILE RESPONSIVE === */
+
+/* Hide inline error actions on mobile — game-controls bar handles it */
+@media (max-width: 639px) {
+  .app-router__error-actions {
+    display: none;
+  }
+}
+
+/* Hide game-controls bar on desktop — inline buttons are enough */
+@media (min-width: 640px) {
+  .app-router__error > .game-controls {
+    display: none;
+  }
+}
+
 @media (max-width: 767px) {
   .app-router__error,
   .app-router__no-module,
@@ -145,11 +160,6 @@
 
   .app-router__error-container {
     padding: 1.5rem;
-  }
-
-  .app-router__error-actions {
-    flex-direction: column;
-    gap: 0.75rem;
   }
 
   .app-router__error-btn,
