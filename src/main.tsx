@@ -13,12 +13,47 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker
       .register(swPath)
       .then(() => {
-        // Service worker registered successfully
+        // After SW is ready, trigger asset precaching from client side.
+        // This is more reliable than doing it inside the SW fetch handler,
+        // especially on WebKit/iOS where SW lifecycle is more aggressive.
+        precacheAppAssets();
       })
       .catch(error => {
         console.warn('SW registration failed:', error);
       });
   });
+}
+
+/**
+ * Fetch asset-manifest.json and tell the SW to precache all chunks.
+ * Runs after SW registration, non-blocking, best-effort.
+ */
+async function precacheAppAssets(): Promise<void> {
+  try {
+    const sw = navigator.serviceWorker.controller;
+    if (!sw) return; // SW not controlling yet — will precache on next load
+
+    const base = import.meta.env.BASE_URL || '/';
+    const origin = window.location.origin;
+
+    // Fetch the manifest
+    const manifestUrl = `${origin}${base}asset-manifest.json`;
+    const res = await fetch(manifestUrl);
+    if (!res.ok) return;
+    const assets: string[] = await res.json();
+
+    // Build full URLs
+    const fullUrls = assets.map(a => `${origin}${base}${a}`);
+
+    // Also include the HTML page and manifest itself
+    fullUrls.push(`${origin}${base}`);
+    fullUrls.push(manifestUrl);
+
+    // Tell SW to precache
+    sw.postMessage({ type: 'PRECACHE_ASSETS', assets: fullUrls, baseUrl: `${origin}${base}` });
+  } catch {
+    // Non-critical — SW will cache assets on-demand via fetch handler
+  }
 }
 
 try {

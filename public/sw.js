@@ -3,14 +3,13 @@
  * Strategy: Network-first with Cache API fallback for offline mode.
  * Hashed assets use cache-first with network fallback.
  *
- * On HTML navigation: after caching the fresh HTML, pre-caches all app chunks
- * from asset-manifest.json. This ensures lazy-loaded chunks are available
- * offline even after a new deploy changes the content hashes.
+ * Asset precaching is triggered from the client side (main.tsx) via postMessage,
+ * not from the SW fetch handler. This is more reliable across browsers,
+ * especially WebKit-based browsers on iOS.
  */
 
 const CACHE_NAME = 'fluentflow-v2';
 
-// Activate immediately and claim all clients
 self.addEventListener('install', event => {
   event.waitUntil(self.skipWaiting());
 });
@@ -30,50 +29,25 @@ self.addEventListener('activate', event => {
   );
 });
 
+// Client-triggered precaching via postMessage
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'PRECACHE_ASSETS') {
+    event.waitUntil(precacheAssets(event.data.assets, event.data.baseUrl));
+  }
+});
+
 /**
- * Fetch the asset manifest and pre-cache all missing chunks.
- * Also cleans up stale assets from previous builds.
+ * Pre-cache a list of asset URLs and clean up stale ones.
  */
-async function precacheFromManifest(baseUrl) {
+async function precacheAssets(assets, baseUrl) {
+  if (!assets || assets.length === 0) return;
+
   const cache = await caches.open(CACHE_NAME);
-  const assetUrls = new Set();
+  const currentUrls = new Set(assets);
 
-  // 1. Parse current HTML from cache to get entry points
-  try {
-    const htmlRes = await cache.match(new Request(baseUrl));
-    if (htmlRes) {
-      const html = await htmlRes.text();
-      const srcPattern = /(?:src|href)=["']([^"']*\/assets\/[^"']+)["']/g;
-      let match;
-      while ((match = srcPattern.exec(html)) !== null) {
-        const path = match[1];
-        assetUrls.add(path.startsWith('http') ? path : new URL(path, baseUrl).href);
-      }
-    }
-  } catch {
-    // Continue with manifest only
-  }
-
-  // 2. Fetch asset-manifest.json for ALL chunks (including lazy-loaded)
-  try {
-    const manifestUrl = new URL('asset-manifest.json', baseUrl).href;
-    const manifestRes = await fetch(manifestUrl);
-    if (manifestRes.ok) {
-      const assets = await manifestRes.json();
-      for (const asset of assets) {
-        assetUrls.add(new URL(asset, baseUrl).href);
-      }
-      await cache.put(manifestUrl, manifestRes.clone());
-    }
-  } catch {
-    // Manifest unavailable
-  }
-
-  if (assetUrls.size === 0) return;
-
-  // 3. Fetch missing assets in parallel (batches of 6)
+  // Fetch missing assets in parallel (batches of 6)
   const missing = [];
-  for (const url of assetUrls) {
+  for (const url of assets) {
     if (!(await cache.match(url))) missing.push(url);
   }
 
@@ -82,14 +56,18 @@ async function precacheFromManifest(baseUrl) {
     for (let i = 0; i < missing.length; i += batchSize) {
       await Promise.allSettled(
         missing.slice(i, i + batchSize).map(async url => {
-          const res = await fetch(url);
-          if (res.ok) await cache.put(url, res);
+          try {
+            const res = await fetch(url);
+            if (res.ok) await cache.put(url, res);
+          } catch {
+            // Individual failures are non-critical
+          }
         })
       );
     }
   }
 
-  // 4. Clean up stale hashed assets not in current build
+  // Clean up stale hashed assets from previous builds
   try {
     const keys = await cache.keys();
     for (const req of keys) {
@@ -97,7 +75,7 @@ async function precacheFromManifest(baseUrl) {
       if (
         pathname.includes('/assets/') &&
         /[-.][\da-f]{8,}\./.test(pathname) &&
-        !assetUrls.has(req.url)
+        !currentUrls.has(req.url)
       ) {
         await cache.delete(req);
       }
@@ -121,8 +99,9 @@ self.addEventListener('fetch', event => {
     url.pathname.endsWith('/englishgame6/') ||
     url.pathname === '/englishgame6';
   const isAsset = /\.(js|css|woff2?|ttf|svg|png|ico|webp)$/.test(url.pathname);
+  const isManifest = url.pathname.endsWith('asset-manifest.json');
 
-  if (!isDataJson && !isHtml && !isAsset) return;
+  if (!isDataJson && !isHtml && !isAsset && !isManifest) return;
 
   // Hashed assets (contain hash in filename): cache-first (immutable)
   if (isAsset && /[-.][\da-f]{8,}\./.test(url.pathname)) {
@@ -142,35 +121,19 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // HTML: network-first with background precaching of all app chunks
-  if (isHtml) {
-    const baseUrl = url.pathname.endsWith('/')
-      ? url.href
-      : url.href.substring(0, url.href.lastIndexOf('/') + 1);
-
-    // Create a deferred promise for precaching that waitUntil can track
-    let triggerPrecache;
-    const precacheReady = new Promise(resolve => { triggerPrecache = resolve; });
-    // waitUntil keeps the SW alive until precaching completes
-    event.waitUntil(precacheReady.then(() => precacheFromManifest(baseUrl).catch(() => {})));
-
+  // HTML and asset-manifest: network-first with cache fallback
+  if (isHtml || isManifest) {
     event.respondWith(
       caches.open(CACHE_NAME).then(async cache => {
         try {
           const response = await fetch(event.request);
-          if (response.ok) {
-            await cache.put(event.request, response.clone());
-            // Signal that HTML is cached, precaching can start
-            triggerPrecache();
-          } else {
-            triggerPrecache();
-          }
+          if (response.ok) cache.put(event.request, response.clone());
           return response;
         } catch {
-          triggerPrecache();
           const cached = await cache.match(event.request);
           if (cached) return cached;
-          return new Response('App not available offline', { status: 503 });
+          if (isHtml) return new Response('App not available offline', { status: 503 });
+          return new Response('[]', { status: 503, headers: { 'Content-Type': 'application/json' } });
         }
       })
     );
@@ -182,9 +145,7 @@ self.addEventListener('fetch', event => {
     caches.open(CACHE_NAME).then(async cache => {
       try {
         const response = await fetch(event.request);
-        if (response.ok) {
-          cache.put(event.request, response.clone());
-        }
+        if (response.ok) cache.put(event.request, response.clone());
         return response;
       } catch {
         const cached = await cache.match(event.request);
@@ -196,7 +157,7 @@ self.addEventListener('fetch', event => {
             headers: { 'Content-Type': 'application/json' },
           });
         }
-        return new Response('App not available offline', { status: 503 });
+        return new Response('Resource not available offline', { status: 503 });
       }
     })
   );
