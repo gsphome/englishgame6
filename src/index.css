@@ -91,8 +91,7 @@ body {
 body:has(.compact-profile),
 body:has(.compact-settings),
 body:has(.compact-about),
-body:has(.compact-progress-dashboard),
-body:has(.compact-learning-path) {
+body:has(.my-progress) {
   overflow: hidden;
 }
 

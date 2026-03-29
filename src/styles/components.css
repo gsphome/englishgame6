@@ -4,9 +4,8 @@
 @import './components/app-router.css';
 @import './components/compact-about.css';
 @import './components/compact-advanced-settings.css';
-@import './components/compact-learning-path.css';
+@import './components/compact-my-progress.css';
 @import './components/compact-profile.css';
-@import './components/compact-progress-dashboard.css';
 @import './components/progression-dashboard.css';
 @import './components/modal-buttons.css';
 @import './components/completion-component.css';
