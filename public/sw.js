@@ -3,9 +3,9 @@
  * Strategy: Network-first with Cache API fallback for offline mode.
  * Hashed assets use cache-first with network fallback.
  *
- * On HTML navigation: after caching the fresh HTML, parses it to discover
- * referenced hashed assets and pre-caches any that are missing. This ensures
- * lazy-loaded chunks are available offline even after a new deploy.
+ * On HTML navigation: after caching the fresh HTML, pre-caches all app chunks
+ * from asset-manifest.json. This ensures lazy-loaded chunks are available
+ * offline even after a new deploy changes the content hashes.
  */
 
 const CACHE_NAME = 'fluentflow-v2';
@@ -31,93 +31,76 @@ self.addEventListener('activate', event => {
 });
 
 /**
- * Parse HTML to extract hashed asset URLs (JS/CSS from /assets/).
- * Then fetch the asset-manifest.json for the full list of chunks
- * (including lazy-loaded ones not referenced in the initial HTML).
+ * Fetch the asset manifest and pre-cache all missing chunks.
+ * Also cleans up stale assets from previous builds.
  */
-async function precacheAssetsFromHtml(htmlResponse, baseUrl) {
+async function precacheFromManifest(baseUrl) {
+  const cache = await caches.open(CACHE_NAME);
+  const assetUrls = new Set();
+
+  // 1. Parse current HTML from cache to get entry points
   try {
-    const html = await htmlResponse.text();
-    const cache = await caches.open(CACHE_NAME);
-
-    // Collect asset URLs from both HTML and manifest
-    const assetUrls = new Set();
-
-    // 1. Extract assets referenced in HTML (entry points)
-    const srcPattern = /(?:src|href)=["']([^"']*\/assets\/[^"']+)["']/g;
-    let match;
-    while ((match = srcPattern.exec(html)) !== null) {
-      const path = match[1];
-      const url = path.startsWith('http')
-        ? path
-        : new URL(path, baseUrl).href;
-      assetUrls.add(url);
-    }
-
-    // 2. Fetch asset-manifest.json for ALL chunks (including lazy-loaded)
-    try {
-      const manifestUrl = new URL('asset-manifest.json', baseUrl).href;
-      const manifestRes = await fetch(manifestUrl);
-      if (manifestRes.ok) {
-        const assets = await manifestRes.json();
-        for (const asset of assets) {
-          assetUrls.add(new URL(asset, baseUrl).href);
-        }
-        // Cache the manifest itself
-        cache.put(manifestUrl, manifestRes.clone());
+    const htmlRes = await cache.match(new Request(baseUrl));
+    if (htmlRes) {
+      const html = await htmlRes.text();
+      const srcPattern = /(?:src|href)=["']([^"']*\/assets\/[^"']+)["']/g;
+      let match;
+      while ((match = srcPattern.exec(html)) !== null) {
+        const path = match[1];
+        assetUrls.add(path.startsWith('http') ? path : new URL(path, baseUrl).href);
       }
-    } catch {
-      // Manifest unavailable — HTML-only assets will still be cached
     }
+  } catch {
+    // Continue with manifest only
+  }
 
-    if (assetUrls.size === 0) return;
-
-    // Check which assets are missing from cache and fetch them
-    const missing = [];
-    for (const url of assetUrls) {
-      const cached = await cache.match(url);
-      if (!cached) missing.push(url);
+  // 2. Fetch asset-manifest.json for ALL chunks (including lazy-loaded)
+  try {
+    const manifestUrl = new URL('asset-manifest.json', baseUrl).href;
+    const manifestRes = await fetch(manifestUrl);
+    if (manifestRes.ok) {
+      const assets = await manifestRes.json();
+      for (const asset of assets) {
+        assetUrls.add(new URL(asset, baseUrl).href);
+      }
+      await cache.put(manifestUrl, manifestRes.clone());
     }
+  } catch {
+    // Manifest unavailable
+  }
 
-    if (missing.length === 0) return;
+  if (assetUrls.size === 0) return;
 
-    // Fetch missing assets in parallel (max 6 concurrent)
+  // 3. Fetch missing assets in parallel (batches of 6)
+  const missing = [];
+  for (const url of assetUrls) {
+    if (!(await cache.match(url))) missing.push(url);
+  }
+
+  if (missing.length > 0) {
     const batchSize = 6;
     for (let i = 0; i < missing.length; i += batchSize) {
-      const batch = missing.slice(i, i + batchSize);
-      const results = await Promise.allSettled(
-        batch.map(async url => {
+      await Promise.allSettled(
+        missing.slice(i, i + batchSize).map(async url => {
           const res = await fetch(url);
           if (res.ok) await cache.put(url, res);
         })
       );
-      // Silently ignore individual failures — SW will try again on next navigation
     }
-
-    // Clean up stale assets: remove cached hashed assets not in current manifest
-    await cleanupStaleAssets(cache, assetUrls);
-  } catch {
-    // Non-critical: precaching is best-effort
   }
-}
 
-/**
- * Remove hashed assets from cache that are no longer referenced
- * by the current build (stale chunks from previous deploys).
- */
-async function cleanupStaleAssets(cache, currentAssetUrls) {
+  // 4. Clean up stale hashed assets not in current build
   try {
     const keys = await cache.keys();
-    const staleRequests = keys.filter(req => {
-      const url = new URL(req.url);
-      // Only clean up hashed assets in /assets/ directory
-      if (!url.pathname.includes('/assets/')) return false;
-      if (!/[-.][\da-f]{8,}\./.test(url.pathname)) return false;
-      return !currentAssetUrls.has(req.url);
-    });
-
-    for (const req of staleRequests) {
-      await cache.delete(req);
+    for (const req of keys) {
+      const pathname = new URL(req.url).pathname;
+      if (
+        pathname.includes('/assets/') &&
+        /[-.][\da-f]{8,}\./.test(pathname) &&
+        !assetUrls.has(req.url)
+      ) {
+        await cache.delete(req);
+      }
     }
   } catch {
     // Non-critical
@@ -152,7 +135,6 @@ self.addEventListener('fetch', event => {
           if (response.ok) cache.put(event.request, response.clone());
           return response;
         } catch {
-          // Network failed and not in cache — return 503 so the app can handle it
           return new Response('', { status: 503, statusText: 'Asset unavailable offline' });
         }
       })
@@ -160,24 +142,32 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // HTML: network-first, and on success trigger background precaching of assets
+  // HTML: network-first with background precaching of all app chunks
   if (isHtml) {
+    const baseUrl = url.pathname.endsWith('/')
+      ? url.href
+      : url.href.substring(0, url.href.lastIndexOf('/') + 1);
+
+    // Create a deferred promise for precaching that waitUntil can track
+    let triggerPrecache;
+    const precacheReady = new Promise(resolve => { triggerPrecache = resolve; });
+    // waitUntil keeps the SW alive until precaching completes
+    event.waitUntil(precacheReady.then(() => precacheFromManifest(baseUrl).catch(() => {})));
+
     event.respondWith(
       caches.open(CACHE_NAME).then(async cache => {
         try {
           const response = await fetch(event.request);
           if (response.ok) {
-            cache.put(event.request, response.clone());
-            // Derive base URL from the HTML page URL for resolving relative paths
-            const htmlUrl = response.url || event.request.url;
-            const baseUrl = htmlUrl.endsWith('/')
-              ? htmlUrl
-              : htmlUrl.substring(0, htmlUrl.lastIndexOf('/') + 1);
-            // Pre-cache assets in background (non-blocking)
-            event.waitUntil(precacheAssetsFromHtml(response.clone(), baseUrl));
+            await cache.put(event.request, response.clone());
+            // Signal that HTML is cached, precaching can start
+            triggerPrecache();
+          } else {
+            triggerPrecache();
           }
           return response;
         } catch {
+          triggerPrecache();
           const cached = await cache.match(event.request);
           if (cached) return cached;
           return new Response('App not available offline', { status: 503 });
