@@ -35,7 +35,9 @@ export const OfflineModal: React.FC<OfflineModalProps> = ({ isOpen, onRetry }) =
         aria-describedby="offline-modal-message"
       >
         <div className="offline-modal__header">
-          <span className="offline-modal__icon" aria-hidden="true">📡</span>
+          <span className="offline-modal__icon" aria-hidden="true">
+            📡
+          </span>
         </div>
         <div className="offline-modal__body">
           <h2 id="offline-modal-title" className="offline-modal__title">
@@ -52,10 +54,7 @@ export const OfflineModal: React.FC<OfflineModalProps> = ({ isOpen, onRetry }) =
           >
             {t('navigation.returnToMenu')}
           </button>
-          <button
-            onClick={onRetry}
-            className="offline-modal__btn offline-modal__btn--secondary"
-          >
+          <button onClick={onRetry} className="offline-modal__btn offline-modal__btn--secondary">
             {t('errors.tryAgain')}
           </button>
         </div>
