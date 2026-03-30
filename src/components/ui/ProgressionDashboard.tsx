@@ -147,7 +147,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
 
     observer.observe(container, { childList: true, subtree: true });
     return () => observer.disconnect();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nextRecommended?.id, scheduleScroll]);
 
   const toggleUnit = (unit: number) => {

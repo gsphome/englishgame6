@@ -51,7 +51,10 @@ export const MainMenu: React.FC = () => {
   // Pre-compute module statuses and hidden dependencies once for all cards
   // instead of each ModuleCard calling useProgression() individually
   const moduleStatusMap = React.useMemo(() => {
-    const map = new Map<string, { status: 'completed' | 'unlocked' | 'locked'; missingCount: number }>();
+    const map = new Map<
+      string,
+      { status: 'completed' | 'unlocked' | 'locked'; missingCount: number }
+    >();
     for (const m of modules) {
       map.set(m.id, {
         status: progression.getModuleStatus(m.id),

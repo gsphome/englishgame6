@@ -1,5 +1,12 @@
 // Core Types
-export type LearningMode = 'flashcard' | 'quiz' | 'completion' | 'sorting' | 'matching' | 'reading' | 'reordering';
+export type LearningMode =
+  | 'flashcard'
+  | 'quiz'
+  | 'completion'
+  | 'sorting'
+  | 'matching'
+  | 'reading'
+  | 'reordering';
 type DifficultyLevel = 'a1' | 'a2' | 'b1' | 'b2' | 'c1' | 'c2';
 export type Category = 'Vocabulary' | 'Grammar' | 'PhrasalVerbs' | 'Idioms' | 'Reading' | 'Review';
 

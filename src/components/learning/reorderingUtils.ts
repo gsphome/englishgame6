@@ -12,10 +12,7 @@ export interface ValidationResult {
  * Compare user's word array against the correct word array element by element (case-sensitive).
  * If lengths differ, all positions in userWords are marked incorrect.
  */
-export function validateReordering(
-  userWords: string[],
-  correctWords: string[]
-): ValidationResult {
+export function validateReordering(userWords: string[], correctWords: string[]): ValidationResult {
   if (userWords.length !== correctWords.length) {
     return {
       isCorrect: false,

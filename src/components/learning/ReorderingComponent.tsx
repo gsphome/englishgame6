@@ -25,25 +25,17 @@ const ReorderingComponent: React.FC<ReorderingComponentProps> = ({ module }) => 
   const [focusedIndex, setFocusedIndex] = useState(0);
   const [keyboardSelected, setKeyboardSelected] = useState(false);
 
-  const {
-    t,
-    randomizeItems,
-    markCorrect,
-    markIncorrect,
-    finishExercise,
-    handleReturnToMenu,
-  } = useLearningSession({
-    moduleId: module.id,
-    moduleName: module.name,
-    learningMode: 'reordering',
-  });
+  const { t, randomizeItems, markCorrect, markIncorrect, finishExercise, handleReturnToMenu } =
+    useLearningSession({
+      moduleId: module.id,
+      moduleName: module.name,
+      learningMode: 'reordering',
+    });
 
   // Compute exercises once on mount to avoid re-shuffling on score updates
   const processedExercisesRef = useRef<ReorderingData[] | null>(null);
   if (processedExercisesRef.current === null) {
-    processedExercisesRef.current = module?.data
-      ? (module.data as ReorderingData[])
-      : [];
+    processedExercisesRef.current = module?.data ? (module.data as ReorderingData[]) : [];
   }
   const exercises = processedExercisesRef.current;
   const currentExercise = exercises[currentIndex];
@@ -51,11 +43,7 @@ const ReorderingComponent: React.FC<ReorderingComponentProps> = ({ module }) => 
   // Initialize words for current exercise
   useEffect(() => {
     if (!currentExercise) return;
-    const words = prepareWords(
-      currentExercise.words,
-      currentExercise.distractors,
-      randomizeItems
-    );
+    const words = prepareWords(currentExercise.words, currentExercise.distractors, randomizeItems);
     setAvailableWords(words);
     setAnswerWords([]);
     setShowResult(false);
@@ -68,22 +56,28 @@ const ReorderingComponent: React.FC<ReorderingComponentProps> = ({ module }) => 
   }, [currentIndex, currentExercise, randomizeItems]);
 
   // Tap word in word bank -> move to end of answer zone
-  const handleTapAvailable = useCallback((index: number) => {
-    if (showResult) return;
-    const result = moveWord(availableWords, answerWords, index);
-    setAvailableWords(result.from);
-    setAnswerWords(result.to);
-    setKeyboardSelected(false);
-  }, [showResult, availableWords, answerWords]);
+  const handleTapAvailable = useCallback(
+    (index: number) => {
+      if (showResult) return;
+      const result = moveWord(availableWords, answerWords, index);
+      setAvailableWords(result.from);
+      setAnswerWords(result.to);
+      setKeyboardSelected(false);
+    },
+    [showResult, availableWords, answerWords]
+  );
 
   // Tap word in answer zone -> return to word bank
-  const handleTapAnswer = useCallback((index: number) => {
-    if (showResult) return;
-    const result = moveWord(answerWords, availableWords, index);
-    setAnswerWords(result.from);
-    setAvailableWords(result.to);
-    setKeyboardSelected(false);
-  }, [showResult, answerWords, availableWords]);
+  const handleTapAnswer = useCallback(
+    (index: number) => {
+      if (showResult) return;
+      const result = moveWord(answerWords, availableWords, index);
+      setAnswerWords(result.from);
+      setAvailableWords(result.to);
+      setKeyboardSelected(false);
+    },
+    [showResult, answerWords, availableWords]
+  );
 
   const handleCheck = useCallback(() => {
     if (answerWords.length === 0 || showResult) return;
@@ -101,11 +95,7 @@ const ReorderingComponent: React.FC<ReorderingComponentProps> = ({ module }) => 
 
   const handleReset = useCallback(() => {
     if (!currentExercise) return;
-    const words = prepareWords(
-      currentExercise.words,
-      currentExercise.distractors,
-      randomizeItems
-    );
+    const words = prepareWords(currentExercise.words, currentExercise.distractors, randomizeItems);
     setAvailableWords(words);
     setAnswerWords([]);
     setShowResult(false);
@@ -225,8 +215,10 @@ const ReorderingComponent: React.FC<ReorderingComponentProps> = ({ module }) => 
           if (focusedZone === 'answer' && keyboardSelected && focusedIndex > 0) {
             // Reorder: swap selected word left
             const newAnswer = [...answerWords];
-            [newAnswer[focusedIndex - 1], newAnswer[focusedIndex]] =
-              [newAnswer[focusedIndex], newAnswer[focusedIndex - 1]];
+            [newAnswer[focusedIndex - 1], newAnswer[focusedIndex]] = [
+              newAnswer[focusedIndex],
+              newAnswer[focusedIndex - 1],
+            ];
             setAnswerWords(newAnswer);
             setFocusedIndex(focusedIndex - 1);
           } else if (!keyboardSelected && focusedIndex > 0) {
@@ -238,11 +230,17 @@ const ReorderingComponent: React.FC<ReorderingComponentProps> = ({ module }) => 
 
         case 'ArrowRight': {
           e.preventDefault();
-          if (focusedZone === 'answer' && keyboardSelected && focusedIndex < answerWords.length - 1) {
+          if (
+            focusedZone === 'answer' &&
+            keyboardSelected &&
+            focusedIndex < answerWords.length - 1
+          ) {
             // Reorder: swap selected word right
             const newAnswer = [...answerWords];
-            [newAnswer[focusedIndex], newAnswer[focusedIndex + 1]] =
-              [newAnswer[focusedIndex + 1], newAnswer[focusedIndex]];
+            [newAnswer[focusedIndex], newAnswer[focusedIndex + 1]] = [
+              newAnswer[focusedIndex + 1],
+              newAnswer[focusedIndex],
+            ];
             setAnswerWords(newAnswer);
             setFocusedIndex(focusedIndex + 1);
           } else if (!keyboardSelected && focusedIndex < currentWords.length - 1) {
@@ -269,7 +267,17 @@ const ReorderingComponent: React.FC<ReorderingComponentProps> = ({ module }) => 
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [showResult, focusedZone, focusedIndex, keyboardSelected, availableWords, answerWords, handleCheck, handleNext, handleReturnToMenu]);
+  }, [
+    showResult,
+    focusedZone,
+    focusedIndex,
+    keyboardSelected,
+    availableWords,
+    answerWords,
+    handleCheck,
+    handleNext,
+    handleReturnToMenu,
+  ]);
 
   // Early return if no data
   if (!exercises.length || !currentExercise) {
@@ -322,10 +330,7 @@ const ReorderingComponent: React.FC<ReorderingComponentProps> = ({ module }) => 
       {/* Hint toggle */}
       {currentExercise.hint && (
         <div className="reordering__hint-section">
-          <button
-            className="reordering__hint-toggle"
-            onClick={() => setShowHint(!showHint)}
-          >
+          <button className="reordering__hint-toggle" onClick={() => setShowHint(!showHint)}>
             <Eye className="reordering__hint-icon" />
             <span>{t('learning.showHint')}</span>
           </button>
@@ -399,7 +404,9 @@ const ReorderingComponent: React.FC<ReorderingComponentProps> = ({ module }) => 
 
       {/* Result feedback */}
       {showResult && (
-        <div className={`reordering__feedback ${isCorrect ? 'reordering__feedback--correct' : 'reordering__feedback--incorrect'}`}>
+        <div
+          className={`reordering__feedback ${isCorrect ? 'reordering__feedback--correct' : 'reordering__feedback--incorrect'}`}
+        >
           <p className="reordering__feedback-text">
             {isCorrect ? t('common.correct') : t('common.incorrect')}
           </p>
