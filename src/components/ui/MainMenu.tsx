@@ -372,7 +372,7 @@ export const MainMenu: React.FC = () => {
           onClearSearch={() => {
             setQuery('');
             setIsSearchExpanded(false);
-            setExpandedFilter(null);
+            setIsFilterOpen(false);
           }}
         />
       ) : (
