@@ -288,13 +288,7 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
       markIncorrect();
     }
     setShowResult(true);
-  }, [
-    showResult,
-    answer,
-    currentExercise?.correct,
-    markCorrect,
-    markIncorrect,
-  ]);
+  }, [showResult, answer, currentExercise?.correct, markCorrect, markIncorrect]);
 
   const handleNext = useCallback(() => {
     if (currentIndex < processedExercises.length - 1) {
@@ -314,11 +308,7 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
     } else {
       finishExercise();
     }
-  }, [
-    currentIndex,
-    processedExercises.length,
-    finishExercise,
-  ]);
+  }, [currentIndex, processedExercises.length, finishExercise]);
 
   useEffect(() => {
     if (processedExercises.length === 0) return;

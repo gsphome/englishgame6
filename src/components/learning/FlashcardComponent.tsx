@@ -18,12 +18,11 @@ const FlashcardComponent: React.FC<FlashcardComponentProps> = ({ module }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [skipTransition, setSkipTransition] = useState(false);
 
-  const { t, randomizeItems, handleReturnToMenu, finishExercise } =
-    useLearningSession({
-      moduleId: module.id,
-      moduleName: module.name,
-      learningMode: 'flashcard',
-    });
+  const { t, randomizeItems, handleReturnToMenu, finishExercise } = useLearningSession({
+    moduleId: module.id,
+    moduleName: module.name,
+    learningMode: 'flashcard',
+  });
 
   // Generate set with optional randomization based on settings
   const processedFlashcards = useMemo(() => {
@@ -55,12 +54,7 @@ const FlashcardComponent: React.FC<FlashcardComponentProps> = ({ module }) => {
         accuracy: 100,
       });
     }
-  }, [
-    currentIndex,
-    isFlipped,
-    processedFlashcards.length,
-    finishExercise,
-  ]);
+  }, [currentIndex, isFlipped, processedFlashcards.length, finishExercise]);
 
   const handlePrev = useCallback(() => {
     if (currentIndex > 0) {

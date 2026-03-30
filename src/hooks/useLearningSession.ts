@@ -24,7 +24,11 @@ interface UseLearningSessionOptions {
  * - Toast feedback (correct/incorrect/completed)
  * - Learning cleanup on unmount
  */
-export const useLearningSession = ({ moduleId, moduleName, learningMode }: UseLearningSessionOptions) => {
+export const useLearningSession = ({
+  moduleId,
+  moduleName,
+  learningMode,
+}: UseLearningSessionOptions) => {
   const [startTime] = useState(Date.now());
 
   const updateSessionScore = useAppStore(state => state.updateSessionScore);
@@ -46,35 +50,47 @@ export const useLearningSession = ({ moduleId, moduleName, learningMode }: UseLe
     showIncorrectAnswer();
   }, [updateSessionScore, showIncorrectAnswer]);
 
-  const finishExercise = useCallback((overrideScore?: { correct: number; total: number; accuracy: number }) => {
-    const timeSpent = Math.floor((Date.now() - startTime) / 1000);
+  const finishExercise = useCallback(
+    (overrideScore?: { correct: number; total: number; accuracy: number }) => {
+      const timeSpent = Math.floor((Date.now() - startTime) / 1000);
 
-    const score = overrideScore ?? (() => {
-      const { sessionScore } = useAppStore.getState();
-      return {
-        correct: sessionScore.correct,
-        total: sessionScore.total,
-        accuracy: sessionScore.accuracy,
-      };
-    })();
+      const score =
+        overrideScore ??
+        (() => {
+          const { sessionScore } = useAppStore.getState();
+          return {
+            correct: sessionScore.correct,
+            total: sessionScore.total,
+            accuracy: sessionScore.accuracy,
+          };
+        })();
 
-    const finalScore = score.total > 0
-      ? Math.round((score.correct / score.total) * 100)
-      : 0;
+      const finalScore = score.total > 0 ? Math.round((score.correct / score.total) * 100) : 0;
 
-    addProgressEntry({
-      score: finalScore,
-      totalQuestions: score.total,
-      correctAnswers: score.correct,
+      addProgressEntry({
+        score: finalScore,
+        totalQuestions: score.total,
+        correctAnswers: score.correct,
+        moduleId,
+        learningMode,
+        timeSpent,
+      });
+
+      showModuleCompleted(moduleName, finalScore, score.accuracy);
+      updateUserScore(moduleId, finalScore, timeSpent);
+      returnToMenu({ autoScrollToNext: true });
+    },
+    [
+      startTime,
       moduleId,
+      moduleName,
       learningMode,
-      timeSpent,
-    });
-
-    showModuleCompleted(moduleName, finalScore, score.accuracy);
-    updateUserScore(moduleId, finalScore, timeSpent);
-    returnToMenu({ autoScrollToNext: true });
-  }, [startTime, moduleId, moduleName, learningMode, addProgressEntry, showModuleCompleted, updateUserScore, returnToMenu]);
+      addProgressEntry,
+      showModuleCompleted,
+      updateUserScore,
+      returnToMenu,
+    ]
+  );
 
   const handleReturnToMenu = useCallback(() => returnToMenu(), [returnToMenu]);
 

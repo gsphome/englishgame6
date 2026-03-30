@@ -153,13 +153,7 @@ const QuizComponent: React.FC<QuizComponentProps> = ({ module }) => {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [
-    showResult,
-    currentQuestion,
-    processedQuestions.length,
-    handleAnswerSelect,
-    handleNext,
-  ]);
+  }, [showResult, currentQuestion, processedQuestions.length, handleAnswerSelect, handleNext]);
 
   // Early return if no data
   if (!processedQuestions.length) {
