@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { User, Settings, Menu, BarChart3, LogOut, WifiOff } from 'lucide-react';
+import { User, Settings, Menu, BarChart3, LogOut, WifiOff, Info, X, Home } from 'lucide-react';
 import '../../styles/components/header.css';
 import { useAppStore } from '../../stores/appStore';
 import { useUserStore } from '../../stores/userStore';
@@ -235,22 +235,35 @@ export const Header: React.FC<HeaderProps> = () => {
             aria-label={t('navigation.navigationAndSettings')}
           >
             <div className="header-side-menu__header">
-              <h2 className="header-side-menu__title">FluentFlow</h2>
-              <p className="header-side-menu__subtitle">{t('navigation.navigationAndSettings')}</p>
+              <div className="header-side-menu__header-row">
+                <div>
+                  <h2 className="header-side-menu__title">FluentFlow</h2>
+                  <p className="header-side-menu__subtitle">
+                    {t('navigation.navigationAndSettings')}
+                  </p>
+                </div>
+                <button
+                  className="header-side-menu__close"
+                  onClick={() => setShowSideMenu(false)}
+                  aria-label={t('navigation.closeMenu', 'Close menu')}
+                >
+                  <X aria-hidden="true" />
+                </button>
+              </div>
             </div>
 
             <div className="header-side-menu__content">
               {/* Navigation Section */}
               <div className="header-side-menu__section">
                 <h3 className="header-side-menu__section-title">
-                  📱 {t('navigation.mainNavigation')}
+                  {t('navigation.mainNavigation')}
                 </h3>
                 <button
                   onClick={handleGoToMenu}
                   className="header-side-menu__item"
                   aria-label={t('auth.goToMainMenu')}
                 >
-                  <Menu className="header-side-menu__icon" aria-hidden="true" />
+                  <Home className="header-side-menu__icon" aria-hidden="true" />
                   <span className="header-side-menu__text">{t('navigation.mainMenu')}</span>
                 </button>
                 <button
@@ -270,7 +283,7 @@ export const Header: React.FC<HeaderProps> = () => {
               {/* Settings Section */}
               <div className="header-side-menu__section">
                 <h3 className="header-side-menu__section-title">
-                  ⚙️ {t('navigation.configuration')}
+                  {t('navigation.configuration')}
                 </h3>
                 <button
                   onClick={() => {
@@ -291,15 +304,15 @@ export const Header: React.FC<HeaderProps> = () => {
                   }}
                   aria-label={t('auth.aboutApplication')}
                 >
-                  <User className="header-side-menu__icon" aria-hidden="true" />
+                  <Info className="header-side-menu__icon" aria-hidden="true" />
                   <span className="header-side-menu__text">{t('modals.aboutFluentFlow')}</span>
                 </button>
               </div>
 
-              {/* User Profile Section - Always visible for consistency */}
+              {/* User Profile Section */}
               <div className="header-side-menu__section">
                 <h3 className="header-side-menu__section-title">
-                  👤 {user ? t('modals.userProfile') : t('auth.userAccount', 'User Account')}
+                  {user ? t('modals.userProfile') : t('auth.userAccount', 'User Account')}
                 </h3>
 
                 {user ? (

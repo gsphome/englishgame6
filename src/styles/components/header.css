@@ -443,6 +443,8 @@ html.dark {
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(8px);
   border-radius: 0 16px 16px 0;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Mobile: drawer takes most of the screen width */
@@ -453,78 +455,108 @@ html.dark {
 }
 
 .header-side-menu__header {
-  padding: 20px;
-  background-color: var(--menu-header-bg);
-  border-bottom: 1px solid var(--menu-border);
-  backdrop-filter: blur(8px);
+  padding: 16px 18px;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #a78bfa 100%);
+  border-radius: 0 16px 0 0;
+  flex-shrink: 0;
+}
+
+.header-side-menu__header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.header-side-menu__close {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.header-side-menu__close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.header-side-menu__close svg {
+  width: 18px;
+  height: 18px;
 }
 
 .header-side-menu__title {
   font-size: 18px;
   font-weight: 700;
-  color: var(--header-text-primary);
+  color: #fff;
   letter-spacing: -0.025em;
-  margin: 0 0 4px 0;
+  margin: 0 0 2px 0;
 }
 
 .header-side-menu__subtitle {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
-  color: var(--header-text-secondary);
+  color: rgba(255, 255, 255, 0.7);
   margin: 0;
-  opacity: 0.8;
 }
 
 .header-side-menu__content {
-  padding: 18px;
+  padding: 12px;
+  flex: 1;
+  overflow-y: auto;
 }
 
 .header-side-menu__content > * + * {
-  margin-top: 18px;
+  margin-top: 6px;
 }
 
 .header-side-menu__section > * + * {
-  margin-top: 8px;
+  margin-top: 2px;
 }
 
 .header-side-menu__section-title {
-  font-size: 14px;
+  font-size: 11px;
   font-weight: 600;
   color: var(--header-text-secondary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin: 0 0 8px 16px;
-  opacity: 0.7;
+  letter-spacing: 0.06em;
+  margin: 0 0 4px 12px;
+  opacity: 0.5;
 }
 
 .header-side-menu__item {
   width: 100%;
   text-align: left;
-  padding: 10px 14px;
-  margin: 3px 6px;
-  border-radius: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   gap: 10px;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.15s ease;
   color: var(--header-text-secondary);
   background-color: transparent;
   border: none;
   cursor: pointer;
   font-weight: 500;
-  min-height: 38px;
+  min-height: 40px;
 }
 
 .header-side-menu__item:hover {
   background-color: var(--menu-item-hover);
   color: var(--header-text-primary);
-  transform: translateX(4px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .header-side-menu__item:active {
   background-color: var(--menu-item-active);
-  transform: translateX(2px);
+  transform: scale(0.98);
 }
 
 .header-side-menu__item:focus-visible {
@@ -610,8 +642,7 @@ html.dark {
 }
 
 .dark .header-side-menu__header {
-  background-color: #111827;
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+  background: linear-gradient(135deg, #312e81 0%, #4c1d95 50%, #6d28d9 100%);
 }
 
 .dark .header-side-menu__item {
@@ -620,10 +651,8 @@ html.dark {
 
 .dark .header-side-menu__item:hover {
   background: linear-gradient(90deg, rgba(75, 85, 99, 0.5) 0%, rgba(107, 114, 128, 0.3) 100%);
-  border-color: rgba(255, 255, 255, 0.1);
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .dark .header-side-menu-overlay {
@@ -710,19 +739,18 @@ html.dark {
   }
 
   .header-side-menu__content {
-    padding: 14px;
+    padding: 10px;
   }
 
   .header-side-menu__item {
-    padding: 12px 14px;
-    margin: 2px 4px;
+    padding: 10px 12px;
     gap: 10px;
-    min-height: 44px;
+    min-height: 40px;
   }
 
   .header-side-menu__icon {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
 
   .header-side-menu__title {
@@ -730,11 +758,11 @@ html.dark {
   }
 
   .header-side-menu__subtitle {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .header-side-menu__text {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
