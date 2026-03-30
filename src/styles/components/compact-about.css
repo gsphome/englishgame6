@@ -725,8 +725,13 @@ html:not(.dark) .compact-about .compact-about__info-value {
     max-width: 92vw;
     width: 92vw;
     max-height: 85vh;
-    max-height: 85dvh;
     border-radius: 16px;
+  }
+
+  @supports (max-height: 1dvh) {
+    .compact-about__container {
+      max-height: 85dvh;
+    }
   }
 
   .compact-about__header {

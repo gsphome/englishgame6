@@ -12,7 +12,7 @@ import type { LearningModule } from '../types';
 
 // Must match the CACHE_NAME in public/sw.js
 export const CACHE_NAME = 'fluentflow-v2';
-export const ASSETS_CACHE = 'fluentflow-v2'; // unified cache
+const ASSETS_CACHE = 'fluentflow-v2'; // unified cache
 
 /**
  * Get the base URL for the app (e.g. /englishgame6/)

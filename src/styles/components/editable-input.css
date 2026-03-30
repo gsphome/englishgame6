@@ -6,10 +6,10 @@
   min-width: 120px;
   margin: 0 0.375rem;
   padding: 0.5rem 0.75rem;
-  border: 2px solid var(--color-border);
+  border: 2px solid var(--color-border, #e5e7eb);
   border-radius: 0.5rem;
-  background: var(--color-bg-primary);
-  color: var(--color-text-primary);
+  background: var(--color-bg-primary, #ffffff);
+  color: var(--color-text-primary, #111827);
   font-size: 1rem;
   font-family: inherit;
   line-height: 1.5;
@@ -27,49 +27,49 @@
 }
 
 .editable-input:focus {
-  border-color: var(--color-primary);
+  border-color: var(--color-primary, #3b82f6);
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .editable-input[contenteditable='false'] {
   opacity: 0.6;
   cursor: not-allowed;
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-secondary, #f9fafb);
 }
 
 /* Placeholder styling — uses data-empty attribute instead of :empty pseudo-class.
    :empty on contenteditable can create ghost text nodes on iOS that push the cursor. */
 .editable-input[data-empty='true']::before {
   content: attr(data-placeholder);
-  color: var(--color-text-tertiary);
+  color: var(--color-text-tertiary, #9ca3af);
   opacity: 0.6;
   pointer-events: none;
 }
 
 /* Correct state */
 .editable-input--correct {
-  border-color: var(--color-success);
-  background: var(--color-success-bg);
+  border-color: var(--color-success, #10b981);
+  background: var(--color-success-bg, #ecfdf5);
   border-width: 2px;
   box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
 }
 
 /* Incorrect state */
 .editable-input--incorrect {
-  border-color: var(--color-error);
-  background: var(--color-error-bg);
+  border-color: var(--color-error, #ef4444);
+  background: var(--color-error-bg, #fef2f2);
   border-width: 2px;
   box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
 }
 
 /* Neutral state (default) */
 .editable-input--neutral {
-  border-color: var(--color-border);
+  border-color: var(--color-border, #e5e7eb);
 }
 
 /* Disabled state */
 .editable-input--disabled {
   opacity: 0.6;
   cursor: not-allowed;
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-secondary, #f9fafb);
 }

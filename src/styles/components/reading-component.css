@@ -9,6 +9,16 @@
   box-sizing: border-box;
 } /* === MAIN CONTAINER - Stable minimum height, grows with content === */
 .reading-component__container {
+  /* Theme variables */
+  --reading-bg-primary: var(--theme-bg-elevated, #ffffff);
+  --reading-bg-secondary: var(--theme-bg-subtle, #f9fafb);
+  --reading-bg-tertiary: var(--theme-bg-soft, #f3f4f6);
+  --reading-text-primary: var(--theme-text-primary, #111827);
+  --reading-text-secondary: var(--theme-text-secondary, #6b7280);
+  --reading-accent-primary: var(--theme-primary-blue, #3b82f6);
+  --reading-accent-secondary: #8b5cf6;
+  --reading-border-primary: var(--theme-border-soft, #e5e7eb);
+
   width: 100%;
   max-width: 900px;
   min-height: clamp(405px, 70vh, 600px);
@@ -327,13 +337,6 @@
   text-align: center;
   position: relative;
   gap: 0.5rem;
-}
-
-.reading-component__objectives-page-meta {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0.5rem;
 }
 
 .reading-component__objectives-centered {
@@ -1594,19 +1597,6 @@
 
 /* === THEME SUPPORT - Local light/dark themes === */
 
-/* Light theme - Base variables */
-.reading-component__container {
-  --reading-bg-primary: var(--theme-bg-elevated, #ffffff);
-  --reading-bg-secondary: var(--theme-bg-subtle, #f9fafb);
-  --reading-bg-tertiary: var(--theme-bg-soft, #f3f4f6);
-  --reading-text-primary: var(--theme-text-primary, #111827);
-  --reading-text-secondary: var(--theme-text-secondary, #6b7280);
-  --reading-accent-primary: var(--theme-primary-blue, #3b82f6);
-  --reading-accent-secondary: #8b5cf6;
-  --reading-border-primary: var(--theme-border-soft, #e5e7eb);
-  --reading-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-}
-
 /* Dark theme - Local overrides */
 html.dark .reading-component__container {
   --reading-bg-primary: var(--theme-bg-primary, #1f2937);
@@ -1617,7 +1607,6 @@ html.dark .reading-component__container {
   --reading-accent-primary: var(--theme-accent-primary, #60a5fa);
   --reading-accent-secondary: var(--theme-accent-secondary, #a78bfa);
   --reading-border-primary: var(--theme-border-primary, #4b5563);
-  --reading-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   background: linear-gradient(
     135deg,
     var(--theme-bg-elevated, #1f2937) 0%,

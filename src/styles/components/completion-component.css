@@ -148,15 +148,12 @@ html.dark .completion-component__tip-text {
 .completion-component__sentence {
   display: inline;
   line-height: 2.2; /* Extra line-height so input doesn't overlap text above/below */
+  color: var(--theme-text-primary, #374151);
+  font-weight: 500;
 }
 
 .completion-component__text {
   color: var(--theme-text-primary, #374151);
-}
-
-.completion-component__sentence {
-  color: var(--theme-text-primary, #374151);
-  font-weight: 500;
 }
 
 /* Dark mode sentence container */

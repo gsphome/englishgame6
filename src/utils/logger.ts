@@ -17,7 +17,7 @@ function logInfo(message: string, data?: any, component?: string) {
   void component;
 }
 
-export function logWarn(message: string, data?: any, component?: string) {
+function logWarn(message: string, data?: any, component?: string) {
   void data;
   void component;
   try {

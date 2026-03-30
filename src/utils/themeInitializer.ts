@@ -28,7 +28,7 @@ interface ThemeState {
 /**
  * Detects the user's system theme preference
  */
-export function detectSystemTheme(): ThemeMode {
+function detectSystemTheme(): ThemeMode {
   // Check if we're in a browser environment
   if (typeof window === 'undefined') {
     return 'light';

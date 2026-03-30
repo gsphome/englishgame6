@@ -20,9 +20,6 @@
   /* Desktop: 4 cols, ~3.2 rows visible */
   --grid-height-desktop: calc((var(--card-height-desktop) * 4 + 0.75rem * 3 + 0.75rem) * 0.8);
 
-  /* Large Desktop: same as desktop */
-  --grid-height-large-desktop: calc((var(--card-height-desktop) * 4 + 0.75rem * 3 + 0.75rem) * 0.8);
-
   /* Fixed content area height — shared by grid AND progression dashboard to prevent resize on tab switch */
   --menu-content-height-mobile: var(--grid-height-mobile);
   --menu-content-height-tablet: var(--grid-height-tablet);

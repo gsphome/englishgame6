@@ -479,7 +479,12 @@ html.dark .compact-profile__header .modal__close-btn:hover {
     max-width: 92vw;
     width: 92vw;
     max-height: 88vh;
-    max-height: 88dvh;
+  }
+
+  @supports (max-height: 1dvh) {
+    .compact-profile__container {
+      max-height: 88dvh;
+    }
   }
 
   .compact-profile__header {

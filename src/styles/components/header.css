@@ -5,13 +5,11 @@
   --header-border: #e5e7eb;
   --header-text-primary: #111827;
   --header-text-secondary: #6b7280;
-  --header-icon-color: #374151;
   --header-button-hover-bg: #f3f4f6;
   --header-button-active-bg: #e5e7eb;
   --header-focus-ring: #3b82f6;
   --menu-bg: #ffffff;
   --menu-border: #e5e7eb;
-  --menu-header-bg: #f9fafb;
   --menu-item-hover: #f3f4f6;
   --menu-item-active: #e5e7eb;
 
@@ -50,13 +48,11 @@ html.dark {
   --header-border: #4b5563;
   --header-text-primary: #ffffff;
   --header-text-secondary: #e5e7eb;
-  --header-icon-color: #e5e7eb;
   --header-button-hover-bg: #374151;
   --header-button-active-bg: #4b5563;
   --header-focus-ring: #60a5fa;
   --menu-bg: #1f2937;
   --menu-border: #4b5563;
-  --menu-header-bg: #111827;
   --menu-item-hover: #374151;
   --menu-item-active: #4b5563;
 
@@ -681,13 +677,11 @@ html.dark {
 /* High contrast support */
 @media (prefers-contrast: high) {
   :root {
-    --header-icon-color: #000000;
     --header-text-primary: #000000;
     --header-text-secondary: #333333;
   }
 
   .dark {
-    --header-icon-color: #ffffff;
     --header-text-primary: #ffffff;
     --header-text-secondary: #e5e5e5;
   }

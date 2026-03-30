@@ -34,12 +34,20 @@ Antes de proponer soluciones o crear specs, explorar el código existente.
 
 ## Ejecución de comandos
 
-- **CRÍTICO**: SIEMPRE crear scripts en `scripts/` para cualquier análisis, transformación o comando complejo
+- **CRÍTICO**: SIEMPRE crear scripts en `scripts/` para cualquier invocación de node/python. Sin excepciones.
 - NUNCA ejecutar directamente en la terminal:
   - `node -e "..."` o `node -p "..."` (ni siquiera una línea)
+  - `node --check archivo.js` o `node --syntax-check` (crear script wrapper)
+  - `node archivo.js` con argumentos complejos
   - `python -c "..."` o `python3 -c "..."`
+  - `npx`, `tsx`, `ts-node` con código inline
   - Loops, pipes, subshells, one-liners con lógica
   - Cualquier comando con template literals, comillas anidadas o interpolación
+  - `jq`, `sed`, `awk` con expresiones complejas
+- **Comandos permitidos directamente** (no requieren script):
+  - `npm run <script>` (scripts ya definidos en package.json)
+  - `wc -l`, `cat`, `ls`, `find` (comandos simples sin lógica)
+  - `git` commands simples (status, add, commit, push)
 - La terminal tiene limitaciones de contexto y falla con comandos complejos
 - Los scripts son reproducibles, debuggeables y evitan errores de ventana de contexto
 - **Scripts temporales** (auditorías, fixes, análisis one-off) → crear en `scripts/tmp/`

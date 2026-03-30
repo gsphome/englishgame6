@@ -93,6 +93,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  padding: 0.5rem;
+  background-color: rgba(59, 130, 246, 0.02);
+  border-radius: 1rem;
+  border: 1px solid rgba(59, 130, 246, 0.08);
 }
 
 @media (max-width: 768px) {
@@ -754,13 +758,6 @@ button.matching-component__item.matching-component__item--incorrect .matching-co
   }
 }
 
-/* === COLUMN SPACING - Compact Design === */
-.matching-component__columns {
-  padding: 0.5rem;
-  background-color: rgba(59, 130, 246, 0.02);
-  border-radius: 1rem;
-  border: 1px solid rgba(59, 130, 246, 0.08);
-}
 
 .matching-component__column {
   padding: 0.5rem;

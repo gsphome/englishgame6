@@ -22,10 +22,4 @@ export function conditionalShuffle<T>(array: T[], shouldRandomize: boolean): T[]
   return shouldRandomize ? shuffleArray(array) : [...array];
 }
 
-/**
- * Conditionally randomize using Math.random based on settings
- * Returns randomized comparison function or stable sort
- */
-export function conditionalRandomSort(shouldRandomize: boolean): (a: any, b: any) => number {
-  return shouldRandomize ? () => Math.random() - 0.5 : () => 0;
-}
+
