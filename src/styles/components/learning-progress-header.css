@@ -1,8 +1,8 @@
 /**
  * Learning Progress Header - Unified Component
  * 
- * Standardized progress header for all 5 learning modes
- * Provides consistent UX across Flashcards, Quiz, Completion, Sorting, and Matching
+ * Standardized progress header for all 7 learning modes
+ * Provides consistent UX across Flashcards, Quiz, Completion, Sorting, Matching, Reading, and Reordering
  */
 
 /* === LEARNING PROGRESS HEADER BLOCK === */
@@ -102,6 +102,14 @@
     90deg,
     var(--theme-primary-blue, #3b82f6) 0%,
     var(--theme-primary-purple, #8b5cf6) 100%
+  );
+}
+
+.learning-progress-header__progress-fill--reordering {
+  background: linear-gradient(
+    90deg,
+    var(--theme-primary-purple, #8b5cf6) 0%,
+    var(--theme-success, #10b981) 100%
   );
 }
 
