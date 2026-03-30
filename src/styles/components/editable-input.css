@@ -73,3 +73,22 @@
   cursor: not-allowed;
   background: var(--color-bg-secondary, #f9fafb);
 }
+
+/* Dark mode */
+html.dark .editable-input {
+  color: #ffffff;
+  background: var(--theme-bg-elevated, #1f2937);
+  border-color: var(--theme-border-soft, #4b5563);
+}
+
+html.dark .editable-input--correct {
+  color: #ffffff;
+  background: rgba(16, 185, 129, 0.25);
+  border-color: #34d399;
+}
+
+html.dark .editable-input--incorrect {
+  color: #ffffff;
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #f87171;
+}
