@@ -25,7 +25,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
   const { setPreviousMenuContext } = useAppStore();
   const { isModuleCompleted } = useProgressStore();
   const progression = useProgression();
-  const { language, categories, learningModes, setCategories, setLearningModes } =
+  const { language, categories, learningModes, level, setCategories, setLearningModes, setLevel } =
     useSettingsStore();
   const { t } = useTranslation(language);
   const [expandedUnits, setExpandedUnits] = React.useState<Set<number>>(new Set());
@@ -265,6 +265,11 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
         !learningModes.includes(module.learningMode)
       )
         return;
+      // Apply level filter
+      if (level !== 'all' && module.level) {
+        const moduleLevels = Array.isArray(module.level) ? module.level : [module.level];
+        if (!moduleLevels.includes(level as any)) return;
+      }
       seen.add(module.id);
       if (!units[module.unit]) {
         units[module.unit] = [];
@@ -301,6 +306,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
     progression.lockedModules,
     categories,
     learningModes,
+    level,
     searchQuery,
   ]);
 
@@ -317,7 +323,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
       className={`progression-dashboard ${isDarkMode ? 'progression-dashboard--dark-theme' : ''}`}
     >
       {/* Search/Filter Results Header */}
-      {(searchQuery.trim() || categories.length > 0 || learningModes?.length > 0) && (
+      {(searchQuery.trim() || categories.length > 0 || learningModes?.length > 0 || level !== 'all') && (
         <div className="progression-dashboard__search-results">
           <p className="progression-dashboard__search-text">
             {t('mainMenu.showingResults', undefined, {
@@ -331,6 +337,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
             onClick={() => {
               setCategories([]);
               setLearningModes([]);
+              setLevel('all');
               onClearSearch?.();
             }}
             aria-label={t('mainMenu.clearFilters')}
