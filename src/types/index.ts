@@ -129,24 +129,11 @@ type LearningData =
 // Language and Theme types
 export type Language = 'en' | 'es';
 export type Theme = 'light' | 'dark';
-type UserLevel = 'beginner' | 'intermediate' | 'advanced';
 
 // User & Auth
 export interface User {
   id: string;
   name: string;
-  email?: string;
-  level: UserLevel;
-  preferences: UserPreferences;
-  createdAt: string;
-}
-
-interface UserPreferences {
-  language: Language;
-  dailyGoal: number;
-  categories: Category[];
-  difficulty: number;
-  notifications: boolean;
 }
 
 // Scoring & Progress

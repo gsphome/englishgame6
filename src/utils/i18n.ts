@@ -414,6 +414,11 @@ const translations = {
       profileSubtitle: 'Customize your learning experience',
       nameRequired: 'Name must be at least 2 characters',
       categoriesRequired: 'Select at least one category',
+      statScore: 'Score',
+      statModules: 'Modules',
+      statStreak: 'Streak',
+      statAvg: 'Average',
+      noActivityYet: 'Complete modules to see your stats here',
     },
     learningPath: {
       complete: 'Complete',
@@ -954,6 +959,11 @@ const translations = {
       profileSubtitle: 'Personaliza tu experiencia de aprendizaje',
       nameRequired: 'El nombre debe tener al menos 2 caracteres',
       categoriesRequired: 'Selecciona al menos una categoría',
+      statScore: 'Puntaje',
+      statModules: 'Módulos',
+      statStreak: 'Racha',
+      statAvg: 'Promedio',
+      noActivityYet: 'Completa módulos para ver tus estadísticas aquí',
     },
     learningPath: {
       complete: 'Completo',
