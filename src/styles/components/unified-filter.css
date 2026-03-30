@@ -84,8 +84,9 @@
   box-shadow:
     0 8px 24px rgba(0, 0, 0, 0.12),
     0 2px 8px rgba(0, 0, 0, 0.06);
+  width: fit-content;
   min-width: 20rem;
-  max-width: min(26rem, calc(100vw - 1.5rem));
+  max-width: calc(100vw - 1.5rem);
   animation: unified-filter-in 0.15s ease-out;
 }
 
