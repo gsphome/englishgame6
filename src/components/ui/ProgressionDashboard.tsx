@@ -84,24 +84,20 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
     // Find the scrollable ancestor (.progression-dashboard__units)
     const container = nextEl.closest('.progression-dashboard__units');
     if (!container) {
-      // Fallback: let the browser figure it out
       nextEl.scrollIntoView({ behavior, block: 'center' });
       return;
     }
 
-    // Use offsetTop-based calculation for accuracy — getBoundingClientRect can be
-    // unreliable during CSS animations (slideDown) which shift element positions.
-    // Walk up the offset chain from the element to the scroll container to get
-    // the true document-flow offset.
-    let offsetFromContainer = 0;
-    let el: HTMLElement | null = nextEl as HTMLElement;
-    while (el && el !== container) {
-      offsetFromContainer += el.offsetTop;
-      el = el.offsetParent as HTMLElement | null;
-    }
+    // Use getBoundingClientRect for the actual rendered position, which is
+    // reliable once CSS animations have completed (we schedule this after
+    // the slideDown animation finishes).
+    const containerRect = container.getBoundingClientRect();
+    const elRect = nextEl.getBoundingClientRect();
 
-    const elHeight = (nextEl as HTMLElement).offsetHeight;
-    const scrollTop = offsetFromContainer - container.clientHeight / 2 + elHeight / 2;
+    // Distance from the element's center to the container's visual center
+    const elCenterInContainer =
+      container.scrollTop + (elRect.top - containerRect.top) + elRect.height / 2;
+    const scrollTop = elCenterInContainer - container.clientHeight / 2;
 
     container.scrollTo({
       top: Math.max(0, scrollTop),
