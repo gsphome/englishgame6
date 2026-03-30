@@ -64,9 +64,7 @@ export const LevelFilter: React.FC<LevelFilterProps> = ({
         type="button"
       >
         <GraduationCap aria-hidden="true" />
-        {isFiltered && (
-          <span className="level-filter__badge">{level.toUpperCase()}</span>
-        )}
+        {isFiltered && <span className="level-filter__badge">{level.toUpperCase()}</span>}
       </button>
 
       <div
@@ -92,7 +90,11 @@ export const LevelFilter: React.FC<LevelFilterProps> = ({
                 onClick={() => handleSelectLevel(lvl)}
                 aria-pressed={isActive}
                 type="button"
-                style={isActive ? { '--level-color': LEVEL_COLORS[lvl] } as React.CSSProperties : undefined}
+                style={
+                  isActive
+                    ? ({ '--level-color': LEVEL_COLORS[lvl] } as React.CSSProperties)
+                    : undefined
+                }
               >
                 <span className="level-filter__chip-emoji" aria-hidden="true">
                   {LEVEL_EMOJIS[lvl]}
