@@ -89,11 +89,19 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
       return;
     }
 
-    // Calculate scroll position to center the element in the container
-    const containerRect = container.getBoundingClientRect();
-    const elRect = nextEl.getBoundingClientRect();
-    const elOffsetInContainer = container.scrollTop + (elRect.top - containerRect.top);
-    const scrollTop = elOffsetInContainer - container.clientHeight / 2 + elRect.height / 2;
+    // Use offsetTop-based calculation for accuracy — getBoundingClientRect can be
+    // unreliable during CSS animations (slideDown) which shift element positions.
+    // Walk up the offset chain from the element to the scroll container to get
+    // the true document-flow offset.
+    let offsetFromContainer = 0;
+    let el: HTMLElement | null = nextEl as HTMLElement;
+    while (el && el !== container) {
+      offsetFromContainer += el.offsetTop;
+      el = el.offsetParent as HTMLElement | null;
+    }
+
+    const elHeight = (nextEl as HTMLElement).offsetHeight;
+    const scrollTop = offsetFromContainer - container.clientHeight / 2 + elHeight / 2;
 
     container.scrollTo({
       top: Math.max(0, scrollTop),
@@ -114,12 +122,11 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
 
   // Helper: schedule scroll after the browser has completed layout
   const scheduleScroll = React.useCallback(() => {
-    // Use a small timeout to ensure the browser has completed layout
-    // after React's DOM updates. rAF alone isn't sufficient because
-    // React may batch multiple state updates before the browser paints.
+    // Wait for the slideDown animation (300ms) to finish so that
+    // offsetTop values are stable before calculating scroll position.
     setTimeout(() => {
       requestAnimationFrame(() => scrollToNextModule('smooth'));
-    }, 100);
+    }, 350);
   }, [scrollToNextModule]);
 
   // Scroll to the --next module once it appears in the DOM
@@ -163,7 +170,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
 
     // If expanding a unit with the next module, scroll to it
     if (isExpanding && nextRecommended && nextRecommended.unit === unit) {
-      setTimeout(() => scrollToNextModule('smooth'), 300);
+      setTimeout(() => scrollToNextModule('smooth'), 400);
     }
   };
 
