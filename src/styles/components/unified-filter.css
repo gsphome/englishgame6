@@ -84,8 +84,8 @@
   box-shadow:
     0 8px 24px rgba(0, 0, 0, 0.12),
     0 2px 8px rgba(0, 0, 0, 0.06);
-  min-width: 16rem;
-  max-width: min(22rem, calc(100vw - 1.5rem));
+  min-width: 20rem;
+  max-width: min(26rem, calc(100vw - 1.5rem));
   animation: unified-filter-in 0.15s ease-out;
 }
 
@@ -106,12 +106,14 @@
   align-items: center;
   border-bottom: 1px solid var(--theme-border-soft, #f3f4f6);
   padding: 0.25rem 0.25rem 0 0.25rem;
+  overflow: hidden;
 }
 
 /* === TABS === */
 .unified-filter__tabs {
   display: flex;
   flex: 1;
+  min-width: 0;
   gap: 0;
 }
 
@@ -119,7 +121,7 @@
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  padding: 0.5rem 0.625rem;
+  padding: 0.5rem 0.5rem;
   background: none;
   border: none;
   border-bottom: 2px solid transparent;
@@ -130,6 +132,8 @@
   cursor: pointer;
   transition: all 0.15s ease;
   white-space: nowrap;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .unified-filter__tab:hover {
@@ -148,6 +152,8 @@
 
 .unified-filter__tab-label {
   line-height: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .unified-filter__tab-count {
@@ -161,6 +167,7 @@
   line-height: 0.875rem;
   text-align: center;
   border-radius: 9999px;
+  flex-shrink: 0;
 }
 
 /* === CLOSE === */
