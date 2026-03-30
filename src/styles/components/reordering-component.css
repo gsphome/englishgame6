@@ -395,6 +395,10 @@ html.dark .reordering__placeholder {
   color: var(--theme-text-tertiary, #6b7280);
 }
 
+html.dark .reordering__word {
+  color: #ffffff;
+}
+
 html.dark .reordering__word--correct {
   background-color: rgba(16, 185, 129, 0.85);
   color: #ffffff;
