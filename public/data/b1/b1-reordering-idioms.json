@@ -1,0 +1,69 @@
+[
+  {
+    "id": "reord-id-b1-001",
+    "sentence": "She decided to go the extra mile to impress her boss",
+    "words": ["She", "decided", "to", "go", "the", "extra", "mile", "to", "impress", "her", "boss"],
+    "explanation": "'Go the extra mile' means to make more effort than expected. 'Decided to' + base form."
+  },
+  {
+    "id": "reord-id-b1-002",
+    "sentence": "He has been sitting on the fence about the job offer",
+    "words": ["He", "has", "been", "sitting", "on", "the", "fence", "about", "the", "job", "offer"],
+    "hint": "Present perfect continuous: has been + -ing",
+    "explanation": "'Sit on the fence' means to avoid making a decision. Present perfect continuous for ongoing indecision."
+  },
+  {
+    "id": "reord-id-b1-003",
+    "sentence": "If you burn the candle at both ends you will get sick",
+    "words": ["If", "you", "burn", "the", "candle", "at", "both", "ends", "you", "will", "get", "sick"],
+    "hint": "First conditional: If + present, will + base form",
+    "explanation": "'Burn the candle at both ends' means to overwork. First conditional for real possibility."
+  },
+  {
+    "id": "reord-id-b1-004",
+    "sentence": "The manager told us to think outside the box",
+    "words": ["The", "manager", "told", "us", "to", "think", "outside", "the", "box"],
+    "explanation": "'Think outside the box' means to think creatively. 'Told us to' + base form."
+  },
+  {
+    "id": "reord-id-b1-005",
+    "sentence": "We should not cry over spilt milk about the lost contract",
+    "words": ["We", "should", "not", "cry", "over", "spilt", "milk", "about", "the", "lost", "contract"],
+    "hint": "Should not + base form",
+    "explanation": "'Cry over spilt milk' means to regret something that cannot be changed."
+  },
+  {
+    "id": "reord-id-b1-006",
+    "sentence": "They were killing two birds with one stone by combining the trips",
+    "words": ["They", "were", "killing", "two", "birds", "with", "one", "stone", "by", "combining", "the", "trips"],
+    "explanation": "'Kill two birds with one stone' means to achieve two things with one action. 'By' + gerund explains how."
+  },
+  {
+    "id": "reord-id-b1-007",
+    "sentence": "I would not touch that topic with a ten foot pole",
+    "words": ["I", "would", "not", "touch", "that", "topic", "with", "a", "ten", "foot", "pole"],
+    "hint": "Would not + base form for hypothetical refusal",
+    "explanation": "'Touch with a ten foot pole' means to avoid completely. 'Would not' for hypothetical situations."
+  },
+  {
+    "id": "reord-id-b1-008",
+    "sentence": "She let the cat out of the bag about the surprise party",
+    "words": ["She", "let", "the", "cat", "out", "of", "the", "bag", "about", "the", "surprise", "party"],
+    "distractors": ["letted"],
+    "explanation": "'Let the cat out of the bag' means to reveal a secret. Past of 'let' is 'let' (irregular)."
+  },
+  {
+    "id": "reord-id-b1-009",
+    "sentence": "The new employee is learning the ropes very quickly",
+    "words": ["The", "new", "employee", "is", "learning", "the", "ropes", "very", "quickly"],
+    "hint": "Present continuous: is + -ing",
+    "explanation": "'Learn the ropes' means to learn how things work. Present continuous for current action."
+  },
+  {
+    "id": "reord-id-b1-010",
+    "sentence": "If we play our cards right we could get the promotion",
+    "words": ["If", "we", "play", "our", "cards", "right", "we", "could", "get", "the", "promotion"],
+    "hint": "Conditional: If + present, could + base form",
+    "explanation": "'Play your cards right' means to act wisely. Mixed conditional with 'could' for possibility."
+  }
+]

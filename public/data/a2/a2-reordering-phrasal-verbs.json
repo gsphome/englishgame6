@@ -1,0 +1,73 @@
+[
+  {
+    "id": "reord-pv-a2-001",
+    "sentence": "She brought up an interesting topic at the meeting",
+    "words": ["She", "brought", "up", "an", "interesting", "topic", "at", "the", "meeting"],
+    "distractors": ["bringed"],
+    "hint": "Subject + phrasal verb (past) + object + place",
+    "explanation": "'Bring up' means to mention. Past tense: 'brought up', not 'bringed up' (irregular verb)."
+  },
+  {
+    "id": "reord-pv-a2-002",
+    "sentence": "We need to check in at the hotel before noon",
+    "words": ["We", "need", "to", "check", "in", "at", "the", "hotel", "before", "noon"],
+    "explanation": "'Check in' means to register at a hotel. 'Need to' is followed by the base form."
+  },
+  {
+    "id": "reord-pv-a2-003",
+    "sentence": "He found out the truth about the accident yesterday",
+    "words": ["He", "found", "out", "the", "truth", "about", "the", "accident", "yesterday"],
+    "distractors": ["finded"],
+    "hint": "Past tense of 'find out' is 'found out'",
+    "explanation": "'Find out' means to discover. Past: 'found out' (irregular). 'Finded' does not exist."
+  },
+  {
+    "id": "reord-pv-a2-004",
+    "sentence": "They get along very well with their neighbours",
+    "words": ["They", "get", "along", "very", "well", "with", "their", "neighbours"],
+    "distractors": ["gets"],
+    "explanation": "'Get along' means to have a good relationship. With 'they', use 'get', not 'gets'."
+  },
+  {
+    "id": "reord-pv-a2-005",
+    "sentence": "I have already filled in the application form",
+    "words": ["I", "have", "already", "filled", "in", "the", "application", "form"],
+    "hint": "Present perfect: have + already + past participle",
+    "explanation": "'Fill in' means to complete a form. In present perfect: 'have filled in'. 'Already' goes between have and the participle."
+  },
+  {
+    "id": "reord-pv-a2-006",
+    "sentence": "She gave up smoking two years ago",
+    "words": ["She", "gave", "up", "smoking", "two", "years", "ago"],
+    "distractors": ["gived"],
+    "hint": "Past tense of 'give up' is 'gave up'",
+    "explanation": "'Give up' means to stop doing something. Past: 'gave up' (irregular)."
+  },
+  {
+    "id": "reord-pv-a2-007",
+    "sentence": "Can you look after the children this afternoon",
+    "words": ["Can", "you", "look", "after", "the", "children", "this", "afternoon"],
+    "explanation": "'Look after' means to take care of. Questions with 'can' start with the modal."
+  },
+  {
+    "id": "reord-pv-a2-008",
+    "sentence": "He ran into his old friend at the supermarket",
+    "words": ["He", "ran", "into", "his", "old", "friend", "at", "the", "supermarket"],
+    "distractors": ["runned"],
+    "explanation": "'Run into' means to meet by chance. Past: 'ran into' (irregular). 'Runned' does not exist."
+  },
+  {
+    "id": "reord-pv-a2-009",
+    "sentence": "We have to clean up the kitchen after dinner",
+    "words": ["We", "have", "to", "clean", "up", "the", "kitchen", "after", "dinner"],
+    "hint": "have to + base form of phrasal verb",
+    "explanation": "'Clean up' means to make tidy. 'Have to' expresses obligation and is followed by the base form."
+  },
+  {
+    "id": "reord-pv-a2-010",
+    "sentence": "They carried on working until midnight last Friday",
+    "words": ["They", "carried", "on", "working", "until", "midnight", "last", "Friday"],
+    "distractors": ["carryed"],
+    "explanation": "'Carry on' means to continue. Past: 'carried on' (regular, y→ied). 'Carryed' is incorrect."
+  }
+]

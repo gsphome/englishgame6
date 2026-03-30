@@ -423,23 +423,6 @@
     ]
   },
   {
-    "id": "quiz-basic-review-a1",
-    "name": "Basic Review",
-    "learningMode": "quiz",
-    "dataPath": "data/a1/a1-quiz-basic-review.json",
-    "level": [
-      "a1"
-    ],
-    "category": "Review",
-    "unit": 1,
-    "prerequisites": [
-      "sorting-expressions-type-a1"
-    ],
-    "description": "Comprehensive review of A1 level concepts",
-    "estimatedTime": 3,
-    "difficulty": 1
-  },
-  {
     "id": "a1-reordering-basic-sentences",
     "name": "Basic Sentence Order",
     "learningMode": "reordering",
@@ -450,7 +433,7 @@
     "category": "Grammar",
     "unit": 1,
     "prerequisites": [
-      "quiz-basic-review-a1"
+      "sorting-expressions-type-a1"
     ],
     "description": "Practice basic English word order",
     "estimatedTime": 2,
@@ -474,6 +457,57 @@
     "difficulty": 1
   },
   {
+    "id": "a1-reordering-phrasal-verbs",
+    "name": "Phrasal Verbs Word Order",
+    "learningMode": "reordering",
+    "dataPath": "data/a1/a1-reordering-phrasal-verbs.json",
+    "level": [
+      "a1"
+    ],
+    "category": "PhrasalVerbs",
+    "unit": 1,
+    "prerequisites": [
+      "a1-reordering-questions-negatives"
+    ],
+    "description": "Practice word order with basic phrasal verbs",
+    "estimatedTime": 2,
+    "difficulty": 1
+  },
+  {
+    "id": "a1-reordering-idioms",
+    "name": "Idioms Word Order",
+    "learningMode": "reordering",
+    "dataPath": "data/a1/a1-reordering-idioms.json",
+    "level": [
+      "a1"
+    ],
+    "category": "Idioms",
+    "unit": 1,
+    "prerequisites": [
+      "a1-reordering-phrasal-verbs"
+    ],
+    "description": "Practice word order with common English idioms",
+    "estimatedTime": 2,
+    "difficulty": 1
+  },
+  {
+    "id": "quiz-basic-review-a1",
+    "name": "Basic Review",
+    "learningMode": "quiz",
+    "dataPath": "data/a1/a1-quiz-basic-review.json",
+    "level": [
+      "a1"
+    ],
+    "category": "Review",
+    "unit": 1,
+    "prerequisites": [
+      "a1-reordering-idioms"
+    ],
+    "description": "Comprehensive review of A1 level concepts",
+    "estimatedTime": 3,
+    "difficulty": 1
+  },
+  {
     "id": "reading-business-a2",
     "name": "Business Reading",
     "learningMode": "reading",
@@ -484,7 +518,7 @@
     "category": "Reading",
     "unit": 2,
     "prerequisites": [
-      "a1-reordering-questions-negatives"
+      "quiz-basic-review-a1"
     ],
     "description": "Introduction to business English concepts and vocabulary",
     "estimatedTime": 12,
@@ -916,6 +950,23 @@
     "difficulty": 2
   },
   {
+    "id": "a2-reordering-phrasal-verbs",
+    "name": "Phrasal Verbs Word Order",
+    "learningMode": "reordering",
+    "dataPath": "data/a2/a2-reordering-phrasal-verbs.json",
+    "level": [
+      "a2"
+    ],
+    "category": "PhrasalVerbs",
+    "unit": 2,
+    "prerequisites": [
+      "completion-elementary-phrasal-verbs-a2"
+    ],
+    "description": "Reorder sentences with elementary phrasal verbs",
+    "estimatedTime": 2,
+    "difficulty": 2
+  },
+  {
     "id": "reading-idioms-a2",
     "name": "Idioms for Everyday Conversations",
     "learningMode": "reading",
@@ -926,7 +977,7 @@
     "category": "Idioms",
     "unit": 2,
     "prerequisites": [
-      "completion-elementary-phrasal-verbs-a2"
+      "a2-reordering-phrasal-verbs"
     ],
     "description": "Discover idioms about feelings, time and common situations",
     "estimatedTime": 12,
@@ -967,6 +1018,23 @@
     "difficulty": 2
   },
   {
+    "id": "a2-reordering-idioms",
+    "name": "Idioms Word Order",
+    "learningMode": "reordering",
+    "dataPath": "data/a2/a2-reordering-idioms.json",
+    "level": [
+      "a2"
+    ],
+    "category": "Idioms",
+    "unit": 2,
+    "prerequisites": [
+      "quiz-elementary-idioms-a2"
+    ],
+    "description": "Reorder sentences with common English idioms",
+    "estimatedTime": 2,
+    "difficulty": 2
+  },
+  {
     "id": "sorting-vocabulary-context-a2",
     "name": "Vocabulary by Context",
     "learningMode": "sorting",
@@ -980,7 +1048,7 @@
     "estimatedTime": 2,
     "difficulty": 2,
     "prerequisites": [
-      "quiz-elementary-idioms-a2"
+      "a2-reordering-idioms"
     ]
   },
   {
@@ -1477,20 +1545,37 @@
     ]
   },
   {
-    "id": "quiz-intermediate-review-b1",
-    "name": "Intermediate Review",
-    "learningMode": "quiz",
-    "dataPath": "data/b1/b1-quiz-intermediate-review.json",
+    "id": "b1-reordering-phrasal-verbs",
+    "name": "Phrasal Verbs Word Order",
+    "learningMode": "reordering",
+    "dataPath": "data/b1/b1-reordering-phrasal-verbs.json",
     "level": [
       "b1"
     ],
-    "category": "Review",
+    "category": "PhrasalVerbs",
     "unit": 3,
     "prerequisites": [
-      "quiz-gerunds-infinitives-b1"
+      "sorting-phrasal-verbs-particle-b1"
     ],
-    "description": "Comprehensive review of B1 level concepts",
-    "estimatedTime": 3,
+    "description": "Reorder sentences with common phrasal verbs in professional contexts",
+    "estimatedTime": 2,
+    "difficulty": 3
+  },
+  {
+    "id": "b1-reordering-idioms",
+    "name": "Idioms Word Order",
+    "learningMode": "reordering",
+    "dataPath": "data/b1/b1-reordering-idioms.json",
+    "level": [
+      "b1"
+    ],
+    "category": "Idioms",
+    "unit": 3,
+    "prerequisites": [
+      "b1-reordering-phrasal-verbs"
+    ],
+    "description": "Reorder sentences with work and education idioms",
+    "estimatedTime": 2,
     "difficulty": 3
   },
   {
@@ -1504,7 +1589,7 @@
     "category": "Grammar",
     "unit": 3,
     "prerequisites": [
-      "sorting-phrasal-verbs-particle-b1"
+      "b1-reordering-idioms"
     ],
     "description": "When to use verb + -ing (gerund) and verb + to (infinitive) after common verbs",
     "estimatedTime": 11,
@@ -1592,6 +1677,23 @@
       "b1-reordering-gerunds-infinitives"
     ],
     "description": "Test your knowledge of gerund and infinitive verb patterns",
+    "estimatedTime": 3,
+    "difficulty": 3
+  },
+  {
+    "id": "quiz-intermediate-review-b1",
+    "name": "Intermediate Review",
+    "learningMode": "quiz",
+    "dataPath": "data/b1/b1-quiz-intermediate-review.json",
+    "level": [
+      "b1"
+    ],
+    "category": "Review",
+    "unit": 3,
+    "prerequisites": [
+      "quiz-gerunds-infinitives-b1"
+    ],
+    "description": "Comprehensive review of B1 level concepts",
     "estimatedTime": 3,
     "difficulty": 3
   },
@@ -2089,20 +2191,37 @@
     "difficulty": 4
   },
   {
-    "id": "quiz-upper-intermediate-review-b2",
-    "name": "Upper-Intermediate Review",
-    "learningMode": "quiz",
-    "dataPath": "data/b2/b2-quiz-upper-intermediate-review.json",
+    "id": "b2-reordering-phrasal-verbs",
+    "name": "Phrasal Verbs Word Order",
+    "learningMode": "reordering",
+    "dataPath": "data/b2/b2-reordering-phrasal-verbs.json",
     "level": [
       "b2"
     ],
-    "category": "Review",
+    "category": "PhrasalVerbs",
     "unit": 4,
     "prerequisites": [
-      "quiz-gerunds-infinitives-advanced-b2"
+      "quiz-phrasal-verbs-b2"
     ],
-    "description": "Comprehensive review of B2 level concepts: used to, phrasal verbs, connectors, and professional vocabulary",
-    "estimatedTime": 3,
+    "description": "Reorder sentences with advanced phrasal verbs in professional contexts",
+    "estimatedTime": 2,
+    "difficulty": 4
+  },
+  {
+    "id": "b2-reordering-idioms",
+    "name": "Idioms Word Order",
+    "learningMode": "reordering",
+    "dataPath": "data/b2/b2-reordering-idioms.json",
+    "level": [
+      "b2"
+    ],
+    "category": "Idioms",
+    "unit": 4,
+    "prerequisites": [
+      "b2-reordering-phrasal-verbs"
+    ],
+    "description": "Reorder sentences with professional and business idioms",
+    "estimatedTime": 2,
     "difficulty": 4
   },
   {
@@ -2116,7 +2235,7 @@
     "category": "Grammar",
     "unit": 4,
     "prerequisites": [
-      "quiz-phrasal-verbs-b2"
+      "b2-reordering-idioms"
     ],
     "description": "Verbs that change meaning with gerund vs infinitive: stop, remember, try, forget, regret, go on, mean",
     "estimatedTime": 3,
@@ -2153,6 +2272,23 @@
       "b2-reordering-used-to-connectors"
     ],
     "description": "Test your understanding of verbs that change meaning with gerund vs infinitive",
+    "estimatedTime": 3,
+    "difficulty": 4
+  },
+  {
+    "id": "quiz-upper-intermediate-review-b2",
+    "name": "Upper-Intermediate Review",
+    "learningMode": "quiz",
+    "dataPath": "data/b2/b2-quiz-upper-intermediate-review.json",
+    "level": [
+      "b2"
+    ],
+    "category": "Review",
+    "unit": 4,
+    "prerequisites": [
+      "quiz-gerunds-infinitives-advanced-b2"
+    ],
+    "description": "Comprehensive review of B2 level concepts: used to, phrasal verbs, connectors, and professional vocabulary",
     "estimatedTime": 3,
     "difficulty": 4
   },
@@ -2616,6 +2752,23 @@
     "difficulty": 5
   },
   {
+    "id": "c1-reordering-phrasal-verbs",
+    "name": "Phrasal Verbs Word Order",
+    "learningMode": "reordering",
+    "dataPath": "data/c1/c1-reordering-phrasal-verbs.json",
+    "level": [
+      "c1"
+    ],
+    "category": "PhrasalVerbs",
+    "unit": 5,
+    "prerequisites": [
+      "completion-advanced-phrasal-verbs-c1"
+    ],
+    "description": "Reorder sentences with sophisticated phrasal verbs and inversions",
+    "estimatedTime": 2,
+    "difficulty": 5
+  },
+  {
     "id": "flashcard-advanced-idioms-c1",
     "name": "Advanced Idioms Flashcards",
     "learningMode": "flashcard",
@@ -2626,7 +2779,7 @@
     "category": "Idioms",
     "unit": 5,
     "prerequisites": [
-      "completion-advanced-phrasal-verbs-c1"
+      "c1-reordering-phrasal-verbs"
     ],
     "description": "Sophisticated idioms with Spanish translations (20 idioms)",
     "estimatedTime": 1,
@@ -2650,6 +2803,23 @@
     "difficulty": 5
   },
   {
+    "id": "c1-reordering-idioms",
+    "name": "Idioms Word Order",
+    "learningMode": "reordering",
+    "dataPath": "data/c1/c1-reordering-idioms.json",
+    "level": [
+      "c1"
+    ],
+    "category": "Idioms",
+    "unit": 5,
+    "prerequisites": [
+      "quiz-advanced-idioms-c1"
+    ],
+    "description": "Reorder sentences with advanced idioms using inversions and subjunctive",
+    "estimatedTime": 2,
+    "difficulty": 5
+  },
+  {
     "id": "quiz-phrasal-verbs-c1",
     "name": "Phrasal Verbs Quiz",
     "learningMode": "quiz",
@@ -2660,7 +2830,7 @@
     "category": "PhrasalVerbs",
     "unit": 5,
     "prerequisites": [
-      "quiz-advanced-idioms-c1"
+      "c1-reordering-idioms"
     ],
     "description": "Advanced phrasal verbs used in professional and academic contexts",
     "estimatedTime": 3,
@@ -3041,6 +3211,23 @@
     "difficulty": 5
   },
   {
+    "id": "c2-reordering-phrasal-verbs",
+    "name": "Phrasal Verbs Word Order",
+    "learningMode": "reordering",
+    "dataPath": "data/c2/c2-reordering-phrasal-verbs.json",
+    "level": [
+      "c2"
+    ],
+    "category": "PhrasalVerbs",
+    "unit": 6,
+    "prerequisites": [
+      "completion-advanced-phrasal-verbs-c2"
+    ],
+    "description": "Reorder sentences with mastery-level phrasal verbs in scholarly discourse",
+    "estimatedTime": 2,
+    "difficulty": 5
+  },
+  {
     "id": "completion-complex-prepositions-conjunctions-c2",
     "name": "Complex Prepositions",
     "learningMode": "completion",
@@ -3051,7 +3238,7 @@
     "category": "Grammar",
     "unit": 6,
     "prerequisites": [
-      "completion-advanced-phrasal-verbs-c2"
+      "c2-reordering-phrasal-verbs"
     ],
     "description": "Complex prepositions and conjunctions",
     "estimatedTime": 3,
@@ -3109,6 +3296,23 @@
     "difficulty": 5
   },
   {
+    "id": "c2-reordering-idioms",
+    "name": "Idioms Word Order",
+    "learningMode": "reordering",
+    "dataPath": "data/c2/c2-reordering-idioms.json",
+    "level": [
+      "c2"
+    ],
+    "category": "Idioms",
+    "unit": 6,
+    "prerequisites": [
+      "quiz-mastery-idioms-c2"
+    ],
+    "description": "Reorder sentences with literary and classical idioms in academic contexts",
+    "estimatedTime": 2,
+    "difficulty": 5
+  },
+  {
     "id": "sorting-discourse-markers-c2",
     "name": "Discourse Markers",
     "learningMode": "sorting",
@@ -3122,7 +3326,7 @@
     "estimatedTime": 2,
     "difficulty": 5,
     "prerequisites": [
-      "quiz-mastery-idioms-c2"
+      "c2-reordering-idioms"
     ]
   },
   {

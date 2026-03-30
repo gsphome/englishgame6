@@ -1,0 +1,69 @@
+[
+  {
+    "id": "reord-pv-c1-001",
+    "sentence": "The committee has been grappling with the implications of the new regulation",
+    "words": ["The", "committee", "has", "been", "grappling", "with", "the", "implications", "of", "the", "new", "regulation"],
+    "hint": "Present perfect continuous: has been + -ing",
+    "explanation": "'Grapple with' means to struggle with a complex issue. Present perfect continuous for ongoing effort."
+  },
+  {
+    "id": "reord-pv-c1-002",
+    "sentence": "Not only did the report gloss over the key findings but it also misrepresented the data",
+    "words": ["Not", "only", "did", "the", "report", "gloss", "over", "the", "key", "findings", "but", "it", "also", "misrepresented", "the", "data"],
+    "hint": "Inversion after 'Not only': Not only + auxiliary + subject",
+    "explanation": "'Gloss over' means to treat superficially. 'Not only...but also' with inversion for emphasis."
+  },
+  {
+    "id": "reord-pv-c1-003",
+    "sentence": "Had the researchers not stumbled upon the anomaly the discovery would never have been made",
+    "words": ["Had", "the", "researchers", "not", "stumbled", "upon", "the", "anomaly", "the", "discovery", "would", "never", "have", "been", "made"],
+    "hint": "Inverted conditional: Had + subject + not + past participle",
+    "explanation": "'Stumble upon' means to discover by accident. Inverted third conditional without 'if'."
+  },
+  {
+    "id": "reord-pv-c1-004",
+    "sentence": "The professor urged the students to delve into the primary sources more thoroughly",
+    "words": ["The", "professor", "urged", "the", "students", "to", "delve", "into", "the", "primary", "sources", "more", "thoroughly"],
+    "explanation": "'Delve into' means to investigate deeply. 'Urged someone to' + base form."
+  },
+  {
+    "id": "reord-pv-c1-005",
+    "sentence": "Seldom does the board touch on such controversial matters in public sessions",
+    "words": ["Seldom", "does", "the", "board", "touch", "on", "such", "controversial", "matters", "in", "public", "sessions"],
+    "hint": "Inversion after 'Seldom': Seldom + auxiliary + subject",
+    "explanation": "'Touch on' means to mention briefly. Negative adverb 'seldom' triggers subject-auxiliary inversion."
+  },
+  {
+    "id": "reord-pv-c1-006",
+    "sentence": "The government is cracking down on tax evasion with unprecedented measures",
+    "words": ["The", "government", "is", "cracking", "down", "on", "tax", "evasion", "with", "unprecedented", "measures"],
+    "explanation": "'Crack down on' means to take strict action against. Present continuous for current policy."
+  },
+  {
+    "id": "reord-pv-c1-007",
+    "sentence": "Were the company to phase out the legacy system productivity would initially drop",
+    "words": ["Were", "the", "company", "to", "phase", "out", "the", "legacy", "system", "productivity", "would", "initially", "drop"],
+    "hint": "Formal conditional: Were + subject + to + base form",
+    "explanation": "'Phase out' means to gradually discontinue. 'Were...to' is a formal conditional structure."
+  },
+  {
+    "id": "reord-pv-c1-008",
+    "sentence": "The author draws on extensive fieldwork to substantiate her argument",
+    "words": ["The", "author", "draws", "on", "extensive", "fieldwork", "to", "substantiate", "her", "argument"],
+    "distractors": ["draw"],
+    "explanation": "'Draw on' means to use as a resource. With 'the author' (singular), use 'draws'."
+  },
+  {
+    "id": "reord-pv-c1-009",
+    "sentence": "Never before had the institution embarked on such an ambitious undertaking",
+    "words": ["Never", "before", "had", "the", "institution", "embarked", "on", "such", "an", "ambitious", "undertaking"],
+    "hint": "Inversion after 'Never before': Never before + had + subject",
+    "explanation": "'Embark on' means to begin a significant project. 'Never before' triggers inversion."
+  },
+  {
+    "id": "reord-pv-c1-010",
+    "sentence": "The panel called for a comprehensive overhaul of the existing framework",
+    "words": ["The", "panel", "called", "for", "a", "comprehensive", "overhaul", "of", "the", "existing", "framework"],
+    "explanation": "'Call for' means to demand or require. Past simple for a completed action."
+  }
+]

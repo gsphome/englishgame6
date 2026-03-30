@@ -1,0 +1,70 @@
+[
+  {
+    "id": "reord-id-c2-001",
+    "sentence": "Not until the epistemological foundations were laid bare did the house of cards collapse",
+    "words": ["Not", "until", "the", "epistemological", "foundations", "were", "laid", "bare", "did", "the", "house", "of", "cards", "collapse"],
+    "hint": "Inversion after 'Not until'",
+    "explanation": "'House of cards' means a fragile structure. 'Laid bare' means exposed. 'Not until' triggers inversion."
+  },
+  {
+    "id": "reord-id-c2-002",
+    "sentence": "Were the academy to rest on its laurels the intellectual stagnation would be irreversible",
+    "words": ["Were", "the", "academy", "to", "rest", "on", "its", "laurels", "the", "intellectual", "stagnation", "would", "be", "irreversible"],
+    "hint": "Formal conditional: Were + subject + to + base form",
+    "explanation": "'Rest on one's laurels' means to be complacent. Formal conditional with 'were...to'."
+  },
+  {
+    "id": "reord-id-c2-003",
+    "sentence": "The philosopher's magnum opus opened a Pandora's box of ontological questions that remain unresolved",
+    "words": ["The", "philosopher's", "magnum", "opus", "opened", "a", "Pandora's", "box", "of", "ontological", "questions", "that", "remain", "unresolved"],
+    "explanation": "'Open a Pandora's box' means to unleash unforeseen problems. Relative clause with 'that'."
+  },
+  {
+    "id": "reord-id-c2-004",
+    "sentence": "Only by reading between the lines can one discern the author's true ideological commitments",
+    "words": ["Only", "by", "reading", "between", "the", "lines", "can", "one", "discern", "the", "author's", "true", "ideological", "commitments"],
+    "hint": "Inversion after 'Only by + gerund'",
+    "explanation": "'Read between the lines' means to understand hidden meaning. 'Only by' triggers inversion."
+  },
+  {
+    "id": "reord-id-c2-005",
+    "sentence": "It is imperative that scholars not throw the baby out with the bathwater when revising established theories",
+    "words": ["It", "is", "imperative", "that", "scholars", "not", "throw", "the", "baby", "out", "with", "the", "bathwater", "when", "revising", "established", "theories"],
+    "hint": "Subjunctive: It is imperative that + subject + base form",
+    "explanation": "'Throw the baby out with the bathwater' means to discard the good with the bad. Subjunctive mood."
+  },
+  {
+    "id": "reord-id-c2-006",
+    "sentence": "Never before had a hermeneutic approach so thoroughly turned the tables on positivist methodology",
+    "words": ["Never", "before", "had", "a", "hermeneutic", "approach", "so", "thoroughly", "turned", "the", "tables", "on", "positivist", "methodology"],
+    "hint": "Inversion after 'Never before'",
+    "explanation": "'Turn the tables' means to reverse a situation. 'Never before' triggers inversion with past perfect."
+  },
+  {
+    "id": "reord-id-c2-007",
+    "sentence": "The dialectical tension between the two schools of thought proved to be a double-edged sword",
+    "words": ["The", "dialectical", "tension", "between", "the", "two", "schools", "of", "thought", "proved", "to", "be", "a", "double-edged", "sword"],
+    "explanation": "'Double-edged sword' means something with both advantages and disadvantages. 'Proved to be' for outcome."
+  },
+  {
+    "id": "reord-id-c2-008",
+    "sentence": "Under no circumstances should the academy sweep systemic inequities under the rug",
+    "words": ["Under", "no", "circumstances", "should", "the", "academy", "sweep", "systemic", "inequities", "under", "the", "rug"],
+    "hint": "Inversion after 'Under no circumstances'",
+    "explanation": "'Sweep under the rug' means to hide problems. Negative phrase triggers inversion."
+  },
+  {
+    "id": "reord-id-c2-009",
+    "sentence": "Had the paradigm not been a sacred cow for so long the field would have evolved sooner",
+    "words": ["Had", "the", "paradigm", "not", "been", "a", "sacred", "cow", "for", "so", "long", "the", "field", "would", "have", "evolved", "sooner"],
+    "hint": "Inverted third conditional",
+    "explanation": "'Sacred cow' means something exempt from criticism. Inverted conditional for unreal past."
+  },
+  {
+    "id": "reord-id-c2-010",
+    "sentence": "Rarely does a single monograph succeed in killing two birds with one stone across disciplines",
+    "words": ["Rarely", "does", "a", "single", "monograph", "succeed", "in", "killing", "two", "birds", "with", "one", "stone", "across", "disciplines"],
+    "hint": "Inversion after 'Rarely'",
+    "explanation": "'Kill two birds with one stone' means to achieve two goals at once. 'Rarely' triggers inversion."
+  }
+]

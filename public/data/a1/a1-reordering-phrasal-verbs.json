@@ -1,0 +1,74 @@
+[
+  {
+    "id": "reord-pv-a1-001",
+    "sentence": "I get up at seven every morning",
+    "words": ["I", "get", "up", "at", "seven", "every", "morning"],
+    "distractors": ["gets"],
+    "hint": "Subject + phrasal verb + time expression",
+    "explanation": "'Get up' means to rise from bed. With 'I', use the base form 'get', not 'gets'."
+  },
+  {
+    "id": "reord-pv-a1-002",
+    "sentence": "Please sit down on the chair",
+    "words": ["Please", "sit", "down", "on", "the", "chair"],
+    "hint": "Polite request + phrasal verb + place",
+    "explanation": "'Sit down' means to take a seat. 'Please' makes it a polite request."
+  },
+  {
+    "id": "reord-pv-a1-003",
+    "sentence": "She turns on the light every night",
+    "words": ["She", "turns", "on", "the", "light", "every", "night"],
+    "distractors": ["turn"],
+    "explanation": "'Turn on' means to start a device. With 'she', add -s: 'turns on'."
+  },
+  {
+    "id": "reord-pv-a1-004",
+    "sentence": "He puts on his jacket before going out",
+    "words": ["He", "puts", "on", "his", "jacket", "before", "going", "out"],
+    "distractors": ["put"],
+    "hint": "Subject + phrasal verb + object + time clause",
+    "explanation": "'Put on' means to wear. 'Go out' means to leave. With 'he', use 'puts'."
+  },
+  {
+    "id": "reord-pv-a1-005",
+    "sentence": "They come in and sit down",
+    "words": ["They", "come", "in", "and", "sit", "down"],
+    "explanation": "'Come in' means to enter. 'Sit down' means to take a seat. Two phrasal verbs joined by 'and'."
+  },
+  {
+    "id": "reord-pv-a1-006",
+    "sentence": "I always wake up early on Monday",
+    "words": ["I", "always", "wake", "up", "early", "on", "Monday"],
+    "hint": "Subject + adverb + phrasal verb + time",
+    "explanation": "'Wake up' means to stop sleeping. Adverbs of frequency go before the main verb."
+  },
+  {
+    "id": "reord-pv-a1-007",
+    "sentence": "Can you turn off the television please",
+    "words": ["Can", "you", "turn", "off", "the", "television", "please"],
+    "explanation": "'Turn off' is the opposite of 'turn on'. Questions with 'can' start with the modal verb."
+  },
+  {
+    "id": "reord-pv-a1-008",
+    "sentence": "The children go out to play after school",
+    "words": ["The", "children", "go", "out", "to", "play", "after", "school"],
+    "distractors": ["goes"],
+    "hint": "'Children' is plural — use the base form",
+    "explanation": "'Go out' means to leave a place. 'Children' is plural, so use 'go', not 'goes'."
+  },
+  {
+    "id": "reord-pv-a1-009",
+    "sentence": "She picks up the phone and says hello",
+    "words": ["She", "picks", "up", "the", "phone", "and", "says", "hello"],
+    "distractors": ["pick"],
+    "explanation": "'Pick up' means to lift or answer the phone. With 'she', use 'picks up'."
+  },
+  {
+    "id": "reord-pv-a1-010",
+    "sentence": "We look for our keys every morning",
+    "words": ["We", "look", "for", "our", "keys", "every", "morning"],
+    "distractors": ["looks"],
+    "hint": "Subject + phrasal verb + object + time",
+    "explanation": "'Look for' means to search. With 'we', use the base form 'look'."
+  }
+]

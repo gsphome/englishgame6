@@ -1,0 +1,67 @@
+[
+  {
+    "id": "reord-id-b2-001",
+    "sentence": "The new policy has opened a can of worms for the department",
+    "words": ["The", "new", "policy", "has", "opened", "a", "can", "of", "worms", "for", "the", "department"],
+    "hint": "Present perfect: has + past participle",
+    "explanation": "'Open a can of worms' means to create unexpected problems. Present perfect for recent result."
+  },
+  {
+    "id": "reord-id-b2-002",
+    "sentence": "If she had not jumped on the bandwagon the project would have failed",
+    "words": ["If", "she", "had", "not", "jumped", "on", "the", "bandwagon", "the", "project", "would", "have", "failed"],
+    "hint": "Third conditional: If + past perfect, would have + past participle",
+    "explanation": "'Jump on the bandwagon' means to join a popular trend. Third conditional for unreal past."
+  },
+  {
+    "id": "reord-id-b2-003",
+    "sentence": "The CEO has been pulling strings behind the scenes for months",
+    "words": ["The", "CEO", "has", "been", "pulling", "strings", "behind", "the", "scenes", "for", "months"],
+    "explanation": "'Pull strings' means to use influence secretly. 'Behind the scenes' means in private."
+  },
+  {
+    "id": "reord-id-b2-004",
+    "sentence": "We need to get to the bottom of this financial discrepancy",
+    "words": ["We", "need", "to", "get", "to", "the", "bottom", "of", "this", "financial", "discrepancy"],
+    "explanation": "'Get to the bottom of' means to find the true cause. 'Need to' + base form."
+  },
+  {
+    "id": "reord-id-b2-005",
+    "sentence": "I wish they would stop beating a dead horse about the old strategy",
+    "words": ["I", "wish", "they", "would", "stop", "beating", "a", "dead", "horse", "about", "the", "old", "strategy"],
+    "hint": "Wish + would + base form for complaints",
+    "explanation": "'Beat a dead horse' means to waste time on a settled issue. 'Wish + would' for complaints."
+  },
+  {
+    "id": "reord-id-b2-006",
+    "sentence": "The startup managed to weather the storm during the economic crisis",
+    "words": ["The", "startup", "managed", "to", "weather", "the", "storm", "during", "the", "economic", "crisis"],
+    "explanation": "'Weather the storm' means to survive a difficult period. 'Managed to' + base form."
+  },
+  {
+    "id": "reord-id-b2-007",
+    "sentence": "Had he not cut corners the product would have been safer",
+    "words": ["Had", "he", "not", "cut", "corners", "the", "product", "would", "have", "been", "safer"],
+    "hint": "Inverted third conditional: Had + subject + not + past participle",
+    "explanation": "'Cut corners' means to do something cheaply or poorly. Inverted conditional omits 'if'."
+  },
+  {
+    "id": "reord-id-b2-008",
+    "sentence": "She was barking up the wrong tree by blaming the intern",
+    "words": ["She", "was", "barking", "up", "the", "wrong", "tree", "by", "blaming", "the", "intern"],
+    "explanation": "'Bark up the wrong tree' means to pursue a mistaken approach. 'By' + gerund explains how."
+  },
+  {
+    "id": "reord-id-b2-009",
+    "sentence": "The team has been bending over backwards to meet the deadline",
+    "words": ["The", "team", "has", "been", "bending", "over", "backwards", "to", "meet", "the", "deadline"],
+    "hint": "Present perfect continuous for ongoing effort",
+    "explanation": "'Bend over backwards' means to try extremely hard. Present perfect continuous for duration."
+  },
+  {
+    "id": "reord-id-b2-010",
+    "sentence": "They would rather not rock the boat before the merger is complete",
+    "words": ["They", "would", "rather", "not", "rock", "the", "boat", "before", "the", "merger", "is", "complete"],
+    "explanation": "'Rock the boat' means to cause trouble. 'Would rather not' expresses preference to avoid."
+  }
+]

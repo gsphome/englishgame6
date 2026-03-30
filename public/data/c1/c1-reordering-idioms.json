@@ -1,0 +1,70 @@
+[
+  {
+    "id": "reord-id-c1-001",
+    "sentence": "Not until the audit was complete did the extent of the red tape become apparent",
+    "words": ["Not", "until", "the", "audit", "was", "complete", "did", "the", "extent", "of", "the", "red", "tape", "become", "apparent"],
+    "hint": "Inversion after 'Not until': Not until + clause + auxiliary + subject",
+    "explanation": "'Red tape' means excessive bureaucracy. 'Not until' triggers inversion in the main clause."
+  },
+  {
+    "id": "reord-id-c1-002",
+    "sentence": "The researcher had to move the goalposts when the initial hypothesis proved untenable",
+    "words": ["The", "researcher", "had", "to", "move", "the", "goalposts", "when", "the", "initial", "hypothesis", "proved", "untenable"],
+    "explanation": "'Move the goalposts' means to change the rules unfairly. 'Had to' for past necessity."
+  },
+  {
+    "id": "reord-id-c1-003",
+    "sentence": "Were the government to turn a blind eye to corruption the consequences would be dire",
+    "words": ["Were", "the", "government", "to", "turn", "a", "blind", "eye", "to", "corruption", "the", "consequences", "would", "be", "dire"],
+    "hint": "Formal conditional: Were + subject + to + base form",
+    "explanation": "'Turn a blind eye' means to deliberately ignore. 'Were...to' is a formal conditional."
+  },
+  {
+    "id": "reord-id-c1-004",
+    "sentence": "Rarely does a single policy shift the balance of power so dramatically",
+    "words": ["Rarely", "does", "a", "single", "policy", "shift", "the", "balance", "of", "power", "so", "dramatically"],
+    "hint": "Inversion after 'Rarely': Rarely + auxiliary + subject",
+    "explanation": "'Shift the balance of power' means to change who has control. 'Rarely' triggers inversion."
+  },
+  {
+    "id": "reord-id-c1-005",
+    "sentence": "The whistleblower opened a Pandora's box that the board had tried to keep shut",
+    "words": ["The", "whistleblower", "opened", "a", "Pandora's", "box", "that", "the", "board", "had", "tried", "to", "keep", "shut"],
+    "explanation": "'Open a Pandora's box' means to unleash unforeseen problems. Past perfect for the earlier action."
+  },
+  {
+    "id": "reord-id-c1-006",
+    "sentence": "Under no circumstances should the team rest on their laurels after this success",
+    "words": ["Under", "no", "circumstances", "should", "the", "team", "rest", "on", "their", "laurels", "after", "this", "success"],
+    "hint": "Inversion after 'Under no circumstances'",
+    "explanation": "'Rest on one's laurels' means to be complacent after success. Negative phrase triggers inversion."
+  },
+  {
+    "id": "reord-id-c1-007",
+    "sentence": "Had the negotiators not played hardball the deal would have fallen through",
+    "words": ["Had", "the", "negotiators", "not", "played", "hardball", "the", "deal", "would", "have", "fallen", "through"],
+    "hint": "Inverted third conditional",
+    "explanation": "'Play hardball' means to negotiate aggressively. 'Fall through' means to fail. Inverted conditional."
+  },
+  {
+    "id": "reord-id-c1-008",
+    "sentence": "The professor suggested that we not take the findings at face value",
+    "words": ["The", "professor", "suggested", "that", "we", "not", "take", "the", "findings", "at", "face", "value"],
+    "hint": "Subjunctive: suggested that + subject + base form",
+    "explanation": "'Take at face value' means to accept without questioning. Subjunctive after 'suggested that'."
+  },
+  {
+    "id": "reord-id-c1-009",
+    "sentence": "Only after the merger did the company gain the upper hand in the market",
+    "words": ["Only", "after", "the", "merger", "did", "the", "company", "gain", "the", "upper", "hand", "in", "the", "market"],
+    "hint": "Inversion after 'Only after'",
+    "explanation": "'Gain the upper hand' means to get an advantage. 'Only after' triggers inversion."
+  },
+  {
+    "id": "reord-id-c1-010",
+    "sentence": "It is imperative that the board not sweep these allegations under the carpet",
+    "words": ["It", "is", "imperative", "that", "the", "board", "not", "sweep", "these", "allegations", "under", "the", "carpet"],
+    "hint": "Subjunctive: It is imperative that + subject + base form",
+    "explanation": "'Sweep under the carpet' means to hide a problem. Subjunctive after 'it is imperative that'."
+  }
+]

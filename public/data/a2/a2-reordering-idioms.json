@@ -1,0 +1,71 @@
+[
+  {
+    "id": "reord-id-a2-001",
+    "sentence": "She was on cloud nine after passing the exam",
+    "words": ["She", "was", "on", "cloud", "nine", "after", "passing", "the", "exam"],
+    "hint": "Subject + was + idiom + after + gerund",
+    "explanation": "'On cloud nine' means extremely happy. 'After' is followed by a gerund (-ing form)."
+  },
+  {
+    "id": "reord-id-a2-002",
+    "sentence": "He always gets cold feet before important meetings",
+    "words": ["He", "always", "gets", "cold", "feet", "before", "important", "meetings"],
+    "distractors": ["get"],
+    "hint": "Adverb of frequency before the main verb",
+    "explanation": "'Get cold feet' means to become nervous. With 'he', use 'gets'. 'Always' goes before the verb."
+  },
+  {
+    "id": "reord-id-a2-003",
+    "sentence": "We had to bite the bullet and sell the car",
+    "words": ["We", "had", "to", "bite", "the", "bullet", "and", "sell", "the", "car"],
+    "explanation": "'Bite the bullet' means to face a difficult situation bravely. 'Had to' expresses past obligation."
+  },
+  {
+    "id": "reord-id-a2-004",
+    "sentence": "The news spread like wildfire across the town",
+    "words": ["The", "news", "spread", "like", "wildfire", "across", "the", "town"],
+    "distractors": ["spreaded"],
+    "hint": "Past tense of 'spread' is 'spread' (irregular)",
+    "explanation": "'Spread like wildfire' means to spread very quickly. 'Spread' is the same in all tenses."
+  },
+  {
+    "id": "reord-id-a2-005",
+    "sentence": "She has been burning the midnight oil all week",
+    "words": ["She", "has", "been", "burning", "the", "midnight", "oil", "all", "week"],
+    "hint": "Present perfect continuous: has been + -ing",
+    "explanation": "'Burn the midnight oil' means to work late at night. Present perfect continuous shows ongoing action."
+  },
+  {
+    "id": "reord-id-a2-006",
+    "sentence": "They decided to call it a day after lunch",
+    "words": ["They", "decided", "to", "call", "it", "a", "day", "after", "lunch"],
+    "explanation": "'Call it a day' means to stop working. 'Decided to' is followed by the base form."
+  },
+  {
+    "id": "reord-id-a2-007",
+    "sentence": "I think we should not beat around the bush",
+    "words": ["I", "think", "we", "should", "not", "beat", "around", "the", "bush"],
+    "hint": "Subject + think + clause with should not",
+    "explanation": "'Beat around the bush' means to avoid the main topic. 'Should not' goes before the verb."
+  },
+  {
+    "id": "reord-id-a2-008",
+    "sentence": "He was feeling blue because he missed his family",
+    "words": ["He", "was", "feeling", "blue", "because", "he", "missed", "his", "family"],
+    "explanation": "'Feeling blue' means feeling sad. 'Because' introduces the reason."
+  },
+  {
+    "id": "reord-id-a2-009",
+    "sentence": "The project cost us an arm and a leg last year",
+    "words": ["The", "project", "cost", "us", "an", "arm", "and", "a", "leg", "last", "year"],
+    "distractors": ["costed"],
+    "hint": "Past tense of 'cost' is 'cost' (irregular)",
+    "explanation": "'Cost an arm and a leg' means to be very expensive. 'Cost' is the same in all tenses."
+  },
+  {
+    "id": "reord-id-a2-010",
+    "sentence": "You should not put all your eggs in one basket",
+    "words": ["You", "should", "not", "put", "all", "your", "eggs", "in", "one", "basket"],
+    "explanation": "'Put all your eggs in one basket' means to risk everything on one option. 'Should not' goes before the base form."
+  }
+]

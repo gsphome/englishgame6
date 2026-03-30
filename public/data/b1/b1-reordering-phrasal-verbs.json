@@ -1,0 +1,71 @@
+[
+  {
+    "id": "reord-pv-b1-001",
+    "sentence": "The car broke down on the way to the airport",
+    "words": ["The", "car", "broke", "down", "on", "the", "way", "to", "the", "airport"],
+    "distractors": ["breaked"],
+    "hint": "Past tense of 'break down' is 'broke down'",
+    "explanation": "'Break down' means to stop working. Past: 'broke down' (irregular). 'Breaked' does not exist."
+  },
+  {
+    "id": "reord-pv-b1-002",
+    "sentence": "They had to call off the meeting because of the storm",
+    "words": ["They", "had", "to", "call", "off", "the", "meeting", "because", "of", "the", "storm"],
+    "explanation": "'Call off' means to cancel. 'Had to' expresses past obligation. 'Because of' introduces the reason."
+  },
+  {
+    "id": "reord-pv-b1-003",
+    "sentence": "She came across an old photograph while cleaning the attic",
+    "words": ["She", "came", "across", "an", "old", "photograph", "while", "cleaning", "the", "attic"],
+    "distractors": ["comed"],
+    "explanation": "'Come across' means to find by chance. Past: 'came across'. 'While' + gerund for simultaneous actions."
+  },
+  {
+    "id": "reord-pv-b1-004",
+    "sentence": "You should cut down on sugar if you want to lose weight",
+    "words": ["You", "should", "cut", "down", "on", "sugar", "if", "you", "want", "to", "lose", "weight"],
+    "hint": "Should + base form + conditional clause",
+    "explanation": "'Cut down on' means to reduce consumption. 'Should' is followed by the base form."
+  },
+  {
+    "id": "reord-pv-b1-005",
+    "sentence": "I need to figure out how to solve this problem",
+    "words": ["I", "need", "to", "figure", "out", "how", "to", "solve", "this", "problem"],
+    "explanation": "'Figure out' means to understand or solve. 'How to' introduces the method."
+  },
+  {
+    "id": "reord-pv-b1-006",
+    "sentence": "He hung up the phone without saying goodbye",
+    "words": ["He", "hung", "up", "the", "phone", "without", "saying", "goodbye"],
+    "distractors": ["hanged"],
+    "hint": "Past tense of 'hang up' is 'hung up'",
+    "explanation": "'Hang up' means to end a phone call. Past: 'hung up'. 'Without' + gerund."
+  },
+  {
+    "id": "reord-pv-b1-007",
+    "sentence": "We are looking forward to meeting you next week",
+    "words": ["We", "are", "looking", "forward", "to", "meeting", "you", "next", "week"],
+    "hint": "'Look forward to' is followed by a gerund",
+    "explanation": "'Look forward to' means to anticipate with pleasure. 'To' here is a preposition, so it takes a gerund."
+  },
+  {
+    "id": "reord-pv-b1-008",
+    "sentence": "The teacher told the students to hand in their essays",
+    "words": ["The", "teacher", "told", "the", "students", "to", "hand", "in", "their", "essays"],
+    "explanation": "'Hand in' means to submit. 'Told someone to' is followed by the base form of the phrasal verb."
+  },
+  {
+    "id": "reord-pv-b1-009",
+    "sentence": "She has been putting off the decision for months",
+    "words": ["She", "has", "been", "putting", "off", "the", "decision", "for", "months"],
+    "hint": "Present perfect continuous: has been + -ing",
+    "explanation": "'Put off' means to postpone. Present perfect continuous shows an ongoing situation."
+  },
+  {
+    "id": "reord-pv-b1-010",
+    "sentence": "They set up a new company in London last year",
+    "words": ["They", "set", "up", "a", "new", "company", "in", "London", "last", "year"],
+    "distractors": ["setted"],
+    "explanation": "'Set up' means to establish. Past: 'set up' (same form). 'Setted' does not exist."
+  }
+]
