@@ -100,6 +100,13 @@
   line-height: 1;
 }
 
+.score-display-compact__total-score {
+  font-weight: 700;
+  color: var(--theme-text-primary, #e5e7eb);
+  font-size: inherit;
+  line-height: 1;
+}
+
 .score-display-compact__progress {
   display: flex;
   align-items: center;

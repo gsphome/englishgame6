@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAppStore } from '../../stores/appStore';
+import { useUserStore } from '../../stores/userStore';
 import { useSettingsStore } from '../../stores/settingsStore';
 import { useProgression } from '../../hooks/useProgression';
 import { useTranslation } from '../../utils/i18n';
@@ -7,8 +8,8 @@ import '../../styles/components/score-display.css';
 
 export const ScoreDisplay: React.FC = () => {
   const sessionScore = useAppStore(state => state.sessionScore);
-  const globalScore = useAppStore(state => state.globalScore);
   const currentView = useAppStore(state => state.currentView);
+  const { getTotalScore } = useUserStore();
   const { language } = useSettingsStore();
   const { t } = useTranslation(language);
   const { stats } = useProgression();
@@ -16,6 +17,7 @@ export const ScoreDisplay: React.FC = () => {
   const isInGame = currentView !== 'menu';
   const { completedModules, totalModules, completionPercentage } = stats;
   const progressWidth = totalModules > 0 ? (completedModules / totalModules) * 100 : 0;
+  const totalScore = getTotalScore();
 
   return (
     <div
@@ -25,7 +27,7 @@ export const ScoreDisplay: React.FC = () => {
       aria-label={
         isInGame
           ? `Session score: ${sessionScore.correct} correct, ${sessionScore.incorrect} incorrect, ${sessionScore.accuracy.toFixed(0)}% accuracy`
-          : `Global score: ${globalScore.correct} correct, ${globalScore.incorrect} incorrect, ${globalScore.accuracy.toFixed(0)}% accuracy. Progress: ${completedModules} of ${totalModules} modules completed`
+          : `Total score: ${totalScore} points. Progress: ${completedModules} of ${totalModules} modules completed`
       }
     >
       <div
@@ -72,31 +74,14 @@ export const ScoreDisplay: React.FC = () => {
                 role="img"
                 aria-label={t('scores.globalScore')}
               >
-                🌍
+                �
               </div>
-              <div className="score-display-compact__values">
-                <span
-                  className="score-display-compact__correct"
-                  aria-label={`${globalScore.correct} total correct answers`}
-                >
-                  {globalScore.correct}
-                </span>
-                <span className="score-display-compact__separator" aria-hidden="true">
-                  /
-                </span>
-                <span
-                  className="score-display-compact__incorrect"
-                  aria-label={`${globalScore.incorrect} total incorrect answers`}
-                >
-                  {globalScore.incorrect}
-                </span>
-              </div>
-              <div
-                className="score-display-compact__accuracy min-width-sm"
-                aria-label={`${globalScore.accuracy.toFixed(0)} percent overall accuracy`}
+              <span
+                className="score-display-compact__total-score"
+                aria-label={`${totalScore} total score points`}
               >
-                {globalScore.total > 0 ? `${globalScore.accuracy.toFixed(0)}%` : '0%'}
-              </div>
+                {totalScore}
+              </span>
             </div>
 
             {/* Module completion progress */}

@@ -234,14 +234,32 @@ export const Header: React.FC<HeaderProps> = () => {
             role="navigation"
             aria-label={t('navigation.navigationAndSettings')}
           >
+            {/* Header: Avatar + User identity (clickable to edit profile) */}
             <div className="header-side-menu__header">
               <div className="header-side-menu__header-row">
-                <div>
-                  <h2 className="header-side-menu__title">FluentFlow</h2>
-                  <p className="header-side-menu__subtitle">
-                    {t('navigation.navigationAndSettings')}
-                  </p>
-                </div>
+                <button
+                  className="header-side-menu__identity"
+                  onClick={() => {
+                    if (user) {
+                      setShowProfileForm(true);
+                      setShowSideMenu(false);
+                    }
+                  }}
+                  aria-label={user ? t('auth.editUserProfile') : undefined}
+                  tabIndex={user ? 0 : -1}
+                >
+                  <div className="header-side-menu__avatar" aria-hidden="true">
+                    {user ? user.name.charAt(0).toUpperCase() : '?'}
+                  </div>
+                  <div>
+                    <h2 className="header-side-menu__title">
+                      {user ? user.name : t('auth.guest', 'Guest')}
+                    </h2>
+                    <p className="header-side-menu__subtitle">
+                      {user ? t('auth.tapToEditProfile', 'Tap to edit profile') : 'FluentFlow'}
+                    </p>
+                  </div>
+                </button>
                 <button
                   className="header-side-menu__close"
                   onClick={() => setShowSideMenu(false)}
@@ -252,109 +270,79 @@ export const Header: React.FC<HeaderProps> = () => {
               </div>
             </div>
 
+            {/* Flat menu — no section headers */}
             <div className="header-side-menu__content">
-              {/* Navigation Section */}
-              <div className="header-side-menu__section">
-                <h3 className="header-side-menu__section-title">
-                  {t('navigation.mainNavigation')}
-                </h3>
-                <button
-                  onClick={handleGoToMenu}
-                  className="header-side-menu__item"
-                  aria-label={t('auth.goToMainMenu')}
-                >
-                  <Home className="header-side-menu__icon" aria-hidden="true" />
-                  <span className="header-side-menu__text">{t('navigation.mainMenu')}</span>
-                </button>
+              <button
+                onClick={handleGoToMenu}
+                className="header-side-menu__item"
+                aria-label={t('auth.goToMainMenu')}
+              >
+                <Home className="header-side-menu__icon" aria-hidden="true" />
+                <span className="header-side-menu__text">{t('navigation.mainMenu')}</span>
+              </button>
+              <button
+                onClick={() => {
+                  setShowMyProgressTab('dashboard');
+                  setShowMyProgress(true);
+                  setShowSideMenu(false);
+                }}
+                className="header-side-menu__item"
+                aria-label={t('auth.viewProgressDashboard')}
+              >
+                <BarChart3 className="header-side-menu__icon" aria-hidden="true" />
+                <span className="header-side-menu__text">{t('modals.myProgress')}</span>
+              </button>
+              <button
+                onClick={() => {
+                  setShowSettings(true);
+                  setShowSideMenu(false);
+                }}
+                className="header-side-menu__item"
+                aria-label={t('navigation.settings')}
+              >
+                <Settings className="header-side-menu__icon" aria-hidden="true" />
+                <span className="header-side-menu__text">{t('navigation.settings')}</span>
+              </button>
+              <button
+                onClick={() => {
+                  setShowAbout(true);
+                  setShowSideMenu(false);
+                }}
+                className="header-side-menu__item"
+                aria-label={t('navigation.about')}
+              >
+                <Info className="header-side-menu__icon" aria-hidden="true" />
+                <span className="header-side-menu__text">{t('navigation.about')}</span>
+              </button>
+
+              {/* Spacer + bottom actions */}
+              <div className="header-side-menu__spacer" />
+
+              {user ? (
                 <button
                   onClick={() => {
-                    setShowMyProgressTab('dashboard');
-                    setShowMyProgress(true);
+                    setShowLogoutConfirm(true);
                     setShowSideMenu(false);
                   }}
-                  className="header-side-menu__item"
-                  aria-label={t('auth.viewProgressDashboard')}
+                  className="header-side-menu__item header-side-menu__item--logout"
+                  aria-label={t('auth.logout', 'Logout')}
                 >
-                  <BarChart3 className="header-side-menu__icon" aria-hidden="true" />
-                  <span className="header-side-menu__text">{t('modals.myProgress')}</span>
+                  <LogOut className="header-side-menu__icon" aria-hidden="true" />
+                  <span className="header-side-menu__text">{t('auth.logout', 'Logout')}</span>
                 </button>
-              </div>
-
-              {/* Settings Section */}
-              <div className="header-side-menu__section">
-                <h3 className="header-side-menu__section-title">{t('navigation.configuration')}</h3>
+              ) : (
                 <button
                   onClick={() => {
-                    setShowSettings(true);
+                    setShowProfileForm(true);
                     setShowSideMenu(false);
                   }}
-                  className="header-side-menu__item"
-                  aria-label={t('modals.advancedSettings', 'Advanced Settings')}
+                  className="header-side-menu__item header-side-menu__item--login"
+                  aria-label={t('auth.loginToAccount')}
                 >
-                  <Settings className="header-side-menu__icon" aria-hidden="true" />
-                  <span className="header-side-menu__text">{t('modals.advancedSettings')}</span>
+                  <User className="header-side-menu__icon" aria-hidden="true" />
+                  <span className="header-side-menu__text">{t('auth.login', 'Login')}</span>
                 </button>
-                <button
-                  className="header-side-menu__item"
-                  onClick={() => {
-                    setShowAbout(true);
-                    setShowSideMenu(false);
-                  }}
-                  aria-label={t('auth.aboutApplication')}
-                >
-                  <Info className="header-side-menu__icon" aria-hidden="true" />
-                  <span className="header-side-menu__text">{t('modals.aboutFluentFlow')}</span>
-                </button>
-              </div>
-
-              {/* User Profile Section */}
-              <div className="header-side-menu__section">
-                <h3 className="header-side-menu__section-title">
-                  {user ? t('modals.userProfile') : t('auth.userAccount', 'User Account')}
-                </h3>
-
-                {user ? (
-                  // Logged in user options
-                  <>
-                    <button
-                      onClick={() => {
-                        setShowProfileForm(true);
-                        setShowSideMenu(false);
-                      }}
-                      className="header-side-menu__item"
-                      aria-label={t('auth.editUserProfile')}
-                    >
-                      <User className="header-side-menu__icon" aria-hidden="true" />
-                      <span className="header-side-menu__text">{t('modals.editProfile')}</span>
-                    </button>
-
-                    <button
-                      onClick={() => {
-                        setShowLogoutConfirm(true);
-                        setShowSideMenu(false);
-                      }}
-                      className="header-side-menu__item header-side-menu__item--logout"
-                      aria-label={t('auth.logout', 'Logout')}
-                    >
-                      <LogOut className="header-side-menu__icon" aria-hidden="true" />
-                      <span className="header-side-menu__text">{t('auth.logout', 'Logout')}</span>
-                    </button>
-                  </>
-                ) : (
-                  // Not logged in - show login option
-                  <button
-                    onClick={() => {
-                      setShowProfileForm(true);
-                      setShowSideMenu(false);
-                    }}
-                    className="header-side-menu__item header-side-menu__item--login"
-                    aria-label={t('auth.loginToAccount')}
-                  >
-                    <User className="header-side-menu__icon" aria-hidden="true" />
-                    <span className="header-side-menu__text">{t('auth.login', 'Login')}</span>
-                  </button>
-                )}
-              </div>
+              )}
             </div>
           </nav>
         </div>
