@@ -21,5 +21,3 @@ export function shuffleArray<T>(array: T[]): T[] {
 export function conditionalShuffle<T>(array: T[], shouldRandomize: boolean): T[] {
   return shouldRandomize ? shuffleArray(array) : [...array];
 }
-
-
