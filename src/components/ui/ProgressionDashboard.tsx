@@ -323,7 +323,10 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
       className={`progression-dashboard ${isDarkMode ? 'progression-dashboard--dark-theme' : ''}`}
     >
       {/* Search/Filter Results Header */}
-      {(searchQuery.trim() || categories.length > 0 || learningModes?.length > 0 || level !== 'all') && (
+      {(searchQuery.trim() ||
+        categories.length > 0 ||
+        learningModes?.length > 0 ||
+        level !== 'all') && (
         <div className="progression-dashboard__search-results">
           <p className="progression-dashboard__search-text">
             {t('mainMenu.showingResults', undefined, {
