@@ -139,11 +139,11 @@
 .reordering__word {
   background-color: var(--theme-primary-blue, #3b82f6);
   color: white;
-  padding: var(--padding-xs, 0.25rem) var(--padding-md, 1rem);
+  padding: 0.263rem 1.05rem;
   border-radius: var(--radius-sm, 0.25rem);
   border: none;
   cursor: pointer;
-  font-size: 0.8125rem;
+  font-size: 0.853rem;
   font-weight: 500;
   transition: var(--transition-shadow), var(--transition-transform);
   will-change: auto;
@@ -496,9 +496,9 @@ html.dark .reordering__empty {
   }
 
   .reordering__word {
-    padding: 0.3125rem 0.5rem;
-    font-size: 0.8125rem;
-    min-height: 2rem;
+    padding: 0.328rem 0.525rem;
+    font-size: 0.853rem;
+    min-height: 2.1rem;
     display: flex;
     align-items: center;
     justify-content: center;
