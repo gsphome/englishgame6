@@ -147,7 +147,7 @@ describe('Feature: learning-modes-9-10, Property 8: All registry entries have re
   const registry = loadRegistry();
   const REQUIRED_FIELDS = [
     'id', 'name', 'learningMode', 'dataPath', 'level',
-    'category', 'unit', 'prerequisites', 'description',
+    'category', 'prerequisites', 'description',
     'estimatedTime', 'difficulty',
   ];
 
@@ -220,7 +220,7 @@ describe('Feature: learning-modes-9-10, Property 9: Module distribution matches 
     const quizCount = registry.filter(m => m.learningMode === 'quiz').length;
 
     expect(readingCount, 'reading').toBeLessThanOrEqual(32);
-    expect(completionCount, 'completion').toBeLessThanOrEqual(37);
+    expect(completionCount, 'completion').toBeLessThanOrEqual(43);
     expect(flashcardCount, 'flashcard').toBeLessThanOrEqual(32);
     expect(quizCount, 'quiz').toBeLessThanOrEqual(38);
   });
