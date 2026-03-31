@@ -224,6 +224,17 @@ export const useSettingsStore = create<SettingsState>()(
         }
         return persistedState;
       },
+      merge: (persistedState: any, currentState: SettingsState): SettingsState => {
+        const merged = { ...currentState, ...persistedState };
+        // Deep-merge gameSettings to ensure new modes get defaults
+        if (persistedState && (persistedState as any).gameSettings) {
+          merged.gameSettings = {
+            ...currentState.gameSettings,
+            ...(persistedState as any).gameSettings,
+          };
+        }
+        return merged;
+      },
       onRehydrateStorage: () => state => {
         // Ensure theme is applied after rehydration
         if (state?.theme) {

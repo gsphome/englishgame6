@@ -69,7 +69,10 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
   const [localLevel, setLocalLevel] = useState(level);
   const [localDevelopmentMode, setLocalDevelopmentMode] = useState(developmentMode);
   const [localRandomizeItems, setLocalRandomizeItems] = useState(randomizeItems);
-  const [localGameSettings, setLocalGameSettings] = useState(gameSettings);
+  const [localGameSettings, setLocalGameSettings] = useState(() => ({
+    ...gameSettings,
+    reorderingMode: gameSettings.reorderingMode ?? { itemCount: 10 },
+  }));
 
   // Reset local state when modal opens
   useEffect(() => {
@@ -79,7 +82,10 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
       setLocalLevel(level);
       setLocalDevelopmentMode(developmentMode);
       setLocalRandomizeItems(randomizeItems);
-      setLocalGameSettings(gameSettings);
+      setLocalGameSettings({
+        ...gameSettings,
+        reorderingMode: gameSettings.reorderingMode ?? { itemCount: 10 },
+      });
       setHasChanges(false);
     } else {
       // Reset download manager modal state when main modal closes
