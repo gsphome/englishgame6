@@ -1,0 +1,69 @@
+[
+  {
+    "prompt": "Change to passive voice",
+    "source": "Someone stole my bicycle.",
+    "correct": ["My bicycle was stolen."],
+    "hint": "The agent is unknown, so omit <by someone>",
+    "explanation": "When the agent is unknown or unimportant, use passive without <by>."
+  },
+  {
+    "prompt": "Change to second conditional",
+    "source": "I don't have money. I can't travel.",
+    "correct": ["If I had money, I could travel.", "If I had money, I would travel."],
+    "hint": "Use <If> + past simple, <would/could> + base verb",
+    "explanation": "Second conditional: <If> + past simple + <would/could> + base verb for unreal present situations."
+  },
+  {
+    "prompt": "Change to reported speech",
+    "source": "He said, \"I will call you tomorrow.\"",
+    "correct": ["He said that he would call me the next day.", "He said he would call me the next day."],
+    "hint": "Shift <will> → <would>, <tomorrow> → <the next day>",
+    "explanation": "Reported speech: <will> → <would>, <you> → <me>, <tomorrow> → <the next day>."
+  },
+  {
+    "prompt": "Rewrite using a gerund as subject",
+    "source": "It is difficult to learn a new language.",
+    "correct": ["Learning a new language is difficult."],
+    "explanation": "Gerund as subject: <verb-ing> + complement replaces <It is ... to + verb>."
+  },
+  {
+    "prompt": "Change to present perfect continuous",
+    "source": "She started studying at 8 AM. She is still studying.",
+    "correct": ["She has been studying since 8 AM."],
+    "hint": "Use <has been> + verb-ing + <since>",
+    "explanation": "Present perfect continuous: <has/have been> + verb-ing for actions that started in the past and continue."
+  },
+  {
+    "prompt": "Change to passive voice",
+    "source": "They are building a new hospital.",
+    "correct": ["A new hospital is being built."],
+    "hint": "Present continuous passive: <is being> + past participle",
+    "explanation": "Present continuous passive: object + <is/are being> + past participle."
+  },
+  {
+    "prompt": "Change to first conditional",
+    "source": "Maybe it will rain. We will stay home.",
+    "correct": ["If it rains, we will stay home."],
+    "explanation": "First conditional: <If> + present simple, <will> + base verb for real future possibilities."
+  },
+  {
+    "prompt": "Rewrite using <wish>",
+    "source": "I don't speak French.",
+    "correct": ["I wish I spoke French."],
+    "hint": "Use <wish> + past simple for unreal present",
+    "explanation": "<Wish> + past simple expresses a desire for something different from reality."
+  },
+  {
+    "prompt": "Change to indirect question",
+    "source": "Where does she live?",
+    "correct": ["Do you know where she lives?", "Can you tell me where she lives?"],
+    "hint": "Use statement word order after the question word",
+    "explanation": "Indirect questions use statement word order: <where she lives> (not <where does she live>)."
+  },
+  {
+    "prompt": "Rewrite using <unless>",
+    "source": "If you don't hurry, you will miss the bus.",
+    "correct": ["Unless you hurry, you will miss the bus."],
+    "explanation": "<Unless> means <if not>. Remove the negative when using <unless>."
+  }
+]

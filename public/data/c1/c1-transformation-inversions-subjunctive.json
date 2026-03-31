@@ -1,0 +1,65 @@
+[
+  {
+    "prompt": "Rewrite using inversion with <Hardly>",
+    "source": "She had hardly arrived when the phone rang.",
+    "correct": ["Hardly had she arrived when the phone rang."],
+    "explanation": "Inversion with <Hardly>: <Hardly> + auxiliary + subject + past participle + <when> + past simple."
+  },
+  {
+    "prompt": "Change to subjunctive with <It is essential that>",
+    "source": "He must attend the meeting.",
+    "correct": ["It is essential that he attend the meeting."],
+    "hint": "Subjunctive uses base form (no <-s>)",
+    "explanation": "Formal subjunctive after <It is essential/important/vital that>: subject + base verb (no conjugation)."
+  },
+  {
+    "prompt": "Rewrite using a reduced relative clause",
+    "source": "The man who is standing by the door is my uncle.",
+    "correct": ["The man standing by the door is my uncle."],
+    "explanation": "Reduced relative clauses: remove <who is/that is> and keep the participle."
+  },
+  {
+    "prompt": "Rewrite using inversion with <Not until>",
+    "source": "I didn't realize the truth until I read the report.",
+    "correct": ["Not until I read the report did I realize the truth."],
+    "explanation": "<Not until> + clause + inverted auxiliary + subject for emphasis."
+  },
+  {
+    "prompt": "Change to passive with <It is said that>",
+    "source": "People say that he is a genius.",
+    "correct": ["It is said that he is a genius.", "He is said to be a genius."],
+    "hint": "Two possible structures: <It is said that...> or <He is said to...>",
+    "explanation": "Impersonal passive: <It is said/believed/reported that> or subject + <is said to> + infinitive."
+  },
+  {
+    "prompt": "Rewrite using a nominal clause with <what>",
+    "source": "The thing that surprised me was his reaction.",
+    "correct": ["What surprised me was his reaction."],
+    "explanation": "<What> replaces <The thing that> in nominal clauses for more natural style."
+  },
+  {
+    "prompt": "Rewrite using inversion with <Only after>",
+    "source": "She understood the problem only after she read the full report.",
+    "correct": ["Only after she read the full report did she understand the problem.", "Only after reading the full report did she understand the problem."],
+    "explanation": "<Only after> + clause/gerund + inverted auxiliary + subject."
+  },
+  {
+    "prompt": "Change to a concessive clause with <much as>",
+    "source": "I admire her talent, but I disagree with her methods.",
+    "correct": ["Much as I admire her talent, I disagree with her methods."],
+    "hint": "<Much as> = <Although ... very much>",
+    "explanation": "<Much as> + clause expresses concession: acknowledging something while contrasting."
+  },
+  {
+    "prompt": "Rewrite using <were it not for>",
+    "source": "Without your help, I would have failed.",
+    "correct": ["Were it not for your help, I would have failed."],
+    "explanation": "<Were it not for> is a formal inversion of <If it were not for>."
+  },
+  {
+    "prompt": "Change to emphatic form with <do/does/did>",
+    "source": "I understand your concern.",
+    "correct": ["I do understand your concern."],
+    "explanation": "Emphatic <do/does/did> + base verb adds emphasis to an affirmative statement."
+  }
+]

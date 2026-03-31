@@ -113,6 +113,14 @@
   );
 }
 
+.learning-progress-header__progress-fill--transformation {
+  background: linear-gradient(
+    90deg,
+    #14b8a6 0%,
+    #0d9488 100%
+  );
+}
+
 .learning-progress-header__help-text {
   font-size: 0.75rem;
   color: var(--theme-text-tertiary, #9ca3af);

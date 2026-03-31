@@ -1,0 +1,68 @@
+[
+  {
+    "prompt": "Change to third conditional",
+    "source": "I didn't study. I failed the exam.",
+    "correct": ["If I had studied, I wouldn't have failed the exam.", "If I had studied, I would not have failed the exam."],
+    "hint": "Use <If> + past perfect, <would have> + past participle",
+    "explanation": "Third conditional: <If> + past perfect + <would(n't) have> + past participle for unreal past situations."
+  },
+  {
+    "prompt": "Rewrite using a cleft sentence with <It was>",
+    "source": "John broke the window.",
+    "correct": ["It was John who broke the window."],
+    "explanation": "Cleft sentences with <It was ... who/that> emphasize a specific element."
+  },
+  {
+    "prompt": "Change to passive with <have something done>",
+    "source": "A mechanic repaired my car.",
+    "correct": ["I had my car repaired."],
+    "hint": "Use <had> + object + past participle",
+    "explanation": "Causative <have something done>: subject + <had> + object + past participle when someone else does the action."
+  },
+  {
+    "prompt": "Rewrite using <wish> + past perfect",
+    "source": "I didn't bring an umbrella. Now I'm wet.",
+    "correct": ["I wish I had brought an umbrella."],
+    "explanation": "<Wish> + past perfect expresses regret about a past action."
+  },
+  {
+    "prompt": "Change to mixed conditional",
+    "source": "I didn't learn to drive. I can't drive you to the airport now.",
+    "correct": ["If I had learned to drive, I could drive you to the airport now."],
+    "hint": "Past condition → present result",
+    "explanation": "Mixed conditional: <If> + past perfect (past condition) + <would/could> + base verb (present result)."
+  },
+  {
+    "prompt": "Rewrite using inversion with <Not only>",
+    "source": "She is intelligent. She is also hardworking.",
+    "correct": ["Not only is she intelligent, but she is also hardworking.", "Not only is she intelligent but also hardworking."],
+    "hint": "Invert subject and verb after <Not only>",
+    "explanation": "<Not only> + inverted auxiliary + subject emphasizes both qualities."
+  },
+  {
+    "prompt": "Change to reported speech with reporting verb",
+    "source": "\"Don't touch that!\" she said.",
+    "correct": ["She warned me not to touch that.", "She told me not to touch that."],
+    "explanation": "Reported commands/warnings: reporting verb + object + <(not) to> + base verb."
+  },
+  {
+    "prompt": "Rewrite using a participle clause",
+    "source": "Because she was tired, she went to bed early.",
+    "correct": ["Being tired, she went to bed early."],
+    "hint": "Replace <Because she was> with a present participle",
+    "explanation": "Participle clauses replace adverbial clauses: <Being> + adjective replaces <Because + subject + was>."
+  },
+  {
+    "prompt": "Change to formal register using <were to>",
+    "source": "If the company loses this contract, it will close.",
+    "correct": ["Were the company to lose this contract, it would close.", "If the company were to lose this contract, it would close."],
+    "explanation": "<Were to> + base verb is a formal way to express hypothetical conditions."
+  },
+  {
+    "prompt": "Rewrite using <It's time> + past simple",
+    "source": "You should start looking for a job.",
+    "correct": ["It's time you started looking for a job."],
+    "hint": "<It's time> + subject + past simple",
+    "explanation": "<It's time> + subject + past simple suggests something should happen now."
+  }
+]

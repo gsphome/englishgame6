@@ -9,6 +9,7 @@ export interface GameSettings {
   sortingMode: { wordCount: number; categoryCount: number };
   matchingMode: { wordCount: number };
   reorderingMode: { itemCount: number };
+  transformationMode: { itemCount: number };
 }
 
 interface SettingsState {
@@ -63,6 +64,7 @@ const DEFAULT_LEARNING_MODES = [
   'matching',
   'reading',
   'reordering',
+  'transformation',
 ];
 
 // Categories removed in v4 migration
@@ -86,6 +88,7 @@ export const useSettingsStore = create<SettingsState>()(
         sortingMode: { wordCount: 5, categoryCount: 3 },
         matchingMode: { wordCount: 6 },
         reorderingMode: { itemCount: 10 },
+        transformationMode: { itemCount: 10 },
       },
 
       // Offline defaults
@@ -133,7 +136,7 @@ export const useSettingsStore = create<SettingsState>()(
     }),
     {
       name: 'settings-storage',
-      version: 10,
+      version: 11,
       migrate: (persistedState: any, version: number) => {
         // Migration from version 1 to version 2
         if (version < 2) {
@@ -218,6 +221,19 @@ export const useSettingsStore = create<SettingsState>()(
               gameSettings: {
                 ...gs,
                 reorderingMode: { itemCount: 10 },
+              },
+            };
+          }
+        }
+        // Migration from version 10 to version 11: add transformationMode to gameSettings
+        if (version < 11) {
+          const gs = persistedState.gameSettings || {};
+          if (!gs.transformationMode) {
+            persistedState = {
+              ...persistedState,
+              gameSettings: {
+                ...gs,
+                transformationMode: { itemCount: 10 },
               },
             };
           }

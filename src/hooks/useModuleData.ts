@@ -99,6 +99,9 @@ export const useModuleData = (moduleId: string) => {
             case 'reordering':
               limit = gameSettings.reorderingMode?.itemCount ?? 10;
               break;
+            case 'transformation':
+              limit = gameSettings.transformationMode?.itemCount ?? 10;
+              break;
           }
         }
 

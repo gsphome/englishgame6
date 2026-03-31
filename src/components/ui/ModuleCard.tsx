@@ -10,6 +10,7 @@ import {
   LockOpen,
   CheckCircle,
   AlertTriangle,
+  RefreshCw,
 } from 'lucide-react';
 import { useProgressStore } from '../../stores/progressStore';
 import { useTranslation } from '../../utils/i18n';
@@ -42,6 +43,7 @@ const getIcon = (learningMode: string) => {
     sorting: <BarChart3 {...iconProps} />,
     matching: <Link {...iconProps} />,
     reading: <BookOpen {...iconProps} />,
+    transformation: <RefreshCw {...iconProps} />,
   };
   return icons[learningMode] || <CreditCard {...iconProps} />;
 };
@@ -54,6 +56,7 @@ const getLearningModeLabel = (learningMode: string, t: (key: string) => string):
     sorting: t('learning.sortingMode'),
     matching: t('learning.matchingMode'),
     reading: t('learning.readingMode'),
+    transformation: t('learning.transformationMode'),
   };
   return labels[learningMode] || t('common.exercise');
 };

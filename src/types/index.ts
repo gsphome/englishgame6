@@ -6,7 +6,8 @@ export type LearningMode =
   | 'sorting'
   | 'matching'
   | 'reading'
-  | 'reordering';
+  | 'reordering'
+  | 'transformation';
 type DifficultyLevel = 'a1' | 'a2' | 'b1' | 'b2' | 'c1' | 'c2';
 export type Category = 'Vocabulary' | 'Grammar' | 'PhrasalVerbs' | 'Idioms' | 'Reading' | 'Review';
 
@@ -132,6 +133,14 @@ export interface ReorderingData extends BaseLearningData {
   explanation?: string;
 }
 
+export interface TransformationData extends BaseLearningData {
+  prompt: string;
+  source: string;
+  correct: string[];
+  hint?: string;
+  explanation?: string;
+}
+
 // Union type for all learning data
 type LearningData =
   | FlashcardData
@@ -140,7 +149,8 @@ type LearningData =
   | SortingData
   | MatchingData
   | ReadingData
-  | ReorderingData;
+  | ReorderingData
+  | TransformationData;
 
 // Language and Theme types
 export type Language = 'en' | 'es';

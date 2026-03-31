@@ -142,6 +142,7 @@ const translations = {
       sortingCategories: 'Sorting Categories',
       matchingMode: 'Matching Mode',
       reorderingMode: 'Reordering Mode',
+      transformationMode: 'Transformation Mode',
       vocabulary: 'Vocabulary',
       grammar: 'Grammar',
       phrasalVerbs: 'Phrasal Verbs',
@@ -176,6 +177,8 @@ const translations = {
       increaseMatchingCount: 'Increase matching count',
       decreaseReorderingCount: 'Decrease reordering count',
       increaseReorderingCount: 'Increase reordering count',
+      decreaseTransformationCount: 'Decrease transformation count',
+      increaseTransformationCount: 'Increase transformation count',
     },
     about: {
       title: 'About FluentFlow',
@@ -223,6 +226,7 @@ const translations = {
       matchingMode: 'Match',
       readingMode: 'Reading',
       reorderingMode: 'Reorder',
+      transformationMode: 'Transform',
       startLearning: 'Start Learning',
       continueSession: 'Continue Session',
       newSession: 'New Session',
@@ -305,6 +309,9 @@ const translations = {
       reorderingYourAnswer: 'Your answer',
       tapToPlace: 'Tap a word to place it',
       tapToRemove: 'Tap a word to remove it',
+      // Transformation mode
+      transformInstruction: 'Rewrite the sentence following the instruction',
+      noTransformationExercisesAvailable: 'No transformation exercises available',
     },
     scores: {
       correct: 'Correct',
@@ -702,6 +709,7 @@ const translations = {
       sortingCategories: 'Categorías de Clasificación',
       matchingMode: 'Modo Emparejar',
       reorderingMode: 'Modo Reordenar',
+      transformationMode: 'Modo Transformar',
       vocabulary: 'Vocabulario',
       grammar: 'Gramática',
       phrasalVerbs: 'Verbos Frasales',
@@ -736,6 +744,8 @@ const translations = {
       increaseMatchingCount: 'Aumentar cantidad de emparejamiento',
       decreaseReorderingCount: 'Disminuir cantidad de reordenar',
       increaseReorderingCount: 'Aumentar cantidad de reordenar',
+      decreaseTransformationCount: 'Disminuir cantidad de transformar',
+      increaseTransformationCount: 'Aumentar cantidad de transformar',
     },
     about: {
       title: 'Acerca de FluentFlow',
@@ -783,6 +793,7 @@ const translations = {
       matchingMode: 'Emparejar',
       readingMode: 'Lectura',
       reorderingMode: 'Reordenar',
+      transformationMode: 'Transformar',
       startLearning: 'Comenzar Aprendizaje',
       continueSession: 'Continuar Sesión',
       newSession: 'Nueva Sesión',
@@ -865,6 +876,9 @@ const translations = {
       reorderingYourAnswer: 'Tu respuesta',
       tapToPlace: 'Toca una palabra para colocarla',
       tapToRemove: 'Toca una palabra para devolverla',
+      // Transformation mode
+      transformInstruction: 'Reescribe la oración siguiendo la instrucción',
+      noTransformationExercisesAvailable: 'No hay ejercicios de transformación disponibles',
     },
     scores: {
       correct: 'Correctas',

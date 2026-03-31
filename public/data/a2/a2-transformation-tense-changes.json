@@ -1,0 +1,69 @@
+[
+  {
+    "prompt": "Change to present perfect",
+    "source": "She visited Paris last year.",
+    "correct": ["She has visited Paris."],
+    "hint": "Use <has> + past participle",
+    "explanation": "Present perfect: <has/have> + past participle. Remove the specific time reference."
+  },
+  {
+    "prompt": "Change to passive voice",
+    "source": "The dog ate the cake.",
+    "correct": ["The cake was eaten by the dog."],
+    "hint": "Object becomes subject + <was> + past participle",
+    "explanation": "Passive: object + <was/were> + past participle + <by> + agent."
+  },
+  {
+    "prompt": "Change to reported speech",
+    "source": "She said, \"I am tired.\"",
+    "correct": ["She said that she was tired.", "She said she was tired."],
+    "hint": "Change pronouns and tense",
+    "explanation": "Reported speech: shift tense back (<am> → <was>) and change pronouns."
+  },
+  {
+    "prompt": "Change to comparative",
+    "source": "This book is interesting.",
+    "correct": ["This book is more interesting."],
+    "hint": "Use <more> for long adjectives",
+    "explanation": "Adjectives with 3+ syllables use <more> + adjective for comparatives."
+  },
+  {
+    "prompt": "Change to past continuous",
+    "source": "They played tennis.",
+    "correct": ["They were playing tennis."],
+    "hint": "Use <were> + verb-ing",
+    "explanation": "Past continuous: <was/were> + verb-ing. Shows an action in progress in the past."
+  },
+  {
+    "prompt": "Change to superlative",
+    "source": "She is tall.",
+    "correct": ["She is the tallest."],
+    "hint": "Add <the> + adjective + <-est>",
+    "explanation": "Short adjectives form superlatives with <the> + adjective + <-est>."
+  },
+  {
+    "prompt": "Change to future with <going to>",
+    "source": "I study English.",
+    "correct": ["I am going to study English.", "I'm going to study English."],
+    "explanation": "Future with <going to>: subject + <am/is/are going to> + base verb."
+  },
+  {
+    "prompt": "Change to negative",
+    "source": "He has finished his homework.",
+    "correct": ["He hasn't finished his homework.", "He has not finished his homework."],
+    "explanation": "Present perfect negative: <has not> (hasn't) + past participle."
+  },
+  {
+    "prompt": "Change to a question",
+    "source": "They were watching TV.",
+    "correct": ["Were they watching TV?"],
+    "explanation": "Past continuous questions: invert <were> and the subject."
+  },
+  {
+    "prompt": "Rewrite using <used to>",
+    "source": "When I was young, I played every day.",
+    "correct": ["I used to play every day.", "When I was young, I used to play every day."],
+    "hint": "Use <used to> + base verb for past habits",
+    "explanation": "<Used to> + base verb describes past habits that no longer happen."
+  }
+]

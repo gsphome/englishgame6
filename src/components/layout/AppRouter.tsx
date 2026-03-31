@@ -21,6 +21,7 @@ const SortingComponent = lazyWithRetry(() => import('../learning/SortingComponen
 const MatchingComponent = lazyWithRetry(() => import('../learning/MatchingComponent'));
 const ReadingComponent = lazyWithRetry(() => import('../learning/ReadingComponent'));
 const ReorderingComponent = lazyWithRetry(() => import('../learning/ReorderingComponent'));
+const TransformationComponent = lazyWithRetry(() => import('../learning/TransformationComponent'));
 
 // Enhanced loading component
 const ComponentLoader: React.FC = () => (
@@ -184,6 +185,8 @@ export const AppRouter: React.FC = () => {
               return <ReadingComponent module={module} />;
             case 'reordering':
               return <ReorderingComponent module={module} />;
+            case 'transformation':
+              return <TransformationComponent module={module} />;
             default:
               return (
                 <div className="app-router__unknown-view">

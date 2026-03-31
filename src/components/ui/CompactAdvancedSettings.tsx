@@ -72,6 +72,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
   const [localGameSettings, setLocalGameSettings] = useState(() => ({
     ...gameSettings,
     reorderingMode: gameSettings.reorderingMode ?? { itemCount: 10 },
+    transformationMode: gameSettings.transformationMode ?? { itemCount: 10 },
   }));
 
   // Reset local state when modal opens
@@ -85,6 +86,7 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
       setLocalGameSettings({
         ...gameSettings,
         reorderingMode: gameSettings.reorderingMode ?? { itemCount: 10 },
+        transformationMode: gameSettings.transformationMode ?? { itemCount: 10 },
       });
       setHasChanges(false);
     } else {
@@ -636,6 +638,47 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
                         }
                         disabled={(localGameSettings.reorderingMode.itemCount || 10) >= 20}
                         aria-label={t('settings.increaseReorderingCount')}
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="compact-settings__game">
+                    <label className="compact-settings__game-label">
+                      🔄 {t('settings.transformationMode')}
+                    </label>
+                    <div className="compact-settings__game-stepper">
+                      <button
+                        type="button"
+                        className="compact-settings__stepper-btn compact-settings__stepper-btn--minus"
+                        onClick={() =>
+                          handleGameSettingChange(
+                            'transformationMode',
+                            'itemCount',
+                            Math.max(5, (localGameSettings.transformationMode.itemCount || 10) - 1)
+                          )
+                        }
+                        disabled={(localGameSettings.transformationMode.itemCount || 10) <= 5}
+                        aria-label={t('settings.decreaseTransformationCount')}
+                      >
+                        −
+                      </button>
+                      <span className="compact-settings__stepper-value">
+                        {localGameSettings.transformationMode.itemCount || 10}
+                      </span>
+                      <button
+                        type="button"
+                        className="compact-settings__stepper-btn compact-settings__stepper-btn--plus"
+                        onClick={() =>
+                          handleGameSettingChange(
+                            'transformationMode',
+                            'itemCount',
+                            Math.min(20, (localGameSettings.transformationMode.itemCount || 10) + 1)
+                          )
+                        }
+                        disabled={(localGameSettings.transformationMode.itemCount || 10) >= 20}
+                        aria-label={t('settings.increaseTransformationCount')}
                       >
                         +
                       </button>

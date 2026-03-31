@@ -3362,5 +3362,83 @@
     "description": "Comprehensive mastery assessment",
     "estimatedTime": 3,
     "difficulty": 5
+  },
+  {
+    "id": "transformation-basic-sentences-a1",
+    "name": "Basic Sentence Transformations",
+    "learningMode": "transformation",
+    "dataPath": "data/a1/a1-transformation-basic-sentences.json",
+    "level": ["a1"],
+    "category": "Grammar",
+    "unit": 2,
+    "prerequisites": ["completion-basic-sentences-a1"],
+    "description": "Transform simple sentences: negatives, questions, tense changes",
+    "estimatedTime": 8,
+    "difficulty": 1
+  },
+  {
+    "id": "transformation-tense-changes-a2",
+    "name": "Tense Transformations",
+    "learningMode": "transformation",
+    "dataPath": "data/a2/a2-transformation-tense-changes.json",
+    "level": ["a2"],
+    "category": "Grammar",
+    "unit": 3,
+    "prerequisites": ["completion-present-perfect-a2"],
+    "description": "Rewrite sentences changing tenses, voice, and reported speech",
+    "estimatedTime": 10,
+    "difficulty": 2
+  },
+  {
+    "id": "transformation-conditionals-passive-b1",
+    "name": "Conditionals & Passive Transformations",
+    "learningMode": "transformation",
+    "dataPath": "data/b1/b1-transformation-conditionals-passive.json",
+    "level": ["b1"],
+    "category": "Grammar",
+    "unit": 4,
+    "prerequisites": ["completion-conditionals-b1"],
+    "description": "Transform sentences using conditionals, passive voice, and indirect speech",
+    "estimatedTime": 12,
+    "difficulty": 3
+  },
+  {
+    "id": "transformation-advanced-grammar-b2",
+    "name": "Advanced Grammar Transformations",
+    "learningMode": "transformation",
+    "dataPath": "data/b2/b2-transformation-advanced-grammar.json",
+    "level": ["b2"],
+    "category": "Grammar",
+    "unit": 5,
+    "prerequisites": ["completion-conditionals-advanced-b2"],
+    "description": "Third conditional, cleft sentences, causative, mixed conditionals",
+    "estimatedTime": 15,
+    "difficulty": 4
+  },
+  {
+    "id": "transformation-inversions-subjunctive-c1",
+    "name": "Inversions & Subjunctive Transformations",
+    "learningMode": "transformation",
+    "dataPath": "data/c1/c1-transformation-inversions-subjunctive.json",
+    "level": ["c1"],
+    "category": "Grammar",
+    "unit": 5,
+    "prerequisites": ["completion-advanced-grammar-inversions-c1"],
+    "description": "Formal inversions, subjunctive mood, reduced clauses, impersonal passive",
+    "estimatedTime": 15,
+    "difficulty": 5
+  },
+  {
+    "id": "transformation-formal-structures-c2",
+    "name": "Formal & Academic Transformations",
+    "learningMode": "transformation",
+    "dataPath": "data/c2/c2-transformation-formal-structures.json",
+    "level": ["c2"],
+    "category": "Grammar",
+    "unit": 6,
+    "prerequisites": ["completion-advanced-grammatical-structures-c2"],
+    "description": "Literary inversions, nominalization, hedging, absolute participle clauses",
+    "estimatedTime": 18,
+    "difficulty": 5
   }
 ]
