@@ -659,13 +659,6 @@
     max-width: 100%;
   }
 
-  /* Centrar el último elemento en la fila inferior */
-  .compact-settings__game:nth-child(5) {
-    grid-column: 1 / -1;
-    max-width: calc(50% - 0.125rem);
-    justify-self: center;
-  }
-
   .compact-settings__game {
     padding: 0.25rem;
     border-radius: 10px;
