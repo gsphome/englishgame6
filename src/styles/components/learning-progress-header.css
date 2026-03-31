@@ -114,11 +114,7 @@
 }
 
 .learning-progress-header__progress-fill--transformation {
-  background: linear-gradient(
-    90deg,
-    #14b8a6 0%,
-    #0d9488 100%
-  );
+  background: linear-gradient(90deg, #14b8a6 0%, #0d9488 100%);
 }
 
 .learning-progress-header__help-text {

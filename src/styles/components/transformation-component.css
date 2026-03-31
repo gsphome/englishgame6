@@ -156,7 +156,9 @@ html.dark .transformation__answer-area--incorrect {
 /* === RESULT === */
 .transformation__result-container {
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease;
 }
 .transformation__result-container--hidden {
   max-height: 0;
