@@ -423,7 +423,7 @@
     ],
     "category": "Grammar",
     "prerequisites": [
-      "a1-reordering-basic-sentences"
+      "a1-reordering-phrasal-verbs"
     ],
     "description": "Practice forming questions and negative sentences in English",
     "estimatedTime": 4,
@@ -439,7 +439,7 @@
     ],
     "category": "PhrasalVerbs",
     "prerequisites": [
-      "a1-reordering-questions-negatives"
+      "a1-reordering-basic-sentences"
     ],
     "description": "Practice word order with basic phrasal verbs",
     "estimatedTime": 4,
@@ -455,7 +455,7 @@
     ],
     "category": "Idioms",
     "prerequisites": [
-      "a1-reordering-phrasal-verbs"
+      "a1-reordering-questions-negatives"
     ],
     "description": "Practice word order with common English idioms",
     "estimatedTime": 4,
@@ -1159,7 +1159,7 @@
     ],
     "category": "Grammar",
     "prerequisites": [
-      "sorting-modal-verbs-b1"
+      "reading-social-media-b1"
     ],
     "description": "Prepositions of place, time and movement",
     "estimatedTime": 3,
@@ -1175,7 +1175,7 @@
     ],
     "category": "Reading",
     "prerequisites": [
-      "sorting-prepositions-b1"
+      "sorting-modal-verbs-b1"
     ],
     "description": "Social media and modern communication",
     "estimatedTime": 8,
@@ -1194,7 +1194,7 @@
     "estimatedTime": 1,
     "difficulty": 3,
     "prerequisites": [
-      "reading-social-media-b1"
+      "sorting-prepositions-b1"
     ]
   },
   {
@@ -1207,7 +1207,7 @@
     ],
     "category": "Vocabulary",
     "prerequisites": [
-      "flashcard-work-career-b1"
+      "quiz-reading-vocab-b1"
     ],
     "description": "Education, environment and social media vocabulary (20 words)",
     "estimatedTime": 1,
@@ -1223,7 +1223,7 @@
     ],
     "category": "Vocabulary",
     "prerequisites": [
-      "flashcard-reading-vocab-b1"
+      "flashcard-work-career-b1"
     ],
     "description": "Test your knowledge of intermediate reading vocabulary",
     "estimatedTime": 4,
@@ -1239,7 +1239,7 @@
     ],
     "category": "Vocabulary",
     "prerequisites": [
-      "quiz-reading-vocab-b1"
+      "flashcard-reading-vocab-b1"
     ],
     "description": "Match intermediate vocabulary with Spanish translations",
     "estimatedTime": 2,
@@ -1767,7 +1767,7 @@
     ],
     "category": "Vocabulary",
     "prerequisites": [
-      "flashcard-clothing-style-b2"
+      "completion-clothing-emotions-b2"
     ],
     "description": "Complex emotions, moods, and feelings vocabulary",
     "estimatedTime": 1,
@@ -1783,7 +1783,7 @@
     ],
     "category": "Vocabulary",
     "prerequisites": [
-      "flashcard-emotions-feelings-b2"
+      "flashcard-clothing-style-b2"
     ],
     "description": "Complete sentences using clothing and emotions vocabulary",
     "estimatedTime": 5,
@@ -1799,7 +1799,7 @@
     ],
     "category": "Reading",
     "prerequisites": [
-      "completion-clothing-emotions-b2"
+      "flashcard-emotions-feelings-b2"
     ],
     "description": "Startups, innovation, and business development",
     "estimatedTime": 9,
@@ -1914,7 +1914,7 @@
     "estimatedTime": 5,
     "difficulty": 4,
     "prerequisites": [
-      "completion-conditionals-advanced-b2"
+      "b2-reordering-conditionals-wish"
     ]
   },
   {
@@ -1927,7 +1927,7 @@
     ],
     "category": "Grammar",
     "prerequisites": [
-      "completion-wish-if-only-b2"
+      "completion-conditionals-advanced-b2"
     ],
     "description": "Reorder third conditional, mixed conditional, and wish sentences",
     "estimatedTime": 4,
@@ -1943,7 +1943,7 @@
     ],
     "category": "Vocabulary",
     "prerequisites": [
-      "b2-reordering-conditionals-wish"
+      "completion-wish-if-only-b2"
     ],
     "description": "Common English collocations matched with Spanish equivalents (40 pairs)",
     "estimatedTime": 2,
@@ -2471,7 +2471,7 @@
     ],
     "category": "Grammar",
     "prerequisites": [
-      "completion-advanced-grammar-conditionals-c1"
+      "quiz-grammar-inversions-c1"
     ],
     "description": "Advanced grammatical inversions",
     "estimatedTime": 5,
@@ -2487,7 +2487,7 @@
     ],
     "category": "Grammar",
     "prerequisites": [
-      "completion-advanced-grammar-inversions-c1"
+      "completion-advanced-grammar-conditionals-c1"
     ],
     "description": "Test your knowledge of advanced grammatical inversions",
     "estimatedTime": 4,
@@ -2503,7 +2503,7 @@
     ],
     "category": "Grammar",
     "prerequisites": [
-      "quiz-grammar-inversions-c1"
+      "completion-advanced-grammar-inversions-c1"
     ],
     "description": "Reorder sentences with negative adverbial inversions",
     "estimatedTime": 4,
@@ -2823,7 +2823,7 @@
     ],
     "category": "Vocabulary",
     "prerequisites": [
-      "flashcard-academic-c2"
+      "quiz-academic-writing-c2"
     ],
     "description": "Advanced academic writing vocabulary and Latin expressions",
     "estimatedTime": 1,
@@ -2839,7 +2839,7 @@
     ],
     "category": "Vocabulary",
     "prerequisites": [
-      "flashcard-academic-writing-c2"
+      "flashcard-academic-c2"
     ],
     "description": "Test your knowledge of academic writing vocabulary",
     "estimatedTime": 4,
@@ -2855,7 +2855,7 @@
     ],
     "category": "Reading",
     "prerequisites": [
-      "quiz-academic-writing-c2"
+      "flashcard-academic-writing-c2"
     ],
     "description": "Philosophy and abstract reasoning",
     "estimatedTime": 11,
@@ -3047,7 +3047,7 @@
     ],
     "category": "Vocabulary",
     "prerequisites": [
-      "completion-formal-vocabulary-nuance-c2"
+      "sorting-nuance-vocabulary-c2"
     ],
     "description": "Advanced formal register transformations and usage",
     "estimatedTime": 5,
@@ -3063,7 +3063,7 @@
     ],
     "category": "Vocabulary",
     "prerequisites": [
-      "completion-formal-register-advanced-c2"
+      "completion-formal-vocabulary-nuance-c2"
     ],
     "description": "Subtle vocabulary distinctions",
     "estimatedTime": 3,
@@ -3079,7 +3079,7 @@
     ],
     "category": "Reading",
     "prerequisites": [
-      "sorting-nuance-vocabulary-c2"
+      "completion-formal-register-advanced-c2"
     ],
     "description": "Mastery-level phrasal verbs and idioms in philosophical and literary discourse",
     "estimatedTime": 9,
