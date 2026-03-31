@@ -269,9 +269,7 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
             <div className="screen-info-modal__header">
               <div className="screen-info-modal__title-section">
                 <Trash2 className="screen-info-modal__icon" />
-                <h3 className="screen-info-modal__title">
-                  {t('about.clearCache', 'Clear cache')}
-                </h3>
+                <h3 className="screen-info-modal__title">{t('about.clearCache', 'Clear cache')}</h3>
               </div>
               <button
                 onClick={() => setShowCacheConfirm(false)}
