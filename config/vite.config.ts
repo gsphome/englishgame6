@@ -49,9 +49,12 @@ export default defineConfig(({ mode }) => {
       // CSS chunk optimization for 500KB target compliance (pure CSS architecture)
       rollupOptions: {
         output: {
+          manualChunks: {
+            'vendor-search': ['fuse.js'],
+          },
           chunkFileNames: (chunkInfo) => {
-            if (chunkInfo.name === 'vendor') {
-              return 'assets/vendor-[hash].js';
+            if (chunkInfo.name === 'vendor' || chunkInfo.name.startsWith('vendor-')) {
+              return 'assets/[name]-[hash].js';
             }
             return 'assets/[name]-[hash].js';
           },

@@ -1,61 +1,61 @@
 /**
  * Input validation and sanitization utilities
+ * Lightweight validation without external dependencies
  */
 
-import { z } from 'zod';
+const isIntInRange = (v: unknown, min: number, max: number): boolean =>
+  typeof v === 'number' && Number.isInteger(v) && v >= min && v <= max;
 
-// Validation schemas
-const gameSettingsSchema = z.object({
-  flashcardMode: z.object({
-    wordCount: z.number().int().min(1).max(50),
-  }),
-  quizMode: z.object({
-    questionCount: z.number().int().min(1).max(50),
-  }),
-  completionMode: z.object({
-    itemCount: z.number().int().min(1).max(50),
-  }),
-  sortingMode: z.object({
-    wordCount: z.number().int().min(1).max(50),
-    categoryCount: z.number().int().min(2).max(10),
-  }),
-  matchingMode: z.object({
-    wordCount: z.number().int().min(2).max(50),
-  }),
-  reorderingMode: z.object({
-    itemCount: z.number().int().min(1).max(50),
-  }),
-  transformationMode: z.object({
-    itemCount: z.number().int().min(1).max(50),
-  }),
-  wordFormationMode: z.object({
-    itemCount: z.number().int().min(1).max(50),
-  }),
-  errorCorrectionMode: z.object({
-    itemCount: z.number().int().min(1).max(50),
-  }),
-});
+const validateMode = (obj: unknown, fields: Record<string, [number, number]>): Record<string, number> | null => {
+  if (!obj || typeof obj !== 'object') return null;
+  const result: Record<string, number> = {};
+  for (const [key, [min, max]] of Object.entries(fields)) {
+    const val = (obj as Record<string, unknown>)[key];
+    if (!isIntInRange(val, min, max)) return null;
+    result[key] = val as number;
+  }
+  return result;
+};
+
+const DEFAULTS = {
+  flashcardMode: { wordCount: 10 },
+  quizMode: { questionCount: 10 },
+  completionMode: { itemCount: 10 },
+  sortingMode: { wordCount: 5, categoryCount: 3 },
+  matchingMode: { wordCount: 6 },
+  reorderingMode: { itemCount: 10 },
+  transformationMode: { itemCount: 10 },
+  wordFormationMode: { itemCount: 10 },
+  errorCorrectionMode: { itemCount: 10 },
+};
 
 /**
  * Validate game settings object
  * @param settings - Game settings to validate
  * @returns Validated and sanitized settings
  */
-export const validateGameSettings = (settings: any): any => {
-  try {
-    return gameSettingsSchema.parse(settings);
-  } catch {
-    // Return safe defaults
-    return {
-      flashcardMode: { wordCount: 10 },
-      quizMode: { questionCount: 10 },
-      completionMode: { itemCount: 10 },
-      sortingMode: { wordCount: 5, categoryCount: 3 },
-      matchingMode: { wordCount: 6 },
-      reorderingMode: { itemCount: 10 },
-      transformationMode: { itemCount: 10 },
-      wordFormationMode: { itemCount: 10 },
-      errorCorrectionMode: { itemCount: 10 },
-    };
+export const validateGameSettings = (settings: unknown): typeof DEFAULTS => {
+  if (!settings || typeof settings !== 'object') return DEFAULTS;
+  const s = settings as Record<string, unknown>;
+
+  const modes: Record<string, Record<string, [number, number]>> = {
+    flashcardMode: { wordCount: [1, 50] },
+    quizMode: { questionCount: [1, 50] },
+    completionMode: { itemCount: [1, 50] },
+    sortingMode: { wordCount: [1, 50], categoryCount: [2, 10] },
+    matchingMode: { wordCount: [2, 50] },
+    reorderingMode: { itemCount: [1, 50] },
+    transformationMode: { itemCount: [1, 50] },
+    wordFormationMode: { itemCount: [1, 50] },
+    errorCorrectionMode: { itemCount: [1, 50] },
+  };
+
+  const result: Record<string, Record<string, number>> = {};
+  for (const [mode, fields] of Object.entries(modes)) {
+    const validated = validateMode(s[mode], fields);
+    if (!validated) return DEFAULTS;
+    result[mode] = validated;
   }
+
+  return result as typeof DEFAULTS;
 };
