@@ -26,6 +26,17 @@
   user-select: text;
 }
 
+/* Full-width variant: allow text wrapping and auto-grow height */
+.editable-input--fullwidth {
+  display: block;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow: visible;
+  text-overflow: unset;
+  min-width: unset;
+  margin: 0;
+}
+
 .editable-input:focus {
   border-color: var(--color-primary, #3b82f6);
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);

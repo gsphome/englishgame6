@@ -4,7 +4,7 @@ import { useLearningSession } from '../../hooks/useLearningSession';
 import { conditionalShuffle } from '../../utils/randomUtils';
 import '../../styles/components/error-correction-component.css';
 import '../../styles/components/editable-input.css';
-// BEM classes applied dynamically via .replace(): 'editable-input--correct' 'editable-input--incorrect' 'editable-input--neutral' 'editable-input--disabled'
+// BEM classes applied dynamically via .replace(): 'editable-input--correct' 'editable-input--incorrect' 'editable-input--neutral' 'editable-input--disabled' 'editable-input--fullwidth'
 import ContentRenderer from '../ui/ContentRenderer';
 import LearningProgressHeader from '../ui/LearningProgressHeader';
 import { EditableInput } from '../ui/EditableInput';
@@ -157,7 +157,7 @@ const ErrorCorrectionComponent: React.FC<ErrorCorrectionComponentProps> = ({ mod
             onChange={setAnswer}
             disabled={showResult}
             placeholder="..."
-            className={`editable-input error-correction__input${
+            className={`editable-input editable-input--fullwidth error-correction__input${
               showResult
                 ? correct
                   ? ' editable-input--correct'

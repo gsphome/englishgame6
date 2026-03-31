@@ -162,7 +162,7 @@ const TransformationComponent: React.FC<TransformationComponentProps> = ({ modul
             onChange={setAnswer}
             disabled={showResult}
             placeholder="..."
-            className={`editable-input transformation__input${
+            className={`editable-input editable-input--fullwidth transformation__input${
               showResult
                 ? correct
                   ? ' editable-input--correct'

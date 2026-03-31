@@ -162,7 +162,7 @@ const WordFormationComponent: React.FC<WordFormationComponentProps> = ({ module 
             onChange={setAnswer}
             disabled={showResult}
             placeholder="..."
-            className={`editable-input word-formation__input${
+            className={`editable-input editable-input--fullwidth word-formation__input${
               showResult
                 ? correct
                   ? ' editable-input--correct'
