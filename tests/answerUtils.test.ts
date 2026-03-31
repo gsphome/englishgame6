@@ -48,8 +48,10 @@ describe('normalizeAnswer', () => {
     expect(normalizeAnswer('  She Doesn\'t Like Coffee.  ')).toBe("she doesn't like coffee");
   });
 
-  it('preserves internal punctuation (commas, apostrophes)', () => {
-    expect(normalizeAnswer("I don't know, really")).toBe("i don't know, really");
+  it('strips commas/semicolons/colons but preserves apostrophes', () => {
+    expect(normalizeAnswer("I don't know, really")).toBe("i don't know really");
+    expect(normalizeAnswer("Yes; of course")).toBe("yes of course");
+    expect(normalizeAnswer("Note: important")).toBe("note important");
   });
 
   it('two strings differing only in case normalize to the same value', () => {
