@@ -168,6 +168,26 @@
   }
 }
 
+/* === COMPACT VIEWPORT — when virtual keyboard shrinks viewport === */
+@media (max-height: 700px) {
+  .learning-progress-header {
+    margin-bottom: 0.25rem;
+  }
+  .learning-progress-header__top {
+    margin-bottom: 0.25rem;
+  }
+  .learning-progress-header__title {
+    font-size: 1rem;
+  }
+  .learning-progress-header__progress-container {
+    height: 4px;
+    margin-bottom: 0.25rem;
+  }
+  .learning-progress-header__help-text {
+    display: none;
+  }
+}
+
 /* === DARK MODE === */
 html.dark .learning-progress-header__title {
   color: var(--theme-text-primary, #ffffff);

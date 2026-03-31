@@ -2,164 +2,224 @@
   {
     "prompt": "Change to passive voice",
     "source": "Someone stole my bicycle.",
-    "correct": ["My bicycle was stolen."],
+    "correct": [
+      "My bicycle was stolen."
+    ],
     "hint": "The agent is unknown, so omit <by someone>",
     "explanation": "When the agent is unknown or unimportant, use passive without <by>."
   },
   {
     "prompt": "Change to second conditional",
     "source": "I don't have money. I can't travel.",
-    "correct": ["If I had money, I could travel.", "If I had money, I would travel."],
+    "correct": [
+      "If I had money, I could travel.",
+      "If I had money, I would travel.",
+      "If I had money, I'd travel."
+    ],
     "hint": "Use <If> + past simple, <would/could> + base verb",
     "explanation": "Second conditional: <If> + past simple + <would/could> + base verb for unreal present situations."
   },
   {
     "prompt": "Change to reported speech",
     "source": "He said, \"I will call you tomorrow.\"",
-    "correct": ["He said that he would call me the next day.", "He said he would call me the next day."],
+    "correct": [
+      "He said that he would call me the next day.",
+      "He said he would call me the next day."
+    ],
     "hint": "Shift <will> → <would>, <tomorrow> → <the next day>",
     "explanation": "Reported speech: <will> → <would>, <you> → <me>, <tomorrow> → <the next day>."
   },
   {
     "prompt": "Rewrite using a gerund as subject",
     "source": "It is difficult to learn a new language.",
-    "correct": ["Learning a new language is difficult."],
+    "correct": [
+      "Learning a new language is difficult."
+    ],
     "explanation": "Gerund as subject: <verb-ing> + complement replaces <It is ... to + verb>."
   },
   {
     "prompt": "Change to present perfect continuous",
     "source": "She started studying at 8 AM. She is still studying.",
-    "correct": ["She has been studying since 8 AM."],
+    "correct": [
+      "She has been studying since 8 AM."
+    ],
     "hint": "Use <has been> + verb-ing + <since>",
     "explanation": "Present perfect continuous: <has/have been> + verb-ing for actions that started in the past and continue."
   },
   {
     "prompt": "Change to passive voice",
     "source": "They are building a new hospital.",
-    "correct": ["A new hospital is being built."],
+    "correct": [
+      "A new hospital is being built."
+    ],
     "hint": "Present continuous passive: <is being> + past participle",
     "explanation": "Present continuous passive: object + <is/are being> + past participle."
   },
   {
     "prompt": "Change to first conditional",
     "source": "Maybe it will rain. We will stay home.",
-    "correct": ["If it rains, we will stay home."],
+    "correct": [
+      "If it rains, we will stay home."
+    ],
     "explanation": "First conditional: <If> + present simple, <will> + base verb for real future possibilities."
   },
   {
     "prompt": "Rewrite using <wish>",
     "source": "I don't speak French.",
-    "correct": ["I wish I spoke French."],
+    "correct": [
+      "I wish I spoke French."
+    ],
     "hint": "Use <wish> + past simple for unreal present",
     "explanation": "<Wish> + past simple expresses a desire for something different from reality."
   },
   {
     "prompt": "Change to indirect question",
     "source": "Where does she live?",
-    "correct": ["Do you know where she lives?", "Can you tell me where she lives?"],
+    "correct": [
+      "Do you know where she lives?",
+      "Can you tell me where she lives?"
+    ],
     "hint": "Use statement word order after the question word",
     "explanation": "Indirect questions use statement word order: <where she lives> (not <where does she live>)."
   },
   {
     "prompt": "Rewrite using <unless>",
     "source": "If you don't hurry, you will miss the bus.",
-    "correct": ["Unless you hurry, you will miss the bus."],
+    "correct": [
+      "Unless you hurry, you will miss the bus."
+    ],
     "explanation": "<Unless> means <if not>. Remove the negative when using <unless>."
   },
   {
     "prompt": "Change to third conditional",
     "source": "She didn't study. She failed the test.",
-    "correct": ["If she had studied, she wouldn't have failed the test.", "If she had studied, she would not have failed the test."],
+    "correct": [
+      "If she had studied, she wouldn't have failed the test.",
+      "If she had studied, she would not have failed the test."
+    ],
     "hint": "Use <If> + past perfect, <would have> + past participle",
     "explanation": "Third conditional: <If> + past perfect + <would(n't) have> + past participle for unreal past."
   },
   {
     "prompt": "Rewrite using causative <have>",
     "source": "A painter painted our house.",
-    "correct": ["We had our house painted."],
+    "correct": [
+      "We had our house painted."
+    ],
     "hint": "Use <had> + object + past participle",
     "explanation": "Causative <have something done>: subject + <had> + object + past participle."
   },
   {
     "prompt": "Reduce the relative clause",
     "source": "The woman who is wearing a red dress is my aunt.",
-    "correct": ["The woman wearing a red dress is my aunt."],
+    "correct": [
+      "The woman wearing a red dress is my aunt."
+    ],
     "explanation": "Reduced relative clause: remove <who is> and keep the present participle."
   },
   {
     "prompt": "Rewrite using <wish> + past simple",
     "source": "I can't play the piano.",
-    "correct": ["I wish I could play the piano."],
+    "correct": [
+      "I wish I could play the piano."
+    ],
     "hint": "Use <wish> + <could> for abilities",
     "explanation": "<Wish> + <could> + base verb expresses a desire for an ability you don't have."
   },
   {
     "prompt": "Change to passive voice",
     "source": "People speak English all over the world.",
-    "correct": ["English is spoken all over the world."],
+    "correct": [
+      "English is spoken all over the world."
+    ],
     "explanation": "Passive: object + <is/are> + past participle. The agent is omitted when it's general."
   },
   {
     "prompt": "Change to third conditional",
     "source": "He didn't wake up early. He missed the train.",
-    "correct": ["If he had woken up early, he wouldn't have missed the train.", "If he had woken up early, he would not have missed the train."],
+    "correct": [
+      "If he had woken up early, he wouldn't have missed the train.",
+      "If he had woken up early, he would not have missed the train."
+    ],
     "explanation": "Third conditional for unreal past: <If> + past perfect + <would(n't) have> + past participle."
   },
   {
     "prompt": "Rewrite using causative <get>",
     "source": "A technician fixed my computer.",
-    "correct": ["I got my computer fixed."],
+    "correct": [
+      "I got my computer fixed."
+    ],
     "hint": "Use <got> + object + past participle",
     "explanation": "Causative <get something done>: subject + <got> + object + past participle."
   },
   {
     "prompt": "Reduce the relative clause",
     "source": "The letter that was written by my father arrived today.",
-    "correct": ["The letter written by my father arrived today."],
+    "correct": [
+      "The letter written by my father arrived today."
+    ],
     "explanation": "Reduced relative clause: remove <that was> and keep the past participle."
   },
   {
     "prompt": "Rewrite using <If only> + past simple",
     "source": "I don't have a car.",
-    "correct": ["If only I had a car."],
+    "correct": [
+      "If only I had a car."
+    ],
     "explanation": "<If only> + past simple expresses a strong wish about the present."
   },
   {
     "prompt": "Change to reported question",
     "source": "She asked, \"Do you like music?\"",
-    "correct": ["She asked if I liked music.", "She asked whether I liked music."],
+    "correct": [
+      "She asked if I liked music.",
+      "She asked whether I liked music."
+    ],
     "hint": "Use <if> or <whether> for yes/no reported questions",
     "explanation": "Reported yes/no questions: reporting verb + <if/whether> + statement word order."
   },
   {
     "prompt": "Rewrite using <wish> + past perfect",
     "source": "I didn't go to the party. I regret it.",
-    "correct": ["I wish I had gone to the party."],
+    "correct": [
+      "I wish I had gone to the party."
+    ],
     "explanation": "<Wish> + past perfect expresses regret about a past action."
   },
   {
     "prompt": "Change to passive voice in past",
     "source": "The police arrested the thief.",
-    "correct": ["The thief was arrested by the police."],
+    "correct": [
+      "The thief was arrested by the police."
+    ],
     "explanation": "Past passive: object + <was/were> + past participle + <by> + agent."
   },
   {
     "prompt": "Rewrite using <so ... that>",
     "source": "The movie was very boring. I fell asleep.",
-    "correct": ["The movie was so boring that I fell asleep."],
+    "correct": [
+      "The movie was so boring that I fell asleep."
+    ],
     "hint": "Use <so> + adjective + <that>",
     "explanation": "<So> + adjective + <that> + result clause shows cause and effect."
   },
   {
     "prompt": "Change to second conditional",
     "source": "I don't know the answer. I can't help you.",
-    "correct": ["If I knew the answer, I could help you.", "If I knew the answer, I would help you."],
+    "correct": [
+      "If I knew the answer, I could help you.",
+      "If I knew the answer, I would help you.",
+      "If I knew the answer, I'd help you."
+    ],
     "explanation": "Second conditional: <If> + past simple + <would/could> + base verb for unreal present."
   },
   {
     "prompt": "Rewrite using <despite> + gerund",
     "source": "Although it was raining, we went for a walk.",
-    "correct": ["Despite it raining, we went for a walk.", "Despite the rain, we went for a walk."],
+    "correct": [
+      "Despite it raining, we went for a walk.",
+      "Despite the rain, we went for a walk."
+    ],
     "explanation": "<Despite> + gerund/noun replaces <Although> + clause for concession."
   }
 ]

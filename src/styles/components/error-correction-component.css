@@ -233,3 +233,31 @@ html.dark .error-correction__explanation-text {
   font-weight: 600;
   color: #f43f5e;
 }
+
+/* === COMPACT MOBILE — when virtual keyboard shrinks viewport === */
+@media (max-height: 700px) {
+  .error-correction__container {
+    padding: 0.25rem;
+    margin: 0 auto;
+  }
+  .error-correction__exercise-card {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+  .error-correction__error-sentence {
+    padding: 0.4rem 0.6rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+  }
+  .error-correction__hint {
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.4rem;
+  }
+  .error-correction__answer-area {
+    padding: 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+  .error-correction__input {
+    min-height: 2rem;
+  }
+}

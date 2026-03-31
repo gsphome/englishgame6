@@ -2,166 +2,229 @@
   {
     "prompt": "Change to negative",
     "source": "She likes coffee.",
-    "correct": ["She doesn't like coffee.", "She does not like coffee."],
+    "correct": [
+      "She doesn't like coffee.",
+      "She does not like coffee."
+    ],
     "hint": "Use <doesn't> + base verb",
     "explanation": "For third person singular negatives in present simple, use <doesn't> + base form of the verb."
   },
   {
     "prompt": "Change to a question",
     "source": "He plays football.",
-    "correct": ["Does he play football?"],
+    "correct": [
+      "Does he play football?"
+    ],
     "hint": "Use <Does> at the beginning",
     "explanation": "For third person singular questions in present simple, use <Does> + subject + base verb."
   },
   {
     "prompt": "Change to plural subject",
     "source": "The cat is sleeping.",
-    "correct": ["The cats are sleeping."],
+    "correct": [
+      "The cats are sleeping."
+    ],
     "hint": "Change <cat> to <cats> and <is> to <are>",
     "explanation": "Plural subjects use <are> instead of <is> in present continuous."
   },
   {
     "prompt": "Change to past simple",
     "source": "I walk to school.",
-    "correct": ["I walked to school."],
+    "correct": [
+      "I walked to school."
+    ],
     "hint": "Add <-ed> to regular verbs",
     "explanation": "Regular verbs form the past simple by adding <-ed>: walk → walked."
   },
   {
     "prompt": "Change to negative",
     "source": "They have a car.",
-    "correct": ["They don't have a car.", "They do not have a car."],
+    "correct": [
+      "They don't have a car.",
+      "They do not have a car."
+    ],
     "explanation": "For plural subjects in present simple, use <don't> + base verb."
   },
   {
     "prompt": "Change to a question",
     "source": "You like pizza.",
-    "correct": ["Do you like pizza?"],
+    "correct": [
+      "Do you like pizza?"
+    ],
     "explanation": "For questions with <you>, use <Do> + subject + base verb."
   },
   {
     "prompt": "Change <he> to <they>",
     "source": "He is a teacher.",
-    "correct": ["They are teachers."],
+    "correct": [
+      "They are teachers.",
+      "They're teachers."
+    ],
     "hint": "Change the verb and make the noun plural",
     "explanation": "When changing from singular to plural: <he is> → <they are>, and <teacher> → <teachers>."
   },
   {
     "prompt": "Change to present continuous",
     "source": "She reads a book.",
-    "correct": ["She is reading a book."],
+    "correct": [
+      "She is reading a book.",
+      "She's reading a book."
+    ],
     "hint": "Use <is> + verb-ing",
     "explanation": "Present continuous: subject + <is/are> + verb-ing. <reads> → <is reading>."
   },
   {
     "prompt": "Change to past simple",
     "source": "They go to the park.",
-    "correct": ["They went to the park."],
+    "correct": [
+      "They went to the park."
+    ],
     "hint": "<go> is an irregular verb",
     "explanation": "Irregular verb: <go> → <went> in past simple."
   },
   {
     "prompt": "Change to negative",
     "source": "I am happy.",
-    "correct": ["I am not happy.", "I'm not happy."],
+    "correct": [
+      "I am not happy.",
+      "I'm not happy."
+    ],
     "explanation": "With <be>, add <not> after the verb: <am> → <am not>."
   },
   {
     "prompt": "Change to present continuous",
     "source": "They play in the garden.",
-    "correct": ["They are playing in the garden."],
+    "correct": [
+      "They are playing in the garden.",
+      "They're playing in the garden."
+    ],
     "hint": "Use <are> + verb-ing",
     "explanation": "Present continuous with plural subjects: <are> + verb-ing."
   },
   {
     "prompt": "Change to possessive form",
     "source": "The dog belongs to Maria.",
-    "correct": ["It is Maria's dog.", "It's Maria's dog."],
+    "correct": [
+      "It is Maria's dog.",
+      "It's Maria's dog."
+    ],
     "hint": "Use apostrophe + s",
     "explanation": "Possessive: add <'s> to the owner's name: <Maria's dog>."
   },
   {
     "prompt": "Change to plural",
     "source": "There is a child in the room.",
-    "correct": ["There are children in the room."],
+    "correct": [
+      "There are children in the room."
+    ],
     "hint": "<child> has an irregular plural",
     "explanation": "Irregular plural: <child> → <children>. Also <is> → <are> for plural."
   },
   {
     "prompt": "Change to a question",
     "source": "She is reading a book.",
-    "correct": ["Is she reading a book?"],
+    "correct": [
+      "Is she reading a book?"
+    ],
     "explanation": "For present continuous questions, invert the subject and <is/are>."
   },
   {
     "prompt": "Change to present continuous",
     "source": "He eats lunch.",
-    "correct": ["He is eating lunch."],
+    "correct": [
+      "He is eating lunch.",
+      "He's eating lunch."
+    ],
     "hint": "Use <is> + verb-ing",
     "explanation": "Present continuous: <is> + verb-ing for actions happening now."
   },
   {
     "prompt": "Change <I> to <she>",
     "source": "I have a red bag.",
-    "correct": ["She has a red bag."],
+    "correct": [
+      "She has a red bag."
+    ],
     "hint": "Change the verb form too",
     "explanation": "Third person singular: <I have> → <She has>."
   },
   {
     "prompt": "Change to possessive pronoun",
     "source": "This book belongs to me.",
-    "correct": ["This is my book.", "This book is mine."],
+    "correct": [
+      "This is my book.",
+      "This book is mine."
+    ],
     "explanation": "Possessive pronouns: <belongs to me> → <my> (adjective) or <mine> (pronoun)."
   },
   {
     "prompt": "Change to plural",
     "source": "The man is tall.",
-    "correct": ["The men are tall."],
+    "correct": [
+      "The men are tall."
+    ],
     "hint": "<man> has an irregular plural",
     "explanation": "Irregular plural: <man> → <men>, <is> → <are>."
   },
   {
     "prompt": "Change to a question",
     "source": "They have two dogs.",
-    "correct": ["Do they have two dogs?"],
+    "correct": [
+      "Do they have two dogs?"
+    ],
     "explanation": "For present simple questions with plural subjects, use <Do> + subject + base verb."
   },
   {
     "prompt": "Change to present continuous",
     "source": "We walk to school.",
-    "correct": ["We are walking to school."],
+    "correct": [
+      "We are walking to school.",
+      "We're walking to school."
+    ],
     "explanation": "Present continuous: subject + <are> + verb-ing."
   },
   {
     "prompt": "Change to negative",
     "source": "He is at home.",
-    "correct": ["He is not at home.", "He isn't at home."],
+    "correct": [
+      "He is not at home.",
+      "He isn't at home.",
+      "He's not at home."
+    ],
     "explanation": "With <be>, add <not> after the verb: <is> → <is not> / <isn't>."
   },
   {
     "prompt": "Change to possessive form",
     "source": "The toy belongs to the baby.",
-    "correct": ["It is the baby's toy.", "It's the baby's toy."],
+    "correct": [
+      "It is the baby's toy.",
+      "It's the baby's toy."
+    ],
     "explanation": "Possessive with <'s>: <the baby's toy>."
   },
   {
     "prompt": "Change to plural",
     "source": "The woman is a doctor.",
-    "correct": ["The women are doctors."],
+    "correct": [
+      "The women are doctors."
+    ],
     "hint": "<woman> has an irregular plural",
     "explanation": "Irregular plural: <woman> → <women>, <is> → <are>, <doctor> → <doctors>."
   },
   {
     "prompt": "Change to a question with <Where>",
     "source": "She lives in London.",
-    "correct": ["Where does she live?"],
+    "correct": [
+      "Where does she live?"
+    ],
     "hint": "Use <Where> + <does> + subject + base verb",
     "explanation": "Wh-questions in present simple: <Where> + <does> + subject + base verb."
   },
   {
     "prompt": "Change to past simple",
     "source": "She has a cat.",
-    "correct": ["She had a cat."],
+    "correct": [
+      "She had a cat."
+    ],
     "explanation": "Past simple of <have>: <has> → <had>."
   }
 ]
