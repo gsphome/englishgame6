@@ -24,8 +24,8 @@ function loadRegistry(): RegistryEntry[] {
   return JSON.parse(readFileSync(resolve(PUBLIC_DATA, 'learningModules.json'), 'utf-8'));
 }
 
-function loadDataFile(dataPath: string): any[] {
-  const fullPath = resolve(PUBLIC_DATA, '..', 'public', dataPath);
+function _loadDataFile(dataPath: string): any[] {
+  const fullPath = resolve(PUBLIC_DATA, '..', dataPath);
   return JSON.parse(readFileSync(fullPath, 'utf-8'));
 }
 
