@@ -737,22 +737,21 @@ function runGroupDC() {
   const cfgCategories = new Set(appConfig.learningSettings.categories);
   const cfgUnits = new Set(appConfig.learningSettings.units.map(u => u.id));
   const cfgIssues = [];
+  const levelUnitMap = { a1: 1, a2: 2, b1: 3, b2: 4, c1: 5, c2: 6 };
   for (const mod of modules) {
     const modLevels = Array.isArray(mod.level) ? mod.level : [mod.level];
     for (const lvl of modLevels) { if (!cfgLevels.has(lvl)) cfgIssues.push({ id: mod.id, type: 'level', value: lvl }); }
     if (!cfgCategories.has(mod.category)) cfgIssues.push({ id: mod.id, type: 'category', value: mod.category });
-    if (!cfgUnits.has(mod.unit)) cfgIssues.push({ id: mod.id, type: 'unit', value: mod.unit });
+    // unit is derived from level at runtime, validate the derived value
+    const derivedUnit = levelUnitMap[Array.isArray(mod.level) ? mod.level[0] : mod.level];
+    if (derivedUnit && !cfgUnits.has(derivedUnit)) cfgIssues.push({ id: mod.id, type: 'unit', value: derivedUnit });
   }
   if (cfgIssues.length === 0) passOk('DC-9', `Config consistency — levels, categories, units alineados`);
   else { passIssue('DC-9', 'Inconsistencias app-config vs learningModules', cfgIssues.length); for (const { id, type, value } of cfgIssues.slice(0, 10)) console.log(`      ${id}: ${type} "${value}" no existe en app-config`); }
 
-  // DC-10: Module progression completeness
-  const levelUnitMap = { a1: 1, a2: 2, b1: 3, b2: 4, c1: 5, c2: 6 };
+  // DC-10: Module progression completeness (unit derived from level)
   const progIssues = [];
-  for (const mod of modules) {
-    const modLevels = Array.isArray(mod.level) ? mod.level : [mod.level];
-    for (const lvl of modLevels) { const expected = levelUnitMap[lvl]; if (expected && mod.unit !== expected) progIssues.push({ id: mod.id, issue: `level="${lvl}" → unit=${expected}, tiene unit=${mod.unit}` }); }
-  }
+  // DC-10: Reviews per level check
   const levelsWithReview = new Set();
   for (const mod of modules) { if (mod.category === 'Review') { const lvls = Array.isArray(mod.level) ? mod.level : [mod.level]; for (const l of lvls) levelsWithReview.add(l); } }
   for (const lvl of cfgLevels) { if (!levelsWithReview.has(lvl)) progIssues.push({ id: `(level ${lvl})`, issue: 'sin módulo Review' }); }

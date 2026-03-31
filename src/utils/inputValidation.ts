@@ -25,6 +25,15 @@ const gameSettingsSchema = z.object({
   reorderingMode: z.object({
     itemCount: z.number().int().min(1).max(50),
   }),
+  transformationMode: z.object({
+    itemCount: z.number().int().min(1).max(50),
+  }),
+  wordFormationMode: z.object({
+    itemCount: z.number().int().min(1).max(50),
+  }),
+  errorCorrectionMode: z.object({
+    itemCount: z.number().int().min(1).max(50),
+  }),
 });
 
 /**
@@ -44,6 +53,9 @@ export const validateGameSettings = (settings: any): any => {
       sortingMode: { wordCount: 5, categoryCount: 3 },
       matchingMode: { wordCount: 6 },
       reorderingMode: { itemCount: 10 },
+      transformationMode: { itemCount: 10 },
+      wordFormationMode: { itemCount: 10 },
+      errorCorrectionMode: { itemCount: 10 },
     };
   }
 };

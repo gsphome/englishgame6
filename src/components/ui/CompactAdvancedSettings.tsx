@@ -73,6 +73,8 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
     ...gameSettings,
     reorderingMode: gameSettings.reorderingMode ?? { itemCount: 10 },
     transformationMode: gameSettings.transformationMode ?? { itemCount: 10 },
+    wordFormationMode: gameSettings.wordFormationMode ?? { itemCount: 10 },
+    errorCorrectionMode: gameSettings.errorCorrectionMode ?? { itemCount: 10 },
   }));
 
   // Reset local state when modal opens
@@ -87,6 +89,8 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
         ...gameSettings,
         reorderingMode: gameSettings.reorderingMode ?? { itemCount: 10 },
         transformationMode: gameSettings.transformationMode ?? { itemCount: 10 },
+        wordFormationMode: gameSettings.wordFormationMode ?? { itemCount: 10 },
+        errorCorrectionMode: gameSettings.errorCorrectionMode ?? { itemCount: 10 },
       });
       setHasChanges(false);
     } else {
@@ -679,6 +683,88 @@ export const CompactAdvancedSettings: React.FC<CompactAdvancedSettingsProps> = (
                         }
                         disabled={(localGameSettings.transformationMode.itemCount || 10) >= 20}
                         aria-label={t('settings.increaseTransformationCount')}
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="compact-settings__game">
+                    <label className="compact-settings__game-label">
+                      🔤 {t('settings.wordFormationMode')}
+                    </label>
+                    <div className="compact-settings__game-stepper">
+                      <button
+                        type="button"
+                        className="compact-settings__stepper-btn compact-settings__stepper-btn--minus"
+                        onClick={() =>
+                          handleGameSettingChange(
+                            'wordFormationMode',
+                            'itemCount',
+                            Math.max(5, (localGameSettings.wordFormationMode.itemCount || 10) - 1)
+                          )
+                        }
+                        disabled={(localGameSettings.wordFormationMode.itemCount || 10) <= 5}
+                        aria-label={t('settings.decreaseWordFormationCount')}
+                      >
+                        −
+                      </button>
+                      <span className="compact-settings__stepper-value">
+                        {localGameSettings.wordFormationMode.itemCount || 10}
+                      </span>
+                      <button
+                        type="button"
+                        className="compact-settings__stepper-btn compact-settings__stepper-btn--plus"
+                        onClick={() =>
+                          handleGameSettingChange(
+                            'wordFormationMode',
+                            'itemCount',
+                            Math.min(20, (localGameSettings.wordFormationMode.itemCount || 10) + 1)
+                          )
+                        }
+                        disabled={(localGameSettings.wordFormationMode.itemCount || 10) >= 20}
+                        aria-label={t('settings.increaseWordFormationCount')}
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="compact-settings__game">
+                    <label className="compact-settings__game-label">
+                      ✅ {t('settings.errorCorrectionMode')}
+                    </label>
+                    <div className="compact-settings__game-stepper">
+                      <button
+                        type="button"
+                        className="compact-settings__stepper-btn compact-settings__stepper-btn--minus"
+                        onClick={() =>
+                          handleGameSettingChange(
+                            'errorCorrectionMode',
+                            'itemCount',
+                            Math.max(5, (localGameSettings.errorCorrectionMode.itemCount || 10) - 1)
+                          )
+                        }
+                        disabled={(localGameSettings.errorCorrectionMode.itemCount || 10) <= 5}
+                        aria-label={t('settings.decreaseErrorCorrectionCount')}
+                      >
+                        −
+                      </button>
+                      <span className="compact-settings__stepper-value">
+                        {localGameSettings.errorCorrectionMode.itemCount || 10}
+                      </span>
+                      <button
+                        type="button"
+                        className="compact-settings__stepper-btn compact-settings__stepper-btn--plus"
+                        onClick={() =>
+                          handleGameSettingChange(
+                            'errorCorrectionMode',
+                            'itemCount',
+                            Math.min(20, (localGameSettings.errorCorrectionMode.itemCount || 10) + 1)
+                          )
+                        }
+                        disabled={(localGameSettings.errorCorrectionMode.itemCount || 10) >= 20}
+                        aria-label={t('settings.increaseErrorCorrectionCount')}
                       >
                         +
                       </button>

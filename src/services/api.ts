@@ -38,13 +38,19 @@ async function fetchJson<T>(url: string): Promise<T> {
   return response.json();
 }
 
+const LEVEL_TO_UNIT: Record<string, number> = { a1: 1, a2: 2, b1: 3, b2: 4, c1: 5, c2: 6 };
+
 function enhanceModules(modules: LearningModule[]): LearningModule[] {
-  return modules.map(module => ({
-    ...module,
-    estimatedTime: module.estimatedTime ?? 5,
-    difficulty: module.difficulty ?? 3,
-    tags: module.tags ?? [module.category],
-  }));
+  return modules.map(module => {
+    const lvl = Array.isArray(module.level) ? module.level[0] : module.level;
+    return {
+      ...module,
+      unit: LEVEL_TO_UNIT[lvl] ?? module.unit ?? 1,
+      estimatedTime: module.estimatedTime ?? 5,
+      difficulty: module.difficulty ?? 3,
+      tags: module.tags ?? [module.category],
+    };
+  });
 }
 
 /**

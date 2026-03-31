@@ -20,7 +20,7 @@ export interface LearningModule {
   learningMode: LearningMode;
   level: DifficultyLevel[] | DifficultyLevel;
   category: Category;
-  unit: number; // 1-6 (Foundation → Mastery)
+  unit: number; // Derived from level at runtime (a1→1, a2→2, b1→3, b2→4, c1→5, c2→6)
   prerequisites: string[]; // IDs of required modules
   tags?: string[];
   data?: LearningData[];

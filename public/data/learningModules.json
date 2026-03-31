@@ -8,7 +8,6 @@
       "a1"
     ],
     "category": "Reading",
-    "unit": 1,
     "prerequisites": [],
     "description": "Learn basic greetings and how to introduce yourself",
     "estimatedTime": 12,
@@ -23,7 +22,6 @@
       "a1"
     ],
     "category": "Grammar",
-    "unit": 1,
     "prerequisites": [
       "reading-greetings-a1"
     ],
@@ -40,7 +38,6 @@
       "a1"
     ],
     "category": "Vocabulary",
-    "unit": 1,
     "prerequisites": [
       "completion-greetings-practice-a1"
     ],
@@ -57,7 +54,6 @@
       "a1"
     ],
     "category": "Vocabulary",
-    "unit": 1,
     "prerequisites": [
       "flashcard-basic-vocabulary-a1"
     ],
@@ -74,7 +70,6 @@
       "a1"
     ],
     "category": "Vocabulary",
-    "unit": 1,
     "prerequisites": [
       "quiz-basic-vocabulary-a1"
     ],
@@ -91,7 +86,6 @@
       "a1"
     ],
     "category": "Reading",
-    "unit": 1,
     "prerequisites": [
       "matching-common-verbs-a1"
     ],
@@ -108,7 +102,6 @@
       "a1"
     ],
     "category": "Vocabulary",
-    "unit": 1,
     "prerequisites": [
       "reading-daily-life-a1"
     ],
@@ -125,7 +118,6 @@
       "a1"
     ],
     "category": "Vocabulary",
-    "unit": 1,
     "description": "Family, body parts, clothes, weather, home rooms and classroom vocabulary (40 words)",
     "estimatedTime": 1,
     "difficulty": 1,
@@ -142,7 +134,6 @@
       "a1"
     ],
     "category": "Vocabulary",
-    "unit": 1,
     "prerequisites": [
       "flashcard-everyday-life-a1"
     ],
@@ -159,7 +150,6 @@
       "a1"
     ],
     "category": "Reading",
-    "unit": 1,
     "prerequisites": [
       "quiz-everyday-life-a1"
     ],
@@ -176,7 +166,6 @@
       "a1"
     ],
     "category": "Grammar",
-    "unit": 1,
     "prerequisites": [
       "reading-travel-a1"
     ],
@@ -193,7 +182,6 @@
       "a1"
     ],
     "category": "Vocabulary",
-    "unit": 1,
     "prerequisites": [
       "matching-basic-grammar-a1"
     ],
@@ -210,7 +198,6 @@
       "a1"
     ],
     "category": "Grammar",
-    "unit": 1,
     "prerequisites": [
       "matching-numbers-quantities-a1"
     ],
@@ -227,7 +214,6 @@
       "a1"
     ],
     "category": "Grammar",
-    "unit": 1,
     "prerequisites": [
       "completion-basic-sentences-a1"
     ],
@@ -244,7 +230,6 @@
       "a1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 1,
     "prerequisites": [
       "sorting-verb-tenses-a1"
     ],
@@ -261,7 +246,6 @@
       "a1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 1,
     "prerequisites": [
       "reading-phrasal-verbs-a1"
     ],
@@ -278,7 +262,6 @@
       "a1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 1,
     "prerequisites": [
       "matching-basic-phrasal-verbs-a1"
     ],
@@ -295,7 +278,6 @@
       "a1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 1,
     "prerequisites": [
       "completion-basic-phrasal-verbs-a1"
     ],
@@ -312,7 +294,6 @@
       "a1"
     ],
     "category": "Idioms",
-    "unit": 1,
     "prerequisites": [
       "quiz-phrasal-verbs-a1"
     ],
@@ -329,7 +310,6 @@
       "a1"
     ],
     "category": "Idioms",
-    "unit": 1,
     "prerequisites": [
       "reading-idioms-a1"
     ],
@@ -346,7 +326,6 @@
       "a1"
     ],
     "category": "Idioms",
-    "unit": 1,
     "prerequisites": [
       "flashcard-basic-idioms-a1"
     ],
@@ -363,7 +342,6 @@
       "a1"
     ],
     "category": "Vocabulary",
-    "unit": 1,
     "prerequisites": [
       "quiz-basic-idioms-a1"
     ],
@@ -380,7 +358,6 @@
       "a1"
     ],
     "category": "Vocabulary",
-    "unit": 1,
     "prerequisites": [
       "flashcard-daily-life-vocab-a1"
     ],
@@ -397,7 +374,6 @@
       "a1"
     ],
     "category": "Vocabulary",
-    "unit": 1,
     "prerequisites": [
       "quiz-daily-life-vocab-a1"
     ],
@@ -414,7 +390,6 @@
       "a1"
     ],
     "category": "Vocabulary",
-    "unit": 1,
     "description": "Sort expressions into categories: Phrasal Verbs, Idioms, Greetings, Polite Expressions",
     "estimatedTime": 2,
     "difficulty": 1,
@@ -431,7 +406,6 @@
       "a1"
     ],
     "category": "Grammar",
-    "unit": 1,
     "prerequisites": [
       "sorting-expressions-type-a1"
     ],
@@ -448,7 +422,6 @@
       "a1"
     ],
     "category": "Grammar",
-    "unit": 1,
     "prerequisites": [
       "a1-reordering-basic-sentences"
     ],
@@ -465,7 +438,6 @@
       "a1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 1,
     "prerequisites": [
       "a1-reordering-questions-negatives"
     ],
@@ -482,12 +454,43 @@
       "a1"
     ],
     "category": "Idioms",
-    "unit": 1,
     "prerequisites": [
       "a1-reordering-phrasal-verbs"
     ],
     "description": "Practice word order with common English idioms",
     "estimatedTime": 2,
+    "difficulty": 1
+  },
+  {
+    "id": "a1-transformation-daily-routines",
+    "name": "Daily Routines Transformations",
+    "learningMode": "transformation",
+    "dataPath": "data/a1/a1-transformation-daily-routines.json",
+    "level": [
+      "a1"
+    ],
+    "category": "Grammar",
+    "prerequisites": [
+      "a1-reordering-idioms"
+    ],
+    "description": "Transform daily routine sentences: negatives, questions, past tense",
+    "estimatedTime": 5,
+    "difficulty": 1
+  },
+  {
+    "id": "a1-error-correction-basic-phrasal-verbs",
+    "name": "Phrasal Verb Error Correction",
+    "learningMode": "error-correction",
+    "dataPath": "data/a1/a1-error-correction-basic-phrasal-verbs.json",
+    "level": [
+      "a1"
+    ],
+    "category": "PhrasalVerbs",
+    "prerequisites": [
+      "a1-transformation-daily-routines"
+    ],
+    "description": "Find and correct errors in sentences with basic phrasal verbs",
+    "estimatedTime": 5,
     "difficulty": 1
   },
   {
@@ -499,9 +502,8 @@
       "a1"
     ],
     "category": "Review",
-    "unit": 1,
     "prerequisites": [
-      "a1-reordering-idioms"
+      "a1-sorting-phrasal-verbs-particle"
     ],
     "description": "Comprehensive review of A1 level concepts",
     "estimatedTime": 3,
@@ -516,7 +518,6 @@
       "a2"
     ],
     "category": "Reading",
-    "unit": 2,
     "prerequisites": [
       "quiz-basic-review-a1"
     ],
@@ -533,7 +534,6 @@
       "a2"
     ],
     "category": "Vocabulary",
-    "unit": 2,
     "prerequisites": [
       "reading-business-a2"
     ],
@@ -550,7 +550,6 @@
       "a2"
     ],
     "category": "Reading",
-    "unit": 2,
     "prerequisites": [
       "matching-time-expressions-a2"
     ],
@@ -567,7 +566,6 @@
       "a2"
     ],
     "category": "Vocabulary",
-    "unit": 2,
     "prerequisites": [
       "reading-culture-a2"
     ],
@@ -584,7 +582,6 @@
       "a2"
     ],
     "category": "Reading",
-    "unit": 2,
     "prerequisites": [
       "flashcard-family-a2"
     ],
@@ -601,7 +598,6 @@
       "a2"
     ],
     "category": "Vocabulary",
-    "unit": 2,
     "prerequisites": [
       "reading-technology-a2"
     ],
@@ -618,7 +614,6 @@
       "a2"
     ],
     "category": "Vocabulary",
-    "unit": 2,
     "prerequisites": [
       "flashcard-home-a2"
     ],
@@ -635,7 +630,6 @@
       "a2"
     ],
     "category": "Reading",
-    "unit": 2,
     "prerequisites": [
       "quiz-family-home-a2"
     ],
@@ -652,7 +646,6 @@
       "a2"
     ],
     "category": "Vocabulary",
-    "unit": 2,
     "prerequisites": [
       "reading-health-a2"
     ],
@@ -669,7 +662,6 @@
       "a2"
     ],
     "category": "Vocabulary",
-    "unit": 2,
     "prerequisites": [
       "flashcard-culture-health-vocab-a2"
     ],
@@ -686,7 +678,6 @@
       "a2"
     ],
     "category": "Vocabulary",
-    "unit": 2,
     "prerequisites": [
       "quiz-culture-health-vocab-a2"
     ],
@@ -703,7 +694,6 @@
       "a2"
     ],
     "category": "Vocabulary",
-    "unit": 2,
     "description": "Hobbies, sports, shopping, jobs, feelings, and transport vocabulary (40 words)",
     "estimatedTime": 1,
     "difficulty": 2,
@@ -720,7 +710,6 @@
       "a2"
     ],
     "category": "Vocabulary",
-    "unit": 2,
     "prerequisites": [
       "flashcard-daily-activities-a2"
     ],
@@ -737,7 +726,6 @@
       "a2"
     ],
     "category": "Grammar",
-    "unit": 2,
     "prerequisites": [
       "completion-daily-activities-a2"
     ],
@@ -754,7 +742,6 @@
       "a2"
     ],
     "category": "Grammar",
-    "unit": 2,
     "prerequisites": [
       "sorting-past-tense-a2"
     ],
@@ -771,7 +758,6 @@
       "a2"
     ],
     "category": "Grammar",
-    "unit": 2,
     "prerequisites": [
       "reading-be-vs-go-a2"
     ],
@@ -788,7 +774,6 @@
       "a2"
     ],
     "category": "Grammar",
-    "unit": 2,
     "prerequisites": [
       "quiz-be-vs-go-a2"
     ],
@@ -805,7 +790,6 @@
       "a2"
     ],
     "category": "Grammar",
-    "unit": 2,
     "prerequisites": [
       "matching-be-vs-go-a2"
     ],
@@ -822,7 +806,6 @@
       "a2"
     ],
     "category": "Grammar",
-    "unit": 2,
     "prerequisites": [
       "completion-past-stories-a2"
     ],
@@ -839,7 +822,6 @@
       "a2"
     ],
     "category": "Grammar",
-    "unit": 2,
     "prerequisites": [
       "a2-reordering-past-tense"
     ],
@@ -856,7 +838,6 @@
       "a2"
     ],
     "category": "Grammar",
-    "unit": 2,
     "prerequisites": [
       "completion-comparatives-superlatives-a2"
     ],
@@ -873,7 +854,6 @@
       "a2"
     ],
     "category": "Grammar",
-    "unit": 2,
     "prerequisites": [
       "a2-reordering-comparatives"
     ],
@@ -890,7 +870,6 @@
       "a2"
     ],
     "category": "Grammar",
-    "unit": 2,
     "prerequisites": [
       "completion-present-perfect-a2"
     ],
@@ -907,7 +886,6 @@
       "a2"
     ],
     "category": "PhrasalVerbs",
-    "unit": 2,
     "prerequisites": [
       "a2-reordering-present-perfect"
     ],
@@ -924,7 +902,6 @@
       "a2"
     ],
     "category": "PhrasalVerbs",
-    "unit": 2,
     "prerequisites": [
       "reading-phrasal-verbs-a2"
     ],
@@ -941,7 +918,6 @@
       "a2"
     ],
     "category": "PhrasalVerbs",
-    "unit": 2,
     "prerequisites": [
       "matching-elementary-phrasal-verbs-a2"
     ],
@@ -958,7 +934,6 @@
       "a2"
     ],
     "category": "PhrasalVerbs",
-    "unit": 2,
     "prerequisites": [
       "completion-elementary-phrasal-verbs-a2"
     ],
@@ -975,7 +950,6 @@
       "a2"
     ],
     "category": "Idioms",
-    "unit": 2,
     "prerequisites": [
       "a2-reordering-phrasal-verbs"
     ],
@@ -992,7 +966,6 @@
       "a2"
     ],
     "category": "Idioms",
-    "unit": 2,
     "prerequisites": [
       "reading-idioms-a2"
     ],
@@ -1009,7 +982,6 @@
       "a2"
     ],
     "category": "Idioms",
-    "unit": 2,
     "prerequisites": [
       "flashcard-elementary-idioms-a2"
     ],
@@ -1026,7 +998,6 @@
       "a2"
     ],
     "category": "Idioms",
-    "unit": 2,
     "prerequisites": [
       "quiz-elementary-idioms-a2"
     ],
@@ -1043,7 +1014,6 @@
       "a2"
     ],
     "category": "Vocabulary",
-    "unit": 2,
     "description": "Sort vocabulary into contexts: Home, Health, Technology, Work",
     "estimatedTime": 2,
     "difficulty": 2,
@@ -1060,9 +1030,8 @@
       "a2"
     ],
     "category": "Review",
-    "unit": 2,
     "prerequisites": [
-      "sorting-vocabulary-context-a2"
+      "a2-matching-elementary-idioms"
     ],
     "description": "Comprehensive review of A2 level concepts",
     "estimatedTime": 3,
@@ -1077,7 +1046,6 @@
       "b1"
     ],
     "category": "Reading",
-    "unit": 3,
     "prerequisites": [
       "quiz-elementary-review-a2"
     ],
@@ -1094,7 +1062,6 @@
       "b1"
     ],
     "category": "Vocabulary",
-    "unit": 3,
     "prerequisites": [
       "reading-education-b1"
     ],
@@ -1111,7 +1078,6 @@
       "b1"
     ],
     "category": "Vocabulary",
-    "unit": 3,
     "prerequisites": [
       "flashcard-travel-leisure-b1"
     ],
@@ -1128,7 +1094,6 @@
       "b1"
     ],
     "category": "Reading",
-    "unit": 3,
     "prerequisites": [
       "quiz-travel-leisure-b1"
     ],
@@ -1145,7 +1110,6 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 3,
     "prerequisites": [
       "reading-environment-b1"
     ],
@@ -1162,7 +1126,6 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 3,
     "prerequisites": [
       "sorting-modal-verbs-b1"
     ],
@@ -1179,7 +1142,6 @@
       "b1"
     ],
     "category": "Reading",
-    "unit": 3,
     "prerequisites": [
       "sorting-prepositions-b1"
     ],
@@ -1196,7 +1158,6 @@
       "b1"
     ],
     "category": "Vocabulary",
-    "unit": 3,
     "description": "Essential work, career, and professional vocabulary (40 words)",
     "estimatedTime": 1,
     "difficulty": 3,
@@ -1213,7 +1174,6 @@
       "b1"
     ],
     "category": "Vocabulary",
-    "unit": 3,
     "prerequisites": [
       "flashcard-work-career-b1"
     ],
@@ -1230,7 +1190,6 @@
       "b1"
     ],
     "category": "Vocabulary",
-    "unit": 3,
     "prerequisites": [
       "flashcard-reading-vocab-b1"
     ],
@@ -1247,7 +1206,6 @@
       "b1"
     ],
     "category": "Vocabulary",
-    "unit": 3,
     "prerequisites": [
       "quiz-reading-vocab-b1"
     ],
@@ -1264,7 +1222,6 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 3,
     "prerequisites": [
       "matching-reading-vocab-b1"
     ],
@@ -1281,7 +1238,6 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 3,
     "prerequisites": [
       "completion-future-forms-b1"
     ],
@@ -1298,7 +1254,6 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 3,
     "description": "First conditional for real possibilities and second conditional for hypothetical situations (25 items)",
     "estimatedTime": 3,
     "difficulty": 3,
@@ -1315,7 +1270,6 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 3,
     "prerequisites": [
       "completion-conditionals-b1"
     ],
@@ -1332,7 +1286,6 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 3,
     "prerequisites": [
       "sorting-conditionals-b1"
     ],
@@ -1349,7 +1302,6 @@
       "b1"
     ],
     "category": "Vocabulary",
-    "unit": 3,
     "description": "Money, banking, relationships, and personal qualities vocabulary (40 words)",
     "estimatedTime": 1,
     "difficulty": 3,
@@ -1366,7 +1318,6 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 3,
     "description": "Present and past simple passive voice, plus modal passives (25 items)",
     "estimatedTime": 3,
     "difficulty": 3,
@@ -1383,7 +1334,6 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 3,
     "prerequisites": [
       "completion-passive-voice-b1"
     ],
@@ -1400,7 +1350,6 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 3,
     "prerequisites": [
       "quiz-passive-voice-b1"
     ],
@@ -1417,7 +1366,6 @@
       "b1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 3,
     "prerequisites": [
       "b1-reordering-passive-voice"
     ],
@@ -1434,7 +1382,6 @@
       "b1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 3,
     "prerequisites": [
       "reading-phrasal-verbs-b1"
     ],
@@ -1451,7 +1398,6 @@
       "b1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 3,
     "prerequisites": [
       "matching-common-phrasal-verbs-b1"
     ],
@@ -1468,7 +1414,6 @@
       "b1"
     ],
     "category": "Idioms",
-    "unit": 3,
     "prerequisites": [
       "completion-phrasal-verbs-practice-b1"
     ],
@@ -1485,7 +1430,6 @@
       "b1"
     ],
     "category": "Idioms",
-    "unit": 3,
     "prerequisites": [
       "reading-idioms-b1"
     ],
@@ -1502,28 +1446,10 @@
       "b1"
     ],
     "category": "Idioms",
-    "unit": 3,
     "prerequisites": [
       "flashcard-everyday-idioms-b1"
     ],
     "description": "Common idioms for everyday situations (75 unique idioms)",
-    "estimatedTime": 3,
-    "difficulty": 3
-  },
-  {
-    "id": "quiz-idioms-challenge-b1",
-    "name": "Idioms Challenge",
-    "learningMode": "quiz",
-    "dataPath": "data/b1/b1-quiz-idioms-challenge.json",
-    "level": [
-      "b1"
-    ],
-    "category": "Idioms",
-    "unit": 3,
-    "prerequisites": [
-      "quiz-idioms-everyday-situations-b1"
-    ],
-    "description": "Challenging idioms quiz for intermediate learners",
     "estimatedTime": 3,
     "difficulty": 3
   },
@@ -1536,12 +1462,11 @@
       "b1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 3,
     "description": "Sort phrasal verbs by particle: up, out, off, down",
     "estimatedTime": 2,
     "difficulty": 3,
     "prerequisites": [
-      "quiz-idioms-challenge-b1"
+      "quiz-idioms-everyday-situations-b1"
     ]
   },
   {
@@ -1553,7 +1478,6 @@
       "b1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 3,
     "prerequisites": [
       "sorting-phrasal-verbs-particle-b1"
     ],
@@ -1570,7 +1494,6 @@
       "b1"
     ],
     "category": "Idioms",
-    "unit": 3,
     "prerequisites": [
       "b1-reordering-phrasal-verbs"
     ],
@@ -1587,7 +1510,6 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 3,
     "prerequisites": [
       "b1-reordering-idioms"
     ],
@@ -1604,7 +1526,6 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 3,
     "prerequisites": [
       "reading-gerunds-infinitives-b1"
     ],
@@ -1621,7 +1542,6 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 3,
     "prerequisites": [
       "sorting-gerunds-infinitives-b1"
     ],
@@ -1638,7 +1558,6 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 3,
     "prerequisites": [
       "reading-gerunds-infinitives-context-b1"
     ],
@@ -1655,7 +1574,6 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 3,
     "prerequisites": [
       "completion-gerunds-infinitives-b1"
     ],
@@ -1672,7 +1590,6 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 3,
     "prerequisites": [
       "b1-reordering-gerunds-infinitives"
     ],
@@ -1689,9 +1606,8 @@
       "b1"
     ],
     "category": "Review",
-    "unit": 3,
     "prerequisites": [
-      "quiz-gerunds-infinitives-b1"
+      "b1-matching-idioms-situations"
     ],
     "description": "Comprehensive review of B1 level concepts",
     "estimatedTime": 3,
@@ -1706,7 +1622,6 @@
       "b2"
     ],
     "category": "Reading",
-    "unit": 4,
     "prerequisites": [
       "quiz-intermediate-review-b1"
     ],
@@ -1723,7 +1638,6 @@
       "b2"
     ],
     "category": "Grammar",
-    "unit": 4,
     "prerequisites": [
       "reading-professional-b2"
     ],
@@ -1740,7 +1654,6 @@
       "b2"
     ],
     "category": "Vocabulary",
-    "unit": 4,
     "prerequisites": [
       "sorting-connector-words-b2"
     ],
@@ -1757,7 +1670,6 @@
       "b2"
     ],
     "category": "Vocabulary",
-    "unit": 4,
     "prerequisites": [
       "flashcard-ielts-vocabulary-pack1-b2"
     ],
@@ -1774,7 +1686,6 @@
       "b2"
     ],
     "category": "Reading",
-    "unit": 4,
     "prerequisites": [
       "quiz-ielts-vocabulary-b2"
     ],
@@ -1791,7 +1702,6 @@
       "b2"
     ],
     "category": "Vocabulary",
-    "unit": 4,
     "prerequisites": [
       "reading-global-issues-b2"
     ],
@@ -1808,7 +1718,6 @@
       "b2"
     ],
     "category": "Vocabulary",
-    "unit": 4,
     "prerequisites": [
       "flashcard-clothing-style-b2"
     ],
@@ -1825,7 +1734,6 @@
       "b2"
     ],
     "category": "Vocabulary",
-    "unit": 4,
     "prerequisites": [
       "flashcard-emotions-feelings-b2"
     ],
@@ -1842,7 +1750,6 @@
       "b2"
     ],
     "category": "Reading",
-    "unit": 4,
     "prerequisites": [
       "completion-clothing-emotions-b2"
     ],
@@ -1859,7 +1766,6 @@
       "b2"
     ],
     "category": "Vocabulary",
-    "unit": 4,
     "prerequisites": [
       "reading-innovation-b2"
     ],
@@ -1876,7 +1782,6 @@
       "b2"
     ],
     "category": "Vocabulary",
-    "unit": 4,
     "prerequisites": [
       "flashcard-success-failure-b2"
     ],
@@ -1893,7 +1798,6 @@
       "b2"
     ],
     "category": "Vocabulary",
-    "unit": 4,
     "prerequisites": [
       "quiz-success-failure-b2"
     ],
@@ -1910,7 +1814,6 @@
       "b2"
     ],
     "category": "Grammar",
-    "unit": 4,
     "prerequisites": [
       "flashcard-reading-vocab-b2"
     ],
@@ -1927,7 +1830,6 @@
       "b2"
     ],
     "category": "Grammar",
-    "unit": 4,
     "prerequisites": [
       "completion-used-to-b2"
     ],
@@ -1944,7 +1846,6 @@
       "b2"
     ],
     "category": "Grammar",
-    "unit": 4,
     "description": "Third conditional and mixed conditionals for unreal past and cross-time situations (25 items)",
     "estimatedTime": 3,
     "difficulty": 4,
@@ -1961,7 +1862,6 @@
       "b2"
     ],
     "category": "Grammar",
-    "unit": 4,
     "description": "Wish and if only for present wishes, past regrets, and complaints (25 items)",
     "estimatedTime": 3,
     "difficulty": 4,
@@ -1978,7 +1878,6 @@
       "b2"
     ],
     "category": "Grammar",
-    "unit": 4,
     "prerequisites": [
       "completion-wish-if-only-b2"
     ],
@@ -1995,7 +1894,6 @@
       "b2"
     ],
     "category": "Vocabulary",
-    "unit": 4,
     "prerequisites": [
       "b2-reordering-conditionals-wish"
     ],
@@ -2012,7 +1910,6 @@
       "b2"
     ],
     "category": "Grammar",
-    "unit": 4,
     "description": "Advanced passive voice (all tenses), impersonal passive, and causative have/get (25 items)",
     "estimatedTime": 3,
     "difficulty": 4,
@@ -2029,7 +1926,6 @@
       "b2"
     ],
     "category": "Grammar",
-    "unit": 4,
     "prerequisites": [
       "completion-passive-advanced-b2"
     ],
@@ -2046,7 +1942,6 @@
       "b2"
     ],
     "category": "Idioms",
-    "unit": 4,
     "prerequisites": [
       "b2-reordering-passive-causative"
     ],
@@ -2063,7 +1958,6 @@
       "b2"
     ],
     "category": "Idioms",
-    "unit": 4,
     "prerequisites": [
       "reading-idioms-b2"
     ],
@@ -2080,7 +1974,6 @@
       "b2"
     ],
     "category": "PhrasalVerbs",
-    "unit": 4,
     "prerequisites": [
       "flashcard-time-idioms-b2"
     ],
@@ -2097,7 +1990,6 @@
       "b2"
     ],
     "category": "PhrasalVerbs",
-    "unit": 4,
     "prerequisites": [
       "reading-phrasal-verbs-b2"
     ],
@@ -2114,7 +2006,6 @@
       "b2"
     ],
     "category": "PhrasalVerbs",
-    "unit": 4,
     "prerequisites": [
       "matching-phrasal-verbs-b2"
     ],
@@ -2131,7 +2022,6 @@
       "b2"
     ],
     "category": "Idioms",
-    "unit": 4,
     "prerequisites": [
       "completion-phrasal-verbs-b2"
     ],
@@ -2148,7 +2038,6 @@
       "b2"
     ],
     "category": "Idioms",
-    "unit": 4,
     "prerequisites": [
       "flashcard-ielts-idioms-pack-b2"
     ],
@@ -2165,7 +2054,6 @@
       "b2"
     ],
     "category": "PhrasalVerbs",
-    "unit": 4,
     "prerequisites": [
       "quiz-idioms-professional-b2"
     ],
@@ -2182,7 +2070,6 @@
       "b2"
     ],
     "category": "PhrasalVerbs",
-    "unit": 4,
     "prerequisites": [
       "completion-phrasal-verbs-advanced-b2"
     ],
@@ -2199,7 +2086,6 @@
       "b2"
     ],
     "category": "PhrasalVerbs",
-    "unit": 4,
     "prerequisites": [
       "quiz-phrasal-verbs-b2"
     ],
@@ -2216,7 +2102,6 @@
       "b2"
     ],
     "category": "Idioms",
-    "unit": 4,
     "prerequisites": [
       "b2-reordering-phrasal-verbs"
     ],
@@ -2233,7 +2118,6 @@
       "b2"
     ],
     "category": "Grammar",
-    "unit": 4,
     "prerequisites": [
       "b2-reordering-idioms"
     ],
@@ -2250,7 +2134,6 @@
       "b2"
     ],
     "category": "Grammar",
-    "unit": 4,
     "prerequisites": [
       "completion-gerunds-infinitives-advanced-b2"
     ],
@@ -2267,7 +2150,6 @@
       "b2"
     ],
     "category": "Grammar",
-    "unit": 4,
     "prerequisites": [
       "b2-reordering-used-to-connectors"
     ],
@@ -2284,9 +2166,8 @@
       "b2"
     ],
     "category": "Review",
-    "unit": 4,
     "prerequisites": [
-      "quiz-gerunds-infinitives-advanced-b2"
+      "b2-sorting-professional-idioms"
     ],
     "description": "Comprehensive review of B2 level concepts: used to, phrasal verbs, connectors, and professional vocabulary",
     "estimatedTime": 3,
@@ -2301,7 +2182,6 @@
       "c1"
     ],
     "category": "Reading",
-    "unit": 5,
     "prerequisites": [
       "quiz-upper-intermediate-review-b2"
     ],
@@ -2318,7 +2198,6 @@
       "c1"
     ],
     "category": "Vocabulary",
-    "unit": 5,
     "prerequisites": [
       "reading-academic-c1"
     ],
@@ -2335,7 +2214,6 @@
       "c1"
     ],
     "category": "Vocabulary",
-    "unit": 5,
     "prerequisites": [
       "flashcard-ielts-business-c1"
     ],
@@ -2352,7 +2230,6 @@
       "c1"
     ],
     "category": "Reading",
-    "unit": 5,
     "prerequisites": [
       "quiz-ielts-business-c1"
     ],
@@ -2369,7 +2246,6 @@
       "c1"
     ],
     "category": "Vocabulary",
-    "unit": 5,
     "prerequisites": [
       "reading-leadership-c1"
     ],
@@ -2386,7 +2262,6 @@
       "c1"
     ],
     "category": "Vocabulary",
-    "unit": 5,
     "prerequisites": [
       "flashcard-ielts-home-daily-life-c1"
     ],
@@ -2403,7 +2278,6 @@
       "c1"
     ],
     "category": "Reading",
-    "unit": 5,
     "prerequisites": [
       "completion-ielts-home-life-c1"
     ],
@@ -2420,7 +2294,6 @@
       "c1"
     ],
     "category": "Vocabulary",
-    "unit": 5,
     "prerequisites": [
       "reading-cultural-analysis-c1"
     ],
@@ -2437,7 +2310,6 @@
       "c1"
     ],
     "category": "Vocabulary",
-    "unit": 5,
     "prerequisites": [
       "sorting-formal-register-c1"
     ],
@@ -2454,7 +2326,6 @@
       "c1"
     ],
     "category": "Vocabulary",
-    "unit": 5,
     "prerequisites": [
       "flashcard-ielts-problem-solving-c1"
     ],
@@ -2471,7 +2342,6 @@
       "c1"
     ],
     "category": "Vocabulary",
-    "unit": 5,
     "prerequisites": [
       "quiz-problem-solving-c1"
     ],
@@ -2488,7 +2358,6 @@
       "c1"
     ],
     "category": "Vocabulary",
-    "unit": 5,
     "prerequisites": [
       "flashcard-reading-vocab-c1"
     ],
@@ -2505,7 +2374,6 @@
       "c1"
     ],
     "category": "Vocabulary",
-    "unit": 5,
     "prerequisites": [
       "quiz-reading-vocab-c1"
     ],
@@ -2522,7 +2390,6 @@
       "c1"
     ],
     "category": "Grammar",
-    "unit": 5,
     "prerequisites": [
       "flashcard-nature-animals-c1"
     ],
@@ -2539,7 +2406,6 @@
       "c1"
     ],
     "category": "Grammar",
-    "unit": 5,
     "prerequisites": [
       "completion-advanced-grammar-conditionals-c1"
     ],
@@ -2556,7 +2422,6 @@
       "c1"
     ],
     "category": "Grammar",
-    "unit": 5,
     "prerequisites": [
       "completion-advanced-grammar-inversions-c1"
     ],
@@ -2573,7 +2438,6 @@
       "c1"
     ],
     "category": "Grammar",
-    "unit": 5,
     "prerequisites": [
       "quiz-grammar-inversions-c1"
     ],
@@ -2590,7 +2454,6 @@
       "c1"
     ],
     "category": "Grammar",
-    "unit": 5,
     "prerequisites": [
       "c1-reordering-inversions"
     ],
@@ -2607,7 +2470,6 @@
       "c1"
     ],
     "category": "Grammar",
-    "unit": 5,
     "prerequisites": [
       "quiz-participles-c1"
     ],
@@ -2624,7 +2486,6 @@
       "c1"
     ],
     "category": "Grammar",
-    "unit": 5,
     "prerequisites": [
       "completion-complex-prepositions-practice-c1"
     ],
@@ -2641,7 +2502,6 @@
       "c1"
     ],
     "category": "Grammar",
-    "unit": 5,
     "prerequisites": [
       "c1-reordering-complex-prepositions"
     ],
@@ -2658,7 +2518,6 @@
       "c1"
     ],
     "category": "Vocabulary",
-    "unit": 5,
     "prerequisites": [
       "completion-advanced-grammar-participles-c1"
     ],
@@ -2675,7 +2534,6 @@
       "c1"
     ],
     "category": "Grammar",
-    "unit": 5,
     "prerequisites": [
       "matching-vocabulary-c1"
     ],
@@ -2692,7 +2550,6 @@
       "c1"
     ],
     "category": "Grammar",
-    "unit": 5,
     "prerequisites": [
       "completion-advanced-grammar-subjunctive-c1"
     ],
@@ -2709,7 +2566,6 @@
       "c1"
     ],
     "category": "Reading",
-    "unit": 5,
     "prerequisites": [
       "c1-reordering-participles-subjunctive"
     ],
@@ -2726,7 +2582,6 @@
       "c1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 5,
     "prerequisites": [
       "reading-phrasal-verbs-idioms-c1"
     ],
@@ -2743,7 +2598,6 @@
       "c1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 5,
     "prerequisites": [
       "matching-advanced-phrasal-verbs-c1"
     ],
@@ -2760,7 +2614,6 @@
       "c1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 5,
     "prerequisites": [
       "completion-advanced-phrasal-verbs-c1"
     ],
@@ -2777,7 +2630,6 @@
       "c1"
     ],
     "category": "Idioms",
-    "unit": 5,
     "prerequisites": [
       "c1-reordering-phrasal-verbs"
     ],
@@ -2794,7 +2646,6 @@
       "c1"
     ],
     "category": "Idioms",
-    "unit": 5,
     "prerequisites": [
       "flashcard-advanced-idioms-c1"
     ],
@@ -2811,7 +2662,6 @@
       "c1"
     ],
     "category": "Idioms",
-    "unit": 5,
     "prerequisites": [
       "quiz-advanced-idioms-c1"
     ],
@@ -2828,7 +2678,6 @@
       "c1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 5,
     "prerequisites": [
       "c1-reordering-idioms"
     ],
@@ -2845,9 +2694,8 @@
       "c1"
     ],
     "category": "Review",
-    "unit": 5,
     "prerequisites": [
-      "quiz-phrasal-verbs-c1"
+      "c1-sorting-phrasal-verbs-register"
     ],
     "description": "Comprehensive review of C1 grammar: conditionals, inversions, participles, subjunctive",
     "estimatedTime": 3,
@@ -2862,7 +2710,6 @@
       "c2"
     ],
     "category": "Reading",
-    "unit": 6,
     "prerequisites": [
       "quiz-advanced-grammar-review-c1"
     ],
@@ -2879,7 +2726,6 @@
       "c2"
     ],
     "category": "Vocabulary",
-    "unit": 6,
     "prerequisites": [
       "reading-specialized-c2"
     ],
@@ -2896,7 +2742,6 @@
       "c2"
     ],
     "category": "Vocabulary",
-    "unit": 6,
     "prerequisites": [
       "flashcard-academic-c2"
     ],
@@ -2913,7 +2758,6 @@
       "c2"
     ],
     "category": "Vocabulary",
-    "unit": 6,
     "prerequisites": [
       "flashcard-academic-writing-c2"
     ],
@@ -2930,7 +2774,6 @@
       "c2"
     ],
     "category": "Reading",
-    "unit": 6,
     "prerequisites": [
       "quiz-academic-writing-c2"
     ],
@@ -2947,7 +2790,6 @@
       "c2"
     ],
     "category": "Vocabulary",
-    "unit": 6,
     "prerequisites": [
       "reading-philosophical-c2"
     ],
@@ -2964,7 +2806,6 @@
       "c2"
     ],
     "category": "Vocabulary",
-    "unit": 6,
     "prerequisites": [
       "flashcard-critical-analysis-c2"
     ],
@@ -2981,7 +2822,6 @@
       "c2"
     ],
     "category": "Reading",
-    "unit": 6,
     "prerequisites": [
       "quiz-critical-analysis-c2"
     ],
@@ -2998,7 +2838,6 @@
       "c2"
     ],
     "category": "Vocabulary",
-    "unit": 6,
     "prerequisites": [
       "reading-literary-c2"
     ],
@@ -3015,7 +2854,6 @@
       "c2"
     ],
     "category": "Vocabulary",
-    "unit": 6,
     "prerequisites": [
       "flashcard-reading-vocab-c2"
     ],
@@ -3032,7 +2870,6 @@
       "c2"
     ],
     "category": "Vocabulary",
-    "unit": 6,
     "prerequisites": [
       "quiz-reading-vocab-c2"
     ],
@@ -3049,7 +2886,6 @@
       "c2"
     ],
     "category": "Vocabulary",
-    "unit": 6,
     "prerequisites": [
       "completion-reading-vocab-c2"
     ],
@@ -3066,7 +2902,6 @@
       "c2"
     ],
     "category": "Vocabulary",
-    "unit": 6,
     "prerequisites": [
       "matching-reading-vocab-c2"
     ],
@@ -3083,7 +2918,6 @@
       "c2"
     ],
     "category": "Grammar",
-    "unit": 6,
     "prerequisites": [
       "completion-advanced-collocations-idioms-c2"
     ],
@@ -3100,7 +2934,6 @@
       "c2"
     ],
     "category": "Grammar",
-    "unit": 6,
     "prerequisites": [
       "completion-advanced-grammatical-structures-c2"
     ],
@@ -3117,7 +2950,6 @@
       "c2"
     ],
     "category": "Vocabulary",
-    "unit": 6,
     "prerequisites": [
       "c2-reordering-advanced-structures"
     ],
@@ -3134,7 +2966,6 @@
       "c2"
     ],
     "category": "Vocabulary",
-    "unit": 6,
     "prerequisites": [
       "completion-formal-vocabulary-nuance-c2"
     ],
@@ -3151,7 +2982,6 @@
       "c2"
     ],
     "category": "Vocabulary",
-    "unit": 6,
     "prerequisites": [
       "completion-formal-register-advanced-c2"
     ],
@@ -3168,7 +2998,6 @@
       "c2"
     ],
     "category": "Reading",
-    "unit": 6,
     "prerequisites": [
       "sorting-nuance-vocabulary-c2"
     ],
@@ -3185,7 +3014,6 @@
       "c2"
     ],
     "category": "PhrasalVerbs",
-    "unit": 6,
     "prerequisites": [
       "reading-phrasal-verbs-idioms-c2"
     ],
@@ -3202,7 +3030,6 @@
       "c2"
     ],
     "category": "PhrasalVerbs",
-    "unit": 6,
     "prerequisites": [
       "matching-mastery-phrasal-verbs-c2"
     ],
@@ -3219,7 +3046,6 @@
       "c2"
     ],
     "category": "PhrasalVerbs",
-    "unit": 6,
     "prerequisites": [
       "completion-advanced-phrasal-verbs-c2"
     ],
@@ -3236,7 +3062,6 @@
       "c2"
     ],
     "category": "Grammar",
-    "unit": 6,
     "prerequisites": [
       "c2-reordering-phrasal-verbs"
     ],
@@ -3253,7 +3078,6 @@
       "c2"
     ],
     "category": "Vocabulary",
-    "unit": 6,
     "prerequisites": [
       "completion-complex-prepositions-conjunctions-c2"
     ],
@@ -3270,7 +3094,6 @@
       "c2"
     ],
     "category": "Idioms",
-    "unit": 6,
     "prerequisites": [
       "matching-advanced-collocations-c2"
     ],
@@ -3287,7 +3110,6 @@
       "c2"
     ],
     "category": "Idioms",
-    "unit": 6,
     "prerequisites": [
       "flashcard-mastery-idioms-c2"
     ],
@@ -3304,7 +3126,6 @@
       "c2"
     ],
     "category": "Idioms",
-    "unit": 6,
     "prerequisites": [
       "quiz-mastery-idioms-c2"
     ],
@@ -3321,7 +3142,6 @@
       "c2"
     ],
     "category": "Grammar",
-    "unit": 6,
     "description": "Sort discourse markers by function: Contrast, Addition, Cause, Sequence",
     "estimatedTime": 2,
     "difficulty": 5,
@@ -3338,11 +3158,26 @@
       "c2"
     ],
     "category": "Grammar",
-    "unit": 6,
     "prerequisites": [
       "sorting-discourse-markers-c2"
     ],
     "description": "Reorder sentences with formal discourse markers and academic register",
+    "estimatedTime": 2,
+    "difficulty": 5
+  },
+  {
+    "id": "sorting-mastery-phrasal-verbs-c2",
+    "name": "Mastery Phrasal Verbs by Function",
+    "learningMode": "sorting",
+    "dataPath": "data/c2/c2-sorting-mastery-phrasal-verbs.json",
+    "level": [
+      "c2"
+    ],
+    "category": "PhrasalVerbs",
+    "prerequisites": [
+      "c2-reordering-discourse-register"
+    ],
+    "description": "Sort mastery-level phrasal verbs by semantic function: causation, discourse, planning, perception, social, discovery",
     "estimatedTime": 2,
     "difficulty": 5
   },
@@ -3355,9 +3190,8 @@
       "c2"
     ],
     "category": "Review",
-    "unit": 6,
     "prerequisites": [
-      "c2-reordering-discourse-register"
+      "c2-matching-literary-idioms-origins"
     ],
     "description": "Comprehensive mastery assessment",
     "estimatedTime": 3,
@@ -3372,9 +3206,8 @@
       "a1"
     ],
     "category": "Grammar",
-    "unit": 2,
     "prerequisites": [
-      "completion-basic-sentences-a1"
+      "a1-error-correction-basic-phrasal-verbs"
     ],
     "description": "Transform simple sentences: negatives, questions, tense changes",
     "estimatedTime": 8,
@@ -3389,9 +3222,8 @@
       "a2"
     ],
     "category": "Grammar",
-    "unit": 3,
     "prerequisites": [
-      "completion-present-perfect-a2"
+      "sorting-vocabulary-context-a2"
     ],
     "description": "Rewrite sentences changing tenses, voice, and reported speech",
     "estimatedTime": 10,
@@ -3406,9 +3238,8 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 4,
     "prerequisites": [
-      "completion-conditionals-b1"
+      "quiz-gerunds-infinitives-b1"
     ],
     "description": "Transform sentences using conditionals, passive voice, and indirect speech",
     "estimatedTime": 12,
@@ -3423,9 +3254,8 @@
       "b2"
     ],
     "category": "Grammar",
-    "unit": 5,
     "prerequisites": [
-      "completion-conditionals-advanced-b2"
+      "quiz-gerunds-infinitives-advanced-b2"
     ],
     "description": "Third conditional, cleft sentences, causative, mixed conditionals",
     "estimatedTime": 15,
@@ -3440,9 +3270,8 @@
       "c1"
     ],
     "category": "Grammar",
-    "unit": 5,
     "prerequisites": [
-      "completion-advanced-grammar-inversions-c1"
+      "quiz-phrasal-verbs-c1"
     ],
     "description": "Formal inversions, subjunctive mood, reduced clauses, impersonal passive",
     "estimatedTime": 15,
@@ -3457,9 +3286,8 @@
       "c2"
     ],
     "category": "Grammar",
-    "unit": 6,
     "prerequisites": [
-      "completion-advanced-grammatical-structures-c2"
+      "sorting-mastery-phrasal-verbs-c2"
     ],
     "description": "Literary inversions, nominalization, hedging, absolute participle clauses",
     "estimatedTime": 18,
@@ -3474,7 +3302,6 @@
       "a1"
     ],
     "category": "Vocabulary",
-    "unit": 1,
     "prerequisites": [
       "transformation-basic-sentences-a1"
     ],
@@ -3491,7 +3318,6 @@
       "a2"
     ],
     "category": "Vocabulary",
-    "unit": 2,
     "prerequisites": [
       "transformation-tense-changes-a2"
     ],
@@ -3508,7 +3334,6 @@
       "b1"
     ],
     "category": "Vocabulary",
-    "unit": 3,
     "prerequisites": [
       "transformation-conditionals-passive-b1"
     ],
@@ -3525,7 +3350,6 @@
       "b2"
     ],
     "category": "Vocabulary",
-    "unit": 4,
     "prerequisites": [
       "transformation-advanced-grammar-b2"
     ],
@@ -3542,7 +3366,6 @@
       "c1"
     ],
     "category": "Grammar",
-    "unit": 5,
     "prerequisites": [
       "transformation-inversions-subjunctive-c1"
     ],
@@ -3559,7 +3382,6 @@
       "c2"
     ],
     "category": "Vocabulary",
-    "unit": 6,
     "prerequisites": [
       "transformation-formal-structures-c2"
     ],
@@ -3576,7 +3398,6 @@
       "a1"
     ],
     "category": "Grammar",
-    "unit": 1,
     "prerequisites": [
       "a1-word-formation-basic-suffixes"
     ],
@@ -3593,7 +3414,6 @@
       "a2"
     ],
     "category": "Grammar",
-    "unit": 2,
     "prerequisites": [
       "a2-word-formation-common-nouns"
     ],
@@ -3610,7 +3430,6 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 3,
     "prerequisites": [
       "b1-word-formation-prefix-suffix"
     ],
@@ -3627,7 +3446,6 @@
       "b2"
     ],
     "category": "Grammar",
-    "unit": 4,
     "prerequisites": [
       "b2-word-formation-advanced-suffixes"
     ],
@@ -3644,7 +3462,6 @@
       "c1"
     ],
     "category": "Grammar",
-    "unit": 5,
     "prerequisites": [
       "c1-word-formation-multi-step"
     ],
@@ -3661,7 +3478,6 @@
       "c2"
     ],
     "category": "Grammar",
-    "unit": 6,
     "prerequisites": [
       "c2-word-formation-scholarly"
     ],
@@ -3678,7 +3494,6 @@
       "a1"
     ],
     "category": "Grammar",
-    "unit": 1,
     "prerequisites": [
       "a1-error-correction-subject-verb"
     ],
@@ -3695,7 +3510,6 @@
       "a1"
     ],
     "category": "Vocabulary",
-    "unit": 1,
     "prerequisites": [
       "a1-transformation-pronoun-possessive"
     ],
@@ -3712,7 +3526,6 @@
       "a1"
     ],
     "category": "Vocabulary",
-    "unit": 1,
     "prerequisites": [
       "a1-transformation-singular-plural"
     ],
@@ -3729,7 +3542,6 @@
       "a1"
     ],
     "category": "Grammar",
-    "unit": 1,
     "prerequisites": [
       "a1-word-formation-jobs-people"
     ],
@@ -3746,7 +3558,6 @@
       "a1"
     ],
     "category": "Grammar",
-    "unit": 1,
     "prerequisites": [
       "a1-word-formation-adjective-formation"
     ],
@@ -3763,7 +3574,6 @@
       "a1"
     ],
     "category": "Vocabulary",
-    "unit": 1,
     "prerequisites": [
       "a1-error-correction-subject-verb-agreement"
     ],
@@ -3780,7 +3590,6 @@
       "a1"
     ],
     "category": "Vocabulary",
-    "unit": 1,
     "prerequisites": [
       "a1-error-correction-article-errors"
     ],
@@ -3797,7 +3606,6 @@
       "a1"
     ],
     "category": "Idioms",
-    "unit": 1,
     "prerequisites": [
       "a1-reordering-daily-routine"
     ],
@@ -3814,7 +3622,6 @@
       "a1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 1,
     "prerequisites": [
       "a1-sorting-simple-idioms"
     ],
@@ -3831,7 +3638,6 @@
       "a1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 1,
     "prerequisites": [
       "a1-matching-basic-phrasal-verbs"
     ],
@@ -3848,7 +3654,6 @@
       "a2"
     ],
     "category": "Grammar",
-    "unit": 2,
     "prerequisites": [
       "a2-error-correction-tense-errors"
     ],
@@ -3865,7 +3670,6 @@
       "a2"
     ],
     "category": "PhrasalVerbs",
-    "unit": 2,
     "prerequisites": [
       "a2-transformation-past-continuous-future"
     ],
@@ -3882,7 +3686,6 @@
       "a2"
     ],
     "category": "Vocabulary",
-    "unit": 2,
     "prerequisites": [
       "a2-transformation-phrasal-verb-tense"
     ],
@@ -3899,7 +3702,6 @@
       "a2"
     ],
     "category": "Grammar",
-    "unit": 2,
     "prerequisites": [
       "a2-word-formation-noun-suffixes"
     ],
@@ -3916,7 +3718,6 @@
       "a2"
     ],
     "category": "Grammar",
-    "unit": 2,
     "prerequisites": [
       "a2-word-formation-adverb-formation"
     ],
@@ -3933,7 +3734,6 @@
       "a2"
     ],
     "category": "PhrasalVerbs",
-    "unit": 2,
     "prerequisites": [
       "a2-error-correction-tense-consistency"
     ],
@@ -3950,7 +3750,6 @@
       "a2"
     ],
     "category": "Grammar",
-    "unit": 2,
     "prerequisites": [
       "a2-error-correction-phrasal-verb-particle"
     ],
@@ -3967,7 +3766,6 @@
       "a2"
     ],
     "category": "Vocabulary",
-    "unit": 2,
     "prerequisites": [
       "a2-reordering-comparatives-superlatives"
     ],
@@ -3984,7 +3782,6 @@
       "a2"
     ],
     "category": "Idioms",
-    "unit": 2,
     "prerequisites": [
       "a2-reordering-daily-activities"
     ],
@@ -4001,7 +3798,6 @@
       "b1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 3,
     "prerequisites": [
       "b1-error-correction-conditionals"
     ],
@@ -4018,7 +3814,6 @@
       "b1"
     ],
     "category": "Vocabulary",
-    "unit": 3,
     "prerequisites": [
       "b1-transformation-phrasal-verb-register"
     ],
@@ -4035,7 +3830,6 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 3,
     "prerequisites": [
       "b1-word-formation-prefix-suffix-combo"
     ],
@@ -4052,7 +3846,6 @@
       "b1"
     ],
     "category": "Grammar",
-    "unit": 3,
     "prerequisites": [
       "b1-error-correction-conditional-passive"
     ],
@@ -4069,7 +3862,6 @@
       "b1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 3,
     "prerequisites": [
       "b1-reordering-conditional-sentences"
     ],
@@ -4086,7 +3878,6 @@
       "b1"
     ],
     "category": "Idioms",
-    "unit": 3,
     "prerequisites": [
       "b1-reordering-phrasal-verb-sentences"
     ],
@@ -4103,7 +3894,6 @@
       "b2"
     ],
     "category": "Grammar",
-    "unit": 4,
     "prerequisites": [
       "b2-error-correction-advanced-tense"
     ],
@@ -4120,7 +3910,6 @@
       "b2"
     ],
     "category": "Vocabulary",
-    "unit": 4,
     "prerequisites": [
       "b2-transformation-cleft-emphasis"
     ],
@@ -4137,7 +3926,6 @@
       "b2"
     ],
     "category": "Grammar",
-    "unit": 4,
     "prerequisites": [
       "b2-word-formation-advanced-suffixes-ive"
     ],
@@ -4154,7 +3942,6 @@
       "b2"
     ],
     "category": "Grammar",
-    "unit": 4,
     "prerequisites": [
       "b2-word-formation-negative-prefixes"
     ],
@@ -4171,7 +3958,6 @@
       "b2"
     ],
     "category": "Grammar",
-    "unit": 4,
     "prerequisites": [
       "b2-error-correction-advanced-tense-collocation"
     ],
@@ -4188,7 +3974,6 @@
       "b2"
     ],
     "category": "PhrasalVerbs",
-    "unit": 4,
     "prerequisites": [
       "b2-reordering-complex-compound"
     ],
@@ -4205,7 +3990,6 @@
       "b2"
     ],
     "category": "Idioms",
-    "unit": 4,
     "prerequisites": [
       "b2-reordering-advanced-phrasal-verbs"
     ],
@@ -4222,7 +4006,6 @@
       "c1"
     ],
     "category": "Grammar",
-    "unit": 5,
     "prerequisites": [
       "c1-error-correction-inversion"
     ],
@@ -4239,7 +4022,6 @@
       "c1"
     ],
     "category": "Idioms",
-    "unit": 5,
     "prerequisites": [
       "c1-transformation-participle-clauses"
     ],
@@ -4256,7 +4038,6 @@
       "c1"
     ],
     "category": "Grammar",
-    "unit": 5,
     "prerequisites": [
       "c1-transformation-formal-register-idioms"
     ],
@@ -4273,7 +4054,6 @@
       "c1"
     ],
     "category": "Vocabulary",
-    "unit": 5,
     "prerequisites": [
       "c1-word-formation-multi-step-derivations"
     ],
@@ -4290,7 +4070,6 @@
       "c1"
     ],
     "category": "Grammar",
-    "unit": 5,
     "prerequisites": [
       "c1-word-formation-academic"
     ],
@@ -4307,7 +4086,6 @@
       "c1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 5,
     "prerequisites": [
       "c1-error-correction-inversion-subjunctive"
     ],
@@ -4324,7 +4102,6 @@
       "c1"
     ],
     "category": "Grammar",
-    "unit": 5,
     "prerequisites": [
       "c1-error-correction-advanced-phrasal-verbs"
     ],
@@ -4341,7 +4118,6 @@
       "c1"
     ],
     "category": "Vocabulary",
-    "unit": 5,
     "prerequisites": [
       "c1-reordering-inverted-emphatic"
     ],
@@ -4358,7 +4134,6 @@
       "c1"
     ],
     "category": "PhrasalVerbs",
-    "unit": 5,
     "prerequisites": [
       "c1-reordering-academic-argument"
     ],
@@ -4375,7 +4150,6 @@
       "c2"
     ],
     "category": "Grammar",
-    "unit": 6,
     "prerequisites": [
       "c2-error-correction-register"
     ],
@@ -4392,7 +4166,6 @@
       "c2"
     ],
     "category": "Vocabulary",
-    "unit": 6,
     "prerequisites": [
       "c2-transformation-nominalization"
     ],
@@ -4409,7 +4182,6 @@
       "c2"
     ],
     "category": "Grammar",
-    "unit": 6,
     "prerequisites": [
       "c2-transformation-academic-hedging"
     ],
@@ -4426,7 +4198,6 @@
       "c2"
     ],
     "category": "Vocabulary",
-    "unit": 6,
     "prerequisites": [
       "c2-word-formation-archaic-literary"
     ],
@@ -4443,7 +4214,6 @@
       "c2"
     ],
     "category": "Grammar",
-    "unit": 6,
     "prerequisites": [
       "c2-word-formation-scholarly-families"
     ],
@@ -4460,7 +4230,6 @@
       "c2"
     ],
     "category": "Idioms",
-    "unit": 6,
     "prerequisites": [
       "c2-error-correction-register-collocation"
     ],
@@ -4477,7 +4246,6 @@
       "c2"
     ],
     "category": "Grammar",
-    "unit": 6,
     "prerequisites": [
       "c2-error-correction-literary-idioms"
     ],
@@ -4494,7 +4262,6 @@
       "c2"
     ],
     "category": "Vocabulary",
-    "unit": 6,
     "prerequisites": [
       "c2-reordering-formal-academic"
     ],
@@ -4511,7 +4278,6 @@
       "c2"
     ],
     "category": "Grammar",
-    "unit": 6,
     "prerequisites": [
       "c2-reordering-literary-prose"
     ],
@@ -4528,7 +4294,6 @@
       "c2"
     ],
     "category": "PhrasalVerbs",
-    "unit": 6,
     "prerequisites": [
       "c2-sorting-discourse-markers"
     ],
@@ -4545,7 +4310,6 @@
       "c2"
     ],
     "category": "Idioms",
-    "unit": 6,
     "prerequisites": [
       "c2-matching-mastery-phrasal-verbs-formal"
     ],
