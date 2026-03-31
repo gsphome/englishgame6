@@ -343,16 +343,6 @@
   stroke: currentColor;
 }
 
-html.light .compact-about .compact-about__developer-link .compact-about__link-icon {
-  color: inherit;
-  stroke: currentColor;
-}
-
-html.dark .compact-about .compact-about__developer-link .compact-about__link-icon {
-  color: inherit;
-  stroke: currentColor;
-}
-
 .compact-about__developer-link span {
   line-height: 1;
 }
@@ -614,83 +604,6 @@ html.dark .compact-about__content::-webkit-scrollbar-thumb {
 
 html.dark .compact-about__content::-webkit-scrollbar-thumb:hover {
   background-color: var(--theme-primary-purple, #a78bfa);
-}
-
-/* === ADDITIONAL DARK MODE FIXES === */
-/* Ensure all backgrounds and borders are properly themed */
-html.dark .compact-about__developer {
-  background: linear-gradient(
-    135deg,
-    var(--theme-bg-subtle, #374151) 0%,
-    var(--theme-bg-soft, #4b5563) 100%
-  ) !important;
-  border-color: var(--theme-border-soft, #4b5563) !important;
-}
-
-html.dark .compact-about__tech-stack {
-  background: linear-gradient(
-    135deg,
-    var(--theme-bg-subtle, #374151) 0%,
-    var(--theme-bg-soft, #4b5563) 100%
-  ) !important;
-  border-color: var(--theme-border-soft, #4b5563) !important;
-}
-
-/* Fix any remaining light backgrounds in dark mode */
-html.dark .compact-about__info-item:hover {
-  background-color: var(--theme-bg-soft, #4b5563) !important;
-  border-color: var(--theme-primary-blue, #60a5fa) !important;
-}
-
-html.dark .compact-about__feature:hover {
-  background-color: var(--theme-bg-soft, #4b5563) !important;
-  border-color: var(--theme-primary-purple, #a78bfa) !important;
-}
-
-/* === COMPREHENSIVE DARK MODE NUCLEAR FIXES === */
-/* Maximum specificity to ensure dark mode works properly */
-
-/* Header gradient override for dark mode */
-html.dark body .compact-about .compact-about__header {
-  background: linear-gradient(135deg, #1e40af 0%, #7c3aed 100%) !important;
-}
-
-/* Tech stack container dark mode */
-html.dark body .compact-about .compact-about__tech-stack {
-  background: linear-gradient(135deg, #374151 0%, #4b5563 100%) !important;
-  border: 1px solid #4b5563 !important;
-}
-
-/* Developer section dark mode */
-html.dark body .compact-about .compact-about__developer {
-  background: linear-gradient(135deg, #374151 0%, #4b5563 100%) !important;
-  border: 1px solid #4b5563 !important;
-}
-
-/* Features section dark mode */
-html.dark body .compact-about .compact-about__features .compact-about__feature {
-  background: linear-gradient(135deg, #374151 0%, #4b5563 100%) !important;
-  border: 1px solid #4b5563 !important;
-  color: #d1d5db !important;
-}
-
-/* Info grid dark mode */
-html.dark body .compact-about .compact-about__info-grid .compact-about__info-item {
-  background: linear-gradient(135deg, #374151 0%, #4b5563 100%) !important;
-  border: 1px solid #4b5563 !important;
-}
-
-/* Close button dark mode enhancement */
-html.dark .compact-about__header .modal__close-btn {
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  color: rgba(255, 255, 255, 0.95) !important;
-}
-
-html.dark .compact-about__header .modal__close-btn:hover {
-  background-color: rgba(255, 255, 255, 0.3) !important;
-  border-color: rgba(255, 255, 255, 0.5) !important;
-  color: #ffffff !important;
 }
 
 /* === LIGHT MODE OVERRIDES === */

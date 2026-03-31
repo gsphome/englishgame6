@@ -166,11 +166,8 @@ html.dark .matching-component__column {
 /* ===== FINAL - CORRECT ANSWER VISIBILITY (Homologated with quiz) ===== */
 
 /* CORRECT ANSWERS - Homologated */
-html body div.matching-component .matching-component__item.matching-component__item--correct,
-html body div.matching-component button.matching-component__item.matching-component__item--correct,
-html body div.matching-component .matching-component__button.matching-component__item--correct,
+html body div.matching-component .matching-component__item--correct,
 html body .matching-component .matching-component__item--correct,
-html body button.matching-component__item--correct,
 .matching-component__item--correct {
   background-color: var(--theme-success, #10b981) !important;
   border-color: transparent !important;
@@ -181,23 +178,8 @@ html body button.matching-component__item--correct,
 }
 
 /* CORRECT ANSWER TEXT - Homologated */
-html
-  body
-  div.matching-component
-  .matching-component__item.matching-component__item--correct
-  .matching-component__item-text,
-html
-  body
-  div.matching-component
-  button.matching-component__item.matching-component__item--correct
-  .matching-component__item-text,
-html
-  body
-  div.matching-component
-  .matching-component__button.matching-component__item--correct
-  .matching-component__item-text,
+html body div.matching-component .matching-component__item--correct .matching-component__item-text,
 html body .matching-component .matching-component__item--correct .matching-component__item-text,
-html body button.matching-component__item--correct .matching-component__item-text,
 .matching-component__item--correct .matching-component__item-text,
 .matching-component__item--correct .matching-component__item-text * {
   color: #ffffff !important;
@@ -206,23 +188,8 @@ html body button.matching-component__item--correct .matching-component__item-tex
 }
 
 /* CORRECT ANSWER LETTER - Homologated */
-html
-  body
-  div.matching-component
-  .matching-component__item.matching-component__item--correct
-  .matching-component__item-letter,
-html
-  body
-  div.matching-component
-  button.matching-component__item.matching-component__item--correct
-  .matching-component__item-letter,
-html
-  body
-  div.matching-component
-  .matching-component__button.matching-component__item--correct
-  .matching-component__item-letter,
+html body div.matching-component .matching-component__item--correct .matching-component__item-letter,
 html body .matching-component .matching-component__item--correct .matching-component__item-letter,
-html body button.matching-component__item--correct .matching-component__item-letter,
 .matching-component__item--correct .matching-component__item-letter {
   background-color: rgba(255, 255, 255, 0.2) !important;
   color: #ffffff !important;
@@ -232,14 +199,8 @@ html body button.matching-component__item--correct .matching-component__item-let
 }
 
 /* INCORRECT ANSWERS - Homologated */
-html body div.matching-component .matching-component__item.matching-component__item--incorrect,
-html
-  body
-  div.matching-component
-  button.matching-component__item.matching-component__item--incorrect,
-html body div.matching-component .matching-component__button.matching-component__item--incorrect,
+html body div.matching-component .matching-component__item--incorrect,
 html body .matching-component .matching-component__item--incorrect,
-html body button.matching-component__item--incorrect,
 .matching-component__item--incorrect {
   background-color: var(--theme-error, #ef4444) !important;
   border-color: transparent !important;
@@ -250,23 +211,8 @@ html body button.matching-component__item--incorrect,
 }
 
 /* INCORRECT ANSWER TEXT - Homologated */
-html
-  body
-  div.matching-component
-  .matching-component__item.matching-component__item--incorrect
-  .matching-component__item-text,
-html
-  body
-  div.matching-component
-  button.matching-component__item.matching-component__item--incorrect
-  .matching-component__item-text,
-html
-  body
-  div.matching-component
-  .matching-component__button.matching-component__item--incorrect
-  .matching-component__item-text,
+html body div.matching-component .matching-component__item--incorrect .matching-component__item-text,
 html body .matching-component .matching-component__item--incorrect .matching-component__item-text,
-html body button.matching-component__item--incorrect .matching-component__item-text,
 .matching-component__item--incorrect .matching-component__item-text,
 .matching-component__item--incorrect .matching-component__item-text * {
   color: #ffffff !important;
@@ -275,12 +221,7 @@ html body button.matching-component__item--incorrect .matching-component__item-t
 }
 
 /* DARK MODE - Homologated */
-html.dark body div.matching-component .matching-component__item.matching-component__item--correct,
-html.dark
-  body
-  div.matching-component
-  button.matching-component__item.matching-component__item--correct,
-html.dark body .matching-component .matching-component__item--correct,
+html.dark body div.matching-component .matching-component__item--correct,
 html.dark .matching-component__item--correct {
   background-color: var(--theme-success, #10b981) !important;
   border-color: transparent !important;
@@ -288,21 +229,7 @@ html.dark .matching-component__item--correct {
   box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
 }
 
-html.dark
-  body
-  div.matching-component
-  .matching-component__item.matching-component__item--correct
-  .matching-component__item-text,
-html.dark
-  body
-  div.matching-component
-  button.matching-component__item.matching-component__item--correct
-  .matching-component__item-text,
-html.dark
-  body
-  .matching-component
-  .matching-component__item--correct
-  .matching-component__item-text,
+html.dark body div.matching-component .matching-component__item--correct .matching-component__item-text,
 html.dark .matching-component__item--correct .matching-component__item-text,
 html.dark .matching-component__item--correct .matching-component__item-text * {
   color: #ffffff !important;
@@ -383,35 +310,14 @@ html.dark .matching-component__item--correct .matching-component__item-text * {
     margin-bottom: 0.25rem !important;
   }
 
-  /* Correct/incorrect states: keep visual feedback but compact - NO height growth */
-  /* Must match nuclear override specificity to prevent border/shadow growth */
-  .matching-component .matching-component__item--correct,
-  .matching-component .matching-component__item--incorrect,
-  html body div.matching-component .matching-component__item.matching-component__item--correct,
-  html
-    body
-    div.matching-component
-    button.matching-component__item.matching-component__item--correct,
-  html body div.matching-component .matching-component__item.matching-component__item--incorrect,
-  html
-    body
-    div.matching-component
-    button.matching-component__item.matching-component__item--incorrect,
+  /* Correct/incorrect states: keep visual feedback but compact */
+  html body div.matching-component .matching-component__item--correct,
+  html body div.matching-component .matching-component__item--incorrect,
   html body .matching-component .matching-component__item--correct,
   html body .matching-component .matching-component__item--incorrect,
-  html body button.matching-component__item--correct,
-  html body button.matching-component__item--incorrect,
-  html.dark body div.matching-component .matching-component__item.matching-component__item--correct,
-  html.dark
-    body
-    div.matching-component
-    button.matching-component__item.matching-component__item--correct,
+  html.dark body div.matching-component .matching-component__item--correct,
   html.dark body .matching-component .matching-component__item--correct,
-  html.dark .matching-component__item--correct,
-  html.dark
-    body
-    div.matching-component
-    .matching-component__item.matching-component__item--incorrect,
+  html.dark body div.matching-component .matching-component__item--incorrect,
   html.dark body .matching-component .matching-component__item--incorrect {
     min-height: 2.25rem !important;
     padding: 0.375rem 0.4375rem !important;
@@ -423,52 +329,18 @@ html.dark .matching-component__item--correct .matching-component__item-text * {
   }
 
   /* Incorrect items: solid red on mobile */
-  html body div.matching-component .matching-component__item.matching-component__item--incorrect,
-  html
-    body
-    div.matching-component
-    button.matching-component__item.matching-component__item--incorrect,
+  html body div.matching-component .matching-component__item--incorrect,
   html body .matching-component .matching-component__item--incorrect,
-  html body button.matching-component__item--incorrect,
-  html.dark
-    body
-    div.matching-component
-    .matching-component__item.matching-component__item--incorrect,
+  html.dark body div.matching-component .matching-component__item--incorrect,
   html.dark body .matching-component .matching-component__item--incorrect {
     background-color: var(--theme-error, #ef4444) !important;
   }
 
-  /* Letters inside correct/incorrect must stay same size as initial state */
-  .matching-component .matching-component__item--correct .matching-component__item-letter,
-  .matching-component .matching-component__item--incorrect .matching-component__item-letter,
+  /* Letters inside correct/incorrect must stay same size */
+  html body div.matching-component .matching-component__item--correct .matching-component__item-letter,
+  html body div.matching-component .matching-component__item--incorrect .matching-component__item-letter,
   html body .matching-component .matching-component__item--correct .matching-component__item-letter,
-  html
-    body
-    .matching-component
-    .matching-component__item--incorrect
-    .matching-component__item-letter,
-  html
-    body
-    div.matching-component
-    .matching-component__item.matching-component__item--correct
-    .matching-component__item-letter,
-  html
-    body
-    div.matching-component
-    button.matching-component__item.matching-component__item--correct
-    .matching-component__item-letter,
-  html
-    body
-    div.matching-component
-    .matching-component__item.matching-component__item--incorrect
-    .matching-component__item-letter,
-  html
-    body
-    div.matching-component
-    button.matching-component__item.matching-component__item--incorrect
-    .matching-component__item-letter,
-  html body button.matching-component__item--correct .matching-component__item-letter,
-  html body button.matching-component__item--incorrect .matching-component__item-letter {
+  html body .matching-component .matching-component__item--incorrect .matching-component__item-letter {
     width: 1.125rem !important;
     height: 1.125rem !important;
     font-size: 0.625rem !important;
@@ -506,20 +378,10 @@ html.dark .matching-component__item--correct .matching-component__item-text * {
 
   .matching-component .matching-component__item--correct,
   .matching-component .matching-component__item--incorrect,
-  html body div.matching-component .matching-component__item.matching-component__item--correct,
-  html
-    body
-    div.matching-component
-    button.matching-component__item.matching-component__item--correct,
-  html body div.matching-component .matching-component__item.matching-component__item--incorrect,
-  html
-    body
-    div.matching-component
-    button.matching-component__item.matching-component__item--incorrect,
+  html body div.matching-component .matching-component__item--correct,
+  html body div.matching-component .matching-component__item--incorrect,
   html body .matching-component .matching-component__item--correct,
-  html body .matching-component .matching-component__item--incorrect,
-  html body button.matching-component__item--correct,
-  html body button.matching-component__item--incorrect {
+  html body .matching-component .matching-component__item--incorrect {
     min-height: 2rem !important;
     padding: 0.3125rem 0.375rem !important;
     transform: none !important;
@@ -530,47 +392,16 @@ html.dark .matching-component__item--correct .matching-component__item-text * {
   }
 
   /* Incorrect items: solid red on small mobile */
-  html body div.matching-component .matching-component__item.matching-component__item--incorrect,
-  html
-    body
-    div.matching-component
-    button.matching-component__item.matching-component__item--incorrect,
-  html body .matching-component .matching-component__item--incorrect,
-  html body button.matching-component__item--incorrect {
+  html body div.matching-component .matching-component__item--incorrect,
+  html body .matching-component .matching-component__item--incorrect {
     background-color: var(--theme-error, #ef4444) !important;
   }
 
-  /* Letters inside correct/incorrect must stay same size as initial state */
-  .matching-component .matching-component__item--correct .matching-component__item-letter,
-  .matching-component .matching-component__item--incorrect .matching-component__item-letter,
+  /* Letters inside correct/incorrect */
+  html body div.matching-component .matching-component__item--correct .matching-component__item-letter,
+  html body div.matching-component .matching-component__item--incorrect .matching-component__item-letter,
   html body .matching-component .matching-component__item--correct .matching-component__item-letter,
-  html
-    body
-    .matching-component
-    .matching-component__item--incorrect
-    .matching-component__item-letter,
-  html
-    body
-    div.matching-component
-    .matching-component__item.matching-component__item--correct
-    .matching-component__item-letter,
-  html
-    body
-    div.matching-component
-    button.matching-component__item.matching-component__item--correct
-    .matching-component__item-letter,
-  html
-    body
-    div.matching-component
-    .matching-component__item.matching-component__item--incorrect
-    .matching-component__item-letter,
-  html
-    body
-    div.matching-component
-    button.matching-component__item.matching-component__item--incorrect
-    .matching-component__item-letter,
-  html body button.matching-component__item--correct .matching-component__item-letter,
-  html body button.matching-component__item--incorrect .matching-component__item-letter {
+  html body .matching-component .matching-component__item--incorrect .matching-component__item-letter {
     width: 1rem !important;
     height: 1rem !important;
     font-size: 0.5625rem !important;

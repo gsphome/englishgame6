@@ -302,19 +302,6 @@
   }
 }
 
-/* === SCREEN READER ONLY === */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
 /* === ACCESSIBILITY ENHANCEMENTS === */
 .search-bar__input:focus-visible {
   outline: 3px solid var(--theme-primary-blue, #3b82f6);
@@ -399,110 +386,30 @@ html.dark .search-bar:focus-within {
     display: none;
   }
 }
-/* === APPLE DESIGN PERFECT INTEGRATION WITH MAIN-MENU === */
-
-/* Perfect integration when inside main-menu__search */
+/* === INTEGRATION WITH MAIN-MENU === */
 .main-menu__search .search-bar {
-  /* CRITICAL: Perfect alignment within parent */
   margin: 0 auto;
-
-  /* Controlled width - inherit from parent for harmonious proportions */
   width: 100%;
   max-width: 100%;
-
-  /* Enhanced integration styling with better visibility */
-  background: linear-gradient(
-    145deg,
-    var(--theme-bg-primary, #f9fafb) 0%,
-    var(--theme-bg-elevated, #ffffff) 100%
-  );
-
-  border: 1.5px solid var(--theme-border-medium, #e5e7eb);
-
-  /* Apple-style shadow */
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
-.main-menu__search:focus-within .search-bar {
-  /* Enhanced focus state when integrated */
-  background: linear-gradient(
-    145deg,
-    var(--theme-bg-elevated, #ffffff) 0%,
-    var(--theme-bg-primary, #f9fafb) 100%
-  );
-
-  border-color: var(--theme-primary-blue, #3b82f6);
-
-  /* Apple-style glow effect */
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    0 0 0 1px var(--theme-primary-blue-light, #dbeafe),
-    0 4px 16px rgba(0, 0, 0, 0.08);
-
-  transform: translateY(-1px);
-}
-
-/* Dark mode integration enhancement */
+/* Dark mode integration */
 html.dark .main-menu__search .search-bar {
-  /* Enhanced dark mode background for better visibility */
-  background: linear-gradient(
-    145deg,
-    var(--theme-bg-elevated, #ffffff) 0%,
-    var(--theme-bg-soft, #f9fafb) 100%
-  );
-
   border: 1.5px solid var(--theme-border-soft, #f3f4f6);
-
-  /* Dark mode shadows */
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.05),
     0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-html.dark .main-menu__search:focus-within .search-bar {
-  /* Enhanced dark mode focus state */
-  background: linear-gradient(
-    145deg,
-    var(--theme-bg-soft, #f9fafb) 0%,
-    var(--theme-bg-elevated, #ffffff) 100%
-  );
-
-  border-color: var(--theme-primary-blue, #3b82f6);
-
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    0 0 0 1px var(--theme-primary-blue-light, #dbeafe),
-    0 4px 16px rgba(0, 0, 0, 0.4);
-
-  transform: translateY(-1px);
-}
-
-/* Perfect responsive integration */
-@media (max-width: 639px) {
-  .main-menu__search .search-bar {
-    border-radius: var(--radius-lg, 0.5rem);
-    max-width: 100%;
-  }
-}
-
-@media (min-width: 640px) and (max-width: 899px) {
-  .main-menu__search .search-bar {
-    border-radius: var(--radius-lg, 0.5rem);
-  }
-}
-
+/* Responsive border-radius */
 @media (min-width: 900px) {
   .main-menu__search .search-bar {
     border-radius: 1rem;
   }
 }
 
-/* === CRITICAL FIX: FORZAR ANCHO CORRECTO === */
-/* Usando CSS layers para máxima especificidad y evitar conflictos jerárquicos */
+/* === WIDTH OVERRIDE === */
 @layer overrides {
-  /* Máxima especificidad para evitar conflictos jerárquicos */
   .main-menu .main-menu__search .search-bar {
     width: 100%;
     max-width: 100%;
@@ -510,14 +417,8 @@ html.dark .main-menu__search:focus-within .search-bar {
     box-sizing: border-box;
   }
 
-  /* Asegurar que el input también respete el ancho */
   .main-menu .main-menu__search .search-bar .search-bar__input {
     width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* Forzar que todos los elementos internos respeten el contenedor */
-  .main-menu .main-menu__search .search-bar * {
     box-sizing: border-box;
   }
 }

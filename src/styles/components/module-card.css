@@ -174,12 +174,6 @@
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.module-card:hover .module-card__time {
-  color: rgba(255, 255, 255, 1);
-  background-color: rgba(255, 255, 255, 0.2);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
 /* Learning Mode Variants - BEM-Like Modifiers with Enhanced Gradient Overlays */
 .module-card--flashcard {
   background:
@@ -308,69 +302,22 @@
     linear-gradient(135deg, #e11d48 0%, #be123c 100%);
 }
 
-/* Ensure all text elements are white on colored backgrounds */
-.module-card--flashcard .module-card__title,
-.module-card--flashcard .module-card__type,
-.module-card--flashcard .module-card__level,
-.module-card--flashcard .module-card__time,
-.module-card--quiz .module-card__title,
-.module-card--quiz .module-card__type,
-.module-card--quiz .module-card__level,
-.module-card--quiz .module-card__time,
-.module-card--completion .module-card__title,
-.module-card--completion .module-card__type,
-.module-card--completion .module-card__level,
-.module-card--completion .module-card__time,
-.module-card--sorting .module-card__title,
-.module-card--sorting .module-card__type,
-.module-card--sorting .module-card__level,
-.module-card--sorting .module-card__time,
-.module-card--matching .module-card__title,
-.module-card--matching .module-card__type,
-.module-card--matching .module-card__level,
-.module-card--matching .module-card__time,
-.module-card--reading .module-card__title,
-.module-card--reading .module-card__type,
-.module-card--reading .module-card__level,
-.module-card--reading .module-card__time,
-.module-card--transformation .module-card__title,
-.module-card--transformation .module-card__type,
-.module-card--transformation .module-card__level,
-.module-card--transformation .module-card__time,
-.module-card--word-formation .module-card__title,
-.module-card--word-formation .module-card__type,
-.module-card--word-formation .module-card__level,
-.module-card--word-formation .module-card__time,
-.module-card--error-correction .module-card__title,
-.module-card--error-correction .module-card__type,
-.module-card--error-correction .module-card__level,
-.module-card--error-correction .module-card__time {
+/* All variant cards have white text and icons */
+.module-card[class*="module-card--"] .module-card__title,
+.module-card[class*="module-card--"] .module-card__type,
+.module-card[class*="module-card--"] .module-card__level,
+.module-card[class*="module-card--"] .module-card__time {
   color: var(--theme-text-on-colored, #ffffff);
 }
 
-/* Icons should also be white on colored backgrounds */
-.module-card--flashcard svg,
-.module-card--quiz svg,
-.module-card--completion svg,
-.module-card--sorting svg,
-.module-card--matching svg,
-.module-card--reading svg,
-.module-card--transformation svg,
-.module-card--word-formation svg,
-.module-card--error-correction svg {
+.module-card[class*="module-card--"] svg {
   color: var(--theme-text-on-colored, #ffffff) !important;
   stroke: var(--theme-text-on-colored, #ffffff) !important;
   fill: none !important;
   opacity: 1 !important;
 }
 
-/* Ensure icon visibility in all states */
-.module-card--flashcard .module-card__icon svg,
-.module-card--quiz .module-card__icon svg,
-.module-card--completion .module-card__icon svg,
-.module-card--sorting .module-card__icon svg,
-.module-card--matching .module-card__icon svg,
-.module-card--reading .module-card__icon svg {
+.module-card[class*="module-card--"] .module-card__icon svg {
   color: rgba(255, 255, 255, 0.95) !important;
   stroke: rgba(255, 255, 255, 0.95) !important;
   fill: none !important;
@@ -776,55 +723,9 @@
 
 /* Safari-specific fixes for button flexbox centering */
 @supports (-webkit-appearance: none) {
-  /* Safari has issues with flexbox on button elements */
-  /* Using higher specificity instead of !important */
   html body .module-card {
     -webkit-appearance: none;
     appearance: none;
-    display: -webkit-flex;
-    /* Safari flexbox fix */
-    display: flex;
-    /* Safari flexbox fix */
-    -webkit-align-items: stretch;
-    align-items: stretch;
-  }
-
-  html body .module-card__content {
-    display: -webkit-flex;
-    /* Safari flexbox fix */
-    display: flex;
-    /* Safari flexbox fix */
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-align-items: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-flex: 1;
-    flex: 1;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    /* Force Safari to respect flexbox */
-    min-height: 0;
-    min-width: 0;
-  }
-
-  .module-card__icon {
-    -webkit-flex-shrink: 0;
-    flex-shrink: 0;
-    -webkit-align-self: center;
-    align-self: center;
-  }
-
-  .module-card__title,
-  .module-card__type,
-  .module-card__level {
-    -webkit-flex-shrink: 0;
-    flex-shrink: 0;
-    -webkit-align-self: center;
-    align-self: center;
-    width: 100%;
   }
 }
 
@@ -838,12 +739,11 @@
   color: var(--theme-text-tertiary, #9ca3af);
 }
 
-/* Dark Mode Enhancements for Module Cards */
-/* Only apply dark styles to cards WITHOUT learning mode variants */
+/* Dark Mode for non-variant cards */
 html.dark
   .module-card:not(.module-card--flashcard):not(.module-card--quiz):not(
     .module-card--completion
-  ):not(.module-card--sorting):not(.module-card--matching):not(.module-card--transformation):not(
+  ):not(.module-card--sorting):not(.module-card--matching):not(.module-card--reading):not(.module-card--transformation):not(
     .module-card--word-formation
   ):not(.module-card--error-correction) {
   background: var(--theme-bg-elevated, #1f2937);
@@ -854,18 +754,17 @@ html.dark
 html.dark
   .module-card:not(.module-card--flashcard):not(.module-card--quiz):not(
     .module-card--completion
-  ):not(.module-card--sorting):not(.module-card--matching):not(.module-card--transformation):not(
+  ):not(.module-card--sorting):not(.module-card--matching):not(.module-card--reading):not(.module-card--transformation):not(
     .module-card--word-formation
   ):not(.module-card--error-correction):hover {
   background: var(--theme-bg-soft, #374151);
   border-color: var(--theme-primary-blue, #3b82f6);
 }
 
-/* Dark mode text for non-variant cards */
 html.dark
   .module-card:not(.module-card--flashcard):not(.module-card--quiz):not(
     .module-card--completion
-  ):not(.module-card--sorting):not(.module-card--matching):not(.module-card--transformation):not(
+  ):not(.module-card--sorting):not(.module-card--matching):not(.module-card--reading):not(.module-card--transformation):not(
     .module-card--word-formation
   ):not(.module-card--error-correction)
   .module-card__title {
@@ -875,14 +774,14 @@ html.dark
 html.dark
   .module-card:not(.module-card--flashcard):not(.module-card--quiz):not(
     .module-card--completion
-  ):not(.module-card--sorting):not(.module-card--matching):not(.module-card--transformation):not(
+  ):not(.module-card--sorting):not(.module-card--matching):not(.module-card--reading):not(.module-card--transformation):not(
     .module-card--word-formation
   ):not(.module-card--error-correction)
   .module-card__type,
 html.dark
   .module-card:not(.module-card--flashcard):not(.module-card--quiz):not(
     .module-card--completion
-  ):not(.module-card--sorting):not(.module-card--matching):not(.module-card--transformation):not(
+  ):not(.module-card--sorting):not(.module-card--matching):not(.module-card--reading):not(.module-card--transformation):not(
     .module-card--word-formation
   ):not(.module-card--error-correction)
   .module-card__level {
@@ -895,53 +794,18 @@ html.dark .module-card--locked {
   filter: grayscale(0.5) brightness(1);
 }
 
-html.dark
-  .module-card--locked:not(.module-card--flashcard):not(.module-card--quiz):not(
-    .module-card--completion
-  ):not(.module-card--sorting):not(.module-card--matching):not(.module-card--transformation):not(
-    .module-card--word-formation
-  ):not(.module-card--error-correction) {
-  background: var(--theme-bg-subtle, #374151);
-  border-color: var(--theme-border-medium, #6b7280);
-}
-
 html.dark .module-card--locked .module-card__title {
   color: var(--theme-text-secondary, #d1d5db);
 }
 
-/* Dark mode icons for non-variant cards */
-html.dark
-  .module-card:not(.module-card--flashcard):not(.module-card--quiz):not(
-    .module-card--completion
-  ):not(.module-card--sorting):not(.module-card--matching):not(.module-card--transformation):not(
-    .module-card--word-formation
-  ):not(.module-card--error-correction)
-  svg {
-  color: var(--theme-text-primary, #ffffff);
-  stroke: var(--theme-text-primary, #ffffff);
-}
-
-/* Ensure reading mode icons are visible in both light and dark mode */
-.module-card--reading .module-card__icon svg,
-html.dark .module-card--reading .module-card__icon svg,
-html.light .module-card--reading .module-card__icon svg {
+/* Ensure reading mode icons are visible in all states */
+.module-card--reading .module-card__icon svg {
   color: rgba(255, 255, 255, 0.95) !important;
   stroke: rgba(255, 255, 255, 0.95) !important;
   fill: none !important;
   opacity: 1 !important;
   visibility: visible !important;
   stroke-width: 2 !important;
-}
-
-/* Ensure all reading cards show icons regardless of state */
-.module-card--reading.module-card--unlocked .module-card__icon svg,
-.module-card--reading.module-card--completed .module-card__icon svg,
-.module-card--reading.module-card--locked .module-card__icon svg {
-  color: rgba(255, 255, 255, 0.95) !important;
-  stroke: rgba(255, 255, 255, 0.95) !important;
-  fill: none !important;
-  opacity: 1 !important;
-  visibility: visible !important;
 }
 
 /* === PROGRESS INDICATOR === */

@@ -237,27 +237,33 @@
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
 }
 
-.compact-settings__field--dev {
+.compact-settings__field--dev,
+.compact-settings__offline-toggle {
   background-color: var(--theme-bg-elevated, #ffffff);
   padding: 0.5rem 0.375rem;
   border-radius: 10px;
   border: 1.5px solid var(--theme-primary-blue, #3b82f6);
   position: relative;
   transition: all 0.2s ease;
-  flex: 1;
-  min-width: 0;
   box-shadow: 0 1px 3px 0 rgba(59, 130, 246, 0.1);
 }
 
-.compact-settings__field--dev:hover {
+.compact-settings__field--dev:hover,
+.compact-settings__offline-toggle:hover {
   border-color: var(--theme-primary-blue, #3b82f6);
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
 }
 
-.compact-settings__field--dev:has(input:checked) {
+.compact-settings__field--dev:has(input:checked),
+.compact-settings__offline-toggle:has(input:checked) {
   background-color: rgba(59, 130, 246, 0.05);
   border-color: var(--theme-primary-blue, #3b82f6);
+}
+
+.compact-settings__field--dev {
+  flex: 1;
+  min-width: 0;
 }
 
 .compact-settings__toggles-row {
@@ -713,32 +719,28 @@ html.dark .compact-settings__container {
   background-color: var(--theme-bg-primary, #111827);
 }
 
-/* Dark mode game cards */
-html.dark .compact-settings__game {
+/* Dark mode game cards, dev toggle cards, and offline toggle */
+html.dark .compact-settings__game,
+html.dark .compact-settings__field--dev,
+html.dark .compact-settings__offline-toggle {
   background-color: var(--theme-bg-elevated, #1f2937);
   border: 1.5px solid var(--theme-accent-primary, #60a5fa);
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+html.dark .compact-settings__game:hover,
+html.dark .compact-settings__field--dev:hover,
+html.dark .compact-settings__offline-toggle:hover {
+  border-color: var(--theme-accent-primary, #60a5fa);
+  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.15);
 }
 
 html.dark .compact-settings__game:hover {
   background-color: var(--theme-bg-subtle, #252f3f);
-  border-color: var(--theme-accent-primary, #60a5fa);
-  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.15);
 }
 
-/* Dark mode dev toggle cards */
-html.dark .compact-settings__field--dev {
-  background-color: var(--theme-bg-elevated, #1f2937);
-  border: 1.5px solid var(--theme-accent-primary, #60a5fa);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
-}
-
-html.dark .compact-settings__field--dev:hover {
-  border-color: var(--theme-accent-primary, #60a5fa);
-  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.15);
-}
-
-html.dark .compact-settings__field--dev:has(input:checked) {
+html.dark .compact-settings__field--dev:has(input:checked),
+html.dark .compact-settings__offline-toggle:has(input:checked) {
   background-color: rgba(96, 165, 250, 0.1);
   border-color: var(--theme-accent-primary, #60a5fa);
 }
@@ -860,24 +862,6 @@ html.dark .compact-settings__tab--active {
   gap: 0.75rem;
   width: 100%;
   max-width: 22rem;
-  background-color: var(--theme-bg-elevated, #ffffff);
-  padding: 0.5rem 0.375rem;
-  border-radius: 10px;
-  border: 1.5px solid var(--theme-primary-blue, #3b82f6);
-  position: relative;
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 3px 0 rgba(59, 130, 246, 0.1);
-}
-
-.compact-settings__offline-toggle:hover {
-  border-color: var(--theme-primary-blue, #3b82f6);
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
-}
-
-.compact-settings__offline-toggle:has(input:checked) {
-  background-color: rgba(59, 130, 246, 0.05);
-  border-color: var(--theme-primary-blue, #3b82f6);
 }
 
 .compact-settings__offline-icon {
@@ -1039,22 +1023,6 @@ html.dark .compact-settings__tab--active {
 }
 
 /* === DARK MODE - OFFLINE SECTION === */
-html.dark .compact-settings__offline-toggle {
-  background-color: var(--theme-bg-elevated, #1f2937);
-  border: 1.5px solid var(--theme-accent-primary, #60a5fa);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
-}
-
-html.dark .compact-settings__offline-toggle:hover {
-  border-color: var(--theme-accent-primary, #60a5fa);
-  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.15);
-}
-
-html.dark .compact-settings__offline-toggle:has(input:checked) {
-  background-color: rgba(96, 165, 250, 0.1);
-  border-color: var(--theme-accent-primary, #60a5fa);
-}
-
 html.dark .compact-settings__offline-level-item {
   color: var(--theme-text-primary, #f9fafb);
 }

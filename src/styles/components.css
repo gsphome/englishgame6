@@ -1,6 +1,6 @@
 /* Components CSS - PURE BEM ARCHITECTURE */
 
-/* Import all component styles */
+/* Import all eagerly-loaded component styles */
 @import './components/app-router.css';
 @import './components/compact-about.css';
 @import './components/compact-advanced-settings.css';
@@ -8,26 +8,29 @@
 @import './components/compact-profile.css';
 @import './components/progression-dashboard.css';
 @import './components/modal-buttons.css';
-@import './components/completion-component.css';
-@import './components/content-renderer.css';
 @import './components/error-fallback.css';
-@import './components/flashcard-component.css';
 @import './components/fluent-flow-logo.css';
-@import './components/game-controls.css';
 @import './components/header.css';
 @import './components/module-card.css';
 @import './components/main-menu.css';
-@import './components/matching-cards.css';
-@import './components/matching-component.css';
-@import './components/matching-modal.css';
-@import './components/quiz-component.css';
 @import './components/score-display.css';
 @import './components/search-bar.css';
-@import './components/sorting-component.css';
-@import './components/sorting-modal.css';
+@import './components/game-controls.css';
 @import './components/toast-card.css';
 @import './components/toast.css';
 @import './components/download-manager.css';
+@import './components/confirm-modal.css';
+@import './components/offline-modal.css';
+@import './components/unified-filter.css';
+@import './components/progression-dashboard-dark-theme.css';
+
+/* Lazy-loaded component CSS is imported by their respective components */
+/* matching-component, matching-modal, matching-component-override, game-controls */
+/* reading-component, sorting-component, sorting-modal */
+/* flashcard-component, quiz-component, completion-component */
+/* content-renderer, reordering-component */
+/* transformation-component, word-formation-component, error-correction-component */
+/* editable-input */
 
 /* Safari Mobile Specific Fixes */
 @import './safari-mobile-fixes.css';

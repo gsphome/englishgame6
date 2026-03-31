@@ -785,14 +785,21 @@ html.dark .my-progress__section-title {
   color: var(--theme-text-primary, #f9fafb);
 }
 
+html.dark .my-progress__weekly-content:hover,
+html.dark .my-progress__overview:hover,
+html.dark .my-progress__units:hover {
+  border-color: var(--theme-accent-primary, #60a5fa);
+  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.15);
+}
+
+html.dark .my-progress__next:hover {
+  border-color: var(--theme-accent-primary, #60a5fa);
+  box-shadow: 0 1px 4px rgba(96, 165, 250, 0.15);
+}
+
 html.dark .my-progress__weekly-content {
   background-color: var(--theme-bg-subtle, #111827);
   border-color: rgba(255, 255, 255, 0.1);
-}
-
-html.dark .my-progress__weekly-content:hover {
-  border-color: var(--theme-accent-primary, #60a5fa);
-  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.15);
 }
 
 html.dark .my-progress__weekly-bar {
@@ -821,14 +828,11 @@ html.dark .my-progress__no-data-text {
 }
 
 /* Overview dark */
-html.dark .my-progress__overview {
+html.dark .my-progress__overview,
+html.dark .my-progress__next,
+html.dark .my-progress__units {
   background-color: var(--theme-bg-elevated, #1f2937);
   border-color: rgba(255, 255, 255, 0.15);
-}
-
-html.dark .my-progress__overview:hover {
-  border-color: var(--theme-accent-primary, #60a5fa);
-  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.15);
 }
 
 html.dark .my-progress__overview-value {
@@ -843,11 +847,6 @@ html.dark .my-progress__overview-label {
 html.dark .my-progress__next {
   background-color: var(--theme-bg-elevated, #1f2937);
   border-color: rgba(255, 255, 255, 0.15);
-}
-
-html.dark .my-progress__next:hover {
-  border-color: var(--theme-accent-primary, #60a5fa);
-  box-shadow: 0 1px 4px rgba(96, 165, 250, 0.15);
 }
 
 html.dark .my-progress__next-star {
@@ -884,16 +883,6 @@ html.dark .my-progress__next-name {
 }
 
 /* Units dark */
-html.dark .my-progress__units {
-  background-color: var(--theme-bg-elevated, #1f2937);
-  border-color: rgba(255, 255, 255, 0.15);
-}
-
-html.dark .my-progress__units:hover {
-  border-color: var(--theme-accent-primary, #60a5fa);
-  box-shadow: 0 2px 8px rgba(96, 165, 250, 0.15);
-}
-
 html.dark .my-progress__unit-bg {
   stroke: rgba(255, 255, 255, 0.1);
 }
