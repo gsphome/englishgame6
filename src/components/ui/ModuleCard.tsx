@@ -44,6 +44,7 @@ const getIcon = (learningMode: string) => {
     matching: <Link {...iconProps} />,
     reading: <BookOpen {...iconProps} />,
     transformation: <RefreshCw {...iconProps} />,
+    'error-correction': <AlertTriangle {...iconProps} />,
   };
   return icons[learningMode] || <CreditCard {...iconProps} />;
 };
@@ -57,6 +58,7 @@ const getLearningModeLabel = (learningMode: string, t: (key: string) => string):
     matching: t('learning.matchingMode'),
     reading: t('learning.readingMode'),
     transformation: t('learning.transformationMode'),
+    'error-correction': t('learning.errorCorrectionMode'),
   };
   return labels[learningMode] || t('common.exercise');
 };

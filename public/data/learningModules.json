@@ -479,7 +479,7 @@
   },
   {
     "id": "a1-error-correction-basic-phrasal-verbs",
-    "name": "Phrasal Verb Error Correction",
+    "name": "Fix Basic Phrasal Verb Errors",
     "learningMode": "error-correction",
     "dataPath": "data/a1/a1-error-correction-basic-phrasal-verbs.json",
     "level": [
