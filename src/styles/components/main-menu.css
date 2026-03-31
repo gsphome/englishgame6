@@ -937,16 +937,24 @@ html.dark .main-menu__grid::-webkit-scrollbar-thumb:hover {
 
   /* Responsive search width - consolidated breakpoints */
   @media (max-width: 379px) {
-    .main-menu > .main-menu__search { max-width: 220px; }
+    .main-menu > .main-menu__search {
+      max-width: 220px;
+    }
   }
   @media (min-width: 380px) and (max-width: 639px) {
-    .main-menu > .main-menu__search { max-width: 280px; }
+    .main-menu > .main-menu__search {
+      max-width: 280px;
+    }
   }
   @media (min-width: 640px) and (max-width: 879px) {
-    .main-menu > .main-menu__search { max-width: 360px; }
+    .main-menu > .main-menu__search {
+      max-width: 360px;
+    }
   }
   @media (min-width: 880px) {
-    .main-menu > .main-menu__search { max-width: 420px; }
+    .main-menu > .main-menu__search {
+      max-width: 420px;
+    }
   }
 
   .main-menu .main-menu__search .search-bar .search-bar__input {

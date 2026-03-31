@@ -188,7 +188,11 @@ html body .matching-component .matching-component__item--correct .matching-compo
 }
 
 /* CORRECT ANSWER LETTER - Homologated */
-html body div.matching-component .matching-component__item--correct .matching-component__item-letter,
+html
+  body
+  div.matching-component
+  .matching-component__item--correct
+  .matching-component__item-letter,
 html body .matching-component .matching-component__item--correct .matching-component__item-letter,
 .matching-component__item--correct .matching-component__item-letter {
   background-color: rgba(255, 255, 255, 0.2) !important;
@@ -211,7 +215,11 @@ html body .matching-component .matching-component__item--incorrect,
 }
 
 /* INCORRECT ANSWER TEXT - Homologated */
-html body div.matching-component .matching-component__item--incorrect .matching-component__item-text,
+html
+  body
+  div.matching-component
+  .matching-component__item--incorrect
+  .matching-component__item-text,
 html body .matching-component .matching-component__item--incorrect .matching-component__item-text,
 .matching-component__item--incorrect .matching-component__item-text,
 .matching-component__item--incorrect .matching-component__item-text * {
@@ -229,7 +237,11 @@ html.dark .matching-component__item--correct {
   box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
 }
 
-html.dark body div.matching-component .matching-component__item--correct .matching-component__item-text,
+html.dark
+  body
+  div.matching-component
+  .matching-component__item--correct
+  .matching-component__item-text,
 html.dark .matching-component__item--correct .matching-component__item-text,
 html.dark .matching-component__item--correct .matching-component__item-text * {
   color: #ffffff !important;
@@ -337,10 +349,22 @@ html.dark .matching-component__item--correct .matching-component__item-text * {
   }
 
   /* Letters inside correct/incorrect must stay same size */
-  html body div.matching-component .matching-component__item--correct .matching-component__item-letter,
-  html body div.matching-component .matching-component__item--incorrect .matching-component__item-letter,
+  html
+    body
+    div.matching-component
+    .matching-component__item--correct
+    .matching-component__item-letter,
+  html
+    body
+    div.matching-component
+    .matching-component__item--incorrect
+    .matching-component__item-letter,
   html body .matching-component .matching-component__item--correct .matching-component__item-letter,
-  html body .matching-component .matching-component__item--incorrect .matching-component__item-letter {
+  html
+    body
+    .matching-component
+    .matching-component__item--incorrect
+    .matching-component__item-letter {
     width: 1.125rem !important;
     height: 1.125rem !important;
     font-size: 0.625rem !important;
@@ -398,10 +422,22 @@ html.dark .matching-component__item--correct .matching-component__item-text * {
   }
 
   /* Letters inside correct/incorrect */
-  html body div.matching-component .matching-component__item--correct .matching-component__item-letter,
-  html body div.matching-component .matching-component__item--incorrect .matching-component__item-letter,
+  html
+    body
+    div.matching-component
+    .matching-component__item--correct
+    .matching-component__item-letter,
+  html
+    body
+    div.matching-component
+    .matching-component__item--incorrect
+    .matching-component__item-letter,
   html body .matching-component .matching-component__item--correct .matching-component__item-letter,
-  html body .matching-component .matching-component__item--incorrect .matching-component__item-letter {
+  html
+    body
+    .matching-component
+    .matching-component__item--incorrect
+    .matching-component__item-letter {
     width: 1rem !important;
     height: 1rem !important;
     font-size: 0.5625rem !important;
