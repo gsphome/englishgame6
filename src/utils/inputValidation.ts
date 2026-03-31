@@ -6,7 +6,10 @@
 const isIntInRange = (v: unknown, min: number, max: number): boolean =>
   typeof v === 'number' && Number.isInteger(v) && v >= min && v <= max;
 
-const validateMode = (obj: unknown, fields: Record<string, [number, number]>): Record<string, number> | null => {
+const validateMode = (
+  obj: unknown,
+  fields: Record<string, [number, number]>
+): Record<string, number> | null => {
   if (!obj || typeof obj !== 'object') return null;
   const result: Record<string, number> = {};
   for (const [key, [min, max]] of Object.entries(fields)) {
