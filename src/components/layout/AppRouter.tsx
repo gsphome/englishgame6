@@ -23,7 +23,9 @@ const ReadingComponent = lazyWithRetry(() => import('../learning/ReadingComponen
 const ReorderingComponent = lazyWithRetry(() => import('../learning/ReorderingComponent'));
 const TransformationComponent = lazyWithRetry(() => import('../learning/TransformationComponent'));
 const WordFormationComponent = lazyWithRetry(() => import('../learning/WordFormationComponent'));
-const ErrorCorrectionComponent = lazyWithRetry(() => import('../learning/ErrorCorrectionComponent'));
+const ErrorCorrectionComponent = lazyWithRetry(
+  () => import('../learning/ErrorCorrectionComponent')
+);
 
 // Enhanced loading component
 const ComponentLoader: React.FC = () => (

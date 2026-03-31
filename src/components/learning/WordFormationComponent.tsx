@@ -115,7 +115,9 @@ const WordFormationComponent: React.FC<WordFormationComponentProps> = ({ module 
         currentIndex={currentIndex}
         totalItems={processedExercises.length}
         mode="word-formation"
-        helpText={showResult ? t('learning.pressEnterNext') : t('learning.wordFormationInstruction')}
+        helpText={
+          showResult ? t('learning.pressEnterNext') : t('learning.wordFormationInstruction')
+        }
       />
 
       <div className="word-formation__exercise-card">

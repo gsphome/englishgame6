@@ -3,5 +3,10 @@
  * strip trailing period/punctuation for leniency.
  */
 export function normalizeAnswer(s: string): string {
-  return s.toLowerCase().replace(/\s+/g, ' ').trim().replace(/[.!?]+$/, '').trim();
+  return s
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/[.!?]+$/, '')
+    .trim();
 }

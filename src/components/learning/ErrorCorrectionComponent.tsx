@@ -116,7 +116,9 @@ const ErrorCorrectionComponent: React.FC<ErrorCorrectionComponentProps> = ({ mod
         currentIndex={currentIndex}
         totalItems={processedExercises.length}
         mode="error-correction"
-        helpText={showResult ? t('learning.pressEnterNext') : t('learning.errorCorrectionInstruction')}
+        helpText={
+          showResult ? t('learning.pressEnterNext') : t('learning.errorCorrectionInstruction')
+        }
       />
 
       <div className="error-correction__exercise-card">
