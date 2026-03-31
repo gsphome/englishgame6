@@ -494,6 +494,22 @@
     "difficulty": 1
   },
   {
+    "id": "completion-review-a1",
+    "name": "A1 Review Practice",
+    "learningMode": "completion",
+    "dataPath": "data/a1/a1-completion-review.json",
+    "level": [
+      "a1"
+    ],
+    "category": "Review",
+    "prerequisites": [
+      "a1-sorting-phrasal-verbs-particle"
+    ],
+    "description": "Practice phrasal verbs, idioms, word formation and transformations from A1",
+    "estimatedTime": 3,
+    "difficulty": 1
+  },
+  {
     "id": "quiz-basic-review-a1",
     "name": "Basic Review",
     "learningMode": "quiz",
@@ -503,7 +519,7 @@
     ],
     "category": "Review",
     "prerequisites": [
-      "a1-sorting-phrasal-verbs-particle"
+      "completion-review-a1"
     ],
     "description": "Comprehensive review of A1 level concepts",
     "estimatedTime": 3,
@@ -1022,6 +1038,22 @@
     ]
   },
   {
+    "id": "completion-review-a2",
+    "name": "A2 Review Practice",
+    "learningMode": "completion",
+    "dataPath": "data/a2/a2-completion-review.json",
+    "level": [
+      "a2"
+    ],
+    "category": "Review",
+    "prerequisites": [
+      "a2-matching-elementary-idioms"
+    ],
+    "description": "Practice phrasal verbs, transformations, error correction and word formation from A2",
+    "estimatedTime": 3,
+    "difficulty": 2
+  },
+  {
     "id": "quiz-elementary-review-a2",
     "name": "Elementary Review",
     "learningMode": "quiz",
@@ -1031,7 +1063,7 @@
     ],
     "category": "Review",
     "prerequisites": [
-      "a2-matching-elementary-idioms"
+      "completion-review-a2"
     ],
     "description": "Comprehensive review of A2 level concepts",
     "estimatedTime": 3,
@@ -1598,6 +1630,22 @@
     "difficulty": 3
   },
   {
+    "id": "completion-review-b1",
+    "name": "B1 Review Practice",
+    "learningMode": "completion",
+    "dataPath": "data/b1/b1-completion-review.json",
+    "level": [
+      "b1"
+    ],
+    "category": "Review",
+    "prerequisites": [
+      "b1-matching-idioms-situations"
+    ],
+    "description": "Practice conditionals, passive voice, phrasal verbs, idioms and word formation from B1",
+    "estimatedTime": 3,
+    "difficulty": 3
+  },
+  {
     "id": "quiz-intermediate-review-b1",
     "name": "Intermediate Review",
     "learningMode": "quiz",
@@ -1607,7 +1655,7 @@
     ],
     "category": "Review",
     "prerequisites": [
-      "b1-matching-idioms-situations"
+      "completion-review-b1"
     ],
     "description": "Comprehensive review of B1 level concepts",
     "estimatedTime": 3,
@@ -2158,6 +2206,22 @@
     "difficulty": 4
   },
   {
+    "id": "completion-review-b2",
+    "name": "B2 Review Practice",
+    "learningMode": "completion",
+    "dataPath": "data/b2/b2-completion-review.json",
+    "level": [
+      "b2"
+    ],
+    "category": "Review",
+    "prerequisites": [
+      "b2-sorting-professional-idioms"
+    ],
+    "description": "Practice advanced conditionals, causatives, phrasal verbs, idioms and word formation from B2",
+    "estimatedTime": 3,
+    "difficulty": 4
+  },
+  {
     "id": "quiz-upper-intermediate-review-b2",
     "name": "Upper-Intermediate Review",
     "learningMode": "quiz",
@@ -2167,7 +2231,7 @@
     ],
     "category": "Review",
     "prerequisites": [
-      "b2-sorting-professional-idioms"
+      "completion-review-b2"
     ],
     "description": "Comprehensive review of B2 level concepts: used to, phrasal verbs, connectors, and professional vocabulary",
     "estimatedTime": 3,
@@ -2686,6 +2750,22 @@
     "difficulty": 5
   },
   {
+    "id": "completion-review-c1",
+    "name": "C1 Review Practice",
+    "learningMode": "completion",
+    "dataPath": "data/c1/c1-completion-review.json",
+    "level": [
+      "c1"
+    ],
+    "category": "Review",
+    "prerequisites": [
+      "c1-sorting-phrasal-verbs-register"
+    ],
+    "description": "Practice inversions, subjunctive, phrasal verbs, idioms, vocabulary and word formation from C1",
+    "estimatedTime": 3,
+    "difficulty": 5
+  },
+  {
     "id": "quiz-advanced-grammar-review-c1",
     "name": "Advanced Grammar Review",
     "learningMode": "quiz",
@@ -2695,7 +2775,7 @@
     ],
     "category": "Review",
     "prerequisites": [
-      "c1-sorting-phrasal-verbs-register"
+      "completion-review-c1"
     ],
     "description": "Comprehensive review of C1 grammar: conditionals, inversions, participles, subjunctive",
     "estimatedTime": 3,
@@ -3182,6 +3262,22 @@
     "difficulty": 5
   },
   {
+    "id": "completion-review-c2",
+    "name": "C2 Review Practice",
+    "learningMode": "completion",
+    "dataPath": "data/c2/c2-completion-review.json",
+    "level": [
+      "c2"
+    ],
+    "category": "Review",
+    "prerequisites": [
+      "c2-matching-literary-idioms-origins"
+    ],
+    "description": "Practice mastery phrasal verbs, literary idioms, word formation and academic transformations from C2",
+    "estimatedTime": 3,
+    "difficulty": 5
+  },
+  {
     "id": "quiz-mastery-assessment-c2",
     "name": "Mastery Assessment",
     "learningMode": "quiz",
@@ -3191,7 +3287,7 @@
     ],
     "category": "Review",
     "prerequisites": [
-      "c2-matching-literary-idioms-origins"
+      "completion-review-c2"
     ],
     "description": "Comprehensive mastery assessment",
     "estimatedTime": 3,

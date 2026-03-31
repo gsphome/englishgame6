@@ -1,442 +1,242 @@
 [
   {
-    "question": "Which sentence correctly uses \"used to\" to describe a past habit?",
-    "options": [
-      "I used to going to the gym every day.",
-      "I am used to go to the gym every day.",
-      "I use to go to the gym every day.",
-      "I used to go to the gym every day."
-    ],
-    "correct": "I used to go to the gym every day.",
-    "explanation": "<Used to> + base verb describes past habits that no longer happen."
+    "question": "Choose the correct form: 'I _____ play the piano when I was a child.'",
+    "options": ["use to", "used to", "was used to", "am used to"],
+    "correct": "used to",
+    "explanation": "<Used to> + base form describes past habits that no longer happen."
   },
   {
-    "question": "Complete: \"She ______ living alone after her roommate moved out.\"",
-    "options": [
-      "got used to",
-      "used to",
-      "is use to",
-      "was used"
-    ],
-    "correct": "got used to",
-    "explanation": "<Got used to> + -ing describes the process of becoming accustomed to something."
+    "question": "Which sentence uses 'used to' correctly?",
+    "options": ["She is used to live in Paris", "She used to living in Paris", "She used to live in Paris", "She use to live in Paris"],
+    "correct": "She used to live in Paris",
+    "explanation": "<Used to> + base form for past states: <She used to live in Paris>."
   },
   {
-    "question": "Which phrasal verb means \"to compensate for something\"?",
-    "options": [
-      "Come up with",
-      "Make up for",
-      "Look forward to",
-      "Put up with"
-    ],
-    "correct": "Make up for",
-    "explanation": "<Make up for> means to compensate or do something to correct a bad situation."
+    "question": "Complete the third conditional: 'If she had studied harder, she _____ the exam.'",
+    "options": ["would pass", "would have passed", "will have passed", "had passed"],
+    "correct": "would have passed",
+    "explanation": "Third conditional: <If> + past perfect, <would have> + past participle."
   },
   {
-    "question": "Choose the correct connector: \"The project was delayed. ______, we managed to meet the deadline.\"",
-    "options": [
-      "In addition",
-      "Furthermore",
-      "Nevertheless",
-      "Moreover"
-    ],
-    "correct": "Nevertheless",
-    "explanation": "<Nevertheless> introduces a contrasting result despite a negative situation."
+    "question": "Which sentence with 'wish' is correct?",
+    "options": ["I wish I can fly", "I wish I could fly", "I wish I will fly", "I wish I am flying"],
+    "correct": "I wish I could fly",
+    "explanation": "<Wish> + past simple/could for unreal present situations: <I wish I could fly>."
   },
   {
-    "question": "What does the phrasal verb \"put up with\" mean?",
-    "options": [
-      "To postpone",
-      "To display",
-      "To tolerate",
-      "To accommodate"
-    ],
-    "correct": "To tolerate",
-    "explanation": "<Put up with> means to tolerate or endure something unpleasant."
+    "question": "Complete: 'If only I _____ more time to prepare.'",
+    "options": ["have", "had", "will have", "am having"],
+    "correct": "had",
+    "explanation": "<If only> + past simple expresses regret about the present: <If only I had>."
   },
   {
-    "question": "Which connector is used to add supporting information?",
-    "options": [
-      "Furthermore",
-      "Although",
-      "However",
-      "Despite"
-    ],
-    "correct": "Furthermore",
-    "explanation": "<Furthermore> adds additional information to support a point."
+    "question": "Which passive construction is correct? 'The report is believed _____ accurate.'",
+    "options": ["being", "to be", "is", "was"],
+    "correct": "to be",
+    "explanation": "Impersonal passive: subject + <is believed to be> + complement."
   },
   {
-    "question": "Complete: \"______ the bad weather, the event was a success.\"",
-    "options": [
-      "Despite",
-      "Moreover",
-      "Therefore",
-      "Because"
-    ],
+    "question": "Choose the correct causative: 'She _____ her hair cut yesterday.'",
+    "options": ["had", "has", "got to", "made"],
+    "correct": "had",
+    "explanation": "Causative <have>: <had> + object + past participle: <had her hair cut>."
+  },
+  {
+    "question": "Which causative sentence is correct?",
+    "options": ["I got my car repair", "I got my car repaired", "I got my car repairing", "I got repaired my car"],
+    "correct": "I got my car repaired",
+    "explanation": "Causative <get>: <got> + object + past participle: <got my car repaired>."
+  },
+  {
+    "question": "Choose the correct connector: 'She passed the exam _____ she hadn't studied much.'",
+    "options": ["although", "because", "so", "therefore"],
+    "correct": "although",
+    "explanation": "<Although> introduces a contrast: she passed <although> she hadn't studied."
+  },
+  {
+    "question": "Which connector is correct: '_____ the rain, the match continued.'",
+    "options": ["Despite", "Although", "However", "Because of"],
     "correct": "Despite",
-    "explanation": "<Despite> + noun/gerund shows contrast with an unexpected positive outcome."
+    "explanation": "<Despite> + noun phrase: <Despite the rain> (no clause follows)."
   },
   {
-    "question": "Which sentence uses \"be used to\" correctly?",
-    "options": [
-      "He is used to wakes up early.",
-      "He is used to woke up early.",
-      "He is used to waking up early.",
-      "He is used to wake up early."
-    ],
-    "correct": "He is used to waking up early.",
-    "explanation": "<Be used to> + -ing form means being accustomed to something."
+    "question": "What does 'make a commitment' mean?",
+    "options": ["to break a promise", "to dedicate yourself to something", "to avoid responsibility", "to change your mind"],
+    "correct": "to dedicate yourself to something",
+    "explanation": "The collocation <make a commitment> means to pledge or dedicate yourself."
   },
   {
-    "question": "What does \"break new ground\" mean?",
-    "options": [
-      "To destroy something",
-      "To start farming",
-      "To do something innovative",
-      "To dig a hole"
-    ],
-    "correct": "To do something innovative",
-    "explanation": "<Break new ground> means to do something that has not been done before."
+    "question": "Which collocation is correct?",
+    "options": ["do a mistake", "make a mistake", "take a mistake", "have a mistake"],
+    "correct": "make a mistake",
+    "explanation": "The correct collocation is <make a mistake>, not <do a mistake>."
   },
   {
-    "question": "Choose the correct option: \"The results were poor. ______, the team decided to change their strategy.\"",
-    "options": [
-      "In addition",
-      "Consequently",
-      "Specifically",
-      "Furthermore"
-    ],
-    "correct": "Consequently",
-    "explanation": "<Consequently> shows a cause-and-effect relationship between two events."
+    "question": "What does 'sustainable' mean in an IELTS context?",
+    "options": ["temporary", "able to be maintained over time", "expensive", "modern"],
+    "correct": "able to be maintained over time",
+    "explanation": "<Sustainable> means able to continue or be maintained at a certain level over time."
   },
   {
-    "question": "Which phrasal verb means \"to investigate\"?",
-    "options": [
-      "Look down on",
-      "Look up to",
-      "Look into",
-      "Look after"
-    ],
-    "correct": "Look into",
-    "explanation": "<Look into> means to investigate or examine something carefully."
+    "question": "What does 'infrastructure' refer to?",
+    "options": ["a type of building", "basic physical systems of a society", "a government policy", "a financial plan"],
+    "correct": "basic physical systems of a society",
+    "explanation": "<Infrastructure> refers to the basic systems like roads, bridges, and utilities."
   },
   {
-    "question": "Complete: \"______ some experts disagree, the majority supports the new policy.\"",
-    "options": [
-      "Indeed",
-      "Therefore",
-      "While",
-      "Moreover"
-    ],
-    "correct": "While",
-    "explanation": "<While> introduces a contrasting viewpoint or situation."
+    "question": "What does the phrasal verb 'turn down' mean?",
+    "options": ["to increase volume", "to reject or refuse", "to turn around", "to arrive"],
+    "correct": "to reject or refuse",
+    "explanation": "<Turn down> means to reject an offer or request."
   },
   {
-    "question": "What does \"cut corners\" mean in a professional context?",
-    "options": [
-      "To turn around a corner",
-      "To cut paper into shapes",
-      "To reduce the size of something",
-      "To take shortcuts, often reducing quality"
-    ],
-    "correct": "To take shortcuts, often reducing quality",
-    "explanation": "<Cut corners> means to do something in the easiest or cheapest way, often sacrificing quality."
+    "question": "What does 'iron out' mean?",
+    "options": ["to press clothes", "to resolve problems or difficulties", "to remove metal", "to flatten paper"],
+    "correct": "to resolve problems or difficulties",
+    "explanation": "<Iron out> means to resolve or eliminate problems and difficulties."
   },
   {
-    "question": "Which connector signals a conclusion?",
-    "options": [
-      "To sum up",
-      "Whereas",
-      "In contrast",
-      "Besides"
-    ],
-    "correct": "To sum up",
-    "explanation": "<To sum up> signals a brief summary or conclusion of the main points."
+    "question": "What does 'phase out' mean?",
+    "options": ["to introduce suddenly", "to gradually stop using something", "to start a new phase", "to speed up"],
+    "correct": "to gradually stop using something",
+    "explanation": "<Phase out> means to gradually discontinue or withdraw something."
   },
   {
-    "question": "Complete: \"He didn't ______ like spicy food, but now he loves it.\"",
-    "options": [
-      "get used to",
-      "use to",
-      "be used to",
-      "used to"
-    ],
-    "correct": "use to",
-    "explanation": "In the negative form with <didn't>, the correct form is <use to> (without d)."
+    "question": "What does 'come across' mean?",
+    "options": ["to cross a road", "to find or encounter by chance", "to be angry", "to communicate clearly"],
+    "correct": "to find or encounter by chance",
+    "explanation": "<Come across> means to find something or someone unexpectedly."
   },
   {
-    "question": "What does \"dress down\" mean?",
-    "options": [
-      "To feel sad",
-      "To put on a dress",
-      "To wear casual clothes",
-      "To go downstairs"
-    ],
-    "correct": "To wear casual clothes",
-    "explanation": "<Dress down> means to wear informal or casual clothing."
+    "question": "What does 'rule out' mean?",
+    "options": ["to include", "to exclude or eliminate as a possibility", "to govern", "to draw a line"],
+    "correct": "to exclude or eliminate as a possibility",
+    "explanation": "<Rule out> means to exclude something as a possibility."
   },
   {
-    "question": "Choose the correct connector: \"______, we need to focus on customer satisfaction.\"",
-    "options": [
-      "Specifically",
-      "Although",
-      "Nevertheless",
-      "Despite"
-    ],
-    "correct": "Specifically",
-    "explanation": "<Specifically> introduces precise details or a particular focus."
+    "question": "What does 'fall through' mean?",
+    "options": ["to fall down", "to fail to happen as planned", "to succeed unexpectedly", "to pass through"],
+    "correct": "to fail to happen as planned",
+    "explanation": "<Fall through> means a plan or arrangement fails to happen."
   },
   {
-    "question": "Which phrasal verb means \"to continue doing something despite difficulties\"?",
-    "options": [
-      "Carry out",
-      "Carry on",
-      "Carry away",
-      "Carry off"
-    ],
-    "correct": "Carry on",
-    "explanation": "<Carry on> means to continue doing something, especially despite difficulties."
+    "question": "What does the idiom 'the elephant in the room' mean?",
+    "options": ["a large animal", "an obvious problem nobody wants to discuss", "a surprise guest", "a big room"],
+    "correct": "an obvious problem nobody wants to discuss",
+    "explanation": "<The elephant in the room> is an obvious problem that everyone ignores."
   },
   {
-    "question": "What does \"owing to\" express?",
-    "options": [
-      "Contrast",
-      "Cause or reason",
-      "Emphasis",
-      "Addition"
-    ],
-    "correct": "Cause or reason",
-    "explanation": "<Owing to> indicates the reason or cause for something, similar to <due to>."
+    "question": "What does 'barking up the wrong tree' mean?",
+    "options": ["a dog making noise", "pursuing a mistaken course of action", "climbing a tree", "being lost in a forest"],
+    "correct": "pursuing a mistaken course of action",
+    "explanation": "<Barking up the wrong tree> means pursuing a wrong or misguided approach."
   },
   {
-    "question": "Complete: \"It took her a while to ______ the new work schedule.\"",
-    "options": [
-      "getting used to",
-      "used to",
-      "get used to",
-      "use to"
-    ],
-    "correct": "get used to",
-    "explanation": "<Get used to> + noun/gerund describes the process of becoming accustomed to something new."
+    "question": "What does 'the ball is in your court' mean?",
+    "options": ["playing tennis", "it's your turn to make a decision", "you lost the game", "the situation is unfair"],
+    "correct": "it's your turn to make a decision",
+    "explanation": "<The ball is in your court> means it's your responsibility to act next."
   },
   {
-    "question": "What does \"hit the ground running\" mean?",
-    "options": [
-      "To start something with great energy and enthusiasm",
-      "To run very fast",
-      "To fall while running",
-      "To start exercising"
-    ],
-    "correct": "To start something with great energy and enthusiasm",
-    "explanation": "<Hit the ground running> means to begin a task or project with immediate effort and energy."
+    "question": "What does 'sit on the fence' mean?",
+    "options": ["to rest outdoors", "to avoid making a decision", "to be comfortable", "to watch a game"],
+    "correct": "to avoid making a decision",
+    "explanation": "<Sit on the fence> means to remain neutral and not take sides."
   },
   {
-    "question": "Which connector introduces an alternative viewpoint?",
-    "options": [
-      "On the other hand",
-      "Consequently",
-      "In addition",
-      "Indeed"
-    ],
-    "correct": "On the other hand",
-    "explanation": "<On the other hand> presents a contrasting or alternative perspective."
+    "question": "What does 'cut corners' mean?",
+    "options": ["to use scissors", "to do something in the cheapest or easiest way", "to drive carefully", "to save time wisely"],
+    "correct": "to do something in the cheapest or easiest way",
+    "explanation": "<Cut corners> means to do something poorly to save time or money."
   },
   {
-    "question": "What does the phrasal verb \"figure out\" mean?",
-    "options": [
-      "To go outside",
-      "To understand or solve something",
-      "To draw a figure",
-      "To calculate a number"
-    ],
-    "correct": "To understand or solve something",
-    "explanation": "<Figure out> means to understand something or find the answer to a problem."
+    "question": "Transform to a cleft sentence: 'John broke the window.'",
+    "options": ["It was John who broke the window", "John it was who broke the window", "Who broke the window was John", "The window was broken it was John"],
+    "correct": "It was John who broke the window",
+    "explanation": "Cleft sentence: <It was> + focus + <who/that>: <It was John who broke the window>."
   },
   {
-    "question": "Choose the correct option: \"______ the evidence, the committee made their decision.\"",
-    "options": [
-      "However",
-      "Furthermore",
-      "Based on",
-      "Although"
-    ],
-    "correct": "Based on",
-    "explanation": "<Based on> indicates that something is founded on specific evidence or information."
+    "question": "Transform using 'wish': 'I don't speak Japanese.'",
+    "options": ["I wish I speak Japanese", "I wish I spoke Japanese", "I wish I will speak Japanese", "I wish I speaking Japanese"],
+    "correct": "I wish I spoke Japanese",
+    "explanation": "<Wish> + past simple for unreal present: <I wish I spoke Japanese>."
   },
   {
-    "question": "What does \"make ends meet\" mean?",
-    "options": [
-      "To earn just enough money to live on",
-      "To reach the end of a road",
-      "To meet new people",
-      "To finish a project"
-    ],
-    "correct": "To earn just enough money to live on",
-    "explanation": "<Make ends meet> means to have just enough money to pay for basic necessities."
+    "question": "Transform to third conditional: 'I didn't bring an umbrella. I got wet.'",
+    "options": ["If I brought an umbrella, I wouldn't get wet", "If I had brought an umbrella, I wouldn't have got wet", "If I bring an umbrella, I won't get wet", "If I would bring an umbrella, I didn't get wet"],
+    "correct": "If I had brought an umbrella, I wouldn't have got wet",
+    "explanation": "Third conditional: <If> + past perfect, <would have> + past participle."
   },
   {
-    "question": "Which sentence correctly uses a contrast connector?",
-    "options": [
-      "The plan was risky. In addition, it succeeded.",
-      "The plan was risky. Specifically, it succeeded.",
-      "The plan was risky. However, it succeeded.",
-      "The plan was risky. Furthermore, it succeeded."
-    ],
-    "correct": "The plan was risky. However, it succeeded.",
-    "explanation": "<However> correctly introduces a contrasting outcome to the risky situation."
+    "question": "Transform to passive with reporting verb: 'People say he is a genius.'",
+    "options": ["He is said to be a genius", "He said to be a genius", "He is saying to be a genius", "He was said being a genius"],
+    "correct": "He is said to be a genius",
+    "explanation": "Impersonal passive: <He is said to be> a genius."
   },
   {
-    "question": "What does \"try on\" mean?",
-    "options": [
-      "To attempt something",
-      "To turn on a device",
-      "To put on clothing to see if it fits",
-      "To start a new job"
-    ],
-    "correct": "To put on clothing to see if it fits",
-    "explanation": "<Try on> means to put on a piece of clothing to check the fit or appearance."
+    "question": "Transform using causative: 'A mechanic fixed my car.'",
+    "options": ["I had my car fixed", "I had fixed my car", "I have my car fix", "My car had fixed"],
+    "correct": "I had my car fixed",
+    "explanation": "Causative: <had> + object + past participle: <I had my car fixed>."
   },
   {
-    "question": "Complete: \"______ budget constraints, the project was postponed.\"",
-    "options": [
-      "Due to",
-      "In contrast",
-      "However",
-      "Furthermore"
-    ],
-    "correct": "Due to",
-    "explanation": "<Due to> indicates the cause or reason for something happening."
+    "question": "What is the adjective form of 'success' with a suffix?",
+    "options": ["successful", "succession", "successive", "succeed"],
+    "correct": "successful",
+    "explanation": "Adding <-ful> to <success> forms the adjective <successful>."
   },
   {
-    "question": "What does \"once in a blue moon\" mean?",
-    "options": [
-      "Every night",
-      "During a full moon",
-      "Very rarely",
-      "When the sky is blue"
-    ],
-    "correct": "Very rarely",
-    "explanation": "<Once in a blue moon> means something happens very infrequently."
+    "question": "What is the negative form of 'possible' using a prefix?",
+    "options": ["unpossible", "dispossible", "impossible", "inpossible"],
+    "correct": "impossible",
+    "explanation": "The prefix <im-> before <p> and <m>: <possible> → <impossible>."
   },
   {
-    "question": "Which connector expresses certainty or emphasis?",
-    "options": [
-      "Undoubtedly",
-      "Although",
-      "Whereas",
-      "However"
-    ],
-    "correct": "Undoubtedly",
-    "explanation": "<Undoubtedly> expresses complete certainty about a statement."
+    "question": "Which prefix makes 'legal' negative?",
+    "options": ["un-", "in-", "il-", "dis-"],
+    "correct": "il-",
+    "explanation": "Before <l>, use the prefix <il->: <legal> → <illegal>."
   },
   {
-    "question": "What does \"pull strings\" mean?",
-    "options": [
-      "To untangle something",
-      "To play a musical instrument",
-      "To pull a rope",
-      "To use influence or connections to get something done"
-    ],
-    "correct": "To use influence or connections to get something done",
-    "explanation": "<Pull strings> means to use personal connections or influence to achieve something."
+    "question": "Form a noun from 'responsible' using a suffix.",
+    "options": ["responsibleness", "responsibility", "responsiblement", "responsibilize"],
+    "correct": "responsibility",
+    "explanation": "Change <-ble> to <-bility>: <responsible> → <responsibility>."
   },
   {
-    "question": "Complete: \"She ______ working night shifts, so it doesn't bother her anymore.\"",
-    "options": [
-      "is used to",
-      "used to",
-      "uses to",
-      "was use to"
-    ],
-    "correct": "is used to",
-    "explanation": "<Is used to> + -ing means she is already accustomed to working night shifts."
+    "question": "Find the error: 'If I would have known, I would have helped.'",
+    "options": ["If I had known, I would have helped", "If I have known, I would have helped", "If I knew, I would have helped", "No error"],
+    "correct": "If I had known, I would have helped",
+    "explanation": "Third conditional: use <If I had known>, not <If I would have known>."
   },
   {
-    "question": "Which phrasal verb means \"to reject or refuse\"?",
-    "options": [
-      "Turn on",
-      "Turn over",
-      "Turn up",
-      "Turn down"
-    ],
-    "correct": "Turn down",
-    "explanation": "<Turn down> means to reject an offer, invitation, or request."
+    "question": "Find the error: 'Despite of the bad weather, we went out.'",
+    "options": ["Despite the bad weather, we went out", "Despite to the bad weather, we went out", "In despite of the bad weather, we went out", "No error"],
+    "correct": "Despite the bad weather, we went out",
+    "explanation": "<Despite> is used without <of>: <Despite the bad weather>."
   },
   {
-    "question": "What does \"in the long run\" mean?",
-    "options": [
-      "At the end of a race",
-      "Over a long period of time",
-      "During a marathon",
-      "In a hurry"
-    ],
-    "correct": "Over a long period of time",
-    "explanation": "<In the long run> means considering a long period of time or the final result."
+    "question": "Find the error: 'She suggested him to apply for the job.'",
+    "options": ["She suggested that he apply for the job", "She suggested him applying for the job", "She suggested to him to apply", "No error"],
+    "correct": "She suggested that he apply for the job",
+    "explanation": "<Suggest> takes <that> + subject + base form: <suggested that he apply>."
   },
   {
-    "question": "Choose the correct connector: \"The first option is expensive. ______, the second is more affordable.\"",
-    "options": [
-      "In contrast",
-      "Consequently",
-      "Indeed",
-      "In addition"
-    ],
-    "correct": "In contrast",
-    "explanation": "<In contrast> highlights differences between two things being compared."
+    "question": "Find the error: 'I wish I can speak more languages.'",
+    "options": ["I wish I could speak more languages", "I wish I will speak more languages", "I wish I am speaking more languages", "No error"],
+    "correct": "I wish I could speak more languages",
+    "explanation": "After <wish>, use past forms: <I wish I could speak>, not <can speak>."
   },
   {
-    "question": "What does \"state-of-the-art\" mean?",
-    "options": [
-      "Related to art museums",
-      "Very old-fashioned",
-      "In a state of confusion",
-      "Using the most modern technology"
-    ],
-    "correct": "Using the most modern technology",
-    "explanation": "<State-of-the-art> describes something that uses the newest and most advanced technology."
+    "question": "What does 'take for granted' mean?",
+    "options": ["to appreciate deeply", "to fail to appreciate something", "to give a grant", "to accept an offer"],
+    "correct": "to fail to appreciate something",
+    "explanation": "<Take for granted> means to not appreciate the value of something or someone."
   },
   {
-    "question": "Which phrasal verb means \"to postpone\"?",
-    "options": [
-      "Put off",
-      "Put away",
-      "Put on",
-      "Put up"
-    ],
-    "correct": "Put off",
-    "explanation": "<Put off> means to delay or postpone something to a later time."
-  },
-  {
-    "question": "Complete: \"______, the research confirms that exercise improves mental health.\"",
-    "options": [
-      "Whereas",
-      "In conclusion",
-      "On the other hand",
-      "In contrast"
-    ],
-    "correct": "In conclusion",
-    "explanation": "<In conclusion> signals the final summary of arguments or findings."
-  },
-  {
-    "question": "What does \"win-win situation\" mean?",
-    "options": [
-      "A situation with no losers",
-      "Winning twice in a row",
-      "A competitive game",
-      "A situation where everyone benefits"
-    ],
-    "correct": "A situation where everyone benefits",
-    "explanation": "<Win-win situation> describes an outcome that is beneficial for all parties involved."
-  },
-  {
-    "question": "Which sentence uses \"get used to\" correctly?",
-    "options": [
-      "I'm slowly getting used to cold weather is.",
-      "I'm slowly getting used to the cold weather.",
-      "I'm slowly getting use to the cold weather.",
-      "I'm slowly get used to the cold weather."
-    ],
-    "correct": "I'm slowly getting used to the cold weather.",
-    "explanation": "<Getting used to> + noun/gerund shows the ongoing process of becoming accustomed to something."
+    "question": "What does the idiom 'miss the boat' mean?",
+    "options": ["to arrive late at a port", "to miss an opportunity", "to feel seasick", "to cancel a trip"],
+    "correct": "to miss an opportunity",
+    "explanation": "<Miss the boat> means to be too slow to take advantage of an opportunity."
   }
 ]

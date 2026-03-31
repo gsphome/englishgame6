@@ -1,0 +1,127 @@
+[
+  {
+    "sentence": "The researcher ______ upon a groundbreaking finding by accident.",
+    "correct": "stumbled",
+    "explanation": "The phrasal verb <stumble upon> means to discover something unexpectedly."
+  },
+  {
+    "sentence": "The diplomat ______ over the tensions between the two delegations.",
+    "correct": "smoothed",
+    "explanation": "The phrasal verb <smooth over> means to make a problem seem less serious."
+  },
+  {
+    "sentence": "She ______ through his elaborate pretence immediately.",
+    "correct": "saw",
+    "explanation": "The phrasal verb <see through> means to recognize deception."
+  },
+  {
+    "sentence": "The panel ______ out a compromise after hours of debate.",
+    "correct": "thrashed",
+    "explanation": "The phrasal verb <thrash out> means to discuss thoroughly until reaching resolution."
+  },
+  {
+    "sentence": "He ______ in on the weakest point of the argument.",
+    "correct": "honed",
+    "explanation": "The phrasal verb <hone in on> means to focus precisely on a specific aspect."
+  },
+  {
+    "sentence": "The auditor ______ up on subtle discrepancies in the accounts.",
+    "correct": "picked",
+    "explanation": "The phrasal verb <pick up on> means to notice something others might miss."
+  },
+  {
+    "sentence": "The mediator ______ upon both parties to reach a compromise.",
+    "correct": "prevailed",
+    "explanation": "The phrasal verb <prevail upon> means to persuade through sustained effort."
+  },
+  {
+    "sentence": "The nominali______ of complex verbs is a hallmark of academic prose.",
+    "correct": "nominalization",
+    "explanation": "Adding <-ation> to <nominalize> forms <nominalization>, common in scholarly writing."
+  },
+  {
+    "sentence": "The ______ of the ancient text required specialized knowledge. (decipher → noun)",
+    "correct": "decipherment",
+    "explanation": "Adding <-ment> to <decipher> forms the noun <decipherment>."
+  },
+  {
+    "sentence": "His prose was characterized by its ______ity and precision. (lucid → noun)",
+    "correct": "lucidity",
+    "explanation": "Changing <-id> to <-idity>: <lucid> → <lucidity> (clarity of expression)."
+  },
+  {
+    "sentence": "The ______ nature of the evidence made conclusions difficult. (equivocal → adverb form)",
+    "correct": "equivocal",
+    "explanation": "<Equivocal> means ambiguous or open to more than one interpretation."
+  },
+  {
+    "sentence": "The prefix 'pseudo-' in 'pseudoscience' means ______.",
+    "correct": "false",
+    "explanation": "The prefix <pseudo-> means false or pretended: <pseudoscience> = false science."
+  },
+  {
+    "sentence": "Adding '-esque' to 'Kafka' gives us ______, meaning resembling Kafka's style.",
+    "correct": "Kafkaesque",
+    "explanation": "The suffix <-esque> means 'in the style of': <Kafkaesque> = resembling Kafka's surreal style."
+  },
+  {
+    "sentence": "It was a Pyrrhic victory — they won the battle but at too great a ______.",
+    "correct": "cost",
+    "explanation": "The idiom <Pyrrhic victory> means a victory that comes at such a great cost that it is not worthwhile."
+  },
+  {
+    "sentence": "The professor's argument was a red herring, designed to ______ from the real issue.",
+    "correct": "distract",
+    "explanation": "The idiom <red herring> means something that misleads or distracts from the real issue."
+  },
+  {
+    "sentence": "She opened Pandora's box by raising the controversial topic, unleashing many ______.",
+    "correct": "problems",
+    "explanation": "The idiom <Pandora's box> refers to an action that creates many unforeseen problems."
+  },
+  {
+    "sentence": "His Achilles' heel was his inability to ______ criticism gracefully.",
+    "correct": "accept",
+    "explanation": "The idiom <Achilles' heel> means a person's main weakness or vulnerability."
+  },
+  {
+    "sentence": "The writing on the wall suggested the company's ______ was inevitable.",
+    "correct": "decline",
+    "explanation": "The idiom <the writing on the wall> means clear signs that something bad will happen."
+  },
+  {
+    "sentence": "It is imperative that the committee ______ its findings immediately. (subjunctive)",
+    "correct": "publish",
+    "explanation": "Formal subjunctive: <that the committee publish> (base form, not publishes)."
+  },
+  {
+    "sentence": "The data ______ to suggest a correlation between the variables. (hedging: 'seems')",
+    "correct": "appears",
+    "explanation": "Academic hedging: <appears to suggest> softens the claim, avoiding absolute statements."
+  },
+  {
+    "sentence": "______ the limitations of the study, the findings remain significant. (concessive)",
+    "correct": "Notwithstanding",
+    "explanation": "<Notwithstanding> is a formal concessive meaning 'despite' or 'in spite of'."
+  },
+  {
+    "sentence": "The phenomenon, ______ previously unexplored, merits further investigation. (participle clause)",
+    "correct": "hitherto",
+    "explanation": "<Hitherto> means 'until now' — formal/literary adverb for academic writing."
+  },
+  {
+    "sentence": "Were the hypothesis ______ be confirmed, it would revolutionize the field. (inverted conditional)",
+    "correct": "to",
+    "explanation": "Inverted conditional: <Were the hypothesis to be confirmed> = If the hypothesis were confirmed."
+  },
+  {
+    "sentence": "The author's ______ use of irony pervades the entire narrative. (vocabulary: subtle and clever)",
+    "correct": "sardonic",
+    "explanation": "<Sardonic> means grimly mocking or cynical — a sophisticated literary term."
+  },
+  {
+    "sentence": "The theory, while ______, fails to account for recent empirical evidence. (vocabulary: seemingly correct)",
+    "correct": "ostensibly plausible",
+    "explanation": "<Ostensibly plausible> means appearing reasonable on the surface but potentially flawed."
+  }
+]

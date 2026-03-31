@@ -1,327 +1,242 @@
 [
   {
-    "question": "Which sentence uses the correct conditional structure?",
-    "options": [
-      "If I had known, I would have come.",
-      "If I knew, I would have come.",
-      "If I would have known, I would have come.",
-      "If I have known, I would come."
-    ],
-    "correct": "If I had known, I would have come.",
-    "explanation": "Third conditional uses 'had + past participle' in the if-clause and 'would have + past participle' in the main clause.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "Choose the correct inversion: '_____ had I arrived when the meeting started.'",
+    "options": ["Hardly", "Barely", "No sooner", "Scarcely"],
+    "correct": "No sooner",
+    "explanation": "<No sooner> + <had> + subject + past participle + <when>: <No sooner had I arrived when...>."
   },
   {
-    "question": "Select the sentence with correct inversion:",
-    "options": [
-      "Rarely have I seen such dedication.",
-      "Rarely I seen such dedication.",
-      "Rarely I have seen such dedication.",
-      "I have rarely seen such dedication."
-    ],
-    "correct": "Rarely have I seen such dedication.",
-    "explanation": "After negative adverbs like 'rarely', we invert the subject and auxiliary verb.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "Which inverted sentence is correct?",
+    "options": ["Never I have seen such beauty", "Never have I seen such beauty", "Never I seen have such beauty", "Have never I seen such beauty"],
+    "correct": "Never have I seen such beauty",
+    "explanation": "Negative adverb inversion: <Never> + auxiliary + subject: <Never have I seen>."
+  },
+  {
+    "question": "Choose the correct subjunctive: 'The committee recommended that he _____ the proposal.'",
+    "options": ["reviews", "review", "reviewed", "reviewing"],
+    "correct": "review",
+    "explanation": "Subjunctive after <recommend>: base form without -s: <that he review>."
+  },
+  {
+    "question": "Which subjunctive form is correct? 'It is essential that she _____ on time.'",
+    "options": ["is", "be", "was", "were"],
+    "correct": "be",
+    "explanation": "Subjunctive after <it is essential that>: use <be>: <that she be on time>."
+  },
+  {
+    "question": "Choose the correct participle clause: '_____ the door, she noticed a letter on the floor.'",
+    "options": ["Opened", "Opening", "Having open", "To open"],
+    "correct": "Opening",
+    "explanation": "Present participle clause for simultaneous actions: <Opening the door, she noticed...>."
   },
   {
     "question": "Which participle clause is correct?",
-    "options": [
-      "Having finished the report, we started the meeting.",
-      "Finishing the report, the meeting was started.",
-      "To finish the report, the meeting was started.",
-      "Having finished the report, the meeting was started."
-    ],
-    "correct": "Having finished the report, we started the meeting.",
-    "explanation": "The participle clause must have the same subject as the main clause.",
-    "category": "Grammar",
-    "level": "c1"
+    "options": ["Having finished the report, he went home", "Having finish the report, he went home", "Finished the report, he went home", "To have finished the report, he went home"],
+    "correct": "Having finished the report, he went home",
+    "explanation": "Perfect participle: <Having> + past participle for completed prior action."
   },
   {
-    "question": "Choose the correct subjunctive form:",
-    "options": [
-      "It's essential that he will be here on time.",
-      "It's essential that he was here on time.",
-      "It's essential that he be here on time.",
-      "It's essential that he is here on time."
-    ],
-    "correct": "It's essential that he be here on time.",
-    "explanation": "After 'it's essential that', we use the subjunctive form (base form of the verb).",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "Choose the correct complex preposition: 'The decision was made _____ the manager's wishes.'",
+    "options": ["in spite", "contrary to", "according", "in terms"],
+    "correct": "contrary to",
+    "explanation": "<Contrary to> means in opposition to: <contrary to the manager's wishes>."
   },
   {
-    "question": "Which sentence demonstrates correct mixed conditionals?",
-    "options": [
-      "If I have studied harder, I would be successful now.",
-      "If I would study harder, I would be successful now.",
-      "If I studied harder, I would have been successful now.",
-      "If I had studied harder, I would be successful now."
-    ],
-    "correct": "If I had studied harder, I would be successful now.",
-    "explanation": "Mixed conditionals combine past condition (had + past participle) with present result (would + base verb).",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "Complete: '_____ further notice, the office will remain closed.'",
+    "options": ["Until", "Unless", "Despite", "Whereas"],
+    "correct": "Until",
+    "explanation": "<Until further notice> means the situation continues indefinitely."
   },
   {
-    "question": "Identify the correct inversion after 'Not only':",
-    "options": [
-      "Not only did she pass the exam, but she also got the highest score.",
-      "Not only she passed the exam, but she also got the highest score.",
-      "Not only she did pass the exam, but she also got the highest score.",
-      "Not only has she passed the exam, but she also got the highest score."
-    ],
-    "correct": "Not only did she pass the exam, but she also got the highest score.",
-    "explanation": "'Not only' at the start requires subject-auxiliary inversion in the first clause.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "Which advanced conditional is correct?",
+    "options": ["Were it not for his help, I would have failed", "Was it not for his help, I would have failed", "If it not were for his help, I would have failed", "Not were it for his help, I would have failed"],
+    "correct": "Were it not for his help, I would have failed",
+    "explanation": "Formal inverted conditional: <Were it not for> replaces <If it were not for>."
   },
   {
-    "question": "Which sentence correctly uses a reduced relative clause?",
-    "options": [
-      "The man who standing by the door was my uncle.",
-      "The man stood by the door was my uncle.",
-      "The man standing by the door was my uncle.",
-      "The man is standing by the door was my uncle."
-    ],
-    "correct": "The man standing by the door was my uncle.",
-    "explanation": "Reduced relative clauses use a present participle to replace 'who/that + be + verb-ing'.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "Choose the correct form: 'Had I known about the delay, I _____ earlier.'",
+    "options": ["would leave", "would have left", "will have left", "had left"],
+    "correct": "would have left",
+    "explanation": "Inverted third conditional: <Had I known>, <I would have left>."
   },
   {
-    "question": "Choose the correct wish structure for a past regret:",
-    "options": [
-      "I wish I wouldn't say that yesterday.",
-      "I wish I hadn't said that yesterday.",
-      "I wish I didn't say that yesterday.",
-      "I wish I don't say that yesterday."
-    ],
-    "correct": "I wish I hadn't said that yesterday.",
-    "explanation": "For past regrets, 'wish' takes the past perfect: wish + had/hadn't + past participle.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "What does 'benchmark' mean in a business context?",
+    "options": ["a park bench", "a standard for comparison", "a financial penalty", "a type of meeting"],
+    "correct": "a standard for comparison",
+    "explanation": "A <benchmark> is a standard or point of reference for measuring performance."
   },
   {
-    "question": "Select the correct cleft sentence:",
-    "options": [
-      "It is the manager who approving the budget.",
-      "It was the manager whom approved the budget.",
-      "It was the manager who he approved the budget.",
-      "It was the manager who approved the budget."
-    ],
-    "correct": "It was the manager who approved the budget.",
-    "explanation": "Cleft sentences use 'It is/was + noun + who/that + verb' to emphasize a particular element.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "What does 'stakeholder' mean?",
+    "options": ["a person who holds a steak", "a person with an interest in a project or company", "a shareholder only", "a company director"],
+    "correct": "a person with an interest in a project or company",
+    "explanation": "A <stakeholder> is anyone with an interest or concern in a business or project."
   },
   {
-    "question": "Which sentence uses the correct form after 'It's high time'?",
-    "options": [
-      "It's high time we will leave.",
-      "It's high time we leave.",
-      "It's high time we left.",
-      "It's high time we are leaving."
-    ],
-    "correct": "It's high time we left.",
-    "explanation": "'It's high time' is followed by the past simple to express something should have happened already.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "What does 'carbon footprint' refer to?",
+    "options": ["a type of shoe", "total greenhouse gas emissions caused by an individual or organization", "a fossil discovery", "a measurement of walking distance"],
+    "correct": "total greenhouse gas emissions caused by an individual or organization",
+    "explanation": "<Carbon footprint> refers to the total amount of greenhouse gases produced."
   },
   {
-    "question": "Identify the correct use of inversion with 'Under no circumstances':",
-    "options": [
-      "Under no circumstances should you open this door.",
-      "Under no circumstances you open this door.",
-      "Under no circumstances do you should open this door.",
-      "Under no circumstances you should open this door."
-    ],
-    "correct": "Under no circumstances should you open this door.",
-    "explanation": "Negative adverbial phrases at the start require inversion: auxiliary + subject.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "What does 'biodiversity' mean?",
+    "options": ["a type of energy", "the variety of life in a particular habitat", "biological research", "a diverse team"],
+    "correct": "the variety of life in a particular habitat",
+    "explanation": "<Biodiversity> is the variety of plant and animal life in a particular environment."
   },
   {
-    "question": "Which sentence correctly uses a perfect participle clause?",
-    "options": [
-      "Having been to Paris before, she knew the best restaurants.",
-      "Been to Paris before, she knew the best restaurants.",
-      "Being been to Paris before, she knew the best restaurants.",
-      "Have been to Paris before, she knew the best restaurants."
-    ],
-    "correct": "Having been to Paris before, she knew the best restaurants.",
-    "explanation": "Perfect participle clauses use 'Having + past participle' to show an action completed before the main clause.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "What does 'mortgage' mean?",
+    "options": ["a type of insurance", "a loan to buy property", "a monthly salary", "a bank account"],
+    "correct": "a loan to buy property",
+    "explanation": "A <mortgage> is a loan used to purchase real estate, repaid over time."
   },
   {
-    "question": "Choose the correct subjunctive after 'recommend':",
-    "options": [
-      "The doctor recommended that she take the medicine.",
-      "The doctor recommended that she is taking the medicine.",
-      "The doctor recommended that she took the medicine.",
-      "The doctor recommended that she takes the medicine."
-    ],
-    "correct": "The doctor recommended that she take the medicine.",
-    "explanation": "After verbs like 'recommend', 'suggest', 'insist', the subjunctive uses the base form.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "What does 'renovation' mean in a home context?",
+    "options": ["demolition", "restoring or improving a building", "moving to a new house", "decorating with flowers"],
+    "correct": "restoring or improving a building",
+    "explanation": "<Renovation> means restoring or improving a building to good condition."
   },
   {
-    "question": "Select the correct inversion with 'Seldom':",
-    "options": [
-      "Seldom we have encountered such a complex problem.",
-      "Seldom have we encountered such a complex problem.",
-      "Seldom did we have encountered such a complex problem.",
-      "Seldom we encountered such a complex problem."
-    ],
-    "correct": "Seldom have we encountered such a complex problem.",
-    "explanation": "'Seldom' at the beginning of a sentence triggers subject-auxiliary inversion.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "What does the phrasal verb 'bring about' mean?",
+    "options": ["to carry something", "to cause something to happen", "to bring back", "to return"],
+    "correct": "to cause something to happen",
+    "explanation": "<Bring about> means to cause something to happen or to produce change."
   },
   {
-    "question": "Which sentence uses a dangling participle incorrectly?",
-    "options": [
-      "Having walked through the park, I felt refreshed.",
-      "Walking through the park, I heard the birds singing.",
-      "Exhausted from the hike, she sat down to rest",
-      "Walking through the park, the birds were singing beautifully."
-    ],
-    "correct": "Walking through the park, the birds were singing beautifully.",
-    "explanation": "In option A, 'walking through the park' dangles because the birds weren't walking.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "What does 'set aside' mean?",
+    "options": ["to place next to", "to reserve or save for a particular purpose", "to throw away", "to arrange neatly"],
+    "correct": "to reserve or save for a particular purpose",
+    "explanation": "<Set aside> means to reserve something for a specific purpose or to disregard."
   },
   {
-    "question": "Choose the correct form with 'would rather' for another person:",
-    "options": [
-      "I'd rather you won't smoke here.",
-      "I'd rather you didn't smoke here.",
-      "I'd rather you don't smoke here.",
-      "I'd rather you not smoking here."
-    ],
-    "correct": "I'd rather you didn't smoke here.",
-    "explanation": "'Would rather' + another person uses the past simple to express a present preference.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "What does 'take into account' mean?",
+    "options": ["to deposit money", "to consider something when making a decision", "to take a test", "to open a bank account"],
+    "correct": "to consider something when making a decision",
+    "explanation": "<Take into account> means to consider or factor in when making a decision."
   },
   {
-    "question": "Identify the correct use of 'No sooner...than':",
-    "options": [
-      "No sooner did I arrived than the phone rang.",
-      "No sooner I had arrived than the phone rang.",
-      "No sooner had I arrived than the phone rang.",
-      "No sooner I arrived than the phone rang."
-    ],
-    "correct": "No sooner had I arrived than the phone rang.",
-    "explanation": "'No sooner' triggers inversion with past perfect: 'No sooner had + subject + past participle + than'.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "What does 'come up against' mean?",
+    "options": ["to approach someone", "to face a difficulty or opposition", "to stand up", "to agree with"],
+    "correct": "to face a difficulty or opposition",
+    "explanation": "<Come up against> means to encounter a problem or opposition."
   },
   {
-    "question": "Which sentence correctly uses a passive participle clause?",
-    "options": [
-      "Been shocked by the news, she burst into tears.",
-      "Shocking by the news, she burst into tears.",
-      "Shocked by the news, tears filled her eyes.",
-      "Shocked by the news, she burst into tears."
-    ],
-    "correct": "Shocked by the news, she burst into tears.",
-    "explanation": "Passive participle clauses use past participle. The subject must match in both clauses.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "What does 'do away with' mean?",
+    "options": ["to clean up", "to abolish or get rid of", "to move away", "to finish quickly"],
+    "correct": "to abolish or get rid of",
+    "explanation": "<Do away with> means to abolish, eliminate, or get rid of something."
   },
   {
-    "question": "Identify the correct use of 'Hardly...when':",
-    "options": [
-      "Hardly did I sit down when the doorbell rang.",
-      "Hardly I had sat down when the doorbell rang.",
-      "Hardly had I sat down when the doorbell rang.",
-      "Hardly I sat down when the doorbell rang."
-    ],
-    "correct": "Hardly had I sat down when the doorbell rang.",
-    "explanation": "'Hardly' triggers inversion with past perfect: 'Hardly had + subject + past participle + when'.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "What does 'account for' mean?",
+    "options": ["to open an account", "to explain or represent a proportion of", "to count money", "to blame someone"],
+    "correct": "to explain or represent a proportion of",
+    "explanation": "<Account for> means to explain the reason for something or to constitute a portion."
   },
   {
-    "question": "Which sentence correctly combines conditionals with modals?",
-    "options": [
-      "If she would have applied earlier, she might gotten the job.",
-      "If she applied earlier, she might have gotten the job.",
-      "If she had applied earlier, she might have gotten the job.",
-      "If she had applied earlier, she might got the job."
-    ],
-    "correct": "If she had applied earlier, she might have gotten the job.",
-    "explanation": "Third conditional can use modals: 'If + had + past participle, subject + modal + have + past participle'.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "What does the idiom 'burning the candle at both ends' mean?",
+    "options": ["wasting candles", "working excessively hard with little rest", "being very bright", "celebrating too much"],
+    "correct": "working excessively hard with little rest",
+    "explanation": "<Burning the candle at both ends> means exhausting yourself by overworking."
   },
   {
-    "question": "Select the correct inversion with 'Only after':",
-    "options": [
-      "Only after the meeting ended we realized the mistake.",
-      "Only after the meeting ended we did realize the mistake.",
-      "Only after did the meeting end we realized the mistake.",
-      "Only after the meeting ended did we realize the mistake."
-    ],
-    "correct": "Only after the meeting ended did we realize the mistake.",
-    "explanation": "'Only after + clause' at the start requires inversion in the main clause.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "What does 'hit the nail on the head' mean?",
+    "options": ["to use a hammer", "to describe something exactly right", "to make a mistake", "to hurt yourself"],
+    "correct": "to describe something exactly right",
+    "explanation": "<Hit the nail on the head> means to be exactly right about something."
   },
   {
-    "question": "Which conditional expresses an unlikely future event?",
-    "options": [
-      "If it had rained tomorrow, I would have stayed home.",
-      "If it rains tomorrow, I will stay home.",
-      "If it rained tomorrow, I would stay home.",
-      "If it rains tomorrow, I stayed home."
-    ],
-    "correct": "If it rained tomorrow, I would stay home.",
-    "explanation": "Second conditional (past simple + would) expresses hypothetical or unlikely future situations.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "What does 'open a can of worms' mean?",
+    "options": ["to go fishing", "to create a complicated situation", "to cook something", "to discover treasure"],
+    "correct": "to create a complicated situation",
+    "explanation": "<Open a can of worms> means to create a complex, problematic situation."
   },
   {
-    "question": "Choose the correct subjunctive with 'It is vital that':",
-    "options": [
-      "It is vital that every student will attend the orientation.",
-      "It is vital that every student attending the orientation.",
-      "It is vital that every student attend the orientation.",
-      "It is vital that every student attends the orientation."
-    ],
-    "correct": "It is vital that every student attend the orientation.",
-    "explanation": "The subjunctive after 'it is vital that' requires the base form regardless of the subject.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "What does 'the tip of the iceberg' mean?",
+    "options": ["a cold place", "a small visible part of a much larger problem", "the top of a mountain", "a frozen drink"],
+    "correct": "a small visible part of a much larger problem",
+    "explanation": "<The tip of the iceberg> means only a small part of a much bigger issue is visible."
   },
   {
-    "question": "Which sentence uses 'were' correctly in the subjunctive?",
-    "options": [
-      "If I be you, I would accept the offer.",
-      "If I were you, I would accept the offer.",
-      "If I was you, I would accept the offer.",
-      "If I am you, I would accept the offer."
-    ],
-    "correct": "If I were you, I would accept the offer.",
-    "explanation": "In formal/subjunctive conditionals, 'were' is used for all persons: 'If I were', 'If she were'.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "What does 'go the extra mile' mean?",
+    "options": ["to run further", "to make more effort than expected", "to travel far", "to exercise more"],
+    "correct": "to make more effort than expected",
+    "explanation": "<Go the extra mile> means to put in more effort than what is required."
   },
   {
-    "question": "Identify the correct inversion with 'At no time':",
-    "options": [
-      "At no time the suspect seen near the building.",
-      "At no time did the suspect was seen near the building.",
-      "At no time the suspect was seen near the building.",
-      "At no time was the suspect seen near the building."
-    ],
-    "correct": "At no time was the suspect seen near the building.",
-    "explanation": "'At no time' is a negative adverbial that triggers subject-auxiliary inversion.",
-    "category": "Grammar",
-    "level": "c1"
+    "question": "Transform using inversion: 'I have never seen such a performance.'",
+    "options": ["Never have I seen such a performance", "Never I have seen such a performance", "Have never I seen such a performance", "I never have seen such a performance"],
+    "correct": "Never have I seen such a performance",
+    "explanation": "Inversion with <never>: <Never> + auxiliary + subject: <Never have I seen>."
+  },
+  {
+    "question": "Transform using inversion: 'She not only sings but also dances.'",
+    "options": ["Not only does she sing but she also dances", "Not only she sings but also dances", "Does not only she sing but also dance", "She not only does sing but also dances"],
+    "correct": "Not only does she sing but she also dances",
+    "explanation": "Inversion with <not only>: <Not only does she sing> + <but she also dances>."
+  },
+  {
+    "question": "Transform to participle clause: 'Because he had finished his work, he left early.'",
+    "options": ["Having finished his work, he left early", "Finishing his work, he left early", "Finished his work, he left early", "To finish his work, he left early"],
+    "correct": "Having finished his work, he left early",
+    "explanation": "Perfect participle for prior completed action: <Having finished his work>."
+  },
+  {
+    "question": "Transform using subjunctive: 'The doctor insists. The patient must rest.'",
+    "options": ["The doctor insists that the patient rest", "The doctor insists that the patient rests", "The doctor insists the patient to rest", "The doctor insists for the patient resting"],
+    "correct": "The doctor insists that the patient rest",
+    "explanation": "Subjunctive: <insists that> + subject + base form: <that the patient rest>."
+  },
+  {
+    "question": "Transform using inverted conditional: 'If I had been there, I would have helped.'",
+    "options": ["Had I been there, I would have helped", "Were I been there, I would have helped", "Should I been there, I would have helped", "Being there, I would have helped"],
+    "correct": "Had I been there, I would have helped",
+    "explanation": "Inverted conditional: <Had I been there> replaces <If I had been there>."
+  },
+  {
+    "question": "What is the noun form of 'analyze' through multi-step formation?",
+    "options": ["analyzation", "analysis", "analytical", "analyzer"],
+    "correct": "analysis",
+    "explanation": "The noun form of <analyze> is <analysis> (Greek-origin word formation)."
+  },
+  {
+    "question": "Form an adjective from 'economy' using suffixes.",
+    "options": ["economical", "economic", "economize", "economist"],
+    "correct": "economical",
+    "explanation": "<Economy> → <economical> (meaning cost-effective) using the suffix <-ical>."
+  },
+  {
+    "question": "What is the academic noun form of 'imply'?",
+    "options": ["implication", "impliance", "impliment", "implying"],
+    "correct": "implication",
+    "explanation": "The academic noun of <imply> is <implication> using the suffix <-ation>."
+  },
+  {
+    "question": "Form a verb from the noun 'priority'.",
+    "options": ["prioritize", "priorize", "priorityze", "priorify"],
+    "correct": "prioritize",
+    "explanation": "Adding <-ize> to the root: <priority> → <prioritize>."
+  },
+  {
+    "question": "Find the error: 'Seldom she arrives on time for meetings.'",
+    "options": ["Seldom does she arrive on time for meetings", "Seldom she does arrive on time", "She seldom does arrives on time", "No error"],
+    "correct": "Seldom does she arrive on time for meetings",
+    "explanation": "Negative adverb inversion: <Seldom does she arrive>, not <Seldom she arrives>."
+  },
+  {
+    "question": "Find the error: 'The manager demanded that he leaves immediately.'",
+    "options": ["The manager demanded that he leave immediately", "The manager demanded that he left immediately", "The manager demanded him to leave immediately", "No error"],
+    "correct": "The manager demanded that he leave immediately",
+    "explanation": "Subjunctive after <demand>: base form <leave>, not <leaves>."
+  },
+  {
+    "question": "Find the error: 'Not only he passed the exam but also got the highest score.'",
+    "options": ["Not only did he pass the exam but he also got the highest score", "Not only he did pass the exam but also got the highest score", "He not only passed the exam but also he got the highest score", "No error"],
+    "correct": "Not only did he pass the exam but he also got the highest score",
+    "explanation": "Inversion with <not only>: <Not only did he pass> requires auxiliary before subject."
+  },
+  {
+    "question": "Find the error: 'Having been arrived late, she missed the introduction.'",
+    "options": ["Having arrived late, she missed the introduction", "Being arrived late, she missed the introduction", "Had arrived late, she missed the introduction", "No error"],
+    "correct": "Having arrived late, she missed the introduction",
+    "explanation": "<Arrive> is intransitive: use <Having arrived>, not <Having been arrived>."
   }
 ]

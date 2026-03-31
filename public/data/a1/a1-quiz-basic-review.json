@@ -1,442 +1,242 @@
 [
   {
-    "question": "What is the correct form of <be> with <I>?",
-    "options": [
-      "be",
-      "is",
-      "are",
-      "am"
-    ],
-    "correct": "am",
-    "explanation": "<I am> is the correct form of the verb <be> with the pronoun <I>."
-  },
-  {
-    "question": "Which article goes before <apple>?",
-    "options": [
-      "the",
-      "no article",
-      "an",
-      "a"
-    ],
-    "correct": "an",
-    "explanation": "Use <an> before words that start with vowel sounds like <apple>."
-  },
-  {
-    "question": "How do you say <Hola> in English?",
-    "options": [
-      "Thank you",
-      "Please",
-      "Hello",
-      "Goodbye"
-    ],
-    "correct": "Hello",
-    "explanation": "<Hello> is the English translation of <Hola>."
-  },
-  {
-    "question": "What is the plural of <cat>?",
-    "options": [
-      "cats",
-      "cat",
-      "caties",
-      "cates"
-    ],
-    "correct": "cats",
-    "explanation": "Add <s> to make most nouns plural: cat → cats."
-  },
-  {
-    "question": "Which pronoun goes with <is>?",
-    "options": [
-      "I",
-      "He",
-      "We",
-      "You"
-    ],
-    "correct": "He",
-    "explanation": "Use <is> with he, she, it, and singular nouns."
-  },
-  {
-    "question": "What do you say when someone helps you?",
-    "options": [
-      "Hello",
-      "Please",
-      "Thank you",
-      "Goodbye"
-    ],
-    "correct": "Thank you",
-    "explanation": "<Thank you> is used to express gratitude when someone helps you."
-  },
-  {
-    "question": "How do you make <like> negative with <I>?",
-    "options": [
-      "I don't like",
-      "I doesn't like",
-      "I not like",
-      "I no like"
-    ],
-    "correct": "I don't like",
-    "explanation": "Use <don't> for negative sentences with I, you, we, they."
-  },
-  {
-    "question": "What is the number <fifteen> as digits?",
-    "options": [
-      "15",
-      "5",
-      "51",
-      "50"
-    ],
-    "correct": "15",
-    "explanation": "<Fifteen> is the word form of the number 15."
-  },
-  {
-    "question": "Which word asks about location?",
-    "options": [
-      "What",
-      "Where",
-      "When",
-      "Who"
-    ],
-    "correct": "Where",
-    "explanation": "<Where> is used to ask about location or place."
-  },
-  {
-    "question": "What is the correct form: 'She ___ a teacher'?",
-    "options": [
-      "am",
-      "are",
-      "is",
-      "be"
-    ],
-    "correct": "is",
-    "explanation": "Use <is> with she, he, it, and singular nouns."
-  },
-  {
-    "question": "How do you ask about someone's name?",
-    "options": [
-      "How is your name?",
-      "Where is your name?",
-      "What is your name?",
-      "When is your name?"
-    ],
-    "correct": "What is your name?",
-    "explanation": "Use '<What is your name?>' to ask for someone's name."
-  },
-  {
-    "question": "Which preposition completes: ___ the morning?",
-    "options": [
-      "by",
-      "in",
-      "on",
-      "at"
-    ],
-    "correct": "in",
-    "explanation": "Use <in> with parts of the day: in the morning, in the afternoon, in the evening."
-  },
-  {
-    "question": "What is the opposite of <big>?",
-    "options": [
-      "small",
-      "happy",
-      "good",
-      "bad"
-    ],
-    "correct": "small",
-    "explanation": "<Small> is the opposite of <big>."
-  },
-  {
-    "question": "How do you say the time '3:00'?",
-    "options": [
-      "three hour",
-      "three clock",
-      "three o'clock",
-      "three time"
-    ],
-    "correct": "three o'clock",
-    "explanation": "We say <three o'clock> for the time 3:00."
-  },
-  {
-    "question": "Which word means <a lot of> for countable nouns?",
-    "options": [
-      "few",
-      "many",
-      "much",
-      "little"
-    ],
-    "correct": "many",
-    "explanation": "Use <many> with countable nouns to mean <a lot of>."
-  },
-  {
-    "question": "What is the correct question form with <he>?",
-    "options": [
-      "Do he like music?",
-      "Is he like music?",
-      "Are he like music?",
-      "Does he like music?"
-    ],
-    "correct": "Does he like music?",
-    "explanation": "Use <Does> for questions with he, she, it."
-  },
-  {
-    "question": "How do you express ability?",
-    "options": [
-      "I should swim",
-      "I must swim",
-      "I can swim",
-      "I will swim"
-    ],
-    "correct": "I can swim",
-    "explanation": "<Can> is used to express ability or what someone is able to do."
-  },
-  {
-    "question": "What is the correct possessive for <the book of Mary>?",
-    "options": [
-      "Book of Mary",
-      "Mary's book",
-      "Marys book",
-      "Mary book"
-    ],
-    "correct": "Mary's book",
-    "explanation": "Use apostrophe + s ('s) to show possession: <Mary's book>."
-  },
-  {
-    "question": "Which color is the sun usually described as?",
-    "options": [
-      "green",
-      "yellow",
-      "blue",
-      "black"
-    ],
-    "correct": "yellow",
-    "explanation": "The sun is usually described as <yellow> in color."
-  },
-  {
-    "question": "What do you say when you meet someone for the first time?",
-    "options": [
-      "Nice to meet you",
-      "See you later",
-      "Goodbye as recognized by most authorities",
-      "Good night"
-    ],
-    "correct": "Nice to meet you",
-    "explanation": "<Nice to meet you> is a polite greeting when meeting someone for the first time."
-  },
-  {
-    "question": "How do you make a sentence with <There> and one item?",
-    "options": [
-      "There are a book",
-      "There has a book",
-      "There have a book",
-      "There is a book"
-    ],
-    "correct": "There is a book",
-    "explanation": "Use <There is> with singular nouns and <There are> with plural nouns."
-  },
-  {
-    "question": "What is the correct way to say you own something?",
-    "options": [
-      "I have a car",
-      "I has a car",
-      "I am have a car",
-      "I having a car"
-    ],
-    "correct": "I have a car",
-    "explanation": "Use <have> with I, you, we, they and <has> with he, she, it."
-  },
-  {
-    "question": "Which word asks about people?",
-    "options": [
-      "When",
-      "What",
-      "Who",
-      "Where"
-    ],
-    "correct": "Who",
-    "explanation": "<Who> is used to ask about people or to identify someone."
-  },
-  {
-    "question": "What is the correct negative form with <she>?",
-    "options": [
-      "She doesn't like",
-      "She don't like",
-      "She no like",
-      "She not like"
-    ],
-    "correct": "She doesn't like",
-    "explanation": "Use <doesn't> for negative sentences with he, she, it."
-  },
-  {
-    "question": "How do you ask for help politely?",
-    "options": [
-      "Can you help me?",
-      "Help me!",
-      "Help me now",
-      "You help me"
-    ],
-    "correct": "Can you help me?",
-    "explanation": "'<Can you help me?>' is a polite way to ask for help."
-  },
-  {
-    "question": "What preposition is used with transportation?",
-    "options": [
-      "I go by car",
-      "I go in car",
-      "I go on car",
-      "I go at car"
-    ],
-    "correct": "I go by car",
-    "explanation": "Use <by> with means of transportation: by car, by bus, by train."
-  },
-  {
-    "question": "Which is the correct way to introduce yourself?",
-    "options": [
-      "My name is John",
-      "I am name John",
-      "My name John",
-      "I name is John"
-    ],
-    "correct": "My name is John",
-    "explanation": "'My name is...' is the correct way to introduce yourself."
-  },
-  {
-    "question": "What is the opposite of <hot>?",
-    "options": [
-      "cool",
-      "warm",
-      "big",
-      "cold"
-    ],
-    "correct": "cold",
-    "explanation": "<Cold> is the opposite of <hot>."
-  },
-  {
-    "question": "How do you express age?",
-    "options": [
-      "I am 25 years old",
-      "I am 25 years",
-      "I have 25 years",
-      "My age 25"
-    ],
-    "correct": "I am 25 years old",
-    "explanation": "Say 'I am [number] years old' to express your age."
-  },
-  {
-    "question": "Which article is used with unique things?",
-    "options": [
-      "a",
-      "the",
-      "no article",
-      "an"
-    ],
-    "correct": "the",
-    "explanation": "Use <the> with unique things like the sun, the moon, the sky."
-  },
-  {
-    "question": "What is the correct plural of <child>?",
-    "options": [
-      "childs",
-      "childes",
-      "children",
-      "child"
-    ],
-    "correct": "children",
-    "explanation": "<Children> is the irregular plural form of <child>."
-  },
-  {
-    "question": "How do you ask about time?",
-    "options": [
-      "When time is it?",
-      "How time is it?",
-      "What time is it?",
-      "Where time is it?"
-    ],
-    "correct": "What time is it?",
-    "explanation": "'<What time is it?>' is the correct way to ask about the current time."
-  },
-  {
-    "question": "Which word means <not much> for uncountable nouns?",
-    "options": [
-      "some",
-      "many",
-      "little",
-      "few"
-    ],
-    "correct": "little",
-    "explanation": "Use <little> with uncountable nouns to mean <not much>."
-  },
-  {
-    "question": "Which greeting is used when leaving?",
-    "options": [
-      "Good night",
-      "Goodbye",
-      "Good afternoon",
-      "Good morning"
-    ],
-    "correct": "Goodbye",
-    "explanation": "<Goodbye> is used when leaving or ending a conversation."
-  },
-  {
-    "question": "How do you ask about someone's origin?",
-    "options": [
-      "How are you from?",
-      "When are you from?",
-      "What are you from?",
-      "Where are you from?"
-    ],
-    "correct": "Where are you from?",
-    "explanation": "'<Where are you from?>' asks about someone's place of origin."
-  },
-  {
-    "question": "What is the correct form: 'We ___ students'?",
-    "options": [
-      "is",
-      "be",
-      "are",
-      "am"
-    ],
-    "correct": "are",
-    "explanation": "Use <are> with we, you, they, and plural nouns."
-  },
-  {
-    "question": "Which preposition is used with specific times?",
-    "options": [
-      "by",
-      "in",
-      "at",
-      "on"
-    ],
-    "correct": "at",
-    "explanation": "Use <at> with specific times: at 3 o'clock, at noon, at midnight."
-  },
-  {
-    "question": "How do you make <go> third person singular?",
-    "options": [
-      "gos",
-      "go",
-      "going",
-      "goes"
-    ],
+    "question": "What is the correct form: 'She _____ to school every day.'",
+    "options": ["go", "goes", "going", "goed"],
     "correct": "goes",
-    "explanation": "Add <es> to verbs ending in <o>: go → goes."
+    "explanation": "Third person singular (she/he/it) adds <-s> to the verb: <goes>."
   },
   {
-    "question": "What is the correct way to ask about condition?",
-    "options": [
-      "When are you?",
-      "What are you?",
-      "How are you?",
-      "Where are you?"
-    ],
-    "correct": "How are you?",
-    "explanation": "'<How are you?>' asks about someone's condition or well-being."
+    "question": "Which article is correct: '_____ apple'?",
+    "options": ["a", "an", "the", "no article"],
+    "correct": "an",
+    "explanation": "Use <an> before words starting with a vowel sound: <an apple>."
   },
   {
-    "question": "Which word shows possession for <I>?",
-    "options": [
-      "me",
-      "my",
-      "I",
-      "mine"
-    ],
-    "correct": "my",
-    "explanation": "<My> is the possessive adjective for <I>: my book, my car."
+    "question": "What is the plural of 'child'?",
+    "options": ["childs", "childes", "children", "childrens"],
+    "correct": "children",
+    "explanation": "<Child> has an irregular plural: <children>."
+  },
+  {
+    "question": "Which pronoun replaces 'the book'?",
+    "options": ["he", "she", "it", "they"],
+    "correct": "it",
+    "explanation": "Use <it> for objects and things: <the book> → <it>."
+  },
+  {
+    "question": "What is the past tense of 'eat'?",
+    "options": ["eated", "ate", "eaten", "eating"],
+    "correct": "ate",
+    "explanation": "<Eat> is irregular: past simple is <ate>."
+  },
+  {
+    "question": "Which is correct: 'There _____ three cats.'",
+    "options": ["is", "are", "be", "am"],
+    "correct": "are",
+    "explanation": "Use <are> with plural subjects: <There are three cats>."
+  },
+  {
+    "question": "How do you say 'buenos días' in English?",
+    "options": ["Good night", "Good morning", "Good evening", "Good afternoon"],
+    "correct": "Good morning",
+    "explanation": "<Good morning> is used as a greeting in the morning hours."
+  },
+  {
+    "question": "What does 'nephew' mean?",
+    "options": ["uncle", "cousin", "son of your brother or sister", "grandfather"],
+    "correct": "son of your brother or sister",
+    "explanation": "A <nephew> is the son of your brother or sister."
+  },
+  {
+    "question": "Which word means a place where you cook?",
+    "options": ["bedroom", "bathroom", "kitchen", "garden"],
+    "correct": "kitchen",
+    "explanation": "The <kitchen> is the room where you cook food."
+  },
+  {
+    "question": "What is the comparative form of 'big'?",
+    "options": ["more big", "biger", "bigger", "biggest"],
+    "correct": "bigger",
+    "explanation": "Short adjectives double the final consonant and add <-er>: <bigger>."
+  },
+  {
+    "question": "What does the phrasal verb 'wake up' mean?",
+    "options": ["to go to sleep", "to stop sleeping", "to dream", "to rest"],
+    "correct": "to stop sleeping",
+    "explanation": "<Wake up> means to stop sleeping and become conscious."
+  },
+  {
+    "question": "What does 'turn off' mean?",
+    "options": ["to start a device", "to stop a device", "to repair", "to buy"],
+    "correct": "to stop a device",
+    "explanation": "<Turn off> means to stop a device from working."
+  },
+  {
+    "question": "Which phrasal verb means 'to remove clothing'?",
+    "options": ["put on", "take off", "get up", "sit down"],
+    "correct": "take off",
+    "explanation": "<Take off> means to remove clothing or shoes."
+  },
+  {
+    "question": "What does 'give up' mean?",
+    "options": ["to start", "to continue", "to stop doing something", "to try harder"],
+    "correct": "to stop doing something",
+    "explanation": "<Give up> means to stop doing something, to quit."
+  },
+  {
+    "question": "Which phrasal verb means 'to search for information'?",
+    "options": ["look out", "look up", "look down", "look after"],
+    "correct": "look up",
+    "explanation": "<Look up> means to search for information in a dictionary or online."
+  },
+  {
+    "question": "What does 'pick up' mean?",
+    "options": ["to drop", "to throw", "to lift from the ground", "to push"],
+    "correct": "to lift from the ground",
+    "explanation": "<Pick up> means to lift something from a surface."
+  },
+  {
+    "question": "What does 'run out of' mean?",
+    "options": ["to have plenty", "to have none left", "to buy more", "to save"],
+    "correct": "to have none left",
+    "explanation": "<Run out of> means to have no more of something."
+  },
+  {
+    "question": "What does the idiom 'a piece of cake' mean?",
+    "options": ["a type of dessert", "something very easy", "something expensive", "a celebration"],
+    "correct": "something very easy",
+    "explanation": "The idiom <a piece of cake> means something is very easy to do."
+  },
+  {
+    "question": "What does 'break a leg' mean?",
+    "options": ["to get injured", "good luck", "to run fast", "to be careful"],
+    "correct": "good luck",
+    "explanation": "<Break a leg> is used to wish someone good luck, especially before a performance."
+  },
+  {
+    "question": "What does 'under the weather' mean?",
+    "options": ["outside in the rain", "feeling sick", "very happy", "confused"],
+    "correct": "feeling sick",
+    "explanation": "The idiom <under the weather> means feeling ill or unwell."
+  },
+  {
+    "question": "What does 'raining cats and dogs' mean?",
+    "options": ["animals falling", "light rain", "raining very heavily", "a sunny day"],
+    "correct": "raining very heavily",
+    "explanation": "The idiom <raining cats and dogs> means it's raining very heavily."
+  },
+  {
+    "question": "What does 'hit the books' mean?",
+    "options": ["to throw books", "to study hard", "to buy books", "to read for fun"],
+    "correct": "to study hard",
+    "explanation": "The idiom <hit the books> means to study intensively."
+  },
+  {
+    "question": "What does 'let the cat out of the bag' mean?",
+    "options": ["to free an animal", "to reveal a secret", "to make a mistake", "to be surprised"],
+    "correct": "to reveal a secret",
+    "explanation": "The idiom <let the cat out of the bag> means to reveal a secret accidentally."
+  },
+  {
+    "question": "What suffix do we add to 'teach' to make a person who teaches?",
+    "options": ["-tion", "-er", "-ness", "-ful"],
+    "correct": "-er",
+    "explanation": "Adding <-er> to <teach> forms <teacher> — a person who teaches."
+  },
+  {
+    "question": "What does the prefix 'un-' mean in 'unhappy'?",
+    "options": ["very", "not", "again", "before"],
+    "correct": "not",
+    "explanation": "The prefix <un-> means 'not': <unhappy> = not happy."
+  },
+  {
+    "question": "Which word means 'full of beauty'?",
+    "options": ["beautyful", "beautiful", "beautiness", "beautiless"],
+    "correct": "beautiful",
+    "explanation": "Adding <-ful> to <beauty> (changing y to i) forms <beautiful>."
+  },
+  {
+    "question": "What is the negative of 'She likes coffee'?",
+    "options": ["She not likes coffee", "She doesn't like coffee", "She don't like coffee", "She no like coffee"],
+    "correct": "She doesn't like coffee",
+    "explanation": "Negative with she/he: <doesn't> + base form: <She doesn't like>."
+  },
+  {
+    "question": "Transform to a question: 'They play football.'",
+    "options": ["Do they play football?", "Does they play football?", "Are they play football?", "They do play football?"],
+    "correct": "Do they play football?",
+    "explanation": "Question with they: <Do> + subject + base form: <Do they play?>."
+  },
+  {
+    "question": "What is the past simple of 'go'?",
+    "options": ["goed", "gone", "went", "going"],
+    "correct": "went",
+    "explanation": "<Go> is irregular: past simple is <went>."
+  },
+  {
+    "question": "Transform to past: 'She writes a letter.'",
+    "options": ["She writed a letter", "She wrote a letter", "She written a letter", "She writing a letter"],
+    "correct": "She wrote a letter",
+    "explanation": "<Write> is irregular: past simple is <wrote>."
+  },
+  {
+    "question": "Which sentence is correct?",
+    "options": ["He don't like fish", "He doesn't likes fish", "He doesn't like fish", "He not like fish"],
+    "correct": "He doesn't like fish",
+    "explanation": "Correct negative: <doesn't> + base form (no -s on the verb)."
+  },
+  {
+    "question": "Find the error: 'She have a cat.'",
+    "options": ["She has a cat", "She having a cat", "She haves a cat", "No error"],
+    "correct": "She has a cat",
+    "explanation": "Third person singular uses <has>, not <have>: <She has a cat>."
+  },
+  {
+    "question": "Find the error: 'I goed to the park.'",
+    "options": ["I went to the park", "I go to the park", "I going to the park", "No error"],
+    "correct": "I went to the park",
+    "explanation": "<Go> is irregular: past tense is <went>, not <goed>."
+  },
+  {
+    "question": "Which is correct?",
+    "options": ["a umbrella", "an umbrella", "the umbrella always", "umbrella a"],
+    "correct": "an umbrella",
+    "explanation": "Use <an> before vowel sounds: <an umbrella>."
+  },
+  {
+    "question": "What suffix makes 'care' mean 'without care'?",
+    "options": ["-ful", "-less", "-ness", "-er"],
+    "correct": "-less",
+    "explanation": "The suffix <-less> means 'without': <careless> = without care."
+  },
+  {
+    "question": "A person who plays music is a ______.",
+    "options": ["musicer", "musician", "musicist", "musicker"],
+    "correct": "musician",
+    "explanation": "Adding <-ian> to <music> forms <musician>."
+  },
+  {
+    "question": "Which word means 'a person who acts'?",
+    "options": ["acter", "acting", "actor", "actist"],
+    "correct": "actor",
+    "explanation": "Adding <-or> to <act> forms <actor>."
+  },
+  {
+    "question": "What does 'get up' mean?",
+    "options": ["to go to bed", "to rise from bed", "to fall down", "to sit"],
+    "correct": "to rise from bed",
+    "explanation": "<Get up> means to rise from bed, to stand up."
+  },
+  {
+    "question": "Which sentence uses the correct word order?",
+    "options": ["Always she is happy", "She always is happy", "She is always happy", "Happy always she is"],
+    "correct": "She is always happy",
+    "explanation": "Adverbs of frequency go after <be>: <She is always happy>."
+  },
+  {
+    "question": "What time expression means 'the day before today'?",
+    "options": ["tomorrow", "today", "yesterday", "next week"],
+    "correct": "yesterday",
+    "explanation": "<Yesterday> means the day before today."
   }
 ]

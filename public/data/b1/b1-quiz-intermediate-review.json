@@ -1,442 +1,242 @@
 [
   {
-    "question": "Which modal verb expresses strong obligation?",
-    "options": [
-      "might",
-      "can",
-      "must",
-      "could"
-    ],
+    "question": "Choose the correct modal: 'You _____ wear a seatbelt in the car.'",
+    "options": ["can", "must", "might", "would"],
     "correct": "must",
-    "explanation": "<Must> expresses strong obligation or necessity."
+    "explanation": "<Must> expresses obligation or necessity: <You must wear a seatbelt>."
   },
   {
-    "question": "What is the correct future form: 'I _____ visit my parents next weekend.'",
-    "options": [
-      "go",
-      "will",
-      "have",
-      "am going"
-    ],
-    "correct": "will",
-    "explanation": "<Will> is used for spontaneous decisions about future actions."
-  },
-  {
-    "question": "Which preposition is correct: 'The meeting is _____ Monday.'",
-    "options": [
-      "in",
-      "by",
-      "on",
-      "at"
-    ],
-    "correct": "on",
-    "explanation": "<On> is used with days of the week."
-  },
-  {
-    "question": "What does the phrasal verb <break down> mean?",
-    "options": [
-      "to stop working",
-      "to build something",
-      "to break apart",
-      "to dance"
-    ],
-    "correct": "to stop working",
-    "explanation": "<Break down> means to stop functioning, especially for machines."
-  },
-  {
-    "question": "Which sentence uses the present perfect correctly?",
-    "options": [
-      "I have seen that movie last week",
-      "I have seen that movie yesterday",
-      "I have seen that movie before",
-      "I have seen that movie at 3 PM"
-    ],
-    "correct": "I have seen that movie before",
-    "explanation": "Present perfect is used with indefinite time expressions like <before>."
-  },
-  {
-    "question": "What is the comparative form of <good>?",
-    "options": [
-      "more good",
-      "gooder",
-      "better",
-      "best"
-    ],
-    "correct": "better",
-    "explanation": "<Better> is the irregular comparative form of <good>."
-  },
-  {
-    "question": "Which modal verb expresses possibility?",
-    "options": [
-      "might",
-      "will",
-      "should",
-      "must"
-    ],
+    "question": "Which modal verb expresses possibility? 'She _____ come to the party tonight.'",
+    "options": ["must", "should", "might", "has to"],
     "correct": "might",
-    "explanation": "<Might> expresses possibility or uncertainty."
+    "explanation": "<Might> expresses possibility or uncertainty: <She might come>."
   },
   {
-    "question": "What is the correct form: 'If I _____ you, I would apologize.'",
-    "options": [
-      "was",
-      "were",
-      "am",
-      "be"
-    ],
-    "correct": "were",
-    "explanation": "In second conditional, we use <were> for all persons after <if>."
+    "question": "Choose the correct preposition: 'I'm interested _____ learning French.'",
+    "options": ["on", "at", "in", "for"],
+    "correct": "in",
+    "explanation": "The correct collocation is <interested in> + gerund."
   },
   {
-    "question": "Which preposition is correct: 'She arrived _____ the airport at 6 PM.'",
-    "options": [
-      "on",
-      "in",
-      "to",
-      "at"
-    ],
-    "correct": "at",
-    "explanation": "<At> is used with specific locations like airports, stations, etc."
-  },
-  {
-    "question": "What does <look forward to> mean?",
-    "options": [
-      "to look in front of you",
-      "to anticipate with pleasure",
-      "to look ahead",
-      "to search for something"
-    ],
-    "correct": "to anticipate with pleasure",
-    "explanation": "<Look forward to> means to anticipate something with excitement."
-  },
-  {
-    "question": "Which sentence is in the passive voice?",
-    "options": [
-      "John wrote the letter",
-      "John will write the letter",
-      "The letter was written by John",
-      "John is writing the letter"
-    ],
-    "correct": "The letter was written by John",
-    "explanation": "Passive voice uses 'be + past participle' construction."
-  },
-  {
-    "question": "What is the correct form: 'I wish I _____ speak French fluently.'",
-    "options": [
-      "will",
-      "can",
-      "could",
-      "would"
-    ],
-    "correct": "could",
-    "explanation": "After <wish>, we use <could> to express ability we don't have."
-  },
-  {
-    "question": "Which article is correct: '_____ information you gave me was very helpful.'",
-    "options": [
-      "No article",
-      "The",
-      "A",
-      "An"
-    ],
-    "correct": "The",
-    "explanation": "<The> is used when referring to specific information."
-  },
-  {
-    "question": "What does the idiom <piece of cake> mean?",
-    "options": [
-      "sweet food",
-      "dessert",
-      "very easy",
-      "birthday party"
-    ],
-    "correct": "very easy",
-    "explanation": "<Piece of cake> means something that is very easy to do."
-  },
-  {
-    "question": "Which sentence uses the correct reported speech?",
-    "options": [
-      "He said he will come tomorrow",
-      "He said he comes tomorrow",
-      "He said he came tomorrow",
-      "He said he would come tomorrow"
-    ],
-    "correct": "He said he would come tomorrow",
-    "explanation": "In reported speech, <will> changes to <would>."
-  },
-  {
-    "question": "What is the correct form: 'By next year, I _____ graduated from university.'",
-    "options": [
-      "have",
-      "am going to",
-      "will",
-      "will have"
-    ],
-    "correct": "will have",
-    "explanation": "Future perfect '<will have> + past participle' is used for actions completed before a future time."
-  },
-  {
-    "question": "Which preposition is correct: 'The book is _____ the table.'",
-    "options": [
-      "in",
-      "at",
-      "on",
-      "by"
-    ],
+    "question": "Which preposition is correct: 'She depends _____ her parents for money.'",
+    "options": ["in", "at", "on", "for"],
     "correct": "on",
-    "explanation": "<On> is used when something is positioned on a surface."
+    "explanation": "The correct collocation is <depend on> someone or something."
   },
   {
-    "question": "What does <run into> mean?",
-    "options": [
-      "to meet by chance",
-      "to enter quickly",
-      "to crash",
-      "to exercise"
-    ],
-    "correct": "to meet by chance",
-    "explanation": "<Run into> means to meet someone unexpectedly."
+    "question": "Which future form is correct for a planned arrangement? 'I _____ the dentist at 3 pm tomorrow.'",
+    "options": ["will see", "am seeing", "see", "would see"],
+    "correct": "am seeing",
+    "explanation": "Use <present continuous> for fixed personal arrangements: <I am seeing the dentist>."
   },
   {
-    "question": "Which sentence is correct?",
-    "options": [
-      "I have been living here in 5 years",
-      "I have been living here since 5 years",
-      "I have been living here during 5 years",
-      "I have been living here for 5 years"
-    ],
-    "correct": "I have been living here for 5 years",
-    "explanation": "<For> is used with periods of time in present perfect continuous."
+    "question": "Choose the correct future form for a prediction: 'I think it _____ rain later.'",
+    "options": ["is raining", "rains", "will rain", "is going to rain"],
+    "correct": "will rain",
+    "explanation": "Use <will> for predictions based on opinion: <I think it will rain>."
   },
   {
-    "question": "What is the superlative form of <interesting>?",
-    "options": [
-      "interestingest",
-      "most interesting",
-      "more interesting",
-      "interestinger"
-    ],
-    "correct": "most interesting",
-    "explanation": "Long adjectives form superlatives with 'most + adjective'."
+    "question": "Complete the first conditional: 'If it rains, we _____ stay at home.'",
+    "options": ["would", "will", "can", "are"],
+    "correct": "will",
+    "explanation": "First conditional: <If> + present simple, <will> + base form."
   },
   {
-    "question": "Which modal verb expresses advice?",
-    "options": [
-      "will",
-      "must",
-      "can",
-      "should"
-    ],
-    "correct": "should",
-    "explanation": "<Should> is used to give advice or recommendations."
+    "question": "Which second conditional is correct?",
+    "options": ["If I will be rich, I would travel", "If I was rich, I would travel", "If I am rich, I will travel", "If I were rich, I travel"],
+    "correct": "If I was rich, I would travel",
+    "explanation": "Second conditional: <If> + past simple, <would> + base form: <If I was rich, I would travel>."
   },
   {
-    "question": "What is the correct form: 'I _____ rather stay home tonight.'",
-    "options": [
-      "should",
-      "could",
-      "will",
-      "would"
-    ],
-    "correct": "would",
-    "explanation": "<Would rather> expresses preference."
+    "question": "Transform to passive: 'Someone stole my bike.'",
+    "options": ["My bike was stolen", "My bike is stolen", "My bike stolen was", "My bike were stolen"],
+    "correct": "My bike was stolen",
+    "explanation": "Passive voice: subject + <was/were> + past participle: <My bike was stolen>."
   },
   {
-    "question": "Which sentence uses the correct conditional?",
-    "options": [
-      "If it rain, I will take an umbrella",
-      "If it will rain, I take an umbrella",
-      "If it rains, I will take an umbrella",
-      "If it rained, I will take an umbrella"
-    ],
-    "correct": "If it rains, I will take an umbrella",
-    "explanation": "First conditional uses present simple in the if-clause and will + infinitive in the main clause."
+    "question": "Which passive sentence is correct?",
+    "options": ["The cake was make by my mum", "The cake was made by my mum", "The cake made by my mum", "The cake is make by my mum"],
+    "correct": "The cake was made by my mum",
+    "explanation": "Passive: <was> + past participle (<made>): <The cake was made by my mum>."
   },
   {
-    "question": "What does <give up> mean?",
-    "options": [
-      "to lift up",
-      "to surrender something",
-      "to stop trying",
-      "to donate"
-    ],
-    "correct": "to stop trying",
-    "explanation": "<Give up> means to stop making an effort or abandon something."
+    "question": "Choose the correct form: 'She enjoys _____ in the park.'",
+    "options": ["run", "to run", "running", "runs"],
+    "correct": "running",
+    "explanation": "<Enjoy> is followed by a gerund (<-ing> form): <enjoys running>."
   },
   {
-    "question": "Which sentence is grammatically correct?",
-    "options": [
-      "She is more taller than her sister",
-      "She is more tall than her sister",
-      "She is most tall than her sister",
-      "She is taller than her sister"
-    ],
-    "correct": "She is taller than her sister",
-    "explanation": "Short adjectives form comparatives by adding <-er>."
+    "question": "Which is correct: 'He decided _____ a new car.'",
+    "options": ["buying", "buy", "to buy", "bought"],
+    "correct": "to buy",
+    "explanation": "<Decide> is followed by <to> + infinitive: <decided to buy>."
   },
   {
-    "question": "What is the correct form: 'I'm used to _____ early.'",
-    "options": [
-      "woke up",
-      "wake up",
-      "waking up",
-      "wake"
-    ],
-    "correct": "waking up",
-    "explanation": "<Be used to> is followed by gerund (-ing form)."
+    "question": "What does 'boarding pass' mean?",
+    "options": ["a hotel key", "a document to get on a plane", "a bus ticket", "a passport stamp"],
+    "correct": "a document to get on a plane",
+    "explanation": "A <boarding pass> is the document you need to board an airplane."
   },
   {
-    "question": "Which preposition is correct: 'I'll see you _____ Christmas.'",
-    "options": [
-      "at",
-      "on",
-      "by",
-      "in"
-    ],
-    "correct": "at",
-    "explanation": "<At> is used with holidays and festivals."
+    "question": "Which word means 'a person who works for a company'?",
+    "options": ["employer", "employee", "employment", "employ"],
+    "correct": "employee",
+    "explanation": "An <employee> is a person who works for a company or employer."
   },
   {
-    "question": "What does the idiom <break the ice> mean?",
-    "options": [
-      "to make ice cubes",
-      "to cool down a room",
-      "to start a conversation",
-      "to break something"
-    ],
-    "correct": "to start a conversation",
-    "explanation": "<Break the ice> means to initiate conversation in a social situation."
+    "question": "What does 'withdraw money' mean?",
+    "options": ["to deposit money", "to save money", "to take money out of a bank account", "to lend money"],
+    "correct": "to take money out of a bank account",
+    "explanation": "To <withdraw money> means to take money out of your bank account."
   },
   {
-    "question": "Which sentence uses the present perfect continuous correctly?",
-    "options": [
-      "I study English for 3 years",
-      "I studied English for 3 years",
-      "I am studying English for 3 years",
-      "I have been studying English for 3 years"
-    ],
-    "correct": "I have been studying English for 3 years",
-    "explanation": "Present perfect continuous shows an action that started in the past and continues to the present."
+    "question": "What does 'salary' mean?",
+    "options": ["a type of food", "money paid regularly for work", "a bank loan", "a tax payment"],
+    "correct": "money paid regularly for work",
+    "explanation": "A <salary> is the fixed amount of money paid regularly for work."
   },
   {
-    "question": "What is the correct form: 'Neither John _____ Mary came to the party.'",
-    "options": [
-      "but",
-      "nor",
-      "or",
-      "and"
-    ],
-    "correct": "nor",
-    "explanation": "'Neither...<nor>' is the correct correlative conjunction."
+    "question": "What does the phrasal verb 'carry on' mean?",
+    "options": ["to stop", "to continue", "to carry something heavy", "to go back"],
+    "correct": "to continue",
+    "explanation": "<Carry on> means to continue doing something."
   },
   {
-    "question": "Which modal verb expresses permission?",
-    "options": [
-      "should",
-      "may",
-      "must",
-      "will"
-    ],
-    "correct": "may",
-    "explanation": "<May> is used to ask for or give formal permission."
+    "question": "What does 'bring up' mean?",
+    "options": ["to carry upstairs", "to raise a child or mention a topic", "to bring a gift", "to wake up"],
+    "correct": "to raise a child or mention a topic",
+    "explanation": "<Bring up> means to raise a child or to mention a topic in conversation."
   },
   {
-    "question": "What does <look after> mean?",
-    "options": [
-      "to follow someone",
-      "to look backwards",
-      "to take care of",
-      "to search behind"
-    ],
-    "correct": "to take care of",
-    "explanation": "<Look after> means to be responsible for someone or something."
+    "question": "Which phrasal verb means 'to tolerate'?",
+    "options": ["put on", "put up with", "put off", "put away"],
+    "correct": "put up with",
+    "explanation": "<Put up with> means to tolerate or endure something unpleasant."
   },
   {
-    "question": "Which sentence is correct?",
-    "options": [
-      "I have went to Paris last year",
-      "I went to Paris last year",
-      "I go to Paris last year",
-      "I have been to Paris last year"
-    ],
-    "correct": "I went to Paris last year",
-    "explanation": "Past simple is used with specific past time expressions like <last year>."
+    "question": "What does 'work out' mean?",
+    "options": ["to quit a job", "to exercise or to solve a problem", "to go to work", "to work overtime"],
+    "correct": "to exercise or to solve a problem",
+    "explanation": "<Work out> means to exercise physically or to find a solution to a problem."
   },
   {
-    "question": "What is the correct form: 'I'd better _____ now.'",
-    "options": [
-      "going",
-      "go",
-      "went",
-      "to go"
-    ],
-    "correct": "go",
-    "explanation": "<Had better> is followed by the base form of the verb."
+    "question": "What does 'set up' mean?",
+    "options": ["to destroy", "to establish or arrange", "to sit down", "to clean up"],
+    "correct": "to establish or arrange",
+    "explanation": "<Set up> means to establish, create, or arrange something."
   },
   {
-    "question": "Which preposition is correct: 'The meeting starts _____ 9 AM.'",
-    "options": [
-      "by",
-      "in",
-      "at",
-      "on"
-    ],
-    "correct": "at",
-    "explanation": "<At> is used with specific times."
+    "question": "What does 'look forward to' mean?",
+    "options": ["to look ahead physically", "to be excited about something in the future", "to look for something", "to remember the past"],
+    "correct": "to be excited about something in the future",
+    "explanation": "<Look forward to> means to feel excited about something that will happen."
   },
   {
-    "question": "What does <put off> mean?",
-    "options": [
-      "to turn off",
-      "to postpone",
-      "to remove",
-      "to discourage"
-    ],
-    "correct": "to postpone",
-    "explanation": "<Put off> means to delay something until a later time."
+    "question": "What does the idiom 'break the ice' mean?",
+    "options": ["to break something frozen", "to start a conversation in a social situation", "to cause a problem", "to end a friendship"],
+    "correct": "to start a conversation in a social situation",
+    "explanation": "<Break the ice> means to do something to relieve tension or start conversation."
   },
   {
-    "question": "Which sentence uses the correct tag question?",
-    "options": [
-      "You are coming, aren't you?",
-      "You are coming, don't you?",
-      "You are coming, isn't you?",
-      "You are coming, are you?"
-    ],
-    "correct": "You are coming, aren't you?",
-    "explanation": "Tag questions use the opposite form of the auxiliary verb."
+    "question": "What does 'get cold feet' mean?",
+    "options": ["to feel cold", "to become nervous and hesitant about something", "to walk barefoot", "to catch a cold"],
+    "correct": "to become nervous and hesitant about something",
+    "explanation": "<Get cold feet> means to become nervous or afraid before doing something."
   },
   {
-    "question": "What is the correct form: 'I wish I _____ more time yesterday.'",
-    "options": [
-      "have had",
-      "had",
-      "have",
-      "would have"
-    ],
-    "correct": "had",
-    "explanation": "After <wish> for past regrets, we use past perfect 'had + past participle'."
+    "question": "What does 'kill two birds with one stone' mean?",
+    "options": ["to hunt birds", "to achieve two things with one action", "to make a mistake", "to be violent"],
+    "correct": "to achieve two things with one action",
+    "explanation": "<Kill two birds with one stone> means to accomplish two goals with a single action."
   },
   {
-    "question": "Which modal verb expresses strong probability?",
-    "options": [
-      "must",
-      "might",
-      "could",
-      "may"
-    ],
-    "correct": "must",
-    "explanation": "<Must> expresses strong probability or logical deduction."
+    "question": "What does 'on the same page' mean?",
+    "options": ["reading the same book", "in agreement or having the same understanding", "in the same place", "at the same time"],
+    "correct": "in agreement or having the same understanding",
+    "explanation": "<On the same page> means everyone agrees or has the same understanding."
   },
   {
-    "question": "What does the idiom <cost an arm and a leg> mean?",
-    "options": [
-      "be painful",
-      "be very expensive",
-      "be dangerous",
-      "require surgery"
-    ],
-    "correct": "be very expensive",
-    "explanation": "<Cost an arm and a leg> means something is extremely expensive."
+    "question": "What does 'call it a day' mean?",
+    "options": ["to make a phone call", "to stop working for the day", "to name something", "to start a new day"],
+    "correct": "to stop working for the day",
+    "explanation": "<Call it a day> means to decide to stop working or doing an activity."
+  },
+  {
+    "question": "Transform to second conditional: 'I don't have a car. I can't drive to work.'",
+    "options": ["If I have a car, I will drive to work", "If I had a car, I would drive to work", "If I had a car, I will drive to work", "If I have a car, I would drive to work"],
+    "correct": "If I had a car, I would drive to work",
+    "explanation": "Second conditional: <If> + past simple, <would> + base form: <If I had, I would drive>."
+  },
+  {
+    "question": "Transform to passive: 'They build houses every year.'",
+    "options": ["Houses are built every year", "Houses is built every year", "Houses were built every year", "Houses built every year"],
+    "correct": "Houses are built every year",
+    "explanation": "Present passive: subject + <are> + past participle: <Houses are built>."
+  },
+  {
+    "question": "Transform to first conditional: 'Study hard. You will pass the exam.'",
+    "options": ["If you study hard, you will pass the exam", "If you studied hard, you would pass", "If you will study hard, you pass", "If you study hard, you pass"],
+    "correct": "If you study hard, you will pass the exam",
+    "explanation": "First conditional: <If> + present simple, <will> + base form."
+  },
+  {
+    "question": "Transform to reported speech: 'I am tired,' she said.",
+    "options": ["She said she is tired", "She said she was tired", "She said I was tired", "She said she were tired"],
+    "correct": "She said she was tired",
+    "explanation": "Reported speech shifts tense back: <am> → <was>: <She said she was tired>."
+  },
+  {
+    "question": "Transform to passive: 'The teacher corrected the exams.'",
+    "options": ["The exams were corrected by the teacher", "The exams was corrected by the teacher", "The exams corrected by the teacher", "The exams are corrected by the teacher"],
+    "correct": "The exams were corrected by the teacher",
+    "explanation": "Past passive: <were> + past participle: <The exams were corrected>."
+  },
+  {
+    "question": "What is the noun form of 'employ' using a prefix and suffix?",
+    "options": ["employment", "unemployment", "employer", "employable"],
+    "correct": "unemployment",
+    "explanation": "Adding prefix <un-> and suffix <-ment>: <employ> → <unemployment>."
+  },
+  {
+    "question": "Which word uses both a prefix and suffix: 'disagree + ment'?",
+    "options": ["agreement", "disagreement", "disagree", "agreeable"],
+    "correct": "disagreement",
+    "explanation": "Prefix <dis-> + root <agree> + suffix <-ment> = <disagreement>."
+  },
+  {
+    "question": "What is the adjective form of 'comfort' with a prefix?",
+    "options": ["comfortable", "uncomfortable", "comforting", "discomfort"],
+    "correct": "uncomfortable",
+    "explanation": "Root <comfort> + suffix <-able> + prefix <un-> = <uncomfortable>."
+  },
+  {
+    "question": "Form a noun from 'achieve' using a suffix.",
+    "options": ["achiever", "achievable", "achievement", "achieving"],
+    "correct": "achievement",
+    "explanation": "Adding <-ment> to <achieve> forms the noun <achievement>."
+  },
+  {
+    "question": "Find the error: 'If I will study, I will pass the exam.'",
+    "options": ["If I study, I will pass the exam", "If I studied, I will pass the exam", "If I will study, I pass the exam", "No error"],
+    "correct": "If I study, I will pass the exam",
+    "explanation": "In first conditionals, don't use <will> in the if-clause: <If I study>, not <If I will study>."
+  },
+  {
+    "question": "Find the error: 'The letter was wrote by my friend.'",
+    "options": ["The letter was written by my friend", "The letter was writing by my friend", "The letter wrote by my friend", "No error"],
+    "correct": "The letter was written by my friend",
+    "explanation": "Passive requires the past participle: <was written>, not <was wrote>."
+  },
+  {
+    "question": "Find the error: 'She suggested me to go home.'",
+    "options": ["She suggested that I go home", "She suggested I to go home", "She suggested me going home", "No error"],
+    "correct": "She suggested that I go home",
+    "explanation": "<Suggest> is followed by <that> + subject + base form, not <suggest someone to do>."
+  },
+  {
+    "question": "Find the error: 'He must to finish his homework.'",
+    "options": ["He must finish his homework", "He must finishing his homework", "He musts finish his homework", "No error"],
+    "correct": "He must finish his homework",
+    "explanation": "Modal verbs like <must> are followed directly by the base form, without <to>."
   }
 ]

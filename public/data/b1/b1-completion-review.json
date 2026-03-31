@@ -1,0 +1,127 @@
+[
+  {
+    "sentence": "If I ______ more time, I would travel the world. (second conditional)",
+    "correct": "had",
+    "explanation": "Second conditional: If + past simple. <If I had> expresses an unreal present situation."
+  },
+  {
+    "sentence": "The report ______ by the manager yesterday. (passive voice)",
+    "correct": "was written",
+    "explanation": "Past simple passive: <was/were> + past participle: <was written>."
+  },
+  {
+    "sentence": "She suggested ______ to the new restaurant. (gerund or infinitive)",
+    "correct": "going",
+    "explanation": "After <suggest>, use the gerund (-ing form): <suggested going>."
+  },
+  {
+    "sentence": "He promised ______ me with the project. (gerund or infinitive)",
+    "correct": "to help",
+    "explanation": "After <promise>, use the infinitive: <promised to help>."
+  },
+  {
+    "sentence": "The meeting was ______ until next Monday. (phrasal verb: postpone)",
+    "correct": "put off",
+    "explanation": "The phrasal verb <put off> means to postpone or delay."
+  },
+  {
+    "sentence": "She ______ the problem after hours of work. (phrasal verb: solve)",
+    "correct": "figured out",
+    "explanation": "The phrasal verb <figure out> means to solve or understand something."
+  },
+  {
+    "sentence": "We need to ______ a solution before the deadline. (phrasal verb: think of)",
+    "correct": "come up with",
+    "explanation": "The phrasal verb <come up with> means to think of or produce an idea."
+  },
+  {
+    "sentence": "He ______ his father. They look exactly the same. (phrasal verb: resemble)",
+    "correct": "takes after",
+    "explanation": "The phrasal verb <take after> means to resemble a family member."
+  },
+  {
+    "sentence": "Don't ______ the opportunity to study abroad. (phrasal verb: miss)",
+    "correct": "pass up",
+    "explanation": "The phrasal verb <pass up> means to miss or not take an opportunity."
+  },
+  {
+    "sentence": "The whole project was a wild goose chase. This means it was a ______ effort.",
+    "correct": "wasted",
+    "explanation": "The idiom <a wild goose chase> means a pointless or wasted search."
+  },
+  {
+    "sentence": "She spilled the beans about the surprise party. She ______ the secret.",
+    "correct": "revealed",
+    "explanation": "The idiom <spill the beans> means to reveal a secret."
+  },
+  {
+    "sentence": "He's been burning the midnight oil. He's been ______ very late.",
+    "correct": "working",
+    "explanation": "The idiom <burn the midnight oil> means to work or study late at night."
+  },
+  {
+    "sentence": "Don't beat around the bush. Just say it ______.",
+    "correct": "directly",
+    "explanation": "The idiom <beat around the bush> means to avoid saying something directly."
+  },
+  {
+    "sentence": "She's on the ball. She's very ______ and efficient.",
+    "correct": "alert",
+    "explanation": "The idiom <on the ball> means being alert, competent, and quick to act."
+  },
+  {
+    "sentence": "It cost an arm and a leg. It was very ______.",
+    "correct": "expensive",
+    "explanation": "The idiom <cost an arm and a leg> means something is very expensive."
+  },
+  {
+    "sentence": "The develop______ of the new software took six months.",
+    "correct": "development",
+    "explanation": "Adding <-ment> to <develop> forms the noun <development>."
+  },
+  {
+    "sentence": "Her kind______ made everyone feel welcome.",
+    "correct": "kindness",
+    "explanation": "Adding <-ness> to <kind> forms the noun <kindness>."
+  },
+  {
+    "sentence": "The ______ of the word 'un-' means 'not'. (prefix meaning)",
+    "correct": "prefix",
+    "explanation": "A <prefix> is added to the beginning of a word to change its meaning."
+  },
+  {
+    "sentence": "Adding 're-' to 'write' gives us ______, meaning to write again.",
+    "correct": "rewrite",
+    "explanation": "The prefix <re-> means 'again': <rewrite> = write again."
+  },
+  {
+    "sentence": "If she studied harder, she ______ pass the exam. (transform to conditional)",
+    "correct": "would",
+    "explanation": "Second conditional result clause: <would> + base form."
+  },
+  {
+    "sentence": "The letter ______ by the secretary. (transform: 'The secretary wrote the letter' → passive)",
+    "correct": "was written",
+    "explanation": "Passive voice: object becomes subject + <was> + past participle."
+  },
+  {
+    "sentence": "He told me that he ______ tired. (transform: 'I am tired' → reported speech)",
+    "correct": "was",
+    "explanation": "In reported speech, present <am> changes to past <was>."
+  },
+  {
+    "sentence": "She said she ______ help me the next day. (reported speech: 'I will help you tomorrow')",
+    "correct": "would",
+    "explanation": "In reported speech, <will> changes to <would> and <tomorrow> to <the next day>."
+  },
+  {
+    "sentence": "The cake ______ eaten by the children. (transform to passive: 'The children ate the cake')",
+    "correct": "was",
+    "explanation": "Past simple passive: subject + <was/were> + past participle."
+  },
+  {
+    "sentence": "If it ______ tomorrow, we'll stay home. (first conditional)",
+    "correct": "rains",
+    "explanation": "First conditional: If + present simple. <If it rains> expresses a real possibility."
+  }
+]

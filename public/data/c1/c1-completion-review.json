@@ -1,0 +1,127 @@
+[
+  {
+    "sentence": "Never before ______ I seen such a magnificent performance. (inversion)",
+    "correct": "had",
+    "explanation": "After <Never before>, use inverted word order: <had I seen>."
+  },
+  {
+    "sentence": "It is essential that he ______ on time. (subjunctive)",
+    "correct": "be",
+    "explanation": "Subjunctive after <it is essential that>: base form <be>, not <is>."
+  },
+  {
+    "sentence": "______ in the garden, she noticed a rare butterfly. (participle clause)",
+    "correct": "Walking",
+    "explanation": "Present participle clause: <Walking in the garden> = While she was walking."
+  },
+  {
+    "sentence": "The data, ______ over five years, revealed significant trends. (participle clause)",
+    "correct": "collected",
+    "explanation": "Past participle clause: <collected over five years> = which was collected."
+  },
+  {
+    "sentence": "She managed to ______ through the difficult negotiations successfully.",
+    "correct": "pull",
+    "explanation": "The phrasal verb <pull through> means to succeed despite difficulties."
+  },
+  {
+    "sentence": "The committee decided to ______ aside the controversial proposal.",
+    "correct": "set",
+    "explanation": "The phrasal verb <set aside> means to put something to one side or disregard."
+  },
+  {
+    "sentence": "He ______ up to the challenge and delivered an excellent presentation.",
+    "correct": "rose",
+    "explanation": "The phrasal verb <rise up to> means to meet a challenge successfully."
+  },
+  {
+    "sentence": "The new policy ______ about significant changes in the department.",
+    "correct": "brought",
+    "explanation": "The phrasal verb <bring about> means to cause something to happen."
+  },
+  {
+    "sentence": "We need to ______ into account all the variables before deciding.",
+    "correct": "take",
+    "explanation": "The phrasal verb <take into account> means to consider something."
+  },
+  {
+    "sentence": "She ______ down the offer despite the generous salary.",
+    "correct": "turned",
+    "explanation": "The phrasal verb <turn down> means to reject or refuse."
+  },
+  {
+    "sentence": "He's burning the candle at both ends. He's ______ himself by working too much.",
+    "correct": "exhausting",
+    "explanation": "The idiom <burning the candle at both ends> means overworking and exhausting oneself."
+  },
+  {
+    "sentence": "She hit the nail on the head with her analysis. She was exactly ______.",
+    "correct": "right",
+    "explanation": "The idiom <hit the nail on the head> means to be exactly right."
+  },
+  {
+    "sentence": "The new regulations opened a can of worms. They created many new ______.",
+    "correct": "problems",
+    "explanation": "The idiom <open a can of worms> means to create many new problems."
+  },
+  {
+    "sentence": "He's sitting on the fence about the decision. He's ______.",
+    "correct": "undecided",
+    "explanation": "The idiom <sitting on the fence> means being undecided or neutral."
+  },
+  {
+    "sentence": "The amelior______ of living conditions is a priority.",
+    "correct": "amelioration",
+    "explanation": "Adding <-ation> to <ameliorate> forms the noun <amelioration> (improvement)."
+  },
+  {
+    "sentence": "His argument was completely ______logical. (prefix: not logical)",
+    "correct": "illogical",
+    "explanation": "The prefix <il-> before words starting with 'l' means 'not': <illogical>."
+  },
+  {
+    "sentence": "The ______ of the research was questioned by peer reviewers. (valid → noun)",
+    "correct": "validity",
+    "explanation": "Adding <-ity> to <valid> forms the noun <validity>."
+  },
+  {
+    "sentence": "She spoke with great ______ence about the topic. (eloquent → noun)",
+    "correct": "eloquence",
+    "explanation": "Changing <-ent> to <-ence>: <eloquent> → <eloquence>."
+  },
+  {
+    "sentence": "The phenomenon, ______ complex, can be explained simply. (transform: 'Although it is complex' → participle)",
+    "correct": "though",
+    "explanation": "Reduced clause: <though complex> = although it is complex."
+  },
+  {
+    "sentence": "______ had the meeting started than the fire alarm went off. (inversion with 'no sooner')",
+    "correct": "No sooner",
+    "explanation": "Inverted structure: <No sooner had... than> expresses immediate sequence."
+  },
+  {
+    "sentence": "The results suggest that further research ______ conducted. (subjunctive passive)",
+    "correct": "be",
+    "explanation": "Subjunctive in formal recommendation: <that research be conducted>."
+  },
+  {
+    "sentence": "Were she ______ reconsider, the outcome might be different. (inverted conditional)",
+    "correct": "to",
+    "explanation": "Inverted conditional: <Were she to reconsider> = If she were to reconsider."
+  },
+  {
+    "sentence": "The CEO's ______ pragmatic approach yielded impressive results. (vocabulary)",
+    "correct": "pragmatic",
+    "explanation": "<Pragmatic> means dealing with things in a practical, realistic way."
+  },
+  {
+    "sentence": "The study's findings were ______ by subsequent research. (vocabulary: confirmed)",
+    "correct": "corroborated",
+    "explanation": "<Corroborated> means confirmed or supported by additional evidence."
+  },
+  {
+    "sentence": "The policy had far-______ consequences that nobody anticipated.",
+    "correct": "reaching",
+    "explanation": "<Far-reaching> means having a wide range of effects or influence."
+  }
+]
