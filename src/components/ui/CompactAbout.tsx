@@ -134,16 +134,21 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
                 <span className="compact-about__developer-name">👨‍💻 Genil Suárez</span>
                 <span className="compact-about__developer-title">{t('about.developerTitle')}</span>
               </div>
-              <a
-                href="https://github.com/genilsuarez"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="compact-about__developer-link"
-                aria-label={t('about.githubProfile')}
-              >
-                <Github className="compact-about__link-icon" />
-                <span>GitHub</span>
-              </a>
+              <div className="compact-about__developer-right">
+                <a
+                  href="https://github.com/genilsuarez"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="compact-about__developer-link"
+                  aria-label={t('about.githubProfile')}
+                >
+                  <Github className="compact-about__link-icon" />
+                  <span>GitHub</span>
+                </a>
+                <span className="compact-about__build-time">
+                  B: {buildString}
+                </span>
+              </div>
             </div>
           </div>
 
@@ -172,9 +177,6 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
 
           {/* Actions */}
           <div className="modal__actions modal__actions--single">
-            <span className="compact-about__build-time">
-              {t('about.build')} {buildString}
-            </span>
             <button onClick={handleClose} className="modal__btn modal__btn--primary">
               {t('common.close')}
             </button>

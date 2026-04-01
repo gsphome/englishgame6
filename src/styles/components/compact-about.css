@@ -275,6 +275,14 @@
   flex-shrink: 0;
 }
 
+.compact-about__developer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
 .compact-about__developer-link:hover {
   background: linear-gradient(135deg, #40464d 0%, #586069 100%);
   transform: translateY(-1px);
@@ -363,12 +371,12 @@
 /* === BUILD TIME FOOTER === */
 .compact-about__build-time {
   display: block;
-  text-align: center;
-  font-size: 0.5625rem;
+  text-align: right;
+  font-size: 0.5rem;
   color: var(--theme-text-tertiary, #9ca3af);
   font-family: ui-monospace, monospace;
   letter-spacing: 0.02em;
-  margin-bottom: 0.125rem;
+  line-height: 1;
 }
 
 /* === ANIMATIONS === */
@@ -416,6 +424,10 @@
   }
 
   .compact-about__developer-link {
+    align-self: flex-end;
+  }
+
+  .compact-about__developer-right {
     align-self: flex-end;
   }
 }
