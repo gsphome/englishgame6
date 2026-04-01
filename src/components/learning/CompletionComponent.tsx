@@ -8,6 +8,7 @@ import '../../styles/components/editable-input.css';
 import { ContentAdapter } from '../../utils/contentAdapter';
 import ContentRenderer from '../ui/ContentRenderer';
 import LearningProgressHeader from '../ui/LearningProgressHeader';
+import ExerciseResultScreen from '../ui/ExerciseResultScreen';
 import { EditableInput } from '../ui/EditableInput';
 import type { EditableInputHandle } from '../ui/EditableInput';
 
@@ -252,7 +253,7 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
   // Flag to ignore Enter key briefly after advancing to next question
   const ignoreEnterRef = useRef(false);
 
-  const { t, randomizeItems, markCorrect, markIncorrect, finishExercise, handleReturnToMenu } =
+  const { t, randomizeItems, markCorrect, markIncorrect, finishExercise, handleReturnToMenu, exerciseResult, setExerciseResult, handleResultContinue, resetSession } =
     useLearningSession({
       moduleId: module.id,
       moduleName: module.name,
@@ -339,6 +340,26 @@ const CompletionComponent: React.FC<CompletionComponentProps> = ({ module }) => 
           {t('navigation.mainMenu')}
         </button>
       </div>
+    );
+  }
+
+  if (exerciseResult) {
+    return (
+      <ExerciseResultScreen
+        result={exerciseResult}
+        onRetry={() => {
+          setExerciseResult(null);
+          resetSession();
+          setCurrentIndex(0);
+          setAnswer('');
+          setShowResult(false);
+          processedExercisesRef.current = module?.data
+            ? conditionalShuffle(module.data as CompletionData[], randomizeItems)
+            : [];
+        }}
+        onContinue={handleResultContinue}
+        t={t}
+      />
     );
   }
 

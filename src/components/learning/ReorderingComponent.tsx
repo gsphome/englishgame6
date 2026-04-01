@@ -3,6 +3,7 @@ import { Check, ArrowRight, Home, RotateCcw, Eye } from 'lucide-react';
 import { useLearningSession } from '../../hooks/useLearningSession';
 import { prepareWords, validateReordering, moveWord } from './reorderingUtils';
 import LearningProgressHeader from '../ui/LearningProgressHeader';
+import ExerciseResultScreen from '../ui/ExerciseResultScreen';
 import type { LearningModule, ReorderingData } from '../../types';
 
 import '../../styles/components/reordering-component.css';
@@ -25,7 +26,7 @@ const ReorderingComponent: React.FC<ReorderingComponentProps> = ({ module }) => 
   const [focusedIndex, setFocusedIndex] = useState(0);
   const [keyboardSelected, setKeyboardSelected] = useState(false);
 
-  const { t, randomizeItems, markCorrect, markIncorrect, finishExercise, handleReturnToMenu } =
+  const { t, randomizeItems, markCorrect, markIncorrect, finishExercise, handleReturnToMenu, exerciseResult, setExerciseResult, handleResultContinue, resetSession } =
     useLearningSession({
       moduleId: module.id,
       moduleName: module.name,
@@ -290,6 +291,31 @@ const ReorderingComponent: React.FC<ReorderingComponentProps> = ({ module }) => 
           </button>
         </div>
       </div>
+    );
+  }
+
+  if (exerciseResult) {
+    return (
+      <ExerciseResultScreen
+        result={exerciseResult}
+        onRetry={() => {
+          setExerciseResult(null);
+          resetSession();
+          setCurrentIndex(0);
+          setShowResult(false);
+          setIsCorrect(false);
+          setIncorrectPositions([]);
+          setShowHint(false);
+          const ex = exercises[0];
+          if (ex) {
+            const words = prepareWords(ex.words, ex.distractors, randomizeItems);
+            setAvailableWords(words);
+            setAnswerWords([]);
+          }
+        }}
+        onContinue={handleResultContinue}
+        t={t}
+      />
     );
   }
 

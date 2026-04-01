@@ -12,6 +12,8 @@ import { useLearningCleanup } from '../../hooks/useLearningCleanup';
 import { ContentAdapter } from '../../utils/contentAdapter';
 import ContentRenderer from '../ui/ContentRenderer';
 import LearningProgressHeader from '../ui/LearningProgressHeader';
+import ExerciseResultScreen from '../ui/ExerciseResultScreen';
+import type { ExerciseResult } from '../ui/ExerciseResultScreen';
 
 import '../../styles/components/sorting-modal.css';
 import '../../styles/components/sorting-component.css';
@@ -36,6 +38,7 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
   const [dragOverCategory, setDragOverCategory] = useState<string | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [selectedTerm, setSelectedTerm] = useState<any>(null);
+  const [exerciseResultData, setExerciseResultData] = useState<ExerciseResult | null>(null);
 
   // Mobile touch support
   const [touchStartPos, setTouchStartPos] = useState<{ x: number; y: number } | null>(null);
@@ -50,7 +53,7 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
   const { returnToMenu } = useMenuNavigation();
   const { addProgressEntry } = useProgressStore();
   const { t } = useTranslation(language);
-  const { showCorrectAnswer, showIncorrectAnswer, showModuleCompleted } = useToast();
+  const { showCorrectAnswer, showIncorrectAnswer } = useToast();
   useLearningCleanup();
 
   const handleReturnToMenu = () => returnToMenu();
@@ -377,9 +380,15 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
       timeSpent: timeSpent,
     });
 
-    showModuleCompleted(module.name, finalScore, accuracy);
     updateUserScore(module.id, finalScore, timeSpent);
-    returnToMenu({ autoScrollToNext: true });
+
+    setExerciseResultData({
+      score: finalScore,
+      accuracy,
+      correct: sessionScore.correct,
+      total: sessionScore.total,
+      moduleName: module.name,
+    });
   };
 
   const showSummaryModal = () => {
@@ -424,6 +433,28 @@ const SortingComponent: React.FC<SortingComponentProps> = ({ module }) => {
           <p className="sorting-component__loading-text">{t('learning.loadingSorting')}</p>
         </div>
       </div>
+    );
+  }
+
+  if (exerciseResultData) {
+    return (
+      <ExerciseResultScreen
+        result={exerciseResultData}
+        onRetry={() => {
+          setExerciseResultData(null);
+          setShowResult(false);
+          setShowExplanation(false);
+          setSelectedTerm(null);
+          // Re-initialize the exercise
+          const allWords = exercise.categories.flatMap(cat => cat.items);
+          setAvailableWords(conditionalShuffle(allWords, randomizeItems));
+          const initialSorted: Record<string, string[]> = {};
+          exercise.categories.forEach(cat => { initialSorted[cat.name] = []; });
+          setSortedItems(initialSorted);
+        }}
+        onContinue={() => returnToMenu({ autoScrollToNext: true })}
+        t={t}
+      />
     );
   }
 

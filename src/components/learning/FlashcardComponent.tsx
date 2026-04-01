@@ -5,6 +5,7 @@ import { conditionalShuffle } from '../../utils/randomUtils';
 import { ContentAdapter } from '../../utils/contentAdapter';
 import ContentRenderer from '../ui/ContentRenderer';
 import LearningProgressHeader from '../ui/LearningProgressHeader';
+import ExerciseResultScreen from '../ui/ExerciseResultScreen';
 
 import '../../styles/components/flashcard-component.css';
 import type { FlashcardData, LearningModule } from '../../types';
@@ -18,7 +19,7 @@ const FlashcardComponent: React.FC<FlashcardComponentProps> = ({ module }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [skipTransition, setSkipTransition] = useState(false);
 
-  const { t, randomizeItems, handleReturnToMenu, finishExercise } = useLearningSession({
+  const { t, randomizeItems, handleReturnToMenu, finishExercise, exerciseResult, setExerciseResult, handleResultContinue, resetSession } = useLearningSession({
     moduleId: module.id,
     moduleName: module.name,
     learningMode: 'flashcard',
@@ -109,6 +110,22 @@ const FlashcardComponent: React.FC<FlashcardComponentProps> = ({ module }) => {
           {t('navigation.mainMenu')}
         </button>
       </div>
+    );
+  }
+
+  if (exerciseResult) {
+    return (
+      <ExerciseResultScreen
+        result={exerciseResult}
+        onRetry={() => {
+          setExerciseResult(null);
+          resetSession();
+          setCurrentIndex(0);
+          setIsFlipped(false);
+        }}
+        onContinue={handleResultContinue}
+        t={t}
+      />
     );
   }
 

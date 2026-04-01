@@ -586,6 +586,18 @@ const translations = {
       cacheIntegrityMissing: 'Levels {{levels}} were removed from cache',
       cacheIntegrityAllMissing: 'All offline content was removed. Offline mode has been disabled.',
     },
+    exerciseResult: {
+      excellent: 'Excellent! 🎉',
+      goodJob: 'Good job! ✨',
+      keepPracticing: 'Keep practicing!',
+      needsWork: 'Needs more practice',
+      correct: 'Correct',
+      incorrect: 'Incorrect',
+      retry: 'Try Again',
+      backToMenu: 'Back to Menu',
+      continue: 'Continue',
+      retryHint: 'You need 70% to pass. Try again!',
+    },
   },
   es: {
     common: {
@@ -1173,6 +1185,18 @@ const translations = {
       cacheIntegrityMissing: 'Los niveles {{levels}} fueron eliminados de la caché',
       cacheIntegrityAllMissing:
         'Todo el contenido offline fue eliminado. El modo offline ha sido desactivado.',
+    },
+    exerciseResult: {
+      excellent: '¡Excelente! 🎉',
+      goodJob: '¡Bien hecho! ✨',
+      keepPracticing: '¡Sigue practicando!',
+      needsWork: 'Necesita más práctica',
+      correct: 'Correctas',
+      incorrect: 'Incorrectas',
+      retry: 'Reintentar',
+      backToMenu: 'Volver al Menú',
+      continue: 'Continuar',
+      retryHint: 'Necesitas 70% para aprobar. ¡Inténtalo de nuevo!',
     },
   },
 } as const;

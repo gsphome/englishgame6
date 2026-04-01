@@ -7,6 +7,7 @@ import { useMenuNavigation } from './useMenuNavigation';
 import { useTranslation } from '../utils/i18n';
 import { useToast } from './useToast';
 import { useLearningCleanup } from './useLearningCleanup';
+import type { ExerciseResult } from '../components/ui/ExerciseResultScreen';
 import type { LearningMode } from '../types';
 
 interface UseLearningSessionOptions {
@@ -19,9 +20,9 @@ interface UseLearningSessionOptions {
  * Shared hook for the common learning session lifecycle:
  * - Start time tracking
  * - Score updates (correct/incorrect)
- * - Finish exercise (progress entry + user score + return to menu)
+ * - Finish exercise (progress entry + user score + result screen)
  * - Keyboard escape to return to menu
- * - Toast feedback (correct/incorrect/completed)
+ * - Toast feedback (correct/incorrect)
  * - Learning cleanup on unmount
  */
 export const useLearningSession = ({
@@ -30,14 +31,16 @@ export const useLearningSession = ({
   learningMode,
 }: UseLearningSessionOptions) => {
   const [startTime] = useState(Date.now());
+  const [exerciseResult, setExerciseResult] = useState<ExerciseResult | null>(null);
 
   const updateSessionScore = useAppStore(state => state.updateSessionScore);
+  const resetSession = useAppStore(state => state.resetSession);
   const { updateUserScore } = useUserStore();
   const { language, randomizeItems } = useSettingsStore();
   const { returnToMenu } = useMenuNavigation();
   const { addProgressEntry } = useProgressStore();
   const { t } = useTranslation(language);
-  const { showCorrectAnswer, showIncorrectAnswer, showModuleCompleted } = useToast();
+  const { showCorrectAnswer, showIncorrectAnswer } = useToast();
   useLearningCleanup();
 
   const markCorrect = useCallback(() => {
@@ -76,21 +79,23 @@ export const useLearningSession = ({
         timeSpent,
       });
 
-      showModuleCompleted(moduleName, finalScore, score.accuracy);
       updateUserScore(moduleId, finalScore, timeSpent);
-      returnToMenu({ autoScrollToNext: true });
+
+      // Show result screen instead of navigating away
+      setExerciseResult({
+        score: finalScore,
+        accuracy: score.accuracy,
+        correct: score.correct,
+        total: score.total,
+        moduleName,
+      });
     },
-    [
-      startTime,
-      moduleId,
-      moduleName,
-      learningMode,
-      addProgressEntry,
-      showModuleCompleted,
-      updateUserScore,
-      returnToMenu,
-    ]
+    [startTime, moduleId, moduleName, learningMode, addProgressEntry, updateUserScore]
   );
+
+  const handleResultContinue = useCallback(() => {
+    returnToMenu({ autoScrollToNext: true });
+  }, [returnToMenu]);
 
   const handleReturnToMenu = useCallback(() => returnToMenu(), [returnToMenu]);
 
@@ -116,5 +121,9 @@ export const useLearningSession = ({
     finishExercise,
     handleReturnToMenu,
     returnToMenu,
+    exerciseResult,
+    setExerciseResult,
+    handleResultContinue,
+    resetSession,
   };
 };

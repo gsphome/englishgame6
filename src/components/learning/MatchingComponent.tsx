@@ -11,6 +11,8 @@ import { useTranslation } from '../../utils/i18n';
 import { ContentAdapter } from '../../utils/contentAdapter';
 import ContentRenderer from '../ui/ContentRenderer';
 import LearningProgressHeader from '../ui/LearningProgressHeader';
+import ExerciseResultScreen from '../ui/ExerciseResultScreen';
+import type { ExerciseResult } from '../ui/ExerciseResultScreen';
 
 import '../../styles/components/matching-modal.css';
 import '../../styles/components/matching-component.css';
@@ -32,6 +34,7 @@ const MatchingComponent: React.FC<MatchingComponentProps> = ({ module }) => {
   const [startTime] = useState(Date.now());
   const [showExplanation, setShowExplanation] = useState(false);
   const [selectedTerm, setSelectedTerm] = useState<any>(null);
+  const [exerciseResultData, setExerciseResultData] = useState<ExerciseResult | null>(null);
   const currentModuleIdRef = useRef<string | null>(null);
   const pairsRef = useRef<{ left: string; right: string; explanation: string }[]>([]);
 
@@ -39,7 +42,7 @@ const MatchingComponent: React.FC<MatchingComponentProps> = ({ module }) => {
   const { updateUserScore } = useUserStore();
   const { language, randomizeItems } = useSettingsStore();
   const { returnToMenu } = useMenuNavigation();
-  const { showCorrectAnswer, showIncorrectAnswer, showModuleCompleted } = useToast();
+  const { showCorrectAnswer, showIncorrectAnswer } = useToast();
   const { t } = useTranslation(language);
   useLearningCleanup();
 
@@ -213,9 +216,15 @@ const MatchingComponent: React.FC<MatchingComponentProps> = ({ module }) => {
     const finalScore = Math.round((correctCount / pairs.length) * 100);
     const accuracy = (correctCount / pairs.length) * 100;
 
-    showModuleCompleted(module.name, finalScore, accuracy);
     updateUserScore(module.id, finalScore, timeSpent);
-    returnToMenu({ autoScrollToNext: true });
+
+    setExerciseResultData({
+      score: finalScore,
+      accuracy,
+      correct: correctCount,
+      total: pairs.length,
+      moduleName: module.name,
+    });
   };
 
   const showSummaryModal = () => {
@@ -258,6 +267,29 @@ const MatchingComponent: React.FC<MatchingComponentProps> = ({ module }) => {
     }
     return 'normal';
   };
+
+  if (exerciseResultData) {
+    return (
+      <ExerciseResultScreen
+        result={exerciseResultData}
+        onRetry={() => {
+          setExerciseResultData(null);
+          setMatches({});
+          setSelectedLeft(null);
+          setSelectedRight(null);
+          setShowResult(false);
+          setShowExplanation(false);
+          setSelectedTerm(null);
+          const terms = pairs.map((p: { left: string }) => p.left);
+          const definitions = pairs.map((p: { right: string }) => p.right);
+          setLeftItems(conditionalShuffle(terms, randomizeItems));
+          setRightItems(conditionalShuffle(definitions, randomizeItems));
+        }}
+        onContinue={() => returnToMenu({ autoScrollToNext: true })}
+        t={t}
+      />
+    );
+  }
 
   return (
     <div className="matching-component">

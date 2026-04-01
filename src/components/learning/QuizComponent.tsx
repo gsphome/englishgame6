@@ -6,6 +6,7 @@ import { conditionalShuffle } from '../../utils/randomUtils';
 import { ContentAdapter } from '../../utils/contentAdapter';
 import ContentRenderer from '../ui/ContentRenderer';
 import LearningProgressHeader from '../ui/LearningProgressHeader';
+import ExerciseResultScreen from '../ui/ExerciseResultScreen';
 
 import '../../styles/components/quiz-component.css';
 
@@ -21,7 +22,7 @@ const QuizComponent: React.FC<QuizComponentProps> = ({ module }) => {
   const [showResult, setShowResult] = useState(false);
   const optionsRef = useRef<HTMLDivElement>(null);
 
-  const { t, randomizeItems, markCorrect, markIncorrect, finishExercise, handleReturnToMenu } =
+  const { t, randomizeItems, markCorrect, markIncorrect, finishExercise, handleReturnToMenu, exerciseResult, setExerciseResult, handleResultContinue, resetSession } =
     useLearningSession({
       moduleId: module.id,
       moduleName: module.name,
@@ -166,6 +167,24 @@ const QuizComponent: React.FC<QuizComponentProps> = ({ module }) => {
           {t('learning.backToMenu')}
         </button>
       </div>
+    );
+  }
+
+  if (exerciseResult) {
+    return (
+      <ExerciseResultScreen
+        result={exerciseResult}
+        onRetry={() => {
+          setExerciseResult(null);
+          resetSession();
+          setCurrentIndex(0);
+          setSelectedAnswer(null);
+          setShowResult(false);
+          processedQuestionsRef.current = buildProcessedQuestions(module?.data, randomizeItems);
+        }}
+        onContinue={handleResultContinue}
+        t={t}
+      />
     );
   }
 

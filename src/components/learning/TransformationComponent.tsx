@@ -7,6 +7,7 @@ import '../../styles/components/editable-input.css';
 // BEM classes applied dynamically via .replace(): 'editable-input--correct' 'editable-input--incorrect' 'editable-input--neutral' 'editable-input--disabled'
 import ContentRenderer from '../ui/ContentRenderer';
 import LearningProgressHeader from '../ui/LearningProgressHeader';
+import ExerciseResultScreen from '../ui/ExerciseResultScreen';
 import { EditableInput } from '../ui/EditableInput';
 import type { EditableInputHandle } from '../ui/EditableInput';
 import { ContentAdapter } from '../../utils/contentAdapter';
@@ -25,7 +26,7 @@ const TransformationComponent: React.FC<TransformationComponentProps> = ({ modul
   const inputRef = useRef<EditableInputHandle>(null);
   const ignoreEnterRef = useRef(false);
 
-  const { t, randomizeItems, markCorrect, markIncorrect, finishExercise, handleReturnToMenu } =
+  const { t, randomizeItems, markCorrect, markIncorrect, finishExercise, handleReturnToMenu, exerciseResult, setExerciseResult, handleResultContinue, resetSession } =
     useLearningSession({
       moduleId: module.id,
       moduleName: module.name,
@@ -106,6 +107,27 @@ const TransformationComponent: React.FC<TransformationComponentProps> = ({ modul
           {t('navigation.mainMenu')}
         </button>
       </div>
+    );
+  }
+
+  if (exerciseResult) {
+    return (
+      <ExerciseResultScreen
+        result={exerciseResult}
+        onRetry={() => {
+          setExerciseResult(null);
+          resetSession();
+          setCurrentIndex(0);
+          setAnswer('');
+          setShowResult(false);
+          setStreak(0);
+          processedExercisesRef.current = module?.data
+            ? conditionalShuffle(module.data as TransformationData[], randomizeItems)
+            : [];
+        }}
+        onContinue={handleResultContinue}
+        t={t}
+      />
     );
   }
 
