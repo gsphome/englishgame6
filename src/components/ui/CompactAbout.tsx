@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { X, Heart, Info, Monitor, Trash2 } from 'lucide-react';
 import { Github } from 'lucide-react';
 import { useSettingsStore } from '../../stores/settingsStore';
@@ -66,6 +67,16 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
     };
   };
 
+  const buildString = (() => {
+    const buildTime = (window as any).__BUILD_TIME__ || new Date().toISOString();
+    const d = new Date(buildTime);
+    const mm = String(d.getMonth() + 1).padStart(2, '0');
+    const dd = String(d.getDate()).padStart(2, '0');
+    const hh = String(d.getHours()).padStart(2, '0');
+    const min = String(d.getMinutes()).padStart(2, '0');
+    return `${mm}/${dd} ${hh}:${min}`;
+  })();
+
   if (!isOpen) return null;
 
   return (
@@ -74,7 +85,9 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
         <div className="compact-about__header">
           <div className="compact-about__title-section">
             <FluentFlowLogo size="sm" />
-            <h2 className="compact-about__title">{t('about.title')}</h2>
+            <div className="compact-about__header-text">
+              <h2 className="compact-about__title">{t('about.title')} <span className="compact-about__version">v2.0</span></h2>
+            </div>
           </div>
           <button onClick={handleClose} className="modal__close-btn" aria-label={t('common.close')}>
             <X className="modal__close-icon" />
@@ -82,41 +95,6 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
         </div>
 
         <div className="compact-about__content">
-          {/* App Info */}
-          <div className="compact-about__section">
-            <div className="compact-about__info-grid">
-              <div className="compact-about__info-item">
-                <span className="compact-about__info-label">{t('about.version')}</span>
-                <span className="compact-about__info-value">2.0.0</span>
-              </div>
-              <div className="compact-about__info-item">
-                <span className="compact-about__info-label">{t('about.platform')}</span>
-                <span className="compact-about__info-value">Web</span>
-              </div>
-              <div className="compact-about__info-item">
-                <span className="compact-about__info-label">{t('about.build')}</span>
-                <span className="compact-about__info-value">
-                  {(() => {
-                    const buildTime = (window as any).__BUILD_TIME__ || new Date().toISOString();
-                    const buildDate = new Date(buildTime);
-                    const month = String(buildDate.getMonth() + 1).padStart(2, '0');
-                    const day = String(buildDate.getDate()).padStart(2, '0');
-                    return `${month}/${day}`;
-                  })()}
-                </span>
-                <span className="compact-about__info-time">
-                  {(() => {
-                    const buildTime = (window as any).__BUILD_TIME__ || new Date().toISOString();
-                    const buildDate = new Date(buildTime);
-                    const hours = String(buildDate.getHours()).padStart(2, '0');
-                    const minutes = String(buildDate.getMinutes()).padStart(2, '0');
-                    return `${hours}:${minutes}`;
-                  })()}
-                </span>
-              </div>
-            </div>
-          </div>
-
           {/* Features */}
           <div className="compact-about__section">
             <h3 className="compact-about__section-title">
@@ -125,7 +103,7 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
             </h3>
             <div className="compact-about__features">
               <div className="compact-about__feature">
-                <span className="compact-about__feature-icon">📚</span>
+                <span className="compact-about__feature-icon">🧩</span>
                 <span className="compact-about__feature-text">{t('about.feature1')}</span>
               </div>
               <div className="compact-about__feature">
@@ -133,7 +111,7 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
                 <span className="compact-about__feature-text">{t('about.feature2')}</span>
               </div>
               <div className="compact-about__feature">
-                <span className="compact-about__feature-icon">📊</span>
+                <span className="compact-about__feature-icon">📶</span>
                 <span className="compact-about__feature-text">{t('about.feature3')}</span>
               </div>
               <div className="compact-about__feature">
@@ -152,22 +130,20 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
             <div className="compact-about__developer">
               <div className="compact-about__developer-info">
                 <span className="compact-about__developer-name">👨‍💻 Genil Suárez</span>
-                <div className="compact-about__developer-row">
-                  <span className="compact-about__developer-title">
-                    {t('about.developerTitle')}
-                  </span>
-                  <a
-                    href="https://github.com/genilsuarez"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="compact-about__developer-link"
-                    aria-label={t('about.githubProfile')}
-                  >
-                    <Github className="compact-about__link-icon" />
-                    <span>GitHub</span>
-                  </a>
-                </div>
+                <span className="compact-about__developer-title">
+                  {t('about.developerTitle')}
+                </span>
               </div>
+              <a
+                href="https://github.com/genilsuarez"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="compact-about__developer-link"
+                aria-label={t('about.githubProfile')}
+              >
+                <Github className="compact-about__link-icon" />
+                <span>GitHub</span>
+              </a>
             </div>
           </div>
 
@@ -196,6 +172,7 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
 
           {/* Actions */}
           <div className="modal__actions modal__actions--single">
+            <span className="compact-about__build-time">{t('about.build')} {buildString}</span>
             <button onClick={handleClose} className="modal__btn modal__btn--primary">
               {t('common.close')}
             </button>
@@ -204,7 +181,7 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
       </div>
 
       {/* Screen Info Modal */}
-      {showScreenInfo && (
+      {showScreenInfo && createPortal(
         <div className="screen-info-modal">
           <div className="screen-info-modal__container">
             <div className="screen-info-modal__header">
@@ -260,10 +237,11 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
               })()}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
       {/* Cache Confirm Modal */}
-      {showCacheConfirm && (
+      {showCacheConfirm && createPortal(
         <div className="screen-info-modal">
           <div className="screen-info-modal__container cache-confirm">
             <div className="screen-info-modal__header">
@@ -304,7 +282,8 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
               </div>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
