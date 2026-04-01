@@ -21,6 +21,7 @@ const ErrorCorrectionComponent: React.FC<ErrorCorrectionComponentProps> = ({ mod
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answer, setAnswer] = useState('');
   const [showResult, setShowResult] = useState(false);
+  const [streak, setStreak] = useState(0);
   const inputRef = useRef<EditableInputHandle>(null);
   const ignoreEnterRef = useRef(false);
 
@@ -57,8 +58,10 @@ const ErrorCorrectionComponent: React.FC<ErrorCorrectionComponentProps> = ({ mod
     if (showResult) return;
     if (isCorrectAnswer(answer)) {
       markCorrect();
+      setStreak(s => s + 1);
     } else {
       markIncorrect();
+      setStreak(0);
     }
     setShowResult(true);
   }, [showResult, answer, isCorrectAnswer, markCorrect, markIncorrect]);
@@ -121,7 +124,14 @@ const ErrorCorrectionComponent: React.FC<ErrorCorrectionComponentProps> = ({ mod
         }
       />
 
-      <div className="error-correction__exercise-card">
+      <div className="error-correction__exercise-card" key={currentIndex}>
+        {/* Streak badge */}
+        {streak >= 2 && (
+          <div className="error-correction__streak" key={streak}>
+            🔥 {streak}
+          </div>
+        )}
+
         {/* Error sentence — visually distinct with red-tinted styling */}
         <div className="error-correction__error-sentence">
           <ContentRenderer
