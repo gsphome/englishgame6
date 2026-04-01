@@ -145,9 +145,7 @@ export const CompactAbout: React.FC<CompactAboutProps> = ({ isOpen, onClose }) =
                   <Github className="compact-about__link-icon" />
                   <span>GitHub</span>
                 </a>
-                <span className="compact-about__build-time">
-                  B: {buildString}
-                </span>
+                <span className="compact-about__build-time">B: {buildString}</span>
               </div>
             </div>
           </div>
