@@ -35,8 +35,16 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
 }) => {
   const { isModuleCompleted } = useProgressStore();
   const progression = useProgression();
-  const { language, categories, learningModes, level, setCategories, setLearningModes, setLevel, theme } =
-    useSettingsStore();
+  const {
+    language,
+    categories,
+    learningModes,
+    level,
+    setCategories,
+    setLearningModes,
+    setLevel,
+    theme,
+  } = useSettingsStore();
   const { t } = useTranslation(language);
   const { navigateToModule } = useModuleNavigation('progression');
   const [expandedUnits, setExpandedUnits] = React.useState<Set<number>>(new Set());
@@ -259,14 +267,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
       units[Number(unitKey)] = sorted;
     });
     return units;
-  }, [
-    allProgressionModules,
-    fuse,
-    categories,
-    learningModes,
-    level,
-    searchQuery,
-  ]);
+  }, [allProgressionModules, fuse, categories, learningModes, level, searchQuery]);
 
   // Auto-expand units with search results
   React.useEffect(() => {

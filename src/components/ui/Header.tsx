@@ -12,10 +12,18 @@ import { useOfflineStatus } from '../../hooks/useOfflineStatus';
 // import { toast } from '../../stores/toastStore';
 
 // Lazy-loaded modals — only loaded when user opens them
-const CompactProfile = React.lazy(() => import('./CompactProfile').then(m => ({ default: m.CompactProfile })));
-const CompactAdvancedSettings = React.lazy(() => import('./CompactAdvancedSettings').then(m => ({ default: m.CompactAdvancedSettings })));
-const CompactAbout = React.lazy(() => import('./CompactAbout').then(m => ({ default: m.CompactAbout })));
-const CompactMyProgress = React.lazy(() => import('./CompactMyProgress').then(m => ({ default: m.CompactMyProgress })));
+const CompactProfile = React.lazy(() =>
+  import('./CompactProfile').then(m => ({ default: m.CompactProfile }))
+);
+const CompactAdvancedSettings = React.lazy(() =>
+  import('./CompactAdvancedSettings').then(m => ({ default: m.CompactAdvancedSettings }))
+);
+const CompactAbout = React.lazy(() =>
+  import('./CompactAbout').then(m => ({ default: m.CompactAbout }))
+);
+const CompactMyProgress = React.lazy(() =>
+  import('./CompactMyProgress').then(m => ({ default: m.CompactMyProgress }))
+);
 
 // Eagerly loaded — always visible
 import { ScoreDisplay } from './ScoreDisplay';
