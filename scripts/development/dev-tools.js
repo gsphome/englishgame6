@@ -7,7 +7,7 @@
  * Usage: node scripts/development/dev-tools.js [command] [options]
  */
 
-import { execSync } from 'child_process';
+import { execSync, spawn } from 'child_process';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { writeFileSync } from 'fs';
@@ -68,16 +68,80 @@ function executeCommand(command, description, options = {}) {
   }
 }
 
+/**
+ * Execute multiple commands in parallel. Returns true only if all succeed.
+ * Each command runs as a child process; output is captured and shown on failure.
+ */
+function executeParallel(commands) {
+  const quiet = process.env.BUILD_QUIET === '1';
+  const descs = commands.map(c => c.desc).join(', ');
+  log(`⚡ Running in parallel: ${descs}`, colors.cyan);
+
+  const startTime = Date.now();
+
+  const promises = commands.map(({ cmd, desc }) => {
+    const taskStart = Date.now();
+    return new Promise((resolve) => {
+      const child = spawn('sh', ['-c', cmd], {
+        cwd: rootDir,
+        env: { ...process.env, FORCE_COLOR: '0' },
+        stdio: 'pipe',
+      });
+
+      let stdout = '';
+      let stderr = '';
+      child.stdout.on('data', d => { stdout += d; });
+      child.stderr.on('data', d => { stderr += d; });
+
+      child.on('close', (code) => {
+        const duration = ((Date.now() - taskStart) / 1000).toFixed(1);
+        if (code === 0) {
+          logSuccess(`${desc} completed in ${duration}s`);
+          resolve({ success: true, desc });
+        } else {
+          logError(`${desc} failed after ${duration}s`);
+          if (!quiet) {
+            if (stdout.trim()) console.log(stdout);
+            if (stderr.trim()) console.error(stderr);
+          } else {
+            // In quiet mode, show captured output on failure
+            if (stdout.trim()) console.log(stdout);
+            if (stderr.trim()) console.error(stderr);
+          }
+          resolve({ success: false, desc, stdout, stderr });
+        }
+      });
+    });
+  });
+
+  return Promise.all(promises).then(results => {
+    const allOk = results.every(r => r.success);
+    const duration = ((Date.now() - startTime) / 1000).toFixed(1);
+    if (allOk) {
+      logSuccess(`Parallel group completed in ${duration}s`);
+    } else {
+      const failed = results.filter(r => !r.success).map(r => r.desc);
+      logError(`Parallel group failed after ${duration}s (${failed.join(', ')})`);
+    }
+    return allOk;
+  });
+}
+
 // Pipeline definitions
+// Commands can be individual objects or arrays (parallel groups)
 const pipelines = {
   quality: {
     name: '🎯 Quality',
-    description: 'ESLint, TypeScript, Tests, Formatting',
+    description: 'ESLint, TypeScript, Tests, Formatting (parallel)',
     commands: [
-      { cmd: 'npm run lint', desc: 'ESLint check' },
-      { cmd: 'npm run type-check', desc: 'TypeScript check' },
+      // ESLint + TypeScript + Format run in parallel (all read-only, no conflicts)
+      [
+        { cmd: 'npm run lint', desc: 'ESLint check' },
+        { cmd: 'npm run type-check', desc: 'TypeScript check' },
+        { cmd: 'npm run format:check', desc: 'Format check' },
+      ],
+      // Tests run after — they may depend on type correctness
       { cmd: 'npm test', desc: 'Tests' },
-      { cmd: 'npm run format:check', desc: 'Format check' }
     ],
     color: colors.blue
   },
@@ -85,8 +149,11 @@ const pipelines = {
     name: '🛡️ Security',
     description: 'Vulnerabilities, Patterns, Licenses',
     commands: [
-      { cmd: 'npm run security:audit', desc: 'Dependency audit' },
-      { cmd: 'npm run security:scan', desc: 'Security patterns' }
+      // Both security checks are independent — run in parallel
+      [
+        { cmd: 'npm run security:audit', desc: 'Dependency audit' },
+        { cmd: 'npm run security:scan', desc: 'Security patterns' },
+      ],
     ],
     color: colors.red
   },
@@ -128,7 +195,9 @@ const workflows = {
       { type: 'command', cmd: 'git pull --rebase', desc: 'Sync with remote' },
       { type: 'pipeline', target: 'quality' },
       { type: 'pipeline', target: 'security' },
-      { type: 'pipeline', target: 'build' },
+      // Skip tsc here — quality pipeline already validated types.
+      // Run vite build directly to avoid compiling TypeScript twice.
+      { type: 'command', cmd: 'npx vite build --mode production --config config/vite.config.ts', desc: 'Build application (vite only)' },
       { type: 'command', cmd: 'node scripts/git/smart-commit.js --stage-all --push --auto --allow-empty', desc: 'Post-build commit & push (with formatting fixes)' },
       { type: 'command', cmd: 'node scripts/git/github-actions-status.js watch', desc: 'Monitor GitHub Actions' },
       { type: 'command', cmd: 'node scripts/git/github-actions-status.js current', desc: 'Final GitHub Actions status' },
@@ -195,11 +264,20 @@ async function runPipeline(pipelineKey) {
   const startTime = Date.now();
   let allSuccess = true;
 
-  for (const command of pipeline.commands) {
-    const success = executeCommand(command.cmd, command.desc);
-    if (!success) {
-      allSuccess = false;
-      break;
+  for (const entry of pipeline.commands) {
+    // Array = parallel group, object = sequential command
+    if (Array.isArray(entry)) {
+      const success = await executeParallel(entry);
+      if (!success) {
+        allSuccess = false;
+        break;
+      }
+    } else {
+      const success = executeCommand(entry.cmd, entry.desc);
+      if (!success) {
+        allSuccess = false;
+        break;
+      }
     }
   }
 
