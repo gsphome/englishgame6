@@ -932,7 +932,6 @@ const IMPORTANT_THRESHOLD = 5;
 // Files where !important is an expected pattern
 const importantAllowList = new Set([
   'safari-mobile-fixes.css',
-  'matching-component-override.css',
   'layout.css',
   'orientation-lock.css',
 ]);

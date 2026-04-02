@@ -10,6 +10,7 @@ import { useSearch } from '../../hooks/useSearch';
 import { useModuleNavigation } from '../../hooks/useModuleNavigation';
 import { useAppStore } from '../../stores/appStore';
 import { useSettingsStore } from '../../stores/settingsStore';
+import { useProgressStore } from '../../stores/progressStore';
 import { useTranslation } from '../../utils/i18n';
 import type { LearningModule } from '../../types';
 import { toast } from '../../stores/toastStore';
@@ -50,19 +51,22 @@ export const MainMenu: React.FC = () => {
 
   // Pre-compute module statuses and hidden dependencies once for all cards
   // instead of each ModuleCard calling useProgression() individually
+  const { getModuleCompletion } = useProgressStore();
   const moduleStatusMap = React.useMemo(() => {
     const map = new Map<
       string,
-      { status: 'completed' | 'unlocked' | 'locked'; missingCount: number }
+      { status: 'completed' | 'unlocked' | 'locked'; missingCount: number; progressPct: number }
     >();
     for (const m of modules) {
+      const completion = getModuleCompletion(m.id);
       map.set(m.id, {
         status: progression.getModuleStatus(m.id),
         missingCount: progression.getMissingPrerequisites(m.id).length,
+        progressPct: completion?.bestScore || 0,
       });
     }
     return map;
-  }, [modules, progression]);
+  }, [modules, progression, getModuleCompletion]);
 
   // Pre-compute hidden dependencies map once (avoids creating a new Map per card)
   const hiddenDepsMap = React.useMemo(() => {
@@ -356,6 +360,8 @@ export const MainMenu: React.FC = () => {
                     moduleStatus={moduleStatusMap.get(module.id)?.status ?? 'locked'}
                     missingPrerequisitesCount={moduleStatusMap.get(module.id)?.missingCount ?? 0}
                     hiddenDependencies={hiddenDepsMap?.get(module.id)}
+                    progressPercentage={moduleStatusMap.get(module.id)?.progressPct ?? 0}
+                    language={language}
                   />
                 ))}
               </div>
@@ -423,6 +429,8 @@ export const MainMenu: React.FC = () => {
                   moduleStatus={moduleStatusMap.get(module.id)?.status ?? 'locked'}
                   missingPrerequisitesCount={moduleStatusMap.get(module.id)?.missingCount ?? 0}
                   hiddenDependencies={hiddenDepsMap?.get(module.id)}
+                  progressPercentage={moduleStatusMap.get(module.id)?.progressPct ?? 0}
+                  language={language}
                 />
               ))}
             </div>

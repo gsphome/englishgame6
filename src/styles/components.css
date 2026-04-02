@@ -2,10 +2,6 @@
 
 /* Import all eagerly-loaded component styles */
 @import './components/app-router.css';
-@import './components/compact-about.css';
-@import './components/compact-advanced-settings.css';
-@import './components/compact-my-progress.css';
-@import './components/compact-profile.css';
 @import './components/progression-dashboard.css';
 @import './components/modal-buttons.css';
 @import './components/error-fallback.css';
@@ -22,10 +18,9 @@
 @import './components/confirm-modal.css';
 @import './components/offline-modal.css';
 @import './components/unified-filter.css';
-@import './components/progression-dashboard-dark-theme.css';
 
 /* Lazy-loaded component CSS is imported by their respective components */
-/* matching-component, matching-modal, matching-component-override, game-controls */
+/* matching-component, matching-modal, game-controls */
 /* reading-component, sorting-component, sorting-modal */
 /* flashcard-component, quiz-component, completion-component */
 /* content-renderer, reordering-component */

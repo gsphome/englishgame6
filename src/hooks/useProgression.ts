@@ -68,7 +68,7 @@ export const useProgression = () => {
       };
     },
     enabled: rawModules.length > 0,
-    staleTime: 0, // No stale time - always refetch when dependencies change
+    staleTime: 2 * 60 * 1000, // 2 minutes — progression only changes on module completion (tracked via queryKey)
     refetchOnMount: true, // Always refetch on mount
     refetchOnWindowFocus: false, // Don't refetch on window focus to avoid unnecessary updates
   });

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { createPortal } from 'react-dom';
 import { User, Settings, Menu, BarChart3, LogOut, WifiOff, Info, X, Home } from 'lucide-react';
 import '../../styles/components/header.css';
@@ -11,11 +11,13 @@ import { useEscapeKey } from '../../hooks/useEscapeKey';
 import { useOfflineStatus } from '../../hooks/useOfflineStatus';
 // import { toast } from '../../stores/toastStore';
 
-// Compact modals - optimized versions
-import { CompactProfile } from './CompactProfile';
-import { CompactAdvancedSettings } from './CompactAdvancedSettings';
-import { CompactAbout } from './CompactAbout';
-import { CompactMyProgress } from './CompactMyProgress';
+// Lazy-loaded modals — only loaded when user opens them
+const CompactProfile = React.lazy(() => import('./CompactProfile').then(m => ({ default: m.CompactProfile })));
+const CompactAdvancedSettings = React.lazy(() => import('./CompactAdvancedSettings').then(m => ({ default: m.CompactAdvancedSettings })));
+const CompactAbout = React.lazy(() => import('./CompactAbout').then(m => ({ default: m.CompactAbout })));
+const CompactMyProgress = React.lazy(() => import('./CompactMyProgress').then(m => ({ default: m.CompactMyProgress })));
+
+// Eagerly loaded — always visible
 import { ScoreDisplay } from './ScoreDisplay';
 import { FluentFlowLogo } from './FluentFlowLogo';
 import { ConfirmModal } from './ConfirmModal';
@@ -169,28 +171,39 @@ export const Header: React.FC<HeaderProps> = () => {
       {/* Compact Modals - rendered via portal to avoid event bubbling to header */}
       {showProfileForm &&
         createPortal(
-          <CompactProfile isOpen={showProfileForm} onClose={() => setShowProfileForm(false)} />,
+          <Suspense fallback={null}>
+            <CompactProfile isOpen={showProfileForm} onClose={() => setShowProfileForm(false)} />
+          </Suspense>,
           document.body
         )}
 
-      {createPortal(
-        <CompactAdvancedSettings isOpen={showSettings} onClose={() => setShowSettings(false)} />,
-        document.body
-      )}
+      {showSettings &&
+        createPortal(
+          <Suspense fallback={null}>
+            <CompactAdvancedSettings isOpen={showSettings} onClose={() => setShowSettings(false)} />
+          </Suspense>,
+          document.body
+        )}
 
-      {createPortal(
-        <CompactAbout isOpen={showAbout} onClose={() => setShowAbout(false)} />,
-        document.body
-      )}
+      {showAbout &&
+        createPortal(
+          <Suspense fallback={null}>
+            <CompactAbout isOpen={showAbout} onClose={() => setShowAbout(false)} />
+          </Suspense>,
+          document.body
+        )}
 
-      {createPortal(
-        <CompactMyProgress
-          isOpen={showMyProgress}
-          onClose={() => setShowMyProgress(false)}
-          initialTab={showMyProgressTab}
-        />,
-        document.body
-      )}
+      {showMyProgress &&
+        createPortal(
+          <Suspense fallback={null}>
+            <CompactMyProgress
+              isOpen={showMyProgress}
+              onClose={() => setShowMyProgress(false)}
+              initialTab={showMyProgressTab}
+            />
+          </Suspense>,
+          document.body
+        )}
 
       {createPortal(
         <ConfirmModal

@@ -714,7 +714,6 @@
 }
 
 /* DARK THEME - html.dark selectors */
-/* Component-specific dark theme handled by progression-dashboard-dark-theme.css */
 html.dark .progression-dashboard {
   background: var(--theme-bg-primary, #1f2937);
   color: var(--theme-text-primary, #ffffff);
@@ -926,5 +925,184 @@ html.dark .progression-dashboard__module--locked .progression-dashboard__level-b
   .progression-dashboard__units::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.03);
     border-radius: 2px;
+  }
+}
+
+/* === DARK THEME — Component modifier (merged from progression-dashboard-dark-theme.css) === */
+
+/* Text elements */
+.progression-dashboard--dark-theme .progression-dashboard__unit-title,
+.progression-dashboard--dark-theme .progression-dashboard__unit-stats,
+.progression-dashboard--dark-theme .progression-dashboard__module-name,
+.progression-dashboard--dark-theme .progression-dashboard__next-name,
+.progression-dashboard--dark-theme .progression-dashboard__unit-next-label,
+.progression-dashboard--dark-theme .progression-dashboard__next-label {
+  color: var(--theme-text-primary, #ffffff);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__module-desc,
+.progression-dashboard--dark-theme .progression-dashboard__next-desc {
+  color: var(--theme-text-primary, #ffffff);
+  opacity: 0.9;
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__module-type,
+.progression-dashboard--dark-theme .progression-dashboard__module-time,
+.progression-dashboard--dark-theme .progression-dashboard__time {
+  color: var(--theme-text-primary, #ffffff);
+  opacity: 0.7;
+}
+
+/* Search */
+.progression-dashboard--dark-theme .progression-dashboard__search-results {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__search-text,
+.progression-dashboard--dark-theme .progression-dashboard__clear-filters-btn {
+  color: #60a5fa;
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__clear-filters-btn {
+  border-color: rgba(96, 165, 250, 0.4);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__clear-filters-btn:hover {
+  background: var(--theme-primary-blue, #3b82f6);
+  color: #fff;
+}
+
+/* No results */
+.progression-dashboard--dark-theme .progression-dashboard__no-results-text {
+  color: var(--theme-text-primary, #ffffff);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__no-results-hint {
+  color: var(--theme-text-secondary, #9ca3af);
+}
+
+/* Expand icon */
+.progression-dashboard--dark-theme .progression-dashboard__unit-expand {
+  background: var(--theme-bg-soft, #374151);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__expand-icon {
+  color: var(--theme-text-secondary, #d1d5db);
+}
+
+/* Background elements */
+.progression-dashboard--dark-theme .progression-dashboard__unit,
+.progression-dashboard--dark-theme .progression-dashboard__module {
+  background-color: var(--theme-bg-elevated, #1f2937);
+  border-color: var(--theme-border-soft, #4b5563);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__module:hover {
+  background-color: var(--theme-bg-soft, #374151);
+  border-color: var(--theme-primary-blue, #3b82f6);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__module--next {
+  background: linear-gradient(135deg, #1e2a3e 0%, #1a2744 100%);
+  border-color: rgba(96, 165, 250, 0.6);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__next-indicator,
+.progression-dashboard--dark-theme .progression-dashboard__unit-next-indicator {
+  background: rgba(96, 165, 250, 0.25);
+  color: #93c5fd;
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__module-icon {
+  background-color: var(--theme-bg-soft, #374151);
+  border-color: var(--theme-border-medium, #6b7280);
+}
+
+/* Hero */
+.progression-dashboard--dark-theme .progression-dashboard__hero {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: var(--theme-text-primary, #ffffff);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__next-module {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--theme-text-primary, #ffffff);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__continue-btn {
+  background-color: var(--theme-primary-blue, #1e40af);
+  color: var(--theme-text-primary, #ffffff);
+  border: 2px solid var(--theme-primary-blue, #3b82f6);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__continue-btn:hover {
+  background-color: var(--theme-primary-blue-hover, #3b82f6);
+  border-color: var(--theme-primary-blue-hover, #60a5fa);
+}
+
+/* Unlocked modules */
+.progression-dashboard--dark-theme .progression-dashboard__module--unlocked {
+  background-color: #1e293b;
+  border: 1px solid #475569;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__module--unlocked:hover {
+  background-color: #263347;
+  border-color: var(--theme-primary-blue, #3b82f6);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+/* Locked modules */
+.progression-dashboard--dark-theme .progression-dashboard__module--locked {
+  background-color: #1a2332;
+  border: 1px solid #2d3a4a;
+  opacity: 0.8;
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__module--locked .progression-dashboard__module-name {
+  color: #9ca3af;
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__module--locked .progression-dashboard__module-desc,
+.progression-dashboard--dark-theme .progression-dashboard__module--locked .progression-dashboard__module-type,
+.progression-dashboard--dark-theme .progression-dashboard__module--locked .progression-dashboard__module-time,
+.progression-dashboard--dark-theme .progression-dashboard__module--locked .progression-dashboard__icon--locked {
+  color: #6b7280;
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__module--locked .progression-dashboard__module-icon {
+  background-color: #1f2937;
+  border-color: #374151;
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__module--locked .progression-dashboard__level-badge {
+  opacity: 0.5;
+}
+
+/* Progress bar */
+.progression-dashboard--dark-theme .progression-dashboard__progress-bar {
+  background: #4b5563;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.progression-dashboard--dark-theme .progression-dashboard__progress-fill {
+  background: linear-gradient(90deg, #60a5fa, #818cf8);
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .progression-dashboard--dark-theme .progression-dashboard__module {
+    padding: 0.875rem;
+    min-height: 44px;
+  }
+
+  .progression-dashboard--dark-theme .progression-dashboard__continue-btn {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
   }
 }

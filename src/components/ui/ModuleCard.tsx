@@ -12,9 +12,7 @@ import {
   AlertTriangle,
   RefreshCw,
 } from 'lucide-react';
-import { useProgressStore } from '../../stores/progressStore';
 import { useTranslation } from '../../utils/i18n';
-import { useSettingsStore } from '../../stores/settingsStore';
 import type { LearningModule } from '../../types';
 
 export interface ModuleCardProps {
@@ -31,6 +29,10 @@ export interface ModuleCardProps {
   moduleStatus?: 'completed' | 'unlocked' | 'locked';
   /** Pre-computed missing prerequisites count */
   missingPrerequisitesCount?: number;
+  /** Pre-computed best score percentage — avoids per-card store subscription */
+  progressPercentage?: number;
+  /** Language for translations — avoids per-card store subscription */
+  language: 'en' | 'es';
 }
 
 const getIcon = (learningMode: string) => {
@@ -76,18 +78,14 @@ export const ModuleCard: React.FC<ModuleCardProps> = React.memo(
     hiddenDependencies,
     moduleStatus = 'locked',
     missingPrerequisitesCount = 0,
+    progressPercentage = 0,
+    language,
   }) => {
-    const { getModuleCompletion } = useProgressStore();
-    const { language } = useSettingsStore();
     const { t } = useTranslation(language);
 
     // Use pre-computed status from parent instead of per-card hook
     const status = moduleStatus;
     const canAccess = status !== 'locked';
-
-    // Get progress data for this module
-    const moduleCompletion = getModuleCompletion(module.id);
-    const progressPercentage = moduleCompletion?.bestScore || 0;
 
     const difficultyLevel =
       module.level && Array.isArray(module.level) && module.level.length > 0

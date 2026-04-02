@@ -251,6 +251,12 @@ export const useProgressStore = create<ProgressStore>()(
         dailyProgress: state.dailyProgress,
         completedModules: state.completedModules,
       }),
+      onRehydrateStorage: () => state => {
+        // Auto-cleanup old progress data (keep 90 days) on app load
+        if (state) {
+          state.clearOldProgress(90);
+        }
+      },
     }
   )
 );

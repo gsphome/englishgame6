@@ -8,7 +8,6 @@ import { CheckCircle, Lock, Play, ChevronDown, ChevronRight, X as XIcon } from '
 import type { LearningModule } from '../../types';
 import Fuse from 'fuse.js';
 import '../../styles/components/progression-dashboard.css';
-import '../../styles/components/progression-dashboard-dark-theme.css';
 
 const MODE_I18N_KEYS: Record<string, string> = {
   flashcard: 'learning.flashcardMode',
@@ -36,42 +35,11 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
 }) => {
   const { isModuleCompleted } = useProgressStore();
   const progression = useProgression();
-  const { language, categories, learningModes, level, setCategories, setLearningModes, setLevel } =
+  const { language, categories, learningModes, level, setCategories, setLearningModes, setLevel, theme } =
     useSettingsStore();
   const { t } = useTranslation(language);
   const { navigateToModule } = useModuleNavigation('progression');
   const [expandedUnits, setExpandedUnits] = React.useState<Set<number>>(new Set());
-  const [isDarkMode, setIsDarkMode] = React.useState(false);
-
-  // Detect dark mode changes dynamically
-  React.useEffect(() => {
-    const checkDarkMode = () => {
-      const darkMode =
-        document.documentElement.classList.contains('dark') ||
-        document.body.classList.contains('dark');
-      setIsDarkMode(darkMode);
-    };
-
-    // Initial check
-    checkDarkMode();
-
-    // Watch for theme changes
-    const observer = new MutationObserver(checkDarkMode);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class'],
-    });
-    observer.observe(document.body, {
-      attributes: true,
-      attributeFilter: ['class'],
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  // Dark mode text is handled entirely via CSS (progression-dashboard-dark-theme.css).
-  // The previous JS-based "emergency fix" iterated all DOM elements with getComputedStyle(),
-  // causing forced reflows and ~50ms+ layout thrashing on every theme change. Removed.
 
   const nextRecommended = progression.getNextRecommendedModule();
 
@@ -217,21 +185,30 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
     return colors[level as keyof typeof colors] || '#6b7280';
   };
 
-  // Group modules by unit, preserving prerequisite chain order (JSON definition order)
-  const modulesByUnit = React.useMemo(() => {
-    const units: Record<number, LearningModule[]> = {};
-    // Combine all modules and deduplicate by id
-    const allModules = [...progression.unlockedModules, ...progression.lockedModules];
-    const seen = new Set<string>();
+  // Memoize Fuse instance separately — avoids re-indexing on every filter/level change
+  const allProgressionModules = React.useMemo(
+    () => [...progression.unlockedModules, ...progression.lockedModules],
+    [progression.unlockedModules, progression.lockedModules]
+  );
 
-    // Apply search filter if query exists
-    let filteredModules = allModules;
-    if (searchQuery.trim()) {
-      const fuse = new Fuse(allModules, {
+  const fuse = React.useMemo(
+    () =>
+      new Fuse(allProgressionModules, {
         keys: ['name', 'description', 'category', 'tags'],
         threshold: 0.3,
         includeScore: true,
-      });
+      }),
+    [allProgressionModules]
+  );
+
+  // Group modules by unit, preserving prerequisite chain order (JSON definition order)
+  const modulesByUnit = React.useMemo(() => {
+    const units: Record<number, LearningModule[]> = {};
+    const seen = new Set<string>();
+
+    // Apply search filter if query exists
+    let filteredModules = allProgressionModules;
+    if (searchQuery.trim()) {
       filteredModules = fuse.search(searchQuery).map(result => result.item);
     }
 
@@ -283,8 +260,8 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
     });
     return units;
   }, [
-    progression.unlockedModules,
-    progression.lockedModules,
+    allProgressionModules,
+    fuse,
     categories,
     learningModes,
     level,
@@ -301,7 +278,7 @@ export const ProgressionDashboard: React.FC<ProgressionDashboardProps> = ({
 
   return (
     <div
-      className={`progression-dashboard ${isDarkMode ? 'progression-dashboard--dark-theme' : ''}`}
+      className={`progression-dashboard ${theme === 'dark' ? 'progression-dashboard--dark-theme' : ''}`}
     >
       {/* Search/Filter Results Header */}
       {(searchQuery.trim() ||

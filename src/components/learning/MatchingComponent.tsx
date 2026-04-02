@@ -16,7 +16,6 @@ import type { ExerciseResult } from '../ui/ExerciseResultScreen';
 
 import '../../styles/components/matching-modal.css';
 import '../../styles/components/matching-component.css';
-import '../../styles/components/matching-component-override.css';
 import '../../styles/components/game-controls.css';
 import type { LearningModule } from '../../types';
 
