@@ -2,10 +2,10 @@
   {
     "question": "A <custom> is...",
     "options": [
-      "a traditional way of doing things in a culture",
       "a style of clothing worn for special occasions",
-      "a musical instrument played at celebrations",
-      "a popular dish served at family gatherings"
+      "a popular dish served at family gatherings",
+      "a traditional way of doing things in a culture",
+      "a musical instrument played at celebrations"
     ],
     "correct": "a traditional way of doing things in a culture",
     "explanation": "A <custom> is a traditional practice or behavior in a culture."
@@ -13,10 +13,10 @@
   {
     "question": "What is <etiquette>?",
     "options": [
+      "A competitive team sport played outdoors",
       "Rules and conventions of polite behavior",
       "A classical style of playing instruments",
-      "A traditional method of preparing food",
-      "A competitive team sport played outdoors"
+      "A traditional method of preparing food"
     ],
     "correct": "Rules and conventions of polite behavior",
     "explanation": "<Etiquette> refers to the rules and conventions of polite behavior in society."
@@ -24,10 +24,10 @@
   {
     "question": "When you <celebrate>, you...",
     "options": [
-      "have a party or special event for something good",
       "clean the house and organize your things",
+      "feel disappointed about something that happened",
       "go to work and complete your daily tasks",
-      "feel disappointed about something that happened"
+      "have a party or special event for something good"
     ],
     "correct": "have a party or special event for something good",
     "explanation": "To <celebrate> means to do something special to mark a happy occasion."
@@ -35,10 +35,10 @@
   {
     "question": "A <host> is someone who...",
     "options": [
-      "cleans the house before a big party",
-      "prepares all the food for the event",
       "organizes an event and welcomes guests",
-      "delivers packages and letters to homes"
+      "delivers packages and letters to homes",
+      "prepares all the food for the event",
+      "cleans the house before a big party"
     ],
     "correct": "organizes an event and welcomes guests",
     "explanation": "A <host> is the person who organizes an event and welcomes guests."
@@ -46,10 +46,10 @@
   {
     "question": "You need a <prescription> to...",
     "options": [
-      "enter a government building or office",
       "travel abroad to a different country",
+      "buy certain medicines from the pharmacy",
       "open a new bank account at a branch",
-      "buy certain medicines from the pharmacy"
+      "enter a government building or office"
     ],
     "correct": "buy certain medicines from the pharmacy",
     "explanation": "A <prescription> is a doctor's written order for medicine."
@@ -57,10 +57,10 @@
   {
     "question": "If you have a <fever>, your body temperature is...",
     "options": [
-      "exactly at the standard healthy level",
-      "changing constantly throughout the day",
       "higher than the normal level for humans",
-      "lower than what is considered healthy"
+      "lower than what is considered healthy",
+      "exactly at the standard healthy level",
+      "changing constantly throughout the day"
     ],
     "correct": "higher than the normal level for humans",
     "explanation": "A <fever> means your body temperature is above the normal 37°C / 98.6°F."
@@ -68,10 +68,10 @@
   {
     "question": "A <check-up> is...",
     "options": [
-      "a competitive event between sports teams",
-      "a method of payment used at some stores",
       "a routine visit to the doctor for your health",
-      "a written evaluation given at the school"
+      "a method of payment used at some stores",
+      "a written evaluation given at the school",
+      "a competitive event between sports teams"
     ],
     "correct": "a routine visit to the doctor for your health",
     "explanation": "A <check-up> is a regular visit to the doctor to make sure you are healthy."
@@ -80,9 +80,9 @@
     "question": "A <browser> is used to...",
     "options": [
       "access and view websites on the internet",
+      "take and edit photographs on your phone",
       "send and receive short text messages",
-      "make voice and video calls to friends",
-      "take and edit photographs on your phone"
+      "make voice and video calls to friends"
     ],
     "correct": "access and view websites on the internet",
     "explanation": "A <browser> is software like Chrome or Firefox used to view websites."
@@ -90,9 +90,9 @@
   {
     "question": "You need <Wi-Fi> to...",
     "options": [
+      "charge your phone battery at full speed",
       "make a phone call to another country",
       "connect to the internet without any cables",
-      "charge your phone battery at full speed",
       "listen to the radio on a portable device"
     ],
     "correct": "connect to the internet without any cables",
@@ -101,8 +101,8 @@
   {
     "question": "A <tradition> is...",
     "options": [
-      "a kind of medicine prescribed by doctors",
       "a type of technology used in daily life",
+      "a kind of medicine prescribed by doctors",
       "something people do for many years in their culture",
       "a recently created invention or modern device"
     ],
@@ -112,10 +112,10 @@
   {
     "question": "A <symptom> is...",
     "options": [
-      "a physical sign that you might be sick",
       "a special tool that doctors use at work",
-      "a private room inside a large hospital",
-      "a type of medicine you take every day"
+      "a type of medicine you take every day",
+      "a physical sign that you might be sick",
+      "a private room inside a large hospital"
     ],
     "correct": "a physical sign that you might be sick",
     "explanation": "A <symptom> is a physical sign that indicates illness, like a cough or fever."
@@ -123,10 +123,10 @@
   {
     "question": "You take <medicine> when you...",
     "options": [
-      "want to exercise and stay in good shape",
-      "need to study for an important exam",
       "are hungry and want to eat something",
-      "are sick and need to feel better soon"
+      "want to exercise and stay in good shape",
+      "are sick and need to feel better soon",
+      "need to study for an important exam"
     ],
     "correct": "are sick and need to feel better soon",
     "explanation": "<Medicine> is a substance used to treat illness and help you recover."
@@ -136,8 +136,8 @@
     "options": [
       "a type of holiday celebrated in many countries",
       "an unexpected surprise visit from a close friend",
-      "a scheduled meeting at a specific time and place",
-      "a random event that happens without any planning"
+      "a random event that happens without any planning",
+      "a scheduled meeting at a specific time and place"
     ],
     "correct": "a scheduled meeting at a specific time and place",
     "explanation": "An <appointment> is a planned meeting, often with a doctor or professional."
@@ -146,9 +146,9 @@
     "question": "To <download> means to...",
     "options": [
       "permanently delete files stored on your device",
-      "send important files to someone by email",
+      "transfer files from the internet to your device",
       "print a document using a connected printer",
-      "transfer files from the internet to your device"
+      "send important files to someone by email"
     ],
     "correct": "transfer files from the internet to your device",
     "explanation": "To <download> means to copy data from the internet to your computer or phone."
@@ -156,10 +156,10 @@
   {
     "question": "A <password> is used to...",
     "options": [
-      "remember your name and personal details easily",
+      "find your phone when you lose it somewhere",
       "protect your accounts and personal information",
-      "pay for things you buy at stores or online",
-      "find your phone when you lose it somewhere"
+      "remember your name and personal details easily",
+      "pay for things you buy at stores or online"
     ],
     "correct": "protect your accounts and personal information",
     "explanation": "A <password> is a secret word or phrase used to access protected accounts."
@@ -167,10 +167,10 @@
   {
     "question": "To <upload> means to...",
     "options": [
-      "copy files to a USB drive for safe storage",
-      "download files from a website to your phone",
+      "delete files that you no longer need at all",
       "send files from your device to the internet",
-      "delete files that you no longer need at all"
+      "download files from a website to your phone",
+      "copy files to a USB drive for safe storage"
     ],
     "correct": "send files from your device to the internet",
     "explanation": "To <upload> means to transfer files from your device to a website or cloud."
@@ -178,10 +178,10 @@
   {
     "question": "A <ceremony> is...",
     "options": [
+      "a formal event with special traditions and rituals",
       "a casual meeting between friends at a coffee shop",
-      "a daily routine that you follow every single morning",
       "a type of exercise that helps you stay healthy",
-      "a formal event with special traditions and rituals"
+      "a daily routine that you follow every single morning"
     ],
     "correct": "a formal event with special traditions and rituals",
     "explanation": "A <ceremony> is a formal event, like a wedding or graduation."
@@ -189,10 +189,10 @@
   {
     "question": "If you have an <allergy>, you...",
     "options": [
-      "are very hungry and want to eat a big meal",
-      "need glasses to see things that are far away",
+      "feel very happy and excited about something good",
       "react badly to certain things like food or pollen",
-      "feel very happy and excited about something good"
+      "are very hungry and want to eat a big meal",
+      "need glasses to see things that are far away"
     ],
     "correct": "react badly to certain things like food or pollen",
     "explanation": "An <allergy> is a negative physical reaction to certain substances."
@@ -201,9 +201,9 @@
     "question": "A <website> is...",
     "options": [
       "a type of book you can buy at a store",
-      "a page or group of pages on the internet",
+      "a TV channel that shows movies and news",
       "a radio station that plays music all day",
-      "a TV channel that shows movies and news"
+      "a page or group of pages on the internet"
     ],
     "correct": "a page or group of pages on the internet",
     "explanation": "A <website> is a collection of web pages accessible through the internet."
@@ -212,9 +212,9 @@
     "question": "A <festival> is...",
     "options": [
       "a kind of transport used to travel between cities",
+      "a type of school where students learn new subjects",
       "a special event with music, food, or cultural activities",
-      "a regular workday at the office or at your company",
-      "a type of school where students learn new subjects"
+      "a regular workday at the office or at your company"
     ],
     "correct": "a special event with music, food, or cultural activities",
     "explanation": "A <festival> is an organized event celebrating something, often with entertainment."

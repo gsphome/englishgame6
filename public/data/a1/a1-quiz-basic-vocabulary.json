@@ -2,10 +2,10 @@
   {
     "question": "What is the opposite of <hot>?",
     "options": [
-      "cool",
-      "cold",
       "warm",
-      "freezing"
+      "freezing",
+      "cool",
+      "cold"
     ],
     "correct": "cold",
     "explanation": "<Cold> is the direct opposite of hot."
@@ -13,10 +13,10 @@
   {
     "question": "Which word means <a place where you live>?",
     "options": [
-      "school",
       "office",
-      "house",
-      "car"
+      "car",
+      "school",
+      "house"
     ],
     "correct": "house",
     "explanation": "A <house> is a place where people live."
@@ -24,10 +24,10 @@
   {
     "question": "What do you use to <write>?",
     "options": [
-      "chair",
       "cup",
-      "pen",
-      "plate"
+      "chair",
+      "plate",
+      "pen"
     ],
     "correct": "pen",
     "explanation": "A <pen> is used for writing."
@@ -35,10 +35,10 @@
   {
     "question": "Which is a <color>?",
     "options": [
-      "table",
-      "book",
       "door",
-      "blue"
+      "book",
+      "blue",
+      "table"
     ],
     "correct": "blue",
     "explanation": "<Blue> is a color — it describes the sky on a clear day or the ocean."
@@ -46,10 +46,10 @@
   {
     "question": "What is the opposite of <big>?",
     "options": [
-      "tall",
-      "large",
+      "small",
       "huge",
-      "small"
+      "tall",
+      "large"
     ],
     "correct": "small",
     "explanation": "<Small> is the opposite of big."
@@ -58,9 +58,9 @@
     "question": "Which word means <happy>?",
     "options": [
       "sad",
-      "glad",
       "tired",
-      "angry"
+      "angry",
+      "glad"
     ],
     "correct": "glad",
     "explanation": "<Glad> means happy or pleased."
@@ -68,10 +68,10 @@
   {
     "question": "What do you use to <eat>?",
     "options": [
-      "key",
       "pen",
-      "phone",
-      "fork"
+      "fork",
+      "key",
+      "phone"
     ],
     "correct": "fork",
     "explanation": "A <fork> is used for eating."
@@ -80,9 +80,9 @@
     "question": "Which is a <number>?",
     "options": [
       "cat",
-      "red",
+      "seven",
       "fast",
-      "seven"
+      "red"
     ],
     "correct": "seven",
     "explanation": "<Seven> is a number — it comes between six and eight."
@@ -90,8 +90,8 @@
   {
     "question": "What is the opposite of <old>?",
     "options": [
-      "broken",
       "dirty",
+      "broken",
       "ancient",
       "new"
     ],
@@ -101,10 +101,10 @@
   {
     "question": "Which word means <very good>?",
     "options": [
-      "bad",
-      "excellent",
       "weak",
-      "poor"
+      "bad",
+      "poor",
+      "excellent"
     ],
     "correct": "excellent",
     "explanation": "<Excellent> means very good."
@@ -112,10 +112,10 @@
   {
     "question": "What do you use to <see>?",
     "options": [
-      "eyes",
-      "ears",
+      "nose",
       "mouth",
-      "nose"
+      "eyes",
+      "ears"
     ],
     "correct": "eyes",
     "explanation": "<Eyes> are used for seeing."
@@ -123,9 +123,9 @@
   {
     "question": "Which is a <day of the week>?",
     "options": [
-      "January",
       "Morning",
       "Summer",
+      "January",
       "Monday"
     ],
     "correct": "Monday",
@@ -134,9 +134,9 @@
   {
     "question": "What is the opposite of <fast>?",
     "options": [
+      "rapid",
       "slow",
       "quick",
-      "rapid",
       "speedy"
     ],
     "correct": "slow",
@@ -146,9 +146,9 @@
     "question": "Which word means <not difficult>?",
     "options": [
       "complex",
-      "hard",
+      "easy",
       "tough",
-      "easy"
+      "hard"
     ],
     "correct": "easy",
     "explanation": "<Easy> means not difficult."
@@ -156,10 +156,10 @@
   {
     "question": "What do you use to <listen>?",
     "options": [
+      "eyes",
       "hands",
       "ears",
-      "feet",
-      "eyes"
+      "feet"
     ],
     "correct": "ears",
     "explanation": "<Ears> are used for listening."
@@ -167,9 +167,9 @@
   {
     "question": "Which is a <season>?",
     "options": [
-      "Hour",
-      "Monday",
       "Winter",
+      "Monday",
+      "Hour",
       "Morning"
     ],
     "correct": "Winter",
@@ -178,9 +178,9 @@
   {
     "question": "What is the opposite of <up>?",
     "options": [
-      "top",
       "above",
       "down",
+      "top",
       "high"
     ],
     "correct": "down",
@@ -189,10 +189,10 @@
   {
     "question": "Which word means <very tired>?",
     "options": [
-      "active",
+      "awake",
       "exhausted",
       "energetic",
-      "awake"
+      "active"
     ],
     "correct": "exhausted",
     "explanation": "<Exhausted> means very tired."
@@ -211,10 +211,10 @@
   {
     "question": "Which is a <month>?",
     "options": [
-      "April",
       "Night",
+      "Tuesday",
       "Autumn",
-      "Tuesday"
+      "April"
     ],
     "correct": "April",
     "explanation": "<April> is a month of the year."

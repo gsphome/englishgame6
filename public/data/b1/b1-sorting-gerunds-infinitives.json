@@ -21,5 +21,12 @@
   { "word": "start + ___", "category": "Both (gerund or infinitive)", "explanation": "It <started> raining. / It <started> to rain." },
   { "word": "begin + ___", "category": "Both (gerund or infinitive)", "explanation": "She <began> crying. / She <began> to cry." },
   { "word": "continue + ___", "category": "Both (gerund or infinitive)", "explanation": "They <continued> talking. / They <continued> to talk." },
-  { "word": "prefer + ___", "category": "Both (gerund or infinitive)", "explanation": "I <prefer> walking. / I <prefer> to walk." }
+  { "word": "prefer + ___", "category": "Both (gerund or infinitive)", "explanation": "I <prefer> walking. / I <prefer> to walk." },
+  { "word": "practise + ___", "category": "Gerund (-ing)", "explanation": "She <practises> playing the piano every day." },
+  { "word": "risk + ___", "category": "Gerund (-ing)", "explanation": "Don't <risk> losing your job over this." },
+  { "word": "imagine + ___", "category": "Gerund (-ing)", "explanation": "<Imagine> living in a castle!" },
+  { "word": "learn + ___", "category": "Infinitive (to + verb)", "explanation": "He <learned> to drive last summer." },
+  { "word": "plan + ___", "category": "Infinitive (to + verb)", "explanation": "We <plan> to visit Paris next year." },
+  { "word": "expect + ___", "category": "Infinitive (to + verb)", "explanation": "I <expect> to arrive by noon." },
+  { "word": "attempt + ___", "category": "Infinitive (to + verb)", "explanation": "She <attempted> to break the record." }
 ]

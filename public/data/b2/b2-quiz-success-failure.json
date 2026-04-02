@@ -2,8 +2,8 @@
   {
     "question": "What does <perseverance> mean?",
     "options": [
-      "giving up easily",
       "persistence in doing something",
+      "giving up easily",
       "avoiding challenges",
       "quitting"
     ],
@@ -13,10 +13,10 @@
   {
     "question": "What is a <setback>?",
     "options": [
-      "a reward",
+      "an achievement",
       "a success",
       "a difficulty that delays progress",
-      "an achievement"
+      "a reward"
     ],
     "correct": "a difficulty that delays progress",
     "explanation": "A <setback> is a reversal or check in progress."
@@ -26,8 +26,8 @@
     "options": [
       "great victory or achievement",
       "failure",
-      "struggle",
-      "attempt"
+      "attempt",
+      "struggle"
     ],
     "correct": "great victory or achievement",
     "explanation": "Triumph means a <great victory or achievement>."
@@ -35,10 +35,10 @@
   {
     "question": "What is <resilience>?",
     "options": [
-      "ability to recover from difficulties",
-      "avoiding problems",
       "weakness",
-      "giving up"
+      "giving up",
+      "avoiding problems",
+      "ability to recover from difficulties"
     ],
     "correct": "ability to recover from difficulties",
     "explanation": "<Resilience> is the capacity to recover quickly from difficulties; toughness."
@@ -46,10 +46,10 @@
   {
     "question": "What does <accomplish> mean?",
     "options": [
-      "try",
-      "abandon",
       "fail",
-      "achieve or complete successfully"
+      "achieve or complete successfully",
+      "try",
+      "abandon"
     ],
     "correct": "achieve or complete successfully",
     "explanation": "<Accomplish> means to achieve or complete something successfully."
@@ -57,9 +57,9 @@
   {
     "question": "What is a <breakthrough>?",
     "options": [
+      "a failure",
       "a delay",
       "a mistake",
-      "a failure",
       "a sudden important development"
     ],
     "correct": "a sudden important development",
@@ -68,10 +68,10 @@
   {
     "question": "What does <determination> mean?",
     "options": [
-      "uncertainty",
-      "firmness of purpose",
       "doubt",
-      "hesitation"
+      "uncertainty",
+      "hesitation",
+      "firmness of purpose"
     ],
     "correct": "firmness of purpose",
     "explanation": "Determination is <firmness of purpose>; resoluteness."
@@ -80,8 +80,8 @@
     "question": "What is <adversity>?",
     "options": [
       "success",
-      "good fortune",
       "difficulties or misfortune",
+      "good fortune",
       "happiness"
     ],
     "correct": "difficulties or misfortune",
@@ -90,10 +90,10 @@
   {
     "question": "What does <strive> mean?",
     "options": [
-      "make great efforts to achieve",
       "give up",
-      "avoid",
-      "relax"
+      "make great efforts to achieve",
+      "relax",
+      "avoid"
     ],
     "correct": "make great efforts to achieve",
     "explanation": "Strive means to <make great efforts to achieve> or obtain something."
@@ -102,8 +102,8 @@
     "question": "What is an <obstacle>?",
     "options": [
       "help",
-      "advantage",
       "something that blocks progress",
+      "advantage",
       "support"
     ],
     "correct": "something that blocks progress",
@@ -113,9 +113,9 @@
     "question": "What does <flourish> mean?",
     "options": [
       "decline",
-      "struggle",
       "fail",
-      "grow or develop successfully"
+      "grow or develop successfully",
+      "struggle"
     ],
     "correct": "grow or develop successfully",
     "explanation": "<Flourish> means to grow or develop in a healthy or vigorous way."
@@ -134,10 +134,10 @@
   {
     "question": "What does <ambitious> mean?",
     "options": [
-      "unmotivated",
-      "lazy",
       "content",
-      "having strong desire for success"
+      "having strong desire for success",
+      "unmotivated",
+      "lazy"
     ],
     "correct": "having strong desire for success",
     "explanation": "<Ambitious> means having or showing a strong desire and determination to succeed."
@@ -145,9 +145,9 @@
   {
     "question": "What is a <fiasco>?",
     "options": [
-      "success",
       "achievement",
       "complete failure",
+      "success",
       "triumph"
     ],
     "correct": "complete failure",
@@ -156,10 +156,10 @@
   {
     "question": "What does <excel> mean?",
     "options": [
-      "be exceptionally good at something",
-      "struggle",
+      "quit",
       "fail",
-      "quit"
+      "be exceptionally good at something",
+      "struggle"
     ],
     "correct": "be exceptionally good at something",
     "explanation": "<Excel> means to be exceptionally good at or proficient in an activity or subject."
@@ -167,10 +167,10 @@
   {
     "question": "What is <defeat>?",
     "options": [
-      "victory",
-      "success",
       "instance of being beaten",
-      "achievement"
+      "success",
+      "achievement",
+      "victory"
     ],
     "correct": "instance of being beaten",
     "explanation": "<Defeat> is an instance of defeating or being defeated."
@@ -178,10 +178,10 @@
   {
     "question": "What does <aspire> mean?",
     "options": [
+      "avoid",
       "direct hope toward achieving something",
-      "give up",
       "fear",
-      "avoid"
+      "give up"
     ],
     "correct": "direct hope toward achieving something",
     "explanation": "<Aspire> means to direct one's hopes or ambitions toward achieving something."
@@ -189,9 +189,9 @@
   {
     "question": "What is a <milestone>?",
     "options": [
-      "mistake",
-      "problem",
       "significant stage or event",
+      "problem",
+      "mistake",
       "failure"
     ],
     "correct": "significant stage or event",
@@ -200,10 +200,10 @@
   {
     "question": "What does <falter> mean?",
     "options": [
-      "lose strength or momentum",
-      "succeed",
+      "improve",
       "excel",
-      "improve"
+      "lose strength or momentum",
+      "succeed"
     ],
     "correct": "lose strength or momentum",
     "explanation": "Falter means to <lose strength or momentum>; to start to fail."
@@ -211,9 +211,9 @@
   {
     "question": "What is <tenacity>?",
     "options": [
-      "quality of being determined",
-      "weakness",
       "laziness",
+      "weakness",
+      "quality of being determined",
       "giving up"
     ],
     "correct": "quality of being determined",

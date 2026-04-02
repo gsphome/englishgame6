@@ -3,8 +3,8 @@
     "question": "An <aporia> is...",
     "options": [
       "a rhetorical device for persuasion",
-      "an irresolvable internal contradiction in a text or argument",
       "a logical proof",
+      "an irresolvable internal contradiction in a text or argument",
       "a type of literary genre"
     ],
     "correct": "an irresolvable internal contradiction in a text or argument",
@@ -13,9 +13,9 @@
   {
     "question": "A <palimpsest> metaphorically refers to...",
     "options": [
-      "an ancient language",
-      "a single clear message",
       "something with multiple layers of meaning or history",
+      "a single clear message",
+      "an ancient language",
       "a type of manuscript"
     ],
     "correct": "something with multiple layers of meaning or history",
@@ -24,10 +24,10 @@
   {
     "question": "<Heteroglossia> describes...",
     "options": [
-      "the coexistence of multiple voices or perspectives in a text",
-      "grammatical errors",
       "a single authoritative voice",
-      "translation between languages"
+      "the coexistence of multiple voices or perspectives in a text",
+      "translation between languages",
+      "grammatical errors"
     ],
     "correct": "the coexistence of multiple voices or perspectives in a text",
     "explanation": "<Heteroglossia>, coined by Bakhtin, refers to the diversity of voices and social languages within a text."
@@ -35,10 +35,10 @@
   {
     "question": "The <subaltern> refers to...",
     "options": [
-      "military officers",
-      "political leaders",
       "academic professors",
-      "marginalized groups excluded from power structures"
+      "military officers",
+      "marginalized groups excluded from power structures",
+      "political leaders"
     ],
     "correct": "marginalized groups excluded from power structures",
     "explanation": "The <subaltern> refers to populations socially, politically, and geographically outside hegemonic power."
@@ -57,10 +57,10 @@
   {
     "question": "<Ontology> is concerned with...",
     "options": [
-      "mathematical proofs",
       "the nature of being and existence",
-      "historical events",
-      "the study of language"
+      "the study of language",
+      "mathematical proofs",
+      "historical events"
     ],
     "correct": "the nature of being and existence",
     "explanation": "<Ontology> is the philosophical study of the nature of being, becoming, and reality."
@@ -68,10 +68,10 @@
   {
     "question": "Kant's <categorical imperative> is...",
     "options": [
-      "a universal moral law that applies regardless of circumstances",
-      "a suggestion for good behavior",
       "a scientific hypothesis",
-      "a legal requirement"
+      "a legal requirement",
+      "a universal moral law that applies regardless of circumstances",
+      "a suggestion for good behavior"
     ],
     "correct": "a universal moral law that applies regardless of circumstances",
     "explanation": "The <categorical imperative> is Kant's principle that one should act only according to rules one could will to be universal laws."
@@ -79,10 +79,10 @@
   {
     "question": "<Qualia> are...",
     "options": [
-      "scientific measurements",
-      "logical propositions",
+      "mathematical constants",
       "subjective, conscious experiences like the redness of red",
-      "mathematical constants"
+      "scientific measurements",
+      "logical propositions"
     ],
     "correct": "subjective, conscious experiences like the redness of red",
     "explanation": "<Qualia> are the subjective, phenomenal qualities of conscious experience."
@@ -90,10 +90,10 @@
   {
     "question": "<Vicious circularity> in an argument means...",
     "options": [
-      "the argument uses many examples",
-      "the argument is well-structured",
+      "the conclusion is assumed in the premises",
       "the argument is very long",
-      "the conclusion is assumed in the premises"
+      "the argument is well-structured",
+      "the argument uses many examples"
     ],
     "correct": "the conclusion is assumed in the premises",
     "explanation": "<Vicious circularity> occurs when an argument's conclusion is presupposed by its premises."
@@ -101,9 +101,9 @@
   {
     "question": "<Inviolability> means...",
     "options": [
-      "conditional rights",
       "the quality of being sacred and not to be transgressed",
       "temporary protection",
+      "conditional rights",
       "flexibility"
     ],
     "correct": "the quality of being sacred and not to be transgressed",
@@ -112,10 +112,10 @@
   {
     "question": "<Jurisprudence> is...",
     "options": [
-      "a type of crime",
-      "the theory and philosophy of law",
       "a court verdict",
-      "a legal document"
+      "a legal document",
+      "the theory and philosophy of law",
+      "a type of crime"
     ],
     "correct": "the theory and philosophy of law",
     "explanation": "<Jurisprudence> is the theoretical study of law and legal systems."
@@ -123,10 +123,10 @@
   {
     "question": "<Pathophysiology> studies...",
     "options": [
-      "surgical techniques",
-      "pharmaceutical production",
+      "healthy body functions",
       "the functional changes associated with disease",
-      "healthy body functions"
+      "pharmaceutical production",
+      "surgical techniques"
     ],
     "correct": "the functional changes associated with disease",
     "explanation": "<Pathophysiology> examines the disordered physiological processes that cause or result from disease."
@@ -134,9 +134,9 @@
   {
     "question": "<Arbitrage> in an intellectual context means...",
     "options": [
+      "legal mediation",
       "exploiting differences between frameworks for new insights",
       "financial trading only",
-      "legal mediation",
       "random selection"
     ],
     "correct": "exploiting differences between frameworks for new insights",
@@ -145,9 +145,9 @@
   {
     "question": "<Topology> in discourse analysis refers to...",
     "options": [
-      "geographical features",
       "the structural arrangement and connections within an argument",
       "the study of maps",
+      "geographical features",
       "surface textures"
     ],
     "correct": "the structural arrangement and connections within an argument",
@@ -156,10 +156,10 @@
   {
     "question": "<Requisite> means...",
     "options": [
-      "optional",
-      "necessary or required for a particular purpose",
       "excessive",
-      "irrelevant"
+      "irrelevant",
+      "necessary or required for a particular purpose",
+      "optional"
     ],
     "correct": "necessary or required for a particular purpose",
     "explanation": "<Requisite> means made necessary by particular circumstances; essential."
@@ -167,9 +167,9 @@
   {
     "question": "<Dialectic> involves...",
     "options": [
-      "emotional persuasion",
       "the resolution of opposing ideas through reasoned argument",
       "a single perspective",
+      "emotional persuasion",
       "statistical analysis"
     ],
     "correct": "the resolution of opposing ideas through reasoned argument",
@@ -178,9 +178,9 @@
   {
     "question": "<Hermeneutics> is the study of...",
     "options": [
-      "mathematical symbols",
       "ancient languages",
       "interpretation, especially of texts",
+      "mathematical symbols",
       "chemical compounds"
     ],
     "correct": "interpretation, especially of texts",
@@ -189,10 +189,10 @@
   {
     "question": "A <teleological> explanation focuses on...",
     "options": [
-      "purpose or end goals",
       "historical causes",
-      "statistical probability",
-      "random events"
+      "purpose or end goals",
+      "random events",
+      "statistical probability"
     ],
     "correct": "purpose or end goals",
     "explanation": "<Teleological> relates to explaining phenomena by their purpose or design."
@@ -213,8 +213,8 @@
     "options": [
       "emotions",
       "physical strength",
-      "knowledge and the conditions for its possibility",
-      "artistic expression"
+      "artistic expression",
+      "knowledge and the conditions for its possibility"
     ],
     "correct": "knowledge and the conditions for its possibility",
     "explanation": "<Epistemic> pertains to knowledge or the degree of its validation."

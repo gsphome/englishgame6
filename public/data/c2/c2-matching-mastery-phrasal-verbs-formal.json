@@ -58,5 +58,45 @@
     "left": "touch on",
     "right": "allude to / reference briefly",
     "explanation": "<Touch on> means to mention briefly. Formal equivalent: <allude to>."
+  },
+  {
+    "left": "set forth",
+    "right": "articulate / delineate",
+    "explanation": "<Set forth> means to present or explain clearly. Formal equivalent: <articulate> or <delineate>."
+  },
+  {
+    "left": "hinge on",
+    "right": "depend upon / be contingent upon",
+    "explanation": "<Hinge on> means to depend entirely on. Formal equivalent: <be contingent upon>."
+  },
+  {
+    "left": "gloss over",
+    "right": "minimise / understate",
+    "explanation": "<Gloss over> means to treat something as less important. Formal equivalent: <minimise> or <understate>."
+  },
+  {
+    "left": "pan out",
+    "right": "transpire / materialise",
+    "explanation": "<Pan out> means to develop or turn out. Formal equivalent: <transpire> or <materialise>."
+  },
+  {
+    "left": "ramp up",
+    "right": "intensify / escalate",
+    "explanation": "<Ramp up> means to increase significantly. Formal equivalent: <intensify> or <escalate>."
+  },
+  {
+    "left": "factor in",
+    "right": "incorporate / take into account",
+    "explanation": "<Factor in> means to include as a relevant element. Formal equivalent: <incorporate>."
+  },
+  {
+    "left": "spell out",
+    "right": "elucidate / explicate",
+    "explanation": "<Spell out> means to explain in detail. Formal equivalent: <elucidate> or <explicate>."
+  },
+  {
+    "left": "zero in on",
+    "right": "focus precisely upon / pinpoint",
+    "explanation": "<Zero in on> means to direct attention to. Formal equivalent: <pinpoint> or <focus precisely upon>."
   }
 ]

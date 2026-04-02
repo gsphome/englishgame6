@@ -58,5 +58,45 @@
     "left": "see eye to eye",
     "right": "agree with someone completely",
     "explanation": "<See eye to eye> means to have the same opinion as someone."
+  },
+  {
+    "left": "hit the nail on the head",
+    "right": "describe exactly what is causing a problem",
+    "explanation": "<Hit the nail on the head> means to be exactly right about something."
+  },
+  {
+    "left": "let sleeping dogs lie",
+    "right": "avoid interfering with a situation that could cause trouble",
+    "explanation": "<Let sleeping dogs lie> means to leave a problem alone to avoid making it worse."
+  },
+  {
+    "left": "bite off more than you can chew",
+    "right": "take on a task that is too big for you",
+    "explanation": "<Bite off more than you can chew> means to try to do too much."
+  },
+  {
+    "left": "break the bank",
+    "right": "cost too much money",
+    "explanation": "<Break the bank> means something is very expensive."
+  },
+  {
+    "left": "pull someone's leg",
+    "right": "joke with someone or tease them",
+    "explanation": "<Pull someone's leg> means to joke with them in a playful way."
+  },
+  {
+    "left": "under the radar",
+    "right": "without being noticed or attracting attention",
+    "explanation": "<Under the radar> means to go unnoticed."
+  },
+  {
+    "left": "the tip of the iceberg",
+    "right": "a small visible part of a much larger problem",
+    "explanation": "<The tip of the iceberg> means only a small part of a bigger issue is visible."
+  },
+  {
+    "left": "throw in the towel",
+    "right": "give up or admit defeat",
+    "explanation": "<Throw in the towel> means to stop trying and accept failure."
   }
 ]

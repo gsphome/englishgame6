@@ -36,16 +36,24 @@ const MINIMUMS = {
   sorting: 30,
   matching: 20,
   reading: 4, // sections
+  reordering: 5,
+  transformation: 20,
+  'error-correction': 20,
+  'word-formation': 20,
 };
 
 /** Time estimate formulas: mode → (itemCount) → minutes */
 const TIME_FORMULAS = {
-  flashcard: (c) => Math.max(1, Math.round(Math.min(c, 10) * 5 / 60)),
-  quiz: (c) => Math.max(2, Math.round(Math.min(c, 10) * 15 / 60)),
-  completion: (c) => Math.max(2, Math.round(Math.min(c, 10) * 20 / 60)),
-  sorting: (c) => Math.max(2, Math.round(Math.min(c, 12) * 8 / 60)),
-  matching: (c) => Math.max(1, Math.round(Math.min(c, 6) * 10 / 60)),
-  reading: (c) => Math.max(3, Math.round(c * 1.5)),
+  flashcard:          (c) => Math.max(1, Math.round(c * 5 / 60)),
+  quiz:               (c) => Math.max(2, Math.round(Math.min(c, 15) * 20 / 60)),
+  completion:         (c) => Math.max(2, Math.round(Math.min(c, 15) * 20 / 60)),
+  sorting:            (c) => Math.max(2, Math.round(Math.min(c, 20) * 10 / 60)),
+  matching:           (c) => Math.max(1, Math.round(Math.min(c, 10) * 15 / 60)),
+  reading:            (c) => Math.max(3, Math.round(c * 0.9)),
+  reordering:         (c) => Math.max(2, Math.round(Math.min(c, 12) * 15 / 60)),
+  transformation:     (c) => Math.max(2, Math.round(Math.min(c, 12) * 20 / 60)),
+  'error-correction': (c) => Math.max(2, Math.round(Math.min(c, 12) * 20 / 60)),
+  'word-formation':   (c) => Math.max(2, Math.round(Math.min(c, 12) * 15 / 60)),
 };
 
 /** CEFR level order for cross-level comparisons */

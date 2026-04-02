@@ -17,5 +17,16 @@
   {"word": "team player", "category": "Teamwork & Effort"},
   {"word": "burn the candle at both ends", "category": "Work-Life Balance"},
   {"word": "call it a day", "category": "Work-Life Balance"},
-  {"word": "a nine-to-five job", "category": "Work-Life Balance"}
+  {"word": "a nine-to-five job", "category": "Work-Life Balance"},
+  {"word": "work around the clock", "category": "Work-Life Balance"},
+  {"word": "take time off", "category": "Work-Life Balance"},
+  {"word": "raise the bar", "category": "Creativity & Innovation"},
+  {"word": "push the envelope", "category": "Creativity & Innovation"},
+  {"word": "step up to the plate", "category": "Starting & Action"},
+  {"word": "take the plunge", "category": "Starting & Action"},
+  {"word": "in the black", "category": "Business & Finance"},
+  {"word": "break even", "category": "Business & Finance"},
+  {"word": "bend over backwards", "category": "Teamwork & Effort"},
+  {"word": "shoulder the burden", "category": "Teamwork & Effort"},
+  {"word": "burn out", "category": "Work-Life Balance"}
 ]

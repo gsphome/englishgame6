@@ -16,5 +16,17 @@
   {"word": "eliminate", "category": "Formal"},
   {"word": "do away with", "category": "Informal"},
   {"word": "devise", "category": "Formal"},
-  {"word": "come up with", "category": "Informal"}
+  {"word": "come up with", "category": "Informal"},
+  {"word": "commence", "category": "Formal"},
+  {"word": "kick off", "category": "Informal"},
+  {"word": "terminate", "category": "Formal"},
+  {"word": "wrap up", "category": "Informal"},
+  {"word": "scrutinise", "category": "Formal"},
+  {"word": "go over", "category": "Informal"},
+  {"word": "recuperate", "category": "Formal"},
+  {"word": "get over", "category": "Informal"},
+  {"word": "disseminate", "category": "Formal"},
+  {"word": "hand out", "category": "Informal"},
+  {"word": "expedite", "category": "Formal"},
+  {"word": "speed up", "category": "Informal"}
 ]

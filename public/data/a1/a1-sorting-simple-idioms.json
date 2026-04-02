@@ -16,5 +16,17 @@
   {"word": "down in the dumps", "category": "Feeling Bad"},
   {"word": "on top of the world", "category": "Feeling Good"},
   {"word": "over the moon", "category": "Feeling Good"},
-  {"word": "on cloud nine", "category": "Feeling Good"}
+  {"word": "on cloud nine", "category": "Feeling Good"},
+  {"word": "in good spirits", "category": "Feeling Good"},
+  {"word": "happy as a clam", "category": "Feeling Good"},
+  {"word": "sick as a dog", "category": "Feeling Bad"},
+  {"word": "not my cup of tea", "category": "Feeling Bad"},
+  {"word": "good luck charm", "category": "Good Luck"},
+  {"word": "touch wood", "category": "Good Luck"},
+  {"word": "child's play", "category": "Easy"},
+  {"word": "nothing to it", "category": "Easy"},
+  {"word": "hit the hay", "category": "Sleep & Rest"},
+  {"word": "catch some sleep", "category": "Sleep & Rest"},
+  {"word": "out like a light", "category": "Sleep & Rest"},
+  {"word": "walk on air", "category": "Feeling Good"}
 ]

@@ -30,8 +30,21 @@ const LEVELS = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
 const MODES = ['reading', 'flashcard', 'matching', 'sorting', 'completion', 'quiz'];
 const CATEGORIES = config.learningSettings.categories;
 
-const MIN_ITEMS = { flashcard: 40, quiz: 20, completion: 25, sorting: 30, matching: 20, reading: 4 };
-const TIME_PER_ITEM = { flashcard: 0.15, quiz: 0.3, completion: 0.25, sorting: 0.12, matching: 0.2, reading: 3 };
+const MIN_ITEMS = { flashcard: 40, quiz: 20, completion: 25, sorting: 30, matching: 20, reading: 4, reordering: 5, transformation: 20, 'error-correction': 20, 'word-formation': 20 };
+
+/** Time formulas matching validate-content.js */
+const TIME_FORMULAS = {
+  flashcard:          (c) => Math.max(1, Math.round(c * 5 / 60)),
+  quiz:               (c) => Math.max(2, Math.round(Math.min(c, 15) * 20 / 60)),
+  completion:         (c) => Math.max(2, Math.round(Math.min(c, 15) * 20 / 60)),
+  sorting:            (c) => Math.max(2, Math.round(Math.min(c, 20) * 10 / 60)),
+  matching:           (c) => Math.max(1, Math.round(Math.min(c, 10) * 15 / 60)),
+  reading:            (c) => Math.max(3, Math.round(c * 0.9)),
+  reordering:         (c) => Math.max(2, Math.round(Math.min(c, 12) * 15 / 60)),
+  transformation:     (c) => Math.max(2, Math.round(Math.min(c, 12) * 20 / 60)),
+  'error-correction': (c) => Math.max(2, Math.round(Math.min(c, 12) * 20 / 60)),
+  'word-formation':   (c) => Math.max(2, Math.round(Math.min(c, 12) * 15 / 60)),
+};
 
 const exportJson = process.argv.includes('--json');
 const report = { passes: {}, summary: { total: 0, warnings: 0, errors: 0 } };
@@ -141,12 +154,22 @@ function passAM3() {
   logHeader('AM-3: Anomalías de naming');
   const anomalies = [];
 
+  // Modes with hyphens need special handling
+  const HYPHENATED_MODES = ['error-correction', 'word-formation'];
+
   for (const mod of modules) {
-    const idPrefix = mod.id.split('-')[0];
-    const expectedPrefix = mod.learningMode === 'reading' ? 'reading' : mod.learningMode;
+    // Extract ID prefix: check hyphenated modes first, then fall back to first segment
+    let idPrefix = mod.id.split('-')[0];
+    for (const hm of HYPHENATED_MODES) {
+      if (mod.id.startsWith(hm + '-')) {
+        idPrefix = hm;
+        break;
+      }
+    }
+    const expectedPrefix = mod.learningMode;
 
     // Check if ID prefix matches learningMode
-    if (idPrefix !== expectedPrefix && idPrefix !== mod.learningMode) {
+    if (idPrefix !== expectedPrefix) {
       anomalies.push({
         id: mod.id,
         idPrefix,
@@ -157,8 +180,7 @@ function passAM3() {
 
     // Check dataPath matches learningMode
     const fileName = mod.dataPath.split('/').pop();
-    const pathMode = fileName.split('-').slice(1, 2)[0]; // e.g. a1-quiz-xxx → quiz
-    if (pathMode && !fileName.includes(mod.learningMode) && mod.learningMode !== 'reading') {
+    if (!fileName.includes(mod.learningMode) && mod.learningMode !== 'reading') {
       anomalies.push({
         id: mod.id,
         dataPath: mod.dataPath,
@@ -316,22 +338,21 @@ function passAM6() {
     const count = countItems(filePath, mod.learningMode);
     if (count <= 0) continue;
 
-    const rate = TIME_PER_ITEM[mod.learningMode] || 0.2;
-    const expectedTime = Math.round(count * rate);
+    const formula = TIME_FORMULAS[mod.learningMode];
+    if (!formula) continue;
+    const expectedTime = formula(count);
     const diff = Math.abs(mod.estimatedTime - expectedTime);
-    const ratio = mod.estimatedTime / Math.max(expectedTime, 1);
 
-    // Flag if estimated time is off by more than 2x or less than 0.3x
-    if (ratio > 2.5 || ratio < 0.3) {
+    // Flag if estimated time differs from formula
+    if (diff > 1) {
       issues.push({
         id: mod.id,
         mode: mod.learningMode,
         items: count,
         estimated: mod.estimatedTime,
         calculated: expectedTime,
-        ratio: ratio.toFixed(2)
       });
-      logWarning(`${mod.id}: estimado ${mod.estimatedTime}min, calculado ~${expectedTime}min (${count} items × ${rate}min)`);
+      logWarning(`${mod.id}: estimado ${mod.estimatedTime}min, calculado ${expectedTime}min (${count} items)`);
       warnings++;
     }
   }

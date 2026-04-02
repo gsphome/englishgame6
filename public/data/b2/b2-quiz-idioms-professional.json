@@ -14,9 +14,9 @@
     "question": "If you <sit on the fence>, you:",
     "options": [
       "avoid making a decision",
-      "guard a property",
       "watch a game",
-      "rest outside"
+      "rest outside",
+      "guard a property"
     ],
     "correct": "avoid making a decision",
     "explanation": "This idiom means to remain neutral and not choose a side."
@@ -24,10 +24,10 @@
   {
     "question": "What does <the bottom line> mean?",
     "options": [
-      "the lowest price",
-      "the last sentence",
+      "the most important fact or result",
       "the end of a page",
-      "the most important fact or result"
+      "the lowest price",
+      "the last sentence"
     ],
     "correct": "the most important fact or result",
     "explanation": "This idiom refers to the essential point or the final outcome."
@@ -35,10 +35,10 @@
   {
     "question": "If someone <pulls strings>, they:",
     "options": [
-      "play guitar",
-      "do puppet shows",
       "exercise",
-      "use influence to get what they want"
+      "use influence to get what they want",
+      "play guitar",
+      "do puppet shows"
     ],
     "correct": "use influence to get what they want",
     "explanation": "This idiom means to use personal connections to gain an advantage."
@@ -46,10 +46,10 @@
   {
     "question": "What does <a tough call> mean?",
     "options": [
-      "a strong person",
-      "a difficult decision",
+      "a loud phone call",
       "a hard surface",
-      "a loud phone call"
+      "a strong person",
+      "a difficult decision"
     ],
     "correct": "a difficult decision",
     "explanation": "This idiom describes a decision that is hard to make."
@@ -57,10 +57,10 @@
   {
     "question": "If you <go with the flow>, you:",
     "options": [
-      "accept things as they happen",
-      "swim in a river",
       "move quickly",
-      "follow a map"
+      "accept things as they happen",
+      "follow a map",
+      "swim in a river"
     ],
     "correct": "accept things as they happen",
     "explanation": "This idiom means to relax and accept a situation without trying to change it."
@@ -68,10 +68,10 @@
   {
     "question": "What does <a ballpark figure> mean?",
     "options": [
-      "an approximate number",
-      "an exact calculation",
       "a baseball score",
-      "a sports statistic"
+      "a sports statistic",
+      "an exact calculation",
+      "an approximate number"
     ],
     "correct": "an approximate number",
     "explanation": "This idiom means a rough estimate or approximation."
@@ -80,9 +80,9 @@
     "question": "If something <falls flat>, it:",
     "options": [
       "becomes flat",
+      "is very successful",
       "fails to produce the intended effect",
-      "drops to the ground",
-      "is very successful"
+      "drops to the ground"
     ],
     "correct": "fails to produce the intended effect",
     "explanation": "This idiom means something fails to achieve the desired result."
@@ -90,10 +90,10 @@
   {
     "question": "What does <in a nutshell> mean?",
     "options": [
-      "with difficulty",
-      "inside a shell",
+      "in a very brief summary",
       "in a small space",
-      "in a very brief summary"
+      "with difficulty",
+      "inside a shell"
     ],
     "correct": "in a very brief summary",
     "explanation": "This idiom means to express something in the most concise way possible."
@@ -102,9 +102,9 @@
     "question": "If you <take something with a grain of salt>, you:",
     "options": [
       "eat carefully",
-      "add salt to food",
       "don't fully believe it",
-      "preserve something"
+      "preserve something",
+      "add salt to food"
     ],
     "correct": "don't fully believe it",
     "explanation": "This idiom means to view something with skepticism."
@@ -113,9 +113,9 @@
     "question": "What does <back to square one> mean?",
     "options": [
       "start over from the beginning",
-      "play a board game",
       "return home",
-      "go backwards"
+      "go backwards",
+      "play a board game"
     ],
     "correct": "start over from the beginning",
     "explanation": "This idiom means to return to the starting point after a failed attempt."
@@ -125,8 +125,8 @@
     "options": [
       "get wet",
       "stay indoors",
-      "check the forecast",
-      "survive a difficult period"
+      "survive a difficult period",
+      "check the forecast"
     ],
     "correct": "survive a difficult period",
     "explanation": "This idiom means to endure and survive a difficult situation."
@@ -134,10 +134,10 @@
   {
     "question": "What does <a game changer> mean?",
     "options": [
-      "a new player",
-      "a referee",
       "something that significantly alters a situation",
-      "a rule change"
+      "a rule change",
+      "a referee",
+      "a new player"
     ],
     "correct": "something that significantly alters a situation",
     "explanation": "This idiom describes an event or idea that fundamentally changes how things are done."
@@ -145,10 +145,10 @@
   {
     "question": "If you <get your act together>, you:",
     "options": [
-      "practice acting",
       "organize yourself and behave properly",
+      "join a theater group",
       "perform on stage",
-      "join a theater group"
+      "practice acting"
     ],
     "correct": "organize yourself and behave properly",
     "explanation": "This idiom means to start behaving in a more organized and effective way."
@@ -156,10 +156,10 @@
   {
     "question": "What does <a level playing field> mean?",
     "options": [
-      "a fair and equal situation for everyone",
       "a smooth surface",
       "a balanced game",
-      "a flat sports ground"
+      "a flat sports ground",
+      "a fair and equal situation for everyone"
     ],
     "correct": "a fair and equal situation for everyone",
     "explanation": "This idiom describes a situation where everyone has the same opportunities."
@@ -179,8 +179,8 @@
     "question": "What does <a slippery slope> mean?",
     "options": [
       "a ski run",
-      "an icy road",
       "a wet floor",
+      "an icy road",
       "a course of action likely to lead to worse outcomes"
     ],
     "correct": "a course of action likely to lead to worse outcomes",
@@ -189,10 +189,10 @@
   {
     "question": "If you <think on your feet>, you:",
     "options": [
-      "make quick decisions under pressure",
-      "stand while thinking",
+      "walk and think",
       "exercise your brain",
-      "walk and think"
+      "make quick decisions under pressure",
+      "stand while thinking"
     ],
     "correct": "make quick decisions under pressure",
     "explanation": "This idiom means to react quickly and effectively without preparation."
@@ -200,10 +200,10 @@
   {
     "question": "What does <the writing is on the wall> mean?",
     "options": [
-      "someone left a note",
-      "there is graffiti",
       "the wall needs painting",
-      "there are clear signs that something bad will happen"
+      "there is graffiti",
+      "there are clear signs that something bad will happen",
+      "someone left a note"
     ],
     "correct": "there are clear signs that something bad will happen",
     "explanation": "This idiom means there are obvious signs of future trouble or failure."

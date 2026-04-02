@@ -2,8 +2,8 @@
   {
     "question": "Which sentence correctly uses <used to> to express a past habit?",
     "options": [
-      "I am used to wake up early",
       "I was used to wake up early",
+      "I am used to wake up early",
       "I get used to wake up early",
       "I used to wake up early when I was a student."
     ],
@@ -13,9 +13,9 @@
   {
     "question": "Complete: 'After living in Japan for two years, she ______ eating with chopsticks.'",
     "options": [
-      "gets used to",
       "is used to",
       "was used to",
+      "gets used to",
       "used to"
     ],
     "correct": "is used to",
@@ -24,9 +24,9 @@
   {
     "question": "Which sentence shows the process of becoming accustomed to something?",
     "options": [
-      "He used to live in the city",
       "He is getting used to living in the city.",
       "He is used to living in the city.",
+      "He used to live in the city",
       "He didn't use to live in the city."
     ],
     "correct": "He is getting used to living in the city.",
@@ -36,9 +36,9 @@
     "question": "What is the correct negative form of <used to>?",
     "options": [
       "I didn't used to",
-      "I wasn't used to",
+      "I usedn't to",
       "I didn't use to",
-      "I usedn't to"
+      "I wasn't used to"
     ],
     "correct": "I didn't use to",
     "explanation": "The negative form of <used to> is <didn>t use to' + base form of the verb."
@@ -46,10 +46,10 @@
   {
     "question": "Complete: 'It took me months to ______ the noise of the construction site.'",
     "options": [
-      "use to",
+      "be used to",
       "get used to",
-      "used to",
-      "be used to"
+      "use to",
+      "used to"
     ],
     "correct": "get used to",
     "explanation": "<Get used to> expresses the process of becoming accustomed to something over time."
@@ -57,10 +57,10 @@
   {
     "question": "Which question form is correct?",
     "options": [
-      "Did you use to play football?",
-      "Were you used to play football?",
+      "Are you used to play football?",
       "Did you used to play football?",
-      "Are you used to play football?"
+      "Did you use to play football?",
+      "Were you used to play football?"
     ],
     "correct": "Did you use to play football?",
     "explanation": "In questions, <did> is used with <use to> + base form of the verb."
@@ -68,10 +68,10 @@
   {
     "question": "Complete: 'I ______ spicy food now, but it took time to develop the tolerance.'",
     "options": [
-      "was used to eat",
-      "am used to eating",
       "used to eat",
-      "get used to eat"
+      "was used to eat",
+      "get used to eat",
+      "am used to eating"
     ],
     "correct": "am used to eating",
     "explanation": "<Be used to> + -ing form expresses being accustomed to something in the present."
@@ -79,10 +79,10 @@
   {
     "question": "Which sentence expresses a past state that contrasts with the present?",
     "options": [
-      "She gets used to working late",
       "She used to work late, but now she has regular hours.",
       "She is used to working late",
-      "She is getting used to working late"
+      "She is getting used to working late",
+      "She gets used to working late"
     ],
     "correct": "She used to work late, but now she has regular hours.",
     "explanation": "<Used to> expresses past habits or states that no longer exist, often contrasted with the present."
@@ -90,10 +90,10 @@
   {
     "question": "Complete: 'When I moved to London, I had to ______ driving on the left side.'",
     "options": [
-      "use to",
-      "get used to",
+      "be used to",
       "used to",
-      "be used to"
+      "get used to",
+      "use to"
     ],
     "correct": "get used to",
     "explanation": "<Get used to> expresses the process of becoming accustomed to something new."
@@ -101,10 +101,10 @@
   {
     "question": "Which sentence is grammatically incorrect?",
     "options": [
-      "I used to the cold weather.",
+      "I got used to the cold weather.",
       "I am used to the cold weather.",
-      "I will get used to the cold weather.",
-      "I got used to the cold weather."
+      "I used to the cold weather.",
+      "I will get used to the cold weather."
     ],
     "correct": "I used to the cold weather.",
     "explanation": "<Used to> must be followed by a base form of a verb, not a noun. For nouns, use <be used to> or <get used to>."
@@ -112,10 +112,10 @@
   {
     "question": "Complete: 'He ______ be very shy, but now he's quite confident in social situations.'",
     "options": [
-      "used to",
-      "was used to",
       "is used to",
-      "gets used to"
+      "gets used to",
+      "used to",
+      "was used to"
     ],
     "correct": "used to",
     "explanation": "<Used to> + base form of the verb expresses past characteristics or states that have changed."
@@ -124,8 +124,8 @@
     "question": "Which sentence shows adaptation to a new environment?",
     "options": [
       "She is used to living abroad",
-      "She didn't use to live abroad",
       "She used to live abroad",
+      "She didn't use to live abroad",
       "She got used to living abroad after a few months."
     ],
     "correct": "She got used to living abroad after a few months.",
@@ -134,10 +134,10 @@
   {
     "question": "Complete: 'I ______ like coffee, but now I can't start my day without it.'",
     "options": [
-      "didn't use to",
+      "wasn't used to",
       "am not used to",
       "don't get used to",
-      "wasn't used to"
+      "didn't use to"
     ],
     "correct": "didn't use to",
     "explanation": "<Didn>t use to' + base form expresses that something was not a habit or preference in the past."
@@ -146,9 +146,9 @@
     "question": "Which sentence correctly expresses future adaptation?",
     "options": [
       "You will be used to the new system.",
-      "You will use to the new system.",
+      "You will used to the new system.",
       "You will get used to the new system.",
-      "You will used to the new system."
+      "You will use to the new system."
     ],
     "correct": "You will get used to the new system.",
     "explanation": "<Will get used to> expresses future adaptation or the process of becoming accustomed to something."
@@ -157,9 +157,9 @@
     "question": "Complete: 'Living in a small town, I ______ the peace and quiet.'",
     "options": [
       "used to",
-      "get used to",
+      "am used to",
       "was used to",
-      "am used to"
+      "get used to"
     ],
     "correct": "am used to",
     "explanation": "<Be used to> + noun/gerund expresses being accustomed to something in the present."
@@ -167,10 +167,10 @@
   {
     "question": "Which sentence shows the most complex temporal relationship?",
     "options": [
-      "I used to smoke",
       "I am used to smoking",
-      "I had gotten used to smoking before I decided to quit.",
-      "I will get used to not smoking"
+      "I used to smoke",
+      "I will get used to not smoking",
+      "I had gotten used to smoking before I decided to quit."
     ],
     "correct": "I had gotten used to smoking before I decided to quit.",
     "explanation": "Past perfect <had gotten used to> shows a completed adaptation process before another past event, demonstrating complex temporal sequencing typical of B2 level."
@@ -178,9 +178,9 @@
   {
     "question": "Complete: 'The refugees ______ their new country's customs gradually.'",
     "options": [
-      "are getting used to",
-      "were used to",
       "used to",
+      "were used to",
+      "are getting used to",
       "had used to"
     ],
     "correct": "are getting used to",
@@ -190,8 +190,8 @@
     "question": "Which sentence demonstrates the most sophisticated use of these structures?",
     "options": [
       "I am used to living there",
-      "Having gotten used to the lifestyle, I decided to stay permanently.",
       "I will get used to living there",
+      "Having gotten used to the lifestyle, I decided to stay permanently.",
       "I used to live there"
     ],
     "correct": "Having gotten used to the lifestyle, I decided to stay permanently.",
@@ -200,10 +200,10 @@
   {
     "question": "Complete: 'Despite ______ public speaking, she still feels nervous before important presentations.'",
     "options": [
-      "used to",
-      "being used to",
       "having used to",
-      "getting used to"
+      "used to",
+      "getting used to",
+      "being used to"
     ],
     "correct": "being used to",
     "explanation": "<Being used to> (gerund form) is used after prepositions like <despite>, showing advanced grammatical awareness."
@@ -211,10 +211,10 @@
   {
     "question": "Which sentence correctly uses the conditional with these structures?",
     "options": [
-      "If I had used to the system, I would understand it.",
-      "If I get used to the food, I will enjoy it more.",
+      "If I used to live there, I would know the area",
       "If I were used to the climate, I wouldn't need warm clothes.",
-      "If I used to live there, I would know the area"
+      "If I get used to the food, I will enjoy it more.",
+      "If I had used to the system, I would understand it."
     ],
     "correct": "If I were used to the climate, I wouldn't need warm clothes.",
     "explanation": "The second conditional with <were used to> correctly expresses a hypothetical present situation and its consequence."

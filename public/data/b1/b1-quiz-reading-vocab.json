@@ -2,10 +2,10 @@
   {
     "question": "A <curriculum> is...",
     "options": [
-      "a teacher's salary",
       "a plan of subjects taught at a school",
-      "a type of exam",
-      "a school building"
+      "a school building",
+      "a teacher's salary",
+      "a type of exam"
     ],
     "correct": "a plan of subjects taught at a school",
     "explanation": "A <curriculum> is the set of courses and content taught at a school or university."
@@ -14,9 +14,9 @@
     "question": "When you <graduate>, you...",
     "options": [
       "change schools",
-      "start a new course",
+      "fail an exam",
       "complete your studies and receive a degree",
-      "fail an exam"
+      "start a new course"
     ],
     "correct": "complete your studies and receive a degree",
     "explanation": "To <graduate> means to successfully finish a course of study."
@@ -25,8 +25,8 @@
     "question": "<Tuition> refers to...",
     "options": [
       "the school bus",
-      "the textbooks",
       "the money paid for education",
+      "the textbooks",
       "the school uniform as recognized by most authorities"
     ],
     "correct": "the money paid for education",
@@ -48,8 +48,8 @@
     "options": [
       "natural gas",
       "sources that won't run out, like sun and wind",
-      "coal and oil",
-      "nuclear power only"
+      "nuclear power only",
+      "coal and oil"
     ],
     "correct": "sources that won't run out, like sun and wind",
     "explanation": "<Renewable energy> comes from natural sources that are constantly replenished."
@@ -57,10 +57,10 @@
   {
     "question": "Your <carbon footprint> measures...",
     "options": [
-      "the amount of CO2 you produce",
       "the size of your shoes",
-      "your weight",
-      "how far you walk"
+      "how far you walk",
+      "the amount of CO2 you produce",
+      "your weight"
     ],
     "correct": "the amount of CO2 you produce",
     "explanation": "Your <carbon footprint> is the total amount of greenhouse gases you produce."
@@ -68,10 +68,10 @@
   {
     "question": "<Emissions> are...",
     "options": [
-      "gases released into the atmosphere",
       "recycling methods",
+      "types of energy",
       "weather patterns",
-      "types of energy"
+      "gases released into the atmosphere"
     ],
     "correct": "gases released into the atmosphere",
     "explanation": "<Emissions> are substances, especially gases, released into the air."
@@ -80,9 +80,9 @@
     "question": "An <influencer> is someone who...",
     "options": [
       "teaches at a university",
+      "writes for a newspaper",
       "works in a factory",
-      "has many followers and affects people's opinions online",
-      "writes for a newspaper"
+      "has many followers and affects people's opinions online"
     ],
     "correct": "has many followers and affects people's opinions online",
     "explanation": "An <influencer> is a person with a large social media following who can affect others' decisions."
@@ -91,8 +91,8 @@
     "question": "When something goes <viral>, it...",
     "options": [
       "becomes very expensive",
-      "spreads very quickly on the internet",
       "becomes illegal",
+      "spreads very quickly on the internet",
       "disappears from the internet"
     ],
     "correct": "spreads very quickly on the internet",
@@ -101,10 +101,10 @@
   {
     "question": "<Engagement> on social media means...",
     "options": [
+      "the time you spend online",
       "the number of friends you have",
-      "likes, comments, and shares on a post",
       "the cost of advertising",
-      "the time you spend online"
+      "likes, comments, and shares on a post"
     ],
     "correct": "likes, comments, and shares on a post",
     "explanation": "<Engagement> measures how much people interact with content through likes, comments, and shares."
@@ -112,10 +112,10 @@
   {
     "question": "A <hashtag> is used to...",
     "options": [
-      "categorize content on social media",
+      "block other users",
       "send private messages",
-      "delete posts",
-      "block other users"
+      "categorize content on social media",
+      "delete posts"
     ],
     "correct": "categorize content on social media",
     "explanation": "A <hashtag> (#) is used to label and find content about specific topics."
@@ -125,8 +125,8 @@
     "options": [
       "bullying that happens online",
       "online shopping",
-      "a type of video game",
-      "a computer virus"
+      "a computer virus",
+      "a type of video game"
     ],
     "correct": "bullying that happens online",
     "explanation": "<Cyberbullying> is the use of technology to harass, threaten, or embarrass someone."
@@ -134,10 +134,10 @@
   {
     "question": "A <scholarship> is...",
     "options": [
+      "money given to a student to help pay for education",
       "a student's grade",
-      "a type of exam",
       "a school subject",
-      "money given to a student to help pay for education"
+      "a type of exam"
     ],
     "correct": "money given to a student to help pay for education",
     "explanation": "A <scholarship> is financial aid awarded to students based on merit or need."
@@ -145,9 +145,9 @@
   {
     "question": "<Sustainability> means...",
     "options": [
-      "building bigger cities",
-      "spending more money",
       "making things faster",
+      "spending more money",
+      "building bigger cities",
       "using resources without harming the future"
     ],
     "correct": "using resources without harming the future",
@@ -158,8 +158,8 @@
     "options": [
       "clean air",
       "harmful substances in the environment",
-      "natural resources",
-      "recycled materials"
+      "recycled materials",
+      "natural resources"
     ],
     "correct": "harmful substances in the environment",
     "explanation": "<Pollution> is the presence of harmful substances that damage the environment."
@@ -168,9 +168,9 @@
     "question": "An <algorithm> is...",
     "options": [
       "a type of social media",
-      "a set of rules a computer follows to solve problems",
       "a computer screen",
-      "an internet connection"
+      "an internet connection",
+      "a set of rules a computer follows to solve problems"
     ],
     "correct": "a set of rules a computer follows to solve problems",
     "explanation": "An <algorithm> is a process or set of rules followed by a computer to perform calculations."
@@ -178,8 +178,8 @@
   {
     "question": "A <content creator> is someone who...",
     "options": [
-      "makes videos, articles, or posts for the internet",
       "designs websites only",
+      "makes videos, articles, or posts for the internet",
       "repairs computers",
       "sells phones"
     ],
@@ -189,10 +189,10 @@
   {
     "question": "<Climate change> refers to...",
     "options": [
-      "long-term changes in global temperatures and weather",
       "daily weather forecasts",
       "local temperature",
-      "seasonal changes"
+      "seasonal changes",
+      "long-term changes in global temperatures and weather"
     ],
     "correct": "long-term changes in global temperatures and weather",
     "explanation": "<Climate change> refers to significant, long-term shifts in global climate patterns."
@@ -201,8 +201,8 @@
     "question": "A university <degree> is...",
     "options": [
       "a type of exam",
-      "a qualification awarded after completing studies",
       "a school subject",
+      "a qualification awarded after completing studies",
       "a student ID card"
     ],
     "correct": "a qualification awarded after completing studies",
@@ -211,10 +211,10 @@
   {
     "question": "To <recycle> means to...",
     "options": [
-      "buy new products",
-      "throw things away",
       "convert waste into reusable material",
-      "burn garbage"
+      "throw things away",
+      "burn garbage",
+      "buy new products"
     ],
     "correct": "convert waste into reusable material",
     "explanation": "To <recycle> means to process used materials so they can be used again."

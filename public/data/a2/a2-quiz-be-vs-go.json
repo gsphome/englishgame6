@@ -2,9 +2,9 @@
   {
     "question": "Which sentence is correct for describing your <location>?",
     "options": [
-      "I go at home.",
       "I am at home.",
       "I go home now.",
+      "I go at home.",
       "I am to home."
     ],
     "correct": "I am at home.",
@@ -15,8 +15,8 @@
     "options": [
       "is",
       "goes",
-      "are",
-      "be"
+      "be",
+      "are"
     ],
     "correct": "goes",
     "explanation": "Use <go> for regular movement to a place. She <goes> to the office (routine movement)."
@@ -24,10 +24,10 @@
   {
     "question": "They ___ at school right now.",
     "options": [
-      "go",
-      "goes",
+      "going",
       "are",
-      "going"
+      "go",
+      "goes"
     ],
     "correct": "are",
     "explanation": "Use <be> (are) for current location. They <are> at school = they are there now."
@@ -36,9 +36,9 @@
     "question": "We ___ shopping every weekend.",
     "options": [
       "are",
-      "is",
+      "be",
       "go",
-      "be"
+      "is"
     ],
     "correct": "go",
     "explanation": "Use <go + -ing> for activities. We <go shopping> = regular activity."
@@ -57,10 +57,10 @@
   {
     "question": "He ___ running in the park every morning.",
     "options": [
-      "is",
       "goes",
+      "be",
       "are",
-      "be"
+      "is"
     ],
     "correct": "goes",
     "explanation": "Use <go + -ing> for sports and activities. He <goes running> = regular activity."
@@ -68,9 +68,9 @@
   {
     "question": "I ___ tired after work.",
     "options": [
-      "go",
       "goes",
       "am",
+      "go",
       "going"
     ],
     "correct": "am",
@@ -80,9 +80,9 @@
     "question": "The bus ___ to the train station.",
     "options": [
       "is",
-      "are",
+      "be",
       "goes",
-      "be"
+      "are"
     ],
     "correct": "goes",
     "explanation": "Use <go> for vehicle movement/routes. The bus <goes> to the station."
@@ -90,9 +90,9 @@
   {
     "question": "Which sentence means 'Estoy en la oficina'?",
     "options": [
+      "I go in the office.",
       "I go to the office.",
       "I am in the office.",
-      "I go in the office.",
       "I am to the office."
     ],
     "correct": "I am in the office.",
@@ -101,10 +101,10 @@
   {
     "question": "The party ___ at 8pm tonight.",
     "options": [
-      "goes",
-      "go",
       "is",
-      "going"
+      "go",
+      "going",
+      "goes"
     ],
     "correct": "is",
     "explanation": "Use <be> (is) for time and schedule. The party <is> at 8pm."
@@ -113,9 +113,9 @@
     "question": "My sister ___ to the gym three times a week.",
     "options": [
       "is",
-      "are",
+      "be",
       "goes",
-      "be"
+      "are"
     ],
     "correct": "goes",
     "explanation": "Use <go> for regular movement. She <goes> to the gym = routine."
@@ -123,10 +123,10 @@
   {
     "question": "It ___ very cold outside today.",
     "options": [
-      "goes",
+      "are",
       "go",
       "is",
-      "are"
+      "goes"
     ],
     "correct": "is",
     "explanation": "Use <be> (is) for weather and temperature. It <is> cold = describing the weather."
@@ -134,10 +134,10 @@
   {
     "question": "We ___ swimming every summer.",
     "options": [
-      "are",
-      "is",
       "go",
-      "be"
+      "be",
+      "are",
+      "is"
     ],
     "correct": "go",
     "explanation": "Use <go + -ing> for seasonal activities. We <go swimming> = activity."
@@ -145,9 +145,9 @@
   {
     "question": "What is WRONG? 'I go at home every night.'",
     "options": [
-      "'go' should be 'am'",
       "'at' should be removed — say 'I go home'",
       "'every night' is incorrect",
+      "'go' should be 'am'",
       "Nothing is wrong"
     ],
     "correct": "'at' should be removed — say 'I go home'",
@@ -156,10 +156,10 @@
   {
     "question": "She ___ a doctor. She works at the hospital.",
     "options": [
-      "goes",
-      "go",
+      "going",
       "is",
-      "going"
+      "goes",
+      "go"
     ],
     "correct": "is",
     "explanation": "Use <be> (is) for identity and profession. She <is> a doctor."
@@ -167,10 +167,10 @@
   {
     "question": "Let's ___ outside! The weather is nice.",
     "options": [
-      "be",
       "is",
       "go",
-      "are"
+      "are",
+      "be"
     ],
     "correct": "go",
     "explanation": "Use <go> for movement to a place. Let's <go> outside = let's move outside."
@@ -178,10 +178,10 @@
   {
     "question": "The children ___ in the garden right now.",
     "options": [
-      "go",
+      "going",
       "goes",
-      "are",
-      "going"
+      "go",
+      "are"
     ],
     "correct": "are",
     "explanation": "Use <be> (are) for current location. The children <are> in the garden = they are there now."
@@ -189,8 +189,8 @@
   {
     "question": "My parents ___ to church every Sunday.",
     "options": [
-      "are",
       "is",
+      "are",
       "go",
       "be"
     ],
@@ -202,8 +202,8 @@
     "options": [
       "goes",
       "go",
-      "is",
-      "are"
+      "are",
+      "is"
     ],
     "correct": "is",
     "explanation": "Use <be> (is) for time and place of events. The meeting <is> at 3pm."
@@ -211,10 +211,10 @@
   {
     "question": "We ___ camping every summer vacation.",
     "options": [
-      "are",
-      "is",
       "go",
-      "be"
+      "is",
+      "be",
+      "are"
     ],
     "correct": "go",
     "explanation": "Use <go + -ing> for leisure activities. We <go camping> = regular activity."

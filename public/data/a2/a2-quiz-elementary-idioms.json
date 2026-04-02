@@ -3,9 +3,9 @@
     "question": "What does <the early bird catches the worm> mean?",
     "options": [
       "wake up early to succeed",
-      "birds eat worms",
       "birds are smart",
-      "worms are fast"
+      "worms are fast",
+      "birds eat worms"
     ],
     "correct": "wake up early to succeed",
     "explanation": "This idiom means people who start early have an advantage."
@@ -13,10 +13,10 @@
   {
     "question": "If you <kill two birds with one stone>, you:",
     "options": [
-      "go hunting as recognized by most authorities",
-      "throw stones",
       "hurt animals",
-      "do two things at once"
+      "do two things at once",
+      "go hunting as recognized by most authorities",
+      "throw stones"
     ],
     "correct": "do two things at once",
     "explanation": "This idiom means to accomplish two things with a single action."
@@ -24,10 +24,10 @@
   {
     "question": "What does <actions speak louder than words> mean?",
     "options": [
-      "speak loudly",
       "don't talk",
-      "what you do matters more than what you say",
-      "be quiet"
+      "be quiet",
+      "speak loudly",
+      "what you do matters more than what you say"
     ],
     "correct": "what you do matters more than what you say",
     "explanation": "This idiom means behavior is more important than promises."
@@ -35,10 +35,10 @@
   {
     "question": "If someone is <on the same page>, they:",
     "options": [
-      "are in the same class",
+      "agree with each other",
       "read the same book",
-      "write together",
-      "agree with each other"
+      "are in the same class",
+      "write together"
     ],
     "correct": "agree with each other",
     "explanation": "This idiom means people share the same understanding."
@@ -46,10 +46,10 @@
   {
     "question": "What does <bite off more than you can chew> mean?",
     "options": [
-      "chew slowly",
       "have big teeth",
-      "eat too much",
-      "take on too much responsibility"
+      "take on too much responsibility",
+      "chew slowly",
+      "eat too much"
     ],
     "correct": "take on too much responsibility",
     "explanation": "This idiom means to attempt more than you can handle."
@@ -57,10 +57,10 @@
   {
     "question": "If you <go the extra mile>, you:",
     "options": [
-      "travel by car",
-      "run a race",
+      "do more than expected",
       "walk far",
-      "do more than expected"
+      "run a race",
+      "travel by car"
     ],
     "correct": "do more than expected",
     "explanation": "This idiom means to make a special effort beyond what is required."
@@ -68,10 +68,10 @@
   {
     "question": "What does <every cloud has a silver lining> mean?",
     "options": [
-      "it will rain",
       "look at the sky",
       "clouds are silver",
-      "bad situations have something positive"
+      "bad situations have something positive",
+      "it will rain"
     ],
     "correct": "bad situations have something positive",
     "explanation": "This idiom means there is something good in every bad situation."
@@ -79,10 +79,10 @@
   {
     "question": "If you <miss the boat>, you:",
     "options": [
-      "miss an opportunity",
       "take the wrong bus",
       "can't swim",
-      "are late for a ship"
+      "are late for a ship",
+      "miss an opportunity"
     ],
     "correct": "miss an opportunity",
     "explanation": "This idiom means to miss a chance or opportunity."
@@ -90,10 +90,10 @@
   {
     "question": "What does <practice makes perfect> mean?",
     "options": [
-      "be perfect always",
+      "doing something many times improves your skill",
       "perfection is easy",
-      "practice is boring",
-      "doing something many times improves your skill"
+      "be perfect always",
+      "practice is boring"
     ],
     "correct": "doing something many times improves your skill",
     "explanation": "This idiom means regular practice leads to improvement."
@@ -101,10 +101,10 @@
   {
     "question": "If something is <the tip of the iceberg>, it is:",
     "options": [
-      "only a small part of a bigger problem",
       "very cold",
-      "easy to see",
-      "on top of ice"
+      "on top of ice",
+      "only a small part of a bigger problem",
+      "easy to see"
     ],
     "correct": "only a small part of a bigger problem",
     "explanation": "This idiom means what you see is only a small part of a much larger issue."
@@ -123,10 +123,10 @@
   {
     "question": "If you <burn the midnight oil>, you:",
     "options": [
-      "start a fire",
-      "work or study late at night",
       "cook at midnight",
-      "waste oil"
+      "start a fire",
+      "waste oil",
+      "work or study late at night"
     ],
     "correct": "work or study late at night",
     "explanation": "This idiom means to work or study until very late."
@@ -135,9 +135,9 @@
     "question": "What does <a blessing in disguise> mean?",
     "options": [
       "something bad that turns out good",
+      "a religious event",
       "a surprise gift",
-      "a hidden costume",
-      "a religious event"
+      "a hidden costume"
     ],
     "correct": "something bad that turns out good",
     "explanation": "This idiom means something that seems bad at first but results in something good."
@@ -145,8 +145,8 @@
   {
     "question": "If you <get out of hand>, the situation:",
     "options": [
-      "becomes difficult to control",
       "is in your hand",
+      "becomes difficult to control",
       "is easy",
       "is under control"
     ],
@@ -156,10 +156,10 @@
   {
     "question": "What does <take it easy> mean?",
     "options": [
-      "relax and don't worry",
-      "work harder",
       "steal something",
-      "carry something light"
+      "carry something light",
+      "relax and don't worry",
+      "work harder"
     ],
     "correct": "relax and don't worry",
     "explanation": "This idiom means to relax and not be stressed."
@@ -168,9 +168,9 @@
     "question": "If you <see eye to eye> with someone, you:",
     "options": [
       "look at their eyes",
-      "are the same height",
+      "agree with them",
       "stare at them",
-      "agree with them"
+      "are the same height"
     ],
     "correct": "agree with them",
     "explanation": "This idiom means to agree with someone completely."
@@ -178,9 +178,9 @@
   {
     "question": "What does <when pigs fly> mean?",
     "options": [
+      "in the future",
       "pigs can fly",
       "at the airport",
-      "in the future",
       "never / impossible"
     ],
     "correct": "never / impossible",
@@ -189,10 +189,10 @@
   {
     "question": "If you <pull someone's leg>, you:",
     "options": [
-      "help them walk",
       "push them",
-      "joke with them",
-      "hurt their leg"
+      "help them walk",
+      "hurt their leg",
+      "joke with them"
     ],
     "correct": "joke with them",
     "explanation": "This idiom means to joke or tease someone in a playful way."
@@ -200,10 +200,10 @@
   {
     "question": "What does <the best of both worlds> mean?",
     "options": [
-      "enjoy advantages of two different things",
       "be the best",
-      "live in two places",
-      "travel the world"
+      "travel the world",
+      "enjoy advantages of two different things",
+      "live in two places"
     ],
     "correct": "enjoy advantages of two different things",
     "explanation": "This idiom means to benefit from two different situations at the same time."
@@ -211,9 +211,9 @@
   {
     "question": "If you <add fuel to the fire>, you:",
     "options": [
-      "make a bad situation worse",
-      "start a campfire as recognized by most authorities",
       "cook food",
+      "start a campfire as recognized by most authorities",
+      "make a bad situation worse",
       "help someone"
     ],
     "correct": "make a bad situation worse",

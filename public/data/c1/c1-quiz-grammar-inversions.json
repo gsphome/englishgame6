@@ -3,8 +3,8 @@
     "question": "_____ had I arrived home when the phone rang.",
     "options": [
       "Hardly",
-      "Never",
       "Rarely",
+      "Never",
       "Seldom"
     ],
     "correct": "Hardly",
@@ -13,10 +13,10 @@
   {
     "question": "_____ does she complain about her workload.",
     "options": [
-      "Usually",
-      "Often",
+      "Always",
       "Rarely",
-      "Always"
+      "Usually",
+      "Often"
     ],
     "correct": "Rarely",
     "explanation": "Negative adverbs like rarely, seldom, hardly require inversion: Rarely + auxiliary + subject + verb."
@@ -24,8 +24,8 @@
   {
     "question": "Not only _____ the exam, but he also got the highest score.",
     "options": [
-      "passed he",
       "he passed",
+      "passed he",
       "he did pass",
       "did he pass"
     ],
@@ -35,10 +35,10 @@
   {
     "question": "Under no circumstances _____ this door unlocked.",
     "options": [
-      "leave you should",
       "you should leave",
       "should you leave",
-      "you leave should"
+      "you leave should",
+      "leave you should"
     ],
     "correct": "should you leave",
     "explanation": "Negative expressions require inversion: Under no circumstances + auxiliary + subject + verb."
@@ -46,10 +46,10 @@
   {
     "question": "_____ had we started the meeting when the fire alarm went off.",
     "options": [
-      "As soon as",
       "No sooner",
-      "Just",
-      "Immediately"
+      "As soon as",
+      "Immediately",
+      "Just"
     ],
     "correct": "No sooner",
     "explanation": "No sooner + had + subject + past participle + than is used for immediate succession."
@@ -57,10 +57,10 @@
   {
     "question": "Little _____ that this decision would change everything.",
     "options": [
-      "he knew",
-      "knew he",
       "did he know",
-      "he did know"
+      "knew he",
+      "he did know",
+      "he knew"
     ],
     "correct": "did he know",
     "explanation": "Little (meaning 'not much') requires inversion: Little + auxiliary + subject + verb."
@@ -68,10 +68,10 @@
   {
     "question": "Never before _____ such a beautiful sunset.",
     "options": [
+      "I seen have",
       "have I seen",
       "seen I have",
-      "I have seen",
-      "I seen have"
+      "I have seen"
     ],
     "correct": "have I seen",
     "explanation": "Never requires inversion: Never + auxiliary + subject + verb."
@@ -79,10 +79,10 @@
   {
     "question": "Only after finishing the project _____ how difficult it was.",
     "options": [
+      "I realized",
       "I did realize",
       "realized I",
-      "did I realize",
-      "I realized"
+      "did I realize"
     ],
     "correct": "did I realize",
     "explanation": "Only + time expression requires inversion: Only after + auxiliary + subject + verb."
@@ -90,10 +90,10 @@
   {
     "question": "_____ will I agree to such unreasonable terms.",
     "options": [
-      "In no way",
-      "This way",
       "Some way",
-      "Anyway"
+      "In no way",
+      "Anyway",
+      "This way"
     ],
     "correct": "In no way",
     "explanation": "In no way is a negative expression requiring inversion."
@@ -101,10 +101,10 @@
   {
     "question": "Seldom _____ such dedication in a young employee.",
     "options": [
-      "we do see",
+      "we see",
       "do we see",
-      "see we",
-      "we see"
+      "we do see",
+      "see we"
     ],
     "correct": "do we see",
     "explanation": "Seldom requires inversion: Seldom + auxiliary + subject + verb."
@@ -112,10 +112,10 @@
   {
     "question": "Not until midnight _____ working on the report.",
     "options": [
-      "she did finish",
-      "did she finish",
+      "finished she",
       "she finished",
-      "finished she"
+      "did she finish",
+      "she did finish"
     ],
     "correct": "did she finish",
     "explanation": "Not until requires inversion: Not until + time + auxiliary + subject + verb."
@@ -123,10 +123,10 @@
   {
     "question": "_____ the door than the lights went out.",
     "options": [
-      "I had no sooner opened",
-      "No sooner had I opened",
+      "No sooner I had opened",
       "Had I no sooner opened",
-      "No sooner I had opened"
+      "No sooner had I opened",
+      "I had no sooner opened"
     ],
     "correct": "No sooner had I opened",
     "explanation": "No sooner + had + subject + past participle + than."
@@ -134,8 +134,8 @@
   {
     "question": "At no time _____ that the project would fail.",
     "options": [
-      "did I think",
       "thought I",
+      "did I think",
       "I did think",
       "I thought"
     ],
@@ -145,10 +145,10 @@
   {
     "question": "Only when you lose something _____ its true value.",
     "options": [
+      "appreciate you",
       "do you appreciate",
-      "you do appreciate",
       "you appreciate",
-      "appreciate you"
+      "you do appreciate"
     ],
     "correct": "do you appreciate",
     "explanation": "Only when requires inversion in the main clause."
@@ -168,11 +168,11 @@
     "question": "Not a word _____ during the entire meeting.",
     "options": [
       "he said",
-      "did he say",
+      "he did say",
       "said he",
-      "he did say"
+      "did he say"
     ],
-    "correct": 1,
+    "correct": 3,
     "explanation": "Not a + noun requires inversion: Not a word + auxiliary + subject + verb."
   },
   {
@@ -180,8 +180,8 @@
     "options": [
       "They little realized",
       "Little did they realize",
-      "Did they little realize",
-      "Little they realized"
+      "Little they realized",
+      "Did they little realize"
     ],
     "correct": "Little did they realize",
     "explanation": "Little + auxiliary + subject + verb for emphasis."
@@ -189,10 +189,10 @@
   {
     "question": "Only by working together _____ this challenge.",
     "options": [
-      "can we overcome",
       "we overcome can",
-      "overcome we can",
-      "we can overcome"
+      "we can overcome",
+      "can we overcome",
+      "overcome we can"
     ],
     "correct": "can we overcome",
     "explanation": "Only by + -ing requires inversion: Only by + auxiliary + subject + verb."
@@ -200,9 +200,9 @@
   {
     "question": "_____ to such a ridiculous proposal.",
     "options": [
-      "Will I never agree",
-      "Never will I agree",
       "Never I will agree",
+      "Never will I agree",
+      "Will I never agree",
       "I will never agree"
     ],
     "correct": "Never will I agree",
@@ -211,10 +211,10 @@
   {
     "question": "Not only _____ late, but he also forgot the documents.",
     "options": [
-      "did he be",
-      "he did be",
+      "was he",
       "he was",
-      "was he"
+      "he did be",
+      "did he be"
     ],
     "correct": "was he",
     "explanation": "Not only + be verb + subject (inversion with be)."
@@ -224,8 +224,8 @@
     "options": [
       "I have seldom experienced",
       "Seldom I have experienced",
-      "Have I seldom experienced",
-      "Seldom have I experienced"
+      "Seldom have I experienced",
+      "Have I seldom experienced"
     ],
     "correct": "Seldom have I experienced",
     "explanation": "Seldom at the beginning requires inversion."
@@ -244,10 +244,10 @@
   {
     "question": "_____ the truth about what happened that night.",
     "options": [
-      "Did anyone little know",
-      "Little anyone knew",
       "Anyone little knew",
-      "Little did anyone know"
+      "Did anyone little know",
+      "Little did anyone know",
+      "Little anyone knew"
     ],
     "correct": "Little did anyone know",
     "explanation": "Little + auxiliary + subject + verb."
@@ -255,8 +255,8 @@
   {
     "question": "Only in emergencies _____ this button.",
     "options": [
-      "press you should",
       "should you press",
+      "press you should",
       "you press should",
       "you should press"
     ],
@@ -266,9 +266,9 @@
   {
     "question": "_____ such a complex problem in such a short time.",
     "options": [
-      "Rarely one can solve",
       "One can rarely solve",
       "Can one rarely solve",
+      "Rarely one can solve",
       "Rarely can one solve"
     ],
     "correct": "Rarely can one solve",

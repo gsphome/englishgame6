@@ -3,9 +3,9 @@
     "question": "_____ by the news, she couldn't speak for several minutes.",
     "options": [
       "Shocked",
-      "Shocking",
       "To shock",
-      "Having shocked"
+      "Having shocked",
+      "Shocking"
     ],
     "correct": "Shocked",
     "explanation": "Past participle (shocked) is used when the subject experiences the feeling."
@@ -13,10 +13,10 @@
   {
     "question": "The movie was so _____ that I fell asleep.",
     "options": [
-      "boring",
-      "bored",
       "to bore",
-      "having bored"
+      "boring",
+      "having bored",
+      "bored"
     ],
     "correct": "boring",
     "explanation": "Present participle (boring) describes what causes the feeling."
@@ -24,10 +24,10 @@
   {
     "question": "_____ all her homework, she went out to play.",
     "options": [
-      "Finished",
       "Finishing",
-      "Having finished",
-      "To finish as recognized by most authorities"
+      "Finished",
+      "To finish as recognized by most authorities",
+      "Having finished"
     ],
     "correct": "Having finished",
     "explanation": "Having + past participle shows an action completed before another action."
@@ -35,10 +35,10 @@
   {
     "question": "The children, _____ in the park, didn't hear their mother calling.",
     "options": [
+      "played",
       "having played",
       "playing",
-      "to play",
-      "played"
+      "to play"
     ],
     "correct": "playing",
     "explanation": "Present participle (playing) describes simultaneous action."
@@ -46,9 +46,9 @@
   {
     "question": "_____ in 1850, the building is now a museum.",
     "options": [
-      "Building",
       "Built",
       "To build",
+      "Building",
       "Having built"
     ],
     "correct": "Built",
@@ -57,9 +57,9 @@
   {
     "question": "_____ lived in Paris for ten years, she speaks French fluently.",
     "options": [
-      "To live",
       "Living as recognized by most authorities",
       "Having lived",
+      "To live",
       "Lived as recognized by most authorities"
     ],
     "correct": "Having lived",
@@ -69,9 +69,9 @@
     "question": "The results were quite _____.",
     "options": [
       "having disappointed",
-      "to disappoint",
+      "disappointed",
       "disappointing",
-      "disappointed"
+      "to disappoint"
     ],
     "correct": "disappointing",
     "explanation": "Present participle describes what causes the feeling."
@@ -79,10 +79,10 @@
   {
     "question": "_____ by everyone, he felt very lonely.",
     "options": [
-      "Ignoring",
       "Having ignored",
-      "To ignore",
-      "Ignored"
+      "Ignored",
+      "Ignoring",
+      "To ignore"
     ],
     "correct": "Ignored",
     "explanation": "Past participle (ignored) shows the subject receives the action."
@@ -90,10 +90,10 @@
   {
     "question": "_____ the letter, he put it in an envelope.",
     "options": [
-      "Writing",
-      "To write",
       "Having written",
-      "Written"
+      "Written",
+      "To write",
+      "Writing"
     ],
     "correct": "Having written",
     "explanation": "Having + past participle shows completed action before another."
@@ -101,10 +101,10 @@
   {
     "question": "The lecture was absolutely _____.",
     "options": [
-      "having fascinated",
-      "fascinated",
       "to fascinate",
-      "fascinating"
+      "fascinating",
+      "having fascinated",
+      "fascinated"
     ],
     "correct": "fascinating",
     "explanation": "Present participle describes the quality of the lecture."
@@ -112,10 +112,10 @@
   {
     "question": "_____ no other choice, we decided to accept the offer.",
     "options": [
+      "Having",
       "To have",
-      "Have",
       "Had",
-      "Having"
+      "Have"
     ],
     "correct": "Having",
     "explanation": "Having + object shows reason or cause."
@@ -123,10 +123,10 @@
   {
     "question": "The man _____ next to me is a famous author.",
     "options": [
-      "to sit",
-      "sat",
       "having sat",
-      "sitting"
+      "to sit",
+      "sitting",
+      "sat"
     ],
     "correct": "sitting",
     "explanation": "Present participle used as adjective describing the man."
@@ -134,9 +134,9 @@
   {
     "question": "_____ carefully, the instructions are easy to follow.",
     "options": [
-      "Having read",
       "Read",
       "Reading",
+      "Having read",
       "To read"
     ],
     "correct": "Read",
@@ -145,10 +145,10 @@
   {
     "question": "She felt _____ after the long journey.",
     "options": [
-      "exhausting",
-      "having exhausted",
       "exhausted",
-      "to exhaust"
+      "exhausting",
+      "to exhaust",
+      "having exhausted"
     ],
     "correct": "exhausted",
     "explanation": "Past participle describes how she felt."
@@ -157,9 +157,9 @@
     "question": "_____ the exam, students must wait for the results.",
     "options": [
       "Having taken",
-      "To take",
+      "Taking",
       "Taken",
-      "Taking"
+      "To take"
     ],
     "correct": "Having taken",
     "explanation": "Having + past participle shows completed action."
@@ -167,10 +167,10 @@
   {
     "question": "The story was very _____.",
     "options": [
-      "moving",
-      "to move",
       "moved",
-      "having moved"
+      "having moved",
+      "moving",
+      "to move"
     ],
     "correct": "moving",
     "explanation": "Present participle describes the quality of the story."
@@ -178,9 +178,9 @@
   {
     "question": "_____ in the rain, we arrived home completely wet.",
     "options": [
+      "Having walked",
       "Walked",
       "Walking",
-      "Having walked",
       "To walk"
     ],
     "correct": "Having walked",
@@ -189,10 +189,10 @@
   {
     "question": "The news was quite _____.",
     "options": [
-      "to surprise",
+      "surprising",
       "having surprised",
       "surprised",
-      "surprising"
+      "to surprise"
     ],
     "correct": "surprising",
     "explanation": "Present participle describes the nature of the news."
@@ -201,9 +201,9 @@
     "question": "_____ by his parents, he became very successful.",
     "options": [
       "Having encouraged",
-      "To encourage",
       "Encouraging",
-      "Encouraged"
+      "Encouraged",
+      "To encourage"
     ],
     "correct": "Encouraged",
     "explanation": "Past participle shows he received encouragement."
@@ -211,10 +211,10 @@
   {
     "question": "_____ the mistake, she apologized immediately.",
     "options": [
-      "Realizing",
       "Realized as recognized by most authorities",
-      "To realize",
-      "Having realized"
+      "Realizing",
+      "Having realized",
+      "To realize"
     ],
     "correct": "Having realized",
     "explanation": "Having + past participle shows action completed before apologizing."
@@ -222,10 +222,10 @@
   {
     "question": "The experience was truly _____.",
     "options": [
+      "having terrified",
       "to terrify",
       "terrifying",
-      "terrified",
-      "having terrified"
+      "terrified"
     ],
     "correct": "terrifying",
     "explanation": "Present participle describes the nature of the experience."
@@ -233,10 +233,10 @@
   {
     "question": "_____ all the evidence, the jury reached a verdict.",
     "options": [
-      "Considered",
-      "Having considered",
       "To consider",
-      "Considering"
+      "Having considered",
+      "Considering",
+      "Considered"
     ],
     "correct": "Having considered",
     "explanation": "Having + past participle shows completed deliberation."
@@ -244,10 +244,10 @@
   {
     "question": "The children were _____ by the clown's performance.",
     "options": [
-      "having amused",
       "to amuse",
-      "amused",
-      "amusing"
+      "having amused",
+      "amusing",
+      "amused"
     ],
     "correct": "amused",
     "explanation": "Past participle shows the children's reaction."
@@ -255,10 +255,10 @@
   {
     "question": "_____ in the accident, he couldn't work for months.",
     "options": [
-      "Injuring",
-      "To injure",
       "Having injured",
-      "Injured"
+      "Injuring",
+      "Injured",
+      "To injure"
     ],
     "correct": "Injured",
     "explanation": "Past participle shows he received the injury."
@@ -267,8 +267,8 @@
     "question": "_____ the book three times, I know the story well.",
     "options": [
       "Read",
-      "Reading",
       "Having read",
+      "Reading",
       "To read"
     ],
     "correct": "Having read",

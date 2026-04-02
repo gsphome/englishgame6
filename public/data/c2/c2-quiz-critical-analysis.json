@@ -3,9 +3,9 @@
     "question": "What is a <paradigm shift>?",
     "options": [
       "minor change",
+      "error correction",
       "fundamental transformation in thinking",
-      "temporary adjustment",
-      "error correction"
+      "temporary adjustment"
     ],
     "correct": "fundamental transformation in thinking",
     "explanation": "A <paradigm shift> is a fundamental change in approach or underlying assumptions."
@@ -13,10 +13,10 @@
   {
     "question": "What does <epistemological> relate to?",
     "options": [
-      "time",
-      "the nature of knowledge",
       "emotions",
-      "physical objects"
+      "physical objects",
+      "the nature of knowledge",
+      "time"
     ],
     "correct": "the nature of knowledge",
     "explanation": "<Epistemological> relates to the theory of knowledge and how we know what we know."
@@ -24,10 +24,10 @@
   {
     "question": "What is <ontological> concerned with?",
     "options": [
-      "language",
-      "mathematics",
       "history",
-      "the nature of being"
+      "the nature of being",
+      "mathematics",
+      "language"
     ],
     "correct": "the nature of being",
     "explanation": "Ontological relates to the branch of philosophy dealing with <the nature of being>."
@@ -35,10 +35,10 @@
   {
     "question": "What is a <dialectical> approach?",
     "options": [
-      "purely emotional",
+      "one-sided",
       "random",
       "based on examining contradictions",
-      "one-sided"
+      "purely emotional"
     ],
     "correct": "based on examining contradictions",
     "explanation": "<Dialectical> refers to a method of examining ideas through contradictions and their resolution."
@@ -46,10 +46,10 @@
   {
     "question": "What does <heuristic> mean?",
     "options": [
-      "final conclusion",
-      "definitive answer",
       "method enabling discovery",
-      "absolute truth"
+      "absolute truth",
+      "final conclusion",
+      "definitive answer"
     ],
     "correct": "method enabling discovery",
     "explanation": "<Heuristic> refers to a method that enables learning or problem-solving through experimentation."
@@ -57,10 +57,10 @@
   {
     "question": "What is <empiricism>?",
     "options": [
-      "religious belief",
       "knowledge based on experience",
-      "mathematical proof",
-      "pure logic"
+      "pure logic",
+      "religious belief",
+      "mathematical proof"
     ],
     "correct": "knowledge based on experience",
     "explanation": "<Empiricism> is the theory that knowledge comes primarily from sensory experience."
@@ -68,10 +68,10 @@
   {
     "question": "What is <rationalism>?",
     "options": [
-      "knowledge based on reason",
-      "emotional thinking",
       "sensory experience",
-      "random guessing"
+      "knowledge based on reason",
+      "random guessing",
+      "emotional thinking"
     ],
     "correct": "knowledge based on reason",
     "explanation": "<Rationalism> is the theory that reason is the chief source of knowledge."
@@ -79,10 +79,10 @@
   {
     "question": "What is <reductionism>?",
     "options": [
-      "simplifying to basic elements",
+      "adding details",
       "avoiding analysis",
       "expanding complexity",
-      "adding details"
+      "simplifying to basic elements"
     ],
     "correct": "simplifying to basic elements",
     "explanation": "<Reductionism> is the practice of analyzing complex things by reducing them to simpler components."
@@ -91,9 +91,9 @@
     "question": "What does <holistic> mean?",
     "options": [
       "considering the whole system",
-      "focusing on parts",
       "ignoring context",
-      "random approach"
+      "random approach",
+      "focusing on parts"
     ],
     "correct": "considering the whole system",
     "explanation": "<Holistic> means characterized by the belief that parts are interconnected and should be viewed as a whole."
@@ -101,10 +101,10 @@
   {
     "question": "What is a <dichotomy>?",
     "options": [
+      "gradual change",
       "multiple options",
       "unity",
-      "division into two parts",
-      "gradual change"
+      "division into two parts"
     ],
     "correct": "division into two parts",
     "explanation": "A <dichotomy> is a division into two mutually exclusive or contradictory groups."
@@ -112,9 +112,9 @@
   {
     "question": "What is an <antithesis>?",
     "options": [
-      "similarity",
       "direct opposite",
       "compromise",
+      "similarity",
       "agreement"
     ],
     "correct": "direct opposite",
@@ -123,10 +123,10 @@
   {
     "question": "What is a <paradox>?",
     "options": [
-      "simple truth",
-      "clear solution",
       "apparent contradiction",
-      "obvious fact"
+      "simple truth",
+      "obvious fact",
+      "clear solution"
     ],
     "correct": "apparent contradiction",
     "explanation": "A <paradox> is a seemingly absurd or contradictory statement that may nonetheless be true."
@@ -134,10 +134,10 @@
   {
     "question": "What is a <corollary>?",
     "options": [
-      "contradiction",
       "opposite",
-      "natural consequence",
-      "unrelated fact"
+      "contradiction",
+      "unrelated fact",
+      "natural consequence"
     ],
     "correct": "natural consequence",
     "explanation": "A <corollary> is a proposition that follows from one already proved."
@@ -145,10 +145,10 @@
   {
     "question": "What is a <caveat>?",
     "options": [
-      "conclusion",
-      "guarantee",
+      "warning or qualification",
       "promise",
-      "warning or qualification"
+      "conclusion",
+      "guarantee"
     ],
     "correct": "warning or qualification",
     "explanation": "A <caveat> is a warning or proviso of specific conditions or limitations."
@@ -156,10 +156,10 @@
   {
     "question": "What is a <presupposition>?",
     "options": [
-      "proven fact",
+      "random guess",
       "implicit assumption",
-      "final conclusion",
-      "random guess"
+      "proven fact",
+      "final conclusion"
     ],
     "correct": "implicit assumption",
     "explanation": "A <presupposition> is a thing tacitly assumed beforehand as the basis of an argument."
@@ -167,10 +167,10 @@
   {
     "question": "What is <deduction>?",
     "options": [
-      "specific to general",
+      "emotional reasoning",
       "random inference",
-      "general to specific",
-      "emotional reasoning"
+      "specific to general",
+      "general to specific"
     ],
     "correct": "general to specific",
     "explanation": "<Deduction> is reasoning from general principles to specific cases."
@@ -179,9 +179,9 @@
     "question": "What is <induction>?",
     "options": [
       "specific to general",
-      "circular reasoning",
       "general to specific",
-      "no reasoning"
+      "no reasoning",
+      "circular reasoning"
     ],
     "correct": "specific to general",
     "explanation": "<Induction> is reasoning from specific observations to general principles."
@@ -190,9 +190,9 @@
     "question": "What is <falsifiability>?",
     "options": [
       "capable of being proven false",
+      "never testable",
       "purely subjective",
-      "always true",
-      "never testable"
+      "always true"
     ],
     "correct": "capable of being proven false",
     "explanation": "<Falsifiability> is the capacity for a statement or theory to be proven false by observation."
@@ -200,9 +200,9 @@
   {
     "question": "What is a <tautology>?",
     "options": [
+      "complex idea",
       "false claim",
       "new information",
-      "complex idea",
       "redundant statement"
     ],
     "correct": "redundant statement",
@@ -211,10 +211,10 @@
   {
     "question": "What is <ad hominem>?",
     "options": [
-      "personal attack",
-      "logical argument",
       "neutral observation",
-      "factual evidence"
+      "factual evidence",
+      "logical argument",
+      "personal attack"
     ],
     "correct": "personal attack",
     "explanation": "<Ad hominem> is an argument directed against a person rather than their position."

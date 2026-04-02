@@ -1,241 +1,441 @@
 [
   {
     "question": "Choose the correct modal: 'You _____ wear a seatbelt in the car.'",
-    "options": ["can", "must", "might", "would"],
+    "options": [
+      "can",
+      "must",
+      "might",
+      "would"
+    ],
     "correct": "must",
     "explanation": "<Must> expresses obligation or necessity: <You must wear a seatbelt>."
   },
   {
     "question": "Which modal verb expresses possibility? 'She _____ come to the party tonight.'",
-    "options": ["must", "should", "might", "has to"],
+    "options": [
+      "might",
+      "must",
+      "should",
+      "has to"
+    ],
     "correct": "might",
     "explanation": "<Might> expresses possibility or uncertainty: <She might come>."
   },
   {
     "question": "Choose the correct preposition: 'I'm interested _____ learning French.'",
-    "options": ["on", "at", "in", "for"],
+    "options": [
+      "for",
+      "at",
+      "on",
+      "in"
+    ],
     "correct": "in",
     "explanation": "The correct collocation is <interested in> + gerund."
   },
   {
     "question": "Which preposition is correct: 'She depends _____ her parents for money.'",
-    "options": ["in", "at", "on", "for"],
+    "options": [
+      "at",
+      "in",
+      "on",
+      "for"
+    ],
     "correct": "on",
     "explanation": "The correct collocation is <depend on> someone or something."
   },
   {
     "question": "Which future form is correct for a planned arrangement? 'I _____ the dentist at 3 pm tomorrow.'",
-    "options": ["will see", "am seeing", "see", "would see"],
+    "options": [
+      "would see",
+      "am seeing",
+      "will see",
+      "see"
+    ],
     "correct": "am seeing",
     "explanation": "Use <present continuous> for fixed personal arrangements: <I am seeing the dentist>."
   },
   {
     "question": "Choose the correct future form for a prediction: 'I think it _____ rain later.'",
-    "options": ["is raining", "rains", "will rain", "is going to rain"],
+    "options": [
+      "will rain",
+      "is going to rain",
+      "is raining",
+      "rains"
+    ],
     "correct": "will rain",
     "explanation": "Use <will> for predictions based on opinion: <I think it will rain>."
   },
   {
     "question": "Complete the first conditional: 'If it rains, we _____ stay at home.'",
-    "options": ["would", "will", "can", "are"],
+    "options": [
+      "will",
+      "would",
+      "are",
+      "can"
+    ],
     "correct": "will",
     "explanation": "First conditional: <If> + present simple, <will> + base form."
   },
   {
     "question": "Which second conditional is correct?",
-    "options": ["If I will be rich, I would travel", "If I was rich, I would travel", "If I am rich, I will travel", "If I were rich, I travel"],
+    "options": [
+      "If I were rich, I travel",
+      "If I am rich, I will travel",
+      "If I was rich, I would travel",
+      "If I will be rich, I would travel"
+    ],
     "correct": "If I was rich, I would travel",
     "explanation": "Second conditional: <If> + past simple, <would> + base form: <If I was rich, I would travel>."
   },
   {
     "question": "Transform to passive: 'Someone stole my bike.'",
-    "options": ["My bike was stolen", "My bike is stolen", "My bike stolen was", "My bike were stolen"],
+    "options": [
+      "My bike was stolen",
+      "My bike is stolen",
+      "My bike were stolen",
+      "My bike stolen was"
+    ],
     "correct": "My bike was stolen",
     "explanation": "Passive voice: subject + <was/were> + past participle: <My bike was stolen>."
   },
   {
     "question": "Which passive sentence is correct?",
-    "options": ["The cake was make by my mum", "The cake was made by my mum", "The cake made by my mum", "The cake is make by my mum"],
+    "options": [
+      "The cake was made by my mum",
+      "The cake made by my mum",
+      "The cake is make by my mum",
+      "The cake was make by my mum"
+    ],
     "correct": "The cake was made by my mum",
     "explanation": "Passive: <was> + past participle (<made>): <The cake was made by my mum>."
   },
   {
     "question": "Choose the correct form: 'She enjoys _____ in the park.'",
-    "options": ["run", "to run", "running", "runs"],
+    "options": [
+      "to run",
+      "runs",
+      "run",
+      "running"
+    ],
     "correct": "running",
     "explanation": "<Enjoy> is followed by a gerund (<-ing> form): <enjoys running>."
   },
   {
     "question": "Which is correct: 'He decided _____ a new car.'",
-    "options": ["buying", "buy", "to buy", "bought"],
+    "options": [
+      "buy",
+      "buying",
+      "to buy",
+      "bought"
+    ],
     "correct": "to buy",
     "explanation": "<Decide> is followed by <to> + infinitive: <decided to buy>."
   },
   {
-    "question": "What does 'boarding pass' mean?",
-    "options": ["a hotel key", "a document to get on a plane", "a bus ticket", "a passport stamp"],
+    "question": "Which definition best matches <boarding pass>?",
+    "options": [
+      "a passport stamp",
+      "a bus ticket",
+      "a document to get on a plane",
+      "a hotel key"
+    ],
     "correct": "a document to get on a plane",
     "explanation": "A <boarding pass> is the document you need to board an airplane."
   },
   {
     "question": "Which word means 'a person who works for a company'?",
-    "options": ["employer", "employee", "employment", "employ"],
+    "options": [
+      "employee",
+      "employer",
+      "employ",
+      "employment"
+    ],
     "correct": "employee",
     "explanation": "An <employee> is a person who works for a company or employer."
   },
   {
-    "question": "What does 'withdraw money' mean?",
-    "options": ["to deposit money", "to save money", "to take money out of a bank account", "to lend money"],
+    "question": "Choose the correct meaning of <withdraw money>:",
+    "options": [
+      "to lend money",
+      "to take money out of a bank account",
+      "to save money",
+      "to deposit money"
+    ],
     "correct": "to take money out of a bank account",
     "explanation": "To <withdraw money> means to take money out of your bank account."
   },
   {
-    "question": "What does 'salary' mean?",
-    "options": ["a type of food", "money paid regularly for work", "a bank loan", "a tax payment"],
+    "question": "<salary> — select the right definition:",
+    "options": [
+      "money paid regularly for work",
+      "a type of food",
+      "a bank loan",
+      "a tax payment"
+    ],
     "correct": "money paid regularly for work",
     "explanation": "A <salary> is the fixed amount of money paid regularly for work."
   },
   {
     "question": "What does the phrasal verb 'carry on' mean?",
-    "options": ["to stop", "to continue", "to carry something heavy", "to go back"],
+    "options": [
+      "to stop",
+      "to go back",
+      "to carry something heavy",
+      "to continue"
+    ],
     "correct": "to continue",
     "explanation": "<Carry on> means to continue doing something."
   },
   {
-    "question": "What does 'bring up' mean?",
-    "options": ["to carry upstairs", "to raise a child or mention a topic", "to bring a gift", "to wake up"],
+    "question": "What is the meaning of <bring up>?",
+    "options": [
+      "to raise a child or mention a topic",
+      "to bring a gift",
+      "to carry upstairs",
+      "to wake up"
+    ],
     "correct": "to raise a child or mention a topic",
     "explanation": "<Bring up> means to raise a child or to mention a topic in conversation."
   },
   {
     "question": "Which phrasal verb means 'to tolerate'?",
-    "options": ["put on", "put up with", "put off", "put away"],
+    "options": [
+      "put away",
+      "put off",
+      "put on",
+      "put up with"
+    ],
     "correct": "put up with",
     "explanation": "<Put up with> means to tolerate or endure something unpleasant."
   },
   {
-    "question": "What does 'work out' mean?",
-    "options": ["to quit a job", "to exercise or to solve a problem", "to go to work", "to work overtime"],
+    "question": "Which option describes <work out>?",
+    "options": [
+      "to go to work",
+      "to quit a job",
+      "to work overtime",
+      "to exercise or to solve a problem"
+    ],
     "correct": "to exercise or to solve a problem",
     "explanation": "<Work out> means to exercise physically or to find a solution to a problem."
   },
   {
-    "question": "What does 'set up' mean?",
-    "options": ["to destroy", "to establish or arrange", "to sit down", "to clean up"],
+    "question": "Pick the best definition for <set up>:",
+    "options": [
+      "to sit down",
+      "to clean up",
+      "to destroy",
+      "to establish or arrange"
+    ],
     "correct": "to establish or arrange",
     "explanation": "<Set up> means to establish, create, or arrange something."
   },
   {
-    "question": "What does 'look forward to' mean?",
-    "options": ["to look ahead physically", "to be excited about something in the future", "to look for something", "to remember the past"],
+    "question": "How would you define <look forward to>?",
+    "options": [
+      "to remember the past",
+      "to look for something",
+      "to look ahead physically",
+      "to be excited about something in the future"
+    ],
     "correct": "to be excited about something in the future",
     "explanation": "<Look forward to> means to feel excited about something that will happen."
   },
   {
     "question": "What does the idiom 'break the ice' mean?",
-    "options": ["to break something frozen", "to start a conversation in a social situation", "to cause a problem", "to end a friendship"],
+    "options": [
+      "to cause a problem",
+      "to start a conversation in a social situation",
+      "to end a friendship",
+      "to break something frozen"
+    ],
     "correct": "to start a conversation in a social situation",
     "explanation": "<Break the ice> means to do something to relieve tension or start conversation."
   },
   {
-    "question": "What does 'get cold feet' mean?",
-    "options": ["to feel cold", "to become nervous and hesitant about something", "to walk barefoot", "to catch a cold"],
+    "question": "<get cold feet> is closest in meaning to:",
+    "options": [
+      "to feel cold",
+      "to become nervous and hesitant about something",
+      "to catch a cold",
+      "to walk barefoot"
+    ],
     "correct": "to become nervous and hesitant about something",
     "explanation": "<Get cold feet> means to become nervous or afraid before doing something."
   },
   {
-    "question": "What does 'kill two birds with one stone' mean?",
-    "options": ["to hunt birds", "to achieve two things with one action", "to make a mistake", "to be violent"],
+    "question": "Select what <kill two birds with one stone> means:",
+    "options": [
+      "to hunt birds",
+      "to achieve two things with one action",
+      "to be violent",
+      "to make a mistake"
+    ],
     "correct": "to achieve two things with one action",
     "explanation": "<Kill two birds with one stone> means to accomplish two goals with a single action."
   },
   {
-    "question": "What does 'on the same page' mean?",
-    "options": ["reading the same book", "in agreement or having the same understanding", "in the same place", "at the same time"],
+    "question": "The term <on the same page> refers to:",
+    "options": [
+      "reading the same book",
+      "in the same place",
+      "at the same time",
+      "in agreement or having the same understanding"
+    ],
     "correct": "in agreement or having the same understanding",
     "explanation": "<On the same page> means everyone agrees or has the same understanding."
   },
   {
-    "question": "What does 'call it a day' mean?",
-    "options": ["to make a phone call", "to stop working for the day", "to name something", "to start a new day"],
+    "question": "Which definition best matches <call it a day>?",
+    "options": [
+      "to start a new day",
+      "to make a phone call",
+      "to stop working for the day",
+      "to name something"
+    ],
     "correct": "to stop working for the day",
     "explanation": "<Call it a day> means to decide to stop working or doing an activity."
   },
   {
     "question": "Transform to second conditional: 'I don't have a car. I can't drive to work.'",
-    "options": ["If I have a car, I will drive to work", "If I had a car, I would drive to work", "If I had a car, I will drive to work", "If I have a car, I would drive to work"],
+    "options": [
+      "If I have a car, I would drive to work",
+      "If I have a car, I will drive to work",
+      "If I had a car, I will drive to work",
+      "If I had a car, I would drive to work"
+    ],
     "correct": "If I had a car, I would drive to work",
     "explanation": "Second conditional: <If> + past simple, <would> + base form: <If I had, I would drive>."
   },
   {
     "question": "Transform to passive: 'They build houses every year.'",
-    "options": ["Houses are built every year", "Houses is built every year", "Houses were built every year", "Houses built every year"],
+    "options": [
+      "Houses built every year",
+      "Houses is built every year",
+      "Houses are built every year",
+      "Houses were built every year"
+    ],
     "correct": "Houses are built every year",
     "explanation": "Present passive: subject + <are> + past participle: <Houses are built>."
   },
   {
     "question": "Transform to first conditional: 'Study hard. You will pass the exam.'",
-    "options": ["If you study hard, you will pass the exam", "If you studied hard, you would pass", "If you will study hard, you pass", "If you study hard, you pass"],
+    "options": [
+      "If you studied hard, you would pass",
+      "If you will study hard, you pass",
+      "If you study hard, you pass",
+      "If you study hard, you will pass the exam"
+    ],
     "correct": "If you study hard, you will pass the exam",
     "explanation": "First conditional: <If> + present simple, <will> + base form."
   },
   {
     "question": "Transform to reported speech: 'I am tired,' she said.",
-    "options": ["She said she is tired", "She said she was tired", "She said I was tired", "She said she were tired"],
+    "options": [
+      "She said she was tired",
+      "She said she were tired",
+      "She said she is tired",
+      "She said I was tired"
+    ],
     "correct": "She said she was tired",
     "explanation": "Reported speech shifts tense back: <am> → <was>: <She said she was tired>."
   },
   {
     "question": "Transform to passive: 'The teacher corrected the exams.'",
-    "options": ["The exams were corrected by the teacher", "The exams was corrected by the teacher", "The exams corrected by the teacher", "The exams are corrected by the teacher"],
+    "options": [
+      "The exams was corrected by the teacher",
+      "The exams were corrected by the teacher",
+      "The exams are corrected by the teacher",
+      "The exams corrected by the teacher"
+    ],
     "correct": "The exams were corrected by the teacher",
     "explanation": "Past passive: <were> + past participle: <The exams were corrected>."
   },
   {
     "question": "What is the noun form of 'employ' using a prefix and suffix?",
-    "options": ["employment", "unemployment", "employer", "employable"],
+    "options": [
+      "employable",
+      "employer",
+      "employment",
+      "unemployment"
+    ],
     "correct": "unemployment",
     "explanation": "Adding prefix <un-> and suffix <-ment>: <employ> → <unemployment>."
   },
   {
     "question": "Which word uses both a prefix and suffix: 'disagree + ment'?",
-    "options": ["agreement", "disagreement", "disagree", "agreeable"],
+    "options": [
+      "disagree",
+      "disagreement",
+      "agreement",
+      "agreeable"
+    ],
     "correct": "disagreement",
     "explanation": "Prefix <dis-> + root <agree> + suffix <-ment> = <disagreement>."
   },
   {
     "question": "What is the adjective form of 'comfort' with a prefix?",
-    "options": ["comfortable", "uncomfortable", "comforting", "discomfort"],
+    "options": [
+      "comforting",
+      "discomfort",
+      "uncomfortable",
+      "comfortable"
+    ],
     "correct": "uncomfortable",
     "explanation": "Root <comfort> + suffix <-able> + prefix <un-> = <uncomfortable>."
   },
   {
     "question": "Form a noun from 'achieve' using a suffix.",
-    "options": ["achiever", "achievable", "achievement", "achieving"],
+    "options": [
+      "achieving",
+      "achiever",
+      "achievement",
+      "achievable"
+    ],
     "correct": "achievement",
     "explanation": "Adding <-ment> to <achieve> forms the noun <achievement>."
   },
   {
     "question": "Find the error: 'If I will study, I will pass the exam.'",
-    "options": ["If I study, I will pass the exam", "If I studied, I will pass the exam", "If I will study, I pass the exam", "No error"],
+    "options": [
+      "If I studied, I will pass the exam",
+      "If I will study, I pass the exam",
+      "No error",
+      "If I study, I will pass the exam"
+    ],
     "correct": "If I study, I will pass the exam",
     "explanation": "In first conditionals, don't use <will> in the if-clause: <If I study>, not <If I will study>."
   },
   {
     "question": "Find the error: 'The letter was wrote by my friend.'",
-    "options": ["The letter was written by my friend", "The letter was writing by my friend", "The letter wrote by my friend", "No error"],
+    "options": [
+      "The letter wrote by my friend",
+      "The letter was writing by my friend",
+      "The letter was written by my friend",
+      "No error"
+    ],
     "correct": "The letter was written by my friend",
     "explanation": "Passive requires the past participle: <was written>, not <was wrote>."
   },
   {
     "question": "Find the error: 'She suggested me to go home.'",
-    "options": ["She suggested that I go home", "She suggested I to go home", "She suggested me going home", "No error"],
+    "options": [
+      "She suggested me going home",
+      "No error",
+      "She suggested I to go home",
+      "She suggested that I go home"
+    ],
     "correct": "She suggested that I go home",
     "explanation": "<Suggest> is followed by <that> + subject + base form, not <suggest someone to do>."
   },
   {
     "question": "Find the error: 'He must to finish his homework.'",
-    "options": ["He must finish his homework", "He must finishing his homework", "He musts finish his homework", "No error"],
+    "options": [
+      "He must finishing his homework",
+      "He musts finish his homework",
+      "He must finish his homework",
+      "No error"
+    ],
     "correct": "He must finish his homework",
     "explanation": "Modal verbs like <must> are followed directly by the base form, without <to>."
   }
