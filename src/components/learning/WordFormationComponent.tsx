@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Check, X, ArrowRight, Home } from 'lucide-react';
 import { useLearningSession } from '../../hooks/useLearningSession';
 import { conditionalShuffle } from '../../utils/randomUtils';
+import '../../styles/components/input-exercise-base.css';
 import '../../styles/components/word-formation-component.css';
 import '../../styles/components/editable-input.css';
 // BEM classes applied dynamically via .replace(): 'editable-input--correct' 'editable-input--incorrect' 'editable-input--neutral' 'editable-input--disabled'
