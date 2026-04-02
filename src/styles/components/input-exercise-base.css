@@ -91,8 +91,14 @@ html.dark .error-correction__exercise-card {
   border-color: var(--theme-border-soft, #374151);
 }
 @keyframes input-exercise-slide-in {
-  from { opacity: 0; transform: translateX(24px); }
-  to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* === STREAK BADGE === */
@@ -120,8 +126,14 @@ html.dark .error-correction__streak {
   border-color: rgba(251, 191, 36, 0.3);
 }
 @keyframes input-exercise-streak-pop {
-  from { transform: scale(0.7); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* === INSTRUCTION === */
