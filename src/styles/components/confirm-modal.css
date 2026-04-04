@@ -37,6 +37,7 @@
   border-radius: 16px;
   box-shadow: var(--shadow-modal, 0 20px 60px rgba(0, 0, 0, 0.3));
   width: min(90vw, 400px);
+  max-height: 90vh;
   overflow: hidden;
   animation: confirm-modal-slide-up var(--animation-normal, 250ms) var(--ease-smooth, ease-out);
 }

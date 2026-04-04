@@ -382,17 +382,24 @@
   box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5) !important;
 }
 
+/* === DESKTOP/TABLET POSITIONING >400px === */
+@media (min-width: 401px) {
+  .matching-modal {
+    align-items: flex-start;
+    padding-top: 8vh;
+  }
+}
+
 /* === RESPONSIVE MODAL === */
 @media (max-width: 640px) {
   .matching-modal {
     padding: 0.5rem;
-    align-items: center;
   }
 
   .matching-modal__container {
     max-width: 90vw;
     width: 90vw;
-    max-height: 80vh;
+    max-height: 85vh;
     border-radius: 0.5rem;
     animation: modalSlideIn 0.3s ease-out;
   }
@@ -456,8 +463,8 @@
 @media (max-width: 400px) {
   .matching-modal {
     padding: 0.5rem;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
     box-sizing: border-box;
     animation: modalFadeIn 0.15s ease-out;
   }
@@ -472,7 +479,7 @@
   .matching-modal__container {
     max-width: 80vw;
     width: 80vw;
-    max-height: 75vh;
+    max-height: 85vh;
     margin: 0;
     border-radius: 0.5rem;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);

@@ -91,7 +91,7 @@
   overflow-x: hidden;
   flex: 1;
   min-height: 0;
-  max-height: calc(90vh - 100px);
+  max-height: calc(90vh - 6rem);
 }
 
 /* === SCROLL STYLES === */
@@ -307,7 +307,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    max-height: calc(85vh - 8rem);
+    max-height: calc(85vh - 6rem);
   }
 
   .sorting-modal__summary {

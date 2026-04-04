@@ -133,7 +133,7 @@
   padding: 0.5rem 0.75rem;
   flex: 1;
   overflow-y: auto;
-  max-height: calc(90vh - 100px);
+  max-height: calc(90vh - 6rem);
 }
 
 .compact-about__content > * + * {
