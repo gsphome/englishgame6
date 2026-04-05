@@ -14,6 +14,22 @@ Antes de proponer soluciones o crear specs, explorar el código existente.
 - Custom i18n (src/utils/i18n.ts) para internacionalización
 - Contenido en JSON: `public/data/` por niveles CEFR (A1-C2)
 - GitHub Actions → GitHub Pages
+- Playwright MCP para análisis UI/UX (headless)
+- Chrome DevTools MCP para debugging técnico (network, console, performance)
+
+## Browser tools — Cuándo usar cada una
+
+| Necesidad | Herramienta | Tools clave |
+|-----------|-------------|-------------|
+| Validar UI post-deploy | Playwright | `browser_navigate`, `browser_snapshot`, `browser_take_screenshot` |
+| Recorrer módulos/flujos | Playwright | `browser_click`, `browser_wait_for`, `browser_snapshot` |
+| Screenshots comparativos | Playwright | `browser_take_screenshot` |
+| Network debugging | Chrome DevTools | `list_network_requests`, `get_network_request` |
+| Console logs/errores | Chrome DevTools | `list_console_messages`, `get_console_message` |
+| Performance/Lighthouse | Chrome DevTools | `lighthouse_audit`, `performance_start_trace` |
+| Offline/service worker | Chrome DevTools | `emulate` (networkConditions) |
+
+Regla: Playwright primero para UI/UX. Chrome DevTools solo para debugging técnico de bajo nivel.
 
 ## Antes de cualquier cambio
 
