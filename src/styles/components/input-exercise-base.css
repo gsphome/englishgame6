@@ -137,18 +137,14 @@ html.dark .error-correction__streak {
 }
 
 /* === INSTRUCTION === */
-.transformation__instruction,
-.word-formation__instruction,
-.error-correction__instruction {
+.transformation__instruction {
   font-size: 0.95rem;
   font-weight: 600;
   color: var(--theme-text-primary, #111827);
   margin: 0 0 0.75rem;
   line-height: 1.4;
 }
-html.dark .transformation__instruction,
-html.dark .word-formation__instruction,
-html.dark .error-correction__instruction {
+html.dark .transformation__instruction {
   color: var(--theme-text-primary, #f3f4f6);
 }
 

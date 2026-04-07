@@ -707,8 +707,7 @@ html.dark .matching-component__item--incorrect .matching-component__item-text * 
   padding-top: 0.5rem !important;
 }
 
-/* Correct/incorrect state guarantees — white text on colored backgrounds */
-.matching-component__item--correct,
+/* Correct/incorrect state guarantees — high-specificity overrides only */
 html body .matching-component .matching-component__item--correct {
   background-color: var(--theme-success, #10b981) !important;
   border-color: transparent !important;
@@ -718,19 +717,6 @@ html body .matching-component .matching-component__item--correct {
   transform: none !important;
 }
 
-.matching-component__item--correct .matching-component__item-text,
-.matching-component__item--correct .matching-component__item-text * {
-  color: #ffffff !important;
-  font-weight: 700 !important;
-}
-
-.matching-component__item--correct .matching-component__item-letter {
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-}
-
-.matching-component__item--incorrect,
 html body .matching-component .matching-component__item--incorrect {
   background-color: var(--theme-error, #ef4444) !important;
   border-color: transparent !important;
@@ -738,23 +724,6 @@ html body .matching-component .matching-component__item--incorrect {
   box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2) !important;
   font-weight: 700 !important;
   transform: none !important;
-}
-
-.matching-component__item--incorrect .matching-component__item-text,
-.matching-component__item--incorrect .matching-component__item-text * {
-  color: #ffffff !important;
-  font-weight: 700 !important;
-}
-
-/* Dark mode state guarantees */
-html.dark .matching-component__item--correct {
-  background-color: var(--theme-success, #10b981) !important;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3) !important;
-}
-
-html.dark .matching-component__item--correct .matching-component__item-text,
-html.dark .matching-component__item--correct .matching-component__item-text * {
-  color: #ffffff !important;
 }
 
 /* Mobile responsive overrides */

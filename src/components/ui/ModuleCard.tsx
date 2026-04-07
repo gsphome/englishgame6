@@ -15,7 +15,7 @@ import {
 import { useTranslation } from '../../utils/i18n';
 import type { LearningModule } from '../../types';
 
-export interface ModuleCardProps {
+interface ModuleCardProps {
   module: LearningModule;
   onClick: (module: LearningModule) => void;
   tabIndex?: number;

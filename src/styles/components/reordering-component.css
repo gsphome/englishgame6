@@ -98,13 +98,6 @@
   background-color: rgba(59, 130, 246, 0.02);
 }
 
-/* Zone active during drag over */
-.reordering__zone--active .reordering__zone-content {
-  outline: 2px dashed var(--color-primary, #7c3aed);
-  outline-offset: 2px;
-  background: var(--color-primary-bg, rgba(124, 58, 237, 0.05));
-}
-
 .reordering__zone-label {
   display: block;
   font-size: 0.8125rem;
@@ -172,11 +165,6 @@
   cursor: default;
 }
 
-/* Drag state: word being dragged */
-.reordering__word--dragging {
-  opacity: 0.4;
-}
-
 /* Correct position (post-validation) */
 .reordering__word--correct {
   background-color: var(--theme-success, #10b981);
@@ -190,14 +178,6 @@
   background-color: var(--theme-error, #ef4444);
   color: #ffffff;
   box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
-  cursor: default;
-}
-
-/* Distractor word (post-validation) */
-.reordering__word--distractor {
-  background-color: #f59e0b;
-  color: #ffffff;
-  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
   cursor: default;
 }
 
@@ -215,27 +195,6 @@
   background: var(--color-primary-bg, rgba(124, 58, 237, 0.15));
   box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.3);
   transform: scale(1.05);
-}
-
-/* === INSERT INDICATOR === */
-.reordering__insert-indicator {
-  display: inline-block;
-  width: 3px;
-  height: 2rem;
-  background: var(--color-primary, #7c3aed);
-  border-radius: 2px;
-  margin: 0 -1px;
-  flex-shrink: 0;
-  animation: reordering-pulse 0.8s ease-in-out infinite alternate;
-}
-
-@keyframes reordering-pulse {
-  from {
-    opacity: 0.5;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 /* === FEEDBACK === */
@@ -287,17 +246,6 @@
   font-size: 0.75rem;
   color: var(--theme-text-secondary, #6b7280);
   line-height: 1.3;
-}
-
-/* === DRAG PREVIEW (floating touch preview) === */
-.reordering__drag-preview {
-  pointer-events: none;
-}
-
-.reordering__word--preview {
-  opacity: 0.9;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05);
 }
 
 /* === EMPTY STATE === */
@@ -383,10 +331,6 @@ html.dark .reordering__zone--answer {
   background-color: rgba(59, 130, 246, 0.05);
 }
 
-html.dark .reordering__zone--active .reordering__zone-content {
-  background: rgba(124, 58, 237, 0.1);
-}
-
 html.dark .reordering__zone-label {
   color: var(--theme-text-primary, #f3f4f6);
 }
@@ -406,11 +350,6 @@ html.dark .reordering__word--correct {
 
 html.dark .reordering__word--incorrect {
   background-color: rgba(239, 68, 68, 0.85);
-  color: #ffffff;
-}
-
-html.dark .reordering__word--distractor {
-  background-color: rgba(245, 158, 11, 0.85);
   color: #ffffff;
 }
 
@@ -541,21 +480,8 @@ html.dark .reordering__empty {
     transition: none;
   }
 
-  .reordering__word--dragging {
-    transform: none;
-  }
-
   .reordering__word--selected {
     transform: none;
-  }
-
-  .reordering__insert-indicator {
-    animation: none;
-    opacity: 1;
-  }
-
-  .reordering__drag-preview {
-    animation: none;
   }
 
   .reordering__zone-content {

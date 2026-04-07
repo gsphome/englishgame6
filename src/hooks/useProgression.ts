@@ -180,40 +180,4 @@ export const useProgression = () => {
   };
 };
 
-/**
- * Hook for getting progression info for a specific module
- */
-export const useModuleProgression = (moduleId: string) => {
-  const progression = useProgression();
-  const { isModuleCompleted } = useProgressStore();
-
-  return useMemo(() => {
-    if (!moduleId || progression.isLoading) {
-      return {
-        isLoading: true,
-        status: 'locked' as const,
-        prerequisites: [],
-        missingPrerequisites: [],
-        progressionPath: [],
-        canAccess: false,
-      };
-    }
-
-    const status = progression.getModuleStatus(moduleId);
-    const prerequisites = progression.getModulePrerequisites(moduleId);
-    const missingPrerequisites = progression.getMissingPrerequisites(moduleId);
-    const progressionPath = progression.getProgressionPath(moduleId);
-    const canAccess = progression.canAccessModule(moduleId);
-
-    return {
-      isLoading: false,
-      status,
-      prerequisites,
-      missingPrerequisites,
-      progressionPath,
-      canAccess,
-      isCompleted: isModuleCompleted(moduleId),
-      isUnlocked: status !== 'locked',
-    };
-  }, [moduleId, progression, isModuleCompleted]);
-};
+// useModuleProgression removed — was unused
